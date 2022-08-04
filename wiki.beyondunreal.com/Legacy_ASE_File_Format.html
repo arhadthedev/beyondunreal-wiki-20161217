@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:ASE_File_Format by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:ASE File Format - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:ASE_File_Format" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:ASE_File_Format" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_ASE_File_Format.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:ASE_File_Format","wgTitle":"ASE File Format","wgCurRevisionId":35397,"wgRevisionId":35397,"wgArticleId":429,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Modeling"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:ASE_File_Format","wgRelevantArticleId":429,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_ASE_File_Format skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Cogito, ergo sum
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:ASE File Format</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>The ASE <a href="Legacy_File_Format.html" title="Legacy:File Format">file format</a>, short for <a href="http://en.wikipedia.org/wiki/ASCII" class="extiw" title="wikipedia:ASCII">Wikipedia:ASCII</a> Scene Exporter, is the prefered format to import <a href="Legacy_Static_Mesh.html" title="Legacy:Static Mesh">static meshes</a> into <a href="Legacy_UnrealEd.html" title="Legacy:UnrealEd" class="mw-redirect">UnrealEd</a> from anything except <a href="Legacy_Lightwave.html" title="Legacy:Lightwave">Lightwave</a>. The format is native to <a href="Legacy_3D_Studio_Max.html" title="Legacy:3D Studio Max">3D Studio Max</a>, but <a href="Legacy_ActorX.html" title="Legacy:ActorX">ActorX</a> for <a href="Legacy_Maya.html" title="Legacy:Maya">Maya</a> can also export it. The format is based on identifiers, all in the form *ASTERISK_THEN_NAME, which are followed by zero or more values, and then for a few a block of further identifiers surrounded by curly braces. As there is no official specification, it is unknown whether there is differentiation of whitespace, but for UnrealEd, each identifier must start on its own line, preceded only by spaces, tabs and closing curly braces.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Top_Level_Identifiers"><span class="tocnumber">1</span> <span class="toctext">Top Level Identifiers</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Scene_Identifiers"><span class="tocnumber">2</span> <span class="toctext">Scene Identifiers</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Material_List_Identifiers"><span class="tocnumber">3</span> <span class="toctext">Material List Identifiers</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Material_Identifiers"><span class="tocnumber">4</span> <span class="toctext">Material Identifiers</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Map_Identifiers"><span class="tocnumber">5</span> <span class="toctext">Map Identifiers</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Geometry_Object_Identifiers"><span class="tocnumber">6</span> <span class="toctext">Geometry Object Identifiers</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Node_Transformation_Matrix_Identifiers"><span class="tocnumber">7</span> <span class="toctext">Node Transformation Matrix Identifiers</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Mesh_Identifiers"><span class="tocnumber">8</span> <span class="toctext">Mesh Identifiers</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Mesh_Geometry_Specification"><span class="tocnumber">9</span> <span class="toctext">Mesh Geometry Specification</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Mesh_Texture_Coordinate_Specification"><span class="tocnumber">10</span> <span class="toctext">Mesh Texture Coordinate Specification</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Mesh_Vertex_Color_Specification"><span class="tocnumber">11</span> <span class="toctext">Mesh Vertex Color Specification</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Mesh_Vertex_Normal_Specification"><span class="tocnumber">12</span> <span class="toctext">Mesh Vertex Normal Specification</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Node_Animation_Specifiers"><span class="tocnumber">13</span> <span class="toctext">Node Animation Specifiers</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Top_Level_Identifiers">Top Level Identifiers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:ASE_File_Format?section=1" title="Edit section: Top Level Identifiers">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<dl>
+<dt>*3DSMAX_ASCIIEXPORT <i>version</i></dt>
+<dd><b>ignored by UnrealEd</b>. indicates the version of the file. typical value for 'version' seems to be 200.</dd>
+<dt>*COMMENT "<i>comment</i>"</dt>
+<dd><b>ignored by UnrealEd</b>. Contains version of the exporter and export date in files generated by <a href="Legacy_3D_Studio_Max.html" title="Legacy:3D Studio Max">3D Studio Max</a>. Presumably could contain anything you want and might occur in any block.</dd>
+<dt>*SCENE</dt>
+<dd><b>ignored by UnrealEd</b>. <b>Block</b> contains information about the scene, animation, ambient light, background color. See <i><b>Scene Identifiers</b></i>.</dd>
+<dt>*MATERIAL_LIST</dt>
+<dd><b>Block</b> contains all materials used by the objects in this file. See <i><b>Material List Identifiers</b></i>.</dd>
+<dt>*GEOMOBJECT</dt>
+<dd><b>Block</b> contains actual geometry of objects in the file. See <i><b>Geometry Object Identifiers</b></i>.</dd>
+<dt>*LIGHTOBJECT &amp; *CAMERAOBJECT</dt>
+<dd><b>ignored by UnrealEd</b>. <b>Blocks</b> contain information about lights and cameras in the scene. They're pretty straightforwards and not at all relevant to UnrealEd, so I'm not covering them.</dd>
+</dl>
+<h2><span class="mw-headline" id="Scene_Identifiers">Scene Identifiers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:ASE_File_Format?section=2" title="Edit section: Scene Identifiers">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<dl>
+<dt>*SCENE_FILENAME "<i>filename</i>"</dt>
+<dd><b>ignored by UnrealEd</b>. Orignal .max file name that this ASE was generated from</dd>
+<dt>*SCENE_FIRSTFRAME <i>frame</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown, presumed to be frame on which animation begins.</dd>
+<dt>*SCENE_LASTFRAME <i>frame</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown, presumed to be frame on which animation ends.</dd>
+<dt>*SCENE_FRAMESPEED <i>frames_per_second</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown, presumed to be frame rate for scene (whether it's rendered or keyed frame rate is unknown).</dd>
+<dt>*SCENE_TICKSPERFRAME <i>frame</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown.</dd>
+<dt>*SCENE_BACKGROUND_STATIC <i>red</i> <i>green</i> <i>blue</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown, presumed to be background color. The three variables are floats between 0.0 and 1.0.</dd>
+<dt>*SCENE_AMBIENT_STATIC <i>red</i> <i>green</i> <i>blue</i></dt>
+<dd><b>ignored by UnrealEd</b>. Ambient light color and brightness. The three variables are floats between 0.0 and 1.0.</dd>
+</dl>
+<h2><span class="mw-headline" id="Material_List_Identifiers">Material List Identifiers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:ASE_File_Format?section=3" title="Edit section: Material List Identifiers">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<dl>
+<dt>*MATERIAL_COUNT <i>num</i></dt>
+<dd>Must be first identifier in *MATERIAL_LIST. <i>num</i> is the number of materials contained in the *MATERIAL_LIST block.</dd>
+<dt>*MATERIAL <i>index</i></dt>
+<dd><b>Block</b> contains specification of a material. <i>index</i> is the index of the material, counting from zero. UnrealEd ignores the index and assigns material indices starting from zero in the order they occur in the file. See <i><b>Material Identifiers</b></i>. Unlike the previous block identifiers, UnrealEd needs to see this one to function properly.</dd>
+</dl>
+<h2><span class="mw-headline" id="Material_Identifiers">Material Identifiers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:ASE_File_Format?section=4" title="Edit section: Material Identifiers">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<dl>
+<dt>*MATERIAL_NAME "<i>name</i>"</dt>
+<dd>Name of the material. UnrealEd may look for a texture by this name, but it has not been tested.</dd>
+<dt>*MATERIAL_CLASS "<i>class</i>"</dt>
+<dd><b>ignored by UnrealEd</b>. Unknown. Usually "Standard", but "Multi/Sub-Object" has been observed.</dd>
+<dt>*MATERIAL_AMBIENT <i>red</i> <i>green</i> <i>blue</i></dt>
+<dd>Ambient glow of this material. It is unknown if this adds to or overrides *SCENE_AMBIENT_STATIC. UnrealEd appears to interpret this identifier, but it is unknown what it does with it. The three variables are floats between 0.0 and 1.0.</dd>
+<dt>*MATERIAL_DIFFUSE <i>red</i> <i>green</i> <i>blue</i></dt>
+<dd>Diffuse color material. UnrealEd appears to interpret this identifier, but it is unknown what it does with it. The three variables are floats between 0.0 and 1.0.</dd>
+<dt>*MATERIAL_SPECULAR <i>red</i> <i>green</i> <i>blue</i></dt>
+<dd>Specular highlight color material. UnrealEd appears to interpret this identifier, but it is unknown what it does with it. The three variables are floats between 0.0 and 1.0.</dd>
+<dt>*MATERIAL_SHINE <i>shine</i></dt>
+<dd><b>ignored by UnrealEd</b>. Defines how focused the Specular shine is.</dd>
+<dt>*MATERIAL_SHINESTRENGTH <i>strength</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown.</dd>
+<dt>*MATERIAL_TRANSPARENCY <i>transparency</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown, presumed to be transparency of the material represented as a float from 0 to 1.</dd>
+<dt>*MATERIAL_WIRESIZE <i>size</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown, presumed to be the pixel width that wires should draw as when viewed as wire frame.</dd>
+<dd>Now, if the material has submaterials, you'll have this:</dd>
+<dt>*NUMSUBMTLS <i>num</i></dt>
+<dd>Number of sub-materials for this material;</dd>
+<dt>*SUBMATERIAL <i>index</i></dt>
+<dd><b>Block</b> containing a complete material definition. indexes start at 0 and count up to NUMSUBMTLS-1. This block contains a complete material definition, but may not contain submaterials.</dd>
+<dd>If the material is regular (no submaterials, you'll have this the rest of this stuff:</dd>
+<dt>*MATERIAL_SHADING <i>mode</i></dt>
+<dd><b>ignored by UnrealEd</b>. Shading algorithm to use. Observed values are Blinn and Phong. Note that this value is not quoted.</dd>
+<dt>*MATERIAL_XP_FALLOFF <i>falloff</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown, presumed to be exponential falloff of something related to lighting. Float.</dd>
+<dt>*MATERIAL_SELFILLUM <i>illum</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown, presumed to be some sort of ambient glow. Float.</dd>
+<dt>*MATERIAL_FALLOFF <i>falloff</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown. Only observed value is "In" (whout quotes).</dd>
+<dt>*MATERIAL_XP_TYPE <i>type</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown. Only observed value is "Filter" (whout quotes).</dd>
+<dt>*MAP_DIFFUSE</dt>
+<dd><b>Block</b> containing a texture map specification for the diffuse channel. See <i><b>Map Identifiers</b></i>.</dd>
+<dd>There may be other MAP types (for example MAP_AMBIENT, MAP_OPACITY or MAP_SPECULAR) but I don't know of them.</dd>
+</dl>
+<h2><span class="mw-headline" id="Map_Identifiers">Map Identifiers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:ASE_File_Format?section=5" title="Edit section: Map Identifiers">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<dl>
+<dt>*MAP_NAME "<i>name</i>"</dt>
+<dd><b>ignored by UnrealEd</b>. Unknown, presumed to be the name of this texture map for display in the editor.</dd>
+<dt>*MAP_CLASS "<i>class</i>"</dt>
+<dd><b>ignored by UnrealEd</b>. Unknown. Observed value is "Bitmap".</dd>
+<dt>*MAP_SUBNO <i>subno</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown. Observed value is 1.</dd>
+<dt>*MAP_AMOUNT 1.0000</dt>
+<dd><b>ignored by UnrealEd</b>. Unknown, presumed to be</dd>
+<dt>*BITMAP "<i>path</i>"</dt>
+<dd><i><b>UNREALED USES THIS ONE!</b></i>. It appears to be a path to a BMP file. I'm not sure if UnrealEd will add the texture or what, but this identifier appears in UnrealEd's strings.</dd>
+<dt>*MAP_TYPE <i>type</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown. Observed value is "Screen" (without quotes).</dd>
+<dt>*UVW_U_OFFSET <i>value</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown. Value is a float.</dd>
+<dt>*UVW_V_OFFSET <i>value</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown. Value is a float.</dd>
+<dt>*UVW_U_TILING <i>value</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown. Value is a float.</dd>
+<dt>*UVW_V_TILING <i>value</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown. Value is a float.</dd>
+<dt>*UVW_ANGLE <i>value</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown. Value is a float.</dd>
+<dt>*UVW_BLUR <i>value</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown. Value is a float.</dd>
+<dt>*UVW_BLUR_OFFSET <i>value</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown. Value is a float.</dd>
+<dt>*UVW_NOUSE_AMT <i>value</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown. Value is a float.</dd>
+<dt>*UVW_NOISE_SIZE <i>value</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown. Value is a float.</dd>
+<dt>*UVW_NOISE_LEVEL <i>level</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown. Observed value is 1.</dd>
+<dt>*UVW_NOISE_PHASE <i>value</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown. Value is a float.</dd>
+<dt>*BITMAP_FILTER <i>filter</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown, presumed to be filter for generating <a href="https://wiki.beyondunreal.com/edit/Legacy:Mipmap?redlink=1" class="new" title="Legacy:Mipmap (page does not exist)">MIP Maps</a>. Only observed value is "Pyramidal" (without the quotes).</dd>
+</dl>
+<h2><span class="mw-headline" id="Geometry_Object_Identifiers">Geometry Object Identifiers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:ASE_File_Format?section=6" title="Edit section: Geometry Object Identifiers">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<dl>
+<dt>*NODE_NAME "<i>name</i>"</dt>
+<dd><b>ignored by UnrealEd</b>. Name of this object.</dd>
+<dt>*NODE_TM</dt>
+<dd><b>Block</b> containing information about the transformation matrix on this object. Like the outer blocks, UnrealEd doesn't care about seeing this identifier, just the ones that are supposed to be inside it. See <i><b>Node Transformation Matrix Identifiers</b></i>.</dd>
+<dt>*MESH</dt>
+<dd><b>Block</b> containing the actual mesh and texturing info. Like the outer blocks, UnrealEd doesn't care about seeing this identifier, just the ones that are supposed to be inside it. See <i><b>Mesh Identifiers</b></i>.</dd>
+<dt>*PROP_MOTIONBLUR <i>bool</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown, presumed to indicate that this object should be motion blurred if 1, and not if 0.</dd>
+<dt>*PROP_CASTSHADOW <i>bool</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown, presumed to indicate that this object should cast shadows if 1, and not if 0.</dd>
+<dt>*PROP_RECVSHADOW <i>bool</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown, presumed to indicate that this object should receive shadows if 1, and not if 0.</dd>
+<dt>*TM_ANIMATION&#160;</dt>
+<dd><b>Block</b> containing information about the transformation of the animation. I don't understand this block. (Different Editor: I understand this block, however, I have lost my example ASE files and have forgotten the identifiers for within this block. There's a section at the bottom of the page allocating space for when I get my hands on another animated ASE file.)</dd>
+<dt>*MATERIAL_REF <i>index</i></dt>
+<dd>Index of the texture to use for this object. Default for faces without a *MESH_MTLID.</dd>
+</dl>
+<h2><span class="mw-headline" id="Node_Transformation_Matrix_Identifiers">Node Transformation Matrix Identifiers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:ASE_File_Format?section=7" title="Edit section: Node Transformation Matrix Identifiers">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<dl>
+<dt>*NODE_NAME "<i>name</i>"</dt>
+<dd>Should be same name as the containing *GEOM_OBJECT.</dd>
+<dt>*INHERIT_POS <i>int</i> <i>int</i> <i>int</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown.</dd>
+<dt>*INHERIT_ROT <i>int</i> <i>int</i> <i>int</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown.</dd>
+<dt>*INHERIT_SCL <i>int</i> <i>int</i> <i>int</i></dt>
+<dd><b>ignored by UnrealEd</b>. Unknown.</dd>
+<dt>*TM_ROW0 <i>float</i> <i>float</i> <i>float</i></dt>
+<dd>First row of the transformation matrix.</dd>
+<dt>*TM_ROW1 <i>float</i> <i>float</i> <i>float</i></dt>
+<dd>Second row of the transformation matrix.</dd>
+<dt>*TM_ROW2 <i>float</i> <i>float</i> <i>float</i></dt>
+<dd>Third row of the transformation matrix.</dd>
+<dt>*TM_ROW3 <i>float</i> <i>float</i> <i>float</i></dt>
+<dd>Fourth row of the transformation matrix.</dd>
+<dt>*TM_POS <i>float</i> <i>float</i> <i>float</i></dt>
+<dd><b>ignored by UnrealEd</b>. The translation part of the transformation. It's here just for convenience, as the information is also in the matrix.</dd>
+<dt>*TM_ROTAXIS <i>float</i> <i>float</i> <i>float</i></dt>
+<dd><b>ignored by UnrealEd</b>. Axis of the rotation part of the transformacion. Also extracted from the matrix, it's not really needed if you already use the full matrix.</dd>
+<dt>*TM_ROTANGLE <i>float</i></dt>
+<dd><b>ignored by UnrealEd</b>. Angle of rotation part of the transformation.</dd>
+<dt>*TM_SCALE <i>float</i> <i>float</i> <i>float</i></dt>
+<dd><b>ignored by UnrealEd</b>. Scale of the transformation. Also from the matrix.</dd>
+<dt>*TM_SCALEAXIS <i>float</i> <i>float</i> <i>float</i></dt>
+<dd><b>ignored by UnrealEd</b>. The axis of the scaling. Not sure how to use it, but the information is also on the matrix.</dd>
+<dt>*TM_SCALEAXISANG <i>float</i></dt>
+<dd><b>ignored by UnrealEd</b>. Angle of the scaling.. Ditto.</dd>
+</dl>
+<h2><span class="mw-headline" id="Mesh_Identifiers">Mesh Identifiers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:ASE_File_Format?section=8" title="Edit section: Mesh Identifiers">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<dl>
+<dt>*TIMEVALUE <i>int</i></dt>
+<dd><b>ignored by UnrealEd</b>. Represents the frame of animation for which this mesh represents (This generally means there are more *MESH declarations within the *GEOMOBJECT block to represent the vertex positions in different frames).</dd>
+<dt>*MESH_NUMVERTEX <i>num</i></dt>
+<dd>Number of vertices used in the model. Vertex indices range from 0 to <i>num</i>-1.</dd>
+<dt>*MESH_VERTEX_LIST</dt>
+<dd><i>Block</i> containing vertex positions. UnrealEd doesn't care about this identifier, just the ones inside of it. See <i><b>Mesh Geometry Specification</b></i>.</dd>
+<dt>*MESH_NUMFACES <i>num</i></dt>
+<dd>Number of faces used in the model. Face indices range from 0 to <i>num</i>-1.</dd>
+<dt>*MESH_FACE_LIST</dt>
+<dd><b>Block</b> containing face definitions. Again, UnrealEd only care about the identifiers inside. See <i><b>Mesh Geometry Specification</b></i>.</dd>
+<dt>*MESH_NUMTVERTEX <i>num</i></dt>
+<dd>Number of vertices used in the first UV set of the model. Texture vertex indices range from 0 to <i>num</i>-1.</dd>
+<dt>*MESH_TVERTLIST</dt>
+<dd><b>Block</b> containing texture vertex positions for the first UV set. Just like the others UnrealEd doesn't actually need to see this identifier. See <i><b>Mesh Texture Specification</b></i>.</dd>
+<dt>*MESH_NUMTVFACES <i>num</i></dt>
+<dd>Number of texture faces used in the first UV set of model. Should always be identical to *MESH_NUMFACES.</dd>
+<dt>*MESH_TFACELIST</dt>
+<dd><b>Block</b> containing texture face definitions for the first UV set. Do I need to say it again?</dd>
+<dt>*MESH_MAPPINGCHANNEL <i>number</i></dt>
+<dd><i>Block containing the an additional UV set. a single *MESH can conatin multiple *MESH_MAPPINGCHANNELs. Each one has a number starting at 2 and counting upwards. See</i> <b>Mesh Texture Specification</b><i>.</i></dd>
+<dt>*MESH_NUMCVERTEX <i>num</i></dt>
+<dd>Number of color vertices. Usually same as *MESH_NUMVERTEX.</dd>
+<dt>*MESH_CVERTLIST</dt>
+<dd><b>Block</b> containing vertex color information. See <i><b>Mesh Color Specification</b></i>.</dd>
+<dt>*MESH_NUMCVFACES <i>num</i></dt>
+<dd>Number of color faces. Should always be identical to *MESH_NUMFACES.</dd>
+<dt>*MESH_CFACELIST</dt>
+<dd><b>Block</b> containing color face definitions. See <i><b>Mesh Color Specification</b></i>.</dd>
+<dt>*MESH_NORMALS</dt>
+<dd><b>Ignored by UnrealEd???</b> <i>Block</i> containing normal information for faces and vertices. See <i><b>Mesh Normal Specification</b></i>.</dd>
+</dl>
+<p>At this level the consistency of the file format breaks down, so will my consistency of presentation.</p>
+<h2><span class="mw-headline" id="Mesh_Geometry_Specification">Mesh Geometry Specification</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:ASE_File_Format?section=9" title="Edit section: Mesh Geometry Specification">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>A Mesh is made up of a set of triangles built by selecting 3 vertices. the "front" of this triangle is the side that when viewed from causes the vertices to rotate in a counter-clockwise direction around the middle. The mesh is specified by listing all the verticies, and then listing polygons that use them. The vertices are specified as follows:</p>
+<pre>
+*MESH_NUMVERTEX 4
+*MESH_VERTEX_LIST {
+    *MESH_VERTEX  0  -128.0  -128.0  0.000 
+    *MESH_VERTEX  1   128.0  -128.0  0.000
+    *MESH_VERTEX  2   128.0   128.0  0.000
+    *MESH_VERTEX  3  -128.0   128.0  0.000
+}
+</pre>
+<p>Each *MESH_VERTEX line contains 4 numbers, which are the vertex's index followed by its X, Y, and Z coordinates. The vertex indices start at 0 and count upwards to one less than the value in MESH_NUMVERTEX. Once the vertices are specified, the faces are defined like this:</p>
+<pre>
+*MESH_NUMFACES 2
+*MESH_FACE_LIST { 
+    *MESH_FACE 0: A: 3 B: 0 C: 2 AB: 1 BC: 0 CA: 1 *MESH_SMOOTHING 1 *MESH_MTLID 0 
+    *MESH_FACE 1: A: 1 B: 2 C: 0 AB: 1 BC: 0 CA: 1 *MESH_SMOOTHING 1 *MESH_MTLID 0 
+}
+</pre>
+<p>Here the format takes a complete departure from everywhere else. Suddenly the values get labeled? The first number is the face index, starting at 0 just like all the other indices. the A, B and C numbers are the vertex indices of the three corners of the triangle, in counter-clockwise order. the AB, BC, and CA are ignored by UnrealEd, but it's believed that they determine whether the edge should be drawn when viewed as wire frame. It gets stranger still as two identifiers show up on the same line as the *MESH_FACE. *MESH_SMOOTHING determines which smoothing groups the triangle is a member of and is a comma-delimited list. *MESH_MTLID specifies which submaterial to use for this triangle.</p>
+<h2><span class="mw-headline" id="Mesh_Texture_Coordinate_Specification">Mesh Texture Coordinate Specification</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:ASE_File_Format?section=10" title="Edit section: Mesh Texture Coordinate Specification">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Once the geometry is in place, we can paint pretty pictures on it. The texture coordinate specification is identical to the vertex coordinate specification:</p>
+<pre>
+*MESH_NUMTVERTEX 4
+*MESH_TVERTLIST {
+    *MESH_TVERT 0  0.000  0.000  0.500
+    *MESH_TVERT 1  1.000  0.000  0.500
+    *MESH_TVERT 2  1.000  1.000  0.500
+    *MESH_TVERT 3  0.000  1.000  0.500
+}
+</pre>
+<p>The last value is some sort of 3rd texture coordinate. It's not clear how or even if it's used. Once the coordinates are defined, you can apply the coordinates to the polygons:</p>
+<pre>
+*MESH_NUMTVFACES 2
+*MESH_TFACELIST {
+    *MESH_TFACE 0  3  0  2
+    *MESH_TFACE 1  1  2  0
+}
+</pre>
+<p>The first number of each *MESH_TFACE selects a face to apply a texture to. The three numbers after that select coordinates from the *MESH_TVERTLIST to use for each of the three corners o the triangle.</p>
+<p>Additional texture coordinate sets can be specified like this:</p>
+<pre>
+*MESH_MAPPINGCHANNEL 2 {
+    *MESH_NUMTVERTEX 4 
+    *MESH_TVERTLIST { ... } 
+    *MESH_NUMTVFACES 2 
+    *MESH_TFACELIST { ... } 
+}
+</pre>
+<p>The only thing new here is the *MESH_MAPPINGCHANNEL block, which contains another copy of the texturing info with different values. The number after *MESH_MAPPINGCHANNEL seems to start at 2 for the 2nd set (the first one is outside any *MESH_MAPPINGCHANNEL), and count upwards for each additional set.</p>
+<h2><span class="mw-headline" id="Mesh_Vertex_Color_Specification">Mesh Vertex Color Specification</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:ASE_File_Format?section=11" title="Edit section: Mesh Vertex Color Specification">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Now, it seems UnrealEd supports this. It shouldn't be able to, but it does. Nowhere in the binary do the strings identifying color information occur, yet it does seems to be able to extract it. Can either use this color information as lighting, or use the red channel to blend between two textures. Anyway, on with the specification.</p>
+<p>Colors are specified in a similar way to geometry and textures. First a block of vertex data:</p>
+<pre>
+*MESH_NUMCVERTEX 4
+*MESH_CVERTLIST {
+    *MESH_VERTCOL 0 1.0000 0.0000 0.0000
+    *MESH_VERTCOL 1 0.0000 1.0000 0.0000
+    *MESH_VERTCOL 2 0.0000 0.0000 1.0000
+    *MESH_VERTCOL 3 1.0000 1.0000 1.0000
+}
+</pre>
+<p>the first value is the color vertex index, the other three are the red green and blue of that vertex, from 0 to 1. Then just like textures, they're mapped onto polygons:</p>
+<pre>
+*MESH_NUMCVFACES 2
+*MESH_CFACELIST {
+    *MESH_CFACE 0  3  0  2
+    *MESH_CFACE 1  1  2  0
+}
+</pre>
+<h2><span class="mw-headline" id="Mesh_Vertex_Normal_Specification">Mesh Vertex Normal Specification</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:ASE_File_Format?section=12" title="Edit section: Mesh Vertex Normal Specification">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Yet another bizarre twist here: two types of identifiers show up inside the MESH_NORMALS list. The first one is *MESH_FACENORMAL, which is followed by a face index and then three float values which are the normalized (length 1) normal for that vertex. the *MESH_FACENORMAL may be followed by exactly 3 *MESH_VERTEXNORMAL commands which are again followed by the vertex index (from *MESH_VERTEX_LIST) and three floats that form the normal for that corner of the triangle. I haven't checked if UnrealEd will let you specify different normals for the same vertex index, but my initial guess is no.</p>
+<h2><span class="mw-headline" id="Node_Animation_Specifiers">Node Animation Specifiers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:ASE_File_Format?section=13" title="Edit section: Node Animation Specifiers">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>More to come...</p>
+<hr />
+<p>Well, that's all I know. There's still one identifier that shows up in UnrealEd's strings that I don't know about: *NUMSUBMTLS. I'm guessing this has something to do with materials. I also don't know how vertex colors are specified. I know the internal format supports them, as CTF-Magma makes use of vertex colors to blend between textures, but I don't know how to get the into UnrealEd.</p>
+<p>Lots of info on the UnrealEd side of things, and a sample ASE file can be found at the <a href="http://udn.epicgames.com/Two/VertexBlendingTutorial" class="extiw" title="udn2:VertexBlendingTutorial">udn2:VertexBlendingTutorial</a>.</p>
+<hr />
+<p><a href="Category_Legacy_Modeling.html" title="Category:Legacy Modeling">Category:Legacy Modeling</a></p>
+<p><b>Tarquin:</b> You mean <a href="Category_Legacy_Application.html" title="Category:Legacy Application">Category:Legacy Application</a>? but this is a file format, not an app! *confused*</p>
+<p><b>inio:</b> I'm blind&#160;:-). yeah, relevancy is questionable. Maybe there should be a tools coding category or something, for stuff like this. I've come across a couple pages that seemed targeted more at people writing tools than people creating content.</p>
+<p><b>Tarquin:</b> interesting idea. Suggest it on the main categories page. in the meantime, link this page from <a href="Legacy_File_Format.html" title="Legacy:File Format">file format</a> if not already.</p>
+<p><b>Tarquin:</b> Is there a way to export ASE files from UnrealEd?</p>
+<p><b>Anonymous:</b> the AB,BC,CA are Edge flags. see glEdgeFlag.</p>
+<p><b>Anonymous:</b> most engines ignore the vertex normals, they are not guaranteed to be orthonormal in the ASE format. This is done by regenerating the normals at each vertex per face, averaging them togethor to get the normal. Assuming the engine even uses the normals.</p>
+<p><b>0beron</b> I've been trying to get a script working to convert STL meshes into ASE format, and have discovered that UEd 3 (UT2004) at least is picky about whitespace. In particular lines like *MESH_TVERT work best if they are in the form *MESH_TVERT index_number U&lt;tab&gt;V&lt;tab&gt;0.000&lt;newline&gt; (with a space being a literal space). A mesh face line is best formatted *MESH_FACE 0: A: 0 B: 2 C: 1 AB: 1 BC: 1 CA: 1 *MESH_SMOOTHING 1 &lt;tab&gt;*MESH_MTLID 0&lt;newline&gt; (note the space followed by a tab.) My guess is that UED splits on tabs and spaces at different times to hack up the strings it reads in, and if they don't appear in the right order it gets rubbish.</p>
+<p>for info on how to use .ase for biped animation check out: <a rel="nofollow" class="external free" href="http://area.autodesk.com/forum/autodesk-3ds-max/animation/ascii-scene-export-format-explanation/">http://area.autodesk.com/forum/autodesk-3ds-max/animation/ascii-scene-export-format-explanation/</a></p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.085 seconds
+Real time usage: 0.088 seconds
+Preprocessor visited node count: 835/1000000
+Preprocessor generated node count: 1804/1000000
+Post‐expand include size: 15/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:429-0!*!0!!en!*!* and timestamp 20161215115950 and revision id 35397
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:ASE_File_Format?oldid=35397">https://wiki.beyondunreal.com/Legacy:ASE_File_Format?oldid=35397</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Legacy_Modeling.html" title="Category:Legacy Modeling">Legacy Modeling</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_ASE_File_Format.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:ASE_File_Format?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:ASE_File_Format" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:ASE_File_Format" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AASE+File+Format&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AASE+File+Format" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:ASE_File_Format" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:ASE_File_Format" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:ASE_File_Format?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:ASE_File_Format?oldid=35397" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:ASE_File_Format" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 03:33, 3 September 2009.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":81});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:ASE_File_Format by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:52 GMT -->
+</html>

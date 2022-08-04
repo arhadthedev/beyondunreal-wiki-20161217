@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE2:PlayerController_(UT2003) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:18:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE2:PlayerController (UT2003) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE2_PlayerController_(UT2003).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE2","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":104,"wgPageName":"UE2:PlayerController_(UT2003)","wgTitle":"PlayerController (UT2003)","wgCurRevisionId":22118,"wgRevisionId":22118,"wgArticleId":14389,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UT2003-specific classes","Classes in UT2003 package Engine","Subclasses of Controller (UT2003)","Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE2:PlayerController_(UT2003)","wgRelevantArticleId":14389,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-104 ns-subject page-UE2_PlayerController_UT2003 skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Worst-case scenario: the UEd Goblin wipes the map and burns down your house.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE2:PlayerController (UT2003)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Tournament_2003.html" title="Unreal Tournament 2003"><img alt="UT2003" src="w/images/Icon-UT2003.png" width="16" height="16" /></a></td>
+<td><a href="UE2_Object_(UT2003).html" title="UE2:Object (UT2003)">Object</a> &gt;&gt;&#160;<a href="UE2_Actor_(UT2003).html" title="UE2:Actor (UT2003)">Actor</a> &gt;&gt;&#160;<a href="UE2_Controller_(UT2003).html" title="UE2:Controller (UT2003)">Controller</a> &gt;&gt;&#160;<b>PlayerController</b></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Properties"><span class="tocnumber">1</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Property_group_.27ForceFeedback.27"><span class="tocnumber">1.1</span> <span class="toctext">Property group 'ForceFeedback'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#bEnableDamageForceFeedback"><span class="tocnumber">1.1.1</span> <span class="toctext">bEnableDamageForceFeedback</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#bEnableGUIForceFeedback"><span class="tocnumber">1.1.2</span> <span class="toctext">bEnableGUIForceFeedback</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#bEnablePickupForceFeedback"><span class="tocnumber">1.1.3</span> <span class="toctext">bEnablePickupForceFeedback</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#bEnableWeaponForceFeedback"><span class="tocnumber">1.1.4</span> <span class="toctext">bEnableWeaponForceFeedback</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#bForceFeedbackSupported"><span class="tocnumber">1.1.5</span> <span class="toctext">bForceFeedbackSupported</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Property_group_.27TeamBeacon.27"><span class="tocnumber">1.2</span> <span class="toctext">Property group 'TeamBeacon'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="#LinkBeaconTexture"><span class="tocnumber">1.2.1</span> <span class="toctext">LinkBeaconTexture</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#TeamBeaconCustomColor"><span class="tocnumber">1.2.2</span> <span class="toctext">TeamBeaconCustomColor</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#TeamBeaconMaxDist"><span class="tocnumber">1.2.3</span> <span class="toctext">TeamBeaconMaxDist</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#TeamBeaconPlayerInfoMaxDist"><span class="tocnumber">1.2.4</span> <span class="toctext">TeamBeaconPlayerInfoMaxDist</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#TeamBeaconTeamColors"><span class="tocnumber">1.2.5</span> <span class="toctext">TeamBeaconTeamColors</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#TeamBeaconTexture"><span class="tocnumber">1.2.6</span> <span class="toctext">TeamBeaconTexture</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="#Internal_variables"><span class="tocnumber">1.3</span> <span class="toctext">Internal variables</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Default_values"><span class="tocnumber">1.4</span> <span class="toctext">Default values</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#Structs"><span class="tocnumber">2</span> <span class="toctext">Structs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="#PlayerNameInfo"><span class="tocnumber">2.1</span> <span class="toctext">PlayerNameInfo</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#Functions"><span class="tocnumber">3</span> <span class="toctext">Functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#Exec_functions"><span class="tocnumber">3.1</span> <span class="toctext">Exec functions</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Native_functions"><span class="tocnumber">3.2</span> <span class="toctext">Native functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-22"><a href="#ClientHearSound"><span class="tocnumber">3.2.1</span> <span class="toctext">ClientHearSound</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#ClientTravel"><span class="tocnumber">3.2.2</span> <span class="toctext">ClientTravel</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="#ClientValidate"><span class="tocnumber">3.2.3</span> <span class="toctext">ClientValidate</span></a></li>
+<li class="toclevel-3 tocsection-25"><a href="#ServerValidationResponse"><span class="tocnumber">3.2.4</span> <span class="toctext">ServerValidationResponse</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#ChangeVoiceChatter"><span class="tocnumber">3.2.5</span> <span class="toctext">ChangeVoiceChatter</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="#ConsoleCommand"><span class="tocnumber">3.2.6</span> <span class="toctext">ConsoleCommand</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="#CopyToClipboard"><span class="tocnumber">3.2.7</span> <span class="toctext">CopyToClipboard</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="#FindStairRotation"><span class="tocnumber">3.2.8</span> <span class="toctext">FindStairRotation</span></a></li>
+<li class="toclevel-3 tocsection-30"><a href="#GetDefaultURL"><span class="tocnumber">3.2.9</span> <span class="toctext">GetDefaultURL</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="#GetEntryLevel"><span class="tocnumber">3.2.10</span> <span class="toctext">GetEntryLevel</span></a></li>
+<li class="toclevel-3 tocsection-32"><a href="#GetPlayerIDHash"><span class="tocnumber">3.2.11</span> <span class="toctext">GetPlayerIDHash</span></a></li>
+<li class="toclevel-3 tocsection-33"><a href="#GetPlayerNetworkAddress"><span class="tocnumber">3.2.12</span> <span class="toctext">GetPlayerNetworkAddress</span></a></li>
+<li class="toclevel-3 tocsection-34"><a href="#GetServerNetworkAddress"><span class="tocnumber">3.2.13</span> <span class="toctext">GetServerNetworkAddress</span></a></li>
+<li class="toclevel-3 tocsection-35"><a href="#LeaveVoiceChat"><span class="tocnumber">3.2.14</span> <span class="toctext">LeaveVoiceChat</span></a></li>
+<li class="toclevel-3 tocsection-36"><a href="#PasteFromClipboard"><span class="tocnumber">3.2.15</span> <span class="toctext">PasteFromClipboard</span></a></li>
+<li class="toclevel-3 tocsection-37"><a href="#ResetKeyboard"><span class="tocnumber">3.2.16</span> <span class="toctext">ResetKeyboard</span></a></li>
+<li class="toclevel-3 tocsection-38"><a href="#SetNetSpeed"><span class="tocnumber">3.2.17</span> <span class="toctext">SetNetSpeed</span></a></li>
+<li class="toclevel-3 tocsection-39"><a href="#SetViewTarget"><span class="tocnumber">3.2.18</span> <span class="toctext">SetViewTarget</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-40"><a href="#Events"><span class="tocnumber">3.3</span> <span class="toctext">Events</span></a>
+<ul>
+<li class="toclevel-3 tocsection-41"><a href="#AddCameraEffect"><span class="tocnumber">3.3.1</span> <span class="toctext">AddCameraEffect</span></a></li>
+<li class="toclevel-3 tocsection-42"><a href="#ClientCloseMenu"><span class="tocnumber">3.3.2</span> <span class="toctext">ClientCloseMenu</span></a></li>
+<li class="toclevel-3 tocsection-43"><a href="#ClientMessage"><span class="tocnumber">3.3.3</span> <span class="toctext">ClientMessage</span></a></li>
+<li class="toclevel-3 tocsection-44"><a href="#ClientOpenMenu"><span class="tocnumber">3.3.4</span> <span class="toctext">ClientOpenMenu</span></a></li>
+<li class="toclevel-3 tocsection-45"><a href="#ClientReplaceMenu"><span class="tocnumber">3.3.5</span> <span class="toctext">ClientReplaceMenu</span></a></li>
+<li class="toclevel-3 tocsection-46"><a href="#ClientSetViewTarget"><span class="tocnumber">3.3.6</span> <span class="toctext">ClientSetViewTarget</span></a></li>
+<li class="toclevel-3 tocsection-47"><a href="#Destroyed"><span class="tocnumber">3.3.7</span> <span class="toctext">Destroyed</span></a></li>
+<li class="toclevel-3 tocsection-48"><a href="#InitInputSystem"><span class="tocnumber">3.3.8</span> <span class="toctext">InitInputSystem</span></a></li>
+<li class="toclevel-3 tocsection-49"><a href="#NotifyLanded"><span class="tocnumber">3.3.9</span> <span class="toctext">NotifyLanded</span></a></li>
+<li class="toclevel-3 tocsection-50"><a href="#PlayerCalcView"><span class="tocnumber">3.3.10</span> <span class="toctext">PlayerCalcView</span></a></li>
+<li class="toclevel-3 tocsection-51"><a href="#PlayerTick"><span class="tocnumber">3.3.11</span> <span class="toctext">PlayerTick</span></a></li>
+<li class="toclevel-3 tocsection-52"><a href="#PostBeginPlay"><span class="tocnumber">3.3.12</span> <span class="toctext">PostBeginPlay</span></a></li>
+<li class="toclevel-3 tocsection-53"><a href="#PreClientTravel"><span class="tocnumber">3.3.13</span> <span class="toctext">PreClientTravel</span></a></li>
+<li class="toclevel-3 tocsection-54"><a href="#ProgressCommand"><span class="tocnumber">3.3.14</span> <span class="toctext">ProgressCommand</span></a></li>
+<li class="toclevel-3 tocsection-55"><a href="#ReceiveLocalizedMessage"><span class="tocnumber">3.3.15</span> <span class="toctext">ReceiveLocalizedMessage</span></a></li>
+<li class="toclevel-3 tocsection-56"><a href="#RemoveCameraEffect"><span class="tocnumber">3.3.16</span> <span class="toctext">RemoveCameraEffect</span></a></li>
+<li class="toclevel-3 tocsection-57"><a href="#ServerChangeVoiceChatter"><span class="tocnumber">3.3.17</span> <span class="toctext">ServerChangeVoiceChatter</span></a></li>
+<li class="toclevel-3 tocsection-58"><a href="#ServerGetVoiceChatters"><span class="tocnumber">3.3.18</span> <span class="toctext">ServerGetVoiceChatters</span></a></li>
+<li class="toclevel-3 tocsection-59"><a href="#StartClientDemoRec"><span class="tocnumber">3.3.19</span> <span class="toctext">StartClientDemoRec</span></a></li>
+<li class="toclevel-3 tocsection-60"><a href="#TeamMessage"><span class="tocnumber">3.3.20</span> <span class="toctext">TeamMessage</span></a></li>
+<li class="toclevel-3 tocsection-61"><a href="#TravelPostAccept"><span class="tocnumber">3.3.21</span> <span class="toctext">TravelPostAccept</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-62"><a href="#Other_instance_functions"><span class="tocnumber">3.4</span> <span class="toctext">Other instance functions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-63"><a href="#States"><span class="tocnumber">4</span> <span class="toctext">States</span></a></li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Package:&#160;</dt>
+<dd><a href="Category_Classes_in_UT2003_package_Engine.html" title="Category:Classes in UT2003 package Engine">Engine</a></dd>
+<dt>Known classes <a href="Within.html" title="Within" class="mw-redirect">within</a> PlayerController:</dt>
+<dd><a href="UE2_Admin_(UT2003).html" title="UE2:Admin (UT2003)">Admin</a>, <a href="UE2_AdminBase_(UT2003).html" title="UE2:AdminBase (UT2003)">AdminBase</a>, <a href="UE2_AdminIni_(UT2003).html" title="UE2:AdminIni (UT2003)">AdminIni</a>, <a href="UE2_CheatManager_(UT2003).html" title="UE2:CheatManager (UT2003)">CheatManager</a>, <a href="UE2_PlayerInput_(UT2003).html" title="UE2:PlayerInput (UT2003)">PlayerInput</a>, <a href="UE2_XBoxPlayerInput_(UT2003).html" title="UE2:XBoxPlayerInput (UT2003)">XBoxPlayerInput</a></dd>
+<dt>Direct subclasses:</dt>
+<dd><a href="UE2_UnrealPlayer_(UT2003).html" title="UE2:UnrealPlayer (UT2003)">UnrealPlayer</a>, <a href="UE2_Camera_(UT2003).html" title="UE2:Camera (UT2003)">Camera</a>, <a href="UE2_MessagingSpectator_(UT2003).html" title="UE2:MessagingSpectator (UT2003)">MessagingSpectator</a></dd>
+<dt>This class in other games:</dt>
+<dd><span><a href="UE2_PlayerController_(U2).html" title="UE2:PlayerController (U2)">U2</a></span>, <span><a href="UE2_PlayerController_(U2XMP).html" title="UE2:PlayerController (U2XMP)">U2XMP</a></span>, <span><a href="UE2_PlayerController_(UE2Runtime).html" title="UE2:PlayerController (UE2Runtime)">UE2Runtime</a></span>, <span><a href="UE2_PlayerController_(UT2004).html" title="UE2:PlayerController (UT2004)">UT2004</a></span>, <span><a href="UE3_PlayerController_(UDK).html" title="UE3:PlayerController (UDK)">UDK</a></span>, <span><a href="UE3_PlayerController_(UT3).html" title="UE3:PlayerController (UT3)">UT3</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<p>PlayerController</p>
+<p>PlayerControllers are used by human players to control pawns.</p>
+<p>This is a built-in Unreal class and it shouldn't be modified. for the change in Possess().</p>
+<h2><span class="mw-headline" id="Properties">Properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=1" title="Edit section: Properties">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Property_group_.27ForceFeedback.27">Property group 'ForceFeedback'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=2" title="Edit section: Property group 'ForceFeedback'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="bEnableDamageForceFeedback">bEnableDamageForceFeedback</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=3" title="Edit section: bEnableDamageForceFeedback">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bEnableGUIForceFeedback">bEnableGUIForceFeedback</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=4" title="Edit section: bEnableGUIForceFeedback">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bEnablePickupForceFeedback">bEnablePickupForceFeedback</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=5" title="Edit section: bEnablePickupForceFeedback">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bEnableWeaponForceFeedback">bEnableWeaponForceFeedback</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=6" title="Edit section: bEnableWeaponForceFeedback">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bForceFeedbackSupported">bForceFeedbackSupported</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=7" title="Edit section: bForceFeedbackSupported">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>true if a device is detected</p>
+<p><b>Default value:</b> True</p>
+<h3><span class="mw-headline" id="Property_group_.27TeamBeacon.27">Property group 'TeamBeacon'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=8" title="Edit section: Property group 'TeamBeacon'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="LinkBeaconTexture">LinkBeaconTexture</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=9" title="Edit section: LinkBeaconTexture">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Texture_(UT2003).html" title="UE2:Texture (UT2003)">Texture</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TeamBeaconCustomColor">TeamBeaconCustomColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=10" title="Edit section: TeamBeaconCustomColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UT2003).html#Color" title="UE2:Object structs (UT2003)">Object.Color</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE2_Object_structs_(UT2003).html#Color" title="UE2:Object structs (UT2003)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>255</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>255</td>
+</tr>
+<tr>
+<td>R</td>
+<td>255</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="TeamBeaconMaxDist">TeamBeaconMaxDist</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=11" title="Edit section: TeamBeaconMaxDist">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 5000.0</p>
+<h4><span class="mw-headline" id="TeamBeaconPlayerInfoMaxDist">TeamBeaconPlayerInfoMaxDist</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=12" title="Edit section: TeamBeaconPlayerInfoMaxDist">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 1200.0</p>
+<h4><span class="mw-headline" id="TeamBeaconTeamColors">TeamBeaconTeamColors</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=13" title="Edit section: TeamBeaconTeamColors">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UT2003).html#Color" title="UE2:Object structs (UT2003)">Object.Color</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 2</p>
+<p><br />
+<b>Default value, index 0:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE2_Object_structs_(UT2003).html#Color" title="UE2:Object structs (UT2003)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>255</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>180</td>
+</tr>
+</table>
+<p><b>Default value, index 1:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE2_Object_structs_(UT2003).html#Color" title="UE2:Object structs (UT2003)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>255</td>
+</tr>
+<tr>
+<td>B</td>
+<td>200</td>
+</tr>
+<tr>
+<td>G</td>
+<td>80</td>
+</tr>
+<tr>
+<td>R</td>
+<td>80</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="TeamBeaconTexture">TeamBeaconTexture</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=14" title="Edit section: TeamBeaconTexture">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Texture_(UT2003).html" title="UE2:Texture (UT2003)">Texture</a></p>
+<p><br /></p>
+<h3><span class="mw-headline" id="Internal_variables">Internal variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=15" title="Edit section: Internal variables">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>See <a href="UE2_PlayerController_internal_variables_(UT2003).html" title="UE2:PlayerController internal variables (UT2003)">PlayerController internal variables</a>.</p>
+<h3><span class="mw-headline" id="Default_values">Default values</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=16" title="Edit section: Default values">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td><a href="UE2_Controller_internal_variables_(UT2003).html#bCanDoSpecial" title="UE2:Controller internal variables (UT2003)">bCanDoSpecial</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE2_Controller_internal_variables_(UT2003).html#bCanOpenDoors" title="UE2:Controller internal variables (UT2003)">bCanOpenDoors</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE2_Controller_internal_variables_(UT2003).html#bIsPlayer" title="UE2:Controller internal variables (UT2003)">bIsPlayer</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE2_Actor_internal_variables_(UT2003).html#bTravel" title="UE2:Actor internal variables (UT2003)">bTravel</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE2_Controller_internal_variables_(UT2003).html#FovAngle" title="UE2:Controller internal variables (UT2003)">FovAngle</a></td>
+<td>85.0</td>
+</tr>
+<tr>
+<td><a href="UE2_Controller_internal_variables_(UT2003).html#Handedness" title="UE2:Controller internal variables (UT2003)">Handedness</a></td>
+<td>1.0</td>
+</tr>
+<tr>
+<td><a href="UE2_Actor_internal_variables_(UT2003).html#NetPriority" title="UE2:Actor internal variables (UT2003)">NetPriority</a></td>
+<td>3.0</td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Structs">Structs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=17" title="Edit section: Structs">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="PlayerNameInfo">PlayerNameInfo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=18" title="Edit section: PlayerNameInfo">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="String.html" title="String">string</a> mInfo&#160;</dt>
+<dt><a href="UE2_Object_structs_(UT2003).html#Color" title="UE2:Object structs (UT2003)">Object.Color</a> mColor&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> mXPos&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> mYPos&#160;</dt>
+</dl>
+<h2><span class="mw-headline" id="Functions">Functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=19" title="Edit section: Functions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Exec_functions">Exec functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=20" title="Edit section: Exec functions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>See <a href="UE2_PlayerController_exec_functions_(UT2003).html" title="UE2:PlayerController exec functions (UT2003)">PlayerController exec functions</a>.</p>
+<h3><span class="mw-headline" id="Native_functions">Native functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=21" title="Edit section: Native functions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="ClientHearSound">ClientHearSound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=22" title="Edit section: ClientHearSound">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native event <b>ClientHearSound</b> (<a href="UE2_Actor_(UT2003).html" title="UE2:Actor (UT2003)">Actor</a>&#160;<b>Actor</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>Id</b>, <a href="UE2_Sound_(UT2003).html" title="UE2:Sound (UT2003)">Sound</a>&#160;<b>S</b>, <a href="UE2_Object_structs_(UT2003).html#Vector" title="UE2:Object structs (UT2003)">Object.Vector</a>&#160;<b>SoundLocation</b>, <a href="UE2_Object_structs_(UT2003).html#Vector" title="UE2:Object structs (UT2003)">Object.Vector</a>&#160;<b>Parameters</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>Attenuate</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ClientTravel">ClientTravel</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=23" title="Edit section: ClientTravel">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native event <b>ClientTravel</b> (<a href="String.html" title="String">string</a>&#160;<b>URL</b>, <a href="UE2_Actor_enums_(UT2003).html#ETravelType" title="UE2:Actor enums (UT2003)">Actor.ETravelType</a>&#160;<b>TravelType</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bItems</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ClientValidate">ClientValidate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=24" title="Edit section: ClientValidate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">private native event <b>ClientValidate</b> (<a href="String.html" title="String">string</a>&#160;<b>C</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ServerValidationResponse">ServerValidationResponse</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=25" title="Edit section: ServerValidationResponse">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">private native event <b>ServerValidationResponse</b> (<a href="String.html" title="String">string</a>&#160;<b>R</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ChangeVoiceChatter">ChangeVoiceChatter</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=26" title="Edit section: ChangeVoiceChatter">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <b>ChangeVoiceChatter</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>IpAddr</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>Handle</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>Add</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ConsoleCommand">ConsoleCommand</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=27" title="Edit section: ConsoleCommand">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="String.html" title="String">string</a>&#160;<b>ConsoleCommand</b> (<a href="String.html" title="String">string</a>&#160;<b>Command</b>)</div>
+<p><b>Overrides:</b> <a href="UE2_Actor_native_functions_(UT2003).html#ConsoleCommand" title="UE2:Actor native functions (UT2003)">Actor.ConsoleCommand</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="CopyToClipboard">CopyToClipboard</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=28" title="Edit section: CopyToClipboard">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>CopyToClipboard</b> (<a href="String.html" title="String">string</a>&#160;<b>Text</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="FindStairRotation">FindStairRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=29" title="Edit section: FindStairRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native(524) final function <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>FindStairRotation</b> (<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>DeltaTime</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetDefaultURL">GetDefaultURL</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=30" title="Edit section: GetDefaultURL">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <a href="String.html" title="String">string</a>&#160;<b>GetDefaultURL</b> (<a href="String.html" title="String">string</a>&#160;<b>Option</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetEntryLevel">GetEntryLevel</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=31" title="Edit section: GetEntryLevel">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <a href="UE2_LevelInfo_(UT2003).html" title="UE2:LevelInfo (UT2003)">LevelInfo</a>&#160;<b>GetEntryLevel</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetPlayerIDHash">GetPlayerIDHash</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=32" title="Edit section: GetPlayerIDHash">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <a href="String.html" title="String">string</a>&#160;<b>GetPlayerIDHash</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetPlayerNetworkAddress">GetPlayerNetworkAddress</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=33" title="Edit section: GetPlayerNetworkAddress">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <a href="String.html" title="String">string</a>&#160;<b>GetPlayerNetworkAddress</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetServerNetworkAddress">GetServerNetworkAddress</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=34" title="Edit section: GetServerNetworkAddress">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <a href="String.html" title="String">string</a>&#160;<b>GetServerNetworkAddress</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="LeaveVoiceChat">LeaveVoiceChat</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=35" title="Edit section: LeaveVoiceChat">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <b>LeaveVoiceChat</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PasteFromClipboard">PasteFromClipboard</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=36" title="Edit section: PasteFromClipboard">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="String.html" title="String">string</a>&#160;<b>PasteFromClipboard</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ResetKeyboard">ResetKeyboard</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=37" title="Edit section: ResetKeyboard">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native(544) final function <b>ResetKeyboard</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SetNetSpeed">SetNetSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=38" title="Edit section: SetNetSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <b>SetNetSpeed</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>NewSpeed</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SetViewTarget">SetViewTarget</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=39" title="Edit section: SetViewTarget">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <b>SetViewTarget</b> (<a href="UE2_Actor_(UT2003).html" title="UE2:Actor (UT2003)">Actor</a>&#160;<b>NewViewTarget</b>)</div>
+<p><br /></p>
+<h3><span class="mw-headline" id="Events">Events</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=40" title="Edit section: Events">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="AddCameraEffect">AddCameraEffect</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=41" title="Edit section: AddCameraEffect">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>AddCameraEffect</b> (<a href="UE2_CameraEffect_(UT2003).html" title="UE2:CameraEffect (UT2003)">CameraEffect</a>&#160;<b>NewEffect</b>, optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>RemoveExisting</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ClientCloseMenu">ClientCloseMenu</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=42" title="Edit section: ClientCloseMenu">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>ClientCloseMenu</b> (optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bCloseAll</b>, optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bCancel</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ClientMessage">ClientMessage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=43" title="Edit section: ClientMessage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>ClientMessage</b> (coerce&#160;<a href="String.html" title="String">string</a>&#160;<b>S</b>, optional&#160;<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>Type</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ClientOpenMenu">ClientOpenMenu</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=44" title="Edit section: ClientOpenMenu">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>ClientOpenMenu</b> (<a href="String.html" title="String">string</a>&#160;<b>Menu</b>, optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bDisconnect</b>, optional&#160;<a href="String.html" title="String">string</a>&#160;<b>Msg1</b>, optional&#160;<a href="String.html" title="String">string</a>&#160;<b>Msg2</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ClientReplaceMenu">ClientReplaceMenu</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=45" title="Edit section: ClientReplaceMenu">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>ClientReplaceMenu</b> (<a href="String.html" title="String">string</a>&#160;<b>Menu</b>, optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bDisconnect</b>, optional&#160;<a href="String.html" title="String">string</a>&#160;<b>Msg1</b>, optional&#160;<a href="String.html" title="String">string</a>&#160;<b>Msg2</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ClientSetViewTarget">ClientSetViewTarget</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=46" title="Edit section: ClientSetViewTarget">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>ClientSetViewTarget</b> (<a href="UE2_Actor_(UT2003).html" title="UE2:Actor (UT2003)">Actor</a>&#160;<b>a</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Destroyed">Destroyed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=47" title="Edit section: Destroyed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>Destroyed</b> ()</div>
+<p><b>Overrides:</b> <a href="UE2_Controller_(UT2003).html#Destroyed" title="UE2:Controller (UT2003)">Controller.Destroyed</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="InitInputSystem">InitInputSystem</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=48" title="Edit section: InitInputSystem">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>InitInputSystem</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="NotifyLanded">NotifyLanded</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=49" title="Edit section: NotifyLanded">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>NotifyLanded</b> (<a href="UE2_Object_structs_(UT2003).html#Vector" title="UE2:Object structs (UT2003)">Object.Vector</a>&#160;<b>HitNormal</b>)</div>
+<p><b>Overrides:</b> <a href="UE2_Controller_(UT2003).html#NotifyLanded" title="UE2:Controller (UT2003)">Controller.NotifyLanded</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="PlayerCalcView">PlayerCalcView</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=50" title="Edit section: PlayerCalcView">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>PlayerCalcView</b> (out&#160;<a href="UE2_Actor_(UT2003).html" title="UE2:Actor (UT2003)">Actor</a>&#160;<b>ViewActor</b>, out&#160;<a href="UE2_Object_structs_(UT2003).html#Vector" title="UE2:Object structs (UT2003)">Object.Vector</a>&#160;<b>CameraLocation</b>, out&#160;<a href="UE2_Object_structs_(UT2003).html#Rotator" title="UE2:Object structs (UT2003)">Object.Rotator</a>&#160;<b>CameraRotation</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PlayerTick">PlayerTick</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=51" title="Edit section: PlayerTick">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>PlayerTick</b> (<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>DeltaTime</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PostBeginPlay">PostBeginPlay</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=52" title="Edit section: PostBeginPlay">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>PostBeginPlay</b> ()</div>
+<p><b>Overrides:</b> <a href="UE2_Controller_(UT2003).html#PostBeginPlay" title="UE2:Controller (UT2003)">Controller.PostBeginPlay</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="PreClientTravel">PreClientTravel</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=53" title="Edit section: PreClientTravel">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>PreClientTravel</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ProgressCommand">ProgressCommand</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=54" title="Edit section: ProgressCommand">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event function <b>ProgressCommand</b> (<a href="String.html" title="String">string</a>&#160;<b>Cmd</b>, <a href="String.html" title="String">string</a>&#160;<b>Msg1</b>, <a href="String.html" title="String">string</a>&#160;<b>Msg2</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ReceiveLocalizedMessage">ReceiveLocalizedMessage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=55" title="Edit section: ReceiveLocalizedMessage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>ReceiveLocalizedMessage</b> (<a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE2_LocalMessage_(UT2003).html" title="UE2:LocalMessage (UT2003)">LocalMessage</a>&gt;&#160;<b>Message</b>, optional&#160;<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>Switch</b>, optional&#160;<a href="UE2_PlayerReplicationInfo_(UT2003).html" title="UE2:PlayerReplicationInfo (UT2003)">PlayerReplicationInfo</a>&#160;<b>RelatedPRI_1</b>, optional&#160;<a href="UE2_PlayerReplicationInfo_(UT2003).html" title="UE2:PlayerReplicationInfo (UT2003)">PlayerReplicationInfo</a>&#160;<b>RelatedPRI_2</b>, optional&#160;<a href="UE2_Object_(UT2003).html" title="UE2:Object (UT2003)">Object</a>&#160;<b>OptionalObject</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="RemoveCameraEffect">RemoveCameraEffect</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=56" title="Edit section: RemoveCameraEffect">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>RemoveCameraEffect</b> (<a href="UE2_CameraEffect_(UT2003).html" title="UE2:CameraEffect (UT2003)">CameraEffect</a>&#160;<b>ExEffect</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ServerChangeVoiceChatter">ServerChangeVoiceChatter</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=57" title="Edit section: ServerChangeVoiceChatter">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>ServerChangeVoiceChatter</b> (<strong class="selflink">PlayerController</strong>&#160;<b>Player</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>IpAddr</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>Handle</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>Add</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ServerGetVoiceChatters">ServerGetVoiceChatters</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=58" title="Edit section: ServerGetVoiceChatters">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>ServerGetVoiceChatters</b> (<strong class="selflink">PlayerController</strong>&#160;<b>Player</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="StartClientDemoRec">StartClientDemoRec</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=59" title="Edit section: StartClientDemoRec">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>StartClientDemoRec</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="TeamMessage">TeamMessage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=60" title="Edit section: TeamMessage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>TeamMessage</b> (<a href="UE2_PlayerReplicationInfo_(UT2003).html" title="UE2:PlayerReplicationInfo (UT2003)">PlayerReplicationInfo</a>&#160;<b>PRI</b>, coerce&#160;<a href="String.html" title="String">string</a>&#160;<b>S</b>, <a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>Type</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="TravelPostAccept">TravelPostAccept</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=61" title="Edit section: TravelPostAccept">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>TravelPostAccept</b> ()</div>
+<p><b>Overrides:</b> <a href="UE2_Actor_events_(UT2003).html#TravelPostAccept" title="UE2:Actor events (UT2003)">Actor.TravelPostAccept</a></p>
+<p><br /></p>
+<h3><span class="mw-headline" id="Other_instance_functions">Other instance functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=62" title="Edit section: Other instance functions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>See <a href="UE2_PlayerController_instance_functions_(UT2003).html" title="UE2:PlayerController instance functions (UT2003)">PlayerController instance functions</a>.</p>
+<h2><span class="mw-headline" id="States">States</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)?section=63" title="Edit section: States">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>See <a href="UE2_PlayerController_states_(UT2003).html" title="UE2:PlayerController states (UT2003)">PlayerController states</a>.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.451 seconds
+Real time usage: 0.461 seconds
+Preprocessor visited node count: 3165/1000000
+Preprocessor generated node count: 7270/1000000
+Post‐expand include size: 25705/2097152 bytes
+Template argument size: 8030/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  331.495      1 - -total
+ 40.71%  134.941      1 - Template:Infobox_class
+ 39.04%  129.420      1 - Template:Infobox_class/core
+ 31.24%  103.547     45 - Template:Samegame
+ 27.32%   90.549     24 - Template:Tl
+ 23.83%   78.998     39 - Template:Code
+ 18.74%   62.122     21 - Template:Cl
+  5.51%   18.254      2 - Template:Ch
+  2.03%    6.730      1 - Template:Autogenerated
+  1.69%    5.599      1 - Template:Classname
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:14389-0!*!*!*!*!*!* and timestamp 20161215145044 and revision id 22118
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE2:PlayerController_(UT2003)?oldid=22118">https://wiki.beyondunreal.com/UE2:PlayerController_(UT2003)?oldid=22118</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_UT2003-specific_classes.html" title="Category:UT2003-specific classes">UT2003-specific classes</a></li><li><a href="Category_Classes_in_UT2003_package_Engine.html" title="Category:Classes in UT2003 package Engine">Classes in UT2003 package Engine</a></li><li><a href="Category_Subclasses_of_Controller_(UT2003).html" title="Category:Subclasses of Controller (UT2003)">Subclasses of Controller (UT2003)</a></li><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue2" class="selected"><a href="UE2_PlayerController_(UT2003).html">UE2</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE2_talk:PlayerController_(UT2003)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE2:PlayerController_(UT2003)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE2:PlayerController_(UT2003)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE2%3APlayerController+%28UT2003%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE2%3APlayerController+%28UT2003%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE2:PlayerController_(UT2003)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE2:PlayerController_(UT2003)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE2:PlayerController_(UT2003)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE2:PlayerController_(UT2003)?oldid=22118" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE2:PlayerController_(UT2003)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 11:11, 17 May 2008.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":94});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE2:PlayerController_(UT2003) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:18:40 GMT -->
+</html>

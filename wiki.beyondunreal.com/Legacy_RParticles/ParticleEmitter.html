@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:RParticles/ParticleEmitter by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:41:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:RParticles/ParticleEmitter - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:RParticles/ParticleEmitter" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:RParticles/ParticleEmitter" />
+<link rel="shortcut icon" href="../w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="../w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="../w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="ParticleEmitter.html" />
+<link rel="copyright" href="../Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="../w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="../w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:RParticles/ParticleEmitter","wgTitle":"RParticles/ParticleEmitter","wgCurRevisionId":6442,"wgRevisionId":6442,"wgArticleId":2708,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Mapping","Legacy Custom Class (UT)"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:RParticles/ParticleEmitter","wgRelevantArticleId":2708,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_RParticles_ParticleEmitter skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Once I get that upgrade to 36-hour days, I will tackle that. &#8211; Mychaeel
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:RParticles/ParticleEmitter</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class infobox-legacy"><a href="../Legacy_UT.html" title="Legacy:UT" class="mw-redirect">UT</a>&#160;:: <a href="../Legacy_Actor_(UT).html" title="Legacy:Actor (UT)">Actor (UT)</a> &gt;&gt; <a href="ParticleSystem.html" title="Legacy:RParticles/ParticleSystem">ParticleSystem</a> &gt;&gt; ParticleEmitter</div>
+<p><i><b>This class is part of <a href="../Legacy_Raven/RParticles.html" title="Legacy:Raven/RParticles">RParticles</a> by <a href="../Legacy_Raven.html" title="Legacy:Raven" class="mw-redirect">Raven</a></b></i></p>
+<p>Base class for all Emitters. From every state only <b>NormalParticle</b> is working. It has no replication and it's completly clientside and thus should couse no lag. Working states: <b>TriggerToggle, TriggerTurnsOn, TriggerTurnsOff, TriggerControl</b> and <b>TriggerBlast</b> can be found in <a href="ExtendedEmitter.html" title="Legacy:RParticles/ExtendedEmitter">ExtendedEmitter</a>. If you want to create wepon effects use <a href="WeaponEmitter.html" title="Legacy:RParticles/WeaponEmitter">WeaponEmitter</a></p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Group_ParticleEmitter"><span class="tocnumber">1</span> <span class="toctext">Group ParticleEmitter</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Group_ParticleEmitter_2"><span class="tocnumber">2</span> <span class="toctext">Group ParticleEmitter</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Group_ParticleTemplate"><span class="tocnumber">3</span> <span class="toctext">Group ParticleTemplate</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#ENUMS"><span class="tocnumber">4</span> <span class="toctext">ENUMS</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Burst"><span class="tocnumber">5</span> <span class="toctext">Burst</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Select"><span class="tocnumber">6</span> <span class="toctext">Select</span></a></li>
+</ul>
+</div>
+<p></p>
+<h3><span class="mw-headline" id="Group_ParticleEmitter">Group ParticleEmitter</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:RParticles/ParticleEmitter?section=1" title="Edit section: Group ParticleEmitter">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>float BeforeDieSleep&#160;</dt>
+<dd>Time between calling GoToState('DeforeDie') and destroying emitter</dd>
+<dt>bool WaitForParticles&#160;</dt>
+<dd>Should emitter wait till all particle it created dies before it call Destroy function</dd>
+<dt>float WaitPause&#160;</dt>
+<dd>Pause between re-check for existing particles which owenr is Emitter</dd>
+</dl>
+<h3><span class="mw-headline" id="Group_ParticleEmitter_2">Group ParticleEmitter</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:RParticles/ParticleEmitter?section=2" title="Edit section: Group ParticleEmitter">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>bool bOn&#160;</dt>
+<dd>Is active or not.</dd>
+<dt>bool bPerformanceMode&#160;</dt>
+<dd>Should performance mode be on (NewIntensity/NewIntervall will be used if player is outside VisibilityRadius/can't see emitter).</dd>
+<dt>Burst BurstMethod&#160;</dt>
+<dd>Burst method (See enum Burst below).</dd>
+<dt>vector EffectArea&#160;</dt>
+<dd>Area where particle will be spawned.</dd>
+<dt>float GeneratorLife &#160;</dt>
+<dd>Emitter life time (0 = not used).</dd>
+<dt>float Intensity&#160;</dt>
+<dd>How many particles will be spawned in one burst.</dd>
+<dt>float Intervall&#160;</dt>
+<dd>Time between bursts.</dd>
+<dt>bool LineOfSightCheck&#160;</dt>
+<dd>Should emitter stops/go to <b>performance mode</b> if player can't see it.</dd>
+<dt>float NewIntensity&#160;</dt>
+<dd>New intensity (<b>performance mode</b>).</dd>
+<dt>float NewIntervall&#160;</dt>
+<dd>New intervall (<b>performance mode</b>)</dd>
+<dt>blool OneShot&#160;</dt>
+<dd>Emitter will be destroyed after first burst.</dd>
+<dt>int ParticlesLimit&#160;</dt>
+<dd>Number of particles in the emitter.</dd>
+<dt>Select SelectionMethod&#160;</dt>
+<dd>Selection method (See enum Select below)</dd>
+<dt>float VisibilityRadius&#160;</dt>
+<dd>Emitter visibility radius.</dd>
+</dl>
+<h3><span class="mw-headline" id="Group_ParticleTemplate">Group ParticleTemplate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:RParticles/ParticleEmitter?section=3" title="Edit section: Group ParticleTemplate">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>float NumTemplates&#160;</dt>
+<dd>Number of used templates (can not be 0!!).</dd>
+<dt>Advanced Particle_Advanced[16]&#160;</dt>
+</dl>
+<p>&lt;+&gt; Advanced variables</p>
+<dl>
+<dt>bool bUseParticleClass&#160;</dt>
+<dd>can we use custom class</dd>
+<dt>class&lt;BasicParticle&gt; ParticleClass&#160;</dt>
+<dd>custom class</dd>
+</dl>
+<p>&lt;/+&gt;</p>
+<dl>
+<dt>SAnimation Particle_Animation[16]&#160;</dt>
+</dl>
+<p>&lt;+&gt; Animation variables</p>
+<dl>
+<dt>texture AnimTextures[60]&#160;</dt>
+<dd>animation textures</dd>
+<dt>int NumOfTextures&#160;</dt>
+<dd>number of textures</dd>
+<dt>bool DefineAnimationStorage&#160;</dt>
+<dd>should animated textures be taken from 'AnimationStorage' class (for coders)</dd>
+<dt>class&lt;ParticleAnimationStorage&gt; ParticleAnimationStorage&#160;</dt>
+<dd>stores animations (for coders)</dd>
+</dl>
+<p>&lt;/+&gt;</p>
+<dl>
+<dt>SBounce Particle_Bounce[16]&#160;</dt>
+</dl>
+<div class="hidden-block"><span class="hint">Bounce variables</span>
+<div class="hidden">;bool CanBounce&#160;: can we use bounce
+<dl>
+<dt>float BounceRatio&#160;</dt>
+<dd>bounce ratio</dd>
+<dt>float BounceModifier&#160;</dt>
+<dd>bounce height (when landed)</dd>
+<dt>bool EndlessBounce&#160;</dt>
+<dd>will bounce till it die if true</dd>
+<dt>int BounceNum&#160;</dt>
+<dd>if EndlessBounce is false this is number of bounces</dd>
+</dl>
+</div>
+</div>
+<dl>
+<dt>SBuoyance Particle_Buoyance[16]&#160;</dt>
+</dl>
+<div class="hidden-block"><span class="hint">Bouyance variables</span>
+<div class="hidden">;bool CanBuoyance&#160;: can buoyance in water
+<dl>
+<dt>bool SplashWhenHitWater&#160;</dt>
+<dd>splash when hit water</dd>
+<dt>bool SoundWhenHitWater&#160;</dt>
+<dd>plays sound when hit water</dd>
+<dt>float ParticleBuoyancy&#160;</dt>
+<dd>particle buoyancy</dd>
+<dt>float ParticleMass&#160;</dt>
+<dd>particle mass</dd>
+</dl>
+</div>
+</div>
+<dl>
+<dt>SCollision Particle_Collision[16]&#160;</dt>
+</dl>
+<p>&lt;+&gt; Collision variables</p>
+<dl>
+<dt>bool ParticlesUseCollision&#160;</dt>
+<dd>particle shoud collide with world and actors?</dd>
+<dt>float ParticleCollisonRadius&#160;</dt>
+<dd>collision radius</dd>
+<dt>float ParticleCollisonHeight&#160;</dt>
+<dd>collision height</dd>
+<dt>bool CollideWithActors&#160;</dt>
+<dd>will collide with actors if true</dd>
+<dt>bool BlockPlayers&#160;</dt>
+<dd>will block players if true</dd>
+<dt>bool BlockActors&#160;</dt>
+<dd>will block actors if true</dd>
+<dt>bool ParticleCollideWorld&#160;</dt>
+<dd>will Collide world</dd>
+<dt>bool DestroyWhenTouch&#160;</dt>
+<dd>will destroy particle when touching an actor</dd>
+<dt>bool DestroyWhenColideWorld&#160;</dt>
+<dd>will destroy particle when touching world geometry (eg walls)</dd>
+<dt>bool DestroyWhenLand&#160;</dt>
+<dd>will destroy particle when land</dd>
+<dt>bool DestroyWhenTouchWater&#160;</dt>
+<dd>will destroy particle when touches water</dd>
+<dt>bool StopWhenTouchWall&#160;</dt>
+<dd>will stop when touches world geometry</dd>
+<dt>bool StopWhenTouchPawn&#160;</dt>
+<dd>will stop when touches pawn</dd>
+<dt>bool StickToWall&#160;</dt>
+<dd>will stick to wall</dd>
+<dt>bool StickToPawn&#160;</dt>
+<dd>will stick to pawn</dd>
+<dt>bool bSpawnLandEffect&#160;</dt>
+<dd>spawn effect when landed</dd>
+<dt>class&lt;actor&gt; LandEffect&#160;</dt>
+<dd>land effect</dd>
+<dt>bool bOverrideWaterEntrySound&#160;</dt>
+<dd>override default water entry sound (if particles_use_collision is false)</dd>
+<dt>sound WaterEntrySound&#160;</dt>
+<dd>water entry sound</dd>
+<dt>bool bOverrideWaterEntryEffect&#160;</dt>
+<dd>override default water entry actor (if particles_use_collision is false)</dd>
+<dt>class&lt;actor&gt; WaterEntryActor&#160;</dt>
+<dd>water entry actor</dd>
+<dt>bool bSpawnEffectOnDestroy&#160;</dt>
+<dd>spawn effect when destroy</dd>
+<dt>class&lt;actor&gt; DestroyEffect&#160;</dt>
+<dd>destroy effect</dd>
+</dl>
+<p>&lt;/+&gt;</p>
+<dl>
+<dt>SDamage Particle_Damage[16]&#160;</dt>
+</dl>
+<div class="hidden-block"><span class="hint">Damage variables</span>
+<div class="hidden">;bool ParticleGivesDamage&#160;: particle will give damage when touchening actor
+<dl>
+<dt>name ParticleDamageType&#160;</dt>
+<dd>damage type</dd>
+<dt>int ParticleDamage&#160;</dt>
+<dd>damage</dd>
+<dt>bool PlayerTakeDamage&#160;</dt>
+<dd>player pawn can be damaged</dd>
+<dt>bool ScriptedPawnTakeDamage&#160;</dt>
+<dd>scripted pawns can be damaged</dd>
+<dt>bool FlockPawnTakeDamage&#160;</dt>
+<dd>flock pawns can be damaged</dd>
+<dt>bool OtherActorTakeDamage&#160;</dt>
+<dd>all other actors such as eg. wooden boxes can be damaged</dd>
+<dt>int MomentumTransfer&#160;</dt>
+<dd>momentum transfer</dd>
+</dl>
+</div>
+</div>
+<dl>
+<dt>SDecal Particle_Decal[16]&#160;</dt>
+</dl>
+<p>&lt;+&gt; Decal variables</p>
+<dl>
+<dt>texture ParticleDecalTexture&#160;</dt>
+<dd>texture used for decal</dd>
+<dt>bool ParticleSpawnDecal&#160;</dt>
+<dd>particle will spawn decal (true) when they hit wall</dd>
+<dt>class&lt;decal&gt; ParticleDecal&#160;</dt>
+<dd>decal class</dd>
+<dt>float ParticleDecalSize&#160;</dt>
+<dd>decal size</dd>
+<dt>bool bLimitDecals&#160;</dt>
+<dd>if true, decals will be limited</dd>
+</dl>
+<p>&lt;/+&gt;</p>
+<dl>
+<dt>SDisplay Particle_Display[16]&#160;</dt>
+</dl>
+<div class="hidden-block"><span class="hint">Display variables</span>
+<div class="hidden">;ERenderStyle ParticleStyle&#160;: particle render style
+<dl>
+<dt>bool bUnlitParticle&#160;</dt>
+<dd>is particle unlit</dd>
+<dt>bool bParticleCastShadow&#160;</dt>
+<dd>particle cast shadow</dd>
+<dt>bool bParticleMeshEnviroMap&#160;</dt>
+<dd>only when particle is a mesh</dd>
+<dt>bool bUseMesh&#160;</dt>
+<dd>particle will use mesh instead of sprite</dd>
+<dt>mesh PraticleMesh&#160;</dt>
+<dd>mesh (if use_mesh is true)</dd>
+<dt>bool bUseRandomTexture&#160;</dt>
+<dd>uses random texture from anim_textures</dd>
+<dt>texture ParticleTexture&#160;</dt>
+<dd>particle texture (if doesn't use particle animation</dd>
+<dt>bool bUseSpriteAnimation&#160;</dt>
+<dd>particle will use sprite animation</dd>
+</dl>
+</div>
+</div>
+<dl>
+<dt>SFading Particle_Fading[16]&#160;</dt>
+</dl>
+<div class="hidden-block"><span class="hint">Fading variables</span>
+<div class="hidden">;bool CanFadeOut&#160;: can fade out
+<dl>
+<dt>bool CanFadeIn&#160;</dt>
+<dd>can fade in</dd>
+<dt>float InitailScaleGlow&#160;</dt>
+<dd>initial glow</dd>
+<dt>float FadeOutTime&#160;</dt>
+<dd>fade out time</dd>
+<dt>float FadeOutScaleFactor&#160;</dt>
+<dd>feade out scale factor</dd>
+<dt>float FadeInTime&#160;</dt>
+<dd>fade in time</dd>
+<dt>float FadeInScaleFactor&#160;</dt>
+<dd>feade scale factor</dd>
+</dl>
+</div>
+</div>
+<dl>
+<dt>SGlobal Particle_Global&#160;</dt>
+</dl>
+<div class="hidden-block"><span class="hint">Global variables which can be forced to all templates</span>
+<div class="hidden">;float ParticleLifeTime&#160;: lifespan (in seconds)
+<dl>
+<dt>float ParticleLifeTimeVariance&#160;</dt>
+<dd>lifespan variance (in seconds)</dd>
+<dt>bool bDefineSpeedAsVector&#160;</dt>
+<dd>defines speed as a vector</dd>
+<dt>vector BaseSpeed&#160;</dt>
+<dd>base particle speed (if bDefineSpeedAsVector is true)</dd>
+<dt>float SpeedVariance&#160;</dt>
+<dd>speed variance</dd>
+<dt>float ParticleSpeed&#160;</dt>
+<dd>speed when particle system is rotated as generator</dd>
+<dt>float SprayFactor&#160;</dt>
+<dd>spray</dd>
+<dt>float SprayFactorVariance&#160;</dt>
+<dd>spray vairance</dd>
+</dl>
+</div>
+</div>
+<dl>
+<dt>SLightColor Particle_LightColor[16]&#160;</dt>
+</dl>
+<div class="hidden-block"><span class="hint">LightColor variables</span>
+<div class="hidden">;byte ParticleLightBrightness&#160;: light brightness
+<dl>
+<dt>byte ParticleLightHue&#160;</dt>
+<dd>light hue</dd>
+<dt>byte ParticleLightSaturation&#160;</dt>
+<dd>light satruation</dd>
+</dl>
+</div>
+</div>
+<dl>
+<dt>SLighting Particle_Lighting[16]&#160;</dt>
+</dl>
+<div class="hidden-block"><span class="hint">Lighting variables</span>
+<div class="hidden">;ELightType ParticleLightType&#160;: light type (can lag&#160;:))
+<dl>
+<dt>ELightEffect ParticleLightEffect&#160;</dt>
+<dd>light effect (can lag&#160;:))</dd>
+<dt>byte ParticleLightRadius&#160;</dt>
+<dd>light radius</dd>
+<dt>byte ParticleLightPeriod&#160;</dt>
+<dd>light period</dd>
+<dt>byte ParticleLightPhase&#160;</dt>
+<dd>light phase</dd>
+<dt>byte ParticleLightCone&#160;</dt>
+<dd>light cone</dd>
+<dt>byte ParticleVolumeBrightness&#160;</dt>
+<dd>volume brightness</dd>
+<dt>byte ParticleVolumeRadius&#160;</dt>
+<dd>volume radius</dd>
+<dt>byte ParticleVolumeFog&#160;</dt>
+<dd>volume fog</dd>
+</dl>
+</div>
+</div>
+<dl>
+<dt>SLight Particle_Light[16]&#160;</dt>
+</dl>
+<div class="hidden-block"><span class="hint">Light variables</span>
+<div class="hidden">;bool CastLight;&#160;: particle will cast light!!</div>
+</div>
+<dl>
+<dt>SMain Particle_Main[16]&#160;</dt>
+</dl>
+<div class="hidden-block"><span class="hint">Main variables</span>
+<div class="hidden">;bool bForceGlobalSettings&#160;: will force settings from <a rel="nofollow" class="external text" href="../Wiki/RParticles/ParticleSystem.html#0.16">SGlobal</a>
+<dl>
+<dt>rotator ParticleRotation&#160;</dt>
+<dd>custom particle rotation (useful when we have mesh instead of sprite)</dd>
+<dt>bool bUseParticleRotation&#160;</dt>
+<dd>should we use custom particle rotation</dd>
+<dt>float ParticleLifeTime&#160;</dt>
+<dd>lifespan (in seconds)</dd>
+<dt>float ParticleLifeTimeVariance&#160;</dt>
+<dd>lifespan variance (in seconds)</dd>
+<dt>float ParticleSlowingDownFactor&#160;</dt>
+<dd>particle slow down factor (can not be 0 (!!) 1.0&#160;: no slow down,&#160;;higher then 1.0&#160;: faster, lower then 1.0&#160;: lower)</dd>
+<dt>bool bMoveSmooth&#160;</dt>
+<dd>particle will move smooth</dd>
+<dt>bool bDefineSpeedAsVector&#160;</dt>
+<dd>defines speed as a vector</dd>
+<dt>vector BaseSpeed&#160;</dt>
+<dd>base particle speed (if bDefineSpeedAsVector is true)</dd>
+<dt>float SpeedVariance&#160;</dt>
+<dd>speed variance</dd>
+<dt>float ParticleSpeed&#160;</dt>
+<dd>speed when particle system is rotated as generator</dd>
+<dt>float SprayFactor&#160;</dt>
+<dd>spray</dd>
+<dt>float SprayFactorVariance&#160;</dt>
+<dd>spray vairance</dd>
+</dl>
+</div>
+</div>
+<dl>
+<dt>SPhysics Particle_Physics[16]&#160;:</dt>
+</dl>
+<div class="hidden-block"><span class="hint">Physics variables</span>
+<div class="hidden">;EPhysics ParticlePhysics&#160;: custom physic
+<dl>
+<dt>bool bCanAccelerate&#160;</dt>
+<dd>particle can accelerate</dd>
+<dt>vector AccelerateFactor&#160;</dt>
+<dd>accelerate factor</dd>
+<dt>vector TerminalVelocity&#160;</dt>
+<dd>max accelerate</dd>
+<dt>EAccelType AccelerationType&#160;</dt>
+<dd>acceleration type</dd>
+</dl>
+<dl>
+<dt>ACC_Addictive&#160;</dt>
+<dd>
+<ul>
+<li>acceleration will be added to velocity.</li>
+<li>ACC_Multiply&#160;: velocity will be multiplied by acceleration.</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<dl>
+<dt>SSize Particle_Size[16]&#160;</dt>
+</dl>
+<div class="hidden-block"><span class="hint">Size variables</span>
+<div class="hidden">;ESizeType SizeType&#160;: size type
+<dl>
+<dt>ST_Normal&#160;</dt>
+<dd>
+<ul>
+<li>particle will not change size</li>
+<li>ST_Grow&#160;: particle will grow (ParticleGrowth)</li>
+<li>ST_Shrink&#160;: particle will shrink (ParticleShrink)</li>
+<li>ST_Cycle&#160;: particle will cyclically shrinks and grow</li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>ESizing Sizing&#160;</dt>
+<dd>describes end size of particle (not used if SizeType is ST_Cycle)</dd>
+</dl>
+<dl>
+<dt>SIZING_Infinity</dt>
+<dd>
+<ul>
+<li>particle will grow/shrink till lifespan ends</li>
+<li>SIZING_UserDecided&#160;: particle will grow/shrink till DrawScale reach specifeid size</li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>float ParticleDrawScale&#160;</dt>
+<dd>particle default size</dd>
+<dt>float ParticleDrawScaleVariance&#160;</dt>
+<dd>particle default size variance</dd>
+<dt>float ParticleGrowth&#160;</dt>
+<dd>particle grow rate (absolute number)</dd>
+<dt>float float ParticleShrink&#160;</dt>
+<dd>particle shrink rate (absolute number)</dd>
+<dt>float MinSize&#160;</dt>
+<dd>the smallest of particle (only if SizeType is ST_Cycle or Sizing is SIZING_UserDecided)</dd>
+<dt>float MaxSize&#160;</dt>
+<dd>the biggest size of particle (only if SizeType is ST_Cycle or Sizing is SIZING_UserDecided)</dd>
+</dl>
+</div>
+</div>
+<dl>
+<dt>SSound Particle_Sound[16]&#160;</dt>
+</dl>
+<div class="hidden-block"><span class="hint">Sound variables</span>
+<div class="hidden">;sound BornSound&#160;: when particle starts it's life
+<dl>
+<dt>sound FlyingSound&#160;</dt>
+<dd>particle flying sound</dd>
+<dt>sound DyingSound&#160;</dt>
+<dd>particle dying sound</dd>
+<dt>sound LandingSound&#160;</dt>
+<dd>particle landing sound</dd>
+<dt>sound HittingSound&#160;</dt>
+<dd>when particle hit's wall</dd>
+<dt>sound TouchingSound&#160;</dt>
+<dd>when particle hits an actor</dd>
+<dt>ESoundSlot ParticleSoundSlot&#160;</dt>
+<dd>sound slot</dd>
+<dt>float ParticleSoundVolume&#160;</dt>
+<dd>sound volume</dd>
+<dt>bool ParticleSoundbNoOverride&#160;</dt>
+<dd>sound no override</dd>
+<dt>float ParticleSoundRadius&#160;</dt>
+<dd>sound radius</dd>
+<dt>float ParticleSoundPitch&#160;</dt>
+<dd>sound pitch</dd>
+</dl>
+</div>
+</div>
+<dl>
+<dt>SVelocity Particle_InvertVelocity[16]&#160;</dt>
+</dl>
+<div class="hidden-block"><span class="hint">Advanced velocity variables</span>
+<div class="hidden">; bool bUseInvertVelocity&#160;: whenever particle velocity should be changed
+<dl>
+<dt>bool InvertX&#160;</dt>
+<dd>X-Axis velocity will be inverted (Velocity.X*=-1)</dd>
+<dt>bool InvertY&#160;</dt>
+<dd>Y-Axis velocity will be inverted (Velocity.Y*=-1)</dd>
+<dt>bool InvertZ&#160;</dt>
+<dd>Z-Axis velocity will be inverted (Velocity.Z*=-1)</dd>
+<dt>float InvertDelay&#160;</dt>
+<dd>change time</dd>
+</dl>
+</div>
+</div>
+<dl>
+<dt>SSpawnPlace Particle_EffectArea[16]&#160;</dt>
+</dl>
+<div class="hidden-block"><span class="hint">Override default effectarea</span>
+<div class="hidden">; vector OwnEffectArea&#160;: each template can override effect area
+<dl>
+<dt>bool bUseOwnEffectArea&#160;</dt>
+<dd>overrided effect area</dd>
+</dl>
+</div>
+</div>
+<dl>
+<dt>SMesh Particle_Mesh[16]&#160;</dt>
+</dl>
+<div class="hidden-block"><span class="hint">Mesh related variables. Used if bUseMesh in Particle_Display is true</span>
+<div class="hidden">; bool bAnimatedMesh&#160;: if mesh have to be animated
+<dl>
+<dt>name AnimationName&#160;</dt>
+<dd>name of animation which should be played</dd>
+<dt>float AnimationRate&#160;</dt>
+<dd>animation rate</dd>
+<dt>float TweenRate&#160;</dt>
+<dd>tween rate</dd>
+<dt>ETAnim AnimationType&#160;</dt>
+<dd>animation type</dd>
+</dl>
+<dl>
+<dt>AN_PlayOnce&#160;</dt>
+<dd>
+<ul>
+<li>should animation be played only once</li>
+<li>AN_Loop&#160;: or should it be looped</li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>EFType FaceObject&#160;</dt>
+<dd>object particle should face</dd>
+</dl>
+<dl>
+<dt>FACE_None&#160;</dt>
+<dd>
+<ul>
+<li>rotation is not changed</li>
+<li>FACE_Velocity&#160;: mesh always faces velocity</li>
+<li>FACE_Actor&#160;: mesh always faces chosen actor</li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>actor LookTarget&#160;</dt>
+<dd>Used if FaceObject== FACE_Actor</dd>
+<dt>rotator MeshRotationRate&#160;</dt>
+<dd>rotation rate (only if FaceObject== FACE_None)</dd>
+</dl>
+</div>
+</div>
+<dl>
+<dt>SDest Particle_Destination[16]&#160;</dt>
+</dl>
+<div class="hidden-block"><span class="hint">Optional destination</span>
+<div class="hidden">; actor Destination&#160;: particle destination
+<dl>
+<dt>EDest DestinationType&#160;</dt>
+<dd>type of destination</dd>
+</dl>
+<dl>
+<dt>DEST_None&#160;</dt>
+<dd>
+<ul>
+<li>no destination&#160;:)</li>
+<li>DEST_Once&#160;: will pick target's destination only once</li>
+<li>DEST_Seek&#160;: will constantly try to found a way to destination actor</li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>bool bForceFollow&#160;</dt>
+<dd>will ignore anything just to reach destination</dd>
+</dl>
+</div>
+</div>
+<dl>
+<dt>SRot Particle_RandomRotation[16]&#160;</dt>
+</dl>
+<div class="hidden-block"><span class="hint">Random rotation support</span>
+<div class="hidden">; bool bRandomizeRotation&#160;: uses random rotation
+<dl>
+<dt>bool bRandPitch&#160;</dt>
+<dd>random pitch</dd>
+<dt>bool bRandYaw&#160;</dt>
+<dd>random yaw</dd>
+<dt>bool bRandRoll&#160;</dt>
+<dd>randomed roll</dd>
+<dt>rotator MinRotation&#160;</dt>
+<dd>min rotation</dd>
+<dt>rotator MaxRotation&#160;</dt>
+<dd>max rotation</dd>
+<dt>bool bForceRndRot&#160;</dt>
+<dd>forces RotRand() function</dd>
+</dl>
+</div>
+</div>
+<h3><span class="mw-headline" id="ENUMS">ENUMS</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:RParticles/ParticleEmitter?section=4" title="Edit section: ENUMS">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h2><span class="mw-headline" id="Burst">Burst</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:RParticles/ParticleEmitter?section=5" title="Edit section: Burst">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<dl>
+<dt>BURST_Linear&#160;</dt>
+<dd>in each burst only one template will be used</dd>
+<dt>BURST_Random&#160;</dt>
+<dd>in each burst many templates will be used</dd>
+</dl>
+<h2><span class="mw-headline" id="Select">Select</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:RParticles/ParticleEmitter?section=6" title="Edit section: Select">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<dl>
+<dt>SELECT_Linear&#160;</dt>
+<dd>cyclically iterate through the ParticleTemplate</dd>
+<dt>SELECT_Random&#160;</dt>
+<dd>randomly pick a particle from the ParticleTemplate</dd>
+</dl>
+<hr />
+<p><a href="../Category_Legacy_Mapping.html" title="Category:Legacy Mapping">Category:Legacy Mapping</a><br />
+<a href="../Category_Legacy_Custom_Class_(UT).html" title="Category:Legacy Custom Class (UT)">Category:Legacy Custom Class (UT)</a> \\</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.061 seconds
+Real time usage: 0.062 seconds
+Preprocessor visited node count: 90/1000000
+Preprocessor generated node count: 207/1000000
+Post‐expand include size: 424/2097152 bytes
+Template argument size: 127/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.368      1 - -total
+100.00%    2.368      1 - Template:Classbox
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:2708-0!*!0!!en!*!* and timestamp 20161215155545 and revision id 6442
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:RParticles/ParticleEmitter?oldid=6442">https://wiki.beyondunreal.com/Legacy:RParticles/ParticleEmitter?oldid=6442</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="../Category_Legacy_Mapping.html" title="Category:Legacy Mapping">Legacy Mapping</a></li><li><a href="../Category_Legacy_Custom_Class_(UT).html" title="Category:Legacy Custom Class (UT)">Legacy Custom Class (UT)</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="ParticleEmitter.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:RParticles/ParticleEmitter?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:RParticles/ParticleEmitter" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:RParticles/ParticleEmitter" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-anonuserpage"><a href="../User_188.162.37.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">188.162.37.3</a></li>
+													<li id="pt-anontalk"><a href="../User_talk_188.162.37.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ARParticles%2FParticleEmitter&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ARParticles%2FParticleEmitter" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="../index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="../Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:RParticles/ParticleEmitter" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:RParticles/ParticleEmitter" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:RParticles/ParticleEmitter?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:RParticles/ParticleEmitter?oldid=6442" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:RParticles/ParticleEmitter" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 13:39, 19 November 2007.</li>
+									<li id="copyright">Licensed as <a href="../Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="../Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="../Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="../Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":102});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:RParticles/ParticleEmitter by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:42:03 GMT -->
+</html>

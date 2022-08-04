@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:First_Person_Shooter_AI_Architecture by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:First Person Shooter AI Architecture - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:First_Person_Shooter_AI_Architecture" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:First_Person_Shooter_AI_Architecture" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_First_Person_Shooter_AI_Architecture.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:First_Person_Shooter_AI_Architecture","wgTitle":"First Person Shooter AI Architecture","wgCurRevisionId":3170,"wgRevisionId":3170,"wgArticleId":1227,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:First_Person_Shooter_AI_Architecture","wgRelevantArticleId":1227,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_First_Person_Shooter_AI_Architecture skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Once I get that upgrade to 36-hour days, I will tackle that. &#8211; Mychaeel
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:First Person Shooter AI Architecture</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Preliminary_Description_and_Basic_Concepts"><span class="tocnumber">1</span> <span class="toctext">Preliminary Description and Basic Concepts</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Introduction"><span class="tocnumber">1.1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Overview:"><span class="tocnumber">1.2</span> <span class="toctext">Overview:</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Principal_Game_AI_Components:"><span class="tocnumber">2</span> <span class="toctext">Principal Game AI Components:</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Pathfinding_and_the_Bot_Navigation_System:"><span class="tocnumber">3</span> <span class="toctext">Pathfinding and the Bot Navigation System:</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Realistic_Interaction_with_Moving_Objects_and_the_Physics_System:"><span class="tocnumber">4</span> <span class="toctext">Realistic Interaction with Moving Objects and the Physics System:</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#The_Agent_Movement_Control_Component:"><span class="tocnumber">5</span> <span class="toctext">The Agent Movement Control Component:</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#The_Combat_Control_Component:"><span class="tocnumber">6</span> <span class="toctext">The Combat Control Component:</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Related_Topics"><span class="tocnumber">7</span> <span class="toctext">Related Topics</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Preliminary_Description_and_Basic_Concepts">Preliminary Description and Basic Concepts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:First_Person_Shooter_AI_Architecture?section=1" title="Edit section: Preliminary Description and Basic Concepts">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Introduction">Introduction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:First_Person_Shooter_AI_Architecture?section=2" title="Edit section: Introduction">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The information in this article is adapted from a chapter in the recently published book, <b>"AI Game Programming Wisdom"</b>, published 2002. It was written by Paul Tozour, and entitled, "First-Person Shooter AI Archtecture". The author prefaces the article with this statement:</p>
+<p>This article describes a generic AI architecture for the typical first-person shooter ("FPS") game such as any of the titles associated with the <i>Quake</i>, <i>Unreal</i>, or <i>Half-Life</i> engines.</p>
+<h3><span class="mw-headline" id="Overview:">Overview:</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:First_Person_Shooter_AI_Architecture?section=3" title="Edit section: Overview:">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><a href="Legacy_Artificial_Intelligence.html" title="Legacy:Artificial Intelligence">Artificial Intelligence</a> (AI) in First Person Shooter (FPS) game architectures tends be organized and controlled as seperate, individual agents, rather than coordinated teams that are synchronized to the same strategy playbook. The FPS Artificial Intelligence architecture is organized into a hierarchy with four major integrated components: <b>Behavior</b>, <b>Movement</b>, <b>Animation</b>, and <b>Combat</b>.</p>
+<h2><span class="mw-headline" id="Principal_Game_AI_Components:">Principal Game AI Components:</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:First_Person_Shooter_AI_Architecture?section=4" title="Edit section: Principal Game AI Components:">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The <b>movement</b> component is tasked with determining how the character should move in the game world. The movement AI is what makes the character avoid obstacles, follow navigation system nodes, and find paths through the complex environments to reach its destination. The movement subsystem never determines where to move, only how to do so. It simply receives commands from other components telling it where to move, and it is responsible for making sure the character moves to that point in an appropriate manner.</p>
+<p>The <b>animation</b> component is responsible for controlling the game bot’s skeletal articulation and display appearance during gameplay. Its major role is selecting, parameterizing, and playing character animation sequences. It is also responsible for generating animations that cannot be played from pre-assembled animation sequences. Since we can’t tell in advance in what direction a character will face in a given scene, we need a method of integrated control over the real-time animation to ensure that the character behaves correctly.</p>
+<p><br />
+The <b>combat</b> component is assigned the role of assessing the character’s current tactical situation, selecting tactics in combat, aiming and firing at opponents, deciding when to pick up a new weapon, and so on. Since combat is the core gameplay dynamic in most FPS games, the performance of this subsystem will be crucial to the player’s perception of the AI.</p>
+<p>The <b>behavior</b> component is the integrating framework that determines the character’s current goal, orders, state, and immediate destination, and communicates with the other subsystems to coordinate physical motion towards a determined staging area. It is the highest-level AI subsystem and sits on top of all the other subsystems.</p>
+<h2><span class="mw-headline" id="Pathfinding_and_the_Bot_Navigation_System:">Pathfinding and the Bot Navigation System:</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:First_Person_Shooter_AI_Architecture?section=5" title="Edit section: Pathfinding and the Bot Navigation System:">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Fundamental to the movement AI system is the pathfinding component. This system is responsible for finding a Bot path from any coordinate location in the level to any other. Given a starting point, a state designation, and a goal or destination, it will find a series of waypoints that comprise an optimal path to some intermediate destination. It is possible that it will report that no path can be found, or will generate an apparent error in its repertoire of simulated human motion. The game AI pathfinder in <i>Unreal Tournament</i> uses a pre-computed data structure for guiding movement. This is a complex algorithm-controlled assemblage of linked lists, <a href="Legacy_NavigationPoint.html" title="Legacy:NavigationPoint">NavigationPoints</a>, and Binary Space Partitioning (<a href="Legacy_BSP_Tree.html" title="Legacy:BSP Tree">BSP</a>) collision data. The FPS game world is relatively static, so it makes sense to pre-generate a database that is highly optimized for performing fast pathfinding in a particular section of the game world. At runtime, the pathfinding database is initialized and parameterized. The performance of this directed navigation system search is highly correlated with how appropriately the pathfinding database is optimized.</p>
+<h2><span class="mw-headline" id="Realistic_Interaction_with_Moving_Objects_and_the_Physics_System:">Realistic Interaction with Moving Objects and the Physics System:</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:First_Person_Shooter_AI_Architecture?section=6" title="Edit section: Realistic Interaction with Moving Objects and the Physics System:">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The obvious weakness with the global pathfinding system is that it does not correctly interact with dynamic obstacles. Practical solutions to the problem of efficient in-game agent avoidance of moving obstacles are built on communication between the physics system and the local pathfinding system. Since dynamic obstacles can be moved at any time, the AI needs to continually query the physics system for the presence of dynamic obstacles in any area it intends to move through. This designated the local pathfinding system, and is an essential quality of any object capable of three dimensional movement in the level.</p>
+<p>A local pathfinder does not replace a global pathfinder; the two are integrated and each subsystem is optimized for a different part of the problem. The local pathfinding system is built on top of the global pathfinder. When an AI needs to move from point A to point B, its movement AI first queries the global pathfinding system, and if it’s successful, the global pathfinder will return an ordered list of points that constitute a path from A to B. The AI can then use the global path as a guideline, and use the local pathfinding system to find a path to each successive waypoint in that global path, avoiding any obstacles that it might happen to interact with along the way.</p>
+<p>Fundamentally, a local pathfinder needs to be based on a search algorithm which constrains possible initial directions to the immediate area near the origin of the search. This technique will ensure that the optimal path is found if such a path exists. A good way to do this is to perform sampling (for example, querying the physics system for the presence of obstacles) using a fixed size grid oriented toward the destination point. However, keep in mind that sampling can be computationally expensive if it’s performed too often, so it’s very important to take steps to minimize the amount of sampling that the system needs to perform in any given local search.</p>
+<h2><span class="mw-headline" id="The_Agent_Movement_Control_Component:">The Agent Movement Control Component:</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:First_Person_Shooter_AI_Architecture?section=7" title="Edit section: The Agent Movement Control Component:">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The movement AI acts as the client of all the other parts of the AI; that is, it is a subsystem that performs arbitrary tasks assigned to it by higher-level components. Those tasks are issued in the form of discrete movement commands, such as, “move to point (X,Y,Z)”, “move to object B”, “turn to face point (X,Y,Z)”, or “stop moving”.</p>
+<p>The movement AI will be executing exactly one of those movement commands at any given moment. We describe the movement component as the object that “owns” the current movement command.</p>
+<p>Once we have done this, we can design the appropriate algorithms to execute the movement commands into the individual movement command objects themselves. A command such as, “move to (X,Y,Z)”, for example, will be responsible for using the global and local pathfinding systems to find and execute a path to (X,Y,Z), and making the appropriate engine calls to ensure that the character moves along the specified path. If no path is available, or when the AI entity reaches the end of its path, the movement command reports back to the movement controller so that it can be garbage-collected.</p>
+<p>This technique is also useful for handling different types of movement. Different types of movement commands can handle tasks such as walking, running, swimming, and dying, with appropriate parameters to determine the AI agent’s acceleration, movement range, turn rate, animations, and other movement characteristics.</p>
+<h2><span class="mw-headline" id="The_Combat_Control_Component:">The Combat Control Component:</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:First_Person_Shooter_AI_Architecture?section=8" title="Edit section: The Combat Control Component:">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>When an AI initiates combat, control for the majority of its behaviors is transferred to a combat control component. The combat controller is responsible for all combat-related tasks, such as selecting an opponent, selecting a weapon, maneuvering, firing, and searching for additional weapons and ammo.</p>
+<p>The most difficult part of the combat problem is determining how to intelligently assess the current situation, and select and execute an appropriate tactic in response.</p>
+<p>The challenge comes from the extraordinary difficulty of getting an AI entity to understand the significance of the spatial configuration of any given area. Any human can glance at his current surroundings and immediately form an assessment of the space.</p>
+<hr />
+<p>Go on to the next part: <a href="Legacy_FPS_AI_Architecture%2c_Continued.html" title="Legacy:FPS AI Architecture, Continued">FPS AI Architecture, Continued</a></p>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:First_Person_Shooter_AI_Architecture?section=9" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_Artificial_Intelligence.html" title="Legacy:Artificial Intelligence">Artificial Intelligence</a> – Super Topic for all AI (bots, Monsters, NPCs, etc)</li>
+<li><a href="Legacy_Introduction_To_Game_AI.html" title="Legacy:Introduction To Game AI">Introduction to Game AI</a></li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.021 seconds
+Real time usage: 0.023 seconds
+Preprocessor visited node count: 34/1000000
+Preprocessor generated node count: 40/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:1227-0!*!0!!en!*!* and timestamp 20161215142728 and revision id 3170
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:First_Person_Shooter_AI_Architecture?oldid=3170">https://wiki.beyondunreal.com/Legacy:First_Person_Shooter_AI_Architecture?oldid=3170</a>"</div>
+					<div id='catlinks' class='catlinks catlinks-allhidden'></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_First_Person_Shooter_AI_Architecture.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:First_Person_Shooter_AI_Architecture?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:First_Person_Shooter_AI_Architecture" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:First_Person_Shooter_AI_Architecture" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AFirst+Person+Shooter+AI+Architecture&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AFirst+Person+Shooter+AI+Architecture" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:First_Person_Shooter_AI_Architecture" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:First_Person_Shooter_AI_Architecture" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:First_Person_Shooter_AI_Architecture?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:First_Person_Shooter_AI_Architecture?oldid=3170" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:First_Person_Shooter_AI_Architecture" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 08:28, 11 October 2006.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":81});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:First_Person_Shooter_AI_Architecture by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:51 GMT -->
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Setting_Up_Subversion by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Setting Up Subversion - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_Subversion" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_Subversion" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_Setting_Up_Subversion.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Setting_Up_Subversion","wgTitle":"Setting Up Subversion","wgCurRevisionId":33900,"wgRevisionId":33900,"wgArticleId":2953,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Tutorial"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Setting_Up_Subversion","wgRelevantArticleId":2953,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Setting_Up_Subversion skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>There is no spoon
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Setting Up Subversion</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This document is intended to walk you through a basic <a href="Legacy_Subversion.html" title="Legacy:Subversion">Subversion</a> setup for use in developing Unreal-related projects. If you follow these instructions, in no time you will have a Subversion repository set up to track changes you make to all of your project-related files. If you will be working with other developers on the same project, you may also want to proceed to <a href="Legacy_Setting_Up_A_Subversion_Server.html" title="Legacy:Setting Up A Subversion Server">Setting up a Subversion Server</a> after reading this page, to see how to make your new repository accessible to other people as well.</p>
+<p>This document assumes you will be developing for an Unreal Tournament style of game such as <a href="Legacy_UT2004.html" title="Legacy:UT2004" class="mw-redirect">UT2004</a> and that you will be setting up your repository under Windows XP/2000/2003/etc. Many of the directions here will also apply to other cases, but you may need to do some tweaking.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Download_the_Software"><span class="tocnumber">1</span> <span class="toctext">Download the Software</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Subversion"><span class="tocnumber">1.1</span> <span class="toctext">Subversion</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#TortoiseSVN"><span class="tocnumber">1.2</span> <span class="toctext">TortoiseSVN</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Install_the_Software"><span class="tocnumber">2</span> <span class="toctext">Install the Software</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Create_a_Repository_Directory"><span class="tocnumber">3</span> <span class="toctext">Create a Repository Directory</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Create_a_First_Repository"><span class="tocnumber">4</span> <span class="toctext">Create a First Repository</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Set_up_Your_Working_Directory"><span class="tocnumber">5</span> <span class="toctext">Set up Your Working Directory</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Basics_of_Using_Subversion"><span class="tocnumber">6</span> <span class="toctext">Basics of Using Subversion</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Setting_up_a_Subversion_Server"><span class="tocnumber">7</span> <span class="toctext">Setting up a Subversion Server</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Download_the_Software">Download the Software</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_Subversion?section=1" title="Edit section: Download the Software">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The first step is to download the tools you'll need:</p>
+<h3><span class="mw-headline" id="Subversion">Subversion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_Subversion?section=2" title="Edit section: Subversion">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This can be obtained from the Subversion web site (<a rel="nofollow" class="external free" href="http://subversion.tigris.org/">http://subversion.tigris.org/</a>). A Windows installer is available under <a rel="nofollow" class="external free" href="http://subversion.tigris.org/servlets/ProjectDocumentList?folderID=91">http://subversion.tigris.org/servlets/ProjectDocumentList?folderID=91</a> (look for the latest EXE file).</p>
+<h3><span class="mw-headline" id="TortoiseSVN">TortoiseSVN</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_Subversion?section=3" title="Edit section: TortoiseSVN">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>While not strictly necessary (Subversion can be used as-is from the command line) you may also want to download the TortoiseSVN graphical client for Subversion, which allows Subversion to integrate nicely with the Windows file manager. This program can be obtained from the TortoiseSVN web site (<a rel="nofollow" class="external free" href="http://tortoisesvn.tigris.org/">http://tortoisesvn.tigris.org</a>).</p>
+<p>The instructions here assume you will be using TortoiseSVN in addition to the basic Subversion package.</p>
+<h2><span class="mw-headline" id="Install_the_Software">Install the Software</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_Subversion?section=4" title="Edit section: Install the Software">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>If you downloaded one of the Windows installer files for Subversion, installing it should be a simple matter of double-clicking the installer and following the prompts. Likewise, the TortoiseSVN installer is pretty much the same deal.</p>
+<p><b>Note:</b> You will need to reboot your computer after installing TortoiseSVN.</p>
+<h2><span class="mw-headline" id="Create_a_Repository_Directory">Create a Repository Directory</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_Subversion?section=5" title="Edit section: Create a Repository Directory">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>First, you will need to create a folder to be used to hold all of your Subversion repositories. For the purposes of this example, we'll place our repositories under <tt>C:\Subversion</tt> (you may want to place this on a drive with a fair amount of spare disk space).</p>
+<h2><span class="mw-headline" id="Create_a_First_Repository">Create a First Repository</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_Subversion?section=6" title="Edit section: Create a First Repository">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Now you will want at least one repository to store things in (that is the point of Subversion, after all). You can create as many repositories as you want under the main repository directory, but for now we'll start with one:</p>
+<ol>
+<li>Open the directory you created for repositories (<tt>C:\Subversion</tt>) in a Windows file browser window.</li>
+<li>Create a new folder in this directory with the name you would like to give to your new repository (<tt>UT_work</tt>).</li>
+<li>Once the new folder is created, right-click on it. The pop-up window which appears should contain a "TortoiseSVN" option. Under this menu item should be several choices, including "Create Repository here..."</li>
+<li>Choose "TortoiseSVN-&gt;Create Repository here..." from the menu. This will bring up a dialog box asking what type of repository to create.</li>
+<li>Choose "Native Filesystem (FSFS)" (you can really choose either one, but the Native Filesystem form is potentially faster, and in some cases easier to work with. Note: Do <i>not</i> use a Berkeley DB repository if it will be located on a network drive. Bad Things(tm) will happen.).</li>
+</ol>
+<p>The new folder we just created is now a Subversion repository folder.</p>
+<p>Next, we will create a "trunk" directory in our new repository (this isn't strictly required, but it is conventional to do things this way, and makes things a lot easier later when you get into sophisticated aspects of Subversion like branching). Subversion repositories aren't like normal directories, however, so we can't just create a directory using the file manager. Instead, we will need to use TortoiseSVN's "Repository Browser":</p>
+<ol>
+<li>Right click on a file or folder anywhere in your system (doesn't matter where).</li>
+<li>From the pop-up menu, select "TortoiseSVN-&gt;Repo-Browser".</li>
+</ol>
+<p>A dialog box will pop up asking you for the URL of the repository to use. Type the following:</p>
+<pre>
+ file:///C:/Subversion/UT_work
+</pre>
+<p>(This is the URL of our new repository, which is how we'll need to refer to it with most Subversion commands. Note that it uses forward-slashes (/), not backslashes (\))</p>
+<ol>
+<li>You should now see a "Repository Browser" window, with an expanded tree of folders (<tt>file:///C:</tt>, <tt>Subversion</tt>, and <tt>UT_work</tt>). Right click on the <tt>UT_work</tt> entry.</li>
+<li>From the pop-up menu, select "Create Folder...", and when it asks for the name, type <tt>trunk</tt></li>
+<li>It will then ask you for a log message. This is where you describe why you're doing this for future reference. Since we're just doing initial setup here, put in something like "Intitial Setup" and click "OK".</li>
+</ol>
+<p>If you now expand the <tt>UT_work</tt> entry, you should see a <tt>trunk</tt> folder underneath it. That's enough for a basic setup of our repository, time to move on to actually using it.</p>
+<blockquote class="legacyquote">
+<p>Alternately, you can use the Subversion command-line tools to create a new repository using the following commands: svnadmin create C:\Subversion\UT_work –fs-type fsfs svn mkdir file:///C:/Subversion/UT_work/trunk</p>
+<p>(Don't create the <tt>UT_work</tt> directory first, the <tt>svnadmin create</tt> command will do it for you)</p>
+<p><br /></p>
+</blockquote>
+<h2><span class="mw-headline" id="Set_up_Your_Working_Directory">Set up Your Working Directory</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_Subversion?section=7" title="Edit section: Set up Your Working Directory">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>At this stage in the process, most Subversion documentation tells you that you should use the Subversion "import" command to import a current snapshot of your project tree into the repository. For most projects, this makes sense, because each project has its own separate set of directories with only its files. For Unreal development, however, the situation is a bit different because the files being worked on are usually scattered around several directories which contain a bunch of other files. If we're working on a map, for example, we don't want to import our whole <tt>Maps</tt> directory into the repository, because that would include tons of stock files that really aren't part of the project we're working on (and don't need to be tracked), making the repository huge and difficult to work with.</p>
+<p>For this reason, we're going to diverge a bit here from the normal procedure for setting up Subversion repositories. The first thing we will do instead is just associate our working directories with the (empty) repository we just created, by doing a "checkout".</p>
+<ol>
+<li>Go into a file browser window and locate the main Unreal folder you'll be developing things under, which we want to be at the top level of our project (for example, <tt>C:\UT2004</tt>).</li>
+<li>Right-click on this folder and from the pop-up menu, select "Checkout..."</li>
+</ol>
+<p>The "Checkout" dialog box will ask for the URL of the repository to use. Type the following and press "OK":</p>
+<pre>
+ file:///C:/Subversion/UT_work/trunk
+</pre>
+<p><br /></p>
+<p>(this is the URL which refers to the "trunk" portion of the "UT_work" repository we set up in the previous step)</p>
+<p>Once the checkout has completed, press F5 (refresh) in your file browser and you should see that the folder now shows up with a little green check-mark next to it. This indicates that the folder is associated with a Subversion repository, and that it is up to date (Note: sometimes the check mark doesn't show up in the tree view of the explorer).</p>
+<p>The next step is to actually populate our repository with the files that are part of our project:</p>
+<ol>
+<li>Again, right-click on the working directory folder (<tt>C:\UT2004</tt>)</li>
+<li>You will see a new option in the pop-up menu named "Commit...". Choose this option.</li>
+<li>An "Enter Log Message" dialog box will appear. This is where you write a brief description of what the change is that you're applying to the repository. Enter something like "Initial Import" in the text box at the top (If you've already been doing a lot of work on this project before setting up the repository, it would probably also be a good idea to write a few notes about what the current state of things is at the moment so if you go back some time later and want to know what the state of development was at this point, you can look at the Subversion comments for this revision and get some idea.)</li>
+<li>In the bottom part of the "Enter Log Message" window, you will see a listing of all of the files under this directory (and all of its subdirectories), with checkboxes next to them (this display can take a while to display while TortoiseSVN goes through all the directories to see what's there, so be patient). This is where you specify what files you want to check in to Subversion. Find the files that are part of your project and check their checkboxes.</li>
+<li>When you've selected all of the right files, press the "OK" button. TortoiseSVN will show a "SVN Commit" dialog box with the status of the operation. Once it's completed, press "OK".</li>
+</ol>
+<p>Congratulations! Your project files are now in a Subversion repository!</p>
+<h2><span class="mw-headline" id="Basics_of_Using_Subversion">Basics of Using Subversion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_Subversion?section=8" title="Edit section: Basics of Using Subversion">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>There are many documents available out there which are quite good at explaining how to use Subversion and TortoiseSVN (including the help files that come with both programs, which are available under your Start Programs menu), so we won't go into a lot of detail here, but here's the basic procedure of how things should work most of the time:</p>
+<ul>
+<li>Work on your files the same way you always do.</li>
+<li>Periodically, commit things back to the Subversion repository by right-clicking on your work directory and using the "Commit..." option.</li>
+<li>If other people are working on files in the same repository, you will periodically need to update your versions to match what other people have committed to the repository. To do this, right-click on the work directory and choose "Update".</li>
+<li>Note that if you rename files, Subversion won't automatically know what you've done, and will just see that the files aren't there under the name it expects, and will assume they've been deleted (and mark them as such in the repository). If you want to rename a file, make sure you do the following instead:
+<ol>
+<li>Right-click on the file, and select the "TortoiseSVN" submenu.</li>
+<li>Choose the "Rename" option.</li>
+</ol>
+</li>
+</ul>
+<h2><span class="mw-headline" id="Setting_up_a_Subversion_Server">Setting up a Subversion Server</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_Subversion?section=9" title="Edit section: Setting up a Subversion Server">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>If all you want to do is keep backups and a change history for your own work, and you're the only one who's going to need to access your repository, then you can just stop here and use things as we've set them up so far.</p>
+<p>If, however, you are going to want other people to be able to access the repository you've just created (and thus take advantage of some of the most powerful features of Subversion), you will want to proceed to <a href="Legacy_Setting_Up_A_Subversion_Server.html" title="Legacy:Setting Up A Subversion Server">Setting up a Subversion Server</a>.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.040 seconds
+Real time usage: 0.042 seconds
+Preprocessor visited node count: 47/1000000
+Preprocessor generated node count: 101/1000000
+Post‐expand include size: 795/2097152 bytes
+Template argument size: 339/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    3.784      1 - -total
+100.00%    3.784      1 - Template:Innerbox
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:2953-0!*!0!!en!*!* and timestamp 20161216061122 and revision id 33900
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Setting_Up_Subversion?oldid=33900">https://wiki.beyondunreal.com/Legacy:Setting_Up_Subversion?oldid=33900</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Legacy_Tutorial.html" title="Category:Legacy Tutorial">Legacy Tutorial</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_Setting_Up_Subversion.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Setting_Up_Subversion?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_Subversion" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Setting_Up_Subversion" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ASetting+Up+Subversion&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ASetting+Up+Subversion" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Setting_Up_Subversion" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Setting_Up_Subversion" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Setting_Up_Subversion?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Setting_Up_Subversion?oldid=33900" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Setting_Up_Subversion" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 02:26, 9 January 2009.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":183});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Setting_Up_Subversion by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:39 GMT -->
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+
+<!-- Mirrored from en.wikipedia.org/wiki/Linked_data_structure by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 19:58:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8"/>
+<title>Linked data structure - Wikipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Linked_data_structure","wgTitle":"Linked data structure","wgCurRevisionId":739576895,"wgRevisionId":739576895,"wgArticleId":22474945,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Abstract data types","Linked lists","Trees (data structures)"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Linked_data_structure","wgRelevantArticleId":22474945,"wgRequestId":"WErjbApAMEwAAIyGArAAAABO","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":true},"wgPreferredVariant":"en","wgMFDisplayWikibaseDescriptions":{"search":true,"nearby":true,"watchlist":true,"tagline":false},"wgRelatedArticles":null,"wgRelatedArticlesUseCirrusSearch":true,"wgRelatedArticlesOnlyUseCirrusSearch":false,"wgULSCurrentAutonym":"English","wgNoticeProject":"wikipedia","wgCentralNoticeCookiesToDelete":[],"wgCentralNoticeCategoriesUsingLegacy":["Fundraising","fundraising"],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgWikibaseItemId":"Q6554356","wgCentralAuthMobileDomain":false,"wgVisualEditorToolbarScrollOffset":0,"wgEditSubmitButtonLabelPublish":false});mw.loader.state({"ext.globalCssJs.user.styles":"ready","ext.globalCssJs.site.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.pygments":"ready","wikibase.client.init":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready","ext.globalCssJs.user":"ready","ext.globalCssJs.site":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@1dqfd7l",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["ext.cite.a11y","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.legacy.wikibits","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.watchlist-notice","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.extra-toolbar-buttons","ext.gadget.switcher","ext.gadget.featured-articles-links","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.navigationTiming","ext.uls.eventlogger","ext.uls.init","ext.uls.interface","ext.quicksurveys.init","ext.centralNotice.geoIP","ext.centralNotice.startUp","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="../w/loadac06.css?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.pygments%2CwikimediaBadges%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector"/>
+<script async="" src="https://en.wikipedia.org/w/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="../w/load18b6.css?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.29.0-wmf.5"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<link rel="alternate" href="Android-app_/org.wikipedia/http/en.m.wikipedia.org/wiki/Linked_data_structure.html"/>
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="../w/index13cb.html?title=Linked_data_structure&amp;action=edit"/>
+<link rel="edit" title="Edit this page" href="../w/index13cb.html?title=Linked_data_structure&amp;action=edit"/>
+<link rel="apple-touch-icon" href="../static/apple-touch/wikipedia.png"/>
+<link rel="shortcut icon" href="../static/favicon/wikipedia.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../w/opensearch_desc.php" title="Wikipedia (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://en.wikipedia.org/w/api.php?action=rsd"/>
+<link rel="copyright" href="../../creativecommons.org/licenses/by-sa/3.0/index.html"/>
+<link rel="canonical" href="Linked_data_structure.html"/>
+<link rel="dns-prefetch" href="../../login.wikimedia.org/index.html"/>
+<link rel="dns-prefetch" href="../../meta.wikimedia.org/index.html" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Linked_data_structure rootpage-Linked_data_structure skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Linked data structure</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><p>In <a href="Computer_science.html" title="Computer science">computer science</a>, a <b>linked data structure</b> is a <a href="Data_structure.html" title="Data structure">data structure</a> which consists of a set of <a href="Record_(computer_science).html" title="Record (computer science)">data records</a> (<i><a href="Node_(computer_science).html" title="Node (computer science)">nodes</a></i>) linked together and organized by <a href="Reference_(computer_science).html" title="Reference (computer science)">references</a> (<i>links</i> or <i><a href="Pointer_(computer_programming).html" title="Pointer (computer programming)">pointers</a></i>). The link between data can also be called a <b>connector</b>.</p>
+<p>In linked data structures, the links are usually treated as special <a href="Data_type.html" title="Data type">data types</a> that can only be <a href="Reference_(computer_science).html" title="Reference (computer science)">dereferenced</a> or compared for equality. Linked data structures are thus contrasted with <a href="Array_data_structure.html" title="Array data structure">arrays</a> and other data structures that require performing arithmetic operations on pointers. This distinction holds even when the nodes are actually implemented as elements of a single array, and the references are actually array <a href="Array_data_structure.html" title="Array data structure">indices</a>: as long as no arithmetic is done on those indices, the data structure is essentially a linked one.</p>
+<p>Linking can be done in two ways&#160;–  using dynamic allocation and using array index linking.</p>
+<p>Linked data structures include <a href="Linked_list.html" title="Linked list">linked lists</a>, <a href="Search_tree.html" title="Search tree">search trees</a>, <a href="Expression_tree.html" class="mw-redirect" title="Expression tree">expression trees</a>, and many other widely used data structures. They are also key building blocks for many efficient algorithms, such as <a href="Topological_sort.html" class="mw-redirect" title="Topological sort">topological sort</a><sup id="cite_ref-knuth_1-0" class="reference"><a href="#cite_note-knuth-1">[1]</a></sup> and <a href="Disjoint-set_data_structure.html" title="Disjoint-set data structure">set union-find</a>.<sup id="cite_ref-galfis_2-0" class="reference"><a href="#cite_note-galfis-2">[2]</a></sup></p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Common_types_of_linked_data_structures"><span class="tocnumber">1</span> <span class="toctext">Common types of linked data structures</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Linked_lists"><span class="tocnumber">1.1</span> <span class="toctext">Linked lists</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#Example_in_Java"><span class="tocnumber">1.1.1</span> <span class="toctext">Example in Java</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#Example_in_C"><span class="tocnumber">1.1.2</span> <span class="toctext">Example in C</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Example_in_C.2B.2B"><span class="tocnumber">1.1.3</span> <span class="toctext">Example in C++</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="#Search_trees"><span class="tocnumber">1.2</span> <span class="toctext">Search trees</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Advantages_and_disadvantages"><span class="tocnumber">2</span> <span class="toctext">Advantages and disadvantages</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Linked_list_versus_arrays"><span class="tocnumber">2.1</span> <span class="toctext">Linked list versus arrays</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#General_disadvantages"><span class="tocnumber">2.2</span> <span class="toctext">General disadvantages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#See_also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#References"><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Common_types_of_linked_data_structures">Common types of linked data structures</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Linked_data_structure&amp;action=edit&amp;section=1" title="Edit section: Common types of linked data structures">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Linked_lists">Linked lists</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Linked_data_structure&amp;action=edit&amp;section=2" title="Edit section: Linked lists">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A linked list is a collection of structures ordered not by their physical placement in memory but by logical links that are stored as part of the data in the structure itself. It is not necessary that it should be stored in the adjacent memory locations. Every <a href="Structure.html" title="Structure">structure</a> has a data field and an address field. The Address field contains the address of its <a href="Successor_(graph_theory).html" class="mw-redirect" title="Successor (graph theory)">successor</a>.</p>
+<p>Linked list can be singly, doubly or multiply linked and can either be linear or circular.</p>
+<dl>
+<dt>Basic properties</dt>
+</dl>
+<ul>
+<li>Objects, called <b>nodes</b>, are linked in a linear sequence.</li>
+<li>A reference to the first node of the list is always kept. This is called the 'head' or 'front'.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">[3]</a></sup></li>
+</ul>
+<div class="center"><a href="File_Singly-linked-list.html" class="image"><img alt="Singly-linked-list.svg" src="../../upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Singly-linked-list.svg/408px-Singly-linked-list.svg.png" width="408" height="41" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Singly-linked-list.svg/612px-Singly-linked-list.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Singly-linked-list.svg/816px-Singly-linked-list.svg.png 2x" data-file-width="408" data-file-height="41" /></a><br />
+<small><i>A linked list with three nodes contain two fields each: an integer value and a link to the next node</i></small></div>
+<div class="center">
+<div class="thumb tnone">
+<div class="thumbinner" style="width:222px;"><a href="File_Single_node1.html" class="image"><img alt="" src="../../upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Single_node1.jpg/220px-Single_node1.jpg" width="220" height="159" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/5/5d/Single_node1.jpg 1.5x" data-file-width="279" data-file-height="202" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="File_Single_node1.html" class="internal" title="Enlarge"></a></div>
+A linked list with a single node.</div>
+</div>
+</div>
+</div>
+<h4><span class="mw-headline" id="Example_in_Java">Example in Java</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Linked_data_structure&amp;action=edit&amp;section=3" title="Edit section: Example in Java">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>This is an example of the node class used to store integers in a Java implementation of a linked list:</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr">
+<pre>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntNode</span> <span class="o">{</span>
+     <span class="kd">public</span> <span class="kt">int</span> <span class="n">value</span><span class="o">;</span>
+     <span class="kd">public</span> <span class="n">IntNode</span> <span class="n">link</span><span class="o">;</span>
+     <span class="kd">public</span> <span class="nf">IntNode</span><span class="o">(</span><span class="kt">int</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span> <span class="n">value</span> <span class="o">=</span> <span class="n">v</span><span class="o">;</span> <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+<h4><span class="mw-headline" id="Example_in_C">Example in C</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Linked_data_structure&amp;action=edit&amp;section=4" title="Edit section: Example in C">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>This is an example of the node structure used for implementation of linked list in C:</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr">
+<pre>
+<span class="k">struct</span> <span class="n">node</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">val</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+<p>This is an example using <a href="Typedef.html" title="Typedef">typedefs</a>:</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr">
+<pre>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">node</span> <span class="n">node</span><span class="p">;</span>
+
+<span class="k">struct</span> <span class="n">node</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">val</span><span class="p">;</span>
+	<span class="n">node</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+<p><b>Note:</b> A structure like this which contains a member that points to the same structure is called a self-referential structure.</p>
+<h4><span class="mw-headline" id="Example_in_C.2B.2B">Example in C++</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Linked_data_structure&amp;action=edit&amp;section=5" title="Edit section: Example in C++">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>This is an example of the node class structure used for implementation of linked list in C++:</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr">
+<pre>
+<span class="k">class</span> <span class="nc">Node</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">val</span><span class="p">;</span>
+	<span class="n">Node</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+<h3><span class="mw-headline" id="Search_trees">Search trees</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Linked_data_structure&amp;action=edit&amp;section=6" title="Edit section: Search trees">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A search tree is a tree data structure in whose nodes data values can be stored from some <a href="Ordered_set.html" class="mw-redirect" title="Ordered set">ordered set</a>, which is such that in an in-order traversal of the tree the nodes are visited in ascending order of the stored values.</p>
+<dl>
+<dt>Basic properties</dt>
+</dl>
+<ul>
+<li>Objects, called nodes, are stored in an ordered set.</li>
+<li><a href="In-order_traversal.html" class="mw-redirect" title="In-order traversal">In-order traversal</a> provides an ascending readout of the data in the tree.</li>
+</ul>
+<h2><span class="mw-headline" id="Advantages_and_disadvantages">Advantages and disadvantages</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Linked_data_structure&amp;action=edit&amp;section=7" title="Edit section: Advantages and disadvantages">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Linked_list_versus_arrays">Linked list versus arrays</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Linked_data_structure&amp;action=edit&amp;section=8" title="Edit section: Linked list versus arrays">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Compared to arrays, linked data structures allow more flexibility in organizing the data and in allocating space for it. In arrays, the size of the array must be specified precisely at the beginning, which can be a potential waste of memory. A linked data structure is built dynamically and never needs to be bigger than the programmer requires. It also requires no guessing in terms of how much space must be allocated when using a linked data structure. This is a feature that is key in saving wasted memory.</p>
+<p>In an array, the array elements have to be in a <a href="Contiguity.html#Computer_science" title="Contiguity">contiguous</a> (connected and sequential) portion of memory. But in a linked data structure, the reference to each node gives users the information needed to find the next one. The nodes of a linked data structure can also be moved individually to different locations without affecting the logical connections between them, unlike arrays. With due care, a <a href="Process_(computing).html" title="Process (computing)">process</a> can add or delete nodes to one part of a data structure even while other processes are working on other parts.</p>
+<p>On the other hand, access to any particular node in a linked data structure requires following a chain of references that stored in it. If the structure has <i>n</i> nodes, and each node contains at most <i>b</i> links, there will be some nodes that cannot be reached in less than log<sub><i>b</i></sub> <i>n</i> steps. For many structures, some nodes may require <a href="Best%2c_worst_and_average_case.html" title="Best, worst and average case">worst case</a> up to <i>n</i>−1 steps. In contrast, many array data structures allow access to any element with a constant number of operations, independent of the number of entries.</p>
+<p>Broadly the implementation of these linked data structure is through <a href="Dynamic_data_structures.html" class="mw-redirect" title="Dynamic data structures">dynamic data structures</a>. It gives us the chance to use particular space again. Memory can be utilized more efficiently by using this data structures. Memory is allocated as per the need and when memory is not further needed, deallocation is done.</p>
+<h3><span class="mw-headline" id="General_disadvantages">General disadvantages</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Linked_data_structure&amp;action=edit&amp;section=9" title="Edit section: General disadvantages">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Linked data structures may also incur in substantial <a href="Dynamic_memory_allocation.html" class="mw-redirect" title="Dynamic memory allocation">memory allocation</a> overhead (if nodes are allocated individually) and frustrate <a href="Virtual_memory.html" title="Virtual memory">memory paging</a> and <a href="Cache_(computing).html" title="Cache (computing)">processor caching</a> algorithms (since they generally have poor <a href="Locality_of_reference.html" title="Locality of reference">locality of reference</a>). In some cases, linked data structures may also use more memory (for the link fields) than competing array structures. This is because linked data structures are not contiguous. Instances of data can be found all over in memory, unlike arrays.</p>
+<p>In arrays, nth element can be accessed immediately, while in a linked data structure we have to follow multiple pointers so element access time varies according to where in the structure the element is.</p>
+<p>In some <a href="Theoretical_computer_science.html" title="Theoretical computer science">theoretical models of computation</a> that enforce the constraints of linked structures, such as the <a href="Pointer_machine.html" title="Pointer machine">pointer machine</a>, many problems require more steps than in the unconstrained <a href="Random_access_machine.html" class="mw-redirect" title="Random access machine">random access machine</a> model.</p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Linked_data_structure&amp;action=edit&amp;section=10" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="List_of_data_structures.html" title="List of data structures">List of data structures</a></li>
+<li><a href="Middleware.html" title="Middleware">Middleware</a></li>
+</ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Linked_data_structure&amp;action=edit&amp;section=11" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-knuth-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-knuth_1-0">^</a></b></span> <span class="reference-text"><a href="Donald_Knuth.html" title="Donald Knuth">Donald Knuth</a>, <a href="The_Art_of_Computer_Programming.html" title="The Art of Computer Programming">The Art of Computer Programming</a></span></li>
+<li id="cite_note-galfis-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-galfis_2-0">^</a></b></span> <span class="reference-text"><a href="Bernard_A.html" class="mw-redirect" title="Bernard A. Galler">Bernard A. Galler</a> and <a href="Michael_J.html" title="Michael J. Fischer">Michael J. Fischer</a>. An improved equivalence algorithm. <i><a href="Communications_of_the_ACM.html" title="Communications of the ACM">Communications of the ACM</a>,</i> Volume 7, Issue 5 (May 1964), pages 301–303. The paper originating disjoint-set forests. <a rel="nofollow" class="external text" href="http://portal.acm.org/citation.cfm?doid=364099.364331">ACM Digital Library</a></span></li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external free" href="../../www.cs.toronto.edu/_hojjat/148s07/lectures/week5/07linked.pdf">http://www.cs.toronto.edu/~hojjat/148s07/lectures/week5/07linked.pdf</a></span></li>
+</ol>
+</div>
+<div role="navigation" class="navbox" aria-labelledby="Data_structures" style="padding:3px">
+<table class="nowraplinks hlist collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit">
+<tr>
+<th scope="col" class="navbox-title" colspan="2">
+<div class="plainlinks hlist navbar mini">
+<ul>
+<li class="nv-view"><a href="Template_Data_structures.html" title="Template:Data structures"><abbr title="View this template" style=";;background:none transparent;border:none;">v</abbr></a></li>
+<li class="nv-talk"><a href="Template_talk_Data_structures.html" title="Template talk:Data structures"><abbr title="Discuss this template" style=";;background:none transparent;border:none;">t</abbr></a></li>
+<li class="nv-edit"><a class="external text" href="http://en.wikipedia.org/w/index.php?title=Template:Data_structures&amp;action=edit"><abbr title="Edit this template" style=";;background:none transparent;border:none;">e</abbr></a></li>
+</ul>
+</div>
+<div id="Data_structures" style="font-size:114%"><a href="Data_structure.html" title="Data structure">Data structures</a></div>
+</th>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Types</th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="Collection_(abstract_data_type).html" title="Collection (abstract data type)">Collection</a></li>
+<li><a href="Container_(abstract_data_type).html" title="Container (abstract data type)">Container</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="Abstract_data_type.html" title="Abstract data type">Abstract</a></th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="Associative_array.html" title="Associative array">Associative array</a>
+<ul>
+<li><a href="Multimap.html" title="Multimap">Multimap</a></li>
+</ul>
+</li>
+<li><a href="List_(abstract_data_type).html" title="List (abstract data type)">List</a></li>
+<li><a href="Stack_(abstract_data_type).html" title="Stack (abstract data type)">Stack</a></li>
+<li><a href="Queue_(abstract_data_type).html" title="Queue (abstract data type)">Queue</a>
+<ul>
+<li><a href="Double-ended_queue.html" title="Double-ended queue">Double-ended queue</a></li>
+</ul>
+</li>
+<li><a href="Priority_queue.html" title="Priority queue">Priority queue</a>
+<ul>
+<li><a href="Double-ended_priority_queue.html" title="Double-ended priority queue">Double-ended priority queue</a></li>
+</ul>
+</li>
+<li><a href="Set_(abstract_data_type).html" title="Set (abstract data type)">Set</a>
+<ul>
+<li><a href="Set_(abstract_data_type).html#Multiset" title="Set (abstract data type)">Multiset</a></li>
+<li><a href="Disjoint-set_data_structure.html" title="Disjoint-set data structure">Disjoint-set</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="Array_data_structure.html" title="Array data structure">Arrays</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="Bit_array.html" title="Bit array">Bit array</a></li>
+<li><a href="Circular_buffer.html" title="Circular buffer">Circular buffer</a></li>
+<li><a href="Dynamic_array.html" title="Dynamic array">Dynamic array</a></li>
+<li><a href="Hash_table.html" title="Hash table">Hash table</a></li>
+<li><a href="Hashed_array_tree.html" title="Hashed array tree">Hashed array tree</a></li>
+<li><a href="Sparse_array.html" title="Sparse array">Sparse array</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><strong class="selflink">Linked</strong></th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="Association_list.html" title="Association list">Association list</a></li>
+<li><a href="Linked_list.html" title="Linked list">Linked list</a></li>
+<li><a href="Skip_list.html" title="Skip list">Skip list</a></li>
+<li><a href="Unrolled_linked_list.html" title="Unrolled linked list">Unrolled linked list</a></li>
+<li><a href="XOR_linked_list.html" title="XOR linked list">XOR linked list</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="Tree_(data_structure).html" title="Tree (data structure)">Trees</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="B-tree.html" title="B-tree">B-tree</a></li>
+<li><a href="Binary_search_tree.html" title="Binary search tree">Binary search tree</a>
+<ul>
+<li><a href="AA_tree.html" title="AA tree">AA tree</a></li>
+<li><a href="AVL_tree.html" title="AVL tree">AVL tree</a></li>
+<li><a href="Red%e2%80%93black_tree.html" title="Red–black tree">Red–black tree</a></li>
+<li><a href="Self-balancing_binary_search_tree.html" title="Self-balancing binary search tree">Self-balancing tree</a></li>
+<li><a href="Splay_tree.html" title="Splay tree">Splay tree</a></li>
+</ul>
+</li>
+<li><a href="Heap_(data_structure).html" title="Heap (data structure)">Heap</a>
+<ul>
+<li><a href="Binary_heap.html" title="Binary heap">Binary heap</a></li>
+<li><a href="Binomial_heap.html" title="Binomial heap">Binomial heap</a></li>
+<li><a href="Fibonacci_heap.html" title="Fibonacci heap">Fibonacci heap</a></li>
+</ul>
+</li>
+<li><a href="R-tree.html" title="R-tree">R-tree</a>
+<ul>
+<li><a href="R__tree.html" title="R* tree">R* tree</a></li>
+<li><a href="R%2b_tree.html" title="R+ tree">R+ tree</a></li>
+<li><a href="Hilbert_R-tree.html" title="Hilbert R-tree">Hilbert R-tree</a></li>
+</ul>
+</li>
+<li><a href="Trie.html" title="Trie">Trie</a>
+<ul>
+<li><a href="Hash_tree_(persistent_data_structure).html" title="Hash tree (persistent data structure)">Hash tree</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="Graph_(abstract_data_type).html" title="Graph (abstract data type)">Graphs</a></th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="Binary_decision_diagram.html" title="Binary decision diagram">Binary decision diagram</a></li>
+<li><a href="Directed_acyclic_graph.html" title="Directed acyclic graph">Directed acyclic graph</a></li>
+<li><a href="Deterministic_acyclic_finite_state_automaton.html" title="Deterministic acyclic finite state automaton">Directed acyclic word graph</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<td class="navbox-abovebelow" colspan="2">
+<div>
+<ul>
+<li><a href="List_of_data_structures.html" title="List of data structures">List of data structures</a></li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:22474945-0!*!0!!en!4!* and timestamp 20161114173412 and revision id 739576895
+ -->
+<noscript><img src="http://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Linked_data_structure&amp;oldid=739576895">https://en.wikipedia.org/w/index.php?title=Linked_data_structure&amp;oldid=739576895</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Help_Category.html" title="Help:Category">Categories</a>: <ul><li><a href="Category_Abstract_data_types.html" title="Category:Abstract data types">Abstract data types</a></li><li><a href="Category_Linked_lists.html" title="Category:Linked lists">Linked lists</a></li><li><a href="Category_Trees_(data_structures).html" title="Category:Trees (data structures)">Trees (data structures)</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-anonuserpage">Not logged in</li><li id="pt-anontalk"><a href="https://en.wikipedia.org/wiki/Special:MyTalk" title="Discussion about edits from this IP address [n]" accesskey="n">Talk</a></li><li id="pt-anoncontribs"><a href="https://en.wikipedia.org/wiki/Special:MyContributions" title="A list of edits made from this IP address [y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&amp;returnto=Linked+data+structure" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Linked+data+structure" title="You're encouraged to log in; however, it's not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Linked_data_structure.html"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="Talk_Linked_data_structure.html"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Linked_data_structure.html" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="../w/index13cb.html?title=Linked_data_structure&amp;action=edit"  title="Edit this page [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://en.wikipedia.org/w/index.php?title=Linked_data_structure&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://en.wikipedia.org/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search Wikipedia" title="Search Wikipedia [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-contents"><a href="Portal_Contents.html" title="Guides to browsing Wikipedia">Contents</a></li><li id="n-featuredcontent"><a href="Portal_Featured_content.html" title="Featured content – the best of Wikipedia">Featured content</a></li><li id="n-currentevents"><a href="Portal_Current_events.html" title="Find background information on current events">Current events</a></li><li id="n-randompage"><a href="https://en.wikipedia.org/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li><li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li><li id="n-shoplink"><a href="http://shop.wikimedia.org/" title="Visit the Wikipedia store">Wikipedia store</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-help"><a href="Help_Contents.html" title="Guidance on how to use and edit Wikipedia">Help</a></li><li id="n-aboutsite"><a href="Wikipedia_About.html" title="Find out about Wikipedia">About Wikipedia</a></li><li id="n-portal"><a href="Wikipedia_Community_portal.html" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="https://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-contactpage"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://en.wikipedia.org/wiki/Special:WhatLinksHere/Linked_data_structure" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.wikipedia.org/wiki/Special:RecentChangesLinked/Linked_data_structure" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="Wikipedia_File_Upload_Wizard.html" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="https://en.wikipedia.org/w/index.php?title=Linked_data_structure&amp;oldid=739576895" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.wikipedia.org/w/index.php?title=Linked_data_structure&amp;action=info" title="More information about this page">Page information</a></li><li id="t-wikibase"><a href="https://www.wikidata.org/wiki/Q6554356" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li><li id="t-cite"><a href="https://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&amp;page=Linked_data_structure&amp;id=739576895" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+						<li id="coll-create_a_book"><a href="https://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Linked+data+structure">Create a book</a></li><li id="coll-download-as-rdf2latex"><a href="https://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Linked+data+structure&amp;returnto=Linked+data+structure&amp;oldid=739576895&amp;writer=rdf2latex">Download as PDF</a></li><li id="t-print"><a href="https://en.wikipedia.org/w/index.php?title=Linked_data_structure&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+						<li class="interlanguage-link interwiki-sr"><a href="https://sr.wikipedia.org/wiki/Повезана_структура_података" title="Повезана структура података – Serbian" lang="sr" hreflang="sr" class="interlanguage-link-target">Српски / srpski</a></li><li class="uls-p-lang-dummy"><a href="#"></a></li>					</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Q6554356#sitelinks-wikipedia" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 15 September 2016, at 14:42.</li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="../../creativecommons.org/licenses/by-sa/3.0/index.html" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="http://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wikimediafoundation.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="Wikipedia_About.html" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="Wikipedia_General_disclaimer.html" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-cookiestatement"><a href="https://wikimediafoundation.org/wiki/Cookie_statement">Cookie statement</a></li>
+											<li id="footer-places-mobileview"><a href="http://en.m.wikipedia.org/w/index.php?title=Linked_data_structure&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://wikimediafoundation.org/"><img src="../static/images/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="../static/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":53,"wgHostname":"mw1241"});});</script>
+	</body>
+
+<!-- Mirrored from en.wikipedia.org/wiki/Linked_data_structure by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 19:58:49 GMT -->
+</html>

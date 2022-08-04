@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UnrealScript_security_considerations by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:52:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UnrealScript security considerations - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UnrealScript_security_considerations" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UnrealScript_security_considerations" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UnrealScript_security_considerations.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"UnrealScript_security_considerations","wgTitle":"UnrealScript security considerations","wgCurRevisionId":45100,"wgRevisionId":45100,"wgArticleId":29390,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Programming articles"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UnrealScript_security_considerations","wgRelevantArticleId":29390,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-UnrealScript_security_considerations skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Always snap to grid
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UnrealScript security considerations</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This article lists some basic security considerations concerning anything you create using <a href="UnrealScript.html" title="UnrealScript">UnrealScript</a>.</p>
+<blockquote class="quote-text">
+<p>If I prevent the client from clicking the wrong button, I'm safe, right?</p>
+<div class="quote-source">an unsuspecting modder</div>
+</blockquote>
+<p>Well, not really. The uncomfortable truth is, the client can do stuff the author can't predict. In fact, crackers (i.e. the evil kind of <a href="http://en.wikipedia.org/wiki/Hacker_(computer_security)" class="extiw" title="wp:Hacker (computer security)">Hackers</a>) have found many ways to make servers do things they would never done for regular players.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Kinds_of_exploits"><span class="tocnumber">1</span> <span class="toctext">Kinds of exploits</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Entry_points"><span class="tocnumber">2</span> <span class="toctext">Entry points</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Preventing_exploits"><span class="tocnumber">3</span> <span class="toctext">Preventing exploits</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Examples"><span class="tocnumber">4</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#UT_ZP_.22massmurder.22_cheat"><span class="tocnumber">4.1</span> <span class="toctext">UT ZP "massmurder" cheat</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#UT200x_cheat_loading"><span class="tocnumber">4.2</span> <span class="toctext">UT200x cheat loading</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#TAM_takeover_vulnerability"><span class="tocnumber">4.3</span> <span class="toctext">TAM takeover vulnerability</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#UTComp_takeover_vulnerability"><span class="tocnumber">4.4</span> <span class="toctext">UTComp takeover vulnerability</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="#Solution"><span class="tocnumber">4.4.1</span> <span class="toctext">Solution</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Kinds_of_exploits">Kinds of exploits</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UnrealScript_security_considerations?section=1" title="Edit section: Kinds of exploits">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>All the evil things crackers may do to a game server can be categorized as follows:</p>
+<dl>
+<dt>Cheating</dt>
+<dd>This involves all the annoying things to break the rules of the game, like wall hacks, speed hacks, aim bots, etc.</dd>
+<dt>Denial of service</dt>
+<dd>Anything that makes the game unplayable for technical reasons, for example hogging the server's CPU, causing network lag or simply crashing the server.</dd>
+<dt>Taking control</dt>
+<dd>The attacker breaches security measures to change game settings or make the server do things only the server administrator should be able to do.</dd>
+</dl>
+<h2><span class="mw-headline" id="Entry_points">Entry points</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UnrealScript_security_considerations?section=2" title="Edit section: Entry points">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Attackers have different ways to achieve any of the above exploits:</p>
+<dl>
+<dt>Console commands and configuration settings</dt>
+<dd>As simple as it may sound, but the game itself or any of the mods running on the server may make console commands or settings available to regular players that allow any of the above exploits. Of course that can be considered a serious bug in the game or mod and needs to be fixed. An example is a crash vulnerability in older versions of the <a href="Unreal_Engine.html" title="Unreal Engine" class="mw-redirect">Unreal Engine</a> that involved invalid class names. If a client was able to make the server try and load such an invalid class, the server would crash, and there were many ways to do that.</dd>
+<dt>Loading additional code to use existing code in unexpected ways</dt>
+<dd>This is probably the most common way to activate cheats nowadays. The client runs some loader program or otherwise "injects" custom code into the game client, be it via a <a href="http://en.wikipedia.org/wiki/DLL_file" class="extiw" title="wp:DLL file">DLL file</a> or an <a href="https://wiki.beyondunreal.com/edit/Unreal_package_file?redlink=1" class="new" title="Unreal package file (page does not exist)">Unreal package file</a>. In both cases the client gains access to new features, such as radars, aiming helps or even more powerful weapons.</dd>
+<dt>Modifying existing code</dt>
+<dd>Files that came with the game or belong to mods running on the server are modified in a way to unlock otherwise inaccessible features or to add custom code. This approach could be used to disable built-in features, such as no longer blinding the player after he was exposed to a flashbang explosion.</dd>
+<dt>External tools</dt>
+<dd>For some exploits it's not even necessary to run the game. As soon as the server provides other means of access, such as a web interface or some kind of query protocol, those can be used to trigger unwanted behavior.</dd>
+</dl>
+<h2><span class="mw-headline" id="Preventing_exploits">Preventing exploits</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UnrealScript_security_considerations?section=3" title="Edit section: Preventing exploits">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>So, how do you prevent malicious players from doing all these things, if you have so few control about what the client does? The answer is actually quite simple:</p>
+<dl>
+<dd><b>Do not trust the client. Ever!</b></dd>
+</dl>
+<p>Validate everything the client sends. "Client" in this case is not only the game client, but for other access methods (e.g. web interfaces) it includes the tools to access those (e.g. a web browser).</p>
+<p>Game client and server communicate through <a href="Replication.html" title="Replication" class="mw-redirect">replication</a>, particularly the client uses replicated functions to send anything to the server. Under no circumstances let the client call functions directly through replication if they can cause any of the following things:</p>
+<ul>
+<li>perform expensive operations, such as iterating over all actors or loading irrelevant objects (causes lag due to CPU hogging)</li>
+<li>cause function calls to be replicated to all or many clients (causes lag due to increased network traffic)</li>
+<li>instantiate actors/objects (uses up memory and CPU)</li>
+<li>modify admin-only settings</li>
+<li>execute arbitrary console commands</li>
+<li>modify the URL options for the next map (danger of admin password override!)</li>
+<li>set game-relevant default or instance properties to arbitrary values</li>
+</ul>
+<p>This list is likely incomplete, so apply common sense to figure out other potentially critical things. Whenever you create a function that is replicated to the server, ask yourself if a client could cause problems by calling it with special parameter values or simply by calling it extremely often. Do not rely on your own client code to prevent such things!</p>
+<p>Also you must not only watch out for what the client may send back to the server, but what you simply leave handled by the client.</p>
+<p>For instance you should make sure certain delays or important checks are not left in client-side code where they could be modified, If it would work and be more safe server-side or with proper replication.</p>
+<h2><span class="mw-headline" id="Examples">Examples</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UnrealScript_security_considerations?section=4" title="Edit section: Examples">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>A few examples that could have been avoided through better code design.</p>
+<h3><span class="mw-headline" id="UT_ZP_.22massmurder.22_cheat">UT ZP "massmurder" cheat</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UnrealScript_security_considerations?section=5" title="Edit section: UT ZP &quot;massmurder&quot; cheat">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This exploit was created based on the zero-ping InstaGib mod for UT. The ZP creators intended to eliminate ping problems in InstaGib games by moving hit detection from the server to the clients. Basically when the player fires, his client does not send the information "I fired" to the server. Instead it performs the firing logic and hit detection locally and tells the server "I hit player X", which causes that player to die. The massmurder cheat in essence told the server "I hit all players in view at once" - and the server believed it.</p>
+<p>This is a good example why the server should never trust the client. ZP lacked even the simplest validations, like how quickly the shots were fired. Ideally a ZP-like mod should not only validate shot intervals, but also check hit plausibility, i.e. perform a server-side hit test, possibly taking ping into account.</p>
+<h3><span class="mw-headline" id="UT200x_cheat_loading">UT200x cheat loading</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UnrealScript_security_considerations?section=6" title="Edit section: UT200x cheat loading">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>UT2003 and UT2004 contain lots of configurable entry points that allow loading of custom code. Making things worse, Epic turned off the server feature that disallowed clients with unknown code packages loaded because some mods were badly coded and didn't unload on clients when switching servers. UTComp in its earlier versions was one of the most popular mods with such a bug. Later when the Anti TCC and SafeGame anti-cheat mods included checks to compensate the disabled security features of the game, people blamed the security mods, like they blamed UT2004 before. The UTComp bug was fixed eventually, but other mods remained buggy and there are probably still such mods around. The UT2004 feature to detect such problems has never been enabled again and the best solution still is to let anti-cheat mods perform expensive searches for unknown code.</p>
+<h3><span class="mw-headline" id="TAM_takeover_vulnerability">TAM takeover vulnerability</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UnrealScript_security_considerations?section=7" title="Edit section: TAM takeover vulnerability">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The popular 3SPN mod is another example of careless code design related to server security. In its version 2.57 there was a bug that allowed attackers to take control of the entire server. The vulnerability was found and fixed in version 3, version 2.57 was patched separately.</p>
+<h3><span class="mw-headline" id="UTComp_takeover_vulnerability">UTComp takeover vulnerability</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UnrealScript_security_considerations?section=8" title="Edit section: UTComp takeover vulnerability">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This is the latest findings in critical vulnerabilities exposed by a mod. The cause is the same as the TAM vulnerability: Careless code design. Unlike the TAM vulnerability, however, this one is a <a href="http://en.wikipedia.org/wiki/zero-day_exploit" class="extiw" title="wp:zero-day exploit">zero-day exploit</a>. It was only found after it was actively abused to tamper with many UT2004 servers. It must have existed for a long time already and is not fixed yet. The exploit is know of being exploited since at least 2008-2009.</p>
+<p>The TAM and UTComp exploits have the same cause, a replicated function for an admin feature without any plausibility check. Basically if the attacker writes custom code to call that function, the server will execute code that was never supposed to be called by non-admin clients.</p>
+<h4><span class="mw-headline" id="Solution">Solution</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UnrealScript_security_considerations?section=9" title="Edit section: Solution">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>This exploit can be suppressed by disabling UTComp built-in voting system. If the voting system was the only reason you use UTComp, then please remove(also delete the .u file!) UTComp completely as it consists of more exploits than this.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.028 seconds
+Real time usage: 0.056 seconds
+Preprocessor visited node count: 55/1000000
+Preprocessor generated node count: 369/1000000
+Post‐expand include size: 247/2097152 bytes
+Template argument size: 116/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    8.839      1 - -total
+100.00%    8.839      1 - Template:Quote
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:29390-0!*!0!!en!*!* and timestamp 20161215141722 and revision id 45100
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UnrealScript_security_considerations?oldid=45100">https://wiki.beyondunreal.com/UnrealScript_security_considerations?oldid=45100</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Programming_articles.html" title="Category:Programming articles">Programming articles</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="UnrealScript_security_considerations.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				<li id="ca-talk"><a href="Talk_UnrealScript_security_considerations.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UnrealScript_security_considerations" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UnrealScript_security_considerations" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UnrealScript+security+considerations&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UnrealScript+security+considerations" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UnrealScript_security_considerations" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UnrealScript_security_considerations" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UnrealScript_security_considerations?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UnrealScript_security_considerations?oldid=45100" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UnrealScript_security_considerations" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 18:21, 21 April 2012.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":93});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UnrealScript_security_considerations by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:52:50 GMT -->
+</html>

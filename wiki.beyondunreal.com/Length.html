@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Length by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:53:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Dynamic arrays - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Dynamic_arrays" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Dynamic_arrays" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Dynamic_arrays.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="canonical" href="Dynamic_arrays.html" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Dynamic_arrays","wgTitle":"Dynamic arrays","wgCurRevisionId":45112,"wgRevisionId":45112,"wgArticleId":24057,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UnrealScript reference"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Dynamic_arrays","wgRelevantArticleId":24057,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"Length","wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgInternalRedirectTargetUrl":"/Dynamic_arrays#Accessing_and_modifying_the_array_length"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.redirect","mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Dynamic_arrays skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Gah - a solution with more questions. &#8211; EntropicLqd
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Dynamic arrays</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"><span class="mw-redirectedfrom">(Redirected from <a href="Lengthc25d.html?redirect=no" title="Length">Length</a>)</span></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><b>Dynamic arrays</b> are a special <a href="Types.html#Composite_types" title="Types">composite type</a> in <a href="UnrealScript.html" title="UnrealScript">UnrealScript</a> that contains a variable number of elements in a well-defined order. These elements all have the same type, called the "inner type" of the array.</p>
+<p>UnrealScript's dynamic arrays are a true <a href="http://en.wikipedia.org/wiki/dynamic_array" class="extiw" title="wp:dynamic array">dynamic array</a> implementation, i.e. unlike <a href="http://en.wikipedia.org/wiki/Java_(programming_language)" class="extiw" title="wp:Java (programming language)">Java</a>'s dynamically-allocated fixed-size arrays they can be resized at runtime. The type declaration syntax was available (almost) from the start, but <a href="https://wiki.beyondunreal.com/edit/Unreal_Engine_1?redlink=1" class="new" title="Unreal Engine 1 (page does not exist)">Unreal Engine 1</a> never provided any way to actually access or modify them at the UnrealScript level. In other words, dynamic arrays are fully usable in UnrealScript only in <a href="https://wiki.beyondunreal.com/edit/Unreal_Engine_2?redlink=1" class="new" title="Unreal Engine 2 (page does not exist)">Unreal Engine 2</a> and later.</p>
+<p>Unlike any other data type in UnrealScript, dynamic arrays have absolutely no support for <a href="Replication.html" title="Replication" class="mw-redirect">replication</a>. Attempting to replicate a dynamic array variable will have no effect on the remote instance of that variable. Attempting to use a dynamic array as parameter of a <a href="https://wiki.beyondunreal.com/edit/Replicated_function?redlink=1" class="new" title="Replicated function (page does not exist)">replicated function</a> will result in the parameter being empty when the function is executed on the remote side.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Declaration_syntax"><span class="tocnumber">1</span> <span class="toctext">Declaration syntax</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Usage_in_code"><span class="tocnumber">2</span> <span class="toctext">Usage in code</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Accessing_array_data"><span class="tocnumber">2.1</span> <span class="toctext">Accessing array data</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Accessing_and_modifying_the_array_length"><span class="tocnumber">2.2</span> <span class="toctext">Accessing and modifying the array length</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Inserting_and_removing_elements"><span class="tocnumber">2.3</span> <span class="toctext">Inserting and removing elements</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Additional_array_operations_in_Unreal_Engine_3"><span class="tocnumber">2.4</span> <span class="toctext">Additional array operations in Unreal Engine 3</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Usage_in_defaultproperties_block"><span class="tocnumber">3</span> <span class="toctext">Usage in defaultproperties block</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Additional_operations_in_Unreal_Engine_3"><span class="tocnumber">3.1</span> <span class="toctext">Additional operations in Unreal Engine 3</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Usage_in_UnrealEd"><span class="tocnumber">4</span> <span class="toctext">Usage in UnrealEd</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Declaration_syntax">Declaration syntax</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Dynamic_arrays?section=1" title="Edit section: Declaration syntax">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Dynamic arrays are declared as part of the type:</p>
+<pre>
+<b>array&lt;</b> type <b>&gt;</b>
+</pre>
+<p>The inner type of a dynamic array can be a <a href="Class_limiter.html" title="Class limiter" class="mw-redirect">class limiter</a> or the name of any other non-array type, including <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a> types. Note that <a href="https://wiki.beyondunreal.com/edit/Unreal_Engine_2?redlink=1" class="new" title="Unreal Engine 2 (page does not exist)">Unreal Engine 2</a> does not support dynamic arrays of type <a href="Bool.html" title="Bool" class="mw-redirect">bool</a> and the compiler will complain accordingly. Dynamic arrays of bool values are possible in <a href="Unreal_Engine_3.html" title="Unreal Engine 3">Unreal Engine 3</a>, though.</p>
+<p>Be careful when declaring a dynamic array of a <a href="Class_limiter.html" title="Class limiter" class="mw-redirect">class limiter</a> or <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a> type. The compiler recognized two consecutive <code>&gt;</code> characters as the <a href="Operator.html" title="Operator" class="mw-redirect">operator</a> <code>&gt;&gt;</code> and will fail with a syntax error. Insert whitespace to get around this limitation:</p>
+<pre>
+<b>array&lt; class&lt;</b> classname <b>&gt; &gt;</b>
+</pre>
+<p>A dynamic array type can be used in all places that allow a type definition. The following example code defines a class-global dynamic array of bytes and a function that uses dynamic arrays as return type and as the type of a parameter and a local variable:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">var</span> array<span class="sy0">&lt;</span>byte<span class="sy0">&gt;</span> Byte<span class="re1">Array</span>&lt; SEMI &gt;
+ 
+<span class="kw1">function</span> array<span class="sy0">&lt;</span>int<span class="sy0">&gt;</span> RoundAll<span class="br0">(</span>array<span class="sy0">&lt;</span>float<span class="sy0">&gt;</span> Values<span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw1">local</span> array<span class="sy0">&lt;</span>int<span class="sy0">&gt;</span> Result;
+ 
+  <span class="co1">//...</span>
+ 
+  <span class="kw2">return</span> Result;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>The only exception are type declarations of <a href="Variables.html" title="Variables">variables</a>, <a href="Struct.html" title="Struct" class="mw-redirect">struct</a> members and <a href="Function.html" title="Function" class="mw-redirect">function</a> parameters that are declared as <a href="Static_arrays.html" title="Static arrays">static arrays</a>. In this case, the dynamic array declaration is ignored.</p>
+<h2><span class="mw-headline" id="Usage_in_code">Usage in code</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Dynamic_arrays?section=2" title="Edit section: Usage in code">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Dynamic arrays provide various ways for reading and manipulating the content and length of the array. All of these must be done through variables or struct members, dynamic arrays returned from functions must be assigned to a variable first.</p>
+<h3><span class="mw-headline" id="Accessing_array_data">Accessing array data</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Dynamic_arrays?section=3" title="Edit section: Accessing array data">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The entire array data can be passed around if the target variable or function parameter or return type is declared as a dynamic array of the same inner type as the source array. The array data is copied in this process, so afterwards there are two independent arrays with the same data, modifications to one of them won't affect the other array's data in any way.</p>
+<p>To access values of individual array elements, use the following syntax:</p>
+<pre>
+<i>arrayreference</i><b>[</b><i>index</i><b>]</b>
+</pre>
+<p>The index may be any non-negative that is smaller than the length of the array. Any other values, i.e. negative numbers or values &gt;= the length of the array, will return the null value of the array's inner type and write an out-of-bounds warning message to the main log file.</p>
+<p>The same syntax can be used for assigning values to individual array elements. In this case the index must be non-negative, but may exceed the array length. If the index is equal to or greater than the current length of the array, the array grows so its last element has the specified index, i.e. its length is now <code>index + 1</code>. If you can estimate the final number of elements an array will have, you can resize it manually before assigning the values.</p>
+<p>An access method only available in <a href="Unreal_Engine_3.html" title="Unreal Engine 3">Unreal Engine 3</a> is iteration via the <a href="Foreach_loop-2.html" title="Foreach loop" class="mw-redirect">foreach loop</a>:</p>
+<pre>
+<b>foreach</b> <i>arrayreference</i><b>(</b><i>valuevariable</i> <b>,</b> [<i>indexvariable</i>]<b>) {</b>
+  ...
+<b>}</b>
+</pre>
+<p>You can just loop over the values, or also let the loop fill in a variable with the current element's index. The value variable must be of the same type as the array's inner type, the index variable must be of type <a href="Int.html" title="Int" class="mw-redirect">int</a>. In <a href="https://wiki.beyondunreal.com/edit/Unreal_Engine_2?redlink=1" class="new" title="Unreal Engine 2 (page does not exist)">Unreal Engine 2</a> you have to use a regular <a href="For_loop.html" title="For loop">for loop</a> with a counter variable to iterate over the array:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw2">for</span> <span class="br0">(</span>index <span class="sy0">=</span> <span class="nu0">0</span>; index <span class="sy0">&lt;</span> arrayreference.<span class="me0">Length</span>; <span class="sy0">++</span>index<span class="br0">)</span> <span class="br0">{</span>
+  value <span class="sy0">=</span> arrayreference<span class="br0">[</span>index<span class="br0">]</span>;
+  <span class="co1">//...</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="Accessing_and_modifying_the_array_length">Accessing and modifying the array length</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Dynamic_arrays?section=4" title="Edit section: Accessing and modifying the array length">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The length of an array can be retrieved with the following syntax:</p>
+<pre>
+<i>arrayreference</i><b>.Length</b>
+</pre>
+<p>The length of an array can be set with the following syntax:</p>
+<pre>
+<i>arrayreference</i><b>.Length=</b><i>Value</i>
+</pre>
+<p>If used on the left side of the simple assignment operator, this syntax can also be used to add or remove elements to/from the array. Like all operations that add elements to the array, this will initialize the new elements with the null value of the array's inner type. <b>Important:</b> The <i>Length</i> attribute must not be used on the left side of combined assignment operators or passed to a function parameter declared with the <i>out</i> modifier!</p>
+<p>It is possible to clear a dynamic array by setting its length variable to 0.</p>
+<p>Any reduction or increase to the array's Length variable will add or remove elements starting at the end of the array.</p>
+<h3><span class="mw-headline" id="Inserting_and_removing_elements">Inserting and removing elements</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Dynamic_arrays?section=5" title="Edit section: Inserting and removing elements">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>To insert elements anywhere in the array, you can use the following syntax:</p>
+<pre>
+<i>arrayreference</i><b>.Insert(</b><i>index</i><b>,</b> <i>count</i><b>);</b>
+</pre>
+<p>This will insert <i>count</i> elements into the array, so that the first inserted element ends up at the specified <i>index</i>. The element originally located at <i>index</i> and any following elements are moved to make room for the new elements. The inserted elements are initialized with null values.</p>
+<p>To remove elements from anywhere in the array, use the following syntax:</p>
+<pre>
+<i>arrayreference</i><b>.Remove(</b><i>index</i><b>,</b> <i>count</i><b>);</b>
+</pre>
+<p>This will remove <i>count</i> successive elements, starting with the element at <i>index</i>. Elements after the removed array section are moved to close the gap.</p>
+<h3><span class="mw-headline" id="Additional_array_operations_in_Unreal_Engine_3">Additional array operations in Unreal Engine 3</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Dynamic_arrays?section=6" title="Edit section: Additional array operations in Unreal Engine 3">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>To add empty elements at the end of the array, use:</p>
+<pre>
+<i>arrayreference</i><b>.Add(</b><i>count</i><b>);</b>
+</pre>
+<p>This has the same effect as any of the following operations, but the intention is much more obvious:</p>
+<ul>
+<li><code>arrayreference.Length = arrayreference.Length + count;</code></li>
+<li><code>arrayreference.Insert(arrayreference.Length, count);</code></li>
+</ul>
+<p>To add a single value to the end of the array, use:</p>
+<pre>
+<i>arrayreference</i><b>.AddItem(</b><i>value</i><b>);</b>
+</pre>
+<p>This is basically the same as <code>arrayreference[arrayreference.Length] = value;</code>.</p>
+<p>Inserting individual items in the middle of the array can be done with the following syntax:</p>
+<pre>
+<i>arrayreference</i><b>.InsertItem(</b><i>index</i><b>,</b> <i>value</i><b>);</b>
+</pre>
+<p>The corresponding Unreal Engine 2 code would be <code>arrayreference.Insert(index, 1); arrayreference[index] = value;</code>, i.e. two statements.</p>
+<p>To remove all occurrences of a specific value from the array, you can use:</p>
+<pre>
+<i>arrayreference</i><b>.RemoveItem(</b><i>value</i><b>);</b>
+</pre>
+<p>This will perform a linear search for the value and remove any instance it finds. In Unreal Engine 2 you need something like this <a href="For_loop.html" title="For loop">for loop</a> to do the same:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">local</span> <span class="kw5">int</span> i;
+ 
+<span class="kw2">for</span> <span class="br0">(</span>i <span class="sy0">=</span> <span class="nu0">0</span>; i <span class="sy0">&lt;</span> arrayreference.<span class="me0">length</span>; <span class="sy0">++</span>i<span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw2">if</span> <span class="br0">(</span>arrayreference<span class="br0">[</span>i<span class="br0">]</span> <span class="sy0">==</span> value<span class="br0">)</span> <span class="br0">{</span>
+    arrayreference.<span class="me0">Remove</span><span class="br0">(</span>i<span class="sy0">--</span>, <span class="nu0">1</span><span class="br0">)</span>;
+  <span class="br0">}</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Unreal Engine 3 also offers two methods to search for values in an array. The simple version just looks for a value:</p>
+<pre>
+<i>arrayreference</i><b>.Find(</b><i>value</i><b>)</b>
+</pre>
+<p>This returns the index of the first element containing the specified value. If the array doesn't contain this value, <code>INDEX_NONE</code> is returned, i.e. the value -1. For dynamic array of structs, a second version of <i>Find</i> is available, which looks for values of struct members:</p>
+<pre>
+<i>arrayreference</i><b>.Find(</b><i>membername</i><b>,</b> <i>value</i><b>)</b>
+</pre>
+<p>The member name must be a <a href="Name.html" title="Name" class="mw-redirect">name</a> literal specifying the name of a struct member variable.</p>
+<p>Starting with newer versions of the Unreal Engine 3 there is also a simply way to sort an array:</p>
+<pre>
+<i>arrayreference</i><b>.Sort(</b><i>comparefunction</i><b>)</b>
+</pre>
+<p>The <i>comparefunction</i> is the name of a function that takes two parameters of the array's element type and returns a value of type <a href="Int.html" title="Int" class="mw-redirect">int</a>. Negative return values indicate that the first parameter should come after the second, i.e. the values are not in order. Positive return values mean the first element should come before the second, i.e. they are in order. Zero means the elements are equal and thus in order. The magnitude of the positive or negative return value don't matter, only its sign.</p>
+<h2><span class="mw-headline" id="Usage_in_defaultproperties_block">Usage in defaultproperties block</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Dynamic_arrays?section=7" title="Edit section: Usage in defaultproperties block">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The default data for a dynamic array can either be specified per element, similar to <a href="Static_arrays.html" title="Static arrays">static arrays</a>, or for the entire array at once.</p>
+<p>The per-element syntax is identical to that of static arrays:</p>
+<pre>
+<i>arrayvariable</i><b>[</b><i>index</i><b>] =</b> <i>value</i>
+</pre>
+<p>For historical reasons, you can also use round parentheses to enclose the array index.</p>
+<p>To specify all elements at once, or to clear an array from a superclass, use the following syntax:</p>
+<pre>
+<i>arrayvariable</i> <b>= (</b><i>value</i><b>,</b><i>value</i><b>,</b>...<b>)</b>
+</pre>
+<p>This will set the default value of the array variable to contain the specified number of elements with the specified values. A pair of empty parentheses, i.e. <code>()</code>, will explicitly clear the array. As always with <a href="Defaultproperties.html" title="Defaultproperties">defaultproperties</a>, you can not execute any code here. For Unreal Engine 2 this includes not being able to use declared <a href="Constants.html" title="Constants">constants</a>.</p>
+<h3><span class="mw-headline" id="Additional_operations_in_Unreal_Engine_3">Additional operations in Unreal Engine 3</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Dynamic_arrays?section=8" title="Edit section: Additional operations in Unreal Engine 3">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>In Unreal Engine 3 you can use more convenient operations to manipulate the default values of dynamic arrays based on their parent class default data:</p>
+<ul>
+<li><code><i>arrayvariable</i><b>.Empty</b></code> clears the entire array</li>
+<li><code><i>arrayvariable</i><b>.Add(</b><i>value</i><b>)</b></code> adds the value to the end of the array</li>
+<li><code><i>arrayvariable</i><b>.Remove(</b><i>value</i><b>)</b></code> removes all occurrences of the specified value from the array</li>
+<li><code><i>arrayvariable</i><b>.RemoveIndex(</b><i>index</i><b>)</b></code> removes the element with the specified index</li>
+<li><code><i>arrayvariable</i><b>.Replace(</b><i>search</i><b>,</b><i>replacement</i><b>)</b></code> replaces all occurrences of the <i>search</i> value with the <i>replacement</i> value</li>
+</ul>
+<p>These operations can be mixed with regular array default values and will be "executed" at compile-time in the order they are found.</p>
+<p>Suppose, class X contains an array called <i>values</i> that was filled with the following default data:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+values <span class="sy0">=</span> <span class="br0">(</span><span class="nu0">1</span>,<span class="nu0">2</span>,<span class="nu0">3</span>,<span class="nu0">4</span>,<span class="nu0">5</span>,<span class="nu0">4</span>,<span class="nu0">3</span>,<span class="nu0">2</span>,<span class="nu0">1</span><span class="br0">)</span>
+</pre></div>
+</div>
+<p>Now a class Y that extends X could modify the inherited default array data:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+values.<span class="me0">Remove</span><span class="br0">(</span><span class="nu0">4</span><span class="br0">)</span>
+values.<span class="me0">Replace</span><span class="br0">(</span><span class="nu0">1</span>,<span class="nu0">10</span><span class="br0">)</span>
+values.<span class="me0">Add</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span>
+</pre></div>
+</div>
+<p>Its actual default array data now is <code>(10,2,3,5,3,2,10,1)</code>.</p>
+<p>Download (not export!) the original UT3 <a href="https://wiki.beyondunreal.com/edit/UnrealScript_source_files?redlink=1" class="new" title="UnrealScript source files (page does not exist)">UnrealScript source files</a> for more examples.</p>
+<h2><span class="mw-headline" id="Usage_in_UnrealEd">Usage in UnrealEd</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Dynamic_arrays?section=9" title="Edit section: Usage in UnrealEd">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="thumb tright">
+<div class="thumbinner" style="width:365px;"><a href="File_UnrealEd3-Properties-DynArrayButtons.html" class="image"><img alt="" src="w/images/UnrealEd3-Properties-DynArrayButtons.png" width="363" height="54" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="File_UnrealEd3-Properties-DynArrayButtons.html" class="internal" title="Enlarge"></a></div>
+An actor's <a href="UE2_Actor_properties_(UT2004).html#Skins" title="UE2:Actor properties (UT2004)">Skins</a> material array property in <a href="UnrealEd_3.html" title="UnrealEd 3" class="mw-redirect">UnrealEd 3</a>.</div>
+</div>
+</div>
+<p>Using and modifying dynamic array properties in <a href="UnrealEd.html" title="UnrealEd" class="mw-redirect">UnrealEd</a> property windows is pretty straight-forward with the buttons provided by the property window.</p>
+<div class="thumb tright">
+<div class="thumbinner" style="width:377px;"><a href="File_UT3-UnrealEd-Properties-DynArrayButtons.html" class="image"><img alt="" src="w/images/UT3-UnrealEd-Properties-DynArrayButtons.png" width="375" height="63" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="File_UT3-UnrealEd-Properties-DynArrayButtons.html" class="internal" title="Enlarge"></a></div>
+The <a href="UE3_WorldInfo_(UT3).html#GameTypesSupportedOnThisMap" title="UE3:WorldInfo (UT3)">GameTypesSupportedOnThisMap</a> class array property in <a href="UT3_Editor.html" title="UT3 Editor" class="mw-redirect">UT3 Editor</a>'s <a href="https://wiki.beyondunreal.com/edit/World_properties?redlink=1" class="new" title="World properties (page does not exist)">world properties</a>.</div>
+</div>
+</div>
+<dl>
+<dt><a href="File_UT3-UnrealEd-Properties-Empty.html" class="image"><img alt="UT3-UnrealEd-Properties-Empty.png" src="w/images/UT3-UnrealEd-Properties-Empty.png" width="15" height="15" /></a> Empty</dt>
+<dd>Removes all array elements.</dd>
+<dt><a href="File_UT3-UnrealEd-Properties-Add.html" class="image"><img alt="UT3-UnrealEd-Properties-Add.png" src="w/images/UT3-UnrealEd-Properties-Add.png" width="15" height="15" /></a> Add</dt>
+<dd>Adds an empty element at the end of the array.</dd>
+<dt><a href="File_UT3-UnrealEd-Properties-Duplicate.html" class="image"><img alt="UT3-UnrealEd-Properties-Duplicate.png" src="w/images/UT3-UnrealEd-Properties-Duplicate.png" width="15" height="15" /></a> Duplicate</dt>
+<dd>Duplicates the array element. (This button is not available in <a href="UnrealEd_3.html" title="UnrealEd 3" class="mw-redirect">UnrealEd 3</a>.)</dd>
+<dt><a href="File_UT3-UnrealEd-Properties-Remove.html" class="image"><img alt="UT3-UnrealEd-Properties-Remove.png" src="w/images/UT3-UnrealEd-Properties-Remove.png" width="15" height="15" /></a> Delete</dt>
+<dd>Removes this array element.</dd>
+<dt><a href="File_UT3-UnrealEd-Properties-Insert.html" class="image"><img alt="UT3-UnrealEd-Properties-Insert.png" src="w/images/UT3-UnrealEd-Properties-Insert.png" width="15" height="15" /></a> Insert</dt>
+<dd>Inserts an empty element above this one.</dd>
+</dl>
+<div style="clear:both;"></div>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Dynamic_arrays?section=10" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="http://udn.epicgames.com/Two/UnrealScriptReference#DynArray" class="extiw" title="udn2:UnrealScriptReference">UnrealScript Language Reference/Dynamic Arrays</a> (Unreal Engine 2)</li>
+<li><a href="http://udn.epicgames.com/Three/UnrealScriptReference#DynArray" class="extiw" title="udn3:UnrealScriptReference">UnrealScript Language Reference/Dynamic Arrays</a> (Unreal Engine 3)</li>
+</ul>
+<table class="navbox nowraplinks" style="">
+<tr class="navbox-header">
+<th colspan="2" class="navbox-header" style="">
+<div style="position:relative; width:100%; white-space:nowrap;">
+<div class="noprint plainlinks" style="background-color:transparent; padding:0; font-weight:normal; font-size:xx-small; white-space:nowrap; position:absolute;left:0.5em;"><a href="Template_Navbox_unrealscript.html" title="Template:Navbox unrealscript"><span title="View this template">v</span></a>&#160;•&#160;<a href="Template_talk_Navbox_unrealscript.html" title="Template talk:Navbox unrealscript"><span title="Discussion about this template">d</span></a>&#160;•&#160;<a rel="nofollow" class="external text" href="https://wiki.beyondunreal.com/edit/Template:Navbox_unrealscript"><span title="You can edit this template. Please use the preview button before saving.">e</span></a></div>
+<a href="UnrealScript_reference.html" title="UnrealScript reference">UnrealScript reference</a></div>
+</th>
+</tr>
+<tr class="navbox-body odd">
+<th class="navbox-group" style="">Declarations</th>
+<td class="navbox-body" style=""><a href="Preprocessor.html" title="Preprocessor">Preprocessor</a>&#160;• <a href="Classes.html" title="Classes">Classes</a>&#160;• <a href="Interfaces.html" title="Interfaces">Interfaces</a>&#160;• <a href="Cpptext.html" title="Cpptext">Cpptext</a>&#160;• <a href="Constants.html" title="Constants">Constants</a>&#160;• <a href="Enums.html" title="Enums">Enums</a>&#160;• <a href="Structs.html" title="Structs">Structs</a>&#160;• <a href="Variables.html" title="Variables">Variables</a>&#160;(<a href="Metadata.html" title="Metadata">Metadata</a>)&#160;• <a href="Replication_block.html" title="Replication block">Replication block</a>&#160;• <a href="Operators.html" title="Operators">Operators</a>&#160;• <a href="Delegates.html" title="Delegates">Delegates</a>&#160;• <a href="Functions.html" title="Functions">Functions</a>&#160;• <a href="States.html" title="States">States</a>&#160;• <a href="Defaultproperties.html" title="Defaultproperties">Defaultproperties</a>&#160;(<a href="Subobjects.html" title="Subobjects">Subobjects</a>)</td>
+</tr>
+<tr class="navbox-body even">
+<th class="navbox-group" style=""><a href="Types.html" title="Types">Types</a></th>
+<td class="navbox-body" style=""><a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;• <a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;• <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;• <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;• <a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;• <a href="String.html" title="String">string</a>&#160;• <a href="Types.html#Reference_types" title="Types">Object</a>&#160;• <a href="Class_limiter.html#Class" title="Class limiter" class="mw-redirect">Class</a>&#160;• <a href="Enums.html" title="Enums">Enums</a>&#160;• <a href="Structs.html" title="Structs">Structs</a>&#160;(<a href="Vector.html" title="Vector">Vector</a>&#160;⋅ <a href="Rotator.html" title="Rotator">Rotator</a>&#160;⋅ <a href="Quat.html" title="Quat" class="mw-redirect">Quat</a>&#160;⋅ <a href="Color.html" title="Color">Color</a>)&#160;• <a href="Static_arrays.html" title="Static arrays">Static arrays</a>&#160;• <strong class="selflink">Dynamic arrays</strong>&#160;• <a href="Delegates.html" title="Delegates">Delegates</a>&#160;• <a href="Typecasting.html" title="Typecasting">Typecasting</a></td>
+</tr>
+<tr class="navbox-body odd">
+<th class="navbox-group" style=""><a href="Literals.html" title="Literals">Literals</a></th>
+<td class="navbox-body" style=""><a href="Literals.html#Boolean_values" title="Literals">Boolean</a>&#160;• <a href="Literals.html#Float_numbers" title="Literals">Float</a>&#160;• <a href="Literals.html#Integer_numbers" title="Literals">Integer</a>&#160;• <a href="Literals.html#Names" title="Literals">Names</a>&#160;• <a href="Literals.html#Objects" title="Literals">Objects</a> (<a href="None.html" title="None" class="mw-redirect">None</a>&#160;⋅ <a href="Self.html" title="Self" class="mw-redirect">Self</a>)&#160;• <a href="Literals.html#Vectors" title="Literals">Vectors</a>&#160;• <a href="Literals.html#Rotators" title="Literals">Rotators</a>&#160;• <a href="Literals.html#Strings" title="Literals">Strings</a></td>
+</tr>
+<tr class="navbox-body even">
+<th class="navbox-group" style=""><a href="Flow_control.html" title="Flow control">Flow</a></th>
+<td class="navbox-body" style=""><a href="GoTo_statement.html" title="GoTo statement">GoTo</a>&#160;• <a href="If_statement.html" title="If statement">If</a>&#160;• <a href="Assert_statement.html" title="Assert statement">Assert</a>&#160;• <a href="Return_statement.html" title="Return statement">Return</a>&#160;• <a href="Stop_statement.html" title="Stop statement">Stop</a>&#160;• <a href="Switch_statement.html" title="Switch statement">Switch</a>&#160;• <a href="While_loop.html" title="While loop">While</a>&#160;• <a href="Do...html" title="Do...Until loop">Do...Until</a>&#160;• <a href="For_loop.html" title="For loop">For</a>&#160;• <a href="ForEach_loop.html" title="ForEach loop">ForEach</a>&#160;• <a href="Break_statement.html" title="Break statement">Break</a>&#160;• <a href="Continue_statement.html" title="Continue statement">Continue</a></td>
+</tr>
+<tr class="navbox-body odd">
+<th class="navbox-group" style=""><a href="Specifiers.html" title="Specifiers">Specifiers</a></th>
+<td class="navbox-body" style=""><a href="Function_call_specifiers.html#Super" title="Function call specifiers">Super</a>&#160;• <a href="Function_call_specifiers.html#Global" title="Function call specifiers">Global</a>&#160;• <a href="Functions.html#Syntax_3" title="Functions">Static</a>&#160;• <a href="Variables.html#Accessing_variables" title="Variables">Default</a>&#160;• <a href="Constants.html#Usage" title="Constants">Const</a></td>
+</tr>
+<tr class="navbox-body even">
+<th class="navbox-group" style=""><a href="UnrealScript.html" title="UnrealScript">UnrealScript</a></th>
+<td class="navbox-body" style=""><a href="UnrealScript_syntax.html" title="UnrealScript syntax">Syntax</a>&#160;• <a href="UC_File.html" title="UC File">.UC</a>&#160;• <a href="https://wiki.beyondunreal.com/edit/UCI_File?redlink=1" class="new" title="UCI File (page does not exist)">.UCI</a>&#160;• <a href="UPKG_File.html" title="UPKG File">.UPKG</a>&#160;• <a href="Comments.html" title="Comments">Comments</a>&#160;• <a href="Compiler_directives.html" title="Compiler directives">#directives</a>&#160;• <a href="https://wiki.beyondunreal.com/edit/Native_coding?redlink=1" class="new" title="Native coding (page does not exist)">Native</a></td>
+</tr>
+</table>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.184 seconds
+Real time usage: 0.402 seconds
+Preprocessor visited node count: 252/1000000
+Preprocessor generated node count: 1028/1000000
+Post‐expand include size: 10669/2097152 bytes
+Template argument size: 4195/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   60.083      1 - -total
+ 84.74%   50.913      1 - Template:Navbox_unrealscript
+ 61.59%   37.005      1 - Template:Navbox
+ 15.25%    9.165      1 - Template:Tnavbar
+ 14.69%    8.824      1 - Template:Clear
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:24057-0!*!0!!en!5!* and timestamp 20161215164410 and revision id 45112
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Dynamic_arrays?oldid=45112#Accessing_and_modifying_the_array_length">https://wiki.beyondunreal.com/Dynamic_arrays?oldid=45112#Accessing_and_modifying_the_array_length</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_UnrealScript_reference.html" title="Category:UnrealScript reference">UnrealScript reference</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="Dynamic_arrays.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				<li id="ca-talk"><a href="Talk_Dynamic_arrays.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Dynamic_arrays" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Dynamic_arrays" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Dynamic+arrays&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Dynamic+arrays" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Dynamic_arrays" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Dynamic_arrays" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Dynamic_arrays?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Dynamic_arrays?oldid=45112" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Dynamic_arrays" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 18:11, 15 May 2012.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":80});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Length by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:53:40 GMT -->
+</html>

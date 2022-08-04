@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Setting_Up_A_Subversion_Server by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Setting Up A Subversion Server - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_A_Subversion_Server" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_A_Subversion_Server" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_Setting_Up_A_Subversion_Server.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Setting_Up_A_Subversion_Server","wgTitle":"Setting Up A Subversion Server","wgCurRevisionId":7824,"wgRevisionId":7824,"wgArticleId":2954,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Tutorial"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Setting_Up_A_Subversion_Server","wgRelevantArticleId":2954,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Setting_Up_A_Subversion_Server skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Cogito, ergo sum
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Setting Up A Subversion Server</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Setting_up_a_Subversion_Server_under_Windows"><span class="tocnumber">1</span> <span class="toctext">Setting up a Subversion Server under Windows</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Download_the_Windows_Resource_Kit_Tools"><span class="tocnumber">1.1</span> <span class="toctext">Download the Windows Resource Kit Tools</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Install_the_Windows_Resource_Kit_Tools"><span class="tocnumber">1.2</span> <span class="toctext">Install the Windows Resource Kit Tools</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Configure_Subversion_to_Run_as_a_Service"><span class="tocnumber">1.3</span> <span class="toctext">Configure Subversion to Run as a Service</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#The_Easy_Alternative"><span class="tocnumber">2</span> <span class="toctext">The Easy Alternative</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Controlling_Access"><span class="tocnumber">3</span> <span class="toctext">Controlling Access</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Related_Topics"><span class="tocnumber">4</span> <span class="toctext">Related Topics</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Other_Resources"><span class="tocnumber">5</span> <span class="toctext">Other Resources</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Setting_up_a_Subversion_Server_under_Windows">Setting up a Subversion Server under Windows</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_A_Subversion_Server?section=1" title="Edit section: Setting up a Subversion Server under Windows">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>There are a few ways to set up a Subversion server on your Windows machine. The easiest way, is just to put a shortcut to the <tt>svnserve.exe</tt> program with appropriate arguments in your Startup folder, but this has some drawbacks:</p>
+<ul>
+<li>It's only running when you're logged in.</li>
+<li>It causes an empty command window to show up on your desktop. This can be minimized, but it still shows up in the taskbar.</li>
+</ul>
+<p><br />
+A better way would actually be to set up the Subversion server as a Windows service, which avoids both of these problems. This document will describe how to do this.</p>
+<p><br /></p>
+<h3><span class="mw-headline" id="Download_the_Windows_Resource_Kit_Tools">Download the Windows Resource Kit Tools</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_A_Subversion_Server?section=2" title="Edit section: Download the Windows Resource Kit Tools">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The "Windows Server 2003 Resource Kit Tools" package can be downloaded from Microsoft's download site (<a rel="nofollow" class="external free" href="http://www.microsoft.com/downloads">http://www.microsoft.com/downloads</a>) under the "System Management Tools" download category (or directly from <a rel="nofollow" class="external free" href="http://www.microsoft.com/downloads/details.aspx?FamilyID=9d467a69-57ff-4ae7-96ee-b18c4790cffd&amp;displaylang=en">http://www.microsoft.com/downloads/details.aspx?FamilyID=9d467a69-57ff-4ae7-96ee-b18c4790cffd&amp;displaylang=en</a>). Note that Microsoft does seem to have a number of confusingly-similarly named packages available for download from their site. You're looking for the one which has a file name of <tt>rktools.exe</tt>.</p>
+<p><br /></p>
+<h3><span class="mw-headline" id="Install_the_Windows_Resource_Kit_Tools">Install the Windows Resource Kit Tools</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_A_Subversion_Server?section=3" title="Edit section: Install the Windows Resource Kit Tools">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>As with Subversion, this is a simple matter of double-clicking the downloaded installer and following the prompts. After doing this, to test that the installation all went ok, open a command prompt window (Start-&gt;Run, "<tt>cmd</tt>"), and type "<tt>instsrv</tt>". You should get a brief message describing INSTSRV's command syntax. (If you don't, try looking for <tt>INSTSRV.EXE</tt> in the location you told the Resource Kit to install, and use its full path name instead)</p>
+<p><br /></p>
+<h3><span class="mw-headline" id="Configure_Subversion_to_Run_as_a_Service">Configure Subversion to Run as a Service</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_A_Subversion_Server?section=4" title="Edit section: Configure Subversion to Run as a Service">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>First we will need to install an appropriately-named service using the <tt>SRVANY.EXE</tt> utility provided by the Resource Kit. To do this, you will need to open a command window and type the following:</p>
+<pre>
+ instsrv "Subversion" "C:\Program Files\Windows Resource Kits\Tools\srvany.exe"  
+ 
+</pre>
+<p>(This assumes you've installed the Resource Kit Tools in the default location of <tt>C:\Program Files\Windows Resource Kits\Tools</tt>. If you installed it somewhere else, obviously, you'll need to change the path to <tt>srvany.exe</tt> appropriately.)</p>
+<p><br />
+The SRVANY program is designed to allow any program to run as a service, but we still need to tell it <i>what</i> program it's supposed to be running. Unfortunately, this step requires a little bit of fiddling with the Windows Registry.</p>
+<p><br />
+<b>NOTE:</b> Changing the wrong things in the Registry can seriously break your Windows system. Always be careful when using the Windows Registry Editor, and be sure to back up your system before doing changes like this. (That having been said, if you're careful about what you change, using the Registry Editor usually isn't as scary as it sounds)</p>
+<p>Start up the Registry Editor by choosing "Run..." from the Start menu and typing the following:</p>
+<pre>
+ regedt32  
+</pre>
+<p><br /></p>
+<p>On the left side of the Registry Editor is what looks like a directory tree view (these are locations in the registry, not actual directories on the disk, but the navigation is the same). Find the following path and select this folder:</p>
+<pre>
+ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Subversion  
+</pre>
+<p><br /></p>
+<ol>
+<li>From the Edit pulldown menu, select New-&gt;Key</li>
+<li>For the name of the new key, type "Parameters"</li>
+<li>From the Edit pulldown menu, select New-&gt;String Value</li>
+<li>For the name of the new string value, type "Application"</li>
+<li>From the Edit pulldown menu, select "Modify" (or just double-click the new "Application" key in the right pane)</li>
+</ol>
+<p>An "Edit String" dialog box will appear. Type the following:</p>
+<pre>
+ C:\Program Files\Subversion\bin\svnserve.exe  
+</pre>
+<p>(This assumes Subversion is installed in <tt>C:\Program Files\Subversion</tt>, of course)</p>
+<p><br /></p>
+<ol>
+<li>From the Edit pulldown menu, select New-&gt;String Value</li>
+<li>For the name of the new string value, type "AppParameters"</li>
+<li>From the Edit pulldown menu, select "Modify" (or just double-click the new "AppParameters" key in the right pane)</li>
+</ol>
+<p>An "Edit String" dialog box will appear. Type the following:</p>
+<pre>
+ -d -r C:\Subversion  
+</pre>
+<p>(the <tt>-d-</tt> flag tells it to run as a daemon (server) process, and the <tt>-r C:\Subversion-</tt> tells it where the directory with the repositories lives)</p>
+<p><br /></p>
+<p><br />
+Now our service should be configured properly, we just need to give it a try:</p>
+<ol>
+<li>Open the Services control panel (this may be under the "Administrative Tools" subfolder in Control Panels).</li>
+<li>You should now be able to find a "Subversion" service in the list of services. Select this service.</li>
+<li>From the Action menu, select "Start".</li>
+</ol>
+<p><br />
+If all goes well, the Subversion process should now say "Started" in its Status column.</p>
+<p><br />
+You now have a Subversion server running, serving all of the repositories under your <tt>C:\Subversion</tt> directory. This means that repositories which you've been accessing with URLs like:</p>
+<pre>
+ file:///C:/Subversion/repository_name  
+</pre>
+<p>..can now also be accessed as..</p>
+<pre>
+ <a rel="nofollow" class="external free" href="svn://localhost/repository_name">svn://localhost/repository_name</a>  
+</pre>
+<p>(note that there are only two slashes (//) before "localhost")</p>
+<p><br />
+So let's give our new server a try. Assuming that you've set up a repository as described in <a href="Legacy_Setting_Up_Subversion.html" title="Legacy:Setting Up Subversion">Setting up Subversion</a>, we should be able to access it now as <tt><a rel="nofollow" class="external free" href="svn://localhost/UT_work">svn://localhost/UT_work</a></tt>:</p>
+<ol>
+<li>Right click on a file or folder somewhere (doesn't matter where) and select "TortoiseSVN-&gt;Repo-Browser" from the pop-up menu.</li>
+</ol>
+<p>For the repository URL, type:</p>
+<pre>
+ <a rel="nofollow" class="external free" href="svn://localhost/UT_work">svn://localhost/UT_work</a>  
+</pre>
+<p><br /></p>
+<p><br />
+You should see your repository and its contents show up in the Repository Browser window.</p>
+<p><br /></p>
+<h2><span class="mw-headline" id="The_Easy_Alternative">The Easy Alternative</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_A_Subversion_Server?section=5" title="Edit section: The Easy Alternative">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>If all that is far too complicated for you, there also is a small commandline tool for setting up SVNServe as a service: <a rel="nofollow" class="external text" href="http://www.clanlib.org/~mbn/svnservice/">SVNService</a>. Extract SVNService.exe to the same directory as SVNServe.exe (by default that is C:\Program Files\Subversion\bin) and you are ready to go.</p>
+<p>Usage is really easy:</p>
+<dl>
+<dt>Installing the service&#160;</dt>
+</dl>
+<pre>
+SVNService -install <i>[SVNServe parameters]</i>  
+</pre>
+<p>This will create a new service with the name "SVNService". The service is initially configured to be started manually.\\</p>
+<p>Useful SVNServe parameters might be "-d -r D:\Path\To\Repository".</p>
+<dl>
+<dt>Changing the service parameters&#160;</dt>
+</dl>
+<pre>
+<tt>SVNService -setup <i>[new SVNServe parameters]</i></tt>
+ 
+</pre>
+<dl>
+<dt>Removing the service&#160;</dt>
+</dl>
+<pre>
+<tt>SVNService -remove</tt>  
+</pre>
+<p>This will also stop the service if it's till running.</p>
+<p><br />
+Note that SVNService can manage only one service. You'll have to go the long way described above if you want more than that.</p>
+<p><br /></p>
+<h2><span class="mw-headline" id="Controlling_Access">Controlling Access</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_A_Subversion_Server?section=6" title="Edit section: Controlling Access">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>By default, Subversion repositories accessed through a Subversion server are readable by anyone, but only writable by people who have been specifically authorized to do so. Obviously, you will want to do a bit of configuration to specify who's allowed to do what, and how Subversion is supposed to tell who people are.</p>
+<p><br />
+This configuration is done by editing the <tt>svnserve.conf</tt> file located in the <tt>conf</tt> directory of each repository (for example, <tt>C:\Subversion\UT_work\conf\svnserve.conf</tt>). Open this file in a text editor.</p>
+<p><br />
+In the configuration file, lines starting with <tt>#</tt> are comments, so as you can see, the default file has everything commented out. You will want to add a few lines (or uncomment the ones that are already there):</p>
+<pre>
+ [general]  
+ anon-access = read  
+ auth-access = write  
+ password-db = passwd  
+ realm = My Subversion Repository  
+ 
+</pre>
+<p>(obviously, you can change the <tt>anon-access</tt> and <tt>auth-access</tt> lines if this isn't the behavior you want. For example, you could change them to <tt>anon-access=none</tt> if you don't want anonymous users seeing your repository contents, and <tt>auth-access=read</tt> if you only want to provide read access to the people you specify (in which case you will only have write access via local (<tt>file:</tt>) URLs))</p>
+<p><br />
+The <tt>realm</tt> parameter is a way of grouping multiple repositories to use a single login. If two repositories have the same realm, all Subversion clients will assume they can use the same username/password to login to them. Since we're not working with multiple repositories (yet), it doesn't really matter what we put here as long as it's unique, but it is displayed by many clients when prompting for a password, so it's good to use something descriptive.</p>
+<p><br />
+The <tt>password-db</tt> parameter specifies the name of a file to have usernames and passwords in, which is relative to the <tt>conf</tt> directory. In this case, we've specified a filename of <tt>passwd</tt>, so we now need to create a <tt>passwd</tt> file in the same directory as our <tt>svnserve.conf</tt>. In the new <tt>passwd</tt> file, add the following:</p>
+<pre>
+ [users]  
+ my_username = my_password  
+ 
+</pre>
+<p>(Obviously, replace <tt>my_username</tt> and <tt>my_password</tt> with an appropriate username and password for yourself). You can also add as many other account usernames and passwords as you want in the same form under the [users] section.</p>
+<p><br />
+There is one other aspect to access which needs to be mentioned: In order for other people to access your new Subversion server, they will need to be able to connect to your machine on TCP port 3690. You will need to make sure that your machine is reachable from the outside world (not behind a NAT router or firewall of some kind) and that port 3690 is not blocked by any personal firewall software you may have installed). Other users should then be able to access your repository using URLs of the form:</p>
+<pre>
+ <a rel="nofollow" class="external free" href="svn://your_hostname_or_ip/repository_name">svn://your_hostname_or_ip/repository_name</a>  
+ 
+</pre>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_A_Subversion_Server?section=7" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_Subversion.html" title="Legacy:Subversion">Subversion</a></li>
+<li><a href="Legacy_Version_Control.html" title="Legacy:Version Control">Version Control</a></li>
+</ul>
+<p><br /></p>
+<h2><span class="mw-headline" id="Other_Resources">Other Resources</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_A_Subversion_Server?section=8" title="Edit section: Other Resources">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<dl>
+<dt><a rel="nofollow" class="external free" href="http://support.microsoft.com/kb/q137890/">http://support.microsoft.com/kb/q137890/</a>&#160;</dt>
+<dd>Microsoft Knowledge Base article on how to use INSTSRV and SRVANY.</dd>
+<dt><a rel="nofollow" class="external free" href="http://subversion.tigris.org/">http://subversion.tigris.org/</a>&#160;</dt>
+<dd>The Subversion web site.</dd>
+</dl>
+<p><br /></p>
+<hr />
+<p>----</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.026 seconds
+Real time usage: 0.027 seconds
+Preprocessor visited node count: 31/1000000
+Preprocessor generated node count: 44/1000000
+Post‐expand include size: 30/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:2954-0!*!0!!en!*!* and timestamp 20161215142910 and revision id 7824
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Setting_Up_A_Subversion_Server?oldid=7824">https://wiki.beyondunreal.com/Legacy:Setting_Up_A_Subversion_Server?oldid=7824</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Legacy_Tutorial.html" title="Category:Legacy Tutorial">Legacy Tutorial</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_Setting_Up_A_Subversion_Server.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Setting_Up_A_Subversion_Server?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Setting_Up_A_Subversion_Server" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Setting_Up_A_Subversion_Server" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ASetting+Up+A+Subversion+Server&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ASetting+Up+A+Subversion+Server" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Setting_Up_A_Subversion_Server" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Setting_Up_A_Subversion_Server" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Setting_Up_A_Subversion_Server?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Setting_Up_A_Subversion_Server?oldid=7824" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Setting_Up_A_Subversion_Server" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 22:38, 14 August 2007.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":79});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Setting_Up_A_Subversion_Server by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:38 GMT -->
+</html>

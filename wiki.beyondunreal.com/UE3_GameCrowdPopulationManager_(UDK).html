@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:GameCrowdPopulationManager_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:08:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:GameCrowdPopulationManager (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_GameCrowdPopulationManager_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:GameCrowdPopulationManager_(UDK)","wgTitle":"GameCrowdPopulationManager (UDK)","wgCurRevisionId":40915,"wgRevisionId":40915,"wgArticleId":28722,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UDK-specific classes","Classes in UDK package GameFramework","Classes implementing GameCrowdSpawnerInterface (UDK)","Subclasses of Actor (UDK)","Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:GameCrowdPopulationManager_(UDK)","wgRelevantArticleId":28722,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_GameCrowdPopulationManager_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I don't need to test my programs. I have an error-correcting modem.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:GameCrowdPopulationManager (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a> &gt;&gt;&#160;<b>GameCrowdPopulationManager</b></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Properties"><span class="tocnumber">1</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Property_group_.27GameCrowdPopulationManager.27"><span class="tocnumber">1.1</span> <span class="toctext">Property group 'GameCrowdPopulationManager'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#bWarmupPosition"><span class="tocnumber">1.1.1</span> <span class="toctext">bWarmupPosition</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-4"><a href="#Internal_variables"><span class="tocnumber">1.2</span> <span class="toctext">Internal variables</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#AgentArchetypes"><span class="tocnumber">1.2.1</span> <span class="toctext">AgentArchetypes</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#AgentCount"><span class="tocnumber">1.2.2</span> <span class="toctext">AgentCount</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#AgentFrequencySum"><span class="tocnumber">1.2.3</span> <span class="toctext">AgentFrequencySum</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#AgentLightingChannel"><span class="tocnumber">1.2.4</span> <span class="toctext">AgentLightingChannel</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#AgentPool"><span class="tocnumber">1.2.5</span> <span class="toctext">AgentPool</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#AgentWarmupTime"><span class="tocnumber">1.2.6</span> <span class="toctext">AgentWarmupTime</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#bCastShadows"><span class="tocnumber">1.2.7</span> <span class="toctext">bCastShadows</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#bEnableCrowdLightEnvironment"><span class="tocnumber">1.2.8</span> <span class="toctext">bEnableCrowdLightEnvironment</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#bForceNavMeshPathing"><span class="tocnumber">1.2.9</span> <span class="toctext">bForceNavMeshPathing</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#bForceObstacleChecking"><span class="tocnumber">1.2.10</span> <span class="toctext">bForceObstacleChecking</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#bHaveInitialPopulation"><span class="tocnumber">1.2.11</span> <span class="toctext">bHaveInitialPopulation</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#bSpawningActive"><span class="tocnumber">1.2.12</span> <span class="toctext">bSpawningActive</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#HeadVisibilityOffset"><span class="tocnumber">1.2.13</span> <span class="toctext">HeadVisibilityOffset</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#InitialPopulationPct"><span class="tocnumber">1.2.14</span> <span class="toctext">InitialPopulationPct</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#KilledCount"><span class="tocnumber">1.2.15</span> <span class="toctext">KilledCount</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#MaxAgentPoolSize"><span class="tocnumber">1.2.16</span> <span class="toctext">MaxAgentPoolSize</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="#MaxSpawnDistSq"><span class="tocnumber">1.2.17</span> <span class="toctext">MaxSpawnDistSq</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="#MinBehindSpawnDistSq"><span class="tocnumber">1.2.18</span> <span class="toctext">MinBehindSpawnDistSq</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#PlayerPositionPredictionTime"><span class="tocnumber">1.2.19</span> <span class="toctext">PlayerPositionPredictionTime</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="#PoolCount"><span class="tocnumber">1.2.20</span> <span class="toctext">PoolCount</span></a></li>
+<li class="toclevel-3 tocsection-25"><a href="#PotentialSpawnPoints"><span class="tocnumber">1.2.21</span> <span class="toctext">PotentialSpawnPoints</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#PrioritizationIndex"><span class="tocnumber">1.2.22</span> <span class="toctext">PrioritizationIndex</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="#PrioritizationUpdateIndex"><span class="tocnumber">1.2.23</span> <span class="toctext">PrioritizationUpdateIndex</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="#PrioritizedSpawnPoints"><span class="tocnumber">1.2.24</span> <span class="toctext">PrioritizedSpawnPoints</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="#Remainder"><span class="tocnumber">1.2.25</span> <span class="toctext">Remainder</span></a></li>
+<li class="toclevel-3 tocsection-30"><a href="#SpawnedCount"><span class="tocnumber">1.2.26</span> <span class="toctext">SpawnedCount</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="#SpawnNum"><span class="tocnumber">1.2.27</span> <span class="toctext">SpawnNum</span></a></li>
+<li class="toclevel-3 tocsection-32"><a href="#SpawnPrioritizationInterval"><span class="tocnumber">1.2.28</span> <span class="toctext">SpawnPrioritizationInterval</span></a></li>
+<li class="toclevel-3 tocsection-33"><a href="#SpawnRate"><span class="tocnumber">1.2.29</span> <span class="toctext">SpawnRate</span></a></li>
+<li class="toclevel-3 tocsection-34"><a href="#SplitScreenNumReduction"><span class="tocnumber">1.2.30</span> <span class="toctext">SplitScreenNumReduction</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-35"><a href="#Default_values"><span class="tocnumber">1.3</span> <span class="toctext">Default values</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-36"><a href="#Functions"><span class="tocnumber">2</span> <span class="toctext">Functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-37"><a href="#Events"><span class="tocnumber">2.1</span> <span class="toctext">Events</span></a>
+<ul>
+<li class="toclevel-3 tocsection-38"><a href="#PostBeginPlay"><span class="tocnumber">2.1.1</span> <span class="toctext">PostBeginPlay</span></a></li>
+<li class="toclevel-3 tocsection-39"><a href="#SpawnAgent"><span class="tocnumber">2.1.2</span> <span class="toctext">SpawnAgent</span></a></li>
+<li class="toclevel-3 tocsection-40"><a href="#Tick"><span class="tocnumber">2.1.3</span> <span class="toctext">Tick</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-41"><a href="#Other_instance_functions"><span class="tocnumber">2.2</span> <span class="toctext">Other instance functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-42"><a href="#AddPrioritizedSpawnPoint"><span class="tocnumber">2.2.1</span> <span class="toctext">AddPrioritizedSpawnPoint</span></a></li>
+<li class="toclevel-3 tocsection-43"><a href="#AddToAgentPool"><span class="tocnumber">2.2.2</span> <span class="toctext">AddToAgentPool</span></a></li>
+<li class="toclevel-3 tocsection-44"><a href="#AgentDestroyed"><span class="tocnumber">2.2.3</span> <span class="toctext">AgentDestroyed</span></a></li>
+<li class="toclevel-3 tocsection-45"><a href="#AnalyzeSpawnPoints"><span class="tocnumber">2.2.4</span> <span class="toctext">AnalyzeSpawnPoints</span></a></li>
+<li class="toclevel-3 tocsection-46"><a href="#CreateNewAgent"><span class="tocnumber">2.2.5</span> <span class="toctext">CreateNewAgent</span></a></li>
+<li class="toclevel-3 tocsection-47"><a href="#DisplayDebug"><span class="tocnumber">2.2.6</span> <span class="toctext">DisplayDebug</span></a></li>
+<li class="toclevel-3 tocsection-48"><a href="#InitializeSpawnPoints"><span class="tocnumber">2.2.7</span> <span class="toctext">InitializeSpawnPoints</span></a></li>
+<li class="toclevel-3 tocsection-49"><a href="#OnGameCrowdPopulationManagerToggle"><span class="tocnumber">2.2.8</span> <span class="toctext">OnGameCrowdPopulationManagerToggle</span></a></li>
+<li class="toclevel-3 tocsection-50"><a href="#PickSpawnPoint"><span class="tocnumber">2.2.9</span> <span class="toctext">PickSpawnPoint</span></a></li>
+<li class="toclevel-3 tocsection-51"><a href="#PrioritizeSpawnPoints"><span class="tocnumber">2.2.10</span> <span class="toctext">PrioritizeSpawnPoints</span></a></li>
+<li class="toclevel-3 tocsection-52"><a href="#ValidateSpawnAt"><span class="tocnumber">2.2.11</span> <span class="toctext">ValidateSpawnAt</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Package:&#160;</dt>
+<dd><a href="Category_Classes_in_UDK_package_GameFramework.html" title="Category:Classes in UDK package GameFramework">GameFramework</a></dd>
+<dt><a href="Implements.html" title="Implements" class="mw-redirect">Implemented interfaces</a>:&#160;</dt>
+<dd><a href="UE3_GameCrowdSpawnerInterface_(UDK).html" title="UE3:GameCrowdSpawnerInterface (UDK)">GameCrowdSpawnerInterface</a></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<p>Manages adding appropriate crowd population around player</p>
+<pre>
+Agents will be spawned/recycled at any available active GameCrowdDestination
+</pre>
+<h2><span class="mw-headline" id="Properties">Properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=1" title="Edit section: Properties">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Property_group_.27GameCrowdPopulationManager.27">Property group 'GameCrowdPopulationManager'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=2" title="Edit section: Property group 'GameCrowdPopulationManager'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="bWarmupPosition">bWarmupPosition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=3" title="Edit section: bWarmupPosition">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If true, and initial spawn positiong is not in player's line of sight, and agent is not part of a group, agent will try to find an starting position at a random spot between the initial spawn positing and its initial destination that isn't in the player's line of sight.</p>
+<p><b>Default value:</b> True</p>
+<h3><span class="mw-headline" id="Internal_variables">Internal variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=4" title="Edit section: Internal variables">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="AgentArchetypes">AgentArchetypes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=5" title="Edit section: AgentArchetypes">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_SeqAct_GameCrowdSpawner_(UDK).html#AgentArchetypeInfo" title="UE3:SeqAct GameCrowdSpawner (UDK)">SeqAct_GameCrowdSpawner.AgentArchetypeInfo</a>&gt;</p>
+<p>Archetypes of agents spawned by this crowd spawner</p>
+<h4><span class="mw-headline" id="AgentCount">AgentCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=6" title="Edit section: AgentCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Number of currently spawned crowd members.</p>
+<h4><span class="mw-headline" id="AgentFrequencySum">AgentFrequencySum</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=7" title="Edit section: AgentFrequencySum">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Sum of agent types + frequency modifiers</p>
+<h4><span class="mw-headline" id="AgentLightingChannel">AgentLightingChannel</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=8" title="Edit section: AgentLightingChannel">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_LightComponent_(UDK).html#LightingChannelContainer" title="UE3:LightComponent (UDK)">LightComponent.LightingChannelContainer</a></p>
+<p>Lighting channels to put the agents in.</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_LightComponent_(UDK).html#LightingChannelContainer" title="UE3:LightComponent (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>bInitialized</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Crowd</td>
+<td>True</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="AgentPool">AgentPool</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=9" title="Edit section: AgentPool">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_GameCrowdAgent_(UDK).html" title="UE3:GameCrowdAgent (UDK)">GameCrowdAgent</a>&gt;</p>
+<p>Pool of agents available for re-use: these are agents close to being removed</p>
+<h4><span class="mw-headline" id="AgentWarmupTime">AgentWarmupTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=10" title="Edit section: AgentWarmupTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Average time to "warm up" spawned agents before letting them sleep if not rendered</p>
+<p><b>Default value:</b> 2.0</p>
+<h4><span class="mw-headline" id="bCastShadows">bCastShadows</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=11" title="Edit section: bCastShadows">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Whether agents from this spawner should cast shadows</p>
+<h4><span class="mw-headline" id="bEnableCrowdLightEnvironment">bEnableCrowdLightEnvironment</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=12" title="Edit section: bEnableCrowdLightEnvironment">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Whether to enable the light environment on crowd members.</p>
+<h4><span class="mw-headline" id="bForceNavMeshPathing">bForceNavMeshPathing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=13" title="Edit section: bForceNavMeshPathing">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If true, force nav mesh navigation for all agents from this spawner</p>
+<h4><span class="mw-headline" id="bForceObstacleChecking">bForceObstacleChecking</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=14" title="Edit section: bForceObstacleChecking">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If true, force obstacle checking for all agents from this spawner</p>
+<h4><span class="mw-headline" id="bHaveInitialPopulation">bHaveInitialPopulation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=15" title="Edit section: bHaveInitialPopulation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>flag set when first adding agents. Extra fill on first tick</p>
+<h4><span class="mw-headline" id="bSpawningActive">bSpawningActive</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=16" title="Edit section: bSpawningActive">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Controls whether we are actively spawning agents.</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="HeadVisibilityOffset">HeadVisibilityOffset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=17" title="Edit section: HeadVisibilityOffset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Offset used to validate spawn by checking above spawn location to see if head/torso would be visible</p>
+<p><b>Default value:</b> 40.0</p>
+<h4><span class="mw-headline" id="InitialPopulationPct">InitialPopulationPct</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=18" title="Edit section: InitialPopulationPct">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>How much population to add first tick</p>
+<p><b>Default value:</b> 0.2</p>
+<h4><span class="mw-headline" id="KilledCount">KilledCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=19" title="Edit section: KilledCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Agent spawning stats</p>
+<h4><span class="mw-headline" id="MaxAgentPoolSize">MaxAgentPoolSize</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=20" title="Edit section: MaxAgentPoolSize">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Maximum size of agent pool</p>
+<p><b>Default value:</b> 20</p>
+<h4><span class="mw-headline" id="MaxSpawnDistSq">MaxSpawnDistSq</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=21" title="Edit section: MaxSpawnDistSq">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Square of max distance allowed for spawns</p>
+<p><b>Default value:</b> 4.0E8</p>
+<h4><span class="mw-headline" id="MinBehindSpawnDistSq">MinBehindSpawnDistSq</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=22" title="Edit section: MinBehindSpawnDistSq">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Square of min distance allowed for in line of sight but out of view frustrum agent spawns</p>
+<p><b>Default value:</b> 2.5E7</p>
+<h4><span class="mw-headline" id="PlayerPositionPredictionTime">PlayerPositionPredictionTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=23" title="Edit section: PlayerPositionPredictionTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>How far ahead to compute predicted player position for spawn prioritization</p>
+<p><b>Default value:</b> 5.0</p>
+<h4><span class="mw-headline" id="PoolCount">PoolCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=24" title="Edit section: PoolCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Agent spawning stats</p>
+<h4><span class="mw-headline" id="PotentialSpawnPoints">PotentialSpawnPoints</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=25" title="Edit section: PotentialSpawnPoints">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_GameCrowdDestination_(UDK).html" title="UE3:GameCrowdDestination (UDK)">GameCrowdDestination</a>&gt;</p>
+<p>List of all GameCrowdDestinations that are PotentialSpawnPoints</p>
+<h4><span class="mw-headline" id="PrioritizationIndex">PrioritizationIndex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=26" title="Edit section: PrioritizationIndex">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Index into prioritization array for picking spawn points, incremented as agents are spawned at each point</p>
+<h4><span class="mw-headline" id="PrioritizationUpdateIndex">PrioritizationUpdateIndex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=27" title="Edit section: PrioritizationUpdateIndex">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Index into prioritization array for updating prioritization</p>
+<h4><span class="mw-headline" id="PrioritizedSpawnPoints">PrioritizedSpawnPoints</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=28" title="Edit section: PrioritizedSpawnPoints">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_GameCrowdDestination_(UDK).html" title="UE3:GameCrowdDestination (UDK)">GameCrowdDestination</a>&gt;</p>
+<p>Ordered array of prioritized spawn GameCrowdDestinations</p>
+<h4><span class="mw-headline" id="Remainder">Remainder</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=29" title="Edit section: Remainder">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Used by spawning code to accumulate partial spawning</p>
+<h4><span class="mw-headline" id="SpawnedCount">SpawnedCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=30" title="Edit section: SpawnedCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Agent spawning stats</p>
+<h4><span class="mw-headline" id="SpawnNum">SpawnNum</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=31" title="Edit section: SpawnNum">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>The maximum number of agents alive at one time. If agents are destroyed, more will spawn to meet this number.</p>
+<p><b>Default value:</b> 700</p>
+<h4><span class="mw-headline" id="SpawnPrioritizationInterval">SpawnPrioritizationInterval</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=32" title="Edit section: SpawnPrioritizationInterval">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>How frequently to reprioritize GameCrowdDestinations as potential spawn points</p>
+<p><b>Default value:</b> 0.4</p>
+<h4><span class="mw-headline" id="SpawnRate">SpawnRate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=33" title="Edit section: SpawnRate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>How many agents per second will be spawned at the target actor(s).</p>
+<p><b>Default value:</b> 50.0</p>
+<h4><span class="mw-headline" id="SplitScreenNumReduction">SplitScreenNumReduction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=34" title="Edit section: SplitScreenNumReduction">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>How much to reduce number by in splitscreen</p>
+<p><b>Default value:</b> 0.5</p>
+<h3><span class="mw-headline" id="Default_values">Default values</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=35" title="Edit section: Default values">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td><a href="UE3_Actor_(UDK).html#bHidden" title="UE3:Actor (UDK)">bHidden</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE3_Actor_internal_variables_(UDK).html#bOnlyDirtyReplication" title="UE3:Actor internal variables (UDK)">bOnlyDirtyReplication</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE3_Actor_internal_variables_(UDK).html#bSkipActorPropertyReplication" title="UE3:Actor internal variables (UDK)">bSkipActorPropertyReplication</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE3_Actor_(UDK).html#CollisionType" title="UE3:Actor (UDK)">CollisionType</a></td>
+<td><a href="UE3_Actor_enums_(UDK).html#ECollisionType" title="UE3:Actor enums (UDK)">COLLIDE_CustomDefault</a></td>
+</tr>
+<tr>
+<td><a href="UE3_Actor_internal_variables_(UDK).html#NetUpdateFrequency" title="UE3:Actor internal variables (UDK)">NetUpdateFrequency</a></td>
+<td>10.0</td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Functions">Functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=36" title="Edit section: Functions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Events">Events</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=37" title="Edit section: Events">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="PostBeginPlay">PostBeginPlay</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=38" title="Edit section: PostBeginPlay">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>PostBeginPlay</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_Actor_events_(UDK).html#PostBeginPlay" title="UE3:Actor events (UDK)">Actor.PostBeginPlay</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="SpawnAgent">SpawnAgent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=39" title="Edit section: SpawnAgent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <a href="UE3_GameCrowdAgent_(UDK).html" title="UE3:GameCrowdAgent (UDK)">GameCrowdAgent</a>&#160;<b>SpawnAgent</b> (<a href="UE3_GameCrowdDestination_(UDK).html" title="UE3:GameCrowdDestination (UDK)">GameCrowdDestination</a>&#160;<b>SpawnLoc</b>)</div>
+<p>Actually create a new CrowdAgent actor, and initialise it</p>
+<h4><span class="mw-headline" id="Tick">Tick</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=40" title="Edit section: Tick">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>Tick</b> (<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>DeltaSeconds</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_Actor_events_(UDK).html#Tick" title="UE3:Actor events (UDK)">Actor.Tick</a></p>
+<p>FIXMESTEVE - Nativize?</p>
+<h3><span class="mw-headline" id="Other_instance_functions">Other instance functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=41" title="Edit section: Other instance functions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="AddPrioritizedSpawnPoint">AddPrioritizedSpawnPoint</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=42" title="Edit section: AddPrioritizedSpawnPoint">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddPrioritizedSpawnPoint</b> (<a href="UE3_GameCrowdDestination_(UDK).html" title="UE3:GameCrowdDestination (UDK)">GameCrowdDestination</a>&#160;<b>GCD</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>ViewLocation</b>)</div>
+<p>Prioritize passed in GameCrowdDestination and insert it into ordered PrioritizedSpawnPoints list, offset from current starting point</p>
+<h4><span class="mw-headline" id="AddToAgentPool">AddToAgentPool</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=43" title="Edit section: AddToAgentPool">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>AddToAgentPool</b> (<a href="UE3_GameCrowdAgent_(UDK).html" title="UE3:GameCrowdAgent (UDK)">GameCrowdAgent</a>&#160;<b>Agent</b>)</div>
+<p><b>Specified by:</b> <a href="UE3_GameCrowdSpawnerInterface_(UDK).html#AddToAgentPool" title="UE3:GameCrowdSpawnerInterface (UDK)">GameCrowdSpawnerInterface.AddToAgentPool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="AgentDestroyed">AgentDestroyed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=44" title="Edit section: AgentDestroyed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AgentDestroyed</b> (<a href="UE3_GameCrowdAgent_(UDK).html" title="UE3:GameCrowdAgent (UDK)">GameCrowdAgent</a>&#160;<b>Agent</b>)</div>
+<p><b>Specified by:</b> <a href="UE3_GameCrowdSpawnerInterface_(UDK).html#AgentDestroyed" title="UE3:GameCrowdSpawnerInterface (UDK)">GameCrowdSpawnerInterface.AgentDestroyed</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="AnalyzeSpawnPoints">AnalyzeSpawnPoints</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=45" title="Edit section: AnalyzeSpawnPoints">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AnalyzeSpawnPoints</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>StartIndex</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>StopIndex</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>ViewLocation</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>PredictionLocation</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="CreateNewAgent">CreateNewAgent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=46" title="Edit section: CreateNewAgent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_GameCrowdAgent_(UDK).html" title="UE3:GameCrowdAgent (UDK)">GameCrowdAgent</a>&#160;<b>CreateNewAgent</b> (<a href="UE3_GameCrowdDestination_(UDK).html" title="UE3:GameCrowdDestination (UDK)">GameCrowdDestination</a>&#160;<b>SpawnLoc</b>, <a href="UE3_GameCrowdAgent_(UDK).html" title="UE3:GameCrowdAgent (UDK)">GameCrowdAgent</a>&#160;<b>AgentTemplate</b>, <a href="UE3_GameCrowdGroup_(UDK).html" title="UE3:GameCrowdGroup (UDK)">GameCrowdGroup</a>&#160;<b>NewGroup</b>)</div>
+<p>Create new GameCrowdAgent and initialize it</p>
+<h4><span class="mw-headline" id="DisplayDebug">DisplayDebug</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=47" title="Edit section: DisplayDebug">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>DisplayDebug</b> (<a href="UE3_HUD_(UDK).html" title="UE3:HUD (UDK)">HUD</a>&#160;<b>HUD</b>, out&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>out_YL</b>, out&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>out_YPos</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_Actor_instance_functions_(UDK).html#DisplayDebug" title="UE3:Actor instance functions (UDK)">Actor.DisplayDebug</a></p>
+<p>Use 'GameDebug' console command to show this debug info</p>
+<pre>
+Useful to show general debug info not tied to a particular concrete actor.
+</pre>
+<h4><span class="mw-headline" id="InitializeSpawnPoints">InitializeSpawnPoints</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=48" title="Edit section: InitializeSpawnPoints">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>InitializeSpawnPoints</b> (<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>ViewLocation</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>PredictionLocation</b>)</div>
+<p>Fill PotentialSpawnPoints list. Once it is filled, initially fill PrioritizedSpawnPoints with visible points for first frame pop fill</p>
+<h4><span class="mw-headline" id="OnGameCrowdPopulationManagerToggle">OnGameCrowdPopulationManagerToggle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=49" title="Edit section: OnGameCrowdPopulationManagerToggle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>OnGameCrowdPopulationManagerToggle</b> (<a href="UE3_SeqAct_GameCrowdPopulationManagerToggle_(UDK).html" title="UE3:SeqAct GameCrowdPopulationManagerToggle (UDK)">SeqAct_GameCrowdPopulationManagerToggle</a>&#160;<b>inAction</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PickSpawnPoint">PickSpawnPoint</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=50" title="Edit section: PickSpawnPoint">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_GameCrowdDestination_(UDK).html" title="UE3:GameCrowdDestination (UDK)">GameCrowdDestination</a>&#160;<b>PickSpawnPoint</b> ()</div>
+<p><b>Returns:</b></p>
+<dl>
+<dd>best spawn point to spawn next crowd agent</dd>
+</dl>
+<h4><span class="mw-headline" id="PrioritizeSpawnPoints">PrioritizeSpawnPoints</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=51" title="Edit section: PrioritizeSpawnPoints">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>PrioritizeSpawnPoints</b> (<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>DeltaSeconds</b>)</div>
+<p>Prioritize GameCrowdDestinations as potential spawn points</p>
+<h4><span class="mw-headline" id="ValidateSpawnAt">ValidateSpawnAt</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)?section=52" title="Edit section: ValidateSpawnAt">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ValidateSpawnAt</b> (<a href="UE3_GameCrowdDestination_(UDK).html" title="UE3:GameCrowdDestination (UDK)">GameCrowdDestination</a>&#160;<b>Candidate</b>)</div>
+<p>Determine whether candidate spawn point is currently valid</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.331 seconds
+Real time usage: 0.338 seconds
+Preprocessor visited node count: 2509/1000000
+Preprocessor generated node count: 6857/1000000
+Post‐expand include size: 18857/2097152 bytes
+Template argument size: 5827/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  243.127      1 - -total
+ 39.55%   96.166      1 - Template:Infobox_class
+ 37.31%   90.710      1 - Template:Infobox_class/core
+ 33.46%   81.347     35 - Template:Samegame
+ 30.24%   73.518     19 - Template:Tl
+ 26.19%   63.668     14 - Template:Code
+ 18.95%   46.061     16 - Template:Cl
+  6.64%   16.140      2 - Template:Ch
+  5.31%   12.921      2 - Template:Links
+  2.64%    6.425      1 - Template:Autogenerated
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:28722-0!*!0!!en!5!* and timestamp 20161215165047 and revision id 40915
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:GameCrowdPopulationManager_(UDK)?oldid=40915">https://wiki.beyondunreal.com/UE3:GameCrowdPopulationManager_(UDK)?oldid=40915</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_UDK-specific_classes.html" title="Category:UDK-specific classes">UDK-specific classes</a></li><li><a href="Category_Classes_in_UDK_package_GameFramework.html" title="Category:Classes in UDK package GameFramework">Classes in UDK package GameFramework</a></li><li><a href="Category_Classes_implementing_GameCrowdSpawnerInterface_(UDK).html" title="Category:Classes implementing GameCrowdSpawnerInterface (UDK)">Classes implementing GameCrowdSpawnerInterface (UDK)</a></li><li><a href="Category_Subclasses_of_Actor_(UDK).html" title="Category:Subclasses of Actor (UDK)">Subclasses of Actor (UDK)</a></li><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_GameCrowdPopulationManager_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:GameCrowdPopulationManager_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:GameCrowdPopulationManager_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:GameCrowdPopulationManager_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AGameCrowdPopulationManager+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AGameCrowdPopulationManager+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:GameCrowdPopulationManager_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:GameCrowdPopulationManager_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:GameCrowdPopulationManager_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:GameCrowdPopulationManager_(UDK)?oldid=40915" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:GameCrowdPopulationManager_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 07:39, 17 January 2010.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":99});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:GameCrowdPopulationManager_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:08:59 GMT -->
+</html>

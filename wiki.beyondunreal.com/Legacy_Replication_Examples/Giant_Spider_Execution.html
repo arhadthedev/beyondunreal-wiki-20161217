@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Replication_Examples/Giant_Spider_Execution by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Replication Examples/Giant Spider Execution - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Replication_Examples/Giant_Spider_Execution" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Replication_Examples/Giant_Spider_Execution" />
+<link rel="shortcut icon" href="../w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="../w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="../w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Giant_Spider_Execution.html" />
+<link rel="copyright" href="../Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="../w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="../w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Replication_Examples/Giant_Spider_Execution","wgTitle":"Replication Examples/Giant Spider Execution","wgCurRevisionId":6391,"wgRevisionId":6391,"wgArticleId":2683,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Tutorial"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Replication_Examples/Giant_Spider_Execution","wgRelevantArticleId":2683,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Replication_Examples_Giant_Spider_Execution skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Once I get that upgrade to 36-hour days, I will tackle that. &#8211; Mychaeel
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Replication Examples/Giant Spider Execution</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../Legacy_Replication_Examples.html" title="Legacy:Replication Examples">Legacy:Replication Examples</a></span></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This example describes the replication (or better: simulation) magic behind the alternate execution sequence on JB-Aswan-v2. The spider actor waits for a serverside trigger <a href="../Legacy_Event.html" title="Legacy:Event">event</a> and then starts parallel execution of server- and clientside <a href="../Legacy_State.html" title="Legacy:State">state</a> code. Only the change of a single replicated value starts the entire clientside simulation machinery, which otherwise doesn't require any replication because it mainly relies on <a href="../Legacy_Default_Properties.html" title="Legacy:Default Properties">default properties</a>.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#The_Actors_Involved"><span class="tocnumber">1</span> <span class="toctext">The Actors Involved</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#The_Giant_Spider.27s_Code"><span class="tocnumber">2</span> <span class="toctext">The Giant Spider's Code</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#How_Does_It_Work.3F"><span class="tocnumber">3</span> <span class="toctext">How Does It Work?</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Before_We_Start"><span class="tocnumber">3.1</span> <span class="toctext">Before We Start</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Press_The_Start_Button"><span class="tocnumber">3.2</span> <span class="toctext">Press The Start Button</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Making_The_Spider_Appear"><span class="tocnumber">3.3</span> <span class="toctext">Making The Spider Appear</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Waiting_For_The_Big_Bang"><span class="tocnumber">3.4</span> <span class="toctext">Waiting For The Big Bang</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Conclusion"><span class="tocnumber">4</span> <span class="toctext">Conclusion</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Related_Topics"><span class="tocnumber">5</span> <span class="toctext">Related Topics</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="The_Actors_Involved">The Actors Involved</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Replication_Examples/Giant_Spider_Execution?section=1" title="Edit section: The Actors Involved">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>I don't want to bore you to death with how Jailbreak's jails and execution sequences are set up, but basically the game triggers an event serversidely that should eventually result in the prisoners in a certain jail getting killed.</p>
+<p>On JB-Aswan-v2, the execution is actually a quite complex system of <a href="../Legacy_ScriptedTrigger.html" title="Legacy:ScriptedTrigger">ScriptedTriggers</a> to randomly select between the default spider invasion execution or the giant spider execution. The giant spider execution uses a custom actor that, once triggered, dispatches events for a camera view switch (a <a href="http://mychaeel.no-ip.com/jailbreak/JBCamera" class="extiw" title="jdn:JBCamera">JDN:JBCamera</a>) and the explosion <a href="../Legacy_Emitter.html" title="Legacy:Emitter">Emitter</a>. The giant spider mine also uses a spawn effect, but that is simply triggered at the same time as the giant spider itself.<br />
+The spawn effect emitter uses a setup similar to the Onslaught vehicle spawn effect and is reset on triggering. The explosion emitter spawns a few explosion effect sprites with spawn sounds, a few yellow/orange-colored sprites to fill the jail and four groups of black sprites coming towards the camera through the jail bars.</p>
+<p>Interested in how exactly this looks? I've prepared a short video sequence for you:</p>
+<ul>
+<li><a rel="nofollow" class="external text" href="../../www.koehler-homepage.de/images/GiantSpiderExecution.html">Giant Spider Execution</a> (DivX required)</li>
+</ul>
+<h2><span class="mw-headline" id="The_Giant_Spider.27s_Code">The Giant Spider's Code</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Replication_Examples/Giant_Spider_Execution?section=2" title="Edit section: The Giant Spider's Code">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The giant spider actor is a custom actor. The following code is basically identical with the code I compiled for JB-Aswan-v2, but has a few comments added for clarification. An explaination of how the code works follows below.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<ol>
+<li class="li1">
+<pre class="de1">
+<span class="co1">//=============================================================================</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">// JBGiantSpiderMine</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">// Copyright (c) 2004 by Wormbo &lt;spamtheworm@koehler-homepage.de&gt;</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">//</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+<span class="co1">// A standalone version of the parasite mine.</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">//=============================================================================</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw1">class</span> JBGiantSpiderMine <span class="kw1">extends</span> <span class="kw9">Actor</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+  <span class="kw1">placeable</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">//=============================================================================</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">// Imports</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+<span class="co1">//=============================================================================</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co2">#exec obj load file=..\Textures\XGameShaders.utx</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co2">#exec obj load file=..\Sounds\WeaponSounds.uax</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li2">
+<pre class="de2">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">//=============================================================================</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">// Properties</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">//=============================================================================</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li2">
+<pre class="de2">
+<span class="kw1">var</span><span class="br0">(</span>Events<span class="br0">)</span> edfindable array<span class="sy0">&lt;</span>JBInfoJail<span class="sy0">&gt;</span> AssociatedJails; <span class="co1">// players in these jails will be killed by the explosion</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw1">var</span><span class="br0">(</span>Events<span class="br0">)</span> <span class="kw5">name</span> PreExplosionEvent;    <span class="co1">// the event used to switch the camera view</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">float</span> PreSpawnDelay;             <span class="co1">// a delay between getting triggered and setting bHidden=false</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">float</span> PreExplosionDelay;         <span class="co1">// a delay between triggering PreExplosionEvent and Event</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">float</span> ExplosionDelay;            <span class="co1">// the delay from getting triggered to exploding</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">Material</span> SpawnOverlayMaterial;   <span class="co1">// the overlay material to display after spawning</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">float</span> SpawnOverlayTime;          <span class="co1">// the time, the overlay is displayed</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">float</span> MomentumTransfer;          <span class="co1">// amount of momentum applied when damagin players (so gibs fly around :P)</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> class<span class="sy0">&lt;</span>DamageType<span class="sy0">&gt;</span> MyDamageType;  <span class="co1">// the damage type to use for killing players</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw1">var</span><span class="br0">(</span>Sounds<span class="br0">)</span> array<span class="sy0">&lt;</span>Sound<span class="sy0">&gt;</span> BulletSounds; <span class="co1">// sounds played back when shots hit the (invulnerable) spider</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">//=============================================================================</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">// Variables</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">//=============================================================================</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw1">var</span> <span class="kw5">name</span> IdleAnims<span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span>;        <span class="co1">// animations are randomly played before exploding (animations handle the sounds)</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw1">var</span> <span class="kw5">float</span> ExplosionCountdown; <span class="co1">// counts down from ExplosionDelay to 0</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw1">var</span> <span class="kw5">bool</span> bPreExplosion;       <span class="co1">// tells, whether PreExplosionEvent was already triggered</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li2">
+<pre class="de2">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">//== EncroachingOn ============================================================</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="coMULTI">/**</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="coMULTI">Telefrag players blocking the spawn point.</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="coMULTI">*/</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+<span class="co1">//=============================================================================</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw1">event</span> <span class="kw5">bool</span> <span class="kw4">EncroachingOn</span><span class="br0">(</span><span class="kw9">Actor</span> Other<span class="br0">)</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="br0">{</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  <span class="kw2">if</span> <span class="br0">(</span> <span class="kw9">Pawn</span><span class="br0">(</span>Other<span class="br0">)</span> <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+    <span class="kw9">Pawn</span><span class="br0">(</span>Other<span class="br0">)</span>.<span class="me0">GibbedBy</span><span class="br0">(</span><span class="kw6">Self</span><span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  <span class="kw2">return</span> <span class="kw6">Super</span>.<span class="kw4">EncroachingOn</span><span class="br0">(</span>Other<span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="br0">}</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li2">
+<pre class="de2">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">//== state Sleeping ===========================================================</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="coMULTI">/**</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="coMULTI">Wait hidden and non-colliding until triggered.</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="coMULTI">*/</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+<span class="co1">//=============================================================================</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw1">simulated</span> <span class="kw1">state</span> Sleeping
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="br0">{</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  <span class="kw1">function</span> <span class="kw4">Trigger</span><span class="br0">(</span><span class="kw9">Actor</span> Other, <span class="kw9">Pawn</span> EventInstigator<span class="br0">)</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+  <span class="br0">{</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="kw1">local</span> JBInfoJail thisJail;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="kw1">local</span> <span class="kw5">int</span> i;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="kw1">local</span> PlayerReplicationInfo PRI;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="kw1">local</span> JBTagPlayer TagPlayer;
+</pre></li>
+<li class="li2">
+<pre class="de2">
+    <span class="kw1">local</span> <span class="kw9">Pawn</span> thisPawn;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="kw2">if</span> <span class="br0">(</span> AssociatedJails.<span class="me0">Length</span> <span class="sy0">==</span> <span class="nu0">0</span> <span class="br0">)</span> <span class="br0">{</span> <span class="co1">// not associated with any jails, try to find matching jails</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+      <span class="kw2">foreach</span> <span class="kw2">AllActors</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'JBInfoJail'</span>, thisJail<span class="br0">)</span> <span class="br0">{</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+        <span class="kw2">if</span> <span class="br0">(</span> thisJail.<span class="me0">ContainsActor</span><span class="br0">(</span><span class="kw6">Self</span><span class="br0">)</span> <span class="br0">)</span> <span class="br0">{</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+          AssociatedJails<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> <span class="sy0">=</span> thisJail;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+          <span class="kw2">break</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+        <span class="br0">}</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+      <span class="br0">}</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+      <span class="kw2">if</span> <span class="br0">(</span> AssociatedJails.<span class="me0">Length</span> <span class="sy0">==</span> <span class="nu0">0</span> <span class="br0">)</span> <span class="br0">{</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+        <span class="co1">// no associated jails found, associate with all jails</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+        <span class="kw3">log</span><span class="br0">(</span><span class="st0">"!!!!"</span> <span class="sy0">@</span> <span class="kw6">Self</span> <span class="sy0">@</span> <span class="st0">"not associated with any jails!"</span>, <span class="st0">'Warning'</span><span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+        <span class="kw2">foreach</span> <span class="kw2">AllActors</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'JBInfoJail'</span>, thisJail<span class="br0">)</span> <span class="br0">{</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+          AssociatedJails<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> <span class="sy0">=</span> thisJail;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+        <span class="br0">}</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+      <span class="br0">}</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="br0">}</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="co1">// check if we actually have someone in this jail</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="kw2">foreach</span> <span class="kw2">DynamicActors</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'PlayerReplicationInfo'</span>, PRI<span class="br0">)</span> <span class="br0">{</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+      TagPlayer <span class="sy0">=</span> <span class="kw1">class</span><span class="st0">'JBTagPlayer'</span>.<span class="kw1">static</span>.<span class="me0">FindFor</span><span class="br0">(</span>PRI<span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+      <span class="kw2">if</span> <span class="br0">(</span> TagPlayer <span class="sy0">!=</span> <span class="kw5">None</span> <span class="sy0">&amp;&amp;</span> TagPlayer.<span class="me0">IsInJail</span><span class="br0">(</span><span class="br0">)</span> <span class="sy0">&amp;&amp;</span> TagPlayer.<span class="me0">GetPawn</span><span class="br0">(</span><span class="br0">)</span> <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span> <span class="br0">{</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+        thisJail <span class="sy0">=</span> TagPlayer.<span class="me0">GetJail</span><span class="br0">(</span><span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+        thisPawn <span class="sy0">=</span> TagPlayer.<span class="me0">GetPawn</span><span class="br0">(</span><span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+        <span class="kw2">for</span> <span class="br0">(</span>i <span class="sy0">=</span> <span class="nu0">0</span>; i <span class="sy0">&lt;</span> AssociatedJails.<span class="me0">Length</span>; <span class="sy0">++</span>i<span class="br0">)</span> <span class="br0">{</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+          <span class="kw2">if</span> <span class="br0">(</span> thisJail <span class="sy0">==</span> AssociatedJails<span class="br0">[</span>i<span class="br0">]</span> <span class="br0">)</span> <span class="br0">{</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+            <span class="co1">// prisoner found, now spawn</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+            NetUpdateTime <span class="sy0">=</span> <span class="kw7">Level</span>.<span class="me0">TimeSeconds</span> <span class="sy0">-</span> <span class="nu0">1</span>; <span class="co1">// force replication right now</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+            bClientTrigger <span class="sy0">=</span> <span class="sy0">!</span>bClientTrigger;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+            <span class="kw3">GotoState</span><span class="br0">(</span><span class="st0">'Spawning'</span><span class="br0">)</span>;
+</pre></li>
+<li class="li2">
+<pre class="de2">
+            <span class="kw2">return</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+          <span class="br0">}</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+        <span class="br0">}</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+      <span class="br0">}</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="br0">}</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+  <span class="br0">}</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  <span class="kw1">simulated</span> <span class="kw1">event</span> <span class="kw4">ClientTrigger</span><span class="br0">(</span><span class="br0">)</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  <span class="br0">{</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="kw3">GotoState</span><span class="br0">(</span><span class="st0">'Spawning'</span><span class="br0">)</span>;
+</pre></li>
+<li class="li2">
+<pre class="de2">
+  <span class="br0">}</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw2">Begin</span>:
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  bHidden <span class="sy0">=</span> <span class="kw6">True</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  <span class="kw4">SetCollision</span><span class="br0">(</span><span class="kw6">False</span>, <span class="kw6">False</span>, <span class="kw6">False</span><span class="br0">)</span>;
+</pre></li>
+<li class="li2">
+<pre class="de2">
+<span class="br0">}</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">//== TakeDamage ===============================================================</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="coMULTI">/**</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+<span class="coMULTI">Play sound effects for bullet hits.</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="coMULTI">*/</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">//=============================================================================</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw1">event</span> <span class="kw4">TakeDamage</span><span class="br0">(</span><span class="kw5">int</span> Damage, <span class="kw9">Pawn</span> EventInstigator, <span class="kw5">vector</span> HitLocation, <span class="kw5">vector</span> Momentum, class<span class="sy0">&lt;</span>DamageType<span class="sy0">&gt;</span> <span class="kw9">DamageType</span><span class="br0">)</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+<span class="br0">{</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  <span class="kw2">if</span> <span class="br0">(</span> <span class="sy0">!</span>bHidden <span class="sy0">&amp;&amp;</span> <span class="kw9">DamageType</span> <span class="sy0">!=</span> <span class="kw5">None</span> <span class="sy0">&amp;&amp;</span> <span class="kw9">DamageType</span>.<span class="kw1">Default</span>.<span class="me0">bBulletHit</span> <span class="sy0">&amp;&amp;</span> BulletSounds.<span class="me0">Length</span> <span class="sy0">&gt;</span> <span class="nu0">0</span> <span class="br0">)</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="kw4">PlaySound</span><span class="br0">(</span>BulletSounds<span class="br0">[</span><span class="kw3">Rand</span><span class="br0">(</span>BulletSounds.<span class="me0">Length</span><span class="br0">)</span><span class="br0">]</span>, <span class="kw7">SLOT_None</span>, <span class="nu0">2.0</span>, <span class="kw6">False</span>, <span class="nu0">100</span><span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="br0">}</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li2">
+<pre class="de2">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">//== state Spawning ===========================================================</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="coMULTI">/**</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="coMULTI">Play a spawn effect.</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="coMULTI">*/</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+<span class="co1">//=============================================================================</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw1">simulated</span> <span class="kw1">state</span> Spawning
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="br0">{</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw2">Begin</span>:
+</pre></li>
+<li class="li2">
+<pre class="de2">
+  <span class="kw2">if</span> <span class="br0">(</span> PrespawnDelay <span class="sy0">&gt;</span> <span class="nu0">0</span> <span class="br0">)</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="kw4">Sleep</span><span class="br0">(</span>PrespawnDelay<span class="br0">)</span>; <span class="co1">// wait until external spawn effect is over</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  bHidden <span class="sy0">=</span> <span class="kw6">False</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  <span class="kw4">SetCollision</span><span class="br0">(</span><span class="kw6">True</span>, <span class="kw6">True</span><span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  <span class="kw4">SetLocation</span><span class="br0">(</span><span class="kw7">Location</span><span class="br0">)</span>;  <span class="co1">// "telefrag" players at this location</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+  <span class="kw2">if</span> <span class="br0">(</span> SpawnOverlayTime <span class="sy0">&gt;</span> <span class="nu0">0</span> <span class="sy0">&amp;&amp;</span> SpawnOverlayMaterial <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    SetOverlayMaterial<span class="br0">(</span>SpawnOverlayMaterial, SpawnOverlayTime, <span class="kw6">True</span><span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  <span class="kw4">PlayAnim</span><span class="br0">(</span><span class="st0">'Startup'</span>, <span class="nu0">1.0</span><span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  <span class="kw4">FinishAnim</span><span class="br0">(</span><span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  <span class="kw3">GotoState</span><span class="br0">(</span><span class="st0">'Waiting'</span><span class="br0">)</span>;
+</pre></li>
+<li class="li2">
+<pre class="de2">
+<span class="br0">}</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">//== state Waiting ============================================================</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="coMULTI">/**</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+<span class="coMULTI">Spider idles a bit before detonating.</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="coMULTI">*/</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">//=============================================================================</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw1">simulated</span> <span class="kw1">state</span> Waiting
+</pre></li>
+<li class="li2">
+<pre class="de2">
+<span class="br0">{</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  <span class="kw1">simulated</span> <span class="kw1">function</span> <span class="kw4">Timer</span><span class="br0">(</span><span class="br0">)</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  <span class="br0">{</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="kw1">local</span> JBInfoJail thisJail;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="kw1">local</span> <span class="kw5">int</span> i;
+</pre></li>
+<li class="li2">
+<pre class="de2">
+    <span class="kw1">local</span> PlayerReplicationInfo PRI;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="kw1">local</span> JBTagPlayer TagPlayer;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="kw1">local</span> <span class="kw9">Pawn</span> thisPawn;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    ExplosionCountdown <span class="sy0">-=</span> <span class="nu0">0.1</span>;
+</pre></li>
+<li class="li2">
+<pre class="de2">
+    <span class="kw2">if</span> <span class="br0">(</span> <span class="sy0">!</span>bPreExplosion <span class="sy0">&amp;&amp;</span> ExplosionCountdown <span class="sy0">&lt;=</span> PreExplosionDelay <span class="br0">)</span> <span class="br0">{</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+      <span class="co1">// trigger the pre-explosion event (camera switch)</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+      bPreExplosion <span class="sy0">=</span> <span class="kw6">True</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+      TriggerEvent<span class="br0">(</span>PreExplosionEvent, <span class="kw6">Self</span>, <span class="kw5">None</span><span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="br0">}</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+    <span class="kw2">if</span> <span class="br0">(</span> ExplosionCountdown <span class="sy0">&lt;=</span> <span class="nu0">0</span> <span class="br0">)</span> <span class="br0">{</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+      <span class="kw4">SetTimer</span><span class="br0">(</span><span class="nu0">0.0</span>, <span class="kw6">False</span><span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+      TriggerEvent<span class="br0">(</span><span class="kw1">Event</span>, <span class="kw6">Self</span>, <span class="kw5">None</span><span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+      <span class="kw2">if</span> <span class="br0">(</span> <span class="kw7">Role</span> <span class="sy0">==</span> <span class="kw7">ROLE_Authority</span> <span class="br0">)</span> <span class="br0">{</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+        <span class="kw2">foreach</span> <span class="kw2">DynamicActors</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'PlayerReplicationInfo'</span>, PRI<span class="br0">)</span> <span class="br0">{</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+          TagPlayer <span class="sy0">=</span> <span class="kw1">class</span><span class="st0">'JBTagPlayer'</span>.<span class="kw1">static</span>.<span class="me0">FindFor</span><span class="br0">(</span>PRI<span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+          <span class="kw2">if</span> <span class="br0">(</span> TagPlayer <span class="sy0">!=</span> <span class="kw5">None</span> <span class="sy0">&amp;&amp;</span> TagPlayer.<span class="me0">IsInJail</span><span class="br0">(</span><span class="br0">)</span> <span class="sy0">&amp;&amp;</span> TagPlayer.<span class="me0">GetPawn</span><span class="br0">(</span><span class="br0">)</span> <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span> <span class="br0">{</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+            thisJail <span class="sy0">=</span> TagPlayer.<span class="me0">GetJail</span><span class="br0">(</span><span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+            thisPawn <span class="sy0">=</span> TagPlayer.<span class="me0">GetPawn</span><span class="br0">(</span><span class="br0">)</span>;
+</pre></li>
+<li class="li2">
+<pre class="de2">
+            <span class="kw2">for</span> <span class="br0">(</span>i <span class="sy0">=</span> <span class="nu0">0</span>; i <span class="sy0">&lt;</span> AssociatedJails.<span class="me0">Length</span>; <span class="sy0">++</span>i<span class="br0">)</span> <span class="br0">{</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+              <span class="kw2">if</span> <span class="br0">(</span> thisJail <span class="sy0">==</span> AssociatedJails<span class="br0">[</span>i<span class="br0">]</span> <span class="br0">)</span> <span class="br0">{</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+                thisPawn.<span class="kw4">TakeDamage</span><span class="br0">(</span><span class="nu0">1000</span>, <span class="kw5">None</span>, thisPawn.<span class="kw7">Location</span>, MomentumTransfer <span class="sy0">*</span> <span class="kw3">Normal</span><span class="br0">(</span>thisPawn.<span class="kw7">Location</span> <span class="sy0">-</span> <span class="kw7">Location</span><span class="br0">)</span> <span class="sy0">*</span> <span class="nu0">1000</span> <span class="sy0">/</span> <span class="kw3">VSize</span><span class="br0">(</span>thisPawn.<span class="kw7">Location</span> <span class="sy0">-</span> <span class="kw7">Location</span><span class="br0">)</span>, MyDamageType<span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+                <span class="kw2">if</span> <span class="br0">(</span> thisPawn.<span class="me0">Health</span> <span class="sy0">&gt;</span> <span class="nu0">0</span> <span class="br0">)</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+                  thisPawn.<span class="me0">Died</span><span class="br0">(</span><span class="kw5">None</span>, MyDamageType, thisPawn.<span class="kw7">Location</span><span class="br0">)</span>;
+</pre></li>
+<li class="li2">
+<pre class="de2">
+                <span class="kw2">break</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+              <span class="br0">}</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+            <span class="br0">}</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+          <span class="br0">}</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+        <span class="br0">}</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+      <span class="br0">}</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+      <span class="kw3">GotoState</span><span class="br0">(</span><span class="st0">'Sleeping'</span><span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="br0">}</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  <span class="br0">}</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw2">Begin</span>:
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  ExplosionCountdown <span class="sy0">=</span> ExplosionDelay;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  bPreExplosion <span class="sy0">=</span> <span class="kw6">False</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  <span class="kw4">SetTimer</span><span class="br0">(</span><span class="nu0">0.1</span>, <span class="kw6">True</span><span class="br0">)</span>;
+</pre></li>
+<li class="li2">
+<pre class="de2">
+  <span class="kw2">while</span> <span class="br0">(</span><span class="kw6">True</span><span class="br0">)</span> <span class="br0">{</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="kw4">PlayAnim</span><span class="br0">(</span><span class="st0">'Idle'</span>, <span class="nu0">1.0</span>, <span class="nu0">0.3</span><span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="kw4">FinishAnim</span><span class="br0">(</span><span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="kw4">PlayAnim</span><span class="br0">(</span>IdleAnims<span class="br0">[</span><span class="kw3">Rand</span><span class="br0">(</span>ArrayCount<span class="br0">(</span>IdleAnims<span class="br0">)</span><span class="br0">)</span><span class="br0">]</span>, <span class="nu0">1.0</span>, <span class="nu0">0.3</span><span class="br0">)</span>;
+</pre></li>
+<li class="li1">
+<pre class="de1">
+    <span class="kw4">FinishAnim</span><span class="br0">(</span><span class="br0">)</span>;
+</pre></li>
+<li class="li2">
+<pre class="de2">
+  <span class="br0">}</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="br0">}</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">//=============================================================================</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+<span class="co1">// Default properties</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="co1">//=============================================================================</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+ 
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="kw1">defaultproperties</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="br0">{</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+  <span class="kw7">DrawType</span><span class="sy0">=</span><span class="kw7">DT_Mesh</span>              <span class="co1">// The mesh used for this actor is a special version of the</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  <span class="kw5">Mesh</span><span class="sy0">=</span>CollidingSpiderMineMesh  <span class="co1">// Onslaught parasite mine mesh, that has sound notifications</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  bUseCylinderCollision<span class="sy0">=</span><span class="kw6">False</span>   <span class="co1">// and collision boxes matching the spider's size and shape.</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  bEdShouldSnap<span class="sy0">=</span><span class="kw6">True</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  bProjTarget<span class="sy0">=</span><span class="kw6">True</span>              <span class="co1">// shots should hit the spider</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+  <span class="kw7">CollisionHeight</span><span class="sy0">=</span><span class="nu0">60.0</span>          <span class="co1">// These dimensions help placing</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  <span class="kw7">CollisionRadius</span><span class="sy0">=</span><span class="nu0">150.0</span>         <span class="co1">// the spider in Unrealed.</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  IdleAnims<span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="sy0">=</span>Clean
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  IdleAnims<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">=</span>Look
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  IdleAnims<span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span><span class="sy0">=</span>Bob
+</pre></li>
+<li class="li2">
+<pre class="de2">
+  IdleAnims<span class="br0">(</span><span class="nu0">3</span><span class="br0">)</span><span class="sy0">=</span>FootTap
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  <span class="kw7">DrawScale</span><span class="sy0">=</span><span class="nu0">1.5</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  bUseDynamicLights<span class="sy0">=</span><span class="kw6">True</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  bDramaticLighting<span class="sy0">=</span><span class="kw6">True</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  <span class="kw7">RemoteRole</span><span class="sy0">=</span><span class="kw7">ROLE_SimulatedProxy</span>    <span class="co1">// The spider should be replicated to clients.</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+  InitialState<span class="sy0">=</span>Sleeping             <span class="co1">// the startup state</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  SpawnOverlayMaterial<span class="sy0">=</span>VehicleSpawnShaderRed
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  SpawnOverlayTime<span class="sy0">=</span><span class="nu0">2.0</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  PreSpawnDelay<span class="sy0">=</span><span class="nu0">2.0</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  PreExplosionDelay<span class="sy0">=</span><span class="nu0">1.0</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+  ExplosionDelay<span class="sy0">=</span><span class="nu0">5.0</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  MomentumTransfer<span class="sy0">=</span><span class="nu0">100000.0</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  MyDamageType<span class="sy0">=</span>DamTypeONSMine
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  SurfaceType<span class="sy0">=</span>EST_Metal         <span class="co1">// for players walking on the spider and shots hitting it</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  BulletSounds<span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'WeaponSounds.BBulletReflect1'</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+  BulletSounds<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'WeaponSounds.BBulletReflect2'</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  BulletSounds<span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span><span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'WeaponSounds.BBulletReflect3'</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  BulletSounds<span class="br0">(</span><span class="nu0">3</span><span class="br0">)</span><span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'WeaponSounds.BBulletReflect4'</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  BulletSounds<span class="br0">(</span><span class="nu0">4</span><span class="br0">)</span><span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'WeaponSounds.BBulletImpact1'</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  BulletSounds<span class="br0">(</span><span class="nu0">5</span><span class="br0">)</span><span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'WeaponSounds.BBulletImpact2'</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+  BulletSounds<span class="br0">(</span><span class="nu0">6</span><span class="br0">)</span><span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'WeaponSounds.BBulletImpact3'</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  BulletSounds<span class="br0">(</span><span class="nu0">7</span><span class="br0">)</span><span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'WeaponSounds.BBulletImpact4'</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  BulletSounds<span class="br0">(</span><span class="nu0">8</span><span class="br0">)</span><span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'WeaponSounds.BBulletImpact5'</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  BulletSounds<span class="br0">(</span><span class="nu0">9</span><span class="br0">)</span><span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'WeaponSounds.BBulletImpact6'</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  BulletSounds<span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span><span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'WeaponSounds.BBulletImpact7'</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+  BulletSounds<span class="br0">(</span><span class="nu0">11</span><span class="br0">)</span><span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'WeaponSounds.BBulletImpact8'</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  BulletSounds<span class="br0">(</span><span class="nu0">12</span><span class="br0">)</span><span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'WeaponSounds.BBulletImpact9'</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  BulletSounds<span class="br0">(</span><span class="nu0">13</span><span class="br0">)</span><span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'WeaponSounds.BBulletImpact11'</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  BulletSounds<span class="br0">(</span><span class="nu0">14</span><span class="br0">)</span><span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'WeaponSounds.BBulletImpact12'</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+  BulletSounds<span class="br0">(</span><span class="nu0">15</span><span class="br0">)</span><span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'WeaponSounds.BBulletImpact13'</span>
+</pre></li>
+<li class="li2">
+<pre class="de2">
+  BulletSounds<span class="br0">(</span><span class="nu0">16</span><span class="br0">)</span><span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'WeaponSounds.BBulletImpact14'</span>
+</pre></li>
+<li class="li1">
+<pre class="de1">
+<span class="br0">}</span>
+</pre></li>
+</ol>
+</div>
+</div>
+<h2><span class="mw-headline" id="How_Does_It_Work.3F">How Does It Work?</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Replication_Examples/Giant_Spider_Execution?section=3" title="Edit section: How Does It Work?">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Before_We_Start">Before We Start</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Replication_Examples/Giant_Spider_Execution?section=4" title="Edit section: Before We Start">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>JBGiantSpiderMine is a placeable, replicated actor. That means, the actor is placed in the map and exists as separate versions on the server and on all clients <i>before</i> any replication happens. These clientside versions will never do anything and could as well be destroyed in PreBeginPlay() when <code>(Level.NetMode == NM_Client)</code> and <code>(Role == ROLE_Authority)</code>.</p>
+<p>The giant spider is initially invisible and will never receive the trigger events in the clients, so we might as well leave it alone. You should still keep this in mind when creating replicated actors for mappers.</p>
+<p>The JBGiantSpiderMine starts in its <a href="../Legacy_InitialState.html" title="Legacy:InitialState">InitialState</a> 'Sleeping' both on the server and on clients.</p>
+<h3><span class="mw-headline" id="Press_The_Start_Button">Press The Start Button</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Replication_Examples/Giant_Spider_Execution?section=5" title="Edit section: Press The Start Button">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The giant spider is triggered serversidely by an event matching its <a href="../Legacy_Tag.html" title="Legacy:Tag">Tag</a> value. This will cause the Trigger() function in state Sleeping to be executed. This is a non-<a href="../Legacy_Simulated_Function.html" title="Legacy:Simulated Function">simulated function</a>, because it never needs to be executed clientsidely.</p>
+<p>The Trigger() function checks, whether there are actually players in the desired jail. If it finds players, three things happen:</p>
+<ul>
+<li>The value of bClientTrigger is toggled. This change will be replicated to all clients and cause some native replication magic to do its work. (see below)</li>
+<li>The value of NetUpdateTime is set to a time index in the past. This will force all changed replicated variables to be replicated as soon as possible.</li>
+<li>The JBGiantSpiderMine switches to state 'Spawning' serversidely.</li>
+</ul>
+<p>Changing the value of bClientTrigger will cause the ClientTrigger() function to be called clientsidely once the change reaches the client. Since the JBGiantSpiderMine is also in state 'Sleeping' on the client, it will call the corresponding ClientTrigger() function, which switches to state 'Spawning'.</p>
+<p>From this point on, the server and clients process their visual and sound effects independantly from each other.</p>
+<h3><span class="mw-headline" id="Making_The_Spider_Appear">Making The Spider Appear</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Replication_Examples/Giant_Spider_Execution?section=6" title="Edit section: Making The Spider Appear">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The 'Spawning' state waits until the spawn effect emitter is done (the required amount time for this must be set manually by the mapper) and makes the spider visible and enables its collision. The call to SetLocation() makes sure, that all players touching the spider are immediately "telefragged". The spider plays its startup animation and goes to state 'Waiting'.</p>
+<h3><span class="mw-headline" id="Waiting_For_The_Big_Bang">Waiting For The Big Bang</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Replication_Examples/Giant_Spider_Execution?section=7" title="Edit section: Waiting For The Big Bang">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Like the 'Sleeping' and 'Spawning' states, the 'Waiting' state is entered independently on server and clients. Only the fixed time intervals used on server and clients ensure that they enter this state at about the same time!</p>
+<p>Once state 'Waiting' starts, two things are done independantly form each other:</p>
+<ul>
+<li>The state code randomly plays animations and waits for them to finish.</li>
+<li>The Timer() function is called every 0.1 game seconds and decreases the ExplosionCounter. If it drops below PreExplosionDelay, the PreExplosionEvent is trigger <i>on the server and clients independantly.</i> If the ExplosionCounter reaches 0, the Event is triggered also on the server and the clients independantly and the server (<code>Role == ROLE_Authority</code>) kills the players in the associated jails. After that, server and client go back to state 'Sleeping' <i>independantly</i>.</li>
+</ul>
+<h2><span class="mw-headline" id="Conclusion">Conclusion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Replication_Examples/Giant_Spider_Execution?section=8" title="Edit section: Conclusion">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Sometimes (like in this case) the big challenge in replication is not the replication itself, but <i>not</i> using it. This example relies more on simulation than on replication. The only part where the simulation is syncronized is the native magic behind the bClientTrigger variable, which calls the ClientTrigger() function once its changed value reaches the client. It should be mentioned, that bClientTrigger is only useful when you know, that it will not change more than once within a short time span. With a higher frequence of changes you should use a replicated byte variable and check its value in PostNetReceive() on the clients.</p>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Replication_Examples/Giant_Spider_Execution?section=9" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="../Legacy_Replication_Examples.html" title="Legacy:Replication Examples">Replication Examples</a></li>
+<li><a href="../Legacy_Replication.html" title="Legacy:Replication">Replication</a></li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.091 seconds
+Real time usage: 0.092 seconds
+Preprocessor visited node count: 46/1000000
+Preprocessor generated node count: 70/1000000
+Post‐expand include size: 43/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:2683-0!*!0!!en!*!* and timestamp 20161215142905 and revision id 6391
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Replication_Examples/Giant_Spider_Execution?oldid=6391">https://wiki.beyondunreal.com/Legacy:Replication_Examples/Giant_Spider_Execution?oldid=6391</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../Category_Legacy_Tutorial.html" title="Category:Legacy Tutorial">Legacy Tutorial</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Giant_Spider_Execution.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Replication_Examples/Giant_Spider_Execution?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Replication_Examples/Giant_Spider_Execution" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Replication_Examples/Giant_Spider_Execution" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AReplication+Examples%2FGiant+Spider+Execution&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AReplication+Examples%2FGiant+Spider+Execution" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="../index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="../Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Replication_Examples/Giant_Spider_Execution" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Replication_Examples/Giant_Spider_Execution" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Replication_Examples/Giant_Spider_Execution?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Replication_Examples/Giant_Spider_Execution?oldid=6391" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Replication_Examples/Giant_Spider_Execution" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 07:07, 30 August 2005.</li>
+									<li id="copyright">Licensed as <a href="../Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="../Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="../Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="../Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":164});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Replication_Examples/Giant_Spider_Execution by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:38 GMT -->
+</html>

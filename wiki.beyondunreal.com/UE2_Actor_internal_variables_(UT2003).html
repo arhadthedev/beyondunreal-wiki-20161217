@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE2:Actor_internal_variables_(UT2003) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:32:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE2:Actor internal variables (UT2003) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE2_Actor_internal_variables_(UT2003).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE2","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":104,"wgPageName":"UE2:Actor_internal_variables_(UT2003)","wgTitle":"Actor internal variables (UT2003)","wgCurRevisionId":16891,"wgRevisionId":16891,"wgArticleId":9166,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE2:Actor_internal_variables_(UT2003)","wgRelevantArticleId":9166,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-104 ns-subject page-UE2_Actor_internal_variables_UT2003 skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Worst-case scenario: the UEd Goblin wipes the map and burns down your house.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE2:Actor internal variables (UT2003)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Tournament_2003.html" title="Unreal Tournament 2003"><img alt="UT2003" src="w/images/Icon-UT2003.png" width="16" height="16" /></a></td>
+<td><a href="UE2_Object_(UT2003).html" title="UE2:Object (UT2003)">Object</a> &gt;&gt;&#160;<a href="UE2_Actor_(UT2003).html" title="UE2:Actor (UT2003)">Actor</a> <i>(internal variables)</i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Internal_variables"><span class="tocnumber">1</span> <span class="toctext">Internal variables</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Acceleration"><span class="tocnumber">1.1</span> <span class="toctext">Acceleration</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#ActorRenderData"><span class="tocnumber">1.2</span> <span class="toctext">ActorRenderData</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Attached"><span class="tocnumber">1.3</span> <span class="toctext">Attached</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#AttachmentBone"><span class="tocnumber">1.4</span> <span class="toctext">AttachmentBone</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#bAlwaysRelevant"><span class="tocnumber">1.5</span> <span class="toctext">bAlwaysRelevant</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#bAlwaysTick"><span class="tocnumber">1.6</span> <span class="toctext">bAlwaysTick</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#bAlwaysZeroBoneOffset"><span class="tocnumber">1.7</span> <span class="toctext">bAlwaysZeroBoneOffset</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#bAnimByOwner"><span class="tocnumber">1.8</span> <span class="toctext">bAnimByOwner</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Base"><span class="tocnumber">1.9</span> <span class="toctext">Base</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#bCanBeDamaged"><span class="tocnumber">1.10</span> <span class="toctext">bCanBeDamaged</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#bClientAnim"><span class="tocnumber">1.11</span> <span class="toctext">bClientAnim</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#bClientDemoNetFunc"><span class="tocnumber">1.12</span> <span class="toctext">bClientDemoNetFunc</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#bClientDemoRecording"><span class="tocnumber">1.13</span> <span class="toctext">bClientDemoRecording</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#bCompressedPosition"><span class="tocnumber">1.14</span> <span class="toctext">bCompressedPosition</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#bDeleteMe"><span class="tocnumber">1.15</span> <span class="toctext">bDeleteMe</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#bDemoOwner"><span class="tocnumber">1.16</span> <span class="toctext">bDemoOwner</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#bDemoRecording"><span class="tocnumber">1.17</span> <span class="toctext">bDemoRecording</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#bDestroyInPainVolume"><span class="tocnumber">1.18</span> <span class="toctext">bDestroyInPainVolume</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#bDisturbFluidSurface"><span class="tocnumber">1.19</span> <span class="toctext">bDisturbFluidSurface</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#bEdSnap"><span class="tocnumber">1.20</span> <span class="toctext">bEdSnap</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#bHurtEntry"><span class="tocnumber">1.21</span> <span class="toctext">bHurtEntry</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#bIgnoreOutOfWorld"><span class="tocnumber">1.22</span> <span class="toctext">bIgnoreOutOfWorld</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#bInterpolating"><span class="tocnumber">1.23</span> <span class="toctext">bInterpolating</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#bJustTeleported"><span class="tocnumber">1.24</span> <span class="toctext">bJustTeleported</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#bLightChanged"><span class="tocnumber">1.25</span> <span class="toctext">bLightChanged</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#bNetDirty"><span class="tocnumber">1.26</span> <span class="toctext">bNetDirty</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#bNetInitial"><span class="tocnumber">1.27</span> <span class="toctext">bNetInitial</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#bNetInitialRotation"><span class="tocnumber">1.28</span> <span class="toctext">bNetInitialRotation</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#bNetOwner"><span class="tocnumber">1.29</span> <span class="toctext">bNetOwner</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#bNetRelevant"><span class="tocnumber">1.30</span> <span class="toctext">bNetRelevant</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#bNetTemporary"><span class="tocnumber">1.31</span> <span class="toctext">bNetTemporary</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#bNoRepMesh"><span class="tocnumber">1.32</span> <span class="toctext">bNoRepMesh</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#bObsolete"><span class="tocnumber">1.33</span> <span class="toctext">bObsolete</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#bOnlyAffectPawns"><span class="tocnumber">1.34</span> <span class="toctext">bOnlyAffectPawns</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#bOnlyDirtyReplication"><span class="tocnumber">1.35</span> <span class="toctext">bOnlyDirtyReplication</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#bOnlyDrawIfAttached"><span class="tocnumber">1.36</span> <span class="toctext">bOnlyDrawIfAttached</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#bOnlyOwnerSee"><span class="tocnumber">1.37</span> <span class="toctext">bOnlyOwnerSee</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#bOnlyRelevantToOwner"><span class="tocnumber">1.38</span> <span class="toctext">bOnlyRelevantToOwner</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#bOrientOnSlope"><span class="tocnumber">1.39</span> <span class="toctext">bOrientOnSlope</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#bOwnerNoSee"><span class="tocnumber">1.40</span> <span class="toctext">bOwnerNoSee</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#bPathTemp"><span class="tocnumber">1.41</span> <span class="toctext">bPathTemp</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#bPendingDelete"><span class="tocnumber">1.42</span> <span class="toctext">bPendingDelete</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="#bRepClientDemo"><span class="tocnumber">1.43</span> <span class="toctext">bRepClientDemo</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="#bReplicateAnimations"><span class="tocnumber">1.44</span> <span class="toctext">bReplicateAnimations</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href="#bReplicateInstigator"><span class="tocnumber">1.45</span> <span class="toctext">bReplicateInstigator</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#bReplicateMovement"><span class="tocnumber">1.46</span> <span class="toctext">bReplicateMovement</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="#Brush"><span class="tocnumber">1.47</span> <span class="toctext">Brush</span></a></li>
+<li class="toclevel-2 tocsection-49"><a href="#bScriptInitialized"><span class="tocnumber">1.48</span> <span class="toctext">bScriptInitialized</span></a></li>
+<li class="toclevel-2 tocsection-50"><a href="#bSelected"><span class="tocnumber">1.49</span> <span class="toctext">bSelected</span></a></li>
+<li class="toclevel-2 tocsection-51"><a href="#bShowOctreeNodes"><span class="tocnumber">1.50</span> <span class="toctext">bShowOctreeNodes</span></a></li>
+<li class="toclevel-2 tocsection-52"><a href="#bSkipActorPropertyReplication"><span class="tocnumber">1.51</span> <span class="toctext">bSkipActorPropertyReplication</span></a></li>
+<li class="toclevel-2 tocsection-53"><a href="#bStatic"><span class="tocnumber">1.52</span> <span class="toctext">bStatic</span></a></li>
+<li class="toclevel-2 tocsection-54"><a href="#bTearOff"><span class="tocnumber">1.53</span> <span class="toctext">bTearOff</span></a></li>
+<li class="toclevel-2 tocsection-55"><a href="#bTempEditor"><span class="tocnumber">1.54</span> <span class="toctext">bTempEditor</span></a></li>
+<li class="toclevel-2 tocsection-56"><a href="#bTicked"><span class="tocnumber">1.55</span> <span class="toctext">bTicked</span></a></li>
+<li class="toclevel-2 tocsection-57"><a href="#bTimerLoop"><span class="tocnumber">1.56</span> <span class="toctext">bTimerLoop</span></a></li>
+<li class="toclevel-2 tocsection-58"><a href="#bTrailerAllowRotation"><span class="tocnumber">1.57</span> <span class="toctext">bTrailerAllowRotation</span></a></li>
+<li class="toclevel-2 tocsection-59"><a href="#bTrailerPrePivot"><span class="tocnumber">1.58</span> <span class="toctext">bTrailerPrePivot</span></a></li>
+<li class="toclevel-2 tocsection-60"><a href="#bTrailerSameRotation"><span class="tocnumber">1.59</span> <span class="toctext">bTrailerSameRotation</span></a></li>
+<li class="toclevel-2 tocsection-61"><a href="#bTravel"><span class="tocnumber">1.60</span> <span class="toctext">bTravel</span></a></li>
+<li class="toclevel-2 tocsection-62"><a href="#bUpdateSimulatedPosition"><span class="tocnumber">1.61</span> <span class="toctext">bUpdateSimulatedPosition</span></a></li>
+<li class="toclevel-2 tocsection-63"><a href="#bWasSNFiltered"><span class="tocnumber">1.62</span> <span class="toctext">bWasSNFiltered</span></a></li>
+<li class="toclevel-2 tocsection-64"><a href="#bWorldGeometry"><span class="tocnumber">1.63</span> <span class="toctext">bWorldGeometry</span></a></li>
+<li class="toclevel-2 tocsection-65"><a href="#CachedLocalToWorld"><span class="tocnumber">1.64</span> <span class="toctext">CachedLocalToWorld</span></a></li>
+<li class="toclevel-2 tocsection-66"><a href="#CachedLocation"><span class="tocnumber">1.65</span> <span class="toctext">CachedLocation</span></a></li>
+<li class="toclevel-2 tocsection-67"><a href="#CachedRotation"><span class="tocnumber">1.66</span> <span class="toctext">CachedRotation</span></a></li>
+<li class="toclevel-2 tocsection-68"><a href="#CollisionTag"><span class="tocnumber">1.67</span> <span class="toctext">CollisionTag</span></a></li>
+<li class="toclevel-2 tocsection-69"><a href="#ColLocation"><span class="tocnumber">1.68</span> <span class="toctext">ColLocation</span></a></li>
+<li class="toclevel-2 tocsection-70"><a href="#Deleted"><span class="tocnumber">1.69</span> <span class="toctext">Deleted</span></a></li>
+<li class="toclevel-2 tocsection-71"><a href="#HardRelMatrix"><span class="tocnumber">1.70</span> <span class="toctext">HardRelMatrix</span></a></li>
+<li class="toclevel-2 tocsection-72"><a href="#Instigator"><span class="tocnumber">1.71</span> <span class="toctext">Instigator</span></a></li>
+<li class="toclevel-2 tocsection-73"><a href="#Inventory"><span class="tocnumber">1.72</span> <span class="toctext">Inventory</span></a></li>
+<li class="toclevel-2 tocsection-74"><a href="#JoinedTag"><span class="tocnumber">1.73</span> <span class="toctext">JoinedTag</span></a></li>
+<li class="toclevel-2 tocsection-75"><a href="#KStepTag"><span class="tocnumber">1.74</span> <span class="toctext">KStepTag</span></a></li>
+<li class="toclevel-2 tocsection-76"><a href="#LastRenderTime"><span class="tocnumber">1.75</span> <span class="toctext">LastRenderTime</span></a></li>
+<li class="toclevel-2 tocsection-77"><a href="#LatentFloat"><span class="tocnumber">1.76</span> <span class="toctext">LatentFloat</span></a></li>
+<li class="toclevel-2 tocsection-78"><a href="#Leaves"><span class="tocnumber">1.77</span> <span class="toctext">Leaves</span></a></li>
+<li class="toclevel-2 tocsection-79"><a href="#Level"><span class="tocnumber">1.78</span> <span class="toctext">Level</span></a></li>
+<li class="toclevel-2 tocsection-80"><a href="#LightRenderData"><span class="tocnumber">1.79</span> <span class="toctext">LightRenderData</span></a></li>
+<li class="toclevel-2 tocsection-81"><a href="#MeshInstance"><span class="tocnumber">1.80</span> <span class="toctext">MeshInstance</span></a></li>
+<li class="toclevel-2 tocsection-82"><a href="#MessageClass"><span class="tocnumber">1.81</span> <span class="toctext">MessageClass</span></a></li>
+<li class="toclevel-2 tocsection-83"><a href="#NetPriority"><span class="tocnumber">1.82</span> <span class="toctext">NetPriority</span></a></li>
+<li class="toclevel-2 tocsection-84"><a href="#NetTag"><span class="tocnumber">1.83</span> <span class="toctext">NetTag</span></a></li>
+<li class="toclevel-2 tocsection-85"><a href="#NetUpdateFrequency"><span class="tocnumber">1.84</span> <span class="toctext">NetUpdateFrequency</span></a></li>
+<li class="toclevel-2 tocsection-86"><a href="#NetUpdateTime"><span class="tocnumber">1.85</span> <span class="toctext">NetUpdateTime</span></a></li>
+<li class="toclevel-2 tocsection-87"><a href="#OctreeBox"><span class="tocnumber">1.86</span> <span class="toctext">OctreeBox</span></a></li>
+<li class="toclevel-2 tocsection-88"><a href="#OctreeBoxCenter"><span class="tocnumber">1.87</span> <span class="toctext">OctreeBoxCenter</span></a></li>
+<li class="toclevel-2 tocsection-89"><a href="#OctreeBoxRadii"><span class="tocnumber">1.88</span> <span class="toctext">OctreeBoxRadii</span></a></li>
+<li class="toclevel-2 tocsection-90"><a href="#OctreeNodes"><span class="tocnumber">1.89</span> <span class="toctext">OctreeNodes</span></a></li>
+<li class="toclevel-2 tocsection-91"><a href="#Owner"><span class="tocnumber">1.90</span> <span class="toctext">Owner</span></a></li>
+<li class="toclevel-2 tocsection-92"><a href="#PendingTouch"><span class="tocnumber">1.91</span> <span class="toctext">PendingTouch</span></a></li>
+<li class="toclevel-2 tocsection-93"><a href="#PhysicsVolume"><span class="tocnumber">1.92</span> <span class="toctext">PhysicsVolume</span></a></li>
+<li class="toclevel-2 tocsection-94"><a href="#Projectors"><span class="tocnumber">1.93</span> <span class="toctext">Projectors</span></a></li>
+<li class="toclevel-2 tocsection-95"><a href="#Region"><span class="tocnumber">1.94</span> <span class="toctext">Region</span></a></li>
+<li class="toclevel-2 tocsection-96"><a href="#RelativeLocation"><span class="tocnumber">1.95</span> <span class="toctext">RelativeLocation</span></a></li>
+<li class="toclevel-2 tocsection-97"><a href="#RelativeRotation"><span class="tocnumber">1.96</span> <span class="toctext">RelativeRotation</span></a></li>
+<li class="toclevel-2 tocsection-98"><a href="#RemoteRole"><span class="tocnumber">1.97</span> <span class="toctext">RemoteRole</span></a></li>
+<li class="toclevel-2 tocsection-99"><a href="#RenderRevision"><span class="tocnumber">1.98</span> <span class="toctext">RenderRevision</span></a></li>
+<li class="toclevel-2 tocsection-100"><a href="#RepSkin"><span class="tocnumber">1.99</span> <span class="toctext">RepSkin</span></a></li>
+<li class="toclevel-2 tocsection-101"><a href="#Role"><span class="tocnumber">1.100</span> <span class="toctext">Role</span></a></li>
+<li class="toclevel-2 tocsection-102"><a href="#SimAnim"><span class="tocnumber">1.101</span> <span class="toctext">SimAnim</span></a></li>
+<li class="toclevel-2 tocsection-103"><a href="#StaticFilterState"><span class="tocnumber">1.102</span> <span class="toctext">StaticFilterState</span></a></li>
+<li class="toclevel-2 tocsection-104"><a href="#StaticMeshInstance"><span class="tocnumber">1.103</span> <span class="toctext">StaticMeshInstance</span></a></li>
+<li class="toclevel-2 tocsection-105"><a href="#StaticMeshProjectors"><span class="tocnumber">1.104</span> <span class="toctext">StaticMeshProjectors</span></a></li>
+<li class="toclevel-2 tocsection-106"><a href="#StaticSectionBatches"><span class="tocnumber">1.105</span> <span class="toctext">StaticSectionBatches</span></a></li>
+<li class="toclevel-2 tocsection-107"><a href="#TimerCounter"><span class="tocnumber">1.106</span> <span class="toctext">TimerCounter</span></a></li>
+<li class="toclevel-2 tocsection-108"><a href="#TimerRate"><span class="tocnumber">1.107</span> <span class="toctext">TimerRate</span></a></li>
+<li class="toclevel-2 tocsection-109"><a href="#Touching"><span class="tocnumber">1.108</span> <span class="toctext">Touching</span></a></li>
+<li class="toclevel-2 tocsection-110"><a href="#XLevel"><span class="tocnumber">1.109</span> <span class="toctext">XLevel</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Actor internal variables in other games:</dt>
+<dd><span><a href="UE1_Actor_internal_variables_(RTNP).html" title="UE1:Actor internal variables (RTNP)">RTNP</a></span>, <span><a href="UE1_Actor_internal_variables_(U1).html" title="UE1:Actor internal variables (U1)">U1</a></span>, <span><a href="UE1_Actor_internal_variables_(UT).html" title="UE1:Actor internal variables (UT)">UT</a></span>, <span><a href="UE2_Actor_internal_variables_(U2).html" title="UE2:Actor internal variables (U2)">U2</a></span>, <span><a href="UE2_Actor_internal_variables_(U2XMP).html" title="UE2:Actor internal variables (U2XMP)">U2XMP</a></span>, <span><a href="UE2_Actor_internal_variables_(UE2Runtime).html" title="UE2:Actor internal variables (UE2Runtime)">UE2Runtime</a></span>, <span><a href="UE2_Actor_internal_variables_(UT2004).html" title="UE2:Actor internal variables (UT2004)">UT2004</a></span>, <span><a href="UE3_Actor_internal_variables_(UT3).html" title="UE3:Actor internal variables (UT3)">UT3</a></span>, <span><a href="UE3_Actor_internal_variables_(UDK).html" title="UE3:Actor internal variables (UDK)">UDK</a></span></dd>
+<dt>Other member categories for this class:</dt>
+<dd><span><a href="UE2_Actor_enums_(UT2003).html" title="UE2:Actor enums (UT2003)">enums</a></span>, <span><a href="UE2_Actor_events_(UT2003).html" title="UE2:Actor events (UT2003)">events</a></span>, <span><a href="UE2_Actor_native_functions_(UT2003).html" title="UE2:Actor native functions (UT2003)">native functions</a></span>, <span><a href="UE2_Actor_properties_(UT2003).html" title="UE2:Actor properties (UT2003)">properties</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Internal_variables">Internal variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=1" title="Edit section: Internal variables">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="Acceleration">Acceleration</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=2" title="Edit section: Acceleration">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UT2003).html#Vector" title="UE2:Object structs (UT2003)">Object.Vector</a></p>
+<p>Acceleration.</p>
+<h4><span class="mw-headline" id="ActorRenderData">ActorRenderData</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=3" title="Edit section: ActorRenderData">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Actor_(UT2003).html#ActorRenderDataPtr" title="UE2:Actor (UT2003)">ActorRenderDataPtr</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, native</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Attached">Attached</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=4" title="Edit section: Attached">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE2_Actor_(UT2003).html" title="UE2:Actor (UT2003)">Actor</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>array of actors attached to this actor.</p>
+<h4><span class="mw-headline" id="AttachmentBone">AttachmentBone</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=5" title="Edit section: AttachmentBone">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>name of bone to which actor is attached (if attached to center of base, ==<i>)</i></p>
+<h4><span class="mw-headline" id="bAlwaysRelevant">bAlwaysRelevant</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=6" title="Edit section: bAlwaysRelevant">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Always relevant for network.</p>
+<h4><span class="mw-headline" id="bAlwaysTick">bAlwaysTick</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=7" title="Edit section: bAlwaysTick">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bAlwaysZeroBoneOffset">bAlwaysZeroBoneOffset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=8" title="Edit section: bAlwaysZeroBoneOffset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bAnimByOwner">bAnimByOwner</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=9" title="Edit section: bAnimByOwner">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Animation dictated by owner.</p>
+<h4><span class="mw-headline" id="Base">Base</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=10" title="Edit section: Base">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Actor_(UT2003).html" title="UE2:Actor (UT2003)">Actor</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Actor we're standing on.</p>
+<h4><span class="mw-headline" id="bCanBeDamaged">bCanBeDamaged</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=11" title="Edit section: bCanBeDamaged">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>can take damage</p>
+<h4><span class="mw-headline" id="bClientAnim">bClientAnim</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=12" title="Edit section: bClientAnim">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Don't replicate any animations - animation done client-side</p>
+<h4><span class="mw-headline" id="bClientDemoNetFunc">bClientDemoNetFunc</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=13" title="Edit section: bClientDemoNetFunc">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>True if we're client-side demo recording and this call originated from the remote.</p>
+<h4><span class="mw-headline" id="bClientDemoRecording">bClientDemoRecording</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=14" title="Edit section: bClientDemoRecording">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>True we are currently recording a client-side demo</p>
+<h4><span class="mw-headline" id="bCompressedPosition">bCompressedPosition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=15" title="Edit section: bCompressedPosition">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>used by networking code to flag compressed position replication</p>
+<h4><span class="mw-headline" id="bDeleteMe">bDeleteMe</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=16" title="Edit section: bDeleteMe">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>About to be deleted.</p>
+<h4><span class="mw-headline" id="bDemoOwner">bDemoOwner</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=17" title="Edit section: bDemoOwner">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Demo recording driver owns this actor.</p>
+<h4><span class="mw-headline" id="bDemoRecording">bDemoRecording</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=18" title="Edit section: bDemoRecording">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>True we are currently demo recording</p>
+<h4><span class="mw-headline" id="bDestroyInPainVolume">bDestroyInPainVolume</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=19" title="Edit section: bDestroyInPainVolume">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>destroy this actor if it enters a pain volume</p>
+<h4><span class="mw-headline" id="bDisturbFluidSurface">bDisturbFluidSurface</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=20" title="Edit section: bDisturbFluidSurface">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Cause ripples when in contact with FluidSurface.</p>
+<h4><span class="mw-headline" id="bEdSnap">bEdSnap</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=21" title="Edit section: bEdSnap">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Should snap to grid in UnrealEd.</p>
+<h4><span class="mw-headline" id="bHurtEntry">bHurtEntry</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=22" title="Edit section: bHurtEntry">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>keep HurtRadius from being reentrant</p>
+<h4><span class="mw-headline" id="bIgnoreOutOfWorld">bIgnoreOutOfWorld</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=23" title="Edit section: bIgnoreOutOfWorld">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Don't destroy if enters zone zero</p>
+<h4><span class="mw-headline" id="bInterpolating">bInterpolating</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=24" title="Edit section: bInterpolating">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Performing interpolating.</p>
+<h4><span class="mw-headline" id="bJustTeleported">bJustTeleported</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=25" title="Edit section: bJustTeleported">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br />
+<b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bLightChanged">bLightChanged</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=26" title="Edit section: bLightChanged">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bNetDirty">bNetDirty</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=27" title="Edit section: bNetDirty">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient, const</p>
+<p>set when any attribute is assigned a value in unrealscript, reset when the actor is replicated</p>
+<h4><span class="mw-headline" id="bNetInitial">bNetInitial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=28" title="Edit section: bNetInitial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Initial network update.</p>
+<h4><span class="mw-headline" id="bNetInitialRotation">bNetInitialRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=29" title="Edit section: bNetInitialRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>sjs - Should replicate initial rotation</p>
+<h4><span class="mw-headline" id="bNetOwner">bNetOwner</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=30" title="Edit section: bNetOwner">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Player owns this actor.</p>
+<h4><span class="mw-headline" id="bNetRelevant">bNetRelevant</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=31" title="Edit section: bNetRelevant">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Actor is currently relevant. Only valid server side, only when replicating variables.</p>
+<h4><span class="mw-headline" id="bNetTemporary">bNetTemporary</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=32" title="Edit section: bNetTemporary">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Tear-off simulation in network play.</p>
+<h4><span class="mw-headline" id="bNoRepMesh">bNoRepMesh</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=33" title="Edit section: bNoRepMesh">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bObsolete">bObsolete</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=34" title="Edit section: bObsolete">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>actor is obsolete - warn level designers to remove it</p>
+<h4><span class="mw-headline" id="bOnlyAffectPawns">bOnlyAffectPawns</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=35" title="Edit section: bOnlyAffectPawns">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Optimisation - only test ovelap against pawns. Used for influences etc.</p>
+<h4><span class="mw-headline" id="bOnlyDirtyReplication">bOnlyDirtyReplication</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=36" title="Edit section: bOnlyDirtyReplication">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bOnlyDrawIfAttached">bOnlyDrawIfAttached</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=37" title="Edit section: bOnlyDrawIfAttached">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>don't draw this actor if not attached (useful for net clients where attached actors and their bases' replication may not be synched)</p>
+<h4><span class="mw-headline" id="bOnlyOwnerSee">bOnlyOwnerSee</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=38" title="Edit section: bOnlyOwnerSee">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Only owner can see this actor.</p>
+<h4><span class="mw-headline" id="bOnlyRelevantToOwner">bOnlyRelevantToOwner</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=39" title="Edit section: bOnlyRelevantToOwner">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>this actor is only relevant to its owner.</p>
+<h4><span class="mw-headline" id="bOrientOnSlope">bOrientOnSlope</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=40" title="Edit section: bOrientOnSlope">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>when landing, orient base on slope of floor</p>
+<h4><span class="mw-headline" id="bOwnerNoSee">bOwnerNoSee</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=41" title="Edit section: bOwnerNoSee">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Everything but the owner can see this actor.</p>
+<h4><span class="mw-headline" id="bPathTemp">bPathTemp</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=42" title="Edit section: bPathTemp">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Internal/path building</p>
+<h4><span class="mw-headline" id="bPendingDelete">bPendingDelete</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=43" title="Edit section: bPendingDelete">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bRepClientDemo">bRepClientDemo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=44" title="Edit section: bRepClientDemo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>True if remote client is recording demo</p>
+<h4><span class="mw-headline" id="bReplicateAnimations">bReplicateAnimations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=45" title="Edit section: bReplicateAnimations">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Should replicate SimAnim</p>
+<h4><span class="mw-headline" id="bReplicateInstigator">bReplicateInstigator</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=46" title="Edit section: bReplicateInstigator">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Replicate instigator to client (used by bNetTemporary projectiles).</p>
+<h4><span class="mw-headline" id="bReplicateMovement">bReplicateMovement</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=47" title="Edit section: bReplicateMovement">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>if true, replicate movement/location related properties</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="Brush">Brush</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=48" title="Edit section: Brush">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Model_(UT2003).html" title="UE2:Model (UT2003)">Model</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, export</p>
+<p>Brush if DrawType=DT_Brush.</p>
+<h4><span class="mw-headline" id="bScriptInitialized">bScriptInitialized</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=49" title="Edit section: bScriptInitialized">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>set to prevent re-initializing of actors spawned during level startup</p>
+<h4><span class="mw-headline" id="bSelected">bSelected</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=50" title="Edit section: bSelected">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Selected in UnrealEd.</p>
+<h4><span class="mw-headline" id="bShowOctreeNodes">bShowOctreeNodes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=51" title="Edit section: bShowOctreeNodes">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bSkipActorPropertyReplication">bSkipActorPropertyReplication</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=52" title="Edit section: bSkipActorPropertyReplication">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>if true, don't replicate actor class variables for this actor</p>
+<h4><span class="mw-headline" id="bStatic">bStatic</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=53" title="Edit section: bStatic">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Does not move or change over time. Don't let L.D.s change this - screws up net play</p>
+<h4><span class="mw-headline" id="bTearOff">bTearOff</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=54" title="Edit section: bTearOff">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bTempEditor">bTempEditor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=55" title="Edit section: bTempEditor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient, const</p>
+<p>Internal UnrealEd.</p>
+<h4><span class="mw-headline" id="bTicked">bTicked</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=56" title="Edit section: bTicked">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient, const</p>
+<p>Actor has been updated.</p>
+<h4><span class="mw-headline" id="bTimerLoop">bTimerLoop</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=57" title="Edit section: bTimerLoop">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Timer loops (else is one-shot).</p>
+<h4><span class="mw-headline" id="bTrailerAllowRotation">bTrailerAllowRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=58" title="Edit section: bTrailerAllowRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If PHYS_Trailer and want independent rotation control.</p>
+<h4><span class="mw-headline" id="bTrailerPrePivot">bTrailerPrePivot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=59" title="Edit section: bTrailerPrePivot">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If PHYS_Trailer and true, offset from owner by PrePivot.</p>
+<h4><span class="mw-headline" id="bTrailerSameRotation">bTrailerSameRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=60" title="Edit section: bTrailerSameRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If PHYS_Trailer and true, have same rotation as owner.</p>
+<h4><span class="mw-headline" id="bTravel">bTravel</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=61" title="Edit section: bTravel">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Actor is capable of travelling among servers.</p>
+<h4><span class="mw-headline" id="bUpdateSimulatedPosition">bUpdateSimulatedPosition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=62" title="Edit section: bUpdateSimulatedPosition">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>if true, update velocity/location after initialization for simulated proxies</p>
+<h4><span class="mw-headline" id="bWasSNFiltered">bWasSNFiltered</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=63" title="Edit section: bWasSNFiltered">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bWorldGeometry">bWorldGeometry</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=64" title="Edit section: bWorldGeometry">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Collision and Physics treats this actor as world geometry</p>
+<h4><span class="mw-headline" id="CachedLocalToWorld">CachedLocalToWorld</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=65" title="Edit section: CachedLocalToWorld">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UT2003).html#Matrix" title="UE2:Object structs (UT2003)">Object.Matrix</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="CachedLocation">CachedLocation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=66" title="Edit section: CachedLocation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UT2003).html#Vector" title="UE2:Object structs (UT2003)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="CachedRotation">CachedRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=67" title="Edit section: CachedRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UT2003).html#Rotator" title="UE2:Object structs (UT2003)">Object.Rotator</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="CollisionTag">CollisionTag</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=68" title="Edit section: CollisionTag">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, native</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ColLocation">ColLocation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=69" title="Edit section: ColLocation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UT2003).html#Vector" title="UE2:Object structs (UT2003)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Actor's old location one move ago. Only for debugging</p>
+<h4><span class="mw-headline" id="Deleted">Deleted</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=70" title="Edit section: Deleted">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Actor_(UT2003).html" title="UE2:Actor (UT2003)">Actor</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Next actor in just-deleted chain.</p>
+<h4><span class="mw-headline" id="HardRelMatrix">HardRelMatrix</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=71" title="Edit section: HardRelMatrix">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UT2003).html#Matrix" title="UE2:Object structs (UT2003)">Object.Matrix</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Instigator">Instigator</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=72" title="Edit section: Instigator">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Pawn_(UT2003).html" title="UE2:Pawn (UT2003)">Pawn</a></p>
+<p>Pawn responsible for damage caused by this actor.</p>
+<h4><span class="mw-headline" id="Inventory">Inventory</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=73" title="Edit section: Inventory">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Inventory_(UT2003).html" title="UE2:Inventory (UT2003)">Inventory</a></p>
+<p>Inventory chain.</p>
+<h4><span class="mw-headline" id="JoinedTag">JoinedTag</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=74" title="Edit section: JoinedTag">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="KStepTag">KStepTag</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=75" title="Edit section: KStepTag">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, native</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastRenderTime">LastRenderTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=76" title="Edit section: LastRenderTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>last time this actor was rendered.</p>
+<h4><span class="mw-headline" id="LatentFloat">LatentFloat</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=77" title="Edit section: LatentFloat">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Leaves">Leaves</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=78" title="Edit section: Leaves">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Int.html" title="Int" class="mw-redirect">int</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>BSP leaves this actor is in.</p>
+<h4><span class="mw-headline" id="Level">Level</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=79" title="Edit section: Level">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_LevelInfo_(UT2003).html" title="UE2:LevelInfo (UT2003)">LevelInfo</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Level this actor is on.</p>
+<h4><span class="mw-headline" id="LightRenderData">LightRenderData</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=80" title="Edit section: LightRenderData">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Actor_(UT2003).html#LightRenderDataPtr" title="UE2:Actor (UT2003)">LightRenderDataPtr</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, native</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="MeshInstance">MeshInstance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=81" title="Edit section: MeshInstance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="https://wiki.beyondunreal.com/edit/UE2:MeshInstance_(UT2003)?redlink=1" class="new" title="UE2:MeshInstance (UT2003) (page does not exist)">MeshInstance</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Mesh instance.</p>
+<h4><span class="mw-headline" id="MessageClass">MessageClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=82" title="Edit section: MessageClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE2_LocalMessage_(UT2003).html" title="UE2:LocalMessage (UT2003)">LocalMessage</a>&gt;</p>
+<p><br />
+<b>Default value:</b> <a href="Types.html#Class" title="Types">Class</a>'<a href="UE2_LocalMessage_(UT2003).html" title="UE2:LocalMessage (UT2003)">Engine.LocalMessage</a>'</p>
+<h4><span class="mw-headline" id="NetPriority">NetPriority</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=83" title="Edit section: NetPriority">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Higher priorities means update it more frequently.</p>
+<p><b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="NetTag">NetTag</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=84" title="Edit section: NetTag">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="NetUpdateFrequency">NetUpdateFrequency</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=85" title="Edit section: NetUpdateFrequency">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>How many seconds between net updates.</p>
+<p><b>Default value:</b> 100.0</p>
+<h4><span class="mw-headline" id="NetUpdateTime">NetUpdateTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=86" title="Edit section: NetUpdateTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>time of last update</p>
+<h4><span class="mw-headline" id="OctreeBox">OctreeBox</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=87" title="Edit section: OctreeBox">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UT2003).html#Box" title="UE2:Object structs (UT2003)">Object.Box</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p>Actor bounding box cached when added to Octree. Internal use only.</p>
+<h4><span class="mw-headline" id="OctreeBoxCenter">OctreeBoxCenter</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=88" title="Edit section: OctreeBoxCenter">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UT2003).html#Vector" title="UE2:Object structs (UT2003)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="OctreeBoxRadii">OctreeBoxRadii</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=89" title="Edit section: OctreeBoxRadii">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UT2003).html#Vector" title="UE2:Object structs (UT2003)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="OctreeNodes">OctreeNodes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=90" title="Edit section: OctreeNodes">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Pointer.html" title="Pointer" class="mw-redirect">pointer</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p>Array of nodes of the octree Actor is currently in. Internal use only.</p>
+<h4><span class="mw-headline" id="Owner">Owner</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=91" title="Edit section: Owner">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Actor_(UT2003).html" title="UE2:Actor (UT2003)">Actor</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Owner actor.</p>
+<h4><span class="mw-headline" id="PendingTouch">PendingTouch</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=92" title="Edit section: PendingTouch">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Actor_(UT2003).html" title="UE2:Actor (UT2003)">Actor</a></p>
+<p>Actor touched during move which wants to add an effect after the movement completes</p>
+<h4><span class="mw-headline" id="PhysicsVolume">PhysicsVolume</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=93" title="Edit section: PhysicsVolume">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_PhysicsVolume_(UT2003).html" title="UE2:PhysicsVolume (UT2003)">PhysicsVolume</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>physics volume this actor is currently in</p>
+<h4><span class="mw-headline" id="Projectors">Projectors</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=94" title="Edit section: Projectors">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE2_Actor_(UT2003).html#ProjectorRenderInfoPtr" title="UE2:Actor (UT2003)">ProjectorRenderInfoPtr</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, native</p>
+<p>Projected textures on this actor</p>
+<h4><span class="mw-headline" id="Region">Region</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=95" title="Edit section: Region">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Actor_(UT2003).html#PointRegion" title="UE2:Actor (UT2003)">PointRegion</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Region this actor is in.</p>
+<h4><span class="mw-headline" id="RelativeLocation">RelativeLocation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=96" title="Edit section: RelativeLocation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UT2003).html#Vector" title="UE2:Object structs (UT2003)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>location relative to base/bone (valid if base exists)</p>
+<h4><span class="mw-headline" id="RelativeRotation">RelativeRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=97" title="Edit section: RelativeRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UT2003).html#Rotator" title="UE2:Object structs (UT2003)">Object.Rotator</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>rotation relative to base/bone (valid if base exists)</p>
+<h4><span class="mw-headline" id="RemoteRole">RemoteRole</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=98" title="Edit section: RemoteRole">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Actor_enums_(UT2003).html#ENetRole" title="UE2:Actor enums (UT2003)">ENetRole</a></p>
+<p><br />
+<b>Default value:</b> <a href="UE2_Actor_enums_(UT2003).html#ENetRole" title="UE2:Actor enums (UT2003)">ROLE_DumbProxy</a></p>
+<h4><span class="mw-headline" id="RenderRevision">RenderRevision</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=99" title="Edit section: RenderRevision">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, native</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="RepSkin">RepSkin</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=100" title="Edit section: RepSkin">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Material_(UT2003).html" title="UE2:Material (UT2003)">Material</a></p>
+<p>replicated skin (sets Skins[0] if not none)</p>
+<h4><span class="mw-headline" id="Role">Role</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=101" title="Edit section: Role">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Actor_enums_(UT2003).html#ENetRole" title="UE2:Actor enums (UT2003)">ENetRole</a></p>
+<p><br />
+<b>Default value:</b> <a href="UE2_Actor_enums_(UT2003).html#ENetRole" title="UE2:Actor enums (UT2003)">ROLE_Authority</a></p>
+<h4><span class="mw-headline" id="SimAnim">SimAnim</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=102" title="Edit section: SimAnim">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Actor_(UT2003).html#AnimRep" title="UE2:Actor (UT2003)">AnimRep</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="StaticFilterState">StaticFilterState</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=103" title="Edit section: StaticFilterState">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Actor_enums_(UT2003).html#EFilterState" title="UE2:Actor enums (UT2003)">EFilterState</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, native</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="StaticMeshInstance">StaticMeshInstance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=104" title="Edit section: StaticMeshInstance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="https://wiki.beyondunreal.com/edit/UE2:StaticMeshInstance_(UT2003)?redlink=1" class="new" title="UE2:StaticMeshInstance (UT2003) (page does not exist)">StaticMeshInstance</a></p>
+<p>Contains per-instance static mesh data, like static lighting data.</p>
+<h4><span class="mw-headline" id="StaticMeshProjectors">StaticMeshProjectors</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=105" title="Edit section: StaticMeshProjectors">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE2_Actor_(UT2003).html#StaticMeshProjectorRenderInfoPtr" title="UE2:Actor (UT2003)">StaticMeshProjectorRenderInfoPtr</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, native</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="StaticSectionBatches">StaticSectionBatches</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=106" title="Edit section: StaticSectionBatches">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE2_Actor_(UT2003).html#BatchReference" title="UE2:Actor (UT2003)">BatchReference</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, native</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TimerCounter">TimerCounter</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=107" title="Edit section: TimerCounter">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Counts up until it reaches TimerRate.</p>
+<h4><span class="mw-headline" id="TimerRate">TimerRate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=108" title="Edit section: TimerRate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Timer event, 0=no timer.</p>
+<h4><span class="mw-headline" id="Touching">Touching</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=109" title="Edit section: Touching">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE2_Actor_(UT2003).html" title="UE2:Actor (UT2003)">Actor</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>List of touching actors.</p>
+<h4><span class="mw-headline" id="XLevel">XLevel</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)?section=110" title="Edit section: XLevel">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="https://wiki.beyondunreal.com/edit/UE2:Level_(UT2003)?redlink=1" class="new" title="UE2:Level (UT2003) (page does not exist)">Level</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient, const</p>
+<p>Level object.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.372 seconds
+Real time usage: 0.398 seconds
+Preprocessor visited node count: 2559/1000000
+Preprocessor generated node count: 4387/1000000
+Post‐expand include size: 15618/2097152 bytes
+Template argument size: 2443/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  255.739      1 - -total
+ 39.31%  100.519     23 - Template:Tl
+ 36.59%   93.566     40 - Template:Samegame
+ 29.89%   76.444      1 - Template:Infobox_class_part
+ 28.47%   72.806      1 - Template:Infobox_class_part/core
+ 19.18%   49.041     17 - Template:Cl
+  5.70%   14.576      1 - Template:Ch
+  2.41%    6.163      1 - Template:Autogenerated
+  1.57%    4.014      1 - Template:Ambox
+  1.24%    3.166      3 - Template:Gamename
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:9166-0!*!*!*!*!*!* and timestamp 20161215152000 and revision id 16891
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE2:Actor_internal_variables_(UT2003)?oldid=16891">https://wiki.beyondunreal.com/UE2:Actor_internal_variables_(UT2003)?oldid=16891</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue2" class="selected"><a href="UE2_Actor_internal_variables_(UT2003).html">UE2</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE2_talk:Actor_internal_variables_(UT2003)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE2:Actor_internal_variables_(UT2003)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE2:Actor_internal_variables_(UT2003)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE2%3AActor+internal+variables+%28UT2003%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE2%3AActor+internal+variables+%28UT2003%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE2:Actor_internal_variables_(UT2003)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE2:Actor_internal_variables_(UT2003)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE2:Actor_internal_variables_(UT2003)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE2:Actor_internal_variables_(UT2003)?oldid=16891" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE2:Actor_internal_variables_(UT2003)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 11:10, 17 May 2008.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":116});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE2:Actor_internal_variables_(UT2003) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:32:10 GMT -->
+</html>

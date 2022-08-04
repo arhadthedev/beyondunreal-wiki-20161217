@@ -1,0 +1,2076 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:UTHUD_internal_variables_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 11:23:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:UTHUD internal variables (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_UTHUD_internal_variables_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:UTHUD_internal_variables_(UDK)","wgTitle":"UTHUD internal variables (UDK)","wgCurRevisionId":42070,"wgRevisionId":42070,"wgArticleId":27743,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:UTHUD_internal_variables_(UDK)","wgRelevantArticleId":27743,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_UTHUD_internal_variables_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I don't need to test my programs. I have an error-correcting modem.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:UTHUD internal variables (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a> &gt;&gt;&#160;<a href="UE3_HUD_(UDK).html" title="UE3:HUD (UDK)">HUD</a> &gt;&gt;&#160;<a href="UE3_GameHUD_(UDK).html" title="UE3:GameHUD (UDK)">GameHUD</a> &gt;&gt;&#160;<a href="UE3_UTHUD_(UDK).html" title="UE3:UTHUD (UDK)">UTHUD</a> <i>(internal variables)</i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Internal_variables"><span class="tocnumber">1</span> <span class="toctext">Internal variables</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#AltHudTexture"><span class="tocnumber">1.1</span> <span class="toctext">AltHudTexture</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#AmmoBarColor"><span class="tocnumber">1.2</span> <span class="toctext">AmmoBarColor</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#AmmoBarOffsetY"><span class="tocnumber">1.3</span> <span class="toctext">AmmoBarOffsetY</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#AmmoBGCoords"><span class="tocnumber">1.4</span> <span class="toctext">AmmoBGCoords</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#AmmoPosition"><span class="tocnumber">1.5</span> <span class="toctext">AmmoPosition</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#AmmoPulseTime"><span class="tocnumber">1.6</span> <span class="toctext">AmmoPulseTime</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#AmmoTextOffsetX"><span class="tocnumber">1.7</span> <span class="toctext">AmmoTextOffsetX</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#AmmoTextOffsetY"><span class="tocnumber">1.8</span> <span class="toctext">AmmoTextOffsetY</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#ArmorBGCoords"><span class="tocnumber">1.9</span> <span class="toctext">ArmorBGCoords</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#ArmorBGOffsetX"><span class="tocnumber">1.10</span> <span class="toctext">ArmorBGOffsetX</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#ArmorBGOffsetY"><span class="tocnumber">1.11</span> <span class="toctext">ArmorBGOffsetY</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#ArmorIconX"><span class="tocnumber">1.12</span> <span class="toctext">ArmorIconX</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#ArmorIconY"><span class="tocnumber">1.13</span> <span class="toctext">ArmorIconY</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#ArmorPulseTime"><span class="tocnumber">1.14</span> <span class="toctext">ArmorPulseTime</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#ArmorTextX"><span class="tocnumber">1.15</span> <span class="toctext">ArmorTextX</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#ArmorTextY"><span class="tocnumber">1.16</span> <span class="toctext">ArmorTextY</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#BaseMaterial"><span class="tocnumber">1.17</span> <span class="toctext">BaseMaterial</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#bCrosshairOnFriendly"><span class="tocnumber">1.18</span> <span class="toctext">bCrosshairOnFriendly</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#bCrosshairShow"><span class="tocnumber">1.19</span> <span class="toctext">bCrosshairShow</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#bDisplayingPowerups"><span class="tocnumber">1.20</span> <span class="toctext">bDisplayingPowerups</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#bFadeOutHitEffect"><span class="tocnumber">1.21</span> <span class="toctext">bFadeOutHitEffect</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#bGreenCrosshair"><span class="tocnumber">1.22</span> <span class="toctext">bGreenCrosshair</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#bHasLeaderboard"><span class="tocnumber">1.23</span> <span class="toctext">bHasLeaderboard</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#bHasMap"><span class="tocnumber">1.24</span> <span class="toctext">bHasMap</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#bHudMessageRendered"><span class="tocnumber">1.25</span> <span class="toctext">bHudMessageRendered</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#bIsFirstPlayer"><span class="tocnumber">1.26</span> <span class="toctext">bIsFirstPlayer</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#bIsSplitScreen"><span class="tocnumber">1.27</span> <span class="toctext">bIsSplitScreen</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#BlackBackgroundColor"><span class="tocnumber">1.28</span> <span class="toctext">BlackBackgroundColor</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#BlackColor"><span class="tocnumber">1.29</span> <span class="toctext">BlackColor</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#BlueLinearColor"><span class="tocnumber">1.30</span> <span class="toctext">BlueLinearColor</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#bNoWeaponNumbers"><span class="tocnumber">1.31</span> <span class="toctext">bNoWeaponNumbers</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#bOnlyShowWeaponBarIfChanging"><span class="tocnumber">1.32</span> <span class="toctext">bOnlyShowWeaponBarIfChanging</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#BootHeight"><span class="tocnumber">1.33</span> <span class="toctext">BootHeight</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#BootWidth"><span class="tocnumber">1.34</span> <span class="toctext">BootWidth</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#BootX"><span class="tocnumber">1.35</span> <span class="toctext">BootX</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#BootY"><span class="tocnumber">1.36</span> <span class="toctext">BootY</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#BouncedWeapon"><span class="tocnumber">1.37</span> <span class="toctext">BouncedWeapon</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#BounceWeaponScale"><span class="tocnumber">1.38</span> <span class="toctext">BounceWeaponScale</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#bQuickPickMadeNewSelection"><span class="tocnumber">1.39</span> <span class="toctext">bQuickPickMadeNewSelection</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#bShowAllAI"><span class="tocnumber">1.40</span> <span class="toctext">bShowAllAI</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#bShowAllWeapons"><span class="tocnumber">1.41</span> <span class="toctext">bShowAllWeapons</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#bShowAmmo"><span class="tocnumber">1.42</span> <span class="toctext">bShowAmmo</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="#bShowClock"><span class="tocnumber">1.43</span> <span class="toctext">bShowClock</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="#bShowDoll"><span class="tocnumber">1.44</span> <span class="toctext">bShowDoll</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href="#bShowFragCount"><span class="tocnumber">1.45</span> <span class="toctext">bShowFragCount</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#bShowLeaderboard"><span class="tocnumber">1.46</span> <span class="toctext">bShowLeaderboard</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="#bShowMap"><span class="tocnumber">1.47</span> <span class="toctext">bShowMap</span></a></li>
+<li class="toclevel-2 tocsection-49"><a href="#bShowPowerups"><span class="tocnumber">1.48</span> <span class="toctext">bShowPowerups</span></a></li>
+<li class="toclevel-2 tocsection-50"><a href="#bShowQuickPick"><span class="tocnumber">1.49</span> <span class="toctext">bShowQuickPick</span></a></li>
+<li class="toclevel-2 tocsection-51"><a href="#bShowScoring"><span class="tocnumber">1.50</span> <span class="toctext">bShowScoring</span></a></li>
+<li class="toclevel-2 tocsection-52"><a href="#bShowVehicle"><span class="tocnumber">1.51</span> <span class="toctext">bShowVehicle</span></a></li>
+<li class="toclevel-2 tocsection-53"><a href="#bShowVehicleArmorCount"><span class="tocnumber">1.52</span> <span class="toctext">bShowVehicleArmorCount</span></a></li>
+<li class="toclevel-2 tocsection-54"><a href="#bShowWeaponbar"><span class="tocnumber">1.53</span> <span class="toctext">bShowWeaponbar</span></a></li>
+<li class="toclevel-2 tocsection-55"><a href="#CharPendingPRI"><span class="tocnumber">1.54</span> <span class="toctext">CharPendingPRI</span></a></li>
+<li class="toclevel-2 tocsection-56"><a href="#CharPortraitMaterial"><span class="tocnumber">1.55</span> <span class="toctext">CharPortraitMaterial</span></a></li>
+<li class="toclevel-2 tocsection-57"><a href="#CharPortraitMI"><span class="tocnumber">1.56</span> <span class="toctext">CharPortraitMI</span></a></li>
+<li class="toclevel-2 tocsection-58"><a href="#CharPortraitSize"><span class="tocnumber">1.57</span> <span class="toctext">CharPortraitSize</span></a></li>
+<li class="toclevel-2 tocsection-59"><a href="#CharPortraitSlideTime"><span class="tocnumber">1.58</span> <span class="toctext">CharPortraitSlideTime</span></a></li>
+<li class="toclevel-2 tocsection-60"><a href="#CharPortraitSlideTransitionTime"><span class="tocnumber">1.59</span> <span class="toctext">CharPortraitSlideTransitionTime</span></a></li>
+<li class="toclevel-2 tocsection-61"><a href="#CharPortraitTime"><span class="tocnumber">1.60</span> <span class="toctext">CharPortraitTime</span></a></li>
+<li class="toclevel-2 tocsection-62"><a href="#CharPortraitXPerc"><span class="tocnumber">1.61</span> <span class="toctext">CharPortraitXPerc</span></a></li>
+<li class="toclevel-2 tocsection-63"><a href="#CharPortraitYPerc"><span class="tocnumber">1.62</span> <span class="toctext">CharPortraitYPerc</span></a></li>
+<li class="toclevel-2 tocsection-64"><a href="#CharPRI"><span class="tocnumber">1.63</span> <span class="toctext">CharPRI</span></a></li>
+<li class="toclevel-2 tocsection-65"><a href="#ClockPosition"><span class="tocnumber">1.64</span> <span class="toctext">ClockPosition</span></a></li>
+<li class="toclevel-2 tocsection-66"><a href="#ConfiguredCrosshairScaling"><span class="tocnumber">1.65</span> <span class="toctext">ConfiguredCrosshairScaling</span></a></li>
+<li class="toclevel-2 tocsection-67"><a href="#ConsoleIconFont"><span class="tocnumber">1.66</span> <span class="toctext">ConsoleIconFont</span></a></li>
+<li class="toclevel-2 tocsection-68"><a href="#ConsoleIconFontClassName"><span class="tocnumber">1.67</span> <span class="toctext">ConsoleIconFontClassName</span></a></li>
+<li class="toclevel-2 tocsection-69"><a href="#CurrentWeaponScale"><span class="tocnumber">1.68</span> <span class="toctext">CurrentWeaponScale</span></a></li>
+<li class="toclevel-2 tocsection-70"><a href="#DamageData"><span class="tocnumber">1.69</span> <span class="toctext">DamageData</span></a></li>
+<li class="toclevel-2 tocsection-71"><a href="#DamageIndicatorSize"><span class="tocnumber">1.70</span> <span class="toctext">DamageIndicatorSize</span></a></li>
+<li class="toclevel-2 tocsection-72"><a href="#DeadMessage"><span class="tocnumber">1.71</span> <span class="toctext">DeadMessage</span></a></li>
+<li class="toclevel-2 tocsection-73"><a href="#DisplayedOrders"><span class="tocnumber">1.72</span> <span class="toctext">DisplayedOrders</span></a></li>
+<li class="toclevel-2 tocsection-74"><a href="#DMLinearColor"><span class="tocnumber">1.73</span> <span class="toctext">DMLinearColor</span></a></li>
+<li class="toclevel-2 tocsection-75"><a href="#DollHeight"><span class="tocnumber">1.74</span> <span class="toctext">DollHeight</span></a></li>
+<li class="toclevel-2 tocsection-76"><a href="#DollOffsetX"><span class="tocnumber">1.75</span> <span class="toctext">DollOffsetX</span></a></li>
+<li class="toclevel-2 tocsection-77"><a href="#DollOffsetY"><span class="tocnumber">1.76</span> <span class="toctext">DollOffsetY</span></a></li>
+<li class="toclevel-2 tocsection-78"><a href="#DollPosition"><span class="tocnumber">1.77</span> <span class="toctext">DollPosition</span></a></li>
+<li class="toclevel-2 tocsection-79"><a href="#DollVisibility"><span class="tocnumber">1.78</span> <span class="toctext">DollVisibility</span></a></li>
+<li class="toclevel-2 tocsection-80"><a href="#DollWidth"><span class="tocnumber">1.79</span> <span class="toctext">DollWidth</span></a></li>
+<li class="toclevel-2 tocsection-81"><a href="#EmptyWeaponAlpha"><span class="tocnumber">1.80</span> <span class="toctext">EmptyWeaponAlpha</span></a></li>
+<li class="toclevel-2 tocsection-82"><a href="#FadeParamName"><span class="tocnumber">1.81</span> <span class="toctext">FadeParamName</span></a></li>
+<li class="toclevel-2 tocsection-83"><a href="#FadeTime"><span class="tocnumber">1.82</span> <span class="toctext">FadeTime</span></a></li>
+<li class="toclevel-2 tocsection-84"><a href="#FireToRespawnMessage"><span class="tocnumber">1.83</span> <span class="toctext">FireToRespawnMessage</span></a></li>
+<li class="toclevel-2 tocsection-85"><a href="#FragPulseTime"><span class="tocnumber">1.84</span> <span class="toctext">FragPulseTime</span></a></li>
+<li class="toclevel-2 tocsection-86"><a href="#FullHeight"><span class="tocnumber">1.85</span> <span class="toctext">FullHeight</span></a></li>
+<li class="toclevel-2 tocsection-87"><a href="#FullWidth"><span class="tocnumber">1.86</span> <span class="toctext">FullWidth</span></a></li>
+<li class="toclevel-2 tocsection-88"><a href="#GlowFonts"><span class="tocnumber">1.87</span> <span class="toctext">GlowFonts</span></a></li>
+<li class="toclevel-2 tocsection-89"><a href="#GoldColor"><span class="tocnumber">1.88</span> <span class="toctext">GoldColor</span></a></li>
+<li class="toclevel-2 tocsection-90"><a href="#GoldLinearColor"><span class="tocnumber">1.89</span> <span class="toctext">GoldLinearColor</span></a></li>
+<li class="toclevel-2 tocsection-91"><a href="#GrayColor"><span class="tocnumber">1.90</span> <span class="toctext">GrayColor</span></a></li>
+<li class="toclevel-2 tocsection-92"><a href="#HealthBGCoords"><span class="tocnumber">1.91</span> <span class="toctext">HealthBGCoords</span></a></li>
+<li class="toclevel-2 tocsection-93"><a href="#HealthBGOffsetX"><span class="tocnumber">1.92</span> <span class="toctext">HealthBGOffsetX</span></a></li>
+<li class="toclevel-2 tocsection-94"><a href="#HealthBGOffsetY"><span class="tocnumber">1.93</span> <span class="toctext">HealthBGOffsetY</span></a></li>
+<li class="toclevel-2 tocsection-95"><a href="#HealthIconX"><span class="tocnumber">1.94</span> <span class="toctext">HealthIconX</span></a></li>
+<li class="toclevel-2 tocsection-96"><a href="#HealthIconY"><span class="tocnumber">1.95</span> <span class="toctext">HealthIconY</span></a></li>
+<li class="toclevel-2 tocsection-97"><a href="#HealthOffsetX"><span class="tocnumber">1.96</span> <span class="toctext">HealthOffsetX</span></a></li>
+<li class="toclevel-2 tocsection-98"><a href="#HealthPulseTime"><span class="tocnumber">1.97</span> <span class="toctext">HealthPulseTime</span></a></li>
+<li class="toclevel-2 tocsection-99"><a href="#HealthTextX"><span class="tocnumber">1.98</span> <span class="toctext">HealthTextX</span></a></li>
+<li class="toclevel-2 tocsection-100"><a href="#HealthTextY"><span class="tocnumber">1.99</span> <span class="toctext">HealthTextY</span></a></li>
+<li class="toclevel-2 tocsection-101"><a href="#HelmetHeight"><span class="tocnumber">1.100</span> <span class="toctext">HelmetHeight</span></a></li>
+<li class="toclevel-2 tocsection-102"><a href="#HelmetWidth"><span class="tocnumber">1.101</span> <span class="toctext">HelmetWidth</span></a></li>
+<li class="toclevel-2 tocsection-103"><a href="#HelmetX"><span class="tocnumber">1.102</span> <span class="toctext">HelmetX</span></a></li>
+<li class="toclevel-2 tocsection-104"><a href="#HelmetY"><span class="tocnumber">1.103</span> <span class="toctext">HelmetY</span></a></li>
+<li class="toclevel-2 tocsection-105"><a href="#HitEffect"><span class="tocnumber">1.104</span> <span class="toctext">HitEffect</span></a></li>
+<li class="toclevel-2 tocsection-106"><a href="#HitEffectFadeTime"><span class="tocnumber">1.105</span> <span class="toctext">HitEffectFadeTime</span></a></li>
+<li class="toclevel-2 tocsection-107"><a href="#HitEffectIntensity"><span class="tocnumber">1.106</span> <span class="toctext">HitEffectIntensity</span></a></li>
+<li class="toclevel-2 tocsection-108"><a href="#HitEffectMaterialInstance"><span class="tocnumber">1.107</span> <span class="toctext">HitEffectMaterialInstance</span></a></li>
+<li class="toclevel-2 tocsection-109"><a href="#HudFonts"><span class="tocnumber">1.108</span> <span class="toctext">HudFonts</span></a></li>
+<li class="toclevel-2 tocsection-110"><a href="#HUDScaleX"><span class="tocnumber">1.109</span> <span class="toctext">HUDScaleX</span></a></li>
+<li class="toclevel-2 tocsection-111"><a href="#HUDScaleY"><span class="tocnumber">1.110</span> <span class="toctext">HUDScaleY</span></a></li>
+<li class="toclevel-2 tocsection-112"><a href="#IconHudTexture"><span class="tocnumber">1.111</span> <span class="toctext">IconHudTexture</span></a></li>
+<li class="toclevel-2 tocsection-113"><a href="#LastAmmoCount"><span class="tocnumber">1.112</span> <span class="toctext">LastAmmoCount</span></a></li>
+<li class="toclevel-2 tocsection-114"><a href="#LastAmmoPickupTime"><span class="tocnumber">1.113</span> <span class="toctext">LastAmmoPickupTime</span></a></li>
+<li class="toclevel-2 tocsection-115"><a href="#LastArmorAmount"><span class="tocnumber">1.114</span> <span class="toctext">LastArmorAmount</span></a></li>
+<li class="toclevel-2 tocsection-116"><a href="#LastArmorPickupTime"><span class="tocnumber">1.115</span> <span class="toctext">LastArmorPickupTime</span></a></li>
+<li class="toclevel-2 tocsection-117"><a href="#LastDollUpdate"><span class="tocnumber">1.116</span> <span class="toctext">LastDollUpdate</span></a></li>
+<li class="toclevel-2 tocsection-118"><a href="#LastFragCount"><span class="tocnumber">1.117</span> <span class="toctext">LastFragCount</span></a></li>
+<li class="toclevel-2 tocsection-119"><a href="#LastHealth"><span class="tocnumber">1.118</span> <span class="toctext">LastHealth</span></a></li>
+<li class="toclevel-2 tocsection-120"><a href="#LastHealthPickupTime"><span class="tocnumber">1.119</span> <span class="toctext">LastHealthPickupTime</span></a></li>
+<li class="toclevel-2 tocsection-121"><a href="#LastHUDUpdateTime"><span class="tocnumber">1.120</span> <span class="toctext">LastHUDUpdateTime</span></a></li>
+<li class="toclevel-2 tocsection-122"><a href="#LastPickupTime"><span class="tocnumber">1.121</span> <span class="toctext">LastPickupTime</span></a></li>
+<li class="toclevel-2 tocsection-123"><a href="#LastSelectedWeapon"><span class="tocnumber">1.122</span> <span class="toctext">LastSelectedWeapon</span></a></li>
+<li class="toclevel-2 tocsection-124"><a href="#LastTimeTooltipDrawn"><span class="tocnumber">1.123</span> <span class="toctext">LastTimeTooltipDrawn</span></a></li>
+<li class="toclevel-2 tocsection-125"><a href="#LastWeapon"><span class="tocnumber">1.124</span> <span class="toctext">LastWeapon</span></a></li>
+<li class="toclevel-2 tocsection-126"><a href="#LastWeaponBarDrawnTime"><span class="tocnumber">1.125</span> <span class="toctext">LastWeaponBarDrawnTime</span></a></li>
+<li class="toclevel-2 tocsection-127"><a href="#LC_White"><span class="tocnumber">1.126</span> <span class="toctext">LC_White</span></a></li>
+<li class="toclevel-2 tocsection-128"><a href="#LightGoldColor"><span class="tocnumber">1.127</span> <span class="toctext">LightGoldColor</span></a></li>
+<li class="toclevel-2 tocsection-129"><a href="#LightGreenColor"><span class="tocnumber">1.128</span> <span class="toctext">LightGreenColor</span></a></li>
+<li class="toclevel-2 tocsection-130"><a href="#MapBackground"><span class="tocnumber">1.129</span> <span class="toctext">MapBackground</span></a></li>
+<li class="toclevel-2 tocsection-131"><a href="#MapDefaultSize"><span class="tocnumber">1.130</span> <span class="toctext">MapDefaultSize</span></a></li>
+<li class="toclevel-2 tocsection-132"><a href="#MapPosition"><span class="tocnumber">1.131</span> <span class="toctext">MapPosition</span></a></li>
+<li class="toclevel-2 tocsection-133"><a href="#MaxHitEffectColor"><span class="tocnumber">1.132</span> <span class="toctext">MaxHitEffectColor</span></a></li>
+<li class="toclevel-2 tocsection-134"><a href="#MaxNoOfIndicators"><span class="tocnumber">1.133</span> <span class="toctext">MaxNoOfIndicators</span></a></li>
+<li class="toclevel-2 tocsection-135"><a href="#MessageOffset"><span class="tocnumber">1.134</span> <span class="toctext">MessageOffset</span></a></li>
+<li class="toclevel-2 tocsection-136"><a href="#MOTDSceneTemplate"><span class="tocnumber">1.135</span> <span class="toctext">MOTDSceneTemplate</span></a></li>
+<li class="toclevel-2 tocsection-137"><a href="#MusicManagerClass"><span class="tocnumber">1.136</span> <span class="toctext">MusicManagerClass</span></a></li>
+<li class="toclevel-2 tocsection-138"><a href="#NameplateBubble"><span class="tocnumber">1.137</span> <span class="toctext">NameplateBubble</span></a></li>
+<li class="toclevel-2 tocsection-139"><a href="#NameplateBubbleWidth"><span class="tocnumber">1.138</span> <span class="toctext">NameplateBubbleWidth</span></a></li>
+<li class="toclevel-2 tocsection-140"><a href="#NameplateCenter"><span class="tocnumber">1.139</span> <span class="toctext">NameplateCenter</span></a></li>
+<li class="toclevel-2 tocsection-141"><a href="#NameplateLeft"><span class="tocnumber">1.140</span> <span class="toctext">NameplateLeft</span></a></li>
+<li class="toclevel-2 tocsection-142"><a href="#NameplateRight"><span class="tocnumber">1.141</span> <span class="toctext">NameplateRight</span></a></li>
+<li class="toclevel-2 tocsection-143"><a href="#NameplateWidth"><span class="tocnumber">1.142</span> <span class="toctext">NameplateWidth</span></a></li>
+<li class="toclevel-2 tocsection-144"><a href="#OffWeaponAlpha"><span class="tocnumber">1.143</span> <span class="toctext">OffWeaponAlpha</span></a></li>
+<li class="toclevel-2 tocsection-145"><a href="#OrderUpdateTime"><span class="tocnumber">1.144</span> <span class="toctext">OrderUpdateTime</span></a></li>
+<li class="toclevel-2 tocsection-146"><a href="#PawnDollBGCoords"><span class="tocnumber">1.145</span> <span class="toctext">PawnDollBGCoords</span></a></li>
+<li class="toclevel-2 tocsection-147"><a href="#PawnOwner"><span class="tocnumber">1.146</span> <span class="toctext">PawnOwner</span></a></li>
+<li class="toclevel-2 tocsection-148"><a href="#PlaceMarks"><span class="tocnumber">1.147</span> <span class="toctext">PlaceMarks</span></a></li>
+<li class="toclevel-2 tocsection-149"><a href="#PositionalParamName"><span class="tocnumber">1.148</span> <span class="toctext">PositionalParamName</span></a></li>
+<li class="toclevel-2 tocsection-150"><a href="#PowerupDims"><span class="tocnumber">1.149</span> <span class="toctext">PowerupDims</span></a></li>
+<li class="toclevel-2 tocsection-151"><a href="#PowerupTransitionTime"><span class="tocnumber">1.150</span> <span class="toctext">PowerupTransitionTime</span></a></li>
+<li class="toclevel-2 tocsection-152"><a href="#PowerupYPos"><span class="tocnumber">1.151</span> <span class="toctext">PowerupYPos</span></a></li>
+<li class="toclevel-2 tocsection-153"><a href="#PressFireToBegin"><span class="tocnumber">1.152</span> <span class="toctext">PressFireToBegin</span></a></li>
+<li class="toclevel-2 tocsection-154"><a href="#PulseDuration"><span class="tocnumber">1.153</span> <span class="toctext">PulseDuration</span></a></li>
+<li class="toclevel-2 tocsection-155"><a href="#PulseMultiplier"><span class="tocnumber">1.154</span> <span class="toctext">PulseMultiplier</span></a></li>
+<li class="toclevel-2 tocsection-156"><a href="#PulseSplit"><span class="tocnumber">1.155</span> <span class="toctext">PulseSplit</span></a></li>
+<li class="toclevel-2 tocsection-157"><a href="#QuickPickBkgCoords"><span class="tocnumber">1.156</span> <span class="toctext">QuickPickBkgCoords</span></a></li>
+<li class="toclevel-2 tocsection-158"><a href="#QuickPickBkgImage"><span class="tocnumber">1.157</span> <span class="toctext">QuickPickBkgImage</span></a></li>
+<li class="toclevel-2 tocsection-159"><a href="#QuickPickCircleCoords"><span class="tocnumber">1.158</span> <span class="toctext">QuickPickCircleCoords</span></a></li>
+<li class="toclevel-2 tocsection-160"><a href="#QuickPickCircleImage"><span class="tocnumber">1.159</span> <span class="toctext">QuickPickCircleImage</span></a></li>
+<li class="toclevel-2 tocsection-161"><a href="#QuickPickClasses"><span class="tocnumber">1.160</span> <span class="toctext">QuickPickClasses</span></a></li>
+<li class="toclevel-2 tocsection-162"><a href="#QuickPickCurrentSelection"><span class="tocnumber">1.161</span> <span class="toctext">QuickPickCurrentSelection</span></a></li>
+<li class="toclevel-2 tocsection-163"><a href="#QuickPickDeltaAngle"><span class="tocnumber">1.162</span> <span class="toctext">QuickPickDeltaAngle</span></a></li>
+<li class="toclevel-2 tocsection-164"><a href="#QuickPickNumCells"><span class="tocnumber">1.163</span> <span class="toctext">QuickPickNumCells</span></a></li>
+<li class="toclevel-2 tocsection-165"><a href="#QuickPickRadius"><span class="tocnumber">1.164</span> <span class="toctext">QuickPickRadius</span></a></li>
+<li class="toclevel-2 tocsection-166"><a href="#QuickPickSelCoords"><span class="tocnumber">1.165</span> <span class="toctext">QuickPickSelCoords</span></a></li>
+<li class="toclevel-2 tocsection-167"><a href="#QuickPickSelImage"><span class="tocnumber">1.166</span> <span class="toctext">QuickPickSelImage</span></a></li>
+<li class="toclevel-2 tocsection-168"><a href="#QuickPickTarget"><span class="tocnumber">1.167</span> <span class="toctext">QuickPickTarget</span></a></li>
+<li class="toclevel-2 tocsection-169"><a href="#QuickPickWaveForm"><span class="tocnumber">1.168</span> <span class="toctext">QuickPickWaveForm</span></a></li>
+<li class="toclevel-2 tocsection-170"><a href="#RedLinearColor"><span class="tocnumber">1.169</span> <span class="toctext">RedLinearColor</span></a></li>
+<li class="toclevel-2 tocsection-171"><a href="#ResolutionScale"><span class="tocnumber">1.170</span> <span class="toctext">ResolutionScale</span></a></li>
+<li class="toclevel-2 tocsection-172"><a href="#ResolutionScaleX"><span class="tocnumber">1.171</span> <span class="toctext">ResolutionScaleX</span></a></li>
+<li class="toclevel-2 tocsection-173"><a href="#SafeRegionPct"><span class="tocnumber">1.172</span> <span class="toctext">SafeRegionPct</span></a></li>
+<li class="toclevel-2 tocsection-174"><a href="#ScoreboardSceneTemplate"><span class="tocnumber">1.173</span> <span class="toctext">ScoreboardSceneTemplate</span></a></li>
+<li class="toclevel-2 tocsection-175"><a href="#ScoringPosition"><span class="tocnumber">1.174</span> <span class="toctext">ScoringPosition</span></a></li>
+<li class="toclevel-2 tocsection-176"><a href="#SelectedBoxScale"><span class="tocnumber">1.175</span> <span class="toctext">SelectedBoxScale</span></a></li>
+<li class="toclevel-2 tocsection-177"><a href="#SelectedWeaponAlpha"><span class="tocnumber">1.176</span> <span class="toctext">SelectedWeaponAlpha</span></a></li>
+<li class="toclevel-2 tocsection-178"><a href="#SelectedWeaponAmmoOffsetX"><span class="tocnumber">1.177</span> <span class="toctext">SelectedWeaponAmmoOffsetX</span></a></li>
+<li class="toclevel-2 tocsection-179"><a href="#SelectedWeaponScale"><span class="tocnumber">1.178</span> <span class="toctext">SelectedWeaponScale</span></a></li>
+<li class="toclevel-2 tocsection-180"><a href="#SilverLinearColor"><span class="tocnumber">1.179</span> <span class="toctext">SilverLinearColor</span></a></li>
+<li class="toclevel-2 tocsection-181"><a href="#SpectatorMessage"><span class="tocnumber">1.180</span> <span class="toctext">SpectatorMessage</span></a></li>
+<li class="toclevel-2 tocsection-182"><a href="#TalkingTexture"><span class="tocnumber">1.181</span> <span class="toctext">TalkingTexture</span></a></li>
+<li class="toclevel-2 tocsection-183"><a href="#TeamHUDColor"><span class="tocnumber">1.182</span> <span class="toctext">TeamHUDColor</span></a></li>
+<li class="toclevel-2 tocsection-184"><a href="#TeamTextColor"><span class="tocnumber">1.183</span> <span class="toctext">TeamTextColor</span></a></li>
+<li class="toclevel-2 tocsection-185"><a href="#TextRenderInfo"><span class="tocnumber">1.184</span> <span class="toctext">TextRenderInfo</span></a></li>
+<li class="toclevel-2 tocsection-186"><a href="#THeight"><span class="tocnumber">1.185</span> <span class="toctext">THeight</span></a></li>
+<li class="toclevel-2 tocsection-187"><a href="#ThighHeight"><span class="tocnumber">1.186</span> <span class="toctext">ThighHeight</span></a></li>
+<li class="toclevel-2 tocsection-188"><a href="#ThighWidth"><span class="tocnumber">1.187</span> <span class="toctext">ThighWidth</span></a></li>
+<li class="toclevel-2 tocsection-189"><a href="#ThighX"><span class="tocnumber">1.188</span> <span class="toctext">ThighX</span></a></li>
+<li class="toclevel-2 tocsection-190"><a href="#ThighY"><span class="tocnumber">1.189</span> <span class="toctext">ThighY</span></a></li>
+<li class="toclevel-2 tocsection-191"><a href="#ToolTipSepCoords"><span class="tocnumber">1.190</span> <span class="toctext">ToolTipSepCoords</span></a></li>
+<li class="toclevel-2 tocsection-192"><a href="#TX"><span class="tocnumber">1.191</span> <span class="toctext">TX</span></a></li>
+<li class="toclevel-2 tocsection-193"><a href="#TY"><span class="tocnumber">1.192</span> <span class="toctext">TY</span></a></li>
+<li class="toclevel-2 tocsection-194"><a href="#UT3GHudTexture"><span class="tocnumber">1.193</span> <span class="toctext">UT3GHudTexture</span></a></li>
+<li class="toclevel-2 tocsection-195"><a href="#UTGRI"><span class="tocnumber">1.194</span> <span class="toctext">UTGRI</span></a></li>
+<li class="toclevel-2 tocsection-196"><a href="#UTOwnerPRI"><span class="tocnumber">1.195</span> <span class="toctext">UTOwnerPRI</span></a></li>
+<li class="toclevel-2 tocsection-197"><a href="#UTPawnOwner"><span class="tocnumber">1.196</span> <span class="toctext">UTPawnOwner</span></a></li>
+<li class="toclevel-2 tocsection-198"><a href="#UTPlayerOwner"><span class="tocnumber">1.197</span> <span class="toctext">UTPlayerOwner</span></a></li>
+<li class="toclevel-2 tocsection-199"><a href="#VehiclePosition"><span class="tocnumber">1.198</span> <span class="toctext">VehiclePosition</span></a></li>
+<li class="toclevel-2 tocsection-200"><a href="#VestHeight"><span class="tocnumber">1.199</span> <span class="toctext">VestHeight</span></a></li>
+<li class="toclevel-2 tocsection-201"><a href="#VestWidth"><span class="tocnumber">1.200</span> <span class="toctext">VestWidth</span></a></li>
+<li class="toclevel-2 tocsection-202"><a href="#VestX"><span class="tocnumber">1.201</span> <span class="toctext">VestX</span></a></li>
+<li class="toclevel-2 tocsection-203"><a href="#VestY"><span class="tocnumber">1.202</span> <span class="toctext">VestY</span></a></li>
+<li class="toclevel-2 tocsection-204"><a href="#WaitingForMatch"><span class="tocnumber">1.203</span> <span class="toctext">WaitingForMatch</span></a></li>
+<li class="toclevel-2 tocsection-205"><a href="#WarmupString"><span class="tocnumber">1.204</span> <span class="toctext">WarmupString</span></a></li>
+<li class="toclevel-2 tocsection-206"><a href="#WeaponAmmoLength"><span class="tocnumber">1.205</span> <span class="toctext">WeaponAmmoLength</span></a></li>
+<li class="toclevel-2 tocsection-207"><a href="#WeaponAmmoOffsetX"><span class="tocnumber">1.206</span> <span class="toctext">WeaponAmmoOffsetX</span></a></li>
+<li class="toclevel-2 tocsection-208"><a href="#WeaponAmmoOffsetY"><span class="tocnumber">1.207</span> <span class="toctext">WeaponAmmoOffsetY</span></a></li>
+<li class="toclevel-2 tocsection-209"><a href="#WeaponAmmoThickness"><span class="tocnumber">1.208</span> <span class="toctext">WeaponAmmoThickness</span></a></li>
+<li class="toclevel-2 tocsection-210"><a href="#WeaponBarScale"><span class="tocnumber">1.209</span> <span class="toctext">WeaponBarScale</span></a></li>
+<li class="toclevel-2 tocsection-211"><a href="#WeaponBarXOffset"><span class="tocnumber">1.210</span> <span class="toctext">WeaponBarXOffset</span></a></li>
+<li class="toclevel-2 tocsection-212"><a href="#WeaponBarY"><span class="tocnumber">1.211</span> <span class="toctext">WeaponBarY</span></a></li>
+<li class="toclevel-2 tocsection-213"><a href="#WeaponBoxHeight"><span class="tocnumber">1.212</span> <span class="toctext">WeaponBoxHeight</span></a></li>
+<li class="toclevel-2 tocsection-214"><a href="#WeaponBoxWidth"><span class="tocnumber">1.213</span> <span class="toctext">WeaponBoxWidth</span></a></li>
+<li class="toclevel-2 tocsection-215"><a href="#WeaponList"><span class="tocnumber">1.214</span> <span class="toctext">WeaponList</span></a></li>
+<li class="toclevel-2 tocsection-216"><a href="#WeaponScaleSpeed"><span class="tocnumber">1.215</span> <span class="toctext">WeaponScaleSpeed</span></a></li>
+<li class="toclevel-2 tocsection-217"><a href="#WeaponSwitchMessage"><span class="tocnumber">1.216</span> <span class="toctext">WeaponSwitchMessage</span></a></li>
+<li class="toclevel-2 tocsection-218"><a href="#WeaponXOffset"><span class="tocnumber">1.217</span> <span class="toctext">WeaponXOffset</span></a></li>
+<li class="toclevel-2 tocsection-219"><a href="#WeaponYOffset"><span class="tocnumber">1.218</span> <span class="toctext">WeaponYOffset</span></a></li>
+<li class="toclevel-2 tocsection-220"><a href="#WeaponYScale"><span class="tocnumber">1.219</span> <span class="toctext">WeaponYScale</span></a></li>
+<li class="toclevel-2 tocsection-221"><a href="#WhiteLinearColor"><span class="tocnumber">1.220</span> <span class="toctext">WhiteLinearColor</span></a></li>
+<li class="toclevel-2 tocsection-222"><a href="#YouHaveLost"><span class="tocnumber">1.221</span> <span class="toctext">YouHaveLost</span></a></li>
+<li class="toclevel-2 tocsection-223"><a href="#YouHaveWon"><span class="tocnumber">1.222</span> <span class="toctext">YouHaveWon</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>;Other member categories for this class::<span><a href="UE3_UTHUD_instance_functions_(UDK).html" title="UE3:UTHUD instance functions (UDK)">instance functions</a></span></p>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Internal_variables">Internal variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=1" title="Edit section: Internal variables">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="AltHudTexture">AltHudTexture</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=2" title="Edit section: AltHudTexture">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Texture2D_(UDK).html" title="UE3:Texture2D (UDK)">Texture2D</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Cached reference to the another hud texture</p>
+<p><b>Default value:</b> <a href="UE3_Texture2D_(UDK).html" title="UE3:Texture2D (UDK)">Texture2D</a>'UI_HUD.HUD.UI_HUD_BaseA'</p>
+<h4><span class="mw-headline" id="AmmoBarColor">AmmoBarColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=3" title="Edit section: AmmoBarColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>7.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>7.0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>7.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="AmmoBarOffsetY">AmmoBarOffsetY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=4" title="Edit section: AmmoBarOffsetY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Padding beneath right side ammo/icon</p>
+<p><b>Default value:</b> 2.0</p>
+<h4><span class="mw-headline" id="AmmoBGCoords">AmmoBGCoords</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=5" title="Edit section: AmmoBGCoords">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">UIRoot.TextureCoordinates</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>U</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>UL</td>
+<td>162.0</td>
+</tr>
+<tr>
+<td>V</td>
+<td>368.0</td>
+</tr>
+<tr>
+<td>VL</td>
+<td>53.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="AmmoPosition">AmmoPosition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=6" title="Edit section: AmmoPosition">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Object.Vector2D</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>X</td>
+<td>-1.0</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>-1.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="AmmoPulseTime">AmmoPulseTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=7" title="Edit section: AmmoPulseTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="AmmoTextOffsetX">AmmoTextOffsetX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=8" title="Edit section: AmmoTextOffsetX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 125.0</p>
+<h4><span class="mw-headline" id="AmmoTextOffsetY">AmmoTextOffsetY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=9" title="Edit section: AmmoTextOffsetY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 3.0</p>
+<h4><span class="mw-headline" id="ArmorBGCoords">ArmorBGCoords</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=10" title="Edit section: ArmorBGCoords">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">UIRoot.TextureCoordinates</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>U</td>
+<td>74.0</td>
+</tr>
+<tr>
+<td>UL</td>
+<td>117.0</td>
+</tr>
+<tr>
+<td>V</td>
+<td>69.0</td>
+</tr>
+<tr>
+<td>VL</td>
+<td>42.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="ArmorBGOffsetX">ArmorBGOffsetX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=11" title="Edit section: ArmorBGOffsetX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>position of the armor bg relative to overall lower left position</p>
+<p><b>Default value:</b> 65.0</p>
+<h4><span class="mw-headline" id="ArmorBGOffsetY">ArmorBGOffsetY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=12" title="Edit section: ArmorBGOffsetY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 18.0</p>
+<h4><span class="mw-headline" id="ArmorIconX">ArmorIconX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=13" title="Edit section: ArmorIconX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>position of the armor shield icon relative to the overall left position</p>
+<p><b>Default value:</b> 80.0</p>
+<h4><span class="mw-headline" id="ArmorIconY">ArmorIconY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=14" title="Edit section: ArmorIconY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 42.0</p>
+<h4><span class="mw-headline" id="ArmorPulseTime">ArmorPulseTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=15" title="Edit section: ArmorPulseTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ArmorTextX">ArmorTextX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=16" title="Edit section: ArmorTextX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>position of the armor text relative to the overall left position</p>
+<p><b>Default value:</b> 160.0</p>
+<h4><span class="mw-headline" id="ArmorTextY">ArmorTextY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=17" title="Edit section: ArmorTextY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 17.0</p>
+<h4><span class="mw-headline" id="BaseMaterial">BaseMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=18" title="Edit section: BaseMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>This holds the base material that will be displayed</p>
+<p><b>Default value:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a>'UI_HUD.HUD.M_UI_HUD_DamageDir'</p>
+<h4><span class="mw-headline" id="bCrosshairOnFriendly">bCrosshairOnFriendly</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=19" title="Edit section: bCrosshairOnFriendly">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If true, we will alter the crosshair when it's over a friendly</p>
+<h4><span class="mw-headline" id="bCrosshairShow">bCrosshairShow</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=20" title="Edit section: bCrosshairShow">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If true, we will allow Weapons to show their crosshairs</p>
+<h4><span class="mw-headline" id="bDisplayingPowerups">bDisplayingPowerups</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=21" title="Edit section: bDisplayingPowerups">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>true while displaying powerups</p>
+<h4><span class="mw-headline" id="bFadeOutHitEffect">bFadeOutHitEffect</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=22" title="Edit section: bFadeOutHitEffect">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>whether we're currently fading out the hit effect</p>
+<h4><span class="mw-headline" id="bGreenCrosshair">bGreenCrosshair</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=23" title="Edit section: bGreenCrosshair">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Make the crosshair green (found valid friendly</p>
+<h4><span class="mw-headline" id="bHasLeaderboard">bHasLeaderboard</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=24" title="Edit section: bHasLeaderboard">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br />
+<b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bHasMap">bHasMap</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=25" title="Edit section: bHasMap">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bHudMessageRendered">bHudMessageRendered</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=26" title="Edit section: bHudMessageRendered">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bIsFirstPlayer">bIsFirstPlayer</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=27" title="Edit section: bIsFirstPlayer">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>This will be true if this is the first player</p>
+<h4><span class="mw-headline" id="bIsSplitScreen">bIsSplitScreen</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=28" title="Edit section: bIsSplitScreen">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>This will be true if the hud is in splitscreen</p>
+<h4><span class="mw-headline" id="BlackBackgroundColor">BlackBackgroundColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=29" title="Edit section: BlackBackgroundColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>0.7</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.7</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.7</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0.7</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="BlackColor">BlackColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=30" title="Edit section: BlackColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Object.Color</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Various colors</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>255</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="BlueLinearColor">BlueLinearColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=31" title="Edit section: BlueLinearColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td>B</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0.5</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="bNoWeaponNumbers">bNoWeaponNumbers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=32" title="Edit section: bNoWeaponNumbers">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bOnlyShowWeaponBarIfChanging">bOnlyShowWeaponBarIfChanging</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=33" title="Edit section: bOnlyShowWeaponBarIfChanging">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>If true, only weapon bar if have pendingweapon</p>
+<h4><span class="mw-headline" id="BootHeight">BootHeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=34" title="Edit section: BootHeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 26.0</p>
+<h4><span class="mw-headline" id="BootWidth">BootWidth</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=35" title="Edit section: BootWidth">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 54.0</p>
+<h4><span class="mw-headline" id="BootX">BootX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=36" title="Edit section: BootX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Jump boot position relative to doll</p>
+<p><b>Default value:</b> 37.0</p>
+<h4><span class="mw-headline" id="BootY">BootY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=37" title="Edit section: BootY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 100.0</p>
+<h4><span class="mw-headline" id="BouncedWeapon">BouncedWeapon</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=38" title="Edit section: BouncedWeapon">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="BounceWeaponScale">BounceWeaponScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=39" title="Edit section: BounceWeaponScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 2.25</p>
+<h4><span class="mw-headline" id="bQuickPickMadeNewSelection">bQuickPickMadeNewSelection</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=40" title="Edit section: bQuickPickMadeNewSelection">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>true when the player has made a new selection since bringing the menu up this time (can't check QuickPickCurrentSelection for that since it defaults to current weapon)</p>
+<h4><span class="mw-headline" id="bShowAllAI">bShowAllAI</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=41" title="Edit section: bShowAllAI">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Debug flag to show AI information</p>
+<h4><span class="mw-headline" id="bShowAllWeapons">bShowAllWeapons</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=42" title="Edit section: bShowAllWeapons">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bShowAmmo">bShowAmmo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=43" title="Edit section: bShowAmmo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bShowClock">bShowClock</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=44" title="Edit section: bShowClock">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>Widget Locations / Visibility flags</p>
+<h4><span class="mw-headline" id="bShowDoll">bShowDoll</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=45" title="Edit section: bShowDoll">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bShowFragCount">bShowFragCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=46" title="Edit section: bShowFragCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br />
+<b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bShowLeaderboard">bShowLeaderboard</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=47" title="Edit section: bShowLeaderboard">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bShowMap">bShowMap</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=48" title="Edit section: bShowMap">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bShowPowerups">bShowPowerups</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=49" title="Edit section: bShowPowerups">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bShowQuickPick">bShowQuickPick</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=50" title="Edit section: bShowQuickPick">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>QuickPick Menu</p>
+<h4><span class="mw-headline" id="bShowScoring">bShowScoring</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=51" title="Edit section: bShowScoring">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bShowVehicle">bShowVehicle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=52" title="Edit section: bShowVehicle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bShowVehicleArmorCount">bShowVehicleArmorCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=53" title="Edit section: bShowVehicleArmorCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bShowWeaponbar">bShowWeaponbar</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=54" title="Edit section: bShowWeaponbar">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>If true, weapon bar is never displayed</p>
+<h4><span class="mw-headline" id="CharPendingPRI">CharPendingPRI</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=55" title="Edit section: CharPendingPRI">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTPlayerReplicationInfo_(UDK).html" title="UE3:UTPlayerReplicationInfo (UDK)">UTPlayerReplicationInfo</a></p>
+<p>Holds the PRI of who we want to switch to</p>
+<h4><span class="mw-headline" id="CharPortraitMaterial">CharPortraitMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=56" title="Edit section: CharPortraitMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>The material used to display the portrait</p>
+<p><b>Default value:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a>'UI_HUD.Materials.CharPortrait'</p>
+<h4><span class="mw-headline" id="CharPortraitMI">CharPortraitMI</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=57" title="Edit section: CharPortraitMI">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_MaterialInstanceConstant_(UDK).html" title="UE3:MaterialInstanceConstant (UDK)">MaterialInstanceConstant</a></p>
+<p>The MI that we will set</p>
+<h4><span class="mw-headline" id="CharPortraitSize">CharPortraitSize</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=58" title="Edit section: CharPortraitSize">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Object.Vector2D</a></p>
+<p>How big at 1024x768 should this be</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>X</td>
+<td>96.0</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>120.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="CharPortraitSlideTime">CharPortraitSlideTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=59" title="Edit section: CharPortraitSlideTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Total Amount of time to display a portrait for</p>
+<p><b>Default value:</b> 2.0</p>
+<h4><span class="mw-headline" id="CharPortraitSlideTransitionTime">CharPortraitSlideTransitionTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=60" title="Edit section: CharPortraitSlideTransitionTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>% of Total time to slide In/Out. It will be used on both sides. Ex. If set to 0.25 then the slide in will be 25% of the total time as will the slide out leaving 50% of the time settled on screen. *</p>
+<p><b>Default value:</b> 0.175</p>
+<h4><span class="mw-headline" id="CharPortraitTime">CharPortraitTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=61" title="Edit section: CharPortraitTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>How long until we are done</p>
+<h4><span class="mw-headline" id="CharPortraitXPerc">CharPortraitXPerc</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=62" title="Edit section: CharPortraitXPerc">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>When sliding in, where should this image stop</p>
+<p><b>Default value:</b> 0.01</p>
+<h4><span class="mw-headline" id="CharPortraitYPerc">CharPortraitYPerc</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=63" title="Edit section: CharPortraitYPerc">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>How far down the screen will it be rendered</p>
+<p><b>Default value:</b> 0.15</p>
+<h4><span class="mw-headline" id="CharPRI">CharPRI</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=64" title="Edit section: CharPRI">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTPlayerReplicationInfo_(UDK).html" title="UE3:UTPlayerReplicationInfo (UDK)">UTPlayerReplicationInfo</a></p>
+<p>Holds the PRI of the person speak</p>
+<h4><span class="mw-headline" id="ClockPosition">ClockPosition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=65" title="Edit section: ClockPosition">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Object.Vector2D</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ConfiguredCrosshairScaling">ConfiguredCrosshairScaling</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=66" title="Edit section: ConfiguredCrosshairScaling">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Configurable crosshair scaling</p>
+<p><b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="ConsoleIconFont">ConsoleIconFont</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=67" title="Edit section: ConsoleIconFont">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Font_(UDK).html" title="UE3:Font (UDK)">Font</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ConsoleIconFontClassName">ConsoleIconFontClassName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=68" title="Edit section: ConsoleIconFontClassName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>Holds a reference to the font to use for a given console</p>
+<p><b>Default value:</b> "UI_Fonts.Fonts.UI_Fonts_Xbox18"</p>
+<h4><span class="mw-headline" id="CurrentWeaponScale">CurrentWeaponScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=69" title="Edit section: CurrentWeaponScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 10</p>
+<p><br />
+<b>Default value, index 0:</b> 1.0</p>
+<p><b>Default value, index 1:</b> 1.0</p>
+<p><b>Default value, index 2:</b> 1.0</p>
+<p><b>Default value, index 3:</b> 1.0</p>
+<p><b>Default value, index 4:</b> 1.0</p>
+<p><b>Default value, index 5:</b> 1.0</p>
+<p><b>Default value, index 6:</b> 1.0</p>
+<p><b>Default value, index 7:</b> 1.0</p>
+<p><b>Default value, index 8:</b> 1.0</p>
+<p><b>Default value, index 9:</b> 1.0</p>
+<h4><span class="mw-headline" id="DamageData">DamageData</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=70" title="Edit section: DamageData">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_UTHUD_(UDK).html#DamageInfo" title="UE3:UTHUD (UDK)">DamageInfo</a>&gt;</p>
+<p>List of DamageInfos.</p>
+<h4><span class="mw-headline" id="DamageIndicatorSize">DamageIndicatorSize</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=71" title="Edit section: DamageIndicatorSize">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> 384.0</p>
+<h4><span class="mw-headline" id="DeadMessage">DeadMessage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=72" title="Edit section: DeadMessage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> localized</p>
+<p>When you are dead</p>
+<p><b>Default value:</b> "You have Died!"</p>
+<h4><span class="mw-headline" id="DisplayedOrders">DisplayedOrders</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=73" title="Edit section: DisplayedOrders">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p>The orders to display when rendering the map</p>
+<h4><span class="mw-headline" id="DMLinearColor">DMLinearColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=74" title="Edit section: DMLinearColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>B</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>1.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="DollHeight">DollHeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=75" title="Edit section: DollHeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 109.0</p>
+<h4><span class="mw-headline" id="DollOffsetX">DollOffsetX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=76" title="Edit section: DollOffsetX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>position of the armor bg relative to overall lower left position</p>
+<p><b>Default value:</b> 35.0</p>
+<h4><span class="mw-headline" id="DollOffsetY">DollOffsetY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=77" title="Edit section: DollOffsetY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 58.0</p>
+<h4><span class="mw-headline" id="DollPosition">DollPosition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=78" title="Edit section: DollPosition">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Object.Vector2D</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>X</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>-1.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="DollVisibility">DollVisibility</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=79" title="Edit section: DollVisibility">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="DollWidth">DollWidth</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=80" title="Edit section: DollWidth">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 56.0</p>
+<h4><span class="mw-headline" id="EmptyWeaponAlpha">EmptyWeaponAlpha</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=81" title="Edit section: EmptyWeaponAlpha">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 0.4</p>
+<h4><span class="mw-headline" id="FadeParamName">FadeParamName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=82" title="Edit section: FadeParamName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p>Name of the material parameter that controls the fade</p>
+<p><b>Default value:</b> 'DamageDirectionAlpha'</p>
+<h4><span class="mw-headline" id="FadeTime">FadeTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=83" title="Edit section: FadeTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>How fast should it fade out</p>
+<p><b>Default value:</b> 0.5</p>
+<h4><span class="mw-headline" id="FireToRespawnMessage">FireToRespawnMessage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=84" title="Edit section: FireToRespawnMessage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> localized</p>
+<p>Press [Fire] to Respawn</p>
+<p><b>Default value:</b> "Press [FIRE] to respawn"</p>
+<h4><span class="mw-headline" id="FragPulseTime">FragPulseTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=85" title="Edit section: FragPulseTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="FullHeight">FullHeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=86" title="Edit section: FullHeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Holds the full width and height of the viewport</p>
+<h4><span class="mw-headline" id="FullWidth">FullWidth</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=87" title="Edit section: FullWidth">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Holds the full width and height of the viewport</p>
+<h4><span class="mw-headline" id="GlowFonts">GlowFonts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=88" title="Edit section: GlowFonts">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Font_(UDK).html" title="UE3:Font (UDK)">Font</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 2</p>
+<p>Glowing Fonts</p>
+<p><b>Default value, index 0:</b> <a href="UE3_Font_(UDK).html" title="UE3:Font (UDK)">Font</a>'UI_Fonts_Final.HUD.F_GlowPrimary'</p>
+<p><b>Default value, index 1:</b> <a href="UE3_Font_(UDK).html" title="UE3:Font (UDK)">Font</a>'UI_Fonts_Final.HUD.F_GlowSecondary'</p>
+<h4><span class="mw-headline" id="GoldColor">GoldColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=89" title="Edit section: GoldColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Object.Color</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Various colors</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>255</td>
+</tr>
+<tr>
+<td>B</td>
+<td>11</td>
+</tr>
+<tr>
+<td>G</td>
+<td>183</td>
+</tr>
+<tr>
+<td>R</td>
+<td>255</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="GoldLinearColor">GoldLinearColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=90" title="Edit section: GoldLinearColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>1.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="GrayColor">GrayColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=91" title="Edit section: GrayColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Object.Color</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>192</td>
+</tr>
+<tr>
+<td>B</td>
+<td>160</td>
+</tr>
+<tr>
+<td>G</td>
+<td>160</td>
+</tr>
+<tr>
+<td>R</td>
+<td>160</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="HealthBGCoords">HealthBGCoords</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=92" title="Edit section: HealthBGCoords">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">UIRoot.TextureCoordinates</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>U</td>
+<td>73.0</td>
+</tr>
+<tr>
+<td>UL</td>
+<td>143.0</td>
+</tr>
+<tr>
+<td>V</td>
+<td>111.0</td>
+</tr>
+<tr>
+<td>VL</td>
+<td>57.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="HealthBGOffsetX">HealthBGOffsetX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=93" title="Edit section: HealthBGOffsetX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>position of the health bg relative to overall lower left position</p>
+<p><b>Default value:</b> 65.0</p>
+<h4><span class="mw-headline" id="HealthBGOffsetY">HealthBGOffsetY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=94" title="Edit section: HealthBGOffsetY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 59.0</p>
+<h4><span class="mw-headline" id="HealthIconX">HealthIconX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=95" title="Edit section: HealthIconX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>position of the health + icon relative to the overall left position</p>
+<p><b>Default value:</b> 80.0</p>
+<h4><span class="mw-headline" id="HealthIconY">HealthIconY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=96" title="Edit section: HealthIconY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 88.0</p>
+<h4><span class="mw-headline" id="HealthOffsetX">HealthOffsetX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=97" title="Edit section: HealthOffsetX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 65.0</p>
+<h4><span class="mw-headline" id="HealthPulseTime">HealthPulseTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=98" title="Edit section: HealthPulseTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="HealthTextX">HealthTextX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=99" title="Edit section: HealthTextX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>position of the health text relative to the overall left position</p>
+<p><b>Default value:</b> 185.0</p>
+<h4><span class="mw-headline" id="HealthTextY">HealthTextY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=100" title="Edit section: HealthTextY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 55.0</p>
+<h4><span class="mw-headline" id="HelmetHeight">HelmetHeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=101" title="Edit section: HelmetHeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 25.0</p>
+<h4><span class="mw-headline" id="HelmetWidth">HelmetWidth</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=102" title="Edit section: HelmetWidth">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 22.0</p>
+<h4><span class="mw-headline" id="HelmetX">HelmetX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=103" title="Edit section: HelmetX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Helmet armor position relative to doll</p>
+<p><b>Default value:</b> 36.0</p>
+<h4><span class="mw-headline" id="HelmetY">HelmetY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=104" title="Edit section: HelmetY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 13.0</p>
+<h4><span class="mw-headline" id="HitEffect">HitEffect</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=105" title="Edit section: HitEffect">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_MaterialEffect_(UDK).html" title="UE3:MaterialEffect (UDK)">MaterialEffect</a></p>
+<p>reference to the hit effect</p>
+<h4><span class="mw-headline" id="HitEffectFadeTime">HitEffectFadeTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=106" title="Edit section: HitEffectFadeTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>the amount the time it takes to fade the hit effect from the maximum values (default.HitEffectFadeTime is max)</p>
+<p><b>Default value:</b> 0.5</p>
+<h4><span class="mw-headline" id="HitEffectIntensity">HitEffectIntensity</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=107" title="Edit section: HitEffectIntensity">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>current hit effect intensity (default.HitEffectIntensity is max)</p>
+<p><b>Default value:</b> 0.25</p>
+<h4><span class="mw-headline" id="HitEffectMaterialInstance">HitEffectMaterialInstance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=108" title="Edit section: HitEffectMaterialInstance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_MaterialInstanceConstant_(UDK).html" title="UE3:MaterialInstanceConstant (UDK)">MaterialInstanceConstant</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>material instance for the hit effect</p>
+<h4><span class="mw-headline" id="HudFonts">HudFonts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=109" title="Edit section: HudFonts">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Font_(UDK).html" title="UE3:Font (UDK)">Font</a>&gt;</p>
+<p>A collection of fonts used in the hud</p>
+<p><b>Default value, index 0:</b> <a href="UE3_MultiFont_(UDK).html" title="UE3:MultiFont (UDK)">MultiFont</a>'UI_Fonts_Final.HUD.MF_Small'</p>
+<p><b>Default value, index 1:</b> <a href="UE3_MultiFont_(UDK).html" title="UE3:MultiFont (UDK)">MultiFont</a>'UI_Fonts_Final.HUD.MF_Medium'</p>
+<p><b>Default value, index 2:</b> <a href="UE3_MultiFont_(UDK).html" title="UE3:MultiFont (UDK)">MultiFont</a>'UI_Fonts_Final.HUD.MF_Large'</p>
+<p><b>Default value, index 3:</b> <a href="UE3_MultiFont_(UDK).html" title="UE3:MultiFont (UDK)">MultiFont</a>'UI_Fonts_Final.HUD.MF_Huge'</p>
+<h4><span class="mw-headline" id="HUDScaleX">HUDScaleX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=110" title="Edit section: HUDScaleX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Resolution dependent HUD scaling factor</p>
+<h4><span class="mw-headline" id="HUDScaleY">HUDScaleY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=111" title="Edit section: HUDScaleY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Resolution dependent HUD scaling factor</p>
+<h4><span class="mw-headline" id="IconHudTexture">IconHudTexture</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=112" title="Edit section: IconHudTexture">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Texture2D_(UDK).html" title="UE3:Texture2D (UDK)">Texture2D</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br />
+<b>Default value:</b> <a href="UE3_Texture2D_(UDK).html" title="UE3:Texture2D (UDK)">Texture2D</a>'UI_HUD.HUD.UI_HUD_BaseB'</p>
+<h4><span class="mw-headline" id="LastAmmoCount">LastAmmoCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=113" title="Edit section: LastAmmoCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastAmmoPickupTime">LastAmmoPickupTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=114" title="Edit section: LastAmmoPickupTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>used to pulse the scaled of several hud elements</p>
+<h4><span class="mw-headline" id="LastArmorAmount">LastArmorAmount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=115" title="Edit section: LastArmorAmount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastArmorPickupTime">LastArmorPickupTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=116" title="Edit section: LastArmorPickupTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>used to pulse the scaled of several hud elements</p>
+<h4><span class="mw-headline" id="LastDollUpdate">LastDollUpdate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=117" title="Edit section: LastDollUpdate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastFragCount">LastFragCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=118" title="Edit section: LastFragCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastHealth">LastHealth</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=119" title="Edit section: LastHealth">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastHealthPickupTime">LastHealthPickupTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=120" title="Edit section: LastHealthPickupTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>used to pulse the scaled of several hud elements</p>
+<h4><span class="mw-headline" id="LastHUDUpdateTime">LastHUDUpdateTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=121" title="Edit section: LastHUDUpdateTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastPickupTime">LastPickupTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=122" title="Edit section: LastPickupTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>used to pulse the scaled of several hud elements</p>
+<h4><span class="mw-headline" id="LastSelectedWeapon">LastSelectedWeapon</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=123" title="Edit section: LastSelectedWeapon">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Weapon_(UDK).html" title="UE3:Weapon (UDK)">Weapon</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastTimeTooltipDrawn">LastTimeTooltipDrawn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=124" title="Edit section: LastTimeTooltipDrawn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastWeapon">LastWeapon</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=125" title="Edit section: LastWeapon">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTWeapon_(UDK).html" title="UE3:UTWeapon (UDK)">UTWeapon</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastWeaponBarDrawnTime">LastWeaponBarDrawnTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=126" title="Edit section: LastWeaponBarDrawnTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LC_White">LC_White</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=127" title="Edit section: LC White">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>1.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="LightGoldColor">LightGoldColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=128" title="Edit section: LightGoldColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Object.Color</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>255</td>
+</tr>
+<tr>
+<td>B</td>
+<td>128</td>
+</tr>
+<tr>
+<td>G</td>
+<td>255</td>
+</tr>
+<tr>
+<td>R</td>
+<td>255</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="LightGreenColor">LightGreenColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=129" title="Edit section: LightGreenColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Object.Color</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>255</td>
+</tr>
+<tr>
+<td>B</td>
+<td>128</td>
+</tr>
+<tr>
+<td>G</td>
+<td>255</td>
+</tr>
+<tr>
+<td>R</td>
+<td>128</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="MapBackground">MapBackground</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=130" title="Edit section: MapBackground">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Texture2D_(UDK).html" title="UE3:Texture2D (UDK)">Texture2D</a></p>
+<p>The background texture for the map</p>
+<h4><span class="mw-headline" id="MapDefaultSize">MapDefaultSize</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=131" title="Edit section: MapDefaultSize">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>Holds the default size in pixels at 1024x768 of the map</p>
+<p><b>Default value:</b> 220.0</p>
+<h4><span class="mw-headline" id="MapPosition">MapPosition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=132" title="Edit section: MapPosition">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Object.Vector2D</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>X</td>
+<td>0.99</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>0.05</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="MaxHitEffectColor">MaxHitEffectColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=133" title="Edit section: MaxHitEffectColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p>maximum hit effect color</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>-1.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>-1.0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>2.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="MaxNoOfIndicators">MaxNoOfIndicators</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=134" title="Edit section: MaxNoOfIndicators">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Holds the Max. # of indicators to be shown</p>
+<p><b>Default value:</b> 3</p>
+<h4><span class="mw-headline" id="MessageOffset">MessageOffset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=135" title="Edit section: MessageOffset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 7</p>
+<p>Y offsets for local message areas - value above 1 = special position in right top corner of HUD</p>
+<p><b>Default value, index 0:</b> 0.15</p>
+<p><b>Default value, index 1:</b> 0.242</p>
+<p><b>Default value, index 2:</b> 0.36</p>
+<p><b>Default value, index 3:</b> 0.58</p>
+<p><b>Default value, index 4:</b> 0.78</p>
+<p><b>Default value, index 5:</b> 0.83</p>
+<p><b>Default value, index 6:</b> 2.0</p>
+<h4><span class="mw-headline" id="MOTDSceneTemplate">MOTDSceneTemplate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=136" title="Edit section: MOTDSceneTemplate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTUIScene_MOTD_(UDK).html" title="UE3:UTUIScene MOTD (UDK)">UTUIScene_MOTD</a></p>
+<p>MOTD</p>
+<h4><span class="mw-headline" id="MusicManagerClass">MusicManagerClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=137" title="Edit section: MusicManagerClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_UTMusicManager_(UDK).html" title="UE3:UTMusicManager (UDK)">UTMusicManager</a>&gt;</p>
+<p>class of dynamic music manager used with this hud/gametype</p>
+<p><b>Default value:</b> <a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UTMusicManager_(UDK).html" title="UE3:UTMusicManager (UDK)">UTGame.UTMusicManager</a>'</p>
+<h4><span class="mw-headline" id="NameplateBubble">NameplateBubble</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=138" title="Edit section: NameplateBubble">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">UIRoot.TextureCoordinates</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>U</td>
+<td>243.0</td>
+</tr>
+<tr>
+<td>UL</td>
+<td>26.0</td>
+</tr>
+<tr>
+<td>V</td>
+<td>11.0</td>
+</tr>
+<tr>
+<td>VL</td>
+<td>35.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="NameplateBubbleWidth">NameplateBubbleWidth</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=139" title="Edit section: NameplateBubbleWidth">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 15.0</p>
+<h4><span class="mw-headline" id="NameplateCenter">NameplateCenter</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=140" title="Edit section: NameplateCenter">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">UIRoot.TextureCoordinates</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>U</td>
+<td>238.0</td>
+</tr>
+<tr>
+<td>UL</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>V</td>
+<td>11.0</td>
+</tr>
+<tr>
+<td>VL</td>
+<td>35.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="NameplateLeft">NameplateLeft</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=141" title="Edit section: NameplateLeft">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">UIRoot.TextureCoordinates</a></p>
+<p>Coordinates of the nameplate background</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>U</td>
+<td>224.0</td>
+</tr>
+<tr>
+<td>UL</td>
+<td>14.0</td>
+</tr>
+<tr>
+<td>V</td>
+<td>11.0</td>
+</tr>
+<tr>
+<td>VL</td>
+<td>35.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="NameplateRight">NameplateRight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=142" title="Edit section: NameplateRight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">UIRoot.TextureCoordinates</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>U</td>
+<td>275.0</td>
+</tr>
+<tr>
+<td>UL</td>
+<td>14.0</td>
+</tr>
+<tr>
+<td>V</td>
+<td>11.0</td>
+</tr>
+<tr>
+<td>VL</td>
+<td>35.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="NameplateWidth">NameplateWidth</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=143" title="Edit section: NameplateWidth">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>width of background on either side of the nameplate</p>
+<p><b>Default value:</b> 8.0</p>
+<h4><span class="mw-headline" id="OffWeaponAlpha">OffWeaponAlpha</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=144" title="Edit section: OffWeaponAlpha">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 0.5</p>
+<h4><span class="mw-headline" id="OrderUpdateTime">OrderUpdateTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=145" title="Edit section: OrderUpdateTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>last time at which displayedorders was updated</p>
+<h4><span class="mw-headline" id="PawnDollBGCoords">PawnDollBGCoords</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=146" title="Edit section: PawnDollBGCoords">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">UIRoot.TextureCoordinates</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>U</td>
+<td>9.0</td>
+</tr>
+<tr>
+<td>UL</td>
+<td>65.0</td>
+</tr>
+<tr>
+<td>V</td>
+<td>52.0</td>
+</tr>
+<tr>
+<td>VL</td>
+<td>116.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="PawnOwner">PawnOwner</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=147" title="Edit section: PawnOwner">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a></p>
+<p>The Pawn that is currently owning this hud</p>
+<h4><span class="mw-headline" id="PlaceMarks">PlaceMarks</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=148" title="Edit section: PlaceMarks">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 4</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> localized</p>
+<p><br />
+<b>Default value, index 0:</b> "st"</p>
+<p><b>Default value, index 1:</b> "nd"</p>
+<p><b>Default value, index 2:</b> "rd"</p>
+<p><b>Default value, index 3:</b> "th"</p>
+<h4><span class="mw-headline" id="PositionalParamName">PositionalParamName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=149" title="Edit section: PositionalParamName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p>Name of the material parameter that controls the position</p>
+<p><b>Default value:</b> 'DamageDirectionRotation'</p>
+<h4><span class="mw-headline" id="PowerupDims">PowerupDims</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=150" title="Edit section: PowerupDims">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Object.Vector2D</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="PowerupTransitionTime">PowerupTransitionTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=151" title="Edit section: PowerupTransitionTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>How long to fade</p>
+<h4><span class="mw-headline" id="PowerupYPos">PowerupYPos</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=152" title="Edit section: PowerupYPos">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 0.75</p>
+<h4><span class="mw-headline" id="PressFireToBegin">PressFireToBegin</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=153" title="Edit section: PressFireToBegin">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> localized</p>
+<p>Press [Fire] to begin</p>
+<p><b>Default value:</b> "Press [FIRE] to Begin..."</p>
+<h4><span class="mw-headline" id="PulseDuration">PulseDuration</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=154" title="Edit section: PulseDuration">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>How long should the pulse take total</p>
+<p><b>Default value:</b> 0.33</p>
+<h4><span class="mw-headline" id="PulseMultiplier">PulseMultiplier</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=155" title="Edit section: PulseMultiplier">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>How much should the text pulse - NOTE this will be added to 1.0 (so PulseMultipler 0.5 = 1.5)</p>
+<p><b>Default value:</b> 0.5</p>
+<h4><span class="mw-headline" id="PulseSplit">PulseSplit</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=156" title="Edit section: PulseSplit">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>When should the pulse switch from Out to in</p>
+<p><b>Default value:</b> 0.25</p>
+<h4><span class="mw-headline" id="QuickPickBkgCoords">QuickPickBkgCoords</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=157" title="Edit section: QuickPickBkgCoords">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">UIRoot.TextureCoordinates</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>U</td>
+<td>459.0</td>
+</tr>
+<tr>
+<td>UL</td>
+<td>69.0</td>
+</tr>
+<tr>
+<td>V</td>
+<td>148.0</td>
+</tr>
+<tr>
+<td>VL</td>
+<td>49.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="QuickPickBkgImage">QuickPickBkgImage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=158" title="Edit section: QuickPickBkgImage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Texture2D_(UDK).html" title="UE3:Texture2D (UDK)">Texture2D</a></p>
+<p><br />
+<b>Default value:</b> <a href="UE3_Texture2D_(UDK).html" title="UE3:Texture2D (UDK)">Texture2D</a>'UI_HUD.HUD.UI_HUD_BaseA'</p>
+<h4><span class="mw-headline" id="QuickPickCircleCoords">QuickPickCircleCoords</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=159" title="Edit section: QuickPickCircleCoords">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">UIRoot.TextureCoordinates</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>U</td>
+<td>18.0</td>
+</tr>
+<tr>
+<td>UL</td>
+<td>128.0</td>
+</tr>
+<tr>
+<td>V</td>
+<td>367.0</td>
+</tr>
+<tr>
+<td>VL</td>
+<td>128.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="QuickPickCircleImage">QuickPickCircleImage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=160" title="Edit section: QuickPickCircleImage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Texture2D_(UDK).html" title="UE3:Texture2D (UDK)">Texture2D</a></p>
+<p><br />
+<b>Default value:</b> <a href="UE3_Texture2D_(UDK).html" title="UE3:Texture2D (UDK)">Texture2D</a>'UI_HUD.HUD.UI_HUD_BaseB'</p>
+<h4><span class="mw-headline" id="QuickPickClasses">QuickPickClasses</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=161" title="Edit section: QuickPickClasses">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_UTWeapon_(UDK).html" title="UE3:UTWeapon (UDK)">UTWeapon</a>&gt;</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="QuickPickCurrentSelection">QuickPickCurrentSelection</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=162" title="Edit section: QuickPickCurrentSelection">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="QuickPickDeltaAngle">QuickPickDeltaAngle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=163" title="Edit section: QuickPickDeltaAngle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="QuickPickNumCells">QuickPickNumCells</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=164" title="Edit section: QuickPickNumCells">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="QuickPickRadius">QuickPickRadius</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=165" title="Edit section: QuickPickRadius">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 160.0</p>
+<h4><span class="mw-headline" id="QuickPickSelCoords">QuickPickSelCoords</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=166" title="Edit section: QuickPickSelCoords">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">UIRoot.TextureCoordinates</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>U</td>
+<td>459.0</td>
+</tr>
+<tr>
+<td>UL</td>
+<td>69.0</td>
+</tr>
+<tr>
+<td>V</td>
+<td>248.0</td>
+</tr>
+<tr>
+<td>VL</td>
+<td>49.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="QuickPickSelImage">QuickPickSelImage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=167" title="Edit section: QuickPickSelImage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Texture2D_(UDK).html" title="UE3:Texture2D (UDK)">Texture2D</a></p>
+<p><br />
+<b>Default value:</b> <a href="UE3_Texture2D_(UDK).html" title="UE3:Texture2D (UDK)">Texture2D</a>'UI_HUD.HUD.UI_HUD_BaseA'</p>
+<h4><span class="mw-headline" id="QuickPickTarget">QuickPickTarget</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=168" title="Edit section: QuickPickTarget">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="QuickPickWaveForm">QuickPickWaveForm</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=169" title="Edit section: QuickPickWaveForm">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_ForceFeedbackWaveform_(UDK).html" title="UE3:ForceFeedbackWaveform (UDK)">ForceFeedbackWaveform</a></p>
+<p>controller rumble to play when switching weapons.</p>
+<p><b>Default value:</b> <a href="UE3_ForceFeedbackWaveform_(UDK).html" title="UE3:ForceFeedbackWaveform (UDK)">ForceFeedbackWaveform</a>'UTGame.Default__UTHUD:ForceFeedbackWaveformQuickPick'</p>
+<h4><span class="mw-headline" id="RedLinearColor">RedLinearColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=170" title="Edit section: RedLinearColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.05</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>3.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="ResolutionScale">ResolutionScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=171" title="Edit section: ResolutionScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Holds the scaling factor given the current resolution. This is calculated in PostRender()</p>
+<h4><span class="mw-headline" id="ResolutionScaleX">ResolutionScaleX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=172" title="Edit section: ResolutionScaleX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Holds the scaling factor given the current resolution. This is calculated in PostRender()</p>
+<h4><span class="mw-headline" id="SafeRegionPct">SafeRegionPct</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=173" title="Edit section: SafeRegionPct">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>The percentage of the view that should be considered safe</p>
+<p><b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="ScoreboardSceneTemplate">ScoreboardSceneTemplate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=174" title="Edit section: ScoreboardSceneTemplate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTUIScene_Scoreboard_(UDK).html" title="UE3:UTUIScene Scoreboard (UDK)">UTUIScene_Scoreboard</a></p>
+<p>The Scoreboard.</p>
+<p><b>Default value:</b> <a href="UE3_Scoreboard_DM_(UDK).html" title="UE3:Scoreboard DM (UDK)">Scoreboard_DM</a>'UI_Scenes_Scoreboards.sbDM'</p>
+<h4><span class="mw-headline" id="ScoringPosition">ScoringPosition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=175" title="Edit section: ScoringPosition">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Object.Vector2D</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>X</td>
+<td>-1.0</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>0.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="SelectedBoxScale">SelectedBoxScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=176" title="Edit section: SelectedBoxScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="SelectedWeaponAlpha">SelectedWeaponAlpha</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=177" title="Edit section: SelectedWeaponAlpha">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="SelectedWeaponAmmoOffsetX">SelectedWeaponAmmoOffsetX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=178" title="Edit section: SelectedWeaponAmmoOffsetX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 110.0</p>
+<h4><span class="mw-headline" id="SelectedWeaponScale">SelectedWeaponScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=179" title="Edit section: SelectedWeaponScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 1.5</p>
+<h4><span class="mw-headline" id="SilverLinearColor">SilverLinearColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=180" title="Edit section: SilverLinearColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.75</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.75</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0.75</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="SpectatorMessage">SpectatorMessage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=181" title="Edit section: SpectatorMessage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> localized</p>
+<p>When you are a spectator</p>
+<p><b>Default value:</b> "Spectator"</p>
+<h4><span class="mw-headline" id="TalkingTexture">TalkingTexture</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=182" title="Edit section: TalkingTexture">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Texture2D_(UDK).html" title="UE3:Texture2D (UDK)">Texture2D</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br />
+<b>Default value:</b> <a href="UE3_Texture2D_(UDK).html" title="UE3:Texture2D (UDK)">Texture2D</a>'PS3Patch.Talking'</p>
+<h4><span class="mw-headline" id="TeamHUDColor">TeamHUDColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=183" title="Edit section: TeamHUDColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="TeamTextColor">TeamTextColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=184" title="Edit section: TeamTextColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Object.Color</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TextRenderInfo">TextRenderInfo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=185" title="Edit section: TextRenderInfo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Canvas_(UDK).html#FontRenderInfo" title="UE3:Canvas (UDK)">Canvas.FontRenderInfo</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Canvas_(UDK).html#FontRenderInfo" title="UE3:Canvas (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>bClipText</td>
+<td>True</td>
+</tr>
+<tr>
+<td>GlowInfo</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="#DepthFieldGlowInfo">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>GlowColor</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0.0</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="THeight">THeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=186" title="Edit section: THeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Misc vars used for laying out the hud</p>
+<h4><span class="mw-headline" id="ThighHeight">ThighHeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=187" title="Edit section: ThighHeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 28.0</p>
+<h4><span class="mw-headline" id="ThighWidth">ThighWidth</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=188" title="Edit section: ThighWidth">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 42.0</p>
+<h4><span class="mw-headline" id="ThighX">ThighX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=189" title="Edit section: ThighX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Thigh armor position relative to doll</p>
+<p><b>Default value:</b> 36.0</p>
+<h4><span class="mw-headline" id="ThighY">ThighY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=190" title="Edit section: ThighY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 72.0</p>
+<h4><span class="mw-headline" id="ToolTipSepCoords">ToolTipSepCoords</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=191" title="Edit section: ToolTipSepCoords">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">UIRoot.TextureCoordinates</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>U</td>
+<td>260.0</td>
+</tr>
+<tr>
+<td>UL</td>
+<td>29.0</td>
+</tr>
+<tr>
+<td>V</td>
+<td>379.0</td>
+</tr>
+<tr>
+<td>VL</td>
+<td>27.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="TX">TX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=192" title="Edit section: TX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TY">TY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=193" title="Edit section: TY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="UT3GHudTexture">UT3GHudTexture</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=194" title="Edit section: UT3GHudTexture">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Texture2D_(UDK).html" title="UE3:Texture2D (UDK)">Texture2D</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br />
+<b>Default value:</b> <a href="UE3_Texture2D_(UDK).html" title="UE3:Texture2D (UDK)">Texture2D</a>'UI_GoldHud.HudIcons'</p>
+<h4><span class="mw-headline" id="UTGRI">UTGRI</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=195" title="Edit section: UTGRI">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTGameReplicationInfo_(UDK).html" title="UE3:UTGameReplicationInfo (UDK)">UTGameReplicationInfo</a></p>
+<p>Cached reference to the GRI</p>
+<h4><span class="mw-headline" id="UTOwnerPRI">UTOwnerPRI</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=196" title="Edit section: UTOwnerPRI">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTPlayerReplicationInfo_(UDK).html" title="UE3:UTPlayerReplicationInfo (UDK)">UTPlayerReplicationInfo</a></p>
+<p>Cached typed reference to the PRI</p>
+<h4><span class="mw-headline" id="UTPawnOwner">UTPawnOwner</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=197" title="Edit section: UTPawnOwner">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTPawn_(UDK).html" title="UE3:UTPawn (UDK)">UTPawn</a></p>
+<p>Points to the UT Pawn. Will be resolved if in a vehicle</p>
+<h4><span class="mw-headline" id="UTPlayerOwner">UTPlayerOwner</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=198" title="Edit section: UTPlayerOwner">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTPlayerController_(UDK).html" title="UE3:UTPlayerController (UDK)">UTPlayerController</a></p>
+<p>Cached a typed Player controller. Unlike PawnOwner we only set this once in PostBeginPlay</p>
+<h4><span class="mw-headline" id="VehiclePosition">VehiclePosition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=199" title="Edit section: VehiclePosition">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Object.Vector2D</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>X</td>
+<td>-1.0</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>-1.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="VestHeight">VestHeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=200" title="Edit section: VestHeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 28.0</p>
+<h4><span class="mw-headline" id="VestWidth">VestWidth</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=201" title="Edit section: VestWidth">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 46.0</p>
+<h4><span class="mw-headline" id="VestX">VestX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=202" title="Edit section: VestX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Body armor position relative to doll</p>
+<p><b>Default value:</b> 36.0</p>
+<h4><span class="mw-headline" id="VestY">VestY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=203" title="Edit section: VestY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 31.0</p>
+<h4><span class="mw-headline" id="WaitingForMatch">WaitingForMatch</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=204" title="Edit section: WaitingForMatch">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> localized</p>
+<p>Waiting for the match to begin</p>
+<p><b>Default value:</b> "Waiting for the Match to Begin..."</p>
+<h4><span class="mw-headline" id="WarmupString">WarmupString</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=205" title="Edit section: WarmupString">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> localized</p>
+<p>Localize Strings -- TODO - Go through and make sure these are all localized</p>
+<p><b>Default value:</b> "Warmup Round"</p>
+<h4><span class="mw-headline" id="WeaponAmmoLength">WeaponAmmoLength</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=206" title="Edit section: WeaponAmmoLength">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 48.0</p>
+<h4><span class="mw-headline" id="WeaponAmmoOffsetX">WeaponAmmoOffsetX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=207" title="Edit section: WeaponAmmoOffsetX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 100.0</p>
+<h4><span class="mw-headline" id="WeaponAmmoOffsetY">WeaponAmmoOffsetY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=208" title="Edit section: WeaponAmmoOffsetY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 16.0</p>
+<h4><span class="mw-headline" id="WeaponAmmoThickness">WeaponAmmoThickness</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=209" title="Edit section: WeaponAmmoThickness">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 16.0</p>
+<h4><span class="mw-headline" id="WeaponBarScale">WeaponBarScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=210" title="Edit section: WeaponBarScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Scaling to apply to entire weapon bar</p>
+<p><b>Default value:</b> 0.75</p>
+<h4><span class="mw-headline" id="WeaponBarXOffset">WeaponBarXOffset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=211" title="Edit section: WeaponBarXOffset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 70.0</p>
+<h4><span class="mw-headline" id="WeaponBarY">WeaponBarY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=212" title="Edit section: WeaponBarY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Weapon bar top left corner at 1024x768, normal scale</p>
+<p><b>Default value:</b> 16.0</p>
+<h4><span class="mw-headline" id="WeaponBoxHeight">WeaponBoxHeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=213" title="Edit section: WeaponBoxHeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 64.0</p>
+<h4><span class="mw-headline" id="WeaponBoxWidth">WeaponBoxWidth</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=214" title="Edit section: WeaponBoxWidth">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 100.0</p>
+<h4><span class="mw-headline" id="WeaponList">WeaponList</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=215" title="Edit section: WeaponList">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTWeapon_(UDK).html" title="UE3:UTWeapon (UDK)">UTWeapon</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 10</p>
+<p>List of weapons to display in weapon bar</p>
+<h4><span class="mw-headline" id="WeaponScaleSpeed">WeaponScaleSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=216" title="Edit section: WeaponScaleSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 10.0</p>
+<h4><span class="mw-headline" id="WeaponSwitchMessage">WeaponSwitchMessage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=217" title="Edit section: WeaponSwitchMessage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_UTLocalMessage_(UDK).html" title="UE3:UTLocalMessage (UDK)">UTLocalMessage</a>&gt;</p>
+<p><br />
+<b>Default value:</b> <a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UTWeaponSwitchMessage_(UDK).html" title="UE3:UTWeaponSwitchMessage (UDK)">UTGame.UTWeaponSwitchMessage</a>'</p>
+<h4><span class="mw-headline" id="WeaponXOffset">WeaponXOffset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=218" title="Edit section: WeaponXOffset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 60.0</p>
+<h4><span class="mw-headline" id="WeaponYOffset">WeaponYOffset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=219" title="Edit section: WeaponYOffset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 8.0</p>
+<h4><span class="mw-headline" id="WeaponYScale">WeaponYScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=220" title="Edit section: WeaponYScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 64.0</p>
+<h4><span class="mw-headline" id="WhiteLinearColor">WhiteLinearColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=221" title="Edit section: WhiteLinearColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>1.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="YouHaveLost">YouHaveLost</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=222" title="Edit section: YouHaveLost">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> localized</p>
+<p>You have lost the match</p>
+<p><b>Default value:</b> "YOU HAVE LOST THE MATCH!"</p>
+<h4><span class="mw-headline" id="YouHaveWon">YouHaveWon</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)?section=223" title="Edit section: YouHaveWon">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> localized</p>
+<p>When you win the match</p>
+<p><b>Default value:</b> "YOU HAVE WON THE MATCH!"</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.925 seconds
+Real time usage: 0.943 seconds
+Preprocessor visited node count: 7121/1000000
+Preprocessor generated node count: 8249/1000000
+Post‐expand include size: 37666/2097152 bytes
+Template argument size: 7971/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  599.557      1 - -total
+ 51.33%  307.771    127 - Template:Samegame
+ 48.57%  291.214     76 - Template:Tl
+ 26.02%  156.004     52 - Template:Cl
+ 12.15%   72.856      1 - Template:Infobox_class_part
+ 11.43%   68.505      1 - Template:Infobox_class_part/core
+  2.67%   16.027      1 - Template:Ch
+  1.16%    6.965      1 - Template:Autogenerated
+  0.72%    4.292      1 - Template:Ambox
+  0.64%    3.846      3 - Template:Gamename
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:27743-0!*!*!*!*!*!* and timestamp 20161215195352 and revision id 42070
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:UTHUD_internal_variables_(UDK)?oldid=42070">https://wiki.beyondunreal.com/UE3:UTHUD_internal_variables_(UDK)?oldid=42070</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_UTHUD_internal_variables_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:UTHUD_internal_variables_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:UTHUD_internal_variables_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:UTHUD_internal_variables_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AUTHUD+internal+variables+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AUTHUD+internal+variables+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:UTHUD_internal_variables_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:UTHUD_internal_variables_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:UTHUD_internal_variables_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:UTHUD_internal_variables_(UDK)?oldid=42070" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:UTHUD_internal_variables_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 07:52, 17 January 2010.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":180});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:UTHUD_internal_variables_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 11:23:07 GMT -->
+</html>

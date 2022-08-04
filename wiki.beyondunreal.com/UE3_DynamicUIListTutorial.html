@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:DynamicUIListTutorial by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:52:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:DynamicUIListTutorial - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:DynamicUIListTutorial" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:DynamicUIListTutorial" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_DynamicUIListTutorial.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:DynamicUIListTutorial","wgTitle":"DynamicUIListTutorial","wgCurRevisionId":42806,"wgRevisionId":42806,"wgArticleId":28590,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages needing cleanup","Programming tutorials"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:DynamicUIListTutorial","wgRelevantArticleId":28590,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_DynamicUIListTutorial skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Once I get that upgrade to 36-hour days, I will tackle that. &#8211; Mychaeel
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:DynamicUIListTutorial</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="" class="metadata plainlinks ambox ambox-content">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text">The following things need to be done on this page or in this section:<br />
+<b>This is a dead-end page, i.e. it doesn't link other pages.</b> (It's also an orphan page, i.e. doesn't get linked from anywhere else, but that's not much of a problem as it's in a tutorial category.)</td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Listing_custom_objects_in_a_menu_.28with_a_picture_and_a_description.29">Listing custom objects in a menu (with a picture and a description)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicUIListTutorial?section=1" title="Edit section: Listing custom objects in a menu (with a picture and a description)">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>I will say right now, this may not be the best way of doing this. I didnt look into the MenuList method that Epic uses as it seems to go for a prebuilt list. Instead I went for a UTUIList as it allows me to dynamically decide what goes in the list. The following is the beginning to end of getting a list appearing on an ingame UI tab. Why would you want this? The immediate thing that springs to mind is a Counter-strike style buy system, where you only want to list the items the user can afford (or has reached the skill level to use).</p>
+<p>What I've written below isn't tested. Its based on code that I have working but its not been put into a project from scratch and confirmed to work. I'll update as people point out problems.</p>
+<p>I started by looking for something that matched my end goal. The GameMode selection menu was a perfect example of what I was trying to do, so I went looking for that first. I loaded the game, and selected deathmatch. On here were the words "Free-for-all deathmatch action". Thats going to be pretty unique, so I searched the UDK directory for it. A single result is found in UTGame.int. An .INT file is basically a .INI file, but the data within it is for localized content, eg content you want to translate. Chances are there will also be some data in UTGame.ini</p>
+<p>Here is what we see in the .int</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+;<span class="co1">///////////////</span>
+; UT3 <span class="kw7">Game</span> Modes
+;<span class="co1">///////////////</span>
+<span class="br0">[</span>UTDeathmatch UTUIDataProvider_GameModeInfo<span class="br0">]</span>
+FriendlyName<span class="sy0">=</span><span class="kw9">Deathmatch</span>
+Description<span class="sy0">=</span>Free<span class="sy0">-</span>for<span class="sy0">-</span>all <span class="kw9">deathmatch</span> action.
+</pre></div>
+</div>
+<p>Everything looks obvious, its the UTDeathmatch game type, and we are seeing the Friendly name and the description for the international translation. But whats this UTUIDataProvioder_GameModeInfo thing? Another search shows there is a UTUIDataProvioder_GameModeInfo class and looking at the file we can see the FriendlyName and Description created here. So it looks like the way it works is you create an entry in the .ini for the class you are interested in, and then say the dataprovider that should consume the data you are looking at.</p>
+<p>As we are doing something new in the menu system, lets create a new provider.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">class</span> MyUIDataProvider_Buy <span class="kw1">extends</span> UTUIResourceDataProvider
+	PerObjectConfig;
+ 
+<span class="coMULTI">/** The items class path */</span>
+<span class="kw1">var</span> <span class="kw1">config</span> <span class="kw5">string</span> ClassName;
+ 
+<span class="coMULTI">/** Friendly name for the items */</span>
+<span class="kw1">var</span> <span class="kw1">config</span> <span class="kw1">localized</span> <span class="kw5">string</span> FriendlyName;
+ 
+<span class="coMULTI">/** Description for the items */</span>
+<span class="kw1">var</span> <span class="kw1">config</span> <span class="kw1">localized</span> <span class="kw5">string</span> Description;
+ 
+<span class="coMULTI">/** Image that the icon of this item is on. */</span>
+<span class="kw1">var</span> <span class="kw1">config</span> <span class="kw5">string</span> IconImage;
+ 
+<span class="coMULTI">/* The cost of the item */</span>
+<span class="kw1">var</span> <span class="kw1">config</span> <span class="kw5">float</span> cost;
+ 
+<span class="kw1">defaultproperties</span>
+<span class="br0">{</span>
+	bSearchAllInis<span class="sy0">=</span><span class="kw6">true</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>OK. Now I've found where the data comes from, Im stuck. Lets look for another start point. We know that the game mode selector is a User interface, and I know from looking through the Unreal Editor that they are accessible from the content browser. So I'll go looking there. If you change the filter to only show UIScenes you can see that there is a UTUITabPage_GameModeSelection, lets see what goodies that holds.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="coMULTI">/** Preview image for a game mode. */</span>
+<span class="kw1">var</span> <span class="kw1">transient</span> UIImage	GameModePreviewImage;
+ 
+<span class="coMULTI">/** Description of the currently selected game mode. */</span>
+<span class="kw1">var</span> <span class="kw1">transient</span> UILabel	GameModeDescription;
+ 
+<span class="coMULTI">/** Reference to the game mode list. */</span>
+<span class="kw1">var</span> <span class="kw1">transient</span> UTUIList GameModeList;
+</pre></div>
+</div>
+<p>Looks like Im in the right place. I see the image box, the description box and the List area. Every UI element has a SetDataStoreBinding, and the lovely Unreal Modding community pointed out to me that you can link a UIList to a datastore. I guess its time to find out what a datastore is. I did a search for "GameModes" and in amongst the results (and boy was there a lot!) is DefaultGame.ini with</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="sy0">+</span>ElementProviderTypes<span class="sy0">=</span><span class="br0">(</span>ProviderTag<span class="sy0">=</span><span class="st0">"GameModes"</span>,ProviderClassName<span class="sy0">=</span><span class="st0">"UTGame.UTUIDataProvider_GameModeInfo"</span><span class="br0">)</span>
+</pre></div>
+</div>
+<p>This is written under UTGame.UTUIDataStore_MenuItems, and the description for that file says "Inherited version of the game resource datastore that has UT specific dataproviders.". Hey, I just wrote a data provider! So a DataStore stores data provided by providers (good naming convention&#160;;) ) and it looks like to add to the menu providers, we just have to add a new line to defaultgame.ini</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="sy0">+</span>ElementProviderTypes<span class="sy0">=</span><span class="br0">(</span>ProviderTag<span class="sy0">=</span><span class="st0">"BuyEquipment"</span>,ProviderClassName<span class="sy0">=</span><span class="st0">"MyMod.MyUIDataProvider_Buy"</span><span class="br0">)</span>
+</pre></div>
+</div>
+<p>That should do it. Now we have told the menulist Datastore to consume anything with a MyUIDataProvider_Buy element in any ini or .int files that it finds. Lets put some stuff in the .ini and .int.</p>
+<p>Add this to the .ini</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="br0">[</span>MyWeap_Pistol MyUIDataProvider_Buy<span class="br0">]</span>
+ClassName<span class="sy0">=</span>MyMod.<span class="me0">MyWeap_Pistol</span>
+cost<span class="sy0">=</span><span class="nu0">300.00</span>
+IconImage<span class="sy0">=&lt;</span>Images:UI_FrontEnd_Art.<span class="me0">GameTypes</span>.___TeamDeathmatch<span class="sy0">&gt;</span>
+IconU<span class="sy0">=</span><span class="nu0">442</span>
+IconV<span class="sy0">=</span><span class="nu0">76</span>
+IconUL<span class="sy0">=</span><span class="nu0">129</span>
+IconVL<span class="sy0">=</span><span class="nu0">104</span>
+ 
+<span class="br0">[</span>MyWeap_SubMachineGun MyUIDataProvider_Buy<span class="br0">]</span>
+ClassName<span class="sy0">=</span>MyMod.<span class="me0">MyWeap_SubMachineGun</span>
+cost<span class="sy0">=</span><span class="nu0">600.00</span>
+IconImage<span class="sy0">=&lt;</span>Images:UI_FrontEnd_Art.<span class="me0">GameTypes</span>.___Deathmatch<span class="sy0">&gt;</span>
+IconU<span class="sy0">=</span><span class="nu0">442</span>
+IconV<span class="sy0">=</span><span class="nu0">76</span>
+IconUL<span class="sy0">=</span><span class="nu0">129</span>
+IconVL<span class="sy0">=</span><span class="nu0">104</span>
+</pre></div>
+</div>
+<p>and this to the .int</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="br0">[</span>MyWeap_Pistol MyUIDataProvider_Buy<span class="br0">]</span>
+FriendlyName<span class="sy0">=</span>Sub<span class="sy0">-</span>machine gun
+Description<span class="sy0">=</span>SMG desc goes here
+ 
+<span class="br0">[</span>MyWeap_SubMachineGun MyUIDataProvider_Buy<span class="br0">]</span>
+FriendlyName<span class="sy0">=</span>Sub<span class="sy0">-</span>machine gun
+Description<span class="sy0">=</span>SMG desc goes here
+</pre></div>
+</div>
+<p>The next step is to create a datastore thats only got the data that I want to display. Its very quick and easy, it will just extend the string datastore, and use a custom tag.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">class</span> MyUIDataStore_Equipment <span class="kw1">extends</span> UTUIDataStore_StringList;
+ 
+<span class="kw1">defaultproperties</span>
+<span class="br0">{</span>
+	<span class="kw7">Tag</span><span class="sy0">=</span><span class="st0">"EquipmentStore"</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Now I guess I should create a list to display the data. We need to create a new class that can handle a UI_Scene. With my game I added a tab to the mid-game menu. I'm going to skip how to make a UI_Scene for now as this tutorial has taken long enough to get written and is going out of scope (the focus here is a customizable UIList). I'll revisit if really needed - You'll need to create your own mid game menu, then add a tab with the class MyUITabPage_BuyEquipment. I'd have a look at this tutorial <a rel="nofollow" class="external free" href="http://www.moddb.com/games/unreal-tournament-3/tutorials/unreal-learning-2-ut3-configurable-mutators">http://www.moddb.com/games/unreal-tournament-3/tutorials/unreal-learning-2-ut3-configurable-mutators</a> if you really need help getting started. Make sure your code compiles before you create the scene as your UIScene needs to extend this class and it will only appear in UEd once your code compiles correctly.</p>
+<p>The following allows us to hook into the elements in the scene. For convience I named everything in the scene with the same name as the variables.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">class</span> MyUITabPage_BuyEquipment <span class="kw1">extends</span> UTUITabPage_InGame;
+ 
+<span class="coMULTI">/** The lists of equipment the player can choose **/</span>
+<span class="kw1">var</span> <span class="kw1">transient</span> UTUIList lstEquipment;
+ 
+<span class="coMULTI">/** Preview image for an item. */</span>
+<span class="kw1">var</span> <span class="kw1">transient</span> UIImage	imgEquipPreview;
+ 
+<span class="coMULTI">/** scrollframe which contains the description label - allows the player to read long descriptions */</span>
+<span class="kw1">var</span>	<span class="kw1">transient</span> UIScrollFrame DescriptionScrollFrame;
+<span class="kw1">var</span> <span class="kw1">transient</span> UILabel	lblDescription;
+ 
+<span class="kw1">var</span> <span class="kw1">transient</span> MyUIDataStore_Equipment EquipmentDataStore;
+<span class="kw1">var</span> array<span class="sy0">&lt;</span>UTUIResourceDataProvider<span class="sy0">&gt;</span> EquipmentProvider;
+ 
+<span class="coMULTI">/** Reference to the menu item datastore. */</span>
+<span class="kw1">var</span> <span class="kw1">transient</span> UTUIDataStore_MenuItems MenuItemDataStore;
+</pre></div>
+</div>
+<p>On PostInitialize, we hook the variables to the values in the UIScene</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="coMULTI">/** Post initialization event - Setup widget delegates.*/</span>
+<span class="kw1">event</span> PostInitialize<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>	
+	InitDataStores<span class="br0">(</span><span class="br0">)</span>;
+ 
+	<span class="kw6">Super</span>.<span class="me0">PostInitialize</span><span class="br0">(</span><span class="br0">)</span>;
+ 
+	<span class="co1">// Store widget references</span>
+	lstEquipment <span class="sy0">=</span> UTUIList<span class="br0">(</span>FindChild<span class="br0">(</span><span class="st0">'lstEquipment'</span>, <span class="kw6">true</span><span class="br0">)</span><span class="br0">)</span>; <span class="co1">// Find the item in the UIScene</span>
+	lstEquipment.<span class="me0">SetDataStoreBinding</span><span class="br0">(</span><span class="st0">"&lt;EquipmentStore:AvailableEquipment&gt;"</span><span class="br0">)</span>; <span class="co1">// Hook the list to our data (set up in InitDataStore)</span>
+	lstEquipment.<span class="me0">OnValueChanged</span> <span class="sy0">=</span> OnEquipment_ValueChanged; <span class="co1">// When the use selects from the list, run this function</span>
+	lstEquipment.<span class="me0">OnSubmitSelection</span> <span class="sy0">=</span> <span class="kw5">None</span>;
+	lstEquipment.<span class="me0">OnRawInputKey</span><span class="sy0">=</span><span class="kw5">None</span>;
+	lstEquipment.<span class="me0">OnRefreshSubscriberValue</span> <span class="sy0">=</span> <span class="kw5">None</span>;
+ 
+	<span class="co1">// Store widget references</span>
+	imgEquipPreview <span class="sy0">=</span> UIImage<span class="br0">(</span>FindChild<span class="br0">(</span><span class="st0">'imgEquipPreview'</span>, <span class="kw6">true</span><span class="br0">)</span><span class="br0">)</span>; <span class="co1">// Find the image in the UIScene</span>
+	lblDescription <span class="sy0">=</span> UILabel<span class="br0">(</span>FindChild<span class="br0">(</span><span class="st0">'lblDescription'</span>, <span class="kw6">true</span><span class="br0">)</span><span class="br0">)</span>; <span class="co1">// Find the description in the UIScene</span>
+	DescriptionScrollFrame <span class="sy0">=</span> UIScrollFrame<span class="br0">(</span>FindChild<span class="br0">(</span><span class="st0">'DescriptionScrollFrame'</span>,<span class="kw6">true</span><span class="br0">)</span><span class="br0">)</span>; <span class="co1">// Find the scroller in the UIScene</span>
+ 
+	<span class="co1">// if were on a console platform, make the scrollframe not focusable.</span>
+	<span class="kw2">if</span> <span class="br0">(</span> IsConsole<span class="br0">(</span><span class="br0">)</span> <span class="sy0">&amp;&amp;</span> DescriptionScrollFrame <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+	<span class="br0">{</span>
+		DescriptionScrollFrame.<span class="me0">SetPrivateBehavior</span><span class="br0">(</span>PRIVATE_NotFocusable, <span class="kw6">true</span><span class="br0">)</span>;
+	<span class="br0">}</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>The eagle eyed will spot that the first thing PostInitalize does is InitDataStores(). This is a custom function that creates the EquipmentStore datastore, and fills it with the dataprovider.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="coMULTI">/** We need to filter down from all weapons, to allowed weapons **/</span>
+<span class="kw1">function</span> InitDataStores<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw1">local</span> DataStoreClient DSClient;
+	<span class="kw1">local</span> <span class="kw5">int</span> Idx;
+ 
+ 
+	DSClient <span class="sy0">=</span> <span class="kw1">class</span><span class="st0">'UIInteraction'</span>.<span class="kw1">static</span>.<span class="me0">GetDataStoreClient</span><span class="br0">(</span><span class="br0">)</span>;
+ 
+	<span class="kw2">if</span> <span class="br0">(</span>DSClient <span class="sy0">==</span> <span class="kw5">none</span><span class="br0">)</span>
+		<span class="kw2">return</span>;
+ 
+	<span class="co1">// Create the equipment store for the menu if we havent already</span>
+	EquipmentDataStore <span class="sy0">=</span> MyUIDataStore_Equipment<span class="br0">(</span>DSClient.<span class="me0">FindDataStore</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'MyUIDataStore_Equipment'</span>.<span class="kw1">default</span>.<span class="kw7">Tag</span><span class="br0">)</span><span class="br0">)</span>;
+ 
+	<span class="co1">// Dont do this bit if we already have a datastore (otherwise well start duplicating data in the menu)</span>
+	<span class="co1">// Alternatively, use EquipmentDataStore.Empty(AvailableEquipment) to clear the list before filling it again.</span>
+ 
+	<span class="kw2">if</span> <span class="br0">(</span>EquipmentDataStore <span class="sy0">!=</span> <span class="kw5">None</span><span class="br0">)</span>
+		<span class="kw2">return</span>;
+	<span class="kw2">else</span>
+		EquipmentDataStore <span class="sy0">=</span> DSClient.<span class="me0">CreateDataStore</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'MyUIDataStore_Equipment'</span><span class="br0">)</span>;
+ 
+	<span class="kw2">if</span> <span class="br0">(</span>EquipmentDataStore <span class="sy0">!=</span> <span class="kw5">None</span><span class="br0">)</span>
+		DSClient.<span class="me0">RegisterDataStore</span><span class="br0">(</span>EquipmentDataStore<span class="br0">)</span>;
+ 
+	<span class="co1">// Get the data about equipment from the ini/int files</span>
+	MenuItemDataStore <span class="sy0">=</span> UTUIDataStore_MenuItems<span class="br0">(</span>DSClient.<span class="me0">FindDataStore</span><span class="br0">(</span><span class="st0">'UTMenuItems'</span><span class="br0">)</span><span class="br0">)</span>;
+	MenuItemDataStore.<span class="me0">GetProviderSet</span><span class="br0">(</span><span class="st0">'BuyEquipment'</span>, EquipmentProvider<span class="br0">)</span>;
+ 
+	<span class="co1">// If length = 0 then dont bother with the rest</span>
+	<span class="kw2">if</span><span class="br0">(</span>EquipmentProvider.<span class="me0">Length</span> <span class="sy0">==</span> <span class="nu0">0</span><span class="br0">)</span>
+		<span class="kw2">return</span>;
+ 
+	<span class="co1">// Fill the datastore with the allowed values from the ini/int</span>
+	<span class="kw2">for</span><span class="br0">(</span>Idx<span class="sy0">=</span><span class="nu0">0</span>; Idx<span class="sy0">&lt;</span>EquipmentProvider.<span class="me0">length</span>; Idx<span class="sy0">++</span><span class="br0">)</span>
+	<span class="br0">{</span>
+		<span class="co1">// Add your filter here.  Ive hard coded it to anything costing less than £500</span>
+		<span class="kw2">if</span> <span class="br0">(</span>MyUIDataProvider_Buy<span class="br0">(</span>EquipmentProvider<span class="br0">[</span>Idx<span class="br0">]</span><span class="br0">)</span>.<span class="me0">cost</span> <span class="sy0">&lt;=</span> <span class="nu0">500.00</span><span class="br0">)</span>
+			EquipmentDataStore.<span class="me0">AddStr</span><span class="br0">(</span><span class="st0">'AvailableEquipment'</span>,  MyUIDataProvider_Buy<span class="br0">(</span>EquipmentProvider<span class="br0">[</span>Idx<span class="br0">]</span><span class="br0">)</span>.<span class="me0">FriendlyName</span>, <span class="kw6">false</span><span class="br0">)</span>;
+	<span class="br0">}</span>
+        <span class="co1">// Just to show you can add stuff without using a .int/ini</span>
+	EquipmentDataStore.<span class="me0">AddStr</span><span class="br0">(</span><span class="st0">'AvailableEquipment'</span>, <span class="st0">"Test string"</span>, <span class="kw6">false</span><span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>So the above should get us a list, but when you click it nothing happens. We need to write some code to change the image each time the user selects from the list. That was the OnValueChanged that we wrote in the PostInitialize function.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> OnEquipment_ValueChanged<span class="br0">(</span> UIObject Sender, <span class="kw1">optional</span> <span class="kw5">int</span> PlayerIndex<span class="sy0">=</span><span class="nu0">0</span> <span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw1">local</span> <span class="kw5">int</span> SelectedItem;
+	<span class="kw1">local</span> MyUIDataProvider_Buy selEquip;
+	<span class="kw1">local</span> <span class="kw5">string</span> equipname;
+ 
+	<span class="co1">//`log ("In value changed "$Sender );</span>
+ 
+	InitDataStores<span class="br0">(</span><span class="br0">)</span>;
+ 
+	<span class="kw2">if</span> <span class="br0">(</span>EquipmentProvider.<span class="me0">Length</span> <span class="sy0">==</span> <span class="nu0">0</span><span class="br0">)</span>
+		<span class="kw2">return</span>;
+ 
+	SelectedItem <span class="sy0">=</span> UTUIList<span class="br0">(</span>Sender<span class="br0">)</span>.<span class="me0">GetCurrentItem</span><span class="br0">(</span><span class="br0">)</span>;
+	equipname <span class="sy0">=</span> EquipmentDataStore.<span class="me0">GetStr</span><span class="br0">(</span><span class="st0">'AvailableEquipment'</span>, SelectedItem<span class="br0">)</span>;
+ 
+	selEquip <span class="sy0">=</span> GetSelectedEquipment<span class="br0">(</span>EquipmentProvider, equipname<span class="br0">)</span>;
+	<span class="kw2">if</span><span class="br0">(</span>selEquip <span class="sy0">!=</span> <span class="kw5">none</span><span class="br0">)</span>
+	<span class="br0">{</span>
+		<span class="co1">//`log ("image = "$selEquip.IconImage);</span>
+		imgEquipPreview.<span class="me0">SetDatastoreBinding</span><span class="br0">(</span>selEquip.<span class="me0">IconImage</span><span class="br0">)</span>;
+		lblDescription.<span class="me0">SetDatastoreBinding</span><span class="br0">(</span>selEquip.<span class="me0">Description</span><span class="br0">)</span>;
+	<span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw1">function</span> MyUIDataProvider_Buy GetSelectedEquipment<span class="br0">(</span>array<span class="sy0">&lt;</span>UTUIResourceDataProvider<span class="sy0">&gt;</span> Providers, <span class="kw5">string</span> FriendlyName<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw1">local</span> <span class="kw5">int</span> Idx;
+ 
+	<span class="co1">//`log ("providers.length"@ Providers.Length);</span>
+	<span class="kw2">if</span> <span class="br0">(</span>Providers.<span class="me0">Length</span> <span class="sy0">&lt;=</span> <span class="nu0">0</span><span class="br0">)</span>
+		<span class="kw2">return</span> <span class="kw5">none</span>;
+ 
+	<span class="kw2">for</span><span class="br0">(</span>Idx<span class="sy0">=</span><span class="nu0">0</span>; Idx<span class="sy0">&lt;</span>Providers.<span class="me0">length</span>; Idx<span class="sy0">++</span><span class="br0">)</span>
+	<span class="br0">{</span>
+		<span class="kw2">if</span> <span class="br0">(</span>Providers<span class="br0">[</span>Idx<span class="br0">]</span> <span class="sy0">==</span> <span class="kw5">none</span><span class="br0">)</span>
+			<span class="kw2">continue</span>;
+		<span class="kw2">if</span> <span class="br0">(</span>FriendlyName ~<span class="sy0">=</span> MyUIDataProvider_Buy<span class="br0">(</span>Providers<span class="br0">[</span>Idx<span class="br0">]</span><span class="br0">)</span>.<span class="me0">FriendlyName</span><span class="br0">)</span>
+			<span class="kw2">return</span> MyUIDataProvider_Buy<span class="br0">(</span>Providers<span class="br0">[</span>Idx<span class="br0">]</span><span class="br0">)</span>;
+	<span class="br0">}</span>
+ 
+	<span class="kw2">return</span> <span class="kw5">none</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>A downloadable zip file with this can be found here - <a rel="nofollow" class="external free" href="http://www.mediafire.com/?undjileiwzk">http://www.mediafire.com/?undjileiwzk</a> (excuse the crappy hosting I don't know where else to put it). Everything can be dropped into place apart from the UTGame.ini file. I recommend just taking the ElementProviderTypes line and adding that to your own code. I've checked it out and the mod loads and runs. Press escape and click the buy tab to see it working.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.155 seconds
+Real time usage: 0.157 seconds
+Preprocessor visited node count: 70/1000000
+Preprocessor generated node count: 450/1000000
+Post‐expand include size: 1237/2097152 bytes
+Template argument size: 684/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 1/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   10.406      1 - -total
+100.00%   10.406      1 - Template:Todo
+ 61.74%    6.425      1 - Template:Ambox
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:28590-0!*!*!*!*!*!* and timestamp 20161215141710 and revision id 42806
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:DynamicUIListTutorial?oldid=42806">https://wiki.beyondunreal.com/UE3:DynamicUIListTutorial?oldid=42806</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Pages_needing_cleanup.html" title="Category:Pages needing cleanup">Pages needing cleanup</a></li><li><a href="Category_Programming_tutorials.html" title="Category:Programming tutorials">Programming tutorials</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_DynamicUIListTutorial.html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:DynamicUIListTutorial?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicUIListTutorial" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:DynamicUIListTutorial" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3ADynamicUIListTutorial&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3ADynamicUIListTutorial" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:DynamicUIListTutorial" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:DynamicUIListTutorial" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:DynamicUIListTutorial?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:DynamicUIListTutorial?oldid=42806" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:DynamicUIListTutorial" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 12:38, 30 March 2010.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":106});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:DynamicUIListTutorial by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:52:49 GMT -->
+</html>

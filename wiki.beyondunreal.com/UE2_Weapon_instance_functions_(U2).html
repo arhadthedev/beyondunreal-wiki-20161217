@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE2:Weapon_instance_functions_(U2) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:50:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE2:Weapon instance functions (U2) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE2_Weapon_instance_functions_(U2).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE2","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":104,"wgPageName":"UE2:Weapon_instance_functions_(U2)","wgTitle":"Weapon instance functions (U2)","wgCurRevisionId":24821,"wgRevisionId":24821,"wgArticleId":17090,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE2:Weapon_instance_functions_(U2)","wgRelevantArticleId":17090,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-104 ns-subject page-UE2_Weapon_instance_functions_U2 skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Always snap to grid
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE2:Weapon instance functions (U2)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_2.html" title="Unreal 2"><img alt="U2" src="w/images/Icon-U2.png" width="15" height="15" /></a></td>
+<td><a href="UE2_Object_(U2).html" title="UE2:Object (U2)">Object</a> &gt;&gt;&#160;<a href="UE2_Actor_(U2).html" title="UE2:Actor (U2)">Actor</a> &gt;&gt;&#160;<a href="UE2_Inventory_(U2).html" title="UE2:Inventory (U2)">Inventory</a> &gt;&gt;&#160;<a href="UE2_Weapon_(U2).html" title="UE2:Weapon (U2)">Weapon</a> <i>(instance functions)</i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Instance_functions"><span class="tocnumber">1</span> <span class="toctext">Instance functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#AddAmmo"><span class="tocnumber">1.1</span> <span class="toctext">AddAmmo</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#AdjustAim"><span class="tocnumber">1.2</span> <span class="toctext">AdjustAim</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#AdjustProjectileAim"><span class="tocnumber">1.3</span> <span class="toctext">AdjustProjectileAim</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#AdjustTraceAim"><span class="tocnumber">1.4</span> <span class="toctext">AdjustTraceAim</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#AllAmmo"><span class="tocnumber">1.5</span> <span class="toctext">AllAmmo</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#AltFire"><span class="tocnumber">1.6</span> <span class="toctext">AltFire</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Ammo_AddAmmo"><span class="tocnumber">1.7</span> <span class="toctext">Ammo_AddAmmo</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Ammo_CanReload"><span class="tocnumber">1.8</span> <span class="toctext">Ammo_CanReload</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Ammo_GetDamageRadius"><span class="tocnumber">1.9</span> <span class="toctext">Ammo_GetDamageRadius</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Ammo_HasAmmo"><span class="tocnumber">1.10</span> <span class="toctext">Ammo_HasAmmo</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Ammo_NotifyAmmoChanged"><span class="tocnumber">1.11</span> <span class="toctext">Ammo_NotifyAmmoChanged</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Ammo_ProcessTraceHit"><span class="tocnumber">1.12</span> <span class="toctext">Ammo_ProcessTraceHit</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Ammo_Reload"><span class="tocnumber">1.13</span> <span class="toctext">Ammo_Reload</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Ammo_ReloadRequired"><span class="tocnumber">1.14</span> <span class="toctext">Ammo_ReloadRequired</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Ammo_Resupply"><span class="tocnumber">1.15</span> <span class="toctext">Ammo_Resupply</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Ammo_SetAmmoAmount"><span class="tocnumber">1.16</span> <span class="toctext">Ammo_SetAmmoAmount</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Ammo_SetClipRoundsRemaining"><span class="tocnumber">1.17</span> <span class="toctext">Ammo_SetClipRoundsRemaining</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Ammo_SetMaxAmmo"><span class="tocnumber">1.18</span> <span class="toctext">Ammo_SetMaxAmmo</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Ammo_ShakeView"><span class="tocnumber">1.19</span> <span class="toctext">Ammo_ShakeView</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Ammo_SpawnProjectile"><span class="tocnumber">1.20</span> <span class="toctext">Ammo_SpawnProjectile</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Ammo_UseAmmo"><span class="tocnumber">1.21</span> <span class="toctext">Ammo_UseAmmo</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#AmmoStatus"><span class="tocnumber">1.22</span> <span class="toctext">AmmoStatus</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#AuthorityFire"><span class="tocnumber">1.23</span> <span class="toctext">AuthorityFire</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#BringUp"><span class="tocnumber">1.24</span> <span class="toctext">BringUp</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#ClientWeaponSet"><span class="tocnumber">1.25</span> <span class="toctext">ClientWeaponSet</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#EverywhereFire"><span class="tocnumber">1.26</span> <span class="toctext">EverywhereFire</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#ExecuteFire"><span class="tocnumber">1.27</span> <span class="toctext">ExecuteFire</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#Fire"><span class="tocnumber">1.28</span> <span class="toctext">Fire</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#FocusOnLeader"><span class="tocnumber">1.29</span> <span class="toctext">FocusOnLeader</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#GetAIRating"><span class="tocnumber">1.30</span> <span class="toctext">GetAIRating</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#GetAmmoAmount"><span class="tocnumber">1.31</span> <span class="toctext">GetAmmoAmount</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#GetClipAmount"><span class="tocnumber">1.32</span> <span class="toctext">GetClipAmount</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#GetClipSize"><span class="tocnumber">1.33</span> <span class="toctext">GetClipSize</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#GetFireStart"><span class="tocnumber">1.34</span> <span class="toctext">GetFireStart</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#GetMaxAmmo"><span class="tocnumber">1.35</span> <span class="toctext">GetMaxAmmo</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#GetProjSpeed"><span class="tocnumber">1.36</span> <span class="toctext">GetProjSpeed</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#GetRating"><span class="tocnumber">1.37</span> <span class="toctext">GetRating</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#GetSpecialSwitchPriority"><span class="tocnumber">1.38</span> <span class="toctext">GetSpecialSwitchPriority</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#GetTargetName"><span class="tocnumber">1.39</span> <span class="toctext">GetTargetName</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#GiveAmmo"><span class="tocnumber">1.40</span> <span class="toctext">GiveAmmo</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#GiveTo"><span class="tocnumber">1.41</span> <span class="toctext">GiveTo</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#GreaterThan"><span class="tocnumber">1.42</span> <span class="toctext">GreaterThan</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="#HandleTargetDetails"><span class="tocnumber">1.43</span> <span class="toctext">HandleTargetDetails</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="#HandleTraceImpact"><span class="tocnumber">1.44</span> <span class="toctext">HandleTraceImpact</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href="#HasAmmo"><span class="tocnumber">1.45</span> <span class="toctext">HasAmmo</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#HideCrosshair"><span class="tocnumber">1.46</span> <span class="toctext">HideCrosshair</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="#IncrementFlashCount"><span class="tocnumber">1.47</span> <span class="toctext">IncrementFlashCount</span></a></li>
+<li class="toclevel-2 tocsection-49"><a href="#IsFiring"><span class="tocnumber">1.48</span> <span class="toctext">IsFiring</span></a></li>
+<li class="toclevel-2 tocsection-50"><a href="#IsTargetable"><span class="tocnumber">1.49</span> <span class="toctext">IsTargetable</span></a></li>
+<li class="toclevel-2 tocsection-51"><a href="#LessThan"><span class="tocnumber">1.50</span> <span class="toctext">LessThan</span></a></li>
+<li class="toclevel-2 tocsection-52"><a href="#NextWeapon"><span class="tocnumber">1.51</span> <span class="toctext">NextWeapon</span></a></li>
+<li class="toclevel-2 tocsection-53"><a href="#PawnAgentEvent"><span class="tocnumber">1.52</span> <span class="toctext">PawnAgentEvent</span></a></li>
+<li class="toclevel-2 tocsection-54"><a href="#PlayAnimEx"><span class="tocnumber">1.53</span> <span class="toctext">PlayAnimEx</span></a></li>
+<li class="toclevel-2 tocsection-55"><a href="#PlayFiring"><span class="tocnumber">1.54</span> <span class="toctext">PlayFiring</span></a></li>
+<li class="toclevel-2 tocsection-56"><a href="#PlayIdleAnim"><span class="tocnumber">1.55</span> <span class="toctext">PlayIdleAnim</span></a></li>
+<li class="toclevel-2 tocsection-57"><a href="#PlayReloading"><span class="tocnumber">1.56</span> <span class="toctext">PlayReloading</span></a></li>
+<li class="toclevel-2 tocsection-58"><a href="#PlaySelect"><span class="tocnumber">1.57</span> <span class="toctext">PlaySelect</span></a></li>
+<li class="toclevel-2 tocsection-59"><a href="#PlayWeaponSound"><span class="tocnumber">1.58</span> <span class="toctext">PlayWeaponSound</span></a></li>
+<li class="toclevel-2 tocsection-60"><a href="#PostSetAimingParameters"><span class="tocnumber">1.59</span> <span class="toctext">PostSetAimingParameters</span></a></li>
+<li class="toclevel-2 tocsection-61"><a href="#PreSetAimingParameters"><span class="tocnumber">1.60</span> <span class="toctext">PreSetAimingParameters</span></a></li>
+<li class="toclevel-2 tocsection-62"><a href="#PrevWeapon"><span class="tocnumber">1.61</span> <span class="toctext">PrevWeapon</span></a></li>
+<li class="toclevel-2 tocsection-63"><a href="#ProjectileFire"><span class="tocnumber">1.62</span> <span class="toctext">ProjectileFire</span></a></li>
+<li class="toclevel-2 tocsection-64"><a href="#PutDown"><span class="tocnumber">1.63</span> <span class="toctext">PutDown</span></a></li>
+<li class="toclevel-2 tocsection-65"><a href="#RangedAttackTime"><span class="tocnumber">1.64</span> <span class="toctext">RangedAttackTime</span></a></li>
+<li class="toclevel-2 tocsection-66"><a href="#RateSelf"><span class="tocnumber">1.65</span> <span class="toctext">RateSelf</span></a></li>
+<li class="toclevel-2 tocsection-67"><a href="#RecommendRangedAttack"><span class="tocnumber">1.66</span> <span class="toctext">RecommendRangedAttack</span></a></li>
+<li class="toclevel-2 tocsection-68"><a href="#RecommendWeapon"><span class="tocnumber">1.67</span> <span class="toctext">RecommendWeapon</span></a></li>
+<li class="toclevel-2 tocsection-69"><a href="#Reload"><span class="tocnumber">1.68</span> <span class="toctext">Reload</span></a></li>
+<li class="toclevel-2 tocsection-70"><a href="#ReloadRequired"><span class="tocnumber">1.69</span> <span class="toctext">ReloadRequired</span></a></li>
+<li class="toclevel-2 tocsection-71"><a href="#Resupply"><span class="tocnumber">1.70</span> <span class="toctext">Resupply</span></a></li>
+<li class="toclevel-2 tocsection-72"><a href="#ResupplyStatus"><span class="tocnumber">1.71</span> <span class="toctext">ResupplyStatus</span></a></li>
+<li class="toclevel-2 tocsection-73"><a href="#SendEvent"><span class="tocnumber">1.72</span> <span class="toctext">SendEvent</span></a></li>
+<li class="toclevel-2 tocsection-74"><a href="#ServerFire"><span class="tocnumber">1.73</span> <span class="toctext">ServerFire</span></a></li>
+<li class="toclevel-2 tocsection-75"><a href="#ServerRapidFire"><span class="tocnumber">1.74</span> <span class="toctext">ServerRapidFire</span></a></li>
+<li class="toclevel-2 tocsection-76"><a href="#ServerStopFiring"><span class="tocnumber">1.75</span> <span class="toctext">ServerStopFiring</span></a></li>
+<li class="toclevel-2 tocsection-77"><a href="#SetAmmoType"><span class="tocnumber">1.76</span> <span class="toctext">SetAmmoType</span></a></li>
+<li class="toclevel-2 tocsection-78"><a href="#SetFireSkin"><span class="tocnumber">1.77</span> <span class="toctext">SetFireSkin</span></a></li>
+<li class="toclevel-2 tocsection-79"><a href="#SetFireStartLocations"><span class="tocnumber">1.78</span> <span class="toctext">SetFireStartLocations</span></a></li>
+<li class="toclevel-2 tocsection-80"><a href="#SpecialSwitchAway"><span class="tocnumber">1.79</span> <span class="toctext">SpecialSwitchAway</span></a></li>
+<li class="toclevel-2 tocsection-81"><a href="#SplashJump"><span class="tocnumber">1.80</span> <span class="toctext">SplashJump</span></a></li>
+<li class="toclevel-2 tocsection-82"><a href="#StopFiring"><span class="tocnumber">1.81</span> <span class="toctext">StopFiring</span></a></li>
+<li class="toclevel-2 tocsection-83"><a href="#SuggestAttackStyle"><span class="tocnumber">1.82</span> <span class="toctext">SuggestAttackStyle</span></a></li>
+<li class="toclevel-2 tocsection-84"><a href="#SuggestDefenseStyle"><span class="tocnumber">1.83</span> <span class="toctext">SuggestDefenseStyle</span></a></li>
+<li class="toclevel-2 tocsection-85"><a href="#SwitchAway"><span class="tocnumber">1.84</span> <span class="toctext">SwitchAway</span></a></li>
+<li class="toclevel-2 tocsection-86"><a href="#SwitchPriority"><span class="tocnumber">1.85</span> <span class="toctext">SwitchPriority</span></a></li>
+<li class="toclevel-2 tocsection-87"><a href="#TraceFire"><span class="tocnumber">1.86</span> <span class="toctext">TraceFire</span></a></li>
+<li class="toclevel-2 tocsection-88"><a href="#TweenDown"><span class="tocnumber">1.87</span> <span class="toctext">TweenDown</span></a></li>
+<li class="toclevel-2 tocsection-89"><a href="#UnsetFireSkin"><span class="tocnumber">1.88</span> <span class="toctext">UnsetFireSkin</span></a></li>
+<li class="toclevel-2 tocsection-90"><a href="#UpdateCrosshair"><span class="tocnumber">1.89</span> <span class="toctext">UpdateCrosshair</span></a></li>
+<li class="toclevel-2 tocsection-91"><a href="#WeaponChange"><span class="tocnumber">1.90</span> <span class="toctext">WeaponChange</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Weapon instance functions in other games:</dt>
+<dd><span><a href="UE1_Weapon_instance_functions_(RTNP).html" title="UE1:Weapon instance functions (RTNP)">RTNP</a></span>, <span><a href="UE1_Weapon_instance_functions_(U1).html" title="UE1:Weapon instance functions (U1)">U1</a></span>, <span><a href="UE1_Weapon_instance_functions_(UT).html" title="UE1:Weapon instance functions (UT)">UT</a></span>, <span><a href="UE2_Weapon_instance_functions_(U2XMP).html" title="UE2:Weapon instance functions (U2XMP)">U2XMP</a></span>, <span><a href="UE2_Weapon_instance_functions_(UE2Runtime).html" title="UE2:Weapon instance functions (UE2Runtime)">UE2Runtime</a></span>, <span><a href="UE2_Weapon_instance_functions_(UT2003).html" title="UE2:Weapon instance functions (UT2003)">UT2003</a></span>, <span><a href="UE2_Weapon_instance_functions_(UT2004).html" title="UE2:Weapon instance functions (UT2004)">UT2004</a></span>, <span><a href="UE3_Weapon_instance_functions_(UT3).html" title="UE3:Weapon instance functions (UT3)">UT3</a></span>, <span><a href="UE3_Weapon_instance_functions_(UDK).html" title="UE3:Weapon instance functions (UDK)">UDK</a></span></dd>
+<dt>Other member categories for this class:</dt>
+<dd><span><a href="UE2_Weapon_internal_variables_(U2).html" title="UE2:Weapon internal variables (U2)">internal variables</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Instance_functions">Instance functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=1" title="Edit section: Instance functions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="AddAmmo">AddAmmo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=2" title="Edit section: AddAmmo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>AddAmmo</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>NewAmmo</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="AdjustAim">AdjustAim</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=3" title="Edit section: AdjustAim">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>AdjustAim</b> (<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bAltFire</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bInstant</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>FireSpread</b>, <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE2_Projectile_(U2).html" title="UE2:Projectile (U2)">Projectile</a>&gt;&#160;<b>ProjClass</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bWarnTarget</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bTrySplash</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="AdjustProjectileAim">AdjustProjectileAim</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=4" title="Edit section: AdjustProjectileAim">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>AdjustProjectileAim</b> (<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bAltFire</b>, <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE2_Projectile_(U2).html" title="UE2:Projectile (U2)">Projectile</a>&gt;&#160;<b>ProjectileClass</b>, <a href="UE2_Object_structs_(U2).html#Vector" title="UE2:Object structs (U2)">Object.Vector</a>&#160;<b>projStart</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>FireSpread</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bLeadTarget</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bWarnTarget</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bTossed</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bTrySplash</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="AdjustTraceAim">AdjustTraceAim</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=5" title="Edit section: AdjustTraceAim">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>AdjustTraceAim</b> (<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>projSpeed</b>, <a href="UE2_Object_structs_(U2).html#Vector" title="UE2:Object structs (U2)">Object.Vector</a>&#160;<b>projStart</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>FireSpread</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bLeadTarget</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bWarnTarget</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bTossed</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bTrySplash</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="AllAmmo">AllAmmo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=6" title="Edit section: AllAmmo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AllAmmo</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="AltFire">AltFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=7" title="Edit section: AltFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>AltFire</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Ammo_AddAmmo">Ammo_AddAmmo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=8" title="Edit section: Ammo AddAmmo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>Ammo_AddAmmo</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>AmmoToAdd</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Ammo_CanReload">Ammo_CanReload</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=9" title="Edit section: Ammo CanReload">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>Ammo_CanReload</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Ammo_GetDamageRadius">Ammo_GetDamageRadius</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=10" title="Edit section: Ammo GetDamageRadius">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>Ammo_GetDamageRadius</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Ammo_HasAmmo">Ammo_HasAmmo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=11" title="Edit section: Ammo HasAmmo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>Ammo_HasAmmo</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Ammo_NotifyAmmoChanged">Ammo_NotifyAmmoChanged</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=12" title="Edit section: Ammo NotifyAmmoChanged">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>Ammo_NotifyAmmoChanged</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Ammo_ProcessTraceHit">Ammo_ProcessTraceHit</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=13" title="Edit section: Ammo ProcessTraceHit">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>Ammo_ProcessTraceHit</b> (<a href="UE2_Actor_(U2).html" title="UE2:Actor (U2)">Actor</a>&#160;<b>Other</b>, <a href="UE2_Object_structs_(U2).html#Vector" title="UE2:Object structs (U2)">Object.Vector</a>&#160;<b>HitLocation</b>, <a href="UE2_Object_structs_(U2).html#Vector" title="UE2:Object structs (U2)">Object.Vector</a>&#160;<b>HitNormal</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Ammo_Reload">Ammo_Reload</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=14" title="Edit section: Ammo Reload">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>Ammo_Reload</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Ammo_ReloadRequired">Ammo_ReloadRequired</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=15" title="Edit section: Ammo ReloadRequired">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>Ammo_ReloadRequired</b> (optional&#160;<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>AmountNeeded</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Ammo_Resupply">Ammo_Resupply</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=16" title="Edit section: Ammo Resupply">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>Ammo_Resupply</b> (<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>AddedPercent</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Ammo_SetAmmoAmount">Ammo_SetAmmoAmount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=17" title="Edit section: Ammo SetAmmoAmount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>Ammo_SetAmmoAmount</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>NewAmmoAmount</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Ammo_SetClipRoundsRemaining">Ammo_SetClipRoundsRemaining</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=18" title="Edit section: Ammo SetClipRoundsRemaining">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>Ammo_SetClipRoundsRemaining</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>NewClipRoundsRemaining</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Ammo_SetMaxAmmo">Ammo_SetMaxAmmo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=19" title="Edit section: Ammo SetMaxAmmo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>Ammo_SetMaxAmmo</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>NewMaxAmmo</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Ammo_ShakeView">Ammo_ShakeView</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=20" title="Edit section: Ammo ShakeView">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>Ammo_ShakeView</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Ammo_SpawnProjectile">Ammo_SpawnProjectile</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=21" title="Edit section: Ammo SpawnProjectile">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE2_Projectile_(U2).html" title="UE2:Projectile (U2)">Projectile</a>&#160;<b>Ammo_SpawnProjectile</b> (<a href="UE2_Object_structs_(U2).html#Vector" title="UE2:Object structs (U2)">Object.Vector</a>&#160;<b>Start</b>, <a href="UE2_Object_structs_(U2).html#Rotator" title="UE2:Object structs (U2)">Object.Rotator</a>&#160;<b>Dir</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Ammo_UseAmmo">Ammo_UseAmmo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=22" title="Edit section: Ammo UseAmmo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>Ammo_UseAmmo</b> (optional&#160;<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>AmountNeeded</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="AmmoStatus">AmmoStatus</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=23" title="Edit section: AmmoStatus">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>AmmoStatus</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="AuthorityFire">AuthorityFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=24" title="Edit section: AuthorityFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AuthorityFire</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="BringUp">BringUp</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=25" title="Edit section: BringUp">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>BringUp</b> (optional&#160;<a href="UE2_Weapon_(U2).html" title="UE2:Weapon (U2)">Weapon</a>&#160;<b>PrevWeapon</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ClientWeaponSet">ClientWeaponSet</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=26" title="Edit section: ClientWeaponSet">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>ClientWeaponSet</b> (<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bOptionalSet</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="EverywhereFire">EverywhereFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=27" title="Edit section: EverywhereFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>EverywhereFire</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ExecuteFire">ExecuteFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=28" title="Edit section: ExecuteFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>ExecuteFire</b> (optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bAltFire</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Fire">Fire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=29" title="Edit section: Fire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>Fire</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="FocusOnLeader">FocusOnLeader</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=30" title="Edit section: FocusOnLeader">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>FocusOnLeader</b> (<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bLeaderFiring</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetAIRating">GetAIRating</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=31" title="Edit section: GetAIRating">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>GetAIRating</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetAmmoAmount">GetAmmoAmount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=32" title="Edit section: GetAmmoAmount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>GetAmmoAmount</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetClipAmount">GetClipAmount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=33" title="Edit section: GetClipAmount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>GetClipAmount</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetClipSize">GetClipSize</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=34" title="Edit section: GetClipSize">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>GetClipSize</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetFireStart">GetFireStart</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=35" title="Edit section: GetFireStart">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="UE2_Object_structs_(U2).html#Vector" title="UE2:Object structs (U2)">Object.Vector</a>&#160;<b>GetFireStart</b> (<a href="UE2_Object_structs_(U2).html#Vector" title="UE2:Object structs (U2)">Object.Vector</a>&#160;<b>X</b>, <a href="UE2_Object_structs_(U2).html#Vector" title="UE2:Object structs (U2)">Object.Vector</a>&#160;<b>Y</b>, <a href="UE2_Object_structs_(U2).html#Vector" title="UE2:Object structs (U2)">Object.Vector</a>&#160;<b>Z</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetMaxAmmo">GetMaxAmmo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=36" title="Edit section: GetMaxAmmo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>GetMaxAmmo</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetProjSpeed">GetProjSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=37" title="Edit section: GetProjSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>GetProjSpeed</b> (<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bAlt</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetRating">GetRating</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=38" title="Edit section: GetRating">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>GetRating</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetSpecialSwitchPriority">GetSpecialSwitchPriority</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=39" title="Edit section: GetSpecialSwitchPriority">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>GetSpecialSwitchPriority</b> (<a href="UE2_Weapon_(U2).html" title="UE2:Weapon (U2)">Weapon</a>&#160;<b>OldWeapon</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetTargetName">GetTargetName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=40" title="Edit section: GetTargetName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">interface function <a href="String.html" title="String">string</a>&#160;<b>GetTargetName</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GiveAmmo">GiveAmmo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=41" title="Edit section: GiveAmmo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>GiveAmmo</b> (<a href="UE2_Pawn_(U2).html" title="UE2:Pawn (U2)">Pawn</a>&#160;<b>Other</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GiveTo">GiveTo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=42" title="Edit section: GiveTo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>GiveTo</b> (<a href="UE2_Pawn_(U2).html" title="UE2:Pawn (U2)">Pawn</a>&#160;<b>Other</b>)</div>
+<p><b>Overrides:</b> <a href="UE2_Inventory_(U2).html#GiveTo" title="UE2:Inventory (U2)">Inventory.GiveTo</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="GreaterThan">GreaterThan</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=43" title="Edit section: GreaterThan">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>GreaterThan</b> (<a href="UE2_Weapon_(U2).html" title="UE2:Weapon (U2)">Weapon</a>&#160;<b>Other</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="HandleTargetDetails">HandleTargetDetails</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=44" title="Edit section: HandleTargetDetails">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>HandleTargetDetails</b> (<a href="UE2_Actor_(U2).html" title="UE2:Actor (U2)">Actor</a>&#160;<b>A</b>, <a href="UE2_Canvas_(U2).html" title="UE2:Canvas (U2)">Canvas</a>&#160;<b>Canvas</b>, <a href="UE2_Object_structs_(U2).html#Vector" title="UE2:Object structs (U2)">Object.Vector</a>&#160;<b>ViewLoc</b>, <a href="UE2_Object_structs_(U2).html#Rotator" title="UE2:Object structs (U2)">Object.Rotator</a>&#160;<b>ViewRot</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="HandleTraceImpact">HandleTraceImpact</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=45" title="Edit section: HandleTraceImpact">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>HandleTraceImpact</b> (<a href="UE2_Actor_(U2).html" title="UE2:Actor (U2)">Actor</a>&#160;<b>Other</b>, <a href="UE2_Object_structs_(U2).html#Vector" title="UE2:Object structs (U2)">Object.Vector</a>&#160;<b>HitLocation</b>, <a href="UE2_Object_structs_(U2).html#Vector" title="UE2:Object structs (U2)">Object.Vector</a>&#160;<b>HitNormal</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="HasAmmo">HasAmmo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=46" title="Edit section: HasAmmo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>HasAmmo</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="HideCrosshair">HideCrosshair</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=47" title="Edit section: HideCrosshair">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>HideCrosshair</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="IncrementFlashCount">IncrementFlashCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=48" title="Edit section: IncrementFlashCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>IncrementFlashCount</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="IsFiring">IsFiring</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=49" title="Edit section: IsFiring">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsFiring</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="IsTargetable">IsTargetable</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=50" title="Edit section: IsTargetable">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsTargetable</b> (<a href="UE2_Actor_(U2).html" title="UE2:Actor (U2)">Actor</a>&#160;<b>A</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="LessThan">LessThan</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=51" title="Edit section: LessThan">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>LessThan</b> (<a href="UE2_Weapon_(U2).html" title="UE2:Weapon (U2)">Weapon</a>&#160;<b>Other</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="NextWeapon">NextWeapon</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=52" title="Edit section: NextWeapon">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="UE2_Weapon_(U2).html" title="UE2:Weapon (U2)">Weapon</a>&#160;<b>NextWeapon</b> (<a href="UE2_Weapon_(U2).html" title="UE2:Weapon (U2)">Weapon</a>&#160;<b>CurrentChoice</b>, <a href="UE2_Weapon_(U2).html" title="UE2:Weapon (U2)">Weapon</a>&#160;<b>CurrentWeapon</b>)</div>
+<p><b>Overrides:</b> <a href="UE2_Inventory_(U2).html#NextWeapon" title="UE2:Inventory (U2)">Inventory.NextWeapon</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="PawnAgentEvent">PawnAgentEvent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=53" title="Edit section: PawnAgentEvent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>PawnAgentEvent</b> (<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>InEventName</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PlayAnimEx">PlayAnimEx</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=54" title="Edit section: PlayAnimEx">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>PlayAnimEx</b> (<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>Sequence</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PlayFiring">PlayFiring</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=55" title="Edit section: PlayFiring">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>PlayFiring</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PlayIdleAnim">PlayIdleAnim</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=56" title="Edit section: PlayIdleAnim">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>PlayIdleAnim</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PlayReloading">PlayReloading</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=57" title="Edit section: PlayReloading">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>PlayReloading</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PlaySelect">PlaySelect</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=58" title="Edit section: PlaySelect">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>PlaySelect</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PlayWeaponSound">PlayWeaponSound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=59" title="Edit section: PlayWeaponSound">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>PlayWeaponSound</b> (<a href="UE2_Sound_(U2).html" title="UE2:Sound (U2)">Sound</a>&#160;<b>Sound</b>, optional&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>Pitch</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PostSetAimingParameters">PostSetAimingParameters</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=60" title="Edit section: PostSetAimingParameters">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>PostSetAimingParameters</b> (<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bAltFire</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bInstant</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>FireSpread</b>, <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE2_Projectile_(U2).html" title="UE2:Projectile (U2)">Projectile</a>&gt;&#160;<b>ProjClass</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bWarnTarget</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bTrySplash</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PreSetAimingParameters">PreSetAimingParameters</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=61" title="Edit section: PreSetAimingParameters">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>PreSetAimingParameters</b> (<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bAltFire</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bInstant</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>FireSpread</b>, <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE2_Projectile_(U2).html" title="UE2:Projectile (U2)">Projectile</a>&gt;&#160;<b>ProjClass</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bWarnTarget</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bTrySplash</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PrevWeapon">PrevWeapon</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=62" title="Edit section: PrevWeapon">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="UE2_Weapon_(U2).html" title="UE2:Weapon (U2)">Weapon</a>&#160;<b>PrevWeapon</b> (<a href="UE2_Weapon_(U2).html" title="UE2:Weapon (U2)">Weapon</a>&#160;<b>CurrentChoice</b>, <a href="UE2_Weapon_(U2).html" title="UE2:Weapon (U2)">Weapon</a>&#160;<b>CurrentWeapon</b>)</div>
+<p><b>Overrides:</b> <a href="UE2_Inventory_(U2).html#PrevWeapon" title="UE2:Inventory (U2)">Inventory.PrevWeapon</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ProjectileFire">ProjectileFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=63" title="Edit section: ProjectileFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE2_Projectile_(U2).html" title="UE2:Projectile (U2)">Projectile</a>&#160;<b>ProjectileFire</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PutDown">PutDown</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=64" title="Edit section: PutDown">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>PutDown</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="RangedAttackTime">RangedAttackTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=65" title="Edit section: RangedAttackTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>RangedAttackTime</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="RateSelf">RateSelf</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=66" title="Edit section: RateSelf">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>RateSelf</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="RecommendRangedAttack">RecommendRangedAttack</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=67" title="Edit section: RecommendRangedAttack">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>RecommendRangedAttack</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="RecommendWeapon">RecommendWeapon</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=68" title="Edit section: RecommendWeapon">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="UE2_Weapon_(U2).html" title="UE2:Weapon (U2)">Weapon</a>&#160;<b>RecommendWeapon</b> (out&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>rating</b>)</div>
+<p><b>Overrides:</b> <a href="UE2_Inventory_(U2).html#RecommendWeapon" title="UE2:Inventory (U2)">Inventory.RecommendWeapon</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Reload">Reload</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=69" title="Edit section: Reload">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>Reload</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ReloadRequired">ReloadRequired</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=70" title="Edit section: ReloadRequired">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ReloadRequired</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Resupply">Resupply</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=71" title="Edit section: Resupply">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>Resupply</b> (<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>AddedPercent</b>)</div>
+<p><b>Overrides:</b> <a href="UE2_Inventory_(U2).html#Resupply" title="UE2:Inventory (U2)">Inventory.Resupply</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ResupplyStatus">ResupplyStatus</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=72" title="Edit section: ResupplyStatus">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>ResupplyStatus</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SendEvent">SendEvent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=73" title="Edit section: SendEvent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>SendEvent</b> (<a href="String.html" title="String">string</a>&#160;<b>EventName</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ServerFire">ServerFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=74" title="Edit section: ServerFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ServerFire</b> (optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bAltFire</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ServerRapidFire">ServerRapidFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=75" title="Edit section: ServerRapidFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ServerRapidFire</b> (optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bAltFire</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ServerStopFiring">ServerStopFiring</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=76" title="Edit section: ServerStopFiring">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ServerStopFiring</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SetAmmoType">SetAmmoType</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=77" title="Edit section: SetAmmoType">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>SetAmmoType</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>i</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SetFireSkin">SetFireSkin</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=78" title="Edit section: SetFireSkin">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>SetFireSkin</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SetFireStartLocations">SetFireStartLocations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=79" title="Edit section: SetFireStartLocations">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>SetFireStartLocations</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SpecialSwitchAway">SpecialSwitchAway</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=80" title="Edit section: SpecialSwitchAway">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>SpecialSwitchAway</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SplashJump">SplashJump</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=81" title="Edit section: SplashJump">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>SplashJump</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="StopFiring">StopFiring</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=82" title="Edit section: StopFiring">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>StopFiring</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SuggestAttackStyle">SuggestAttackStyle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=83" title="Edit section: SuggestAttackStyle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>SuggestAttackStyle</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SuggestDefenseStyle">SuggestDefenseStyle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=84" title="Edit section: SuggestDefenseStyle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>SuggestDefenseStyle</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SwitchAway">SwitchAway</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=85" title="Edit section: SwitchAway">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>SwitchAway</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SwitchPriority">SwitchPriority</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=86" title="Edit section: SwitchPriority">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>SwitchPriority</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="TraceFire">TraceFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=87" title="Edit section: TraceFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>TraceFire</b> (<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>TraceSpread</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="TweenDown">TweenDown</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=88" title="Edit section: TweenDown">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>TweenDown</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="UnsetFireSkin">UnsetFireSkin</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=89" title="Edit section: UnsetFireSkin">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>UnsetFireSkin</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="UpdateCrosshair">UpdateCrosshair</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=90" title="Edit section: UpdateCrosshair">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>UpdateCrosshair</b> (<a href="UE2_Canvas_(U2).html" title="UE2:Canvas (U2)">Canvas</a>&#160;<b>Canvas</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="WeaponChange">WeaponChange</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)?section=91" title="Edit section: WeaponChange">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="UE2_Weapon_(U2).html" title="UE2:Weapon (U2)">Weapon</a>&#160;<b>WeaponChange</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>F</b>, <a href="UE2_Weapon_(U2).html" title="UE2:Weapon (U2)">Weapon</a>&#160;<b>CurrentChoice</b>)</div>
+<p><b>Overrides:</b> <a href="UE2_Inventory_(U2).html#WeaponChange" title="UE2:Inventory (U2)">Inventory.WeaponChange</a></p>
+<p><br /></p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.477 seconds
+Real time usage: 0.497 seconds
+Preprocessor visited node count: 3442/1000000
+Preprocessor generated node count: 6373/1000000
+Post‐expand include size: 31969/2097152 bytes
+Template argument size: 10409/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  302.455      1 - -total
+ 53.55%  161.963     90 - Template:Code
+ 34.94%  105.693     48 - Template:Samegame
+ 25.98%   78.566     28 - Template:Cl
+ 25.94%   78.442      1 - Template:Infobox_class_part
+ 24.70%   74.702     20 - Template:Tl
+ 24.64%   74.511      1 - Template:Infobox_class_part/core
+  5.01%   15.166      1 - Template:Ch
+  2.24%    6.763      1 - Template:Autogenerated
+  1.44%    4.365      1 - Template:Ambox
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:17090-0!*!*!*!*!*!* and timestamp 20161215185755 and revision id 24821
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE2:Weapon_instance_functions_(U2)?oldid=24821">https://wiki.beyondunreal.com/UE2:Weapon_instance_functions_(U2)?oldid=24821</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue2" class="selected"><a href="UE2_Weapon_instance_functions_(U2).html">UE2</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE2_talk:Weapon_instance_functions_(U2)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE2:Weapon_instance_functions_(U2)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE2:Weapon_instance_functions_(U2)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE2%3AWeapon+instance+functions+%28U2%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE2%3AWeapon+instance+functions+%28U2%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE2:Weapon_instance_functions_(U2)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE2:Weapon_instance_functions_(U2)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE2:Weapon_instance_functions_(U2)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE2:Weapon_instance_functions_(U2)?oldid=24821" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE2:Weapon_instance_functions_(U2)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 11:11, 17 May 2008.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":110});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE2:Weapon_instance_functions_(U2) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:50:54 GMT -->
+</html>

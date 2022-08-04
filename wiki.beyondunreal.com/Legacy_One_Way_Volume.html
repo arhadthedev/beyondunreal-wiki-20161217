@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:One_Way_Volume by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:34:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:One Way Volume - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:One_Way_Volume" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:One_Way_Volume" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_One_Way_Volume.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:One_Way_Volume","wgTitle":"One Way Volume","wgCurRevisionId":5716,"wgRevisionId":5716,"wgArticleId":2381,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:One_Way_Volume","wgRelevantArticleId":2381,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_One_Way_Volume skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Cogito, ergo sum
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:One Way Volume</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This is a two actor system I coded last night that only allows players to pass through it in one direction.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">class</span> OneWayPhysicsVolume <span class="kw1">extends</span> <span class="kw9">PhysicsVolume</span>;
+ 
+<span class="co1">// Volume to handle adding and removing players from the affected array.</span>
+ 
+<span class="kw1">var</span> array<span class="sy0">&lt;</span>Pawn<span class="sy0">&gt;</span> MyPawns;
+<span class="kw1">var</span> array<span class="sy0">&lt;</span>vector<span class="sy0">&gt;</span> MyLocs;
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">bool</span> bAffectsRed, bAffectsBlue;  <span class="co1">// For team games.</span>
+ 
+<span class="kw1">simulated</span> <span class="kw1">event</span> PawnEnteredVolume<span class="br0">(</span><span class="kw9">Pawn</span> Other<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">local</span> <span class="kw5">int</span> i;
+ 
+    <span class="kw2">if</span><span class="br0">(</span><span class="kw7">Level</span>.<span class="kw7">Game</span>.<span class="me0">bTeamGame</span> <span class="sy0">&amp;&amp;</span> <span class="br0">(</span><span class="br0">(</span>Other.<span class="me0">GetTeamNum</span><span class="br0">(</span><span class="br0">)</span> <span class="sy0">==</span> <span class="nu0">0</span> <span class="sy0">&amp;&amp;</span> <span class="sy0">!</span>bAffectsRed<span class="br0">)</span> <span class="sy0">||</span> <span class="br0">(</span>Other.<span class="me0">GetTeamNum</span><span class="br0">(</span><span class="br0">)</span> <span class="sy0">==</span> <span class="nu0">1</span> <span class="sy0">&amp;&amp;</span> <span class="sy0">!</span>bAffectsBlue<span class="br0">)</span><span class="br0">)</span><span class="br0">)</span>
+        <span class="kw2">return</span>;
+ 
+    <span class="kw2">for</span><span class="br0">(</span>i<span class="sy0">=</span><span class="nu0">0</span>; i<span class="sy0">&lt;</span>MyPawns.<span class="me0">Length</span>; i<span class="sy0">++</span><span class="br0">)</span>
+    <span class="br0">{</span>
+        <span class="kw2">if</span> <span class="br0">(</span>MyPawns<span class="br0">[</span>i<span class="br0">]</span> <span class="sy0">==</span> Other<span class="br0">)</span>
+            <span class="kw2">return</span>; <span class="co1">// Make sure this pawn isn't already in the array.</span>
+        <span class="kw2">if</span> <span class="br0">(</span>MyPawns<span class="br0">[</span>i<span class="br0">]</span> <span class="sy0">==</span> <span class="kw5">None</span><span class="br0">)</span> <span class="br0">{</span>
+            <span class="co1">// remove empty slot</span>
+            MyPawns.<span class="me0">Remove</span><span class="br0">(</span>i, <span class="nu0">1</span><span class="br0">)</span>;
+            MyLocs.<span class="me0">Remove</span><span class="br0">(</span>i, <span class="nu0">1</span><span class="br0">)</span>;
+            i<span class="sy0">--</span>;
+        <span class="br0">}</span>
+    <span class="br0">}</span>
+ 
+    MyPawns<span class="br0">[</span>i<span class="br0">]</span> <span class="sy0">=</span> Other;
+    MyLocs<span class="br0">[</span>i<span class="br0">]</span> <span class="sy0">=</span> Other.<span class="kw7">Location</span>;
+<span class="br0">}</span>
+ 
+<span class="kw1">event</span> PawnLeavingVolume<span class="br0">(</span><span class="kw9">Pawn</span> Other<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">local</span> <span class="kw5">int</span> m;
+ 
+    <span class="kw2">for</span><span class="br0">(</span>m <span class="sy0">=</span> MyPawns.<span class="me0">Length</span> <span class="sy0">-</span> <span class="nu0">1</span>; m <span class="sy0">&gt;=</span> <span class="nu0">0</span>; m<span class="sy0">--</span><span class="br0">)</span>
+    <span class="br0">{</span>
+        <span class="kw2">if</span> <span class="br0">(</span>MyPawns<span class="br0">[</span>m<span class="br0">]</span> <span class="sy0">==</span> Other <span class="sy0">||</span>MyPawns<span class="br0">[</span>j<span class="br0">]</span> <span class="sy0">==</span> <span class="kw5">None</span><span class="br0">)</span>
+        <span class="br0">{</span>
+            MyPawns.<span class="me0">Remove</span><span class="br0">(</span>m, <span class="nu0">1</span><span class="br0">)</span>;
+            MyLocs.<span class="me0">Remove</span><span class="br0">(</span>m, <span class="nu0">1</span><span class="br0">)</span>;
+        <span class="br0">}</span>
+    <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw1">DefaultProperties</span>
+<span class="br0">{</span>
+    bAffectsRed<span class="sy0">=</span><span class="kw6">true</span>
+    bAffectsBlue<span class="sy0">=</span><span class="kw6">true</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Then the actor that actually handles the movement:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">class</span> OneWayChecker <span class="kw1">extends</span> <span class="kw9">Actor</span>
+    <span class="kw1">placeable</span>;
+ 
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> edfindable OneWayPhysicsVolume MyVolume;
+<span class="kw1">var</span> <span class="kw5">float</span> ObjectAngle;
+ 
+<span class="kw1">function</span> <span class="kw4">Tick</span><span class="br0">(</span><span class="kw5">float</span> DT<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">local</span> <span class="kw5">int</span> k;
+    <span class="kw1">local</span> <span class="kw5">rotator</span> R;
+    <span class="kw1">local</span> <span class="kw5">vector</span> B, NewLoc;
+ 
+    <span class="kw2">if</span><span class="br0">(</span>MyVolume <span class="sy0">==</span> <span class="kw5">none</span><span class="br0">)</span>
+    <span class="br0">{</span>
+        <span class="kw4">Destroy</span><span class="br0">(</span><span class="br0">)</span>;
+        <span class="kw2">return</span>; <span class="co1">// If there's no volume assigned, destroy this actor.</span>
+    <span class="br0">}</span>
+ 
+    <span class="kw2">for</span><span class="br0">(</span>k<span class="sy0">=</span><span class="nu0">0</span>; k<span class="sy0">&lt;</span>MyVolume.<span class="me0">MyPawns</span>.<span class="me0">Length</span>; k<span class="sy0">++</span><span class="br0">)</span>
+    <span class="br0">{</span>
+        <span class="kw2">if</span><span class="br0">(</span>MyVolume.<span class="me0">MyPawns</span><span class="br0">[</span>k<span class="br0">]</span> <span class="sy0">!=</span> <span class="kw5">None</span><span class="br0">)</span>
+        <span class="br0">{</span>
+            <span class="co1">// Find out the angle between this actor's rotation and</span>
+            <span class="co1">// the rotator of the player's last and current position.</span>
+            <span class="co1">// I know this next line could be optimized by not using acos.  :)</span>
+            <span class="kw2">if</span><span class="br0">(</span><span class="kw3">acos</span><span class="br0">(</span><span class="kw3">Normal</span><span class="br0">(</span><span class="kw5">vector</span><span class="br0">(</span><span class="kw7">Rotation</span><span class="br0">)</span><span class="br0">)</span> dot <span class="kw3">Normal</span><span class="br0">(</span>MyVolume.<span class="me0">MyLocs</span><span class="br0">[</span>k<span class="br0">]</span> <span class="sy0">-</span> MyVolume.<span class="me0">MyPawns</span><span class="br0">[</span>k<span class="br0">]</span>.<span class="kw7">Location</span><span class="br0">)</span><span class="br0">)</span> <span class="sy0">&lt;</span> ObjectAngle<span class="br0">)</span>
+            <span class="br0">{</span>
+                <span class="co1">// Find the rotator perpendicular with this actor.</span>
+                R.<span class="me0">Yaw</span> <span class="sy0">=</span> <span class="kw7">Rotation</span>.<span class="me0">Yaw</span> <span class="sy0">+</span> <span class="nu0">16384</span>;
+                <span class="co1">// Find a point along that rotator.</span>
+                B <span class="sy0">=</span> MyVolume.<span class="me0">MyLocs</span><span class="br0">[</span>k<span class="br0">]</span> <span class="sy0">+</span> <span class="kw5">vector</span><span class="br0">(</span>R<span class="br0">)</span>;
+                <span class="co1">// Find the point where the player's location intersects</span>
+                <span class="co1">// perpendicularly with the line between those vectors.</span>
+                NewLoc <span class="sy0">=</span> MyVolume.<span class="me0">MyLocs</span><span class="br0">[</span>k<span class="br0">]</span> <span class="sy0">+</span> <span class="kw3">Normal</span><span class="br0">(</span> B <span class="sy0">-</span> MyVolume.<span class="me0">MyLocs</span><span class="br0">[</span>k<span class="br0">]</span> <span class="br0">)</span> <span class="sy0">*</span> <span class="br0">(</span><span class="br0">(</span><span class="br0">(</span> B <span class="sy0">-</span> MyVolume.<span class="me0">MyLocs</span><span class="br0">[</span>k<span class="br0">]</span> <span class="br0">)</span>
+                    dot <span class="br0">(</span> MyVolume.<span class="me0">MyPawns</span><span class="br0">[</span>k<span class="br0">]</span>.<span class="kw7">Location</span> <span class="sy0">-</span> MyVolume.<span class="me0">MyLocs</span><span class="br0">[</span>k<span class="br0">]</span> <span class="br0">)</span><span class="br0">)</span> <span class="sy0">/</span> <span class="kw3">VSize</span><span class="br0">(</span> MyVolume.<span class="me0">MyLocs</span><span class="br0">[</span>k<span class="br0">]</span> <span class="sy0">-</span> B <span class="br0">)</span><span class="br0">)</span>;
+                <span class="co1">// Keep the player's Z axis position.</span>
+                NewLoc.<span class="me0">Z</span> <span class="sy0">=</span> MyVolume.<span class="me0">MyPawns</span><span class="br0">[</span>k<span class="br0">]</span>.<span class="kw7">Location</span>.<span class="me0">Z</span>;
+                <span class="co1">// Move the pawn to this new position.</span>
+                MyVolume.<span class="me0">MyPawns</span><span class="br0">[</span>k<span class="br0">]</span>.<span class="kw4">SetLocation</span><span class="br0">(</span>NewLoc<span class="br0">)</span>;
+            <span class="br0">}</span>
+        <span class="br0">}</span>
+    <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw1">DefaultProperties</span>
+<span class="br0">{</span>
+    bDirectional<span class="sy0">=</span><span class="kw6">True</span>
+    bHidden<span class="sy0">=</span><span class="kw6">True</span>
+    ObjectAngle<span class="sy0">=</span><span class="nu0">1.5</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Set up in the editor, it looks like this:</p>
+<p>[[Image:Legacy_AngelMapperOneWayVolume.jpeg|]]</p>
+<p>The direction of the checker's arrow indicates where the player will be able to walk. Trying to go against this arrow will stop the player.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.052 seconds
+Real time usage: 0.052 seconds
+Preprocessor visited node count: 7/1000000
+Preprocessor generated node count: 44/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:2381-0!*!*!*!*!*!* and timestamp 20161215152752 and revision id 5716
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:One_Way_Volume?oldid=5716">https://wiki.beyondunreal.com/Legacy:One_Way_Volume?oldid=5716</a>"</div>
+					<div id='catlinks' class='catlinks catlinks-allhidden'></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_One_Way_Volume.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:One_Way_Volume?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:One_Way_Volume" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:One_Way_Volume" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AOne+Way+Volume&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AOne+Way+Volume" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:One_Way_Volume" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:One_Way_Volume" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:One_Way_Volume?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:One_Way_Volume?oldid=5716" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:One_Way_Volume" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 04:04, 7 December 2006.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":65});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:One_Way_Volume by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:34:50 GMT -->
+</html>

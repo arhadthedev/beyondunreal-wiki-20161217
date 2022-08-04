@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Introduction_to_replication by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:59:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Introduction to replication - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Introduction_to_replication" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Introduction_to_replication" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Introduction_to_replication.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Introduction_to_replication","wgTitle":"Introduction to replication","wgCurRevisionId":43592,"wgRevisionId":43592,"wgArticleId":24004,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Replication"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Introduction_to_replication","wgRelevantArticleId":24004,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Introduction_to_replication skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I'm a doctor, not a mechanic
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Introduction to replication</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><a href="Replication.html" title="Replication" class="mw-redirect">Replication</a> is one of the most important concepts in <a href="Unreal_Engine.html" title="Unreal Engine" class="mw-redirect">Unreal Engine</a> games as it is the basis for keeping game clients synchronized with the game server in network games.</p>
+<p>While details have slightly evolved between engine generations, the basic principles are still the same. Generally there are three major types of replication: <b>actor replication</b>, <b>variable value replication</b> and <b>function call replication</b>. Replication can only go from the server to one or more clients, or from one client to the server, but never from one client to another directly. Replication does not happen immediately, but is delayed until the end of the tick, when things are replicated to the remote side. At the start of the next tick, things received from the remote side take effect.</p>
+<h2><span class="mw-headline" id="Actor_replication">Actor replication</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Introduction_to_replication?section=1" title="Edit section: Actor replication">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Before any other kind of replication is possible, there needs to be a common ground the server and client can base their communication on. This common ground are actor instances. Variable values and function calls can only be replicated if both sides know which actor instance the replicated value or function call belongs to.</p>
+<p>Actor classes that have <i>bStatic</i> or <i>bNoDelete</i> set to <i>True</i> can neither be created nor destroyed at runtime. We'll call these "persistent actors" from here on, as opposed to non-persistent actors that have both <i>bStatic</i> and <i>bNoDelete</i> set to <i>False</i>. Persistent actors make replication pretty simple as they already exist when the level is loaded and they will continue to exist until a different level is loaded or the game exits.</p>
+<p>Non-persistent actors, on the other hand, may initially exist in the level but could get destroyed at runtime. Or new instances of a non-persistent actor class are spawned at runtime. Imagine a non-persistent actor that initially existed in the current level, but gets destroyed on the server. Now if a client connects, what will happen to the clientside version of this actor? The Unreal Engine takes a conservative approach here: When a level is loaded on a client, all non-persistent actors are removed there. Then the server will replicate non-persistent actors back to the client without making a difference between initially existing actor and actors spawned at runtime.</p>
+<p>Actors can't be replicated all the time. Especially when a client connects the server would have to send a great number of actors, taking up valuable bandwidth. The trick is, that the server will only replicate an actor to a specific client if the actor is "<a href="Relevant.html" title="Relevant" class="mw-redirect">relevant</a>" to that client. Many actors are completely excluded from replication because clients simply do not need them. Usually, when an actor is no longer relevant, it is removed from the client again, but there are also exceptions. If a replicated actor is destroyed on the server, it will also be destroyed on all clients it is currently relevant to.</p>
+<p>The most important exception are "net-temporary" actors, i.e. instances of actor classes that have <i>bNetTemporary</i> set to <i>True</i>. A net-temporary actor is replicated to any client it becomes relevant to, but after the initial data the client takes full control of the actor, including its eventual destruction. This is mostly used for simple projectiles that fly in a straight line and explode on contact with an object.</p>
+<p>Another exception are torn-off actors in <a href="https://wiki.beyondunreal.com/edit/Unreal_Engine_2?redlink=1" class="new" title="Unreal Engine 2 (page does not exist)">Unreal Engine 2</a> and later. These start out as regular non-persistent actors, but at some point the server sets the actor's <i>bTearOff</i> property to <i>True</i>. This cuts off the connection to clients after a final network update for this actor. When an actor is torn off, it will behave like a locally-spawned, non-replicated actor on the server and all clients it was relevant to at the time of tearing off. Unlike net-temporary actors, a torn-off actor can not become relevant to other clients that didn't know the actor before it was torn off. An example of actors that are torn off at some point are the xPawn class from <a href="UT2003.html" title="UT2003" class="mw-redirect">UT2003</a> and <a href="UT2004.html" title="UT2004" class="mw-redirect">UT2004</a>. When an xPawn dies, it is torn off and clients independently handle the ragdoll physics, while a dedicated server gets rid of the xPawn actor pretty quickly.</p>
+<h2><span class="mw-headline" id="Variable_value_replication">Variable value replication</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Introduction_to_replication?section=2" title="Edit section: Variable value replication">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Values stored in class <a href="Variables.html" title="Variables">variables</a> can be replicated from the server to any client if the actor is either persistent or currently relevant to the target client. Variable replication from client to server is possible (but discouraged) in <a href="https://wiki.beyondunreal.com/edit/Unreal_Engine_1?redlink=1" class="new" title="Unreal Engine 1 (page does not exist)">Unreal Engine 1</a>, but not in any later engine generation. Apart from the initial data when an actor is replicated to a client, variable replication does not happen instantly when a variable changes. Only once in a while, as specified by the <i>NetUpdateFrequency</i> property, the server checks for changed variables and replicates their new values.</p>
+<p>Before a variable value is replicated, the client assumes it to have the default value as specified in the <a href="Defaultproperties.html" title="Defaultproperties">defaultproperties</a> block. This also goes for actors that initially exist in the map because the mapper added them in the editor. Generally, variable values are only replicated after they were changed for that actor instance at runtime. Values of configurable or localized variables don't count as "changed" just because their configured/localized default value is different from their original defaultproperties value!</p>
+<p>The exact conditions for when to replicate a variable's value can be specified in the <a href="Replication_block.html" title="Replication block">replication block</a> of the class declaring the variable. It is not possible to change this replication condition for subclasses. The <i>reliable</i> and <i>unreliable</i> keywords that need to be specified in the replication block of Unreal Engine 1 and 2 have no meaning for replicated variables.</p>
+<p>If the size of their values allows it, multiple changed variables of a single actor instance are replicated together. Elements of a <a href="Static_array.html" title="Static array" class="mw-redirect">static array</a> variable are replicated individually and only if they actually changed. The value of a <a href="Struct.html" title="Struct" class="mw-redirect">struct</a> variable is always replicated as a unit. If the value is too large to fit into a single packet, it will never get replicated! Similar rules apply to strings, which can only be replicated if their length doesn't exceed the packet size. <a href="Dynamic_arrays.html" title="Dynamic arrays">Dynamic arrays</a> do not support replication at all. Attempting to replicate a dynamic array variable will have no effect, trying to replicate a dynamic array as part of a struct will result in an array empty on the receiving side.</p>
+<h2><span class="mw-headline" id="Function_call_replication">Function call replication</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Introduction_to_replication?section=3" title="Edit section: Function call replication">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><a href="Function.html" title="Function" class="mw-redirect">Function</a> calls can be used for a more responsive and structured communication between the server and individual clients. Whether calls to a function are replicated must be specified in the class that originally declared the function. Subclasses can neither change existing replication declarations, nor can they make overridden functions replicated. Also, in order for a function to actually get replicated to the remote side, the actor mus be directly or indirectly owned by the client involved in the replication, i.e. the client's PlayerPawn/PlayerController is either the actor itself or can be reached by traversing the actor's <i>Owner</i> "chain".</p>
+<p>Like replicated variables, the replication of a function call can be tied to certain conditions. In Unreal Engine 1 and 2 this condition is specified via the <a href="Replication_block.html" title="Replication block">replication block</a> and typically involves comparing the actor's <i>Role</i> to the value <code>ROLE_Authority</code>, <a href="Unreal_Engine_3.html" title="Unreal Engine 3">Unreal Engine 3</a> provides the special function modifiers <i>client</i> and <i>server</i> instead. Additionally a function can be replicated reliably or unreliably, which is specified by the keywords <i>reliable</i> and <i>unreliable</i> in front of the replication condition or as additional modifier in the UE3 function declaration.</p>
+<p>Function calls are always replicated asynchronously. As a result, a replicated function call returns immediately. If the function has a return type, the corresponding <a href="Type.html" title="Type" class="mw-redirect">type</a>'s null value is returned locally. Whatever the function returns on the remote side (i.e. where it is executed) will be discarded there. If the replication conditions for a replicated function call aren't met, the function is executed locally as if it was a non-replicated function. You can use this fact to check whether a function was actually replicated or not:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">reliable</span> client <span class="kw1">function</span> <span class="kw5">bool</span> DoSomething<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw2">return</span> <span class="kw6">true</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw2">if</span> <span class="br0">(</span>DoSomething<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// function returned True, so it was executed locally</span>
+<span class="br0">}</span>
+<span class="kw2">else</span> <span class="br0">{</span>
+  <span class="co1">// function returned the null value (i.e. False), so it was replicated</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Note that regular calling restrictions apply for replicated functions. For example if a function is replicated to a client where the actor's local <i>Role</i> is <code>ROLE_SimulatedProxy</code>, but the function is not declared as <i>simulated</i>, it will not be executed. Conveniently the UE3 modifier <i>client</i> already implies the <i>simulated</i> modifier, so this is more of a problem in earlier engine generations.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.037 seconds
+Real time usage: 0.038 seconds
+Preprocessor visited node count: 17/1000000
+Preprocessor generated node count: 56/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:24004-0!*!0!!*!*!* and timestamp 20161215144010 and revision id 43592
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Introduction_to_replication?oldid=43592">https://wiki.beyondunreal.com/Introduction_to_replication?oldid=43592</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Replication.html" title="Category:Replication">Replication</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="Introduction_to_replication.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Talk:Introduction_to_replication?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Introduction_to_replication" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Introduction_to_replication" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Introduction+to+replication&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Introduction+to+replication" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Introduction_to_replication" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Introduction_to_replication" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Introduction_to_replication?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Introduction_to_replication?oldid=43592" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Introduction_to_replication" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 20:46, 2 July 2010.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":74});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Introduction_to_replication by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:59:26 GMT -->
+</html>

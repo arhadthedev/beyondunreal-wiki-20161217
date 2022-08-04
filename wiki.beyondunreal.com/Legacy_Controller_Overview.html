@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Controller_Overview by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Controller Overview - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Controller_Overview" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Controller_Overview" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_Controller_Overview.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Controller_Overview","wgTitle":"Controller Overview","wgCurRevisionId":2248,"wgRevisionId":2248,"wgArticleId":794,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy To Do"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Controller_Overview","wgRelevantArticleId":794,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Controller_Overview skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I'm a doctor, not a mechanic
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Controller Overview</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>A UT200x player is composed of a number of classes that all work together to accept and process input from the player and handle collision with the world. Bots use much the same system, so processing of AI also takes place (for Bot-specific subclasses; more on that in a minute) within the same code. What follows is an attempt to explain the different classes involved and how they interact.</p>
+<dl>
+<dt>Controller</dt>
+<dd>The base interface to a pawn.</dd>
+</dl>
+<dl>
+<dd>
+<ul>
+<li>Receives events from the engine that are destined for the <a href="Legacy_Pawn.html" title="Legacy:Pawn">Pawn</a>,</li>
+<li>Handles AI,</li>
+<li>Acts as an animation interface,</li>
+<li>Controllers are partially implemented using native code and have native replication,</li>
+<li>Most of the time, each <a href="Legacy_Controller.html" title="Legacy:Controller">Controller</a> has a <a href="Legacy_Pawn.html" title="Legacy:Pawn">Pawn</a> attached to it,</li>
+<li>A good way to visualise the <a href="Legacy_Controller.html" title="Legacy:Controller">Controller</a>/<a href="Legacy_Pawn.html" title="Legacy:Pawn">Pawn</a> interface is to consider the <a href="Legacy_Controller.html" title="Legacy:Controller">Controller</a> the "brain" of a <a href="Legacy_Pawn.html" title="Legacy:Pawn">Pawn</a> (which is the "body").</li>
+</ul>
+</dd>
+</dl>
+<p>The class definition of <a href="Legacy_Controller.html" title="Legacy:Controller">Controller</a> shows that it is an <i>abstract</i> class - this means that this isn't the class actually used in <a href="Legacy_UT2003.html" title="Legacy:UT2003" class="mw-redirect">UT2003</a>; human players use <a href="Legacy_XPlayer.html" title="Legacy:XPlayer">xPlayer</a> while bots use <a href="Legacy_XBot.html" title="Legacy:XBot">xBot</a>.</p>
+<p>The gametype of the current <a href="Legacy_LevelInfo.html" title="Legacy:LevelInfo">Level</a> specifies the type of <a href="Legacy_Controller.html" title="Legacy:Controller">Controller</a> for bots and players to use. As bots don't cheat in <a href="Legacy_UT2003.html" title="Legacy:UT2003" class="mw-redirect">UT2003</a>, the <a href="Legacy_XBot.html" title="Legacy:XBot">xBot</a> class doesn't have a number of security-related classes that the <a href="Legacy_XPlayer.html" title="Legacy:XPlayer">xPlayer</a> has.</p>
+<p>One of these differences is that a <a href="Legacy_PlayerInput.html" title="Legacy:PlayerInput">PlayerInput</a> class is attached to each (human) player, and this processes keyboard/mouse/joystick input and (then) passes it to the <a href="Legacy_Controller.html" title="Legacy:Controller">Controller</a>.</p>
+<p>The other is the <a href="Legacy_CheatManager.html" title="Legacy:CheatManager">CheatManager</a> class; this is involved with handling console commands (such as cheats such as "god") and other debug functions that can only be called in <b>Instant Action</b> (or other custom non-network gametypes).</p>
+<p>Unlike The Matrix, <a href="Legacy_Pawn.html" title="Legacy:Pawn">Pawns</a> can exist without <a href="Legacy_Controller.html" title="Legacy:Controller">Controllers</a> and vice-versa. Indeed, the alternate firemode of the Redeemer creates a new <a href="Legacy_Pawn.html" title="Legacy:Pawn">Pawn</a> that the Player's <a href="Legacy_Controller.html" title="Legacy:Controller">Controller</a> possesses - this is how the Player's mouse/keyboard input is "mapped" onto the Redeemer.</p>
+<h2><span class="mw-headline" id="Some_Useful_Properties">Some Useful Properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Controller_Overview?section=1" title="Edit section: Some Useful Properties">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<dl>
+<dt>Engine.<a href="Legacy_GameInfo.html" title="Legacy:GameInfo">GameInfo</a>.PlayerControllerClass&#160;</dt>
+<dd>This property defines the class to use to control the player. Changing this class will allow you to alter the view the player sees in first person, behind view, and spectator mode. It also handles lots of stuff that only execute on the client. The default value for this is not set although Engine.<a href="Legacy_PlayerController.html" title="Legacy:PlayerController">PlayerController</a> (UnrealGame.<a href="Legacy_DeathMatch.html" title="Legacy:DeathMatch">DeathMatch</a> specifies xGame.<a href="Legacy_XPlayer.html" title="Legacy:XPlayer">xPlayer</a>) will be instantiated if a subclass of GameInfo fails to provide a default value by using the PlayerControllerClassName property.</dd>
+</dl>
+<dl>
+<dt>Engine.<a href="Legacy_GameInfo.html" title="Legacy:GameInfo">GameInfo</a>.DefaultPlayerClassName&#160;</dt>
+<dd>This property allows the default player class as displayed within the 3D world to be specified. The class specified by this property handles all the classic player pawn stuff (animation, physics, blah blah blah). The default value for this specified in UnrealGame.<a href="Legacy_DeathMatch.html" title="Legacy:DeathMatch">DeathMatch</a> is xGame.<a href="Legacy_XPawn.html" title="Legacy:XPawn">xPawn</a>.</dd>
+</dl>
+<dl>
+<dt>Engine.<a href="Legacy_PlayerController.html" title="Legacy:PlayerController">PlayerController</a>.CheatManager&#160;</dt>
+<dd>This property specifies the class to use to handle the cheat manager. If you want to add new console commands then this is the class you need to replace. The default value set within the PlayerController class is Engine.<a href="Legacy_CheatManager.html" title="Legacy:CheatManager">CheatManager</a>.</dd>
+</dl>
+<dl>
+<dt>Engine.<a href="Legacy_PlayerController.html" title="Legacy:PlayerController">PlayerController</a>.PlayerInput&#160;</dt>
+<dd>This property specifies the class use to capture and process player input. So if you want to change the way double-click moving works or mouse smoothing then this is the place to start.</dd>
+</dl>
+<h2><span class="mw-headline" id="Related_Pages">Related Pages</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Controller_Overview?section=2" title="Edit section: Related Pages">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_Controller.html" title="Legacy:Controller">Controller</a> – Base class
+<ul>
+<li><a href="Legacy_AIController.html" title="Legacy:AIController">AIController</a> – Artificially intelligent agents</li>
+<li><a href="Legacy_PlayerController.html" title="Legacy:PlayerController">PlayerController</a> – A slightly more in depth look at the relationship between player controllers and pawns.</li>
+</ul>
+</li>
+<li><a href="Legacy_Engine_Concept.html" title="Legacy:Engine Concept">Engine_Concept</a> – A list of definitions of terms used on this page.</li>
+</ul>
+<h2><span class="mw-headline" id="Discussion">Discussion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Controller_Overview?section=3" title="Edit section: Discussion">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>Tarquin:</b> Merge needed of the two intros above. Since I don't know much about it, someone else should do it. The stuff on <a href="Legacy_PlayerController.html" title="Legacy:PlayerController">PlayerController</a> has been moved to, well, <a href="Legacy_PlayerController.html" title="Legacy:PlayerController">PlayerController</a>.</p>
+<p><b>DJPaul:</b> Started doing Mr. T's merge; hopefully it's not too bad.</p>
+<p><b>scumble:</b> It's an oversimplification to say that the <a href="Legacy_LevelInfo.html" title="Legacy:LevelInfo">Level</a> determines the <a href="Legacy_Controller.html" title="Legacy:Controller">Controller</a> used by Pawns. From what I found out recently, it's one of the defaultproperties in <a href="Legacy_XPawn.html" title="Legacy:XPawn">xPawn</a> that specifies XGame.<a href="Legacy_XBot.html" title="Legacy:XBot">xBot</a> as the controller. The <a href="Legacy_GameInfo.html" title="Legacy:GameInfo">GameInfo</a> only specifies the <a href="https://wiki.beyondunreal.com/edit/Legacy:Roster?redlink=1" class="new" title="Legacy:Roster (page does not exist)">Roster</a> class. You have to get down to <a href="https://wiki.beyondunreal.com/edit/Legacy:XRosterEntry?redlink=1" class="new" title="Legacy:XRosterEntry (page does not exist)">xRosterEntry</a> before you find the code that returns <a href="https://wiki.beyondunreal.com/edit/Legacy:XPawns?redlink=1" class="new" title="Legacy:XPawns (page does not exist)">xPawns</a> for the Enemy team.</p>
+<p><b>Daid303:</b> It's says that the "gametype of the current <a href="Legacy_LevelInfo.html" title="Legacy:LevelInfo">Level</a>" not the "<a href="Legacy_LevelInfo.html" title="Legacy:LevelInfo">Level</a>" determines the controller class. And that's 100% true&#160;:) But yes, for bots it gets it from the Roster. But that's not true for normal players.</p>
+<p><b>scumble:</b> Yes, I meant gametype! I'm really advocating a little elaboration on the difference between how Bots and Players are spawned. They seem to work in opposite directions.</p>
+<hr />
+<p><a href="Category_Legacy_To_Do.html" title="Category:Legacy To Do">Category:Legacy To Do</a> – Make this a more complete overview of all Controllers with relevant links to <a href="Legacy_Controller.html" title="Legacy:Controller">Controller</a> and its subclasses.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.026 seconds
+Real time usage: 0.027 seconds
+Preprocessor visited node count: 12/1000000
+Preprocessor generated node count: 24/1000000
+Post‐expand include size: 19/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:794-0!*!0!!*!*!* and timestamp 20161215143118 and revision id 2248
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Controller_Overview?oldid=2248">https://wiki.beyondunreal.com/Legacy:Controller_Overview?oldid=2248</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Legacy_To_Do.html" title="Category:Legacy To Do">Legacy To Do</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_Controller_Overview.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Controller_Overview?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Controller_Overview" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Controller_Overview" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AController+Overview&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AController+Overview" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Controller_Overview" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Controller_Overview" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Controller_Overview?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Controller_Overview?oldid=2248" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Controller_Overview" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 15:29, 7 December 2005.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":188});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Controller_Overview by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:50 GMT -->
+</html>

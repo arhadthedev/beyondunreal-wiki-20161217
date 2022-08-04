@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:Vehicle_Tutorial_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:52:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:Vehicle Tutorial (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_Vehicle_Tutorial_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:Vehicle_Tutorial_(UDK)","wgTitle":"Vehicle Tutorial (UDK)","wgCurRevisionId":43984,"wgRevisionId":43984,"wgArticleId":28681,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Modeling tutorials","Programming tutorials"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:Vehicle_Tutorial_(UDK)","wgRelevantArticleId":28681,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_Vehicle_Tutorial_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>My program doesn't have bugs. It just develops random features.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:Vehicle Tutorial (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Vehicle_Tutorial"><span class="tocnumber">1</span> <span class="toctext">Vehicle Tutorial</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Part_1:_Design"><span class="tocnumber">1.1</span> <span class="toctext">Part 1: Design</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Part_2:_Rough_Model_and_Basic_Vehicle_Setup"><span class="tocnumber">1.2</span> <span class="toctext">Part 2: Rough Model and Basic Vehicle Setup</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#Naming"><span class="tocnumber">1.2.1</span> <span class="toctext">Naming</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Modeling"><span class="tocnumber">1.2.2</span> <span class="toctext">Modeling</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Scaling"><span class="tocnumber">1.2.3</span> <span class="toctext">Scaling</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Aligning"><span class="tocnumber">1.2.4</span> <span class="toctext">Aligning</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Texturing"><span class="tocnumber">1.2.5</span> <span class="toctext">Texturing</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Rigging"><span class="tocnumber">1.2.6</span> <span class="toctext">Rigging</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Skinning"><span class="tocnumber">1.2.7</span> <span class="toctext">Skinning</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Exporting"><span class="tocnumber">1.2.8</span> <span class="toctext">Exporting</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-12"><a href="#Part_3:_Editor_Setup"><span class="tocnumber">1.3</span> <span class="toctext">Part 3: Editor Setup</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="#Naming_2"><span class="tocnumber">1.3.1</span> <span class="toctext">Naming</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#Packaging"><span class="tocnumber">1.3.2</span> <span class="toctext">Packaging</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="#Part_4:_Scripting"><span class="tocnumber">1.4</span> <span class="toctext">Part 4: Scripting</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Tips"><span class="tocnumber">1.5</span> <span class="toctext">Tips</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Videos"><span class="tocnumber">1.6</span> <span class="toctext">Videos</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Forum_Topic"><span class="tocnumber">1.7</span> <span class="toctext">Forum Topic</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Project_Files"><span class="tocnumber">1.8</span> <span class="toctext">Project Files</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p></p>
+<h1><span class="mw-headline" id="Vehicle_Tutorial">Vehicle Tutorial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)?section=1" title="Edit section: Vehicle Tutorial">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+<p>This is a step-by-step tutorial on how to model, rig, export and script a custom four wheeled vehicle. Also this work is a combination of several tutorials on the subject so we by no means take credit for everything but only want to help others.</p>
+<p><br /></p>
+<h2><span class="mw-headline" id="Part_1:_Design">Part 1: Design</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)?section=2" title="Edit section: Part 1: Design">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>We have not explored all the different design types that can be done in UDK but it seems it is broad depending on the game you are making. Of course don't expect a low riding vehicle to cross terrain that will make it bottom out. But if your roads are flat then a low riding vehicle should be fine. The vehicle in this tutorial is pretty low but only have tested it in a empty room with a flat surface and seems to work fine. Also lowering the wheel bones to there lowest point helps when you need more suspension.</p>
+<p><br /></p>
+<h2><span class="mw-headline" id="Part_2:_Rough_Model_and_Basic_Vehicle_Setup">Part 2: Rough Model and Basic Vehicle Setup</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)?section=3" title="Edit section: Part 2: Rough Model and Basic Vehicle Setup">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>I started with a box type car very basic model with basic tires and basic suspension. I did this just in case i had to make a lot of changes to get it to work and to avoid wasting time in case i had to start from scratch like i did several times.</p>
+<p><br /></p>
+<h3><span class="mw-headline" id="Naming">Naming</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)?section=4" title="Edit section: Naming">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Get with your programmer and mapper and decide what names you all are going to use for the bones to save everyone time in the long run. Your programmer will have to add the bones names in the script and the mapper will have to add the names to connect the bones to the controllers and the mesh in the editor. So if you change the names of your bones when you rig your model everyone else will have to change the names. Naming your objects when modeling will not be important because you will be merging them into one mesh when you are done and will be naming that mesh on export.</p>
+<p><br /></p>
+<h3><span class="mw-headline" id="Modeling">Modeling</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)?section=5" title="Edit section: Modeling">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>When you make your model just create your separate objects like normal body, tires, suspension. Then after you are satisfied with your model you will need to merge/blend the objects into one. I know it doesn't seem logical that you are going to use one mesh and that your tires will be able to rotate versus making your animated objects as separate meshes and exporting them separate. Also I would suggest you duplicate and hide the original objects in case you have to go back and make changes. I normally put all my objects under a parent object/model and hide them before i make major changes or just save the scene as a different file name. <b>Note: You will want to make sure you are thinking ahead instead of just going wild with your model and later having to go back and fix it because it is too hard to animate.</b></p>
+<p><br /></p>
+<h3><span class="mw-headline" id="Scaling">Scaling</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)?section=6" title="Edit section: Scaling">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>You will want to scale your model to the scale of a ingame character. You can always make adjustments to the scale later but i would advice against it unless you are a advanced user in your 3d program. All 3d apps are different so try exporting a static mesh and adjust it to a ingame character. Don't adjust it ingame just compare it to the ingame environment then adjust the units/meters/inches in your 3d app so you know what measurements you are going to need to make it look right ingame.</p>
+<p><br /></p>
+<h3><span class="mw-headline" id="Aligning">Aligning</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)?section=7" title="Edit section: Aligning">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>You will want your mesh to align so your vehicles length extends into the X axis it's width into the Y and height into the Z. So in other words the front of your vehicle need to be pointing towards the X axis and the roof pointing on the Z axis and the doors on the Y axis in UDK. Now in your 3d app might be totally different for example in Softimage the front of the car points on the X axis and the hood points on the Y axis and the doors point on the Z axis. You will want to do the same as you did for scaling import it as a static mesh and make sure it as the correct alignment. Keep in mind that when you add bones you will need them aligned the same way as the mesh.</p>
+<p><br /></p>
+<h3><span class="mw-headline" id="Texturing">Texturing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)?section=8" title="Edit section: Texturing">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Depending on your 3d app you can texture your model before or after you rig it. I would suggest for your first test model just use a standard uv map to avoid spending too much time appling texture maps. Also I used a 1024^2 texture map and mapped the whole model using a "Unique UV polymesh" but using a box map for the whole mesh should be good enough. Once you are more familiar with the whole process that's when you should go back and unwrap the model properly and texture it.</p>
+<p><br /></p>
+<h3><span class="mw-headline" id="Rigging">Rigging</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)?section=9" title="Edit section: Rigging">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Now first thing when rigging is that you can use nulls or bones at least this is the case in Softimage. I prefer using nulls seeing there are no roots or effectors you have to mess with. Also make sure the bones aligning correctly in the editor they should be aligning in the same direction as your mesh so when you open in the editor the mesh and bones are pointing in same direction. I tested it first just using the root bone and apply the whole skin to the root bone so i could export and test it. <b>Note: You might have to rotate the bone like i did to a -90 X axis so it aligns correctly in the editor</b>. After that i renamed the root bone to Main_Root and after i knew it was aligning correctly i then made a copy of the Main_Root bone and moved it to the back tire for the back tire bone and renamed it B_R_Tire, then i copied the back tire bone and moved it to back axle for the back axle bone and renamed it B_R_Axle, then i copied both the back tire bone and back axle bone and moved them both to the front and renamed them F_R_Tire and F_R_Axle and i repeated same thing on the left side of the car.</p>
+<p><br /></p>
+<h3><span class="mw-headline" id="Skinning">Skinning</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)?section=10" title="Edit section: Skinning">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>You need to attach your bones to the appropriate vertices of your mesh to create the skin. For example your root bone needs to attach to the vertices of the body mesh, and your tire bone needs to attach to the vertices of your tire mesh and repeat the process until you have covered the entire mesh. When you finish your mesh weights should be color coded to the bones so when you look at it you should see the body one solid color the tire one solid color each should have their own colors. If you see any blending in the colors then you have applied to wrong or went too far and you will notice it when you see it animating funky. Each 3d app has its own methods of attaching the vertices to the bones, in Softimage i attached the mesh to all the bones and reassigned the vertices to there appropriate bones. <b>Note: You will need to parent your bones under the root bone before you export you might need to parent them before applying the skin that will depend on the 3d app.</b></p>
+<p><br /></p>
+<h3><span class="mw-headline" id="Exporting">Exporting</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)?section=11" title="Edit section: Exporting">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>First you will need to install <a href="http://udn.epicgames.com/Two/ActorX" class="extiw" title="udn2:ActorX">ActorX</a>.</p>
+<h2><span class="mw-headline" id="Part_3:_Editor_Setup">Part 3: Editor Setup</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)?section=12" title="Edit section: Part 3: Editor Setup">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>I did not do anything special when i setup the SimpleCar package basically i just opened the Scorpion package and tried to copy as much of the settings as i could, but there where some of the settings that i could not use for me package because the animations where not the same but the basic setting where.</p>
+<h3><span class="mw-headline" id="Naming_2">Naming</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)?section=13" title="Edit section: Naming">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Make sure you are using the correct names for your package and content get with your programmer and modeler to find out what the naming convention is before you get started. This is very important because the scripts will be reading the info in the package and you will need to know the bone names when adding controllers and what not.</p>
+<p><br /></p>
+<h3><span class="mw-headline" id="Packaging">Packaging</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)?section=14" title="Edit section: Packaging">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Create a test map or open an existing map i would suggest a simple map so it loads rather quick because you might be opening and closing it a lot. Now that the map is open you can open your "Content Browser" this is where you will be spending most of your time. Go ahead and import your .psk file which is the (SkeletalMesh) file and click ok when the dialog box appears, now import your texture map and when dialog box appears check the "Create Material?" box so it creates the material for you. After you have imported those 2 items save your package and name it accordingly because if you don't save it then something might happen and you could lose the entire package or learn the hard way&#160;:)...</p>
+<p><br /></p>
+<p><br /></p>
+<h2><span class="mw-headline" id="Part_4:_Scripting">Part 4: Scripting</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)?section=15" title="Edit section: Part 4: Scripting">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>WIP...</p>
+<p><br /></p>
+<h2><span class="mw-headline" id="Tips">Tips</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)?section=16" title="Edit section: Tips">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>Build:</b> UDK-2009-12</p>
+<p><b>Compile:</b> In order for Unreal to compile your scripts in MyMod folder you need to make sure that&#160;;ModEditPackages=MyMod is not nulled out in DefaultEngine.ini Just right click the file and go to properties and uncheck Read-only then open the file and change&#160;;ModEditPackages=MyMod to ModEditPackages=MyMod just remove the (;).</p>
+<p><b>Inverted Mesh:</b> I came across this several times for some reason when you apply the envelopes and start attaching the bones to the mesh your mesh gets inverted and when you load it into editor you can only see the back faces of the mesh. Now there is a option in ActorX exporter under the "Setup" tab that has a (Invert) option but it never worked for me. I found that if you reset the mesh transformations after you finish modeling and merging into one object it usually helps. What i mean by resetting is make a cube that expands over the whole vehicle and merge it with the vehicle then delete the cube and your vehicle transformations should have reset.</p>
+<p><br /></p>
+<h2><span class="mw-headline" id="Videos">Videos</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)?section=17" title="Edit section: Videos">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=OQpPtNdsuBw">SimpleCar Youtube</a><br />
+<a rel="nofollow" class="external text" href="http://www.youtube.com/user/barrybsmith#p/a/u/0/wBRRhMT9OtM">Quad Youtube</a></p>
+<p><br /></p>
+<h2><span class="mw-headline" id="Forum_Topic">Forum Topic</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)?section=18" title="Edit section: Forum Topic">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>If you have any questions just post them on this forum topic... <a rel="nofollow" class="external text" href="http://forums.epicgames.com/showthread.php?t=714973">Step by Step Tutorial</a></p>
+<p><br /></p>
+<h2><span class="mw-headline" id="Project_Files">Project Files</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)?section=19" title="Edit section: Project Files">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>SimpleCar.rar<br />
+<a rel="nofollow" class="external text" href="http://www.fileplanet.com/209100/download/Simple-Car-Files-for-UDK">Fileplanet</a><br />
+<a rel="nofollow" class="external text" href="http://www.megaupload.com/?d=KIW9B4GR">Megaupload</a><br /></p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+Contents: The names are different SimpleCar<span class="sy0">/</span>Humvee<span class="sy0">/</span>VH_HMMWV because we did not want to go back and rename everything.
+ 
+<span class="me0">Folder</span>  SimpleCar
+Folder  C.<span class="me0">UDK</span>.<span class="me0">UDK</span>.2009<span class="sy0">-</span><span class="nu0">12</span>.<span class="me0">UTGame</span>.<span class="me0">Content</span>.<span class="me0">Vehicles</span>
+File    VH_Humvee.<span class="me0">upk</span>
+ 
+Folder  C.<span class="me0">UDK</span>.<span class="me0">UDK</span><span class="sy0">-</span><span class="nu0">2009</span><span class="sy0">-</span><span class="nu0">12</span>.<span class="me0">Development</span>.<span class="me0">Src</span>.<span class="me0">MyMod</span>.<span class="me0">Classes</span>
+File    UTVehicle_Humvee_Content.<span class="me0">uc</span>
+File    UTVehicleFactory_Humvee.<span class="me0">uc</span>
+File    UTVehicleHumvee.<span class="me0">uc</span>
+File    UTVehicleHumveeWheel.<span class="me0">uc</span>
+ 
+Folder  Humvee Export Model
+File    VH_HMMWV.<span class="me0">psa</span>
+File    VH_HMMWV.<span class="me0">PSK</span>
+File    X_ModelInfo_VH_HMMWV.<span class="kw3">LOG</span>
+ 
+Folder Humvee Model Source 
+File   Humbvee.<span class="me0">ase</span>
+File   Humbvee.<span class="me0">dae</span>
+File   Humbvee.<span class="me0">fbx</span>
+File   Humbvee.<span class="me0">mtl</span>
+File   Humbvee.<span class="me0">obj</span>
+File   Humbvee.<span class="me0">xsi</span>
+File   simplecartexture.<span class="me0">bmp</span>
+</pre></div>
+</div>
+<hr />
+<!-- 
+NewPP limit report
+CPU time usage: 0.051 seconds
+Real time usage: 0.052 seconds
+Preprocessor visited node count: 77/1000000
+Preprocessor generated node count: 100/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:28681-0!*!*!!en!*!* and timestamp 20161215141714 and revision id 43984
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:Vehicle_Tutorial_(UDK)?oldid=43984">https://wiki.beyondunreal.com/UE3:Vehicle_Tutorial_(UDK)?oldid=43984</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Modeling_tutorials.html" title="Category:Modeling tutorials">Modeling tutorials</a></li><li><a href="Category_Programming_tutorials.html" title="Category:Programming tutorials">Programming tutorials</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_Vehicle_Tutorial_(UDK).html">UE3</a></li>
+				<li id="ca-talk"><a href="UE3_talk_Vehicle_Tutorial_(UDK).html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_Tutorial_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:Vehicle_Tutorial_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AVehicle+Tutorial+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AVehicle+Tutorial+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:Vehicle_Tutorial_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:Vehicle_Tutorial_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:Vehicle_Tutorial_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:Vehicle_Tutorial_(UDK)?oldid=43984" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:Vehicle_Tutorial_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 03:25, 13 September 2010.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":86});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:Vehicle_Tutorial_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:52:49 GMT -->
+</html>

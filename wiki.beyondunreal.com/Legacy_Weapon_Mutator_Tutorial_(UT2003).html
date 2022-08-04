@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Weapon_Mutator_Tutorial_(UT2003) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:39:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Weapon Mutator Tutorial (UT2003) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Weapon_Mutator_Tutorial_(UT2003)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Weapon_Mutator_Tutorial_(UT2003)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_Weapon_Mutator_Tutorial_(UT2003).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Weapon_Mutator_Tutorial_(UT2003)","wgTitle":"Weapon Mutator Tutorial (UT2003)","wgCurRevisionId":9581,"wgRevisionId":9581,"wgArticleId":3783,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Tutorial","Legacy Refactor Me"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Weapon_Mutator_Tutorial_(UT2003)","wgRelevantArticleId":3783,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Weapon_Mutator_Tutorial_UT2003 skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I love the smell of UnrealEd crashing in the morning. &#8211; tarquin
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Weapon Mutator Tutorial (UT2003)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><i>This page is one of a series of <a href="Legacy_UnrealScript_Lessons.html" title="Legacy:UnrealScript Lessons">UnrealScript Lessons</a>.</i></p>
+<p><i>The UT2004 version of this tutorial is available at <a href="Legacy_Weapon_Mutator_Tutorial.html" title="Legacy:Weapon Mutator Tutorial">Weapon Mutator Tutorial</a>.</i></p>
+<h2><span class="mw-headline" id="UTute_3:_A_Weapon_Mute_.E2.80.93_Did_someone_say_Firestorm.3F">UTute 3: A Weapon Mute – Did someone say Firestorm?</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Weapon_Mutator_Tutorial_(UT2003)?section=1" title="Edit section: UTute 3: A Weapon Mute – Did someone say Firestorm?">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>I was reading a preview of Unreal Tournament 2003 that said that the alt fire would have explosive bullets. I thought, neat - that's just like firestorm rounds in my mod, Freehold! But when I got the game, I realized that Epic had a different definition of "explosive" than I did. So I set out to change that.</p>
+<p>What I like to do with something like this is run through the code and grab everything I might need in order to complete it. In UT2003, the weapon code is more subdivided than in UT, with seperate classes for the weapon, the weapon's pickup, the ammo, the fire, the damage, etc. At first, it's actually a bit annoying - but in practice quite flexible. Since all I wanted to do was change the altfire of the Minigun, I was going to extend the following classes:</p>
+<ul>
+<li><a href="Legacy_Minigun.html" title="Legacy:Minigun">Minigun</a> - for the weapon, to reference the new fire and pickup class</li>
+<li><a href="Legacy_MinigunFire.html" title="Legacy:MinigunFire">MinigunFire</a> - for the new explosive fire</li>
+<li><a href="Legacy_Mutator.html" title="Legacy:Mutator">Mutator</a> - to make a pickup mutator so that it can be seen in the game</li>
+<li><a href="Legacy_MinigunPickup.html" title="Legacy:MinigunPickup">MinigunPickup</a> - to make a pickup class for my new weapon</li>
+</ul>
+<p>So I made four new classes which extended those:</p>
+<ul>
+<li>MinigunHE - for the weapon, to reference the new fire and pickup class</li>
+<li>MinigunHEAltFire - for the new explosive fire</li>
+<li>MinigunHEArena - to make a pickup mutator so that it can be seen in the game</li>
+<li>MinigunHEPickup - to make a pickup class for my new weapon</li>
+</ul>
+<p>Quicknote about MinigunHEArena. I call any mutator I use to alter pickups in the game an "arena" class, but this might be somewhat confusing to some other definitions of Arena.</p>
+<p>In MiniGunHE, all I needed to do was point two default properties to my new classes. Essentially I modified the following:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+FireModeClass<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">=</span><span class="kw1">Class</span><span class="st0">'XPak.MinigunHEAltFire'</span>
+PickupClass<span class="sy0">=</span><span class="kw1">Class</span><span class="st0">'Xpak.MinigunHEPickup'</span>
+</pre></div>
+</div>
+<p>Each weapon in UT2003 has two FireModeClasses, primary (0) and alt (1). Here, I want the alt fire to be my class. The PickUpClass is something that confused me at first, but essentially it points to the class which should be used to pick up this weapon in the map itself. It becomes important with the mutator.</p>
+<p>In the MinigunHEAltFire, I use the DoTrace which is inherited from the InstantFire parent class.. DoTrace is a function called when an instant hit weapon needs to determine the target that it is pointing at. It generates a vector called HitLocation and another called HitNormal to describe the point that the hit would occur. I added:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+Explode<span class="br0">(</span>HitLocation, HitNormal<span class="br0">)</span>;
+</pre></div>
+</div>
+<p>After those <a href="Legacy_Vector.html" title="Legacy:Vector">vectors</a> are determined. I then defined Explode, and its damaging function BlowUp (based from <a href="Legacy_UT.html" title="Legacy:UT" class="mw-redirect">UT</a> code actually) as:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> BlowUp<span class="br0">(</span><span class="kw5">vector</span> HitLocation<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw4">HurtRadius</span><span class="br0">(</span><span class="nu0">15</span>, <span class="nu0">45</span>, <span class="kw9">DamageType</span>, <span class="nu0">250</span>, HitLocation <span class="br0">)</span>;
+	<span class="kw4">MakeNoise</span><span class="br0">(</span><span class="nu0">1.0</span><span class="br0">)</span>;
+<span class="br0">}</span>
+ 
+<span class="kw1">simulated</span> <span class="kw1">function</span> Explode<span class="br0">(</span><span class="kw5">vector</span> HitLocation, <span class="kw5">vector</span> HitNormal<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw4">PlaySound</span><span class="br0">(</span><span class="kw5">sound</span><span class="st0">'WeaponSounds.BExplosion3'</span>,,<span class="nu0">2.5</span><span class="sy0">*</span><span class="kw7">TransientSoundVolume</span><span class="br0">)</span>;
+    <span class="kw2">if</span> <span class="br0">(</span> EffectIsRelevant<span class="br0">(</span><span class="kw7">Location</span>,<span class="kw6">false</span><span class="br0">)</span> <span class="br0">)</span>
+    <span class="br0">{</span>
+    	<span class="kw4">Spawn</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'HEBulletExplosion'</span>,,,HitLocation <span class="sy0">+</span> HitNormal<span class="sy0">*</span><span class="nu0">16</span>,<span class="kw5">rotator</span><span class="br0">(</span>HitNormal<span class="br0">)</span><span class="br0">)</span>;
+        <span class="kw4">Spawn</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'ExplosionCrap'</span>,,, HitLocation, <span class="kw5">rotator</span><span class="br0">(</span>HitNormal<span class="br0">)</span><span class="br0">)</span>;
+		   <span class="br0">}</span>
+ 
+	BlowUp<span class="br0">(</span>HitLocation<span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Now, when the DoTrace returns its HitLocation, there is also a little explosion and a damage radius. Now that's an explosion. The other class directly related to the weapon is the pickup itself. Here, it's enough to extend the MinigunPickUp and merely change a few <a href="Legacy_Default_Properties.html" title="Legacy:Default Properties">default properties</a>:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">defaultproperties</span>
+<span class="br0">{</span>
+     InventoryType<span class="sy0">=</span><span class="kw1">Class</span><span class="st0">'XPak.MinigunHE'</span>
+     PickupMessage<span class="sy0">=</span><span class="st0">"You got the Minigun HE."</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Finally, we write a mutator to replace that old Minigun with the shiny new one.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">class</span> MinigunHEArena <span class="kw1">extends</span> <span class="kw9">Mutator</span>
+    <span class="kw1">config</span><span class="br0">(</span>user<span class="br0">)</span>;
+ 
+<span class="kw1">function</span> <span class="kw5">bool</span> CheckReplacement<span class="br0">(</span> <span class="kw9">Actor</span> Other, <span class="kw1">out</span> <span class="kw5">byte</span> bSuperRelevant <span class="br0">)</span>
+<span class="br0">{</span>
+	bSuperRelevant <span class="sy0">=</span> <span class="nu0">0</span>;
+    <span class="kw2">if</span> <span class="br0">(</span> xWeaponBase<span class="br0">(</span>Other<span class="br0">)</span> <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+    <span class="br0">{</span>
+		<span class="kw2">if</span> <span class="br0">(</span> xWeaponBase<span class="br0">(</span>Other<span class="br0">)</span>.<span class="me0">WeaponType</span> <span class="sy0">==</span> <span class="kw1">class</span><span class="st0">'Minigun'</span> <span class="br0">)</span>
+			xWeaponBase<span class="br0">(</span>Other<span class="br0">)</span>.<span class="me0">WeaponType</span> <span class="sy0">=</span> <span class="kw1">class</span><span class="st0">'MinigunHE'</span>;
+		<span class="kw2">else</span>
+			<span class="kw2">return</span> <span class="kw6">true</span>;
+	<span class="br0">}</span>
+	<span class="kw2">else</span> <span class="kw2">if</span> <span class="br0">(</span> WeaponPickup<span class="br0">(</span>Other<span class="br0">)</span> <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+	<span class="br0">{</span>
+		<span class="kw2">if</span> <span class="br0">(</span> <span class="kw5">string</span><span class="br0">(</span>Other.<span class="kw1">Class</span><span class="br0">)</span> ~<span class="sy0">=</span> <span class="st0">"xWeapons.MinigunPickup"</span> <span class="br0">)</span>
+			ReplaceWith<span class="br0">(</span> Other, <span class="st0">"xPak.MinigunHEPickUP"</span><span class="br0">)</span>;
+		<span class="kw2">else</span>
+			<span class="kw2">return</span> <span class="kw6">true</span>;
+	<span class="br0">}</span>
+	<span class="kw2">else</span>
+		<span class="kw2">return</span> <span class="kw6">true</span>;
+ 
+	<span class="kw2">return</span> <span class="kw6">false</span>;
+<span class="br0">}</span>
+ 
+<span class="kw1">defaultproperties</span>
+<span class="br0">{</span>
+     GroupName<span class="sy0">=</span><span class="st0">"Minigun HE"</span>
+     FriendlyName<span class="sy0">=</span><span class="st0">"Minigun HE"</span>
+     Description<span class="sy0">=</span><span class="st0">"Minigun with High Explosive Firestorm rounds"</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>CheckReplacement is a Mutator function which hits every actor and asks if it should be replaced. It's an extremely powerful call and if done wrong can completely crash your game. Here, it pretty much just looks for Miniguns and MinigunPickups and replaces them with new classes. Now, add two lines to the Public section of the <a href="Legacy_INT_File.html" title="Legacy:INT File">INT file</a>:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw8">Object</span><span class="sy0">=</span><span class="br0">(</span><span class="kw1">Class</span><span class="sy0">=</span><span class="kw1">Class</span>,MetaClass<span class="sy0">=</span><span class="kw8">Engine</span>.<span class="kw9">Mutator</span>,<span class="kw5">Name</span><span class="sy0">=</span>XPak.<span class="me0">MinigunHEArena</span>,Description<span class="sy0">=</span><span class="st0">"Minigun HE."</span><span class="br0">)</span>
+ 
+<span class="kw8">Object</span><span class="sy0">=</span><span class="br0">(</span><span class="kw1">Class</span><span class="sy0">=</span><span class="kw1">Class</span>,MetaClass<span class="sy0">=</span><span class="kw8">Engine</span>.<span class="kw9">Weapon</span>,<span class="kw5">Name</span><span class="sy0">=</span>XPak.<span class="me0">MinigunHE</span>,Description<span class="sy0">=</span><span class="st0">"Customized Minigun with Firestorm Rounds."</span><span class="br0">)</span>
+</pre></div>
+</div>
+<p>The bottom one is weapon specific, and is the line that adds the weapon to the Weapon Database. There you go, the basics of a weapon mutator and real explosions to boot.</p>
+<blockquote class="legacyquote">
+<p>Quicknote about the "HEBulletExplosion" call in the "Explosion" function. Yes, that's a custom job as well - but I left it out of the tute as it's not &gt;actually needed. It essentially extends the explosion used for rockets and cuts back the scale.</p>
+</blockquote>
+<p><i>This tutorial was originally part of <a href="Legacy_RegularX.html" title="Legacy:RegularX">RegularX</a>'s <a href="https://wiki.beyondunreal.com/edit/Legacy:UTutes?redlink=1" class="new" title="Legacy:UTutes (page does not exist)">UTutes</a> series.</i></p>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Weapon_Mutator_Tutorial_(UT2003)?section=2" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_UnrealScript_Lessons.html" title="Legacy:UnrealScript Lessons">UnrealScript Lessons</a> – all the UnrealScript tutorials</li>
+<li><a href="Legacy_UnrealScript.html" title="Legacy:UnrealScript">UnrealScript</a> – all the reference pages</li>
+<li><a href="Legacy_Mutator_Topics.html" title="Legacy:Mutator Topics">Mutator Topics</a> – more on mutators</li>
+<li><a href="Legacy_Making_Mods.html" title="Legacy:Making Mods">Making Mods</a> – more on the organizational and social aspects</li>
+<li><a href="Legacy_Creating_A_New_Weapontype.html" title="Legacy:Creating A New Weapontype">Creating A New Weapontype</a> – more on weapon creation/modification</li>
+<li><a href="Legacy_Topics_On_Modeling.html" title="Legacy:Topics On Modeling">Topics on Modeling</a>
+<ul>
+<li><a href="Legacy_Weapon_Modeling.html" title="Legacy:Weapon Modeling">Weapon Modeling</a></li>
+</ul>
+</li>
+</ul>
+<h2><span class="mw-headline" id="Discussion">Discussion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Weapon_Mutator_Tutorial_(UT2003)?section=3" title="Edit section: Discussion">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>RegularX:</b> I think there are still netcode issues with spawning the ExplosionCrap I haven't worked out yet.</p>
+<p><b>Nullzero:</b>Well everything seems to be compiling right for me except for my MinigunHEAltfire class, the way I read the tutorial you have a function call "Explode(HitLocation, HitNormal);" where you're passing in the values from the parent class to your later defined function and then calling the BlowUP function from within Explode but I'm getting an Unexpected'Explode' when I try to compile any comments on where I might have gone wrong would be helpfull or maybe full text of your classes just so I could compare. Thanks.</p>
+<p><b>CorDharel:</b>Same thing on my computer. It's also not clear, i have problems to understand it. Would be cool if i can get the whole code of this mut. Thx.</p>
+<p><b>RegularX:</b> <a rel="nofollow" class="external text" href="../inkless.com/xxxpak_source.html">| Complete Source of the XXXpak</a> - this will be out of date shortly though as I'll be releasing a new version of the XXXpak soon. These classes are in the xpak package.</p>
+<p><b>Alex AC:</b> I'm not quite clear about the bit saying;</p>
+<p>"In the MinigunHEAltFire, I simply modified the original fire's DoTrace slightly."</p>
+<p>all i see in the minigunaltfire is</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">class</span> MinigunAltFire <span class="kw1">extends</span> MinigunFire;
+ 
+<span class="kw1">defaultproperties</span>
+<span class="br0">{</span>
+     BarrelRotationsPerSec<span class="sy0">=</span><span class="nu0">1.000000</span>
+     FiringSound<span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'WeaponSounds.Minigun.minialtfireb'</span>
+     WindUpTime<span class="sy0">=</span><span class="nu0">0.150000</span>
+     FiringForce<span class="sy0">=</span><span class="st0">"minialtfireb"</span>
+     <span class="kw9">DamageType</span><span class="sy0">=</span><span class="kw1">Class</span><span class="st0">'XWeapons.DamTypeMinigunAlt'</span>
+     DamageMin<span class="sy0">=</span><span class="nu0">12</span>
+     DamageMax<span class="sy0">=</span><span class="nu0">14</span>
+     FireLoopAnimRate<span class="sy0">=</span><span class="nu0">3.000000</span>
+     PreFireTime<span class="sy0">=</span><span class="nu0">0.150000</span>
+     SmokeEmitterClass<span class="sy0">=</span><span class="kw1">Class</span><span class="st0">'XEffects.MinigunAltMuzzleSmoke'</span>
+     Spread<span class="sy0">=</span><span class="nu0">0.030000</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>am i being stupid, or is there just a miscomunication?</p>
+<p><b>RegularX:</b> It's misleading, and more evidence I need to rewrite this guy - but I was referring to adding DoTrace to the AltFire which will update its super.function. So "its" is the one it inherited.</p>
+<p>'<i>AlexAC:</i> buh?</p>
+<p><b>RegularX:</b> I just double checked. MinigunHEAltFire extends MinigunFire, but the DoTrace it is replacing/updating is the one from inherited from InstantFire. (I'm assuming all this OO stuff makes sense&#160;?). Updated the text to try and make it more clear.</p>
+<p>Also - I have a networked version that puts the explosion effects in the correct place (oddly, they seem to work off the attachment) for the upcoming X3Pak version.</p>
+<p><b>Almo:</b> Found a problem. I copied this:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+    <span class="kw2">if</span> <span class="br0">(</span> <span class="kw5">string</span><span class="br0">(</span>Other.<span class="kw1">Class</span><span class="br0">)</span> <span class="sy0">==</span> <span class="st0">"xWeapons.FlakCannonPickup"</span> <span class="br0">)</span>
+</pre></div>
+</div>
+<p>and changed it to this:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+    <span class="kw2">if</span> <span class="br0">(</span> <span class="kw5">string</span><span class="br0">(</span>Other.<span class="kw1">Class</span><span class="br0">)</span> <span class="sy0">==</span> <span class="st0">"xWeapons.FlakAmmoPickup"</span> <span class="br0">)</span>
+</pre></div>
+</div>
+<p>and it didn't replace flak ammo. It was a small error in xWeapon:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+    <span class="kw2">if</span> <span class="br0">(</span> <span class="kw5">string</span><span class="br0">(</span>Other.<span class="kw1">Class</span><span class="br0">)</span> <span class="sy0">==</span> <span class="st0">"XWeapons.FlakAmmoPickup"</span> <span class="br0">)</span>
+</pre></div>
+</div>
+<p>Note the Capital "X".&#160;:D</p>
+<p><b>Mychaeel:</b> Actually I'd be better to do a case-insensitive comparison to start with; I have changed the code in the tutorial accordingly. On the other hand, I don't fully understand why the tutorial's author did a string comparison at all; simply comparing the classes directly would have done famously.</p>
+<p><b>Foxpaw:</b> I would have used the IsA function.. that way you are still covered if, for whatever reason, Epic or Digital Extremes chose to change which package the minigun is in in a later patch. It would also catch subclasses.</p>
+<p><b>RegularX:</b> Well, I wrote it like that because that's how MutArena is arranged, although it's done like that due to how the ArenaConfig is set up. An IsA would seem to be the way to go.</p>
+<p><b>Mychaeel:</b> Probably not if you're replacing a class by a custom subclass of it; then you'd get into an infinite loop and crash the game. Doing a string comparison prevents a package dependency (at that place), but at least the comparison should be case-insensitive as is the rest of the game. No biggie, but something you can easily spend hours on trying to track down.</p>
+<p><b>Foxpaw:</b> Hmm, you have a point. In which case, you could do if ( IsA( 'BaseClass' ) &amp;&amp;&#160;!IsA( 'CustomSubclass' ) )</p>
+<p><b>***Rand*m N**B***</b> I have been following the tutorials and this seems to be the last one directly linked,as so it seems tat there is a very steep curve in the jump from unexperience to the more knowledgable.I find this bridge very confusing to cross,so much is still unexplained</p>
+<p><b>Araes:</b> (3/25/04) Alright, having a bit of trouble getting this to work, so I'll attempt to describe everything involved. One of the main things that's confusing me is that I assume this worked fine in UT2003, however, even out of the zip, this mod is no longer working in UT2004. Its erroring out on the MiniGunHEAltFire.uc file. What its having trouble with is the explosion (Explode, BlowUp) spawn which was derived from the RocketProj.uc. The specific error code is:</p>
+<blockquote class="legacyquote">
+<p>I:\GAMES\UT2004\Xpak\Classes\MinigunHEAltFire.uc(66)&#160;: Error, 'PlaySound': Bad command or expression</p>
+</blockquote>
+<p>However, since it was doing this I figured I'd just avoid the sound and only spawn the explosion.</p>
+<blockquote class="legacyquote">
+<p>I:\GAMES\UT2004\Xpak\Classes\MinigunHEAltFire.uc(67)&#160;: Error, Bad or missing expression in 'If'</p>
+</blockquote>
+<p>No dice. So then I figured I'd just avoid the whole explosion and just get the damage to work.</p>
+<blockquote class="legacyquote">
+<p>I:\GAMES\UT2004\Xpak\Classes\MinigunHEAltFire.uc(60)&#160;: Error, 'HurtRadius': Bad command or expression</p>
+</blockquote>
+<p>All of this seems quite wierd as HurtRadius, PlaySound, and Spawn are all inherited from the most general Actor class. Note, it does compile fine and run otherwise if I get rid of all the code in Explode and BlowUp and just leave them as empty functions. Anybody have any idea what has changed between versions or where my problem might lie? The full code for this section is as shown:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> BlowUp<span class="br0">(</span><span class="kw5">vector</span> HitLocation<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw4">HurtRadius</span><span class="br0">(</span><span class="nu0">100</span>, <span class="nu0">220</span>, <span class="kw9">DamageType</span>, <span class="nu0">750</span>, HitLocation <span class="br0">)</span>;
+	<span class="kw4">MakeNoise</span><span class="br0">(</span><span class="nu0">1.0</span><span class="br0">)</span>;
+<span class="br0">}</span>
+ 
+<span class="kw1">simulated</span> <span class="kw1">function</span> Explode<span class="br0">(</span><span class="kw5">vector</span> HitLocation, <span class="kw5">vector</span> HitNormal<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw4">PlaySound</span><span class="br0">(</span><span class="kw5">sound</span><span class="st0">'WeaponSounds.BExplosion3'</span>,,<span class="nu0">2.5</span><span class="sy0">*</span><span class="kw7">TransientSoundVolume</span><span class="br0">)</span>;
+    <span class="kw2">if</span> <span class="br0">(</span> EffectIsRelevant<span class="br0">(</span><span class="kw7">Location</span>,<span class="kw6">false</span><span class="br0">)</span> <span class="br0">)</span>
+    <span class="br0">{</span>
+    	<span class="kw4">Spawn</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'HEBulletExplosion'</span>,,,HitLocation <span class="sy0">+</span> HitNormal<span class="sy0">*</span><span class="nu0">16</span>,<span class="kw5">rotator</span><span class="br0">(</span>HitNormal<span class="br0">)</span><span class="br0">)</span>;
+        <span class="kw4">Spawn</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'ExplosionCrap'</span>,,, HitLocation <span class="sy0">+</span> HitNormal, <span class="kw5">rotator</span><span class="br0">(</span>HitNormal<span class="br0">)</span><span class="br0">)</span>;
+    <span class="br0">}</span>
+ 
+	BlowUp<span class="br0">(</span>HitLocation<span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p><b>pgibbs:</b> I think the WeaponFire class now derives from Object, where it derived from Actor in UT2003; which'd explain the error messages you are getting (as those are defined in Actor).</p>
+<p><b>RegularX:</b> Yeah, you're trying to compile a UT2003 mutator with some WeaponFire specific stuff into UT2004, and both the Minigun and the LinkGun have had code modifications, plus the mentioned fact that WeaponFires are Objects now in 2k4, not Actors - which could explain the PlaySound() and other issues ... unforturnately the other weapon tute around here is for the LinkGun, so you'll probably run into similar issues. Regardless - weapon code from the xxxpak probably isn't going to play nice w/ 2k4 without some modification.</p>
+<p>I will try to make an updated UT2004 tutorial, but it's going to be this weekend at the very earliest.</p>
+<p><b>Areas:</b> Alright, could have sworn looking at it last night that it was an Actor still, but maybe that was just me being distracted by the tree of dependancies. I'll look into it tonight.</p>
+<p><b>Areas:</b> Yep, you're right. Instantfire, Minigunfire, and Weaponfire are now all direct children of Object rather than Actor. Since this is the case, what is the syntax for referencing the use of a function within another class that is not within your direct dependancy? For example, using the HurtRadius() function in Actor?</p>
+<p><b>RegularX:</b> Look to ProjectileFire for an example. Since Object doesn't have Spawn(), ProjectileFire asks it's Weapon to do it for it ( Weapon.Spawn(ProjectileClass,,, Start, Dir); ) ... So either point to something the WeaponFire has access to, like it's Weapon or Instigator, and have them handle the function - or have them spawn an actor which can handle the function.</p>
+<p><b>Araes:</b> Thanks. Changing the code to a version with large references to instigators:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> BlowUp<span class="br0">(</span><span class="kw5">vector</span> HitLocation<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw7">Instigator</span>.<span class="kw4">HurtRadius</span><span class="br0">(</span><span class="nu0">100</span>, <span class="nu0">220</span>, <span class="kw9">DamageType</span>, <span class="nu0">750</span>, HitLocation <span class="br0">)</span>;
+	<span class="kw7">Instigator</span>.<span class="kw4">MakeNoise</span><span class="br0">(</span><span class="nu0">1.0</span><span class="br0">)</span>;
+<span class="br0">}</span>
+ 
+<span class="kw1">simulated</span> <span class="kw1">function</span> Explode<span class="br0">(</span><span class="kw5">vector</span> HitLocation, <span class="kw5">vector</span> HitNormal<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw7">Instigator</span>.<span class="kw4">PlaySound</span><span class="br0">(</span><span class="kw5">sound</span><span class="st0">'WeaponSounds.BExplosion3'</span>,,<span class="nu0">2.5</span><span class="sy0">*</span><span class="kw7">TransientSoundVolume</span><span class="br0">)</span>;
+    <span class="kw2">if</span> <span class="br0">(</span> <span class="kw7">Instigator</span>.<span class="me0">EffectIsRelevant</span><span class="br0">(</span><span class="kw7">Instigator</span>.<span class="kw7">Location</span>,<span class="kw6">false</span><span class="br0">)</span> <span class="br0">)</span>
+    <span class="br0">{</span>
+    	<span class="kw7">Instigator</span>.<span class="kw4">Spawn</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'HEBulletExplosion'</span>,,,HitLocation <span class="sy0">+</span> HitNormal<span class="sy0">*</span><span class="nu0">16</span>,<span class="kw5">rotator</span><span class="br0">(</span>HitNormal<span class="br0">)</span><span class="br0">)</span>;
+        <span class="kw7">Instigator</span>.<span class="kw4">Spawn</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'ExplosionCrap'</span>,,, HitLocation <span class="sy0">+</span> HitNormal, <span class="kw5">rotator</span><span class="br0">(</span>HitNormal<span class="br0">)</span><span class="br0">)</span>;
+		   <span class="br0">}</span>
+ 
+	BlowUp<span class="br0">(</span>HitLocation<span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>As so, seems to have worked fine and fixed the problem.</p>
+<p><b>Geist:</b> So, if I've adapted this tutorial to work with UT2004, what's the current Wiki-wide policy on how to handle differences in different UT versions (esp. if I'm not sure how it works in UT or UT2003?). Should it be in a /UT2004 subpage? A "UT2004 Differences and Caveats" section of the same page? Let me know, and I'll add my version in the appropriate place. Then hopefully someone more savvy about UT2003 can clean it up? (I'd almost like to refactor this whole page – esp. since I didn't use any XXXpak resources, thus making it more "vanilla" – but I don't want to clobber anything that is UT2003-specific.)</p>
+<p><b>Tarquin:</b> I guess it depends on how much difference there is. If it's just something minor, then a heading for that part should do. If the differences are fundamental, then I'd say put the 2004 version here and move the 2003 version to a page "Weapon Mutator Tutorial (UT2003)", leaving a link at the top of this one. If your version of this tutorial doesn't use the XXXpak, it sounds to me like it's rather different, so maybe the 2 page approach is best.</p>
+<p><b>RegularX:</b> Yeah, I would agree. This page woefully needs refactoring, did since day one really - and that was like week after UT2003 was released. I didn't even realize what a poor choice the minigun is because of it's odd use of the attachment class. So archiving this page just for UT2003 reference and replacing it with a UT2004, non-XXXpak variant sounds dandy.</p>
+<p><b>Geist:</b> Done. See the link at the top of this page (and the reciprical link at the top of the old page). Notice that this page still needs refactoring for UT2003!</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.160 seconds
+Real time usage: 0.162 seconds
+Preprocessor visited node count: 123/1000000
+Preprocessor generated node count: 385/1000000
+Post‐expand include size: 1552/2097152 bytes
+Template argument size: 552/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   40.628      1 - -total
+ 10.31%    4.190      4 - Template:Innerbox
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:3783-0!*!0!!*!*!* and timestamp 20161215154315 and revision id 9581
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Weapon_Mutator_Tutorial_(UT2003)?oldid=9581">https://wiki.beyondunreal.com/Legacy:Weapon_Mutator_Tutorial_(UT2003)?oldid=9581</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Legacy_Tutorial.html" title="Category:Legacy Tutorial">Legacy Tutorial</a></li><li><a href="Category_Legacy_Refactor_Me.html" title="Category:Legacy Refactor Me">Legacy Refactor Me</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_Weapon_Mutator_Tutorial_(UT2003).html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Weapon_Mutator_Tutorial_(UT2003)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Weapon_Mutator_Tutorial_(UT2003)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Weapon_Mutator_Tutorial_(UT2003)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-anonuserpage"><a href="User_188.162.37.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">188.162.37.3</a></li>
+													<li id="pt-anontalk"><a href="User_talk_188.162.37.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AWeapon+Mutator+Tutorial+%28UT2003%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AWeapon+Mutator+Tutorial+%28UT2003%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Weapon_Mutator_Tutorial_(UT2003)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Weapon_Mutator_Tutorial_(UT2003)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Weapon_Mutator_Tutorial_(UT2003)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Weapon_Mutator_Tutorial_(UT2003)?oldid=9581" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Weapon_Mutator_Tutorial_(UT2003)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 11:00, 25 May 2006.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":76});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Weapon_Mutator_Tutorial_(UT2003) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:39:08 GMT -->
+</html>

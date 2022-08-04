@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Minigun/Script - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="/edit/Legacy:Minigun/Script" />
+<link rel="edit" title="Edit" href="/edit/Legacy:Minigun/Script" />
+<link rel="shortcut icon" href="/w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.beyondunreal.com/w/api.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="/Legacy:Minigun/Script" />
+<link rel="copyright" href="/Unreal_Wiki:Copyrights" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="https://wiki.beyondunreal.com/w/load.php?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.beyondunreal.com/w/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="https://wiki.beyondunreal.com/w/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Minigun/Script","wgTitle":"Minigun/Script","wgCurRevisionId":5174,"wgRevisionId":5174,"wgArticleId":2125,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Minigun/Script","wgRelevantArticleId":2125,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Minigun_Script skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Mostly Harmless
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Minigun/Script</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="/Legacy:Minigun" title="Legacy:Minigun">Legacy:Minigun</a></span></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class infobox-legacy"><a href="/Legacy:UT2003" title="Legacy:UT2003" class="mw-redirect">UT2003</a>&#160;:: <a href="/Legacy:Actor" title="Legacy:Actor">Actor</a> &gt;&gt; <a href="/Legacy:Pickup" title="Legacy:Pickup">Pickup</a> &gt;&gt; <a href="/Legacy:Weapon" title="Legacy:Weapon">Weapon</a> &gt;&gt; Minigun (commented UnrealScript code)</div>
+<p>This is a reference to the Minigun code in case you can't understand the code. All the remarks you see in the code will be done by me. It's a good reference for various guns that fire rapidly and have charge-up times.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="co1">//=============================================================================</span>
+<span class="co1">// Minigun  // This is the name of the weapon.</span>
+<span class="co1">//=============================================================================</span>
+<span class="kw1">class</span> Minigun <span class="kw1">extends</span> <span class="kw9">Weapon</span>  <span class="co1">//The class is the type of weapon, while the extends is used to refer the code to a specific type of actor</span>
+    <span class="kw1">config</span><span class="br0">(</span>user<span class="br0">)</span>;  <span class="co1">// This says that there are variables here that get their values from the user.ini file.</span>
+ 
+<span class="co1">// The InterfaceContent.utx file contains all the icons for all the weapons. The following line loads the file so we can get to the icon for our minigun.</span>
+<span class="co2">#EXEC OBJ LOAD FILE=InterfaceContent.utx</span>
+ 
+<span class="kw1">var</span>     <span class="kw5">float</span>           CurrentRoll;
+<span class="kw1">var</span>     <span class="kw5">float</span>           RollSpeed;
+<span class="co1">//var     float           FireTime;</span>
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw9">xEmitter</span>          ShellCaseEmitter;
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">vector</span>            AttachLoc;
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">rotator</span>           AttachRot;
+<span class="kw1">var</span>   <span class="kw5">int</span>               CurrentMode;
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">float</span>             GearRatio;
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">float</span>             GearOffset;
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">float</span>             Blend;
+<span class="co1">//These are the variables used in the code</span>
+ 
+<span class="kw1">simulated</span> <span class="kw1">function</span> <span class="kw4">PostBeginPlay</span><span class="br0">(</span><span class="br0">)</span>  <span class="co1">//Says to start code after play begins</span>
+<span class="br0">{</span>
+    <span class="kw6">Super</span>.<span class="kw4">PostBeginPlay</span><span class="br0">(</span><span class="br0">)</span>;
+ 
+    <span class="kw2">if</span> <span class="br0">(</span> <span class="kw7">Level</span>.<span class="me0">NetMode</span> <span class="sy0">==</span> NM_DedicatedServer <span class="br0">)</span>
+        <span class="kw2">return</span>;
+ 
+    ShellCaseEmitter <span class="sy0">=</span> <span class="kw4">spawn</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'ShellSpewer'</span><span class="br0">)</span>;
+	<span class="kw2">if</span> <span class="br0">(</span> ShellCaseEmitter <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+	<span class="br0">{</span>
+		ShellCaseEmitter.<span class="kw4">Trigger</span><span class="br0">(</span><span class="kw6">Self</span>, <span class="kw7">Instigator</span><span class="br0">)</span>;
+		<span class="kw4">AttachToBone</span><span class="br0">(</span>ShellCaseEmitter, <span class="st0">'shell'</span><span class="br0">)</span>;
+	<span class="br0">}</span> <span class="co1">//This says if the ShellCaseEmitter variable is not zero then the minigun will create an emitter to expel the shells when you fire</span>
+<span class="br0">}</span>
+ 
+<span class="kw1">function</span> DropFrom<span class="br0">(</span><span class="kw5">vector</span> StartLocation<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw1">local</span> <span class="kw9">Ammunition</span> AssaultAmmo; <span class="co1">// This creates a local instance of Assault Rifle ammunition.</span>
+	<span class="kw1">local</span> <span class="kw9">Weapon</span> AssaultRifle;    <span class="co1">// This creates a local instance of an Assault Rifle.</span>
+                                      <span class="co1">// Both of these will be used in the following lines, but will be "destroyed" when the function ends.</span>
+ 
+	<span class="kw6">Super</span>.<span class="me0">DropFrom</span><span class="br0">(</span>StartLocation<span class="br0">)</span>;
+	<span class="kw2">if</span> <span class="br0">(</span> <span class="br0">(</span><span class="kw7">Instigator</span> <span class="sy0">!=</span> <span class="kw5">None</span><span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="br0">(</span><span class="kw7">Instigator</span>.<span class="me0">Health</span> <span class="sy0">&gt;</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">)</span> 
+	<span class="br0">{</span>
+ 
+		AssaultAmmo <span class="sy0">=</span> <span class="kw9">Ammunition</span><span class="br0">(</span><span class="kw7">Instigator</span>.<span class="me0">FindInventoryType</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'MinigunAmmo'</span><span class="br0">)</span><span class="br0">)</span>;
+		<span class="kw2">if</span> <span class="br0">(</span> AssaultAmmo <span class="sy0">==</span> <span class="kw5">None</span> <span class="br0">)</span>
+		<span class="br0">{</span>
+			AssaultAmmo <span class="sy0">=</span> <span class="kw4">spawn</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'MinigunAmmo'</span>,<span class="kw7">Instigator</span><span class="br0">)</span>;
+			AssaultAmmo.<span class="me0">GiveTo</span><span class="br0">(</span> <span class="kw7">Instigator</span>, <span class="kw5">None</span> <span class="br0">)</span>;
+		<span class="br0">}</span> <span class="co1">//This is the code to cause the ammo to be shared with the Assualt Rifle</span>
+		AssaultAmmo.<span class="me0">AmmoAmount</span> <span class="sy0">=</span> <span class="nu0">0</span>;
+		AssaultRifle <span class="sy0">=</span> <span class="kw9">Weapon</span><span class="br0">(</span><span class="kw7">Instigator</span>.<span class="me0">FindInventoryType</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'AssaultRifle'</span><span class="br0">)</span><span class="br0">)</span>;
+		<span class="kw2">if</span> <span class="br0">(</span> AssaultRifle <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+			AssaultRifle.<span class="kw9">Ammo</span><span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> <span class="sy0">=</span> AssaultAmmo;
+	<span class="br0">}</span>	
+<span class="br0">}</span>
+ 
+<span class="kw1">simulated</span> <span class="kw1">function</span> OutOfAmmo<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw2">if</span> <span class="br0">(</span> <span class="sy0">!</span><span class="kw7">Instigator</span>.<span class="me0">IsLocallyControlled</span><span class="br0">(</span><span class="br0">)</span> <span class="sy0">||</span> HasAmmo<span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span>
+        <span class="kw2">return</span>;
+ 
+	<span class="kw7">Instigator</span>.<span class="kw9">AmbientSound</span> <span class="sy0">=</span> <span class="kw5">None</span>;
+    DoAutoSwitch<span class="br0">(</span><span class="br0">)</span>;
+<span class="br0">}</span> <span class="co1">//This says if a minigun runs out of ammo the weapon will autoswitch</span>
+ 
+<span class="kw1">simulated</span> <span class="kw1">function</span> <span class="kw4">Destroyed</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw2">if</span> <span class="br0">(</span>ShellCaseEmitter <span class="sy0">!=</span> <span class="kw5">None</span><span class="br0">)</span>
+    <span class="br0">{</span>
+        ShellCaseEmitter.<span class="kw4">Destroy</span><span class="br0">(</span><span class="br0">)</span>;
+        ShellCaseEmitter <span class="sy0">=</span> <span class="kw5">None</span>;
+    <span class="br0">}</span>
+ 
+    <span class="kw6">Super</span>.<span class="kw4">Destroyed</span><span class="br0">(</span><span class="br0">)</span>;
+<span class="br0">}</span>
+ 
+BotFire<span class="br0">(</span><span class="br0">)</span> <span class="co1">//Initiates this section of code when a bot fires.</span>
+<span class="kw1">function</span> <span class="kw5">bool</span> BotFire<span class="br0">(</span><span class="kw5">bool</span> bFinished, <span class="kw1">optional</span> <span class="kw5">name</span> FiringMode<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">local</span> <span class="kw5">int</span> newmode;
+    <span class="kw1">local</span> <span class="kw9">Controller</span> C;
+ 
+    C <span class="sy0">=</span> <span class="kw7">Instigator</span>.<span class="kw9">Controller</span>;
+	newMode <span class="sy0">=</span> BestMode<span class="br0">(</span><span class="br0">)</span>;
+ 
+	<span class="kw2">if</span> <span class="br0">(</span> newMode <span class="sy0">==</span> <span class="nu0">0</span> <span class="br0">)</span>
+	<span class="br0">{</span>
+		C.<span class="me0">bFire</span> <span class="sy0">=</span> <span class="nu0">1</span>;
+		C.<span class="me0">bAltFire</span> <span class="sy0">=</span> <span class="nu0">0</span>;
+	<span class="br0">}</span>
+	<span class="kw2">else</span>
+	<span class="br0">{</span>
+		C.<span class="me0">bFire</span> <span class="sy0">=</span> <span class="nu0">0</span>;
+		C.<span class="me0">bAltFire</span> <span class="sy0">=</span> <span class="nu0">1</span>;
+	<span class="br0">}</span>
+ 
+	<span class="kw2">if</span> <span class="br0">(</span> bFinished <span class="br0">)</span>
+		<span class="kw2">return</span> <span class="kw6">true</span>;
+ 
+    <span class="kw2">if</span> <span class="br0">(</span> FireMode<span class="br0">[</span>BotMode<span class="br0">]</span>.<span class="me0">bIsFiring</span> <span class="sy0">&amp;&amp;</span> <span class="br0">(</span>NewMode <span class="sy0">!=</span> BotMode<span class="br0">)</span> <span class="br0">)</span>
+		StopFire<span class="br0">(</span>BotMode<span class="br0">)</span>;
+ 
+    <span class="kw2">if</span> <span class="br0">(</span> <span class="sy0">!</span>ReadyToFire<span class="br0">(</span>newMode<span class="br0">)</span> <span class="sy0">||</span> ClientState <span class="sy0">!=</span> WS_ReadyToFire <span class="br0">)</span>
+		<span class="kw2">return</span> <span class="kw6">false</span>;
+ 
+    BotMode <span class="sy0">=</span> NewMode;
+    StartFire<span class="br0">(</span>NewMode<span class="br0">)</span>;
+    <span class="kw2">return</span> <span class="kw6">true</span>;
+<span class="br0">}</span> <span class="co1">//Allows the bots to change firing mode when using the minigun</span>
+ 
+<span class="co1">//This is the AI Interface</span>
+<span class="kw1">function</span> <span class="kw5">float</span> GetAIRating<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw2">return</span> AIRating <span class="sy0">*</span> <span class="kw3">FMin</span><span class="br0">(</span><span class="kw9">Pawn</span><span class="br0">(</span><span class="kw7">Owner</span><span class="br0">)</span>.<span class="me0">DamageScaling</span>, <span class="nu0">1.5</span><span class="br0">)</span>;
+<span class="br0">}</span>
+ 
+BestMode<span class="br0">(</span><span class="br0">)</span>
+<span class="kw1">function</span> <span class="kw5">byte</span> BestMode<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw1">local</span> <span class="kw5">float</span> EnemyDist;
+	<span class="kw1">local</span> <span class="kw9">bot</span> B;
+ 
+	B <span class="sy0">=</span> <span class="kw9">Bot</span><span class="br0">(</span><span class="kw7">Instigator</span>.<span class="kw9">Controller</span><span class="br0">)</span>;
+	<span class="kw2">if</span> <span class="br0">(</span> <span class="br0">(</span>B <span class="sy0">==</span> <span class="kw5">None</span><span class="br0">)</span> <span class="sy0">||</span> <span class="br0">(</span>B.<span class="me0">Enemy</span> <span class="sy0">==</span> <span class="kw5">None</span><span class="br0">)</span> <span class="br0">)</span>
+		<span class="kw2">return</span> <span class="nu0">0</span>;
+ 
+	<span class="kw2">if</span> <span class="br0">(</span> FireMode<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span>.<span class="me0">bIsFiring</span> <span class="br0">)</span>
+		<span class="kw2">return</span> <span class="nu0">0</span>;
+	<span class="kw2">else</span> <span class="kw2">if</span> <span class="br0">(</span> FireMode<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span>.<span class="me0">bIsFiring</span> <span class="br0">)</span>
+		<span class="kw2">return</span> <span class="nu0">1</span>;
+	EnemyDist <span class="sy0">=</span> <span class="kw3">VSize</span><span class="br0">(</span>B.<span class="me0">Enemy</span>.<span class="kw7">Location</span> <span class="sy0">-</span> <span class="kw7">Instigator</span>.<span class="kw7">Location</span><span class="br0">)</span>;
+	<span class="kw2">if</span> <span class="br0">(</span> EnemyDist <span class="sy0">&lt;</span> <span class="nu0">2000</span> <span class="br0">)</span>
+		<span class="kw2">return</span> <span class="nu0">0</span>;
+	<span class="kw2">return</span> <span class="nu0">1</span>;
+<span class="br0">}</span> <span class="co1">//This section is used to choose the best firing mode for the bots</span>
+ 
+<span class="kw1">simulated</span> <span class="kw1">function</span> SpawnShells<span class="br0">(</span><span class="kw5">float</span> amountPerSec<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw2">if</span><span class="br0">(</span>ShellCaseEmitter <span class="sy0">==</span> <span class="kw5">None</span> <span class="sy0">||</span> <span class="sy0">!</span>FirstPersonView<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+        <span class="kw2">return</span>;
+	<span class="kw2">if</span> <span class="br0">(</span> <span class="kw9">Bot</span><span class="br0">(</span><span class="kw7">Instigator</span>.<span class="kw9">Controller</span><span class="br0">)</span> <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+	<span class="br0">{</span>
+		ShellCaseEmitter.<span class="kw4">Destroy</span><span class="br0">(</span><span class="br0">)</span>;
+		<span class="kw2">return</span>;
+	<span class="br0">}</span>
+ 
+	ShellCaseEmitter.<span class="me0">mRegenRange</span><span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> <span class="sy0">=</span> amountPerSec;
+	ShellCaseEmitter.<span class="me0">mRegenRange</span><span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span> <span class="sy0">=</span> amountPerSec;
+    ShellCaseEmitter.<span class="kw4">Trigger</span><span class="br0">(</span><span class="kw6">self</span>, <span class="kw7">Instigator</span><span class="br0">)</span>;
+<span class="br0">}</span> <span class="co1">//This is the code for the amount of shells spawned per sec</span>
+ 
+<span class="kw1">simulated</span> <span class="kw1">function</span> <span class="kw5">bool</span> FirstPersonView<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw2">return</span> <span class="br0">(</span><span class="kw7">Instigator</span>.<span class="me0">IsLocallyControlled</span><span class="br0">(</span><span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="br0">(</span><span class="kw9">PlayerController</span><span class="br0">(</span><span class="kw7">Instigator</span>.<span class="kw9">Controller</span><span class="br0">)</span> <span class="sy0">!=</span> <span class="kw5">None</span><span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="sy0">!</span><span class="kw9">PlayerController</span><span class="br0">(</span><span class="kw7">Instigator</span>.<span class="kw9">Controller</span><span class="br0">)</span>.<span class="me0">bBehindView</span><span class="br0">)</span>;
+<span class="br0">}</span>
+ 
+<span class="co1">//This next section prevents the wrong animations from playing</span>
+<span class="kw1">simulated</span> <span class="kw1">function</span> <span class="kw4">AnimEnd</span><span class="br0">(</span><span class="kw5">int</span> channel<span class="br0">)</span>
+<span class="br0">{</span>
+<span class="br0">}</span>
+ 
+<span class="co1">// This is client side only: It updates the first person barrel rotation</span>
+<span class="kw1">simulated</span> <span class="kw1">function</span> UpdateRoll<span class="br0">(</span><span class="kw5">float</span> dt, <span class="kw5">float</span> speed, <span class="kw5">int</span> mode<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">local</span> <span class="kw5">rotator</span> r;
+ 
+    <span class="kw2">if</span> <span class="br0">(</span><span class="kw7">Level</span>.<span class="me0">NetMode</span> <span class="sy0">==</span> NM_DedicatedServer<span class="br0">)</span>
+        <span class="kw2">return</span>;
+ 
+    <span class="kw2">if</span> <span class="br0">(</span>mode <span class="sy0">==</span> CurrentMode<span class="br0">)</span> <span class="co1">// to limit to one mode</span>
+    <span class="br0">{</span>
+       <span class="co1">// log(self$" updateroll (mode="$mode$") speed="$speed);</span>
+ 
+        RollSpeed <span class="sy0">=</span> speed;
+        CurrentRoll <span class="sy0">+=</span> dt<span class="sy0">*</span>RollSpeed;
+        CurrentRoll <span class="sy0">=</span> CurrentRoll <span class="sy0">%</span> <span class="nu0">65536</span>.<span class="me0">f</span>;
+        r.<span class="me0">Roll</span> <span class="sy0">=</span> <span class="kw5">int</span><span class="br0">(</span>CurrentRoll<span class="br0">)</span>;
+        SetBoneRotation<span class="br0">(</span><span class="st0">'Bone Barrels'</span>, r, <span class="nu0">0</span>, Blend<span class="br0">)</span>;
+ 
+        r.<span class="me0">Roll</span> <span class="sy0">=</span> GearOffset <span class="sy0">+</span> r.<span class="me0">Roll</span><span class="sy0">*</span>GearRatio;
+        SetBoneRotation<span class="br0">(</span><span class="st0">'Bone gear'</span>, r, <span class="nu0">0</span>, Blend<span class="br0">)</span>;
+    <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw1">simulated</span> <span class="kw1">function</span> <span class="kw5">bool</span> StartFire<span class="br0">(</span><span class="kw5">int</span> mode<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">local</span> <span class="kw5">bool</span> bStart;
+ 
+	<span class="kw2">if</span> <span class="br0">(</span> <span class="sy0">!</span>MinigunFire<span class="br0">(</span>FireMode<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span>.<span class="me0">IsIdle</span><span class="br0">(</span><span class="br0">)</span> <span class="sy0">||</span> <span class="sy0">!</span>MinigunFire<span class="br0">(</span>FireMode<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="br0">)</span>.<span class="me0">IsIdle</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span>
+		<span class="kw2">return</span> <span class="kw6">false</span>;
+ 
+    bStart <span class="sy0">=</span> <span class="kw6">Super</span>.<span class="me0">StartFire</span><span class="br0">(</span>mode<span class="br0">)</span>;
+    <span class="kw2">if</span> <span class="br0">(</span>bStart<span class="br0">)</span>
+        FireMode<span class="br0">[</span>mode<span class="br0">]</span>.<span class="me0">StartFiring</span><span class="br0">(</span><span class="br0">)</span>;
+ 
+    <span class="kw2">return</span> bStart;
+<span class="br0">}</span> <span class="co1">// If this function returns True, the weapon will start firing, if it returns False, it won't.</span>
+ 
+<span class="co1">// This section allows fire modes to return to idle on weapon switch </span>
+<span class="br0">(</span><span class="kw1">simulated</span> <span class="kw1">function</span> DetachFromPawn<span class="br0">(</span><span class="kw9">Pawn</span> P<span class="br0">)</span>
+<span class="br0">{</span>
+    ReturnToIdle<span class="br0">(</span><span class="br0">)</span>;
+ 
+    <span class="kw6">Super</span>.<span class="me0">DetachFromPawn</span><span class="br0">(</span>P<span class="br0">)</span>;
+<span class="br0">}</span>
+ 
+<span class="kw1">simulated</span> <span class="kw1">function</span> <span class="kw5">bool</span> PutDown<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    ReturnToIdle<span class="br0">(</span><span class="br0">)</span>;
+ 
+    <span class="kw2">return</span> <span class="kw6">Super</span>.<span class="me0">PutDown</span><span class="br0">(</span><span class="br0">)</span>;
+<span class="br0">}</span>
+ 
+<span class="kw1">simulated</span> <span class="kw1">function</span> ReturnToIdle<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">local</span> <span class="kw5">int</span> mode;
+ 
+    <span class="kw2">for</span> <span class="br0">(</span>mode<span class="sy0">=</span><span class="nu0">0</span>; mode<span class="sy0">&lt;</span>NUM_FIRE_MODES; mode<span class="sy0">++</span><span class="br0">)</span>
+    <span class="br0">{</span>
+        <span class="kw2">if</span> <span class="br0">(</span>FireMode<span class="br0">[</span>mode<span class="br0">]</span> <span class="sy0">!=</span> <span class="kw5">None</span><span class="br0">)</span>
+        <span class="br0">{</span>
+            FireMode<span class="br0">[</span>mode<span class="br0">]</span>.<span class="kw3">GotoState</span><span class="br0">(</span><span class="st0">'Idle'</span><span class="br0">)</span>;
+        <span class="br0">}</span>
+    <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw1">defaultproperties</span> <span class="co1">// These are the default properties of each variable. Some were created at the top of this file, others are inherited from the weapon's parent class.</span>
+<span class="br0">{</span>
+     AttachLoc<span class="sy0">=</span><span class="br0">(</span>X<span class="sy0">=-</span><span class="nu0">77.000000</span>,Y<span class="sy0">=</span><span class="nu0">6.000000</span>,Z<span class="sy0">=</span><span class="nu0">4.000000</span><span class="br0">)</span> <span class="co1">// Where the model attachs</span>
+     AttachRot<span class="sy0">=</span><span class="br0">(</span>Pitch<span class="sy0">=</span><span class="nu0">22000</span>,Yaw<span class="sy0">=-</span><span class="nu0">16384</span><span class="br0">)</span> <span class="co1">// The rotation it is at</span>
+     GearRatio<span class="sy0">=-</span><span class="nu0">2.370000</span>
+     Blend<span class="sy0">=</span><span class="nu0">1.000000</span>
+     FireModeClass<span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="sy0">=</span><span class="kw1">Class</span><span class="st0">'XWeapons.MinigunFire'</span>    <span class="co1">// Firing mode 1 (Primary)</span>
+     FireModeClass<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">=</span><span class="kw1">Class</span><span class="st0">'XWeapons.MinigunAltFire'</span> <span class="co1">// Firing mode 2 (Alt/Secondary)</span>
+     PutDownAnim<span class="sy0">=</span><span class="st0">"PutDown"</span>
+     SelectSound<span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'WeaponSounds.Minigun.SwitchToMiniGun'</span> <span class="co1">// The Sound that is played when you switch to this weapon.</span>
+     SelectForce<span class="sy0">=</span><span class="st0">"SwitchToMiniGun"</span>
+     AIRating<span class="sy0">=</span><span class="nu0">0.710000</span>
+     CurrentRating<span class="sy0">=</span><span class="nu0">0.710000</span>
+     EffectOffset<span class="sy0">=</span><span class="br0">(</span>X<span class="sy0">=</span><span class="nu0">100.000000</span>,Y<span class="sy0">=</span><span class="nu0">18.000000</span>,Z<span class="sy0">=-</span><span class="nu0">16.000000</span><span class="br0">)</span>
+     DisplayFOV<span class="sy0">=</span><span class="nu0">60.000000</span>
+     Priority<span class="sy0">=</span><span class="nu0">7</span>
+     DefaultPriority<span class="sy0">=</span><span class="nu0">7</span>
+     HudColor<span class="sy0">=</span><span class="br0">(</span>B<span class="sy0">=</span><span class="nu0">255</span><span class="br0">)</span>
+     SmallViewOffset<span class="sy0">=</span><span class="br0">(</span>X<span class="sy0">=</span><span class="nu0">8.000000</span>,Y<span class="sy0">=</span><span class="nu0">1.000000</span>,Z<span class="sy0">=-</span><span class="nu0">2.000000</span><span class="br0">)</span>
+     CenteredOffsetY<span class="sy0">=-</span><span class="nu0">6.000000</span>
+     CenteredRoll<span class="sy0">=</span><span class="nu0">0</span>
+     CenteredYaw<span class="sy0">=-</span><span class="nu0">500</span>
+     InventoryGroup<span class="sy0">=</span><span class="nu0">6</span> <span class="co1">// The inventory group used (i.e. the number you press to reach the gun)</span>
+     PickupClass<span class="sy0">=</span><span class="kw1">Class</span><span class="st0">'XWeapons.MinigunPickup'</span> <span class="co1">// The MinigunPickup class defines the weapon the way it sits on the ground.</span>
+     PlayerViewOffset<span class="sy0">=</span><span class="br0">(</span>X<span class="sy0">=</span><span class="nu0">2.000000</span>,Y<span class="sy0">=-</span><span class="nu0">1.000000</span><span class="br0">)</span>
+     PlayerViewPivot<span class="sy0">=</span><span class="br0">(</span>Yaw<span class="sy0">=</span><span class="nu0">500</span><span class="br0">)</span>
+     BobDamping<span class="sy0">=</span><span class="nu0">2.250000</span>
+     AttachmentClass<span class="sy0">=</span><span class="kw1">Class</span><span class="st0">'XWeapons.MinigunAttachment'</span>
+     IconMaterial<span class="sy0">=</span><span class="kw5">Texture</span><span class="st0">'InterfaceContent.HUD.SkinA'</span>
+     IconCoords<span class="sy0">=</span><span class="br0">(</span>X1<span class="sy0">=</span><span class="nu0">200</span>,Y1<span class="sy0">=</span><span class="nu0">372</span>,X2<span class="sy0">=</span><span class="nu0">321</span>,Y2<span class="sy0">=</span><span class="nu0">462</span><span class="br0">)</span>
+     ItemName<span class="sy0">=</span><span class="st0">"Minigun"</span> <span class="co1">// The name!</span>
+ 
+     LightType<span class="sy0">=</span>LT_Pulse             <span class="co1">// Any of the excellent lighting tutorials</span>
+     LightEffect<span class="sy0">=</span>LE_NonIncidence    <span class="co1">// at the Wiki and around the web can </span>
+     LightBrightness<span class="sy0">=</span><span class="nu0">150.000000</span>     <span class="co1">// detail what these light properties</span>
+     LightRadius<span class="sy0">=</span><span class="nu0">4.000000</span>           <span class="co1">// are. They are the same properties that </span>
+     LightHue<span class="sy0">=</span><span class="nu0">30</span>                    <span class="co1">// you would set on a light on your map.</span>
+     LightSaturation<span class="sy0">=</span><span class="nu0">150</span>            <span class="co1">// If you look closely on a dark map you'll </span>
+     LightPeriod<span class="sy0">=</span><span class="nu0">3</span>                  <span class="co1">// notice that all the weapons actually give off a pulse light.</span>
+ 
+     <span class="kw5">Mesh</span><span class="sy0">=</span><span class="kw5">SkeletalMesh</span><span class="st0">'Weapons.Minigun_1st'</span> <span class="co1">// The skeletal mesh of the model</span>
+     <span class="kw7">DrawScale</span><span class="sy0">=</span><span class="nu0">0.400000</span>
+     UV2Texture<span class="sy0">=</span><span class="kw5">Shader</span><span class="st0">'XGameShaders.WeaponShaders.WeaponEnvShader'</span>
+     <span class="kw7">SoundRadius</span><span class="sy0">=</span><span class="nu0">400.000000</span> <span class="co1">// The radius of the minigun sounds</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.071 seconds
+Real time usage: 0.073 seconds
+Preprocessor visited node count: 13/1000000
+Preprocessor generated node count: 77/1000000
+Post‐expand include size: 414/2097152 bytes
+Template argument size: 148/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.540      1 - -total
+100.00%    2.540      1 - Template:Classbox
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:2125-0!*!0!*!*!*!* and timestamp 20161216194318 and revision id 5174
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Minigun/Script?oldid=5174">https://wiki.beyondunreal.com/Legacy:Minigun/Script?oldid=5174</a>"</div>
+					<div id='catlinks' class='catlinks catlinks-allhidden'></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="/Legacy:Minigun/Script">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="/edit/Legacy_talk:Minigun/Script?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="/edit/Legacy:Minigun/Script" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="/history/Legacy:Minigun/Script" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="/Special:UserLogin?returnto=Legacy%3AMinigun%2FScript&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="/Special:UserLogin?returnto=Legacy%3AMinigun%2FScript" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="/" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="/" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="/Unreal_Wiki:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="/Special:WhatLinksHere/Legacy:Minigun/Script" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="/Special:RecentChangesLinked/Legacy:Minigun/Script" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="/Legacy:Minigun/Script?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="/Legacy:Minigun/Script?oldid=5174" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="/info/Legacy:Minigun/Script" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 05:53, 9 October 2004.</li>
+									<li id="copyright">Licensed as <a href="/Unreal_Wiki:Copyrights" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="/Unreal_Wiki:Privacy_policy" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="/Unreal_Wiki:About" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="/Unreal_Wiki:General_disclaimer" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":106});
+}</script></body></html>

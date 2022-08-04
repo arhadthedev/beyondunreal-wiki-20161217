@@ -1,0 +1,1514 @@
+@charset "UTF-8";
+
+/* --- attached_files.css --- */
+
+/* the attached files block is intended to appear like a bb code block */
+
+.attachedFiles
+{
+	margin: 1em 170px 1em 0;
+border: 1px solid rgb(34, 34, 34);
+border-radius: 0px;
+overflow: auto;
+
+}
+
+.messageList.withSidebar .attachedFiles
+{
+	margin-right: 0px;
+}
+
+	.attachedFiles .attachedFilesHeader
+	{
+		font-size: 11px;
+font-family: 'Open Sans', sans-serif;
+color: rgb(235, 235, 235);
+background-color: rgb(48, 48, 48);
+padding: 7px 8px;
+border-bottom: 1px solid rgb(64, 64, 64);
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;
+
+		
+		padding: 4px 8px;
+	}
+
+	.attachedFiles .attachmentList
+	{
+		/* roughly the same as "bbCodeCode" with the monospacing stuff removed */
+		overflow: hidden; zoom: 1;		
+		padding: 10px 10px 0;
+		background-color: rgb(60, 60, 60);
+		border-radius: 5px;
+	}
+
+		.attachment
+		{
+			float: left;
+			width: 50%;
+			max-width: 300px;
+		}
+		
+		.attachment .boxModelFixer
+		{
+			overflow: hidden; zoom: 1;
+			margin-bottom: 10px;
+			margin-right: 10px;
+			padding: 5px;				
+			background-color: rgb(34, 34, 34);
+			border: 1px solid rgb(48, 48, 48);
+			border-radius: 5px;	
+		}
+		
+			
+		
+			.attachment .thumbnail
+			{
+				float: left;						
+				border-right: 1px solid rgb(48, 48, 48);
+				padding-right: 5px;
+				width: 50px;
+				height: 50px;
+				overflow: hidden;
+			}
+			
+				.attachment .thumbnail .SquareThumb
+				{
+					width: 50px;
+					height: 50px;
+					border-radius: 3px;
+				}
+				
+				.attachment .thumbnail .genericAttachment
+				{
+					background-color: transparent;
+display: block;
+width: 36px;
+height: 36px;
+
+					
+					margin: 7px 7px !important;
+				}
+			
+		.attachment .attachmentInfo
+		{
+			white-space: nowrap;
+			overflow: hidden; zoom: 1;
+			font-size: 11px;
+			padding-left: 5px;
+		}
+		
+			.attachment .attachmentInfo .filename
+			{
+				text-overflow: ellipsis;
+				overflow: hidden;
+				max-width: 100%;
+			}
+
+
+@media (max-width:800px)
+{
+	.Responsive .attachedFiles
+	{
+		margin-right: 0;
+	}
+}
+
+@media (max-width:610px)
+{
+	html.Responsive .attachment
+	{
+		width: 100%;
+	}
+}
+
+
+/* --- bb_code.css --- */
+
+/* .bbCodeX classes are designed to exist inside .baseHtml. ie: they have no CSS reset applied */
+
+.bbCodeBlock
+{
+	margin: 1em 170px 1em 0;
+border: 1px solid rgb(34, 34, 34);
+border-radius: 0px;
+overflow: auto;
+
+}
+
+	.bbCodeBlock .bbCodeBlock,
+	.hasJs .bbCodeBlock .bbCodeSpoilerText,
+	.messageList.withSidebar .bbCodeBlock
+	{
+		margin-right: 0;
+	}
+
+	/* mini CSS reset */
+	.bbCodeBlock pre,
+	.bbCodeBlock blockquote
+	{
+		margin: 0;
+	}
+	
+	.bbCodeBlock img
+	{
+		border: none;
+	}
+
+.bbCodeBlock .type
+{
+	font-size: 11px;
+font-family: 'Open Sans', sans-serif;
+color: rgb(235, 235, 235);
+background-color: rgb(48, 48, 48);
+padding: 7px 8px;
+border-bottom: 1px solid rgb(64, 64, 64);
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;
+
+}
+
+.bbCodeBlock pre,
+.bbCodeBlock .code
+{
+	font-size: 10pt;
+font-family: Consolas, 'Courier New', Courier, monospace;
+background-color: rgb(51, 50, 50);
+padding: 10px;
+border-radius: 0px;
+word-wrap: normal;
+overflow: auto;
+line-height: 1.24;
+min-height: 30px;
+max-height: 500px;
+_width: 600px;
+direction: ltr;
+
+}
+
+.bbCodeBlock .code
+{
+	white-space: nowrap;
+}
+
+.bbCodeQuote
+{
+	overflow: auto;
+
+}
+
+.bbCodeQuote .attribution
+{
+	
+}
+
+.bbCodeQuote .quoteContainer
+{
+	overflow: hidden;
+	position: relative;
+	
+	font-style: italic;
+font-size: 9pt;
+background-color: rgb(51, 50, 50);
+padding: 10px;
+border-radius: 0px;
+
+}
+
+
+	.bbCodeQuote .quoteContainer .quote
+	{
+		max-height: 150px;
+		overflow: hidden;
+		padding-bottom: 1px;
+	}
+	
+		.NoJs .bbCodeQuote .quoteContainer .quote
+		{
+			max-height: none;
+		}
+
+	.bbCodeQuote .quoteContainer .quoteExpand
+	{		
+		display: none;
+		box-sizing: border-box;
+		position: absolute;
+		height: 80px;
+		top: 90px;
+		left: 0;
+		right: 0;
+		
+		font-size: 11px;
+		line-height: 1;
+		text-align: center;
+		color: rgb(156, 156, 156);
+		cursor: pointer;
+		padding-top: 65px;
+		background: -webkit-linear-gradient(top, rgba(51, 50, 50, 0) 0%, rgb(51, 50, 50) 80%);
+		background: -moz-linear-gradient(top, rgba(51, 50, 50, 0) 0%, rgb(51, 50, 50) 80%);
+		background: -o-linear-gradient(top, rgba(51, 50, 50, 0) 0%, rgb(51, 50, 50) 80%);
+		background: linear-gradient(to bottom, rgba(51, 50, 50, 0) 0%, rgb(51, 50, 50) 80%);
+		
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+	
+	.bbCodeQuote .quoteContainer .quoteExpand.quoteCut
+	{
+		display: block;
+	}
+	
+	.bbCodeQuote .quoteContainer.expanded .quote
+	{
+		max-height: none;
+	}
+	
+	.bbCodeQuote .quoteContainer.expanded .quoteExpand
+	{
+		display: none;
+	}
+
+
+	.bbCodeQuote img
+	{
+		max-height: 150px;
+	}
+	
+	.bbCodeQuote iframe,
+	.bbCodeQuote .fb_iframe_widget,
+	.bbCodeQuote object,
+	.bbCodeQuote embed
+	{
+		max-width: 200px;
+		max-height: 150px;
+	}
+	
+	.bbCodeQuote iframe:-webkit-full-screen
+	{
+		max-width: none;
+		max-height: none;
+	}
+	
+	.bbCodeQuote iframe:-moz-full-screen
+	{
+		max-width: none;
+		max-height: none;
+	}
+	
+	.bbCodeQuote iframe:-ms-fullscreen
+	{
+		max-width: none;
+		max-height: none;
+	}
+	
+	.bbCodeQuote iframe:fullscreen
+	{
+		max-width: none;
+		max-height: none;
+	}
+	
+.bbCodeSpoilerButton
+{
+	margin: 5px 0;
+	max-width: 99%;
+}
+
+	.bbCodeSpoilerButton > span
+	{
+		display: inline-block;
+		max-width: 100%;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+	
+.hasJs .bbCodeSpoilerText
+{
+	display: none;
+	background-color: rgb(60, 60, 60);
+padding: 5px;
+margin-top: 5px;
+margin-right: 170px;
+margin-bottom: 5px;
+border: 1px solid rgb(48, 48, 48);
+border-radius: 0px;
+overflow: auto;
+
+}
+
+	.hasJs .bbCodeSpoilerText .bbCodeSpoilerText,
+	.hasJs .bbCodeSpoilerText .bbCodeBlock,
+	.hasJs .messageList.withSidebar .bbCodeSpoilerText
+	{
+		margin-right: 0;
+	}
+	
+.NoJs .bbCodeSpoilerContainer
+{
+	background-color: rgb(235, 235, 235); /* fallback for browsers without currentColor */
+	background-color: currentColor;
+}
+
+	.NoJs .bbCodeSpoilerContainer > .bbCodeSpoilerText
+	{
+		visibility: hidden;
+	}
+
+	.NoJs .bbCodeSpoilerContainer:hover
+	{
+		background-color: transparent;
+	}
+	
+		.NoJs .bbCodeSpoilerContainer:hover > .bbCodeSpoilerText
+		{
+			visibility: visible;
+		}
+
+
+@media (max-width:800px)
+{
+	.Responsive .bbCodeBlock,
+	.Responsive.hasJs .bbCodeSpoilerText
+	{
+		margin-right: 0;
+	}
+}
+
+
+/* --- fa_socialicons.css --- */
+
+.socialicons
+{
+	float: right;
+	margin-top: 10px;
+}
+.socialicons li
+{
+	display: inline-block;
+}
+.socialicons li a
+{
+	padding: 10px;
+	font-size: 24px;
+	color: rgb(235, 235, 235);
+}
+.socialicons li a:hover
+{
+	color: rgb(203, 119, 0);
+}
+
+/* --- login_bar.css --- */
+
+/** Login bar basics **/
+
+#loginBar
+{
+	color: rgb(235, 235, 235);
+background-color: rgb(45, 45, 45);
+border-bottom: 1px solid rgb(88, 88, 88);
+position: relative;
+z-index: 1000;
+
+}
+
+	#loginBar .ctrlWrapper
+	{
+		margin: 0 10px;
+	}
+
+	#loginBar .pageContent
+	{
+		padding-top: 5px;
+		position: relative;
+		_height: 0px;
+	}
+
+	#loginBar a
+	{
+		color: rgb(112, 112, 112);
+
+	}
+
+	#loginBar form
+	{
+		padding: 5px 0;
+margin: 0 auto;
+display: none;
+line-height: 20px;
+position: relative;
+
+	}
+	
+		#loginBar .xenForm .ctrlUnit,		
+		#loginBar .xenForm .ctrlUnit > dt label
+		{
+			margin: 0;
+			border: none;
+		}
+	
+		#loginBar .xenForm .ctrlUnit > dd
+		{
+			position: relative;
+		}
+	
+	#loginBar .lostPassword,
+	#loginBar .lostPasswordLogin
+	{
+		font-size: 11px;
+	}
+	
+	#loginBar .rememberPassword
+	{
+		font-size: 11px;
+	}
+
+	#loginBar .textCtrl
+	{
+		color: rgb(155, 155, 155);
+background-color: rgb(50, 50, 50);
+border-color: rgb(88, 88, 88);
+
+	}
+	
+	#loginBar .textCtrl[type=text]
+	{
+		font-weight: bold;
+font-size: 18px;
+
+	}
+
+	#loginBar .textCtrl:-webkit-autofill /* http://code.google.com/p/chromium/issues/detail?id=1334#c35 */
+	{
+		background: rgb(50, 50, 50) !important;
+		color: rgb(155, 155, 155);
+	}
+
+	#loginBar .textCtrl:focus
+	{
+		background: black none;
+
+	}
+	
+	#loginBar input.textCtrl.disabled
+	{
+		color: rgb(70, 70, 70);
+background-color: rgb(45, 45, 45);
+border-style: dashed;
+
+	}
+	
+	#loginBar .button
+	{
+		min-width: 85px;
+		*width: 85px;
+	}
+	
+		#loginBar .button.primary
+		{
+			font-weight: bold;
+		}
+		
+/** changes when eAuth is present **/
+
+#loginBar form.eAuth
+{
+	-x-max-width: 700px; /* normal width + 170px */
+}
+
+	#loginBar form.eAuth .ctrlWrapper
+	{
+		border-right: 1px dotted rgb(70, 70, 70);
+		margin-right: 200px;
+		box-sizing: border-box;
+	}
+
+	#loginBar form.eAuth #eAuthUnit
+	{
+		position: absolute;
+		top: 0px;
+		right: 10px;
+	}
+
+		#eAuthUnit li
+		{
+			margin-top: 10px;
+			line-height: 0;
+		}
+	
+/** handle **/
+
+#loginBar #loginBarHandle
+{
+	font-size: 11px;
+color: rgb(235, 235, 235);
+background-color: rgb(45, 45, 45);
+padding: 0 10px;
+margin-right: 20px;
+border-bottom-right-radius: 0px;
+border-bottom-left-radius: 0px;
+position: absolute;
+right: 180px;
+bottom: -20px;
+text-align: center;
+z-index: 1;
+line-height: 20px;
+box-shadow: 0px 2px 5px rgb(45, 45, 45);
+
+}
+
+
+@media (max-width:800px)
+{
+	.Responsive #loginBar form.eAuth .ctrlWrapper
+	{
+		border-right: none;
+		margin-right: 10px;
+	}
+
+	.Responsive #loginBar form.eAuth #eAuthUnit
+	{
+		position: static;
+		width: 180px;
+		margin: 0 auto 10px;
+	}
+}
+
+
+/* --- message.css --- */
+
+
+
+.messageList
+{
+	
+}
+
+.messageList .message
+{
+	background-color: rgb(60, 60, 60);
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid rgb(70, 70, 70);
+
+}
+
+/* clearfix */ .messageList .message { zoom: 1; } .messageList .message:after { content: '.'; display: block; height: 0; clear: both; visibility: hidden; }
+
+/*** Message block ***/
+
+.message .messageInfo
+{
+	background: url(rgbaf0bb.png?r=0&amp;g=0&amp;b=0&amp;a=0); background: rgba(0, 0, 0, 0); _filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000000,endColorstr=#00000000);
+padding: 0;
+margin-left: 170px;
+border-bottom: 1px none black;
+
+	zoom: 1;
+}
+
+	.message .newIndicator
+	{
+		font-size: 12px;
+color: rgb(255, 255, 255);
+background-color: rgb(203, 119, 0);
+padding: 1px 5px;
+margin: -5px -5px 5px 5px;
+border: 1px solid rgb(203, 119, 0);
+border-radius: 3px;
+border-top-right-radius: 0px;
+display: block;
+float: right;
+position: relative;
+box-shadow: 1px 1px 3px rgba(0,0,0, 0.25);
+
+		
+		margin-right: -25px;
+	}
+	
+		.message .newIndicator span
+		{
+			background-color: rgb(203, 119, 0);
+border-top-right-radius: 3px;
+position: absolute;
+top: -4px;
+right: -1px;
+width: 5px;
+height: 4px;
+
+		}
+
+	.message .messageContent
+	{
+		padding-bottom: 2px;
+min-height: 100px;
+overflow: hidden;
+*zoom: 1;
+
+	}
+	
+	.message .messageTextEndMarker
+	{
+		height: 0;
+		font-size: 0;
+		overflow: hidden;
+	}
+	
+	.message .editDate
+	{
+		text-align: right;
+		margin-top: 5px;
+		font-size: 11px;
+		color: rgb(113, 113, 113);
+	}
+
+	.message .signature
+	{
+		font-size: 12px;
+color: rgb(113, 113, 113);
+padding: 5px 0 0;
+margin-top: 5px;
+border-top: 1px dashed rgb(70, 70, 70);
+
+	}
+
+	.message .messageMeta
+	{
+		font-size: 12px;
+padding: 15px 5px 5px;
+margin: -5px;
+overflow: hidden;
+zoom: 1;
+
+	}
+
+		.message .privateControls
+		{
+			float: left;
+
+		}
+
+		.message .publicControls
+		{
+			float: right;
+
+		}
+		
+			.message .privateControls .item
+			{
+				margin-right: 10px;
+				float: left;
+			}
+
+				.message .privateControls .item:last-child
+				{
+					margin-right: 0;
+				}
+
+			.message .publicControls .item
+			{
+				margin-left: 10px;
+				float: left;
+			}
+	
+				.message .messageMeta .control
+				{
+					
+				}
+				
+					.message .messageMeta .control:focus
+					{
+						
+					}
+				
+					.message .messageMeta .control:hover
+					{
+						
+					}
+				
+					.message .messageMeta .control:active
+					{
+						
+					}
+	/*** multiquote +/- ***/
+			
+	.message .publicControls .MultiQuoteControl
+	{
+		padding-left: 4px;
+		padding-right: 4px;
+		border-radius: 2px;
+		margin-left: 6px;
+		margin-right: -4px;
+	}
+	
+	
+	.message .publicControls .MultiQuoteControl.active
+	{
+		background-color: rgb(48, 48, 48);
+	}
+	
+		.messageNotices li
+	{
+		font-size: 12px;
+background-color: rgb(203, 203, 203);
+padding: 5px;
+margin: 10px 0;
+border: 1px solid rgb(203, 203, 203);
+border-radius: 0px;
+line-height: 16px;
+
+	}
+	
+		.messageNotices .icon
+		{
+			float: right;
+			width: 16px;
+			height: 16px;
+			font-size: 18px;
+		}
+	
+
+	
+	.message .likesSummary
+	{
+		padding: 5px;
+margin-top: 10px;
+border: 1px solid rgb(48, 48, 48);
+border-radius: 0px;
+
+	}
+	
+	.message .messageText > *:first-child
+	{
+		margin-top: 0;
+	}
+
+/* inline moderation changes */
+
+.InlineModChecked .messageUserBlock,
+.InlineModChecked .messageInfo,
+.InlineModChecked .messageNotices,
+.InlineModChecked .bbCodeBlock .type,
+.InlineModChecked .bbCodeBlock blockquote,
+.InlineModChecked .attachedFiles .attachedFilesHeader,
+.InlineModChecked .attachedFiles .attachmentList
+{
+	background-color: rgb(58, 58, 58);
+
+}
+
+.InlineModChecked .messageUserBlock div.avatarHolder,
+.InlineModChecked .messageUserBlock .extraUserInfo
+{
+	background: transparent;
+}
+
+.InlineModChecked .messageUserBlock .arrow span
+{
+	border-left-color: rgb(58, 58, 58);
+}
+
+/* message list */
+
+.messageList .newMessagesNotice
+{
+	margin: 10px auto;
+	padding: 5px 10px;
+	border-radius: 5px;
+	border: 1px solid rgb(70, 70, 70);
+	background-color: rgb(48, 48, 48);
+	font-size: 11px;
+}
+
+/* deleted / ignored message placeholder */
+
+.messageList .message.placeholder
+{
+}
+
+.messageList .placeholder .placeholderContent
+{	
+	overflow: hidden; zoom: 1;
+	color: rgb(88, 88, 88);
+	font-size: 11px;
+}
+
+	.messageList .placeholder a.avatar
+	{
+		float: left;
+		display: block;
+	}
+	
+		.messageList .placeholder a.avatar img
+		{
+			display: block;
+			width: 32px;
+			height: 32px;
+		}
+		
+	.messageList .placeholder .privateControls
+	{
+		margin-top: -5px;
+	}
+	
+
+/* messages remaining link */
+
+.postsRemaining a,
+a.postsRemaining
+{
+	font-size: 11px;
+	color: rgb(113, 113, 113);
+}
+
+
+@media (max-width:800px)
+{
+	.Responsive .message .newIndicator
+	{
+		margin-right: 0;
+		border-top-right-radius: 3px;
+	}
+	
+		.Responsive .message .newIndicator span
+		{
+			display: none;
+		}
+}
+
+@media (max-width:480px)
+{
+	.Responsive .message .messageInfo
+	{
+		margin-left: 0;
+		padding: 0 10px;
+	}
+
+	.Responsive .message .messageContent
+	{
+		min-height: 0;
+	}	
+
+	.Responsive .message .newIndicator
+	{
+		margin-right: -5px;
+		margin-top: -16px;
+	}
+
+	.Responsive .message .postNumber,
+	.Responsive .message .authorEnd
+	{
+		display: none;
+	}
+	
+	.Responsive .message .signature
+	{
+		display: none;
+	}
+	
+	.Responsive .messageList .placeholder a.avatar
+	{
+		margin-right: 10px;
+	}
+}
+
+
+/* --- message_user_info.css --- */
+
+.messageUserInfo
+{
+	float: left;
+width: 154px;
+
+}
+
+	.messageUserBlock
+	{
+		background-color: rgb(34, 34, 34);
+border: 1px solid rgb(70, 70, 70);
+border-radius: 0px;
+
+		
+		position: relative;
+	}
+		
+		.messageUserBlock div.avatarHolder
+		{
+			background-color: rgb(34, 34, 34);
+padding: 10px;
+border-radius: 0px;
+text-align: center;
+
+			
+			position: relative;	
+		}
+		
+			.messageUserBlock div.avatarHolder .avatar
+			{
+				display: block;
+				font-size: 0;
+			}
+			
+			.messageUserBlock div.avatarHolder .onlineMarker
+			{
+				position: absolute;
+				top: 9px;
+				left: 9px;
+				
+				border: 7px solid transparent;
+border-top-color: rgb(127, 185, 0);
+border-left-color: rgb(127, 185, 0);
+border-top-left-radius: 5px;
+border-top-right-radius: 3px;
+border-bottom-left-radius: 3px;
+left: 24px;
+
+			}
+			
+		.messageUserBlock h3.userText
+		{
+			padding: 6px;
+border-top: 1px solid rgb(20, 20, 20);
+border-bottom: 1px solid rgb(20, 20, 20);
+
+		}
+		
+		.messageUserBlock .userBanner
+		{
+			display: block;
+			margin-bottom: 5px;
+			margin-left: -12px;
+			margin-right: -12px;
+		}
+		
+		.messageUserBlock .userBanner:last-child
+		{
+			margin-bottom: 0;
+		}
+	
+		.messageUserBlock a.username
+		{
+			font-weight: bold;
+font-size: 15px;
+color: rgb(203, 119, 0);
+display: block;
+overflow: hidden;
+line-height: 20px;
+text-align: center !important;
+
+			
+		}
+		
+		.messageUserBlock .userTitle
+		{
+			font-size: 12px;
+padding-bottom: 3px;
+display: block;
+text-align: center !important;
+
+		}
+		
+		.messageUserBlock .extraUserInfo
+		{
+			font-size: 12px;
+background-color: rgb(34, 34, 34);
+padding: 4px 6px;
+border-radius: 0px;
+
+		}
+		
+			.messageUserBlock .extraUserInfo dl
+			{
+				margin: 2px 0 0;
+			}
+							
+			.messageUserBlock .extraUserInfo img
+			{
+				max-width: 100%;
+			}
+		
+		.messageUserBlock .arrow
+		{
+			position: absolute;
+			top: 10px;
+			right: -10px;
+			
+			display: block;
+			width: 0px;
+			height: 0px;
+			line-height: 0px;
+			
+			border: 10px solid transparent;
+			border-left-color: rgb(70, 70, 70);
+			-moz-border-left-colors: rgb(70, 70, 70);
+			border-right: none;
+			
+			/* Hide from IE6 */
+			_display: none;
+		}
+		
+			.messageUserBlock .arrow span
+			{
+				position: absolute;
+				top: -10px;
+				left: -11px;
+				
+				display: block;
+				width: 0px;
+				height: 0px;
+				line-height: 0px;
+				
+				border: 10px solid transparent;
+				border-left-color: rgb(34, 34, 34);
+				-moz-border-left-colors: rgb(34, 34, 34);
+				border-right: none;
+			}
+
+
+@media (max-width:480px)
+{
+	.Responsive .messageUserInfo
+	{
+		float: none;
+		width: auto; 
+	}
+
+	.Responsive .messageUserBlock
+	{
+		overflow: hidden;
+		margin-bottom: 5px;
+		position: relative;
+	}
+
+	.Responsive .messageUserBlock div.avatarHolder
+	{
+		float: left;
+		padding: 5px;
+	}
+
+		.Responsive .messageUserBlock div.avatarHolder .avatar img
+		{
+			width: 48px;
+			height: 48px;
+		}
+		
+		.Responsive .messageUserBlock div.avatarHolder .onlineMarker
+		{
+			top: 4px;
+			left: 4px;
+			border-width: 6px;
+		}
+
+	.Responsive .messageUserBlock h3.userText
+	{
+		margin-left: 64px;
+	}
+	
+	.Responsive .messageUserBlock .userBanner
+	{
+		max-width: 150px;
+		margin-left: 0;
+		margin-right: 0;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		position: static;
+		display: inline-block;
+	}
+	
+		.Responsive .messageUserBlock .userBanner span
+		{
+			display: none;
+		}
+
+	.Responsive .messageUserBlock .extraUserInfo
+	{
+		display: none;
+	}
+
+	.Responsive .messageUserBlock .arrow
+	{
+		display: none;
+	}
+}
+
+
+/* --- notices.css --- */
+
+.hasJs .FloatingContainer .Notice
+{
+	display: none;
+}
+
+.FloatingContainer
+{
+	position: fixed;
+	width: 300px;
+	z-index: 9997;
+	top: auto;
+	left: auto;
+	bottom: 0;
+	right: 20px;
+}
+
+.Notices .Notice .blockImage
+{
+	padding: 10px 0 5px 10px;
+}
+
+.Notices .Notice .blockImage,
+.FloatingContainer .floatingImage
+{
+	float: left;
+}
+
+.Notices .Notice .blockImage img,
+.FloatingContainer .floatingImage img
+{
+	max-width: 48px;
+	max-height: 48px;
+}
+
+.Notices .hasImage,
+.FloatingContainer .hasImage
+{
+	margin-left: 64px;
+	min-height: 52px;
+}
+
+.FloatingContainer .floatingItem
+{
+	display: block;
+	padding: 10px;
+	font-size: 11px;
+	position: relative;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 6px;
+	box-shadow: 1px 1px 3px rgba(0,0,0, 0.25);
+}
+
+.FloatingContainer .floatingItem.primary
+{
+	background-color: rgb(45, 45, 45);
+	border-color: rgb(70, 70, 70);
+}
+
+.FloatingContainer .floatingItem.secondary
+{
+	color: rgb(73, 73, 73);
+	background-color: rgb(156, 156, 156);
+	border-color: rgb(203, 203, 203);
+}
+
+.FloatingContainer .floatingItem.dark
+{
+	color: #fff;
+	background: black;
+	background: url(rgbaf42d.png?r=0&amp;g=0&amp;b=0&amp;a=204); background: rgba(0,0,0, 0.8); _filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000,endColorstr=#CC000000);
+	border-color: #333;
+}
+
+.FloatingContainer .floatingItem.light
+{
+	color: #000;
+	background: white;
+	background: url(rgba571f.png?r=255&amp;g=255&amp;b=255&amp;a=204); background: rgba(255,255,255, 0.8); _filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF);
+	border-color: #ddd;
+}
+
+.FloatingContainer .floatingItem .title
+{
+	font-size: 14px;
+	padding-bottom: 5px;
+	font-weight: bold;
+	display: block;
+}
+
+.FloatingContainer .floatingItem .DismissCtrl
+{
+	position: static;
+	float: right;
+	margin-left: 5px;
+	margin-right: -5px;
+	margin-top: -5px;
+}
+
+.Notices
+{
+	display: none;
+}
+
+
+	@media (max-width:800px)
+	{
+		.Responsive .Notice.wide { display: none !important; }
+	}
+	
+	@media (max-width:610px)
+	{
+		.Responsive .Notice.medium { display: none !important; }
+	}
+	
+	@media (max-width:480px)
+	{
+		.Responsive .Notice.narrow { display: none !important; }
+		
+		.Responsive .FloatingContainer
+		{
+			right: 50%;
+			margin-right: -150px;
+		}
+	}
+
+
+/* --- panel_scroller.css --- */
+
+.hasJs .Notices.PanelScroller { display: none; }
+
+.PanelScroller .scrollContainer,
+.PanelScrollerOff .panel
+{
+	background-color: rgb(25, 175, 126);
+padding: 3px;
+margin-bottom: 10px;
+border-radius: 0px;
+font-size: 13pt;
+
+}
+
+.PanelScroller .PanelContainer
+{
+	position: relative;
+	clear: both;
+	width: 100%;
+	overflow: auto;
+}
+
+	.hasJs .PanelScroller .Panels
+	{
+		position: absolute;
+	}
+
+	.PanelScroller .Panels
+	{
+		clear: both;
+		margin: 0;
+		padding: 0;
+	}
+	
+		.PanelScroller .panel,
+		.PanelScrollerOff .panel
+		{
+			overflow: hidden;
+			position: relative;
+			padding: 0 !important;
+
+			padding: 10px;
+color: #FFF;
+
+		}
+			
+		.PanelScroller .panel .noticeContent,
+		.PanelScrollerOff .panel .noticeContent
+		{
+			padding: 10px;
+		}
+
+/** panel scroller nav **/
+
+.PanelScroller .navContainer
+{
+	margin: -11px 21px 10px;
+overflow: hidden;
+zoom: 1;
+
+}
+
+.PanelScroller .navControls
+{
+	float: right;
+}
+
+/* clearfix */ .PanelScroller .navControls { zoom: 1; } .PanelScroller .navControls:after { content: '.'; display: block; height: 0; clear: both; visibility: hidden; }
+
+	.PanelScroller .navControls a
+	{
+		font-size: 11px;
+color: rgb(255, 255, 255);
+background-color: rgb(25, 175, 126);
+padding: 3px 6px 2px;
+margin-right: 3px;
+margin-left: -1px;
+float: left;
+display: block;
+position: relative;
+
+		
+		border-radius: 0px;
+		border-radius: 0;
+	}
+	
+		.PanelScroller .navControls > a:first-child
+		{
+			border-bottom-left-radius: 0px;
+		}
+		
+		.PanelScroller .navControls > a:last-child
+		{
+			border-bottom-right-radius: 0px;
+		}
+		
+		.PanelScroller .navControls a:hover
+		{
+			color: rgb(228, 228, 228);
+text-decoration: none;
+
+		}
+		
+		.PanelScroller .navControls a.current
+		{
+			
+		}
+		
+			.PanelScroller .navControls a .arrow
+			{
+				display: none;
+			}
+			
+			.PanelScroller .navControls a.current span
+			{
+				display: block;
+				line-height: 0px;
+				width: 0px;
+				height: 0px;
+				border-top: 5px solid rgb(70, 70, 70);
+				border-right: 5px solid transparent;
+				border-bottom: 1px none black;
+				border-left: 5px solid transparent;
+				-moz-border-bottom-colors: rgb(70, 70, 70);
+				position: absolute;
+			}
+			
+			.PanelScroller .navControls a.current .arrow
+			{
+				border-top-color: ;
+				top: 0px;
+				left: 50%;
+				margin-left: -5px;
+			}
+			
+				.PanelScroller .navControls a .arrow span
+				{
+					border-top-color: rgb(25, 175, 126);
+					top: -6px;
+					left: -5px;
+				}
+				
+/* notices */
+
+.Notices .panel .noticeContent
+{
+	padding-right: 25px;
+}
+
+/* --- share_page.css --- */
+
+.sharePage
+{
+}
+
+/* clearfix */ .sharePage { zoom: 1; } .sharePage:after { content: '.'; display: block; height: 0; clear: both; visibility: hidden; }
+
+	.sharePage .shareControl
+	{
+		float: left;
+	}
+	
+	.sharePage .tweet
+	{
+		margin-right: 30px;
+	}
+
+	.sharePage .facebookLike .label
+	{
+		font-size: 11px;
+		line-height: 24px;
+		float: left;
+		margin-right: 7px;
+		display: none;
+	}
+	
+	.sharePage iframe
+	{
+		height: 20px;
+	}
+	
+	.sharePage .facebookLike iframe
+	{
+		z-index: 52;
+	}
+	
+
+
+
+@media (max-width:480px)
+{
+	.Responsive .sharePage
+	{
+		display: none;
+	}
+}
+
+
+/* --- thread_view.css --- */
+
+.thread_view .threadAlerts
+{
+	border: 1px solid rgb(48, 48, 48);
+	border-radius: 5px;
+	font-size: 11px;
+	margin: 10px 0;
+	padding: 5px;
+	line-height: 16px;
+}
+	
+	.thread_view .threadAlerts dt
+	{
+		color: rgb(112, 112, 112);
+		display: inline;
+	}
+	
+	.thread_view .threadAlerts dd
+	{
+		color: rgb(50, 50, 50);
+		font-weight: bold;
+		display: inline;
+	}
+	
+		.thread_view .threadAlerts .icon
+		{
+			float: right;
+			width: 16px;
+			height: 16px;
+			margin-left: 5px;
+			font-size: 15px;
+		}
+		
+	
+.thread_view .threadAlerts + * > .messageList
+{
+	border-top: none;
+}
+
+.thread_view .threadNotices
+{
+	background-color: rgb(60, 60, 60);
+	border: 1px solid rgb(70, 70, 70);
+	border-radius: 5px;
+	padding: 10px;
+	margin: 10px auto;
+}
+
+.thread_view .InlineMod
+{
+	overflow: hidden; zoom: 1;
+}

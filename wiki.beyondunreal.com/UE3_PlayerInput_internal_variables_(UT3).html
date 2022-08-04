@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:PlayerInput_internal_variables_(UT3) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:43:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:PlayerInput internal variables (UT3) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_PlayerInput_internal_variables_(UT3).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:PlayerInput_internal_variables_(UT3)","wgTitle":"PlayerInput internal variables (UT3)","wgCurRevisionId":31637,"wgRevisionId":31637,"wgArticleId":18812,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:PlayerInput_internal_variables_(UT3)","wgRelevantArticleId":18812,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_PlayerInput_internal_variables_UT3 skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I love the smell of UnrealEd crashing in the morning. &#8211; tarquin
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:PlayerInput internal variables (UT3)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Tournament_3.html" title="Unreal Tournament 3"><img alt="UT3" src="w/images/Icon-UT3.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UT3).html" title="UE3:Object (UT3)">Object</a> &gt;&gt;&#160;<a href="UE3_UIRoot_(UT3).html" title="UE3:UIRoot (UT3)">UIRoot</a> &gt;&gt;&#160;<a href="UE3_Interaction_(UT3).html" title="UE3:Interaction (UT3)">Interaction</a> &gt;&gt;&#160;<a href="UE3_Input_(UT3).html" title="UE3:Input (UT3)">Input</a> &gt;&gt;&#160;<a href="UE3_PlayerInput_(UT3).html" title="UE3:PlayerInput (UT3)">PlayerInput</a> <i>(internal variables)</i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Internal_variables"><span class="tocnumber">1</span> <span class="toctext">Internal variables</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#aBaseX"><span class="tocnumber">1.1</span> <span class="toctext">aBaseX</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#aBaseY"><span class="tocnumber">1.2</span> <span class="toctext">aBaseY</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#aBaseZ"><span class="tocnumber">1.3</span> <span class="toctext">aBaseZ</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#aForward"><span class="tocnumber">1.4</span> <span class="toctext">aForward</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#aLookUp"><span class="tocnumber">1.5</span> <span class="toctext">aLookUp</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#aMouseX"><span class="tocnumber">1.6</span> <span class="toctext">aMouseX</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#aMouseY"><span class="tocnumber">1.7</span> <span class="toctext">aMouseY</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#aPS3AccelX"><span class="tocnumber">1.8</span> <span class="toctext">aPS3AccelX</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#aPS3AccelY"><span class="tocnumber">1.9</span> <span class="toctext">aPS3AccelY</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#aPS3AccelZ"><span class="tocnumber">1.10</span> <span class="toctext">aPS3AccelZ</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#aPS3Gyro"><span class="tocnumber">1.11</span> <span class="toctext">aPS3Gyro</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#aStrafe"><span class="tocnumber">1.12</span> <span class="toctext">aStrafe</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#aTurn"><span class="tocnumber">1.13</span> <span class="toctext">aTurn</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#aUp"><span class="tocnumber">1.14</span> <span class="toctext">aUp</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#bEdgeBack"><span class="tocnumber">1.15</span> <span class="toctext">bEdgeBack</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#bEdgeForward"><span class="tocnumber">1.16</span> <span class="toctext">bEdgeForward</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#bEdgeLeft"><span class="tocnumber">1.17</span> <span class="toctext">bEdgeLeft</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#bEdgeRight"><span class="tocnumber">1.18</span> <span class="toctext">bEdgeRight</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#bEnableFOVScaling"><span class="tocnumber">1.19</span> <span class="toctext">bEnableFOVScaling</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#bEnableMouseSmoothing"><span class="tocnumber">1.20</span> <span class="toctext">bEnableMouseSmoothing</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#bInvertMouse"><span class="tocnumber">1.21</span> <span class="toctext">bInvertMouse</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#bInvertTurn"><span class="tocnumber">1.22</span> <span class="toctext">bInvertTurn</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#bStrafe"><span class="tocnumber">1.23</span> <span class="toctext">bStrafe</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#bUsingGamepad"><span class="tocnumber">1.24</span> <span class="toctext">bUsingGamepad</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#bWasBack"><span class="tocnumber">1.25</span> <span class="toctext">bWasBack</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#bWasForward"><span class="tocnumber">1.26</span> <span class="toctext">bWasForward</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#bWasLeft"><span class="tocnumber">1.27</span> <span class="toctext">bWasLeft</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#bWasRight"><span class="tocnumber">1.28</span> <span class="toctext">bWasRight</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#bXAxis"><span class="tocnumber">1.29</span> <span class="toctext">bXAxis</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#bYAxis"><span class="tocnumber">1.30</span> <span class="toctext">bYAxis</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#DoubleClickTime"><span class="tocnumber">1.31</span> <span class="toctext">DoubleClickTime</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#DoubleClickTimer"><span class="tocnumber">1.32</span> <span class="toctext">DoubleClickTimer</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#LastAxisKeyName"><span class="tocnumber">1.33</span> <span class="toctext">LastAxisKeyName</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#MouseSamples"><span class="tocnumber">1.34</span> <span class="toctext">MouseSamples</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#MouseSamplingTotal"><span class="tocnumber">1.35</span> <span class="toctext">MouseSamplingTotal</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#MouseSensitivity"><span class="tocnumber">1.36</span> <span class="toctext">MouseSensitivity</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#RawJoyLookRight"><span class="tocnumber">1.37</span> <span class="toctext">RawJoyLookRight</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#RawJoyLookUp"><span class="tocnumber">1.38</span> <span class="toctext">RawJoyLookUp</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#RawJoyRight"><span class="tocnumber">1.39</span> <span class="toctext">RawJoyRight</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#RawJoyUp"><span class="tocnumber">1.40</span> <span class="toctext">RawJoyUp</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#SmoothedMouse"><span class="tocnumber">1.41</span> <span class="toctext">SmoothedMouse</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#ZeroTime"><span class="tocnumber">1.42</span> <span class="toctext">ZeroTime</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>PlayerInput internal variables in other games:</dt>
+<dd><span><a href="UE3_PlayerInput_internal_variables_(UDK).html" title="UE3:PlayerInput internal variables (UDK)">UDK</a></span></dd>
+<dt>Other member categories for this class:</dt>
+<dd><span><a href="UE3_PlayerInput_defaults_(UT3).html" title="UE3:PlayerInput defaults (UT3)">defaults</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Internal_variables">Internal variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=1" title="Edit section: Internal variables">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="aBaseX">aBaseX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=2" title="Edit section: aBaseX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aBaseY">aBaseY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=3" title="Edit section: aBaseY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aBaseZ">aBaseZ</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=4" title="Edit section: aBaseZ">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aForward">aForward</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=5" title="Edit section: aForward">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aLookUp">aLookUp</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=6" title="Edit section: aLookUp">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aMouseX">aMouseX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=7" title="Edit section: aMouseX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aMouseY">aMouseY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=8" title="Edit section: aMouseY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aPS3AccelX">aPS3AccelX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=9" title="Edit section: aPS3AccelX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aPS3AccelY">aPS3AccelY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=10" title="Edit section: aPS3AccelY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aPS3AccelZ">aPS3AccelZ</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=11" title="Edit section: aPS3AccelZ">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aPS3Gyro">aPS3Gyro</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=12" title="Edit section: aPS3Gyro">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aStrafe">aStrafe</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=13" title="Edit section: aStrafe">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aTurn">aTurn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=14" title="Edit section: aTurn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aUp">aUp</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=15" title="Edit section: aUp">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bEdgeBack">bEdgeBack</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=16" title="Edit section: bEdgeBack">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bEdgeForward">bEdgeForward</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=17" title="Edit section: bEdgeForward">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bEdgeLeft">bEdgeLeft</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=18" title="Edit section: bEdgeLeft">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bEdgeRight">bEdgeRight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=19" title="Edit section: bEdgeRight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bEnableFOVScaling">bEnableFOVScaling</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=20" title="Edit section: bEnableFOVScaling">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>if true, mouse smoothing is enabled</p>
+<h4><span class="mw-headline" id="bEnableMouseSmoothing">bEnableMouseSmoothing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=21" title="Edit section: bEnableMouseSmoothing">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bInvertMouse">bInvertMouse</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=22" title="Edit section: bInvertMouse">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bInvertTurn">bInvertTurn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=23" title="Edit section: bInvertTurn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>if true, mouse y axis is inverted from normal FPS mode</p>
+<h4><span class="mw-headline" id="bStrafe">bStrafe</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=24" title="Edit section: bStrafe">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bUsingGamepad">bUsingGamepad</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=25" title="Edit section: bUsingGamepad">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Player is giving input through a gamepad</p>
+<h4><span class="mw-headline" id="bWasBack">bWasBack</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=26" title="Edit section: bWasBack">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bWasForward">bWasForward</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=27" title="Edit section: bWasForward">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>if true, mouse x axis is inverted from normal FPS mode</p>
+<h4><span class="mw-headline" id="bWasLeft">bWasLeft</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=28" title="Edit section: bWasLeft">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bWasRight">bWasRight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=29" title="Edit section: bWasRight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bXAxis">bXAxis</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=30" title="Edit section: bXAxis">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bYAxis">bYAxis</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=31" title="Edit section: bYAxis">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="DoubleClickTime">DoubleClickTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=32" title="Edit section: DoubleClickTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>max double click interval for double click move</p>
+<p><b>Default value:</b> 0.25</p>
+<h4><span class="mw-headline" id="DoubleClickTimer">DoubleClickTimer</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=33" title="Edit section: DoubleClickTimer">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastAxisKeyName">LastAxisKeyName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=34" title="Edit section: LastAxisKeyName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="MouseSamples">MouseSamples</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=35" title="Edit section: MouseSamples">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Current average mouse movement/sample</p>
+<p><b>Default value:</b> 1</p>
+<h4><span class="mw-headline" id="MouseSamplingTotal">MouseSamplingTotal</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=36" title="Edit section: MouseSamplingTotal">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Number of mouse samples since mouse movement has been zero</p>
+<p><b>Default value:</b> 0.0083</p>
+<h4><span class="mw-headline" id="MouseSensitivity">MouseSensitivity</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=37" title="Edit section: MouseSensitivity">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>stores time of first click for potential double click</p>
+<p><b>Default value:</b> 30.0</p>
+<h4><span class="mw-headline" id="RawJoyLookRight">RawJoyLookRight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=38" title="Edit section: RawJoyLookRight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Joypad right thumbstick, horizontal axis. Range [-1,+1]</p>
+<h4><span class="mw-headline" id="RawJoyLookUp">RawJoyLookUp</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=39" title="Edit section: RawJoyLookUp">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Joypad right thumbstick, vertical axis. Range [-1,+1]</p>
+<h4><span class="mw-headline" id="RawJoyRight">RawJoyRight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=40" title="Edit section: RawJoyRight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Joypad left thumbstick, horizontal axis. Range [-1,+1]</p>
+<h4><span class="mw-headline" id="RawJoyUp">RawJoyUp</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=41" title="Edit section: RawJoyUp">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Joypad left thumbstick, vertical axis. Range [-1,+1]</p>
+<h4><span class="mw-headline" id="SmoothedMouse">SmoothedMouse</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=42" title="Edit section: SmoothedMouse">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 2</p>
+<p>How long received mouse movement has been zero.</p>
+<h4><span class="mw-headline" id="ZeroTime">ZeroTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)?section=43" title="Edit section: ZeroTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 2</p>
+<p><br /></p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.190 seconds
+Real time usage: 0.199 seconds
+Preprocessor visited node count: 559/1000000
+Preprocessor generated node count: 2645/1000000
+Post‐expand include size: 3088/2097152 bytes
+Template argument size: 795/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  104.861      1 - -total
+ 93.13%   97.653      1 - Template:Infobox_class_part
+ 89.52%   93.873      1 - Template:Infobox_class_part/core
+ 30.08%   31.540      1 - Template:Ch
+  6.58%    6.903      1 - Template:Autogenerated
+  4.57%    4.796      1 - Template:Ambox
+  3.30%    3.457      3 - Template:Gamename
+  1.80%    1.885      1 - Template:UT3
+  1.11%    1.169      2 - Template:Extension_DPL
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:18812-0!*!*!*!*!*!* and timestamp 20161215184016 and revision id 31637
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:PlayerInput_internal_variables_(UT3)?oldid=31637">https://wiki.beyondunreal.com/UE3:PlayerInput_internal_variables_(UT3)?oldid=31637</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_PlayerInput_internal_variables_(UT3).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:PlayerInput_internal_variables_(UT3)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerInput_internal_variables_(UT3)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:PlayerInput_internal_variables_(UT3)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3APlayerInput+internal+variables+%28UT3%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3APlayerInput+internal+variables+%28UT3%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:PlayerInput_internal_variables_(UT3)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:PlayerInput_internal_variables_(UT3)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:PlayerInput_internal_variables_(UT3)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:PlayerInput_internal_variables_(UT3)?oldid=31637" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:PlayerInput_internal_variables_(UT3)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 09:40, 23 May 2008.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":105});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:PlayerInput_internal_variables_(UT3) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:43:01 GMT -->
+</html>

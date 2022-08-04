@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:Weapon_instance_functions_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:50:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:Weapon instance functions (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_Weapon_instance_functions_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:Weapon_instance_functions_(UDK)","wgTitle":"Weapon instance functions (UDK)","wgCurRevisionId":42296,"wgRevisionId":42296,"wgArticleId":28187,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:Weapon_instance_functions_(UDK)","wgRelevantArticleId":28187,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_Weapon_instance_functions_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I love the smell of UnrealEd crashing in the morning. &#8211; tarquin
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:Weapon instance functions (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a> &gt;&gt;&#160;<a href="UE3_Inventory_(UDK).html" title="UE3:Inventory (UDK)">Inventory</a> &gt;&gt;&#160;<a href="UE3_Weapon_(UDK).html" title="UE3:Weapon (UDK)">Weapon</a> <i>(instance functions)</i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Instance_functions"><span class="tocnumber">1</span> <span class="toctext">Instance functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Activate"><span class="tocnumber">1.1</span> <span class="toctext">Activate</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#AddAmmo"><span class="tocnumber">1.2</span> <span class="toctext">AddAmmo</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#AddSpread"><span class="tocnumber">1.3</span> <span class="toctext">AddSpread</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#AdjustFOVAngle"><span class="tocnumber">1.4</span> <span class="toctext">AdjustFOVAngle</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#AttachWeaponTo"><span class="tocnumber">1.5</span> <span class="toctext">AttachWeaponTo</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#BeginFire"><span class="tocnumber">1.6</span> <span class="toctext">BeginFire</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#CacheAIController"><span class="tocnumber">1.7</span> <span class="toctext">CacheAIController</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#CalcWeaponFire"><span class="tocnumber">1.8</span> <span class="toctext">CalcWeaponFire</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#CanAttack"><span class="tocnumber">1.9</span> <span class="toctext">CanAttack</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#CanThrow"><span class="tocnumber">1.10</span> <span class="toctext">CanThrow</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#ClearAllPendingFire"><span class="tocnumber">1.11</span> <span class="toctext">ClearAllPendingFire</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#ClearFlashCount"><span class="tocnumber">1.12</span> <span class="toctext">ClearFlashCount</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#ClearFlashLocation"><span class="tocnumber">1.13</span> <span class="toctext">ClearFlashLocation</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#ClearPendingFire"><span class="tocnumber">1.14</span> <span class="toctext">ClearPendingFire</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#ClientGivenTo"><span class="tocnumber">1.15</span> <span class="toctext">ClientGivenTo</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#ClientWeaponSet"><span class="tocnumber">1.16</span> <span class="toctext">ClientWeaponSet</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#ClientWeaponThrown"><span class="tocnumber">1.17</span> <span class="toctext">ClientWeaponThrown</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#ConsumeAmmo"><span class="tocnumber">1.18</span> <span class="toctext">ConsumeAmmo</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#CustomFire"><span class="tocnumber">1.19</span> <span class="toctext">CustomFire</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#DenyClientWeaponSet"><span class="tocnumber">1.20</span> <span class="toctext">DenyClientWeaponSet</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#DenyPickupQuery"><span class="tocnumber">1.21</span> <span class="toctext">DenyPickupQuery</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#DetachWeapon"><span class="tocnumber">1.22</span> <span class="toctext">DetachWeapon</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#DisplayDebug"><span class="tocnumber">1.23</span> <span class="toctext">DisplayDebug</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#DoOverrideNextWeapon"><span class="tocnumber">1.24</span> <span class="toctext">DoOverrideNextWeapon</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#DoOverridePrevWeapon"><span class="tocnumber">1.25</span> <span class="toctext">DoOverridePrevWeapon</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#DropFrom"><span class="tocnumber">1.26</span> <span class="toctext">DropFrom</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#EndFire"><span class="tocnumber">1.27</span> <span class="toctext">EndFire</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#FireAmmunition"><span class="tocnumber">1.28</span> <span class="toctext">FireAmmunition</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#FireModeUpdated"><span class="tocnumber">1.29</span> <span class="toctext">FireModeUpdated</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#FireOnRelease"><span class="tocnumber">1.30</span> <span class="toctext">FireOnRelease</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#FocusOnLeader"><span class="tocnumber">1.31</span> <span class="toctext">FocusOnLeader</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#ForceEndFire"><span class="tocnumber">1.32</span> <span class="toctext">ForceEndFire</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#GetAdjustedAim"><span class="tocnumber">1.33</span> <span class="toctext">GetAdjustedAim</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#GetAIRating"><span class="tocnumber">1.34</span> <span class="toctext">GetAIRating</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#GetDamageRadius"><span class="tocnumber">1.35</span> <span class="toctext">GetDamageRadius</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#GetFireInterval"><span class="tocnumber">1.36</span> <span class="toctext">GetFireInterval</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#GetPendingFireLength"><span class="tocnumber">1.37</span> <span class="toctext">GetPendingFireLength</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#GetProjectileClass"><span class="tocnumber">1.38</span> <span class="toctext">GetProjectileClass</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#GetTraceOwner"><span class="tocnumber">1.39</span> <span class="toctext">GetTraceOwner</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#GetViewAxes"><span class="tocnumber">1.40</span> <span class="toctext">GetViewAxes</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#GetWeaponAnimNodeSeq"><span class="tocnumber">1.41</span> <span class="toctext">GetWeaponAnimNodeSeq</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#GetWeaponDebug"><span class="tocnumber">1.42</span> <span class="toctext">GetWeaponDebug</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="#GetWeaponRating"><span class="tocnumber">1.43</span> <span class="toctext">GetWeaponRating</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="#HandleFinishedFiring"><span class="tocnumber">1.44</span> <span class="toctext">HandleFinishedFiring</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href="#HasAmmo"><span class="tocnumber">1.45</span> <span class="toctext">HasAmmo</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#HasAnyAmmo"><span class="tocnumber">1.46</span> <span class="toctext">HasAnyAmmo</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="#HolderDied"><span class="tocnumber">1.47</span> <span class="toctext">HolderDied</span></a></li>
+<li class="toclevel-2 tocsection-49"><a href="#IncrementFlashCount"><span class="tocnumber">1.48</span> <span class="toctext">IncrementFlashCount</span></a></li>
+<li class="toclevel-2 tocsection-50"><a href="#InstantFire"><span class="tocnumber">1.49</span> <span class="toctext">InstantFire</span></a></li>
+<li class="toclevel-2 tocsection-51"><a href="#IsActiveWeapon"><span class="tocnumber">1.50</span> <span class="toctext">IsActiveWeapon</span></a></li>
+<li class="toclevel-2 tocsection-52"><a href="#ItemRemovedFromInvManager"><span class="tocnumber">1.51</span> <span class="toctext">ItemRemovedFromInvManager</span></a></li>
+<li class="toclevel-2 tocsection-53"><a href="#MaxRange"><span class="tocnumber">1.52</span> <span class="toctext">MaxRange</span></a></li>
+<li class="toclevel-2 tocsection-54"><a href="#NotifyWeaponFinishedFiring"><span class="tocnumber">1.53</span> <span class="toctext">NotifyWeaponFinishedFiring</span></a></li>
+<li class="toclevel-2 tocsection-55"><a href="#NotifyWeaponFired"><span class="tocnumber">1.54</span> <span class="toctext">NotifyWeaponFired</span></a></li>
+<li class="toclevel-2 tocsection-56"><a href="#PendingFire"><span class="tocnumber">1.55</span> <span class="toctext">PendingFire</span></a></li>
+<li class="toclevel-2 tocsection-57"><a href="#PlayFireEffects"><span class="tocnumber">1.56</span> <span class="toctext">PlayFireEffects</span></a></li>
+<li class="toclevel-2 tocsection-58"><a href="#PlayFiringSound"><span class="tocnumber">1.57</span> <span class="toctext">PlayFiringSound</span></a></li>
+<li class="toclevel-2 tocsection-59"><a href="#PlayWeaponAnimation"><span class="tocnumber">1.58</span> <span class="toctext">PlayWeaponAnimation</span></a></li>
+<li class="toclevel-2 tocsection-60"><a href="#ProcessInstantHit"><span class="tocnumber">1.59</span> <span class="toctext">ProcessInstantHit</span></a></li>
+<li class="toclevel-2 tocsection-61"><a href="#ProjectileFire"><span class="tocnumber">1.60</span> <span class="toctext">ProjectileFire</span></a></li>
+<li class="toclevel-2 tocsection-62"><a href="#PutDownWeapon"><span class="tocnumber">1.61</span> <span class="toctext">PutDownWeapon</span></a></li>
+<li class="toclevel-2 tocsection-63"><a href="#RangedAttackTime"><span class="tocnumber">1.62</span> <span class="toctext">RangedAttackTime</span></a></li>
+<li class="toclevel-2 tocsection-64"><a href="#RecommendLongRangedAttack"><span class="tocnumber">1.63</span> <span class="toctext">RecommendLongRangedAttack</span></a></li>
+<li class="toclevel-2 tocsection-65"><a href="#RecommendRangedAttack"><span class="tocnumber">1.64</span> <span class="toctext">RecommendRangedAttack</span></a></li>
+<li class="toclevel-2 tocsection-66"><a href="#RefireCheckTimer"><span class="tocnumber">1.65</span> <span class="toctext">RefireCheckTimer</span></a></li>
+<li class="toclevel-2 tocsection-67"><a href="#RelativeStrengthVersus"><span class="tocnumber">1.66</span> <span class="toctext">RelativeStrengthVersus</span></a></li>
+<li class="toclevel-2 tocsection-68"><a href="#SendToFiringState"><span class="tocnumber">1.67</span> <span class="toctext">SendToFiringState</span></a></li>
+<li class="toclevel-2 tocsection-69"><a href="#ServerStartFire"><span class="tocnumber">1.68</span> <span class="toctext">ServerStartFire</span></a></li>
+<li class="toclevel-2 tocsection-70"><a href="#ServerStopFire"><span class="tocnumber">1.69</span> <span class="toctext">ServerStopFire</span></a></li>
+<li class="toclevel-2 tocsection-71"><a href="#SetCurrentFireMode"><span class="tocnumber">1.70</span> <span class="toctext">SetCurrentFireMode</span></a></li>
+<li class="toclevel-2 tocsection-72"><a href="#SetFlashLocation"><span class="tocnumber">1.71</span> <span class="toctext">SetFlashLocation</span></a></li>
+<li class="toclevel-2 tocsection-73"><a href="#SetPendingFire"><span class="tocnumber">1.72</span> <span class="toctext">SetPendingFire</span></a></li>
+<li class="toclevel-2 tocsection-74"><a href="#ShouldRefire"><span class="tocnumber">1.73</span> <span class="toctext">ShouldRefire</span></a></li>
+<li class="toclevel-2 tocsection-75"><a href="#StartFire"><span class="tocnumber">1.74</span> <span class="toctext">StartFire</span></a></li>
+<li class="toclevel-2 tocsection-76"><a href="#StillFiring"><span class="tocnumber">1.75</span> <span class="toctext">StillFiring</span></a></li>
+<li class="toclevel-2 tocsection-77"><a href="#StopFire"><span class="tocnumber">1.76</span> <span class="toctext">StopFire</span></a></li>
+<li class="toclevel-2 tocsection-78"><a href="#StopFireEffects"><span class="tocnumber">1.77</span> <span class="toctext">StopFireEffects</span></a></li>
+<li class="toclevel-2 tocsection-79"><a href="#StopWeaponAnimation"><span class="tocnumber">1.78</span> <span class="toctext">StopWeaponAnimation</span></a></li>
+<li class="toclevel-2 tocsection-80"><a href="#SuggestAttackStyle"><span class="tocnumber">1.79</span> <span class="toctext">SuggestAttackStyle</span></a></li>
+<li class="toclevel-2 tocsection-81"><a href="#SuggestDefenseStyle"><span class="tocnumber">1.80</span> <span class="toctext">SuggestDefenseStyle</span></a></li>
+<li class="toclevel-2 tocsection-82"><a href="#TimeWeaponEquipping"><span class="tocnumber">1.81</span> <span class="toctext">TimeWeaponEquipping</span></a></li>
+<li class="toclevel-2 tocsection-83"><a href="#TimeWeaponFiring"><span class="tocnumber">1.82</span> <span class="toctext">TimeWeaponFiring</span></a></li>
+<li class="toclevel-2 tocsection-84"><a href="#TimeWeaponPutDown"><span class="tocnumber">1.83</span> <span class="toctext">TimeWeaponPutDown</span></a></li>
+<li class="toclevel-2 tocsection-85"><a href="#TryPutDown"><span class="tocnumber">1.84</span> <span class="toctext">TryPutDown</span></a></li>
+<li class="toclevel-2 tocsection-86"><a href="#WeaponCalcCamera"><span class="tocnumber">1.85</span> <span class="toctext">WeaponCalcCamera</span></a></li>
+<li class="toclevel-2 tocsection-87"><a href="#WeaponEmpty"><span class="tocnumber">1.86</span> <span class="toctext">WeaponEmpty</span></a></li>
+<li class="toclevel-2 tocsection-88"><a href="#WeaponIsDown"><span class="tocnumber">1.87</span> <span class="toctext">WeaponIsDown</span></a></li>
+<li class="toclevel-2 tocsection-89"><a href="#WeaponPlaySound"><span class="tocnumber">1.88</span> <span class="toctext">WeaponPlaySound</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Weapon instance functions in other games:</dt>
+<dd><span><a href="UE1_Weapon_instance_functions_(RTNP).html" title="UE1:Weapon instance functions (RTNP)">RTNP</a></span>, <span><a href="UE1_Weapon_instance_functions_(U1).html" title="UE1:Weapon instance functions (U1)">U1</a></span>, <span><a href="UE1_Weapon_instance_functions_(UT).html" title="UE1:Weapon instance functions (UT)">UT</a></span>, <span><a href="UE2_Weapon_instance_functions_(U2).html" title="UE2:Weapon instance functions (U2)">U2</a></span>, <span><a href="UE2_Weapon_instance_functions_(U2XMP).html" title="UE2:Weapon instance functions (U2XMP)">U2XMP</a></span>, <span><a href="UE2_Weapon_instance_functions_(UE2Runtime).html" title="UE2:Weapon instance functions (UE2Runtime)">UE2Runtime</a></span>, <span><a href="UE2_Weapon_instance_functions_(UT2003).html" title="UE2:Weapon instance functions (UT2003)">UT2003</a></span>, <span><a href="UE2_Weapon_instance_functions_(UT2004).html" title="UE2:Weapon instance functions (UT2004)">UT2004</a></span>, <span><a href="UE3_Weapon_instance_functions_(UT3).html" title="UE3:Weapon instance functions (UT3)">UT3</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Instance_functions">Instance functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=1" title="Edit section: Instance functions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="Activate">Activate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=2" title="Edit section: Activate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>Activate</b> ()</div>
+<p>All inventory use the Activate() function when an item is selected for use. For weapons, this function starts the Equipping process. If the weapon is the inactive state, it will go to the 'WeaponEquipping' followed by 'Active' state, and ready to be fired.</p>
+<h4><span class="mw-headline" id="AddAmmo">AddAmmo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=3" title="Edit section: AddAmmo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>AddAmmo</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>Amount</b>)</div>
+<p>Add ammo to weapon</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>Amount</i> - to add.</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>Amount actually added. (In case magazine is already full and some ammo is left Subclass me to define ammo addition rules.</dd>
+</dl>
+<h4><span class="mw-headline" id="AddSpread">AddSpread</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=4" title="Edit section: AddSpread">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a>&#160;<b>AddSpread</b> (<a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a>&#160;<b>BaseAim</b>)</div>
+<p>Adds any fire spread offset to the passed in rotator</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>Aim</i> - the base aim direction</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the adjusted aim direction</dd>
+</dl>
+<h4><span class="mw-headline" id="AdjustFOVAngle">AdjustFOVAngle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=5" title="Edit section: AdjustFOVAngle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>AdjustFOVAngle</b> (<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>FOVAngle</b>)</div>
+<p>This function can be used by a weapon to override a playercontroller's FOVAngle. It should be overriden in a subclass.</p>
+<h4><span class="mw-headline" id="AttachWeaponTo">AttachWeaponTo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=6" title="Edit section: AttachWeaponTo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>AttachWeaponTo</b> (<a href="UE3_SkeletalMeshComponent_(UDK).html" title="UE3:SkeletalMeshComponent (UDK)">SkeletalMeshComponent</a>&#160;<b>MeshCpnt</b>, optional&#160;<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>SocketName</b>)</div>
+<p>AttachWeaponTo is called when it's time to attach the weapon's mesh to a location. it should be subclassed.</p>
+<h4><span class="mw-headline" id="BeginFire">BeginFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=7" title="Edit section: BeginFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>BeginFire</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>FireModeNum</b>)</div>
+<p>BeginFire is the point at which the server and client sync up their code path. It's job is to set the weapon in to the firing state. Network: LocalPlayer and Server</p>
+<h4><span class="mw-headline" id="CacheAIController">CacheAIController</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=8" title="Edit section: CacheAIController">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>CacheAIController</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="CalcWeaponFire">CalcWeaponFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=9" title="Edit section: CalcWeaponFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="UE3_Actor_structs_(UDK).html#ImpactInfo" title="UE3:Actor structs (UDK)">Actor.ImpactInfo</a>&#160;<b>CalcWeaponFire</b> (<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>StartTrace</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>EndTrace</b>, optional&#160;out&#160;<a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Actor_structs_(UDK).html#ImpactInfo" title="UE3:Actor structs (UDK)">Actor.ImpactInfo</a>&gt;&#160;<b>ImpactList</b>, optional&#160;<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>Extent</b>)</div>
+<p>CalcWeaponFire: Simulate an instant hit shot. This doesn't deal any damage nor trigger any effect. It just simulates a shot and returns the hit information, to be post-processed later.</p>
+<p>ImpactList returns a list of ImpactInfo containing all listed impacts during the simulation. CalcWeaponFire however returns one impact (return variable) being the first geometry impact straight, with no direction change. If you were to do refraction, reflection, bullet penetration or something like that, this would return exactly when the crosshair sees: The first 'real geometry' impact, skipping invisible triggers and volumes.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>StartTrace</i> - world location to start trace from</li>
+<li><i>EndTrace</i> - world location to end trace at</li>
+<li><i>Extent</i> - extent of trace performed</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>first 'real geometry' impact that occured.</dd>
+</dl>
+<p><b>Output:</b> ImpactList list of all impacts that occured during simulation</p>
+<p><b>Note:</b> if an impact didn't occur, and impact is still returned, with its HitLocation being the EndTrace value.</p>
+<h4><span class="mw-headline" id="CanAttack">CanAttack</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=10" title="Edit section: CanAttack">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>CanAttack</b> (<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>Other</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="CanThrow">CanThrow</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=11" title="Edit section: CanThrow">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>CanThrow</b> ()</div>
+<p>Returns true if this item can be thrown out.</p>
+<h4><span class="mw-headline" id="ClearAllPendingFire">ClearAllPendingFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=12" title="Edit section: ClearAllPendingFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final simulated function <b>ClearAllPendingFire</b> ()</div>
+<p>Ensure that all pending fire flags are 0</p>
+<h4><span class="mw-headline" id="ClearFlashCount">ClearFlashCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=13" title="Edit section: ClearFlashCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>ClearFlashCount</b> ()</div>
+<p>Clear flashCount variable on Pawn. and call WeaponStoppedFiring event. Call this on the server and local player.</p>
+<p>Network: Server or Local Player</p>
+<h4><span class="mw-headline" id="ClearFlashLocation">ClearFlashLocation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=14" title="Edit section: ClearFlashLocation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearFlashLocation</b> ()</div>
+<p>Reset flash location variable. and call stop firing. Network: Server only</p>
+<h4><span class="mw-headline" id="ClearPendingFire">ClearPendingFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=15" title="Edit section: ClearPendingFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final simulated function <b>ClearPendingFire</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>FireMode</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ClientGivenTo">ClientGivenTo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=16" title="Edit section: ClientGivenTo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">reliable client function <b>ClientGivenTo</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>NewOwner</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bDoNotActivate</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_Inventory_(UDK).html#ClientGivenTo" title="UE3:Inventory (UDK)">Inventory.ClientGivenTo</a></p>
+<p><i>(Description copied from <a href="UE3_Inventory_(UDK).html#ClientGivenTo" title="UE3:Inventory (UDK)">Inventory.ClientGivenTo</a>)</i><br />
+This Inventory Item has just been given to this Pawn (owning client only)</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>thisPawn</i> - new Inventory owner</li>
+<li><i>bDoNotActivate</i> - If true, this item will not try to activate</li>
+</ul>
+<h4><span class="mw-headline" id="ClientWeaponSet">ClientWeaponSet</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=17" title="Edit section: ClientWeaponSet">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">reliable client function <b>ClientWeaponSet</b> (<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bOptionalSet</b>, optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bDoNotActivate</b>)</div>
+<p>is called by the server to tell the client about potential weapon changes after the player runs over a weapon (the client decides whether to actually switch weapons or not. Network: LocalPlayer</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>bOptionalSet</i> - Set to true if the switch is optional. (simple weapon pickup and weight against current weapon).</li>
+<li><i>bDoNotActivate</i> - Override, do not activate this weapon. It's just been received in the inventory.</li>
+</ul>
+<h4><span class="mw-headline" id="ClientWeaponThrown">ClientWeaponThrown</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=18" title="Edit section: ClientWeaponThrown">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">reliable client function <b>ClientWeaponThrown</b> ()</div>
+<p>This function is called when the client needs to discard the weapon</p>
+<h4><span class="mw-headline" id="ConsumeAmmo">ConsumeAmmo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=19" title="Edit section: ConsumeAmmo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ConsumeAmmo</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>FireModeNum</b>)</div>
+<p>Consumes ammunition when firing a shot. Subclass me to define weapon ammunition consumption.</p>
+<h4><span class="mw-headline" id="CustomFire">CustomFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=20" title="Edit section: CustomFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>CustomFire</b> ()</div>
+<p>If the weapon isn't an instant hit, or a simple projectile, it should use the tyoe EWFT_Custom. In those cases this function will be called. It should be subclassed by the custom weapon.</p>
+<h4><span class="mw-headline" id="DenyClientWeaponSet">DenyClientWeaponSet</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=21" title="Edit section: DenyClientWeaponSet">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>DenyClientWeaponSet</b> ()</div>
+<p>Returns true if this weapon wants to deny a ClientWeaponSwitch call</p>
+<h4><span class="mw-headline" id="DenyPickupQuery">DenyPickupQuery</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=22" title="Edit section: DenyPickupQuery">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>DenyPickupQuery</b> (<a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_Inventory_(UDK).html" title="UE3:Inventory (UDK)">Inventory</a>&gt;&#160;<b>ItemClass</b>, <a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>Pickup</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_Inventory_(UDK).html#DenyPickupQuery" title="UE3:Inventory (UDK)">Inventory.DenyPickupQuery</a></p>
+<p>When you pickup an weapon, the inventory system has a chance to restrict the pickup.</p>
+<h4><span class="mw-headline" id="DetachWeapon">DetachWeapon</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=23" title="Edit section: DetachWeapon">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>DetachWeapon</b> ()</div>
+<p>Detach weapon components from instigator. Perform any clean up. Should be subclassed.</p>
+<h4><span class="mw-headline" id="DisplayDebug">DisplayDebug</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=24" title="Edit section: DisplayDebug">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>DisplayDebug</b> (<a href="UE3_HUD_(UDK).html" title="UE3:HUD (UDK)">HUD</a>&#160;<b>HUD</b>, out&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>out_YL</b>, out&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>out_YPos</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_Actor_instance_functions_(UDK).html#DisplayDebug" title="UE3:Actor instance functions (UDK)">Actor.DisplayDebug</a></p>
+<p>list important Weapon variables on canvas. HUD will call DisplayDebug() on the current ViewTarget when the ShowDebug exec is used</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>HUD</i> - HUD with canvas to draw on</li>
+<li><i>out_YL</i> - Height of the current font</li>
+<li><i>out_YPos</i> - Y position on Canvas. out_YPos += out_YL, gives position to draw text for next debug line.</li>
+</ul>
+<h4><span class="mw-headline" id="DoOverrideNextWeapon">DoOverrideNextWeapon</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=25" title="Edit section: DoOverrideNextWeapon">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>DoOverrideNextWeapon</b> ()</div>
+<p>hook to override Next weapon call. For example the physics gun uses it to have mouse wheel change the distance of the held object. Warning: only use in firing state, otherwise it breaks weapon switching</p>
+<h4><span class="mw-headline" id="DoOverridePrevWeapon">DoOverridePrevWeapon</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=26" title="Edit section: DoOverridePrevWeapon">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>DoOverridePrevWeapon</b> ()</div>
+<p>hook to override Previous weapon call.</p>
+<h4><span class="mw-headline" id="DropFrom">DropFrom</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=27" title="Edit section: DropFrom">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>DropFrom</b> (<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>StartLocation</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>StartVelocity</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_Inventory_(UDK).html#DropFrom" title="UE3:Inventory (UDK)">Inventory.DropFrom</a></p>
+<p>Drop this weapon out in to the world</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>StartLocation</i> - The World Location to drop this item from</li>
+<li><i>StartVelocity</i> - The initial velocity for the item when dropped</li>
+</ul>
+<h4><span class="mw-headline" id="EndFire">EndFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=28" title="Edit section: EndFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>EndFire</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>FireModeNum</b>)</div>
+<p>Like BeginFire, this function puts a client and the server in sync and shuts down the firing sequence on both. Network: LocalPlayer and Server</p>
+<h4><span class="mw-headline" id="FireAmmunition">FireAmmunition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=29" title="Edit section: FireAmmunition">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>FireAmmunition</b> ()</div>
+<p>FireAmmunition: Perform all logic associated with firing a shot - Fires ammunition (instant hit or spawn projectile) - Consumes ammunition - Plays any associated effects (fire sound and whatnot)</p>
+<p>Network: LocalPlayer and Server</p>
+<h4><span class="mw-headline" id="FireModeUpdated">FireModeUpdated</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=30" title="Edit section: FireModeUpdated">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>FireModeUpdated</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>FiringMode</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bViaReplication</b>)</div>
+<p>Event called when Pawn.FiringMode has been changed. bViaReplication indicates if this was the result of a replication call.</p>
+<h4><span class="mw-headline" id="FireOnRelease">FireOnRelease</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=31" title="Edit section: FireOnRelease">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>FireOnRelease</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="FocusOnLeader">FocusOnLeader</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=32" title="Edit section: FocusOnLeader">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>FocusOnLeader</b> (<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bLeaderFiring</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ForceEndFire">ForceEndFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=33" title="Edit section: ForceEndFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>ForceEndFire</b> ()</div>
+<p>Clear all pending fires. This is non replicated flag.</p>
+<h4><span class="mw-headline" id="GetAdjustedAim">GetAdjustedAim</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=34" title="Edit section: GetAdjustedAim">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a>&#160;<b>GetAdjustedAim</b> (<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>StartFireLoc</b>)</div>
+<p>GetAdjustedAim begins a chain of function class that allows the weapon, the pawn and the controller to make on the fly adjustments to where this weapon is pointing.</p>
+<h4><span class="mw-headline" id="GetAIRating">GetAIRating</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=35" title="Edit section: GetAIRating">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>GetAIRating</b> ()</div>
+<p>AI interface</p>
+<h4><span class="mw-headline" id="GetDamageRadius">GetDamageRadius</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=36" title="Edit section: GetDamageRadius">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>GetDamageRadius</b> ()</div>
+<p>Returns the DamageRadius of projectiles being shot</p>
+<h4><span class="mw-headline" id="GetFireInterval">GetFireInterval</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=37" title="Edit section: GetFireInterval">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>GetFireInterval</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>FireModeNum</b>)</div>
+<p>Returns interval in seconds between each shot, for the firing state of FireModeNum firing mode.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>FireModeNum</i> - fire mode</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>Period in seconds of firing mode</dd>
+</dl>
+<h4><span class="mw-headline" id="GetPendingFireLength">GetPendingFireLength</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=38" title="Edit section: GetPendingFireLength">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final simulated function <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>GetPendingFireLength</b> ()</div>
+<p>Pending Fire / Inv Manager</p>
+<h4><span class="mw-headline" id="GetProjectileClass">GetProjectileClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=39" title="Edit section: GetProjectileClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_Projectile_(UDK).html" title="UE3:Projectile (UDK)">Projectile</a>&gt;&#160;<b>GetProjectileClass</b> ()</div>
+<p>Returns the type of projectile to spawn. We use a function so subclasses can override it if needed (case in point, homing rockets).</p>
+<h4><span class="mw-headline" id="GetTraceOwner">GetTraceOwner</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=40" title="Edit section: GetTraceOwner">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>GetTraceOwner</b> ()</div>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the actor that 'owns' this weapon's traces (i.e. can't be hit by them)</dd>
+</dl>
+<h4><span class="mw-headline" id="GetViewAxes">GetViewAxes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=41" title="Edit section: GetViewAxes">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>GetViewAxes</b> (out&#160;<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>XAxis</b>, out&#160;<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>YAxis</b>, out&#160;<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>ZAxis</b>)</div>
+<p>Returns the base view aim of the weapon owner</p>
+<h4><span class="mw-headline" id="GetWeaponAnimNodeSeq">GetWeaponAnimNodeSeq</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=42" title="Edit section: GetWeaponAnimNodeSeq">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="UE3_AnimNodeSequence_(UDK).html" title="UE3:AnimNodeSequence (UDK)">AnimNodeSequence</a>&#160;<b>GetWeaponAnimNodeSeq</b> ()</div>
+<p>Returns the AnimNodeSequence the weapon is using to play animations.</p>
+<h4><span class="mw-headline" id="GetWeaponDebug">GetWeaponDebug</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=43" title="Edit section: GetWeaponDebug">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>GetWeaponDebug</b> (out&#160;<a href="Array.html" title="Array">array</a>&lt;<a href="String.html" title="String">string</a>&gt;&#160;<b>DebugInfo</b>)</div>
+<p>Retrieves important weapon debug information as an array of strings. That can then be dumped or displayed on HUD.</p>
+<h4><span class="mw-headline" id="GetWeaponRating">GetWeaponRating</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=44" title="Edit section: GetWeaponRating">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>GetWeaponRating</b> ()</div>
+<p>Returns a weight reflecting the desire to use the given weapon, used for AI and player best weapon selection.</p>
+<p><b>Returns:</b></p>
+<dl>
+<dd>weapon rating (range -1.f to 1.f)</dd>
+</dl>
+<h4><span class="mw-headline" id="HandleFinishedFiring">HandleFinishedFiring</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=45" title="Edit section: HandleFinishedFiring">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>HandleFinishedFiring</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="HasAmmo">HasAmmo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=46" title="Edit section: HasAmmo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>HasAmmo</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>FireModeNum</b>, optional&#160;<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>Amount</b>)</div>
+<p>This function checks to see if the weapon has any ammo available for a given fire mode.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>FireModeNum</i> - The Fire Mode to Test For</li>
+<li><i>Amount</i> - Optional] Check to see if this amount is available.</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if ammo is available for Firemode FireModeNum.</dd>
+</dl>
+<h4><span class="mw-headline" id="HasAnyAmmo">HasAnyAmmo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=47" title="Edit section: HasAnyAmmo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>HasAnyAmmo</b> ()</div>
+<p>returns true if this weapon has any ammo left, regardless of the actual firing mode.</p>
+<h4><span class="mw-headline" id="HolderDied">HolderDied</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=48" title="Edit section: HolderDied">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>HolderDied</b> ()</div>
+<p>Pawn holding this weapon as active weapon just died.</p>
+<h4><span class="mw-headline" id="IncrementFlashCount">IncrementFlashCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=49" title="Edit section: IncrementFlashCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>IncrementFlashCount</b> ()</div>
+<p>Increment Pawn's FlashCount variable. This is used to play weapon fire effects on remote clients. Call this on the server and local player.</p>
+<p>Network: Server and Local Player</p>
+<h4><span class="mw-headline" id="InstantFire">InstantFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=50" title="Edit section: InstantFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>InstantFire</b> ()</div>
+<p>Performs an 'Instant Hit' shot. Also, sets up replication for remote clients, and processes all the impacts to deal proper damage and play effects.</p>
+<p>Network: Local Player and Server</p>
+<h4><span class="mw-headline" id="IsActiveWeapon">IsActiveWeapon</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=51" title="Edit section: IsActiveWeapon">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsActiveWeapon</b> ()</div>
+<p>Informs if this weapon is active for the player</p>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if this an active weapon for the player</dd>
+</dl>
+<h4><span class="mw-headline" id="ItemRemovedFromInvManager">ItemRemovedFromInvManager</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=52" title="Edit section: ItemRemovedFromInvManager">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ItemRemovedFromInvManager</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_Inventory_(UDK).html#ItemRemovedFromInvManager" title="UE3:Inventory (UDK)">Inventory.ItemRemovedFromInvManager</a></p>
+<p>A notification call when this weapon is removed from the Inventory of a pawn</p>
+<p><b>See:</b> Inventory::ItemRemovedFromInvManager</p>
+<h4><span class="mw-headline" id="MaxRange">MaxRange</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=53" title="Edit section: MaxRange">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>MaxRange</b> ()</div>
+<p>Returns the Maximum Range for this weapon</p>
+<h4><span class="mw-headline" id="NotifyWeaponFinishedFiring">NotifyWeaponFinishedFiring</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=54" title="Edit section: NotifyWeaponFinishedFiring">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>NotifyWeaponFinishedFiring</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>FireMode</b>)</div>
+<p>AI function to handle a firing sequence (ie burst/melee strike/etc) being finished</p>
+<h4><span class="mw-headline" id="NotifyWeaponFired">NotifyWeaponFired</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=55" title="Edit section: NotifyWeaponFired">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>NotifyWeaponFired</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>FireMode</b>)</div>
+<p>AI function to handle a single shot being fired</p>
+<h4><span class="mw-headline" id="PendingFire">PendingFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=56" title="Edit section: PendingFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>PendingFire</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>FireMode</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PlayFireEffects">PlayFireEffects</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=57" title="Edit section: PlayFireEffects">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>PlayFireEffects</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>FireModeNum</b>, optional&#160;<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>HitLocation</b>)</div>
+<p>PlayFireEffects Main function to play Weapon fire effects. This is called from Pawn::WeaponFired in the base implementation.</p>
+<h4><span class="mw-headline" id="PlayFiringSound">PlayFiringSound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=58" title="Edit section: PlayFiringSound">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>PlayFiringSound</b> ()</div>
+<p>PlayFiringSound - Called after a shot is fired.</p>
+<h4><span class="mw-headline" id="PlayWeaponAnimation">PlayWeaponAnimation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=59" title="Edit section: PlayWeaponAnimation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>PlayWeaponAnimation</b> (<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>Sequence</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>fDesiredDuration</b>, optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bLoop</b>, optional&#160;<a href="UE3_SkeletalMeshComponent_(UDK).html" title="UE3:SkeletalMeshComponent (UDK)">SkeletalMeshComponent</a>&#160;<b>SkelMesh</b>)</div>
+<p>Play an animation on the weapon mesh Network: Local Player and clients</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>Anim</i> - Sequence to play on weapon skeletal mesh</li>
+<li><i>desired</i> - duration, in seconds, animation should be played</li>
+</ul>
+<h4><span class="mw-headline" id="ProcessInstantHit">ProcessInstantHit</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=60" title="Edit section: ProcessInstantHit">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>ProcessInstantHit</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>FiringMode</b>, <a href="UE3_Actor_structs_(UDK).html#ImpactInfo" title="UE3:Actor structs (UDK)">Actor.ImpactInfo</a>&#160;<b>Impact</b>, optional&#160;<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>NumHits</b>)</div>
+<p>Processes a successful 'Instant Hit' trace and eventually spawns any effects. Network: LocalPlayer and Server</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>FiringMode</i> - index of firing mode being used</li>
+<li><i>Impact</i> - hit information</li>
+<li><i>NumHits</i> - opt): number of hits to apply using this impact this is useful for handling multiple nearby impacts of multihit weapons (e.g. shotguns) without having to execute the entire damage code path for each one an omitted or &lt;= 0 value indicates a single hit</li>
+</ul>
+<h4><span class="mw-headline" id="ProjectileFire">ProjectileFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=61" title="Edit section: ProjectileFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="UE3_Projectile_(UDK).html" title="UE3:Projectile (UDK)">Projectile</a>&#160;<b>ProjectileFire</b> ()</div>
+<p>Fires a projectile. Spawns the projectile, but also increment the flash count for remote client effects. Network: Local Player and Server</p>
+<h4><span class="mw-headline" id="PutDownWeapon">PutDownWeapon</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=62" title="Edit section: PutDownWeapon">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>PutDownWeapon</b> ()</div>
+<p>This function is called to put a weapon down</p>
+<h4><span class="mw-headline" id="RangedAttackTime">RangedAttackTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=63" title="Edit section: RangedAttackTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>RangedAttackTime</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="RecommendLongRangedAttack">RecommendLongRangedAttack</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=64" title="Edit section: RecommendLongRangedAttack">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>RecommendLongRangedAttack</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="RecommendRangedAttack">RecommendRangedAttack</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=65" title="Edit section: RecommendRangedAttack">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>RecommendRangedAttack</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="RefireCheckTimer">RefireCheckTimer</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=66" title="Edit section: RefireCheckTimer">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>RefireCheckTimer</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="RelativeStrengthVersus">RelativeStrengthVersus</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=67" title="Edit section: RelativeStrengthVersus">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>RelativeStrengthVersus</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>P</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>Dist</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SendToFiringState">SendToFiringState</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=68" title="Edit section: SendToFiringState">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>SendToFiringState</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>FireModeNum</b>)</div>
+<p>Send weapon to proper firing state Also sets the CurrentFireMode. Network: LocalPlayer and Server</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>FireModeNum</i> - Fire Mode.</li>
+</ul>
+<h4><span class="mw-headline" id="ServerStartFire">ServerStartFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=69" title="Edit section: ServerStartFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">reliable server function <b>ServerStartFire</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>FireModeNum</b>)</div>
+<p>When StartFire() is called on a client, it replicates the start by calling ServerStartFire. This begins the event on server. Server side actors (such as bots) should not call ServerStartFire directly and should instead call StartFire().</p>
+<p>Network: Dedicated Server only, or Listen Server for remote clients.</p>
+<h4><span class="mw-headline" id="ServerStopFire">ServerStopFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=70" title="Edit section: ServerStopFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">reliable server function <b>ServerStopFire</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>FireModeNum</b>)</div>
+<p>When StopFire is called on a client, ServerStopFire is used to initiate the sequence on the server. Network: Dedicated Server only, or Listen Server for remote clients.</p>
+<h4><span class="mw-headline" id="SetCurrentFireMode">SetCurrentFireMode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=71" title="Edit section: SetCurrentFireMode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>SetCurrentFireMode</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>FiringModeNum</b>)</div>
+<p>Set current firing mode. Network: Local Player and Server.</p>
+<h4><span class="mw-headline" id="SetFlashLocation">SetFlashLocation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=72" title="Edit section: SetFlashLocation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>SetFlashLocation</b> (<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>HitLocation</b>)</div>
+<p>This function sets up the Location of a hit to be replicated to all remote clients.</p>
+<p>Network: Server only</p>
+<h4><span class="mw-headline" id="SetPendingFire">SetPendingFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=73" title="Edit section: SetPendingFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final simulated function <b>SetPendingFire</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>FireMode</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ShouldRefire">ShouldRefire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=74" title="Edit section: ShouldRefire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ShouldRefire</b> ()</div>
+<p>Check if current fire mode can/should keep on firing. This is called from a firing state after each shot is fired to decide if the weapon should fire again, or stop and go to the active state. The default behavior, implemented here, is keep on firing while player presses fire and there is enough ammo. (Auto Fire).</p>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true to fire again, false to stop firing and return to Active State.</dd>
+</dl>
+<h4><span class="mw-headline" id="StartFire">StartFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=75" title="Edit section: StartFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>StartFire</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>FireModeNum</b>)</div>
+<p>Called on the LocalPlayer, Fire sends the shoot request to the server (ServerStartFire) and them simulates the firing effects locally. Call path: PlayerController::StartFire -&gt; Pawn::StartFire -&gt; InventoryManager::StartFire Network: LocalPlayer</p>
+<h4><span class="mw-headline" id="StillFiring">StillFiring</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=76" title="Edit section: StillFiring">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>StillFiring</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>FireMode</b>)</div>
+<p>This function returns true if the weapon is still firing in a given mode</p>
+<h4><span class="mw-headline" id="StopFire">StopFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=77" title="Edit section: StopFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>StopFire</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>FireModeNum</b>)</div>
+<p>This initiates the shutdown of a weapon that is firing. Network: Local Player</p>
+<h4><span class="mw-headline" id="StopFireEffects">StopFireEffects</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=78" title="Edit section: StopFireEffects">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>StopFireEffects</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>FireModeNum</b>)</div>
+<p>StopFireEffects Main function to stop any active effects This is called from Pawn::WeaponStoppedFiring</p>
+<h4><span class="mw-headline" id="StopWeaponAnimation">StopWeaponAnimation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=79" title="Edit section: StopWeaponAnimation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>StopWeaponAnimation</b> ()</div>
+<p>Stops an animation on the weapon mesh Network: Local Player and clients</p>
+<h4><span class="mw-headline" id="SuggestAttackStyle">SuggestAttackStyle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=80" title="Edit section: SuggestAttackStyle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>SuggestAttackStyle</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SuggestDefenseStyle">SuggestDefenseStyle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=81" title="Edit section: SuggestDefenseStyle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>SuggestDefenseStyle</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="TimeWeaponEquipping">TimeWeaponEquipping</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=82" title="Edit section: TimeWeaponEquipping">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>TimeWeaponEquipping</b> ()</div>
+<p>Sets the timing for equipping a weapon. The WeaponEquipped event is trigged when expired</p>
+<h4><span class="mw-headline" id="TimeWeaponFiring">TimeWeaponFiring</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=83" title="Edit section: TimeWeaponFiring">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>TimeWeaponFiring</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>FireModeNum</b>)</div>
+<p>Sets the timing for the firing state on server and local client. By default, a constant looping Rate Of Fire (ROF) is set up. When the delay has expired, the RefireCheckTimer event is triggered.</p>
+<p>Network: LocalPlayer and Server</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>FireModeNum</i> - Fire Mode.</li>
+</ul>
+<h4><span class="mw-headline" id="TimeWeaponPutDown">TimeWeaponPutDown</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=84" title="Edit section: TimeWeaponPutDown">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>TimeWeaponPutDown</b> ()</div>
+<p>Sets the timing for putting a weapon down. The WeaponIsDown event is trigged when expired</p>
+<h4><span class="mw-headline" id="TryPutDown">TryPutDown</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=85" title="Edit section: TryPutDown">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>TryPutDown</b> ()</div>
+<p>Put Down current weapon Once the weapon is put down, the InventoryManager will switch to InvManager.PendingWeapon.</p>
+<p><b>Returns:</b></p>
+<dl>
+<dd>returns true if the weapon can be put down.</dd>
+</dl>
+<h4><span class="mw-headline" id="WeaponCalcCamera">WeaponCalcCamera</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=86" title="Edit section: WeaponCalcCamera">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>WeaponCalcCamera</b> (<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>fDeltaTime</b>, out&#160;<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>out_CamLoc</b>, out&#160;<a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a>&#160;<b>out_CamRot</b>)</div>
+<p>WeaponCalcCamera allows a weapon to adjust the pawn's controller's camera. Should be subclassed</p>
+<h4><span class="mw-headline" id="WeaponEmpty">WeaponEmpty</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=87" title="Edit section: WeaponEmpty">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>WeaponEmpty</b> ()</div>
+<p>Called when the weapon runs out of ammo during firing</p>
+<h4><span class="mw-headline" id="WeaponIsDown">WeaponIsDown</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=88" title="Edit section: WeaponIsDown">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>WeaponIsDown</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="WeaponPlaySound">WeaponPlaySound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)?section=89" title="Edit section: WeaponPlaySound">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>WeaponPlaySound</b> (<a href="UE3_SoundCue_(UDK).html" title="UE3:SoundCue (UDK)">SoundCue</a>&#160;<b>Sound</b>, optional&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>NoiseLoudness</b>)</div>
+<p>This function handles playing sounds for weapons. How it plays the sound depends on the following:</p>
+<p>If we are a listen server, then this sound is played and replicated as normal If we are a remote client, but locally controlled (ie: we are on the client) we play the sound and don't replicate it If we are a dedicated server, play the sound and replicate it to everyone BUT the owner (he will play it locally).</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>SoundCue</i> - The Source Cue to play</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.480 seconds
+Real time usage: 0.676 seconds
+Preprocessor visited node count: 3017/1000000
+Preprocessor generated node count: 5959/1000000
+Post‐expand include size: 30374/2097152 bytes
+Template argument size: 10392/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  455.163      1 - -total
+ 52.36%  238.314     88 - Template:Code
+ 37.68%  171.518     25 - Template:Tl
+ 32.74%  149.006     38 - Template:Samegame
+ 24.69%  112.380      1 - Template:Infobox_class_part
+ 22.80%  103.782      1 - Template:Infobox_class_part/core
+ 13.73%   62.475     13 - Template:Cl
+  4.08%   18.592      1 - Template:Ch
+  1.81%    8.257      1 - Template:Autogenerated
+  1.67%    7.610      3 - Template:Gamename
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:28187-0!*!*!*!*!*!* and timestamp 20161215221449 and revision id 42296
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:Weapon_instance_functions_(UDK)?oldid=42296">https://wiki.beyondunreal.com/UE3:Weapon_instance_functions_(UDK)?oldid=42296</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_Weapon_instance_functions_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:Weapon_instance_functions_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:Weapon_instance_functions_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:Weapon_instance_functions_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AWeapon+instance+functions+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AWeapon+instance+functions+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:Weapon_instance_functions_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:Weapon_instance_functions_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:Weapon_instance_functions_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:Weapon_instance_functions_(UDK)?oldid=42296" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:Weapon_instance_functions_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 08:04, 17 January 2010.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":208});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:Weapon_instance_functions_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:50:54 GMT -->
+</html>

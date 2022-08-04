@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Mod_Authoring/Making_A_Mutator by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Mod Authoring/Making A Mutator - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Mod_Authoring/Making_A_Mutator" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Mod_Authoring/Making_A_Mutator" />
+<link rel="shortcut icon" href="../w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="../w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="../w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Making_A_Mutator.html" />
+<link rel="copyright" href="../Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="../w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="../w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Mod_Authoring/Making_A_Mutator","wgTitle":"Mod Authoring/Making A Mutator","wgCurRevisionId":4403,"wgRevisionId":4403,"wgArticleId":1794,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Mod_Authoring/Making_A_Mutator","wgRelevantArticleId":1794,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Mod_Authoring_Making_A_Mutator skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Cogito, ergo sum
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Mod Authoring/Making A Mutator</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../Legacy_Mod_Authoring.html" title="Legacy:Mod Authoring">Legacy:Mod Authoring</a></span></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><a href="../Legacy_Mutator.html" title="Legacy:Mutator">Mutators</a> are a great place to cut your teeth on UnrealScript because you are exposed to a limited, but powerful subset of the engine. As I said above, Mutators should only modify the game code in a relatively slight way. This increases the chances your mutator will work well when mixed with other mutators. (For example, you can play <i>FatBoy</i>, <i>InstaGib</i>, <i>No Powerups</i> deathmatch. A mix of 3 mutators).</p>
+<p>All mutators descend from the Mutator base class either directly or indirectly. Let's make a Vampire mutator and see how it all works. Create a new file in your package classes directory called Vampire.uc. Drop the following code in there:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">class</span> Vampire <span class="kw1">extends</span> <span class="kw9">Mutator</span>;
+ 
+<span class="kw1">var</span> <span class="kw5">bool</span> Initialized;
+ 
+<span class="kw1">function</span> <span class="kw4">PostBeginPlay</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw2">if</span> <span class="br0">(</span>Initialized<span class="br0">)</span>
+		<span class="kw2">return</span>;
+	Initialized <span class="sy0">=</span> <span class="kw6">True</span>;
+ 
+	<span class="kw7">Level</span>.<span class="kw7">Game</span>.<span class="me0">RegisterDamageMutator</span><span class="br0">(</span> <span class="kw6">Self</span> <span class="br0">)</span>;
+<span class="br0">}</span>
+ 
+<span class="kw1">function</span> MutatorTakeDamage<span class="br0">(</span> <span class="kw1">out</span> <span class="kw5">int</span> ActualDamage, <span class="kw9">Pawn</span> Victim, <span class="kw9">Pawn</span> InstigatedBy, <span class="kw1">out</span> <span class="kw5">Vector</span> HitLocation,
+	<span class="kw1">out</span> <span class="kw5">Vector</span> Momentum, <span class="kw5">name</span> <span class="kw9">DamageType</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw2">if</span> <span class="br0">(</span>InstigatedBy.<span class="kw3">IsA</span><span class="br0">(</span><span class="st0">'Bot'</span><span class="br0">)</span> <span class="sy0">||</span> InstigatedBy.<span class="kw3">IsA</span><span class="br0">(</span><span class="st0">'PlayerPawn'</span><span class="br0">)</span><span class="br0">)</span>
+	<span class="br0">{</span>
+		InstigatedBy.<span class="me0">Health</span> <span class="sy0">+=</span> ActualDamage;
+		<span class="kw2">if</span> <span class="br0">(</span>InstigatedBy.<span class="me0">Health</span> <span class="sy0">&gt;</span> <span class="nu0">199</span><span class="br0">)</span>
+			InstigatedBy.<span class="me0">Health</span> <span class="sy0">=</span> <span class="nu0">199</span>;
+	<span class="br0">}</span>
+	<span class="kw2">if</span> <span class="br0">(</span> NextDamageMutator <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+		NextDamageMutator.<span class="me0">MutatorTakeDamage</span><span class="br0">(</span> ActualDamage, Victim, InstigatedBy, HitLocation, Momentum, <span class="kw9">DamageType</span> <span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>The first line declares the class contained in this file. UnrealScript is like Java in that each file contains a separate class definition. We are saying that our class, Vampire, is a Mutator. It "inherits" all the properties of Mutator.</p>
+<p>Next, we declare a class member. In UnrealScript, all class member variables must be declared before any functions (also called methods) are declared. The var keyword tells the compiler what we are doing. Here we have a boolean (true/false) value called Intialized.</p>
+<p>Next we have a function called <code>PostBeginPlay</code>. To someone who isn't experienced with object oriented programming, we have a bit of a puzzle. This object just declares functions, it doesn't seem to have any entry point! The "entry point" is inherited. Vampire is a Mutator, so it does everything Mutators can. Mutator is an Info, Info is an Actor, and an Actor is managed by the engine. In our case, we are overriding the function PostBeginPlay. PreBeginPlay, BeginPlay, and PostBeginPlay are called on every Actor in the level when the game starts. They are used to initialize the world.</p>
+<p>Our PostBeginPlay function starts by setting initialized to true. Notice it'll return if initialized is already true. What's the point of that? Well, the problem is that the BeginPlay suite of functions get called twice on Mutators. Unfortunately, this is somewhat unavoidable. BeginPlay and its friends are called on Actors when they are spawned and when the game starts. Mutators, unlike other actors, are spawned before the game starts... so you get two calls. The Initialized check is to prevent the rest of PostBeginPlay from being executed twice.</p>
+<p>The second part of PostBeginPlay is called RegisterDamageMutator, a method located in the <a href="../Legacy_GameInfo_(UT).html" title="Legacy:GameInfo (UT)">GameInfo (UT)</a> class. Here we are accessing the <code>Level</code> property that all <a href="../Legacy_Actor.html" title="Legacy:Actor">Actors</a> inherit. Then we access the <code>Game</code> property of the <a href="../Legacy_LevelInfo.html" title="Legacy:LevelInfo">LevelInfo</a> class that <code>Level</code> points to. Finally, we call the function from that reference, passing our <code>Self</code> as the parameter.</p>
+<p><code>RegisterDamageMutator</code> is a special method that tells the GameInfo to call MutatorTakeDamage on this mutator whenever a pawn takes damage. Because pawns take a lot of damage during the course of a normal game, we don't want to call this function on every mutator, that would be slow. RegisterDamageMutator allows us to limit the calls to only a subset of mutators. (By the way, in UT <a href="../Legacy_Pawn_(UT).html" title="Legacy:Pawn (UT)">Pawn (UT)s</a> consist primarily of <a href="../Legacy_Bot_(UT).html" title="Legacy:Bot (UT)">Bot (UT)s</a> and <a href="../Legacy_PlayerPawn.html" title="Legacy:PlayerPawn">PlayerPawns</a>).</p>
+<p>Next we have our implementation of <code>MutatorTakeDamage</code>. This is the heart of our Mutator. We are making a Vampire mutator. The idea is simple: if a Pawn A does damage to another Pawn B, give the Pawn A health equal to the amount of damage. Players and bots will effectively suck life off of other players or bots.</p>
+<p>As I mentioned above, RegisterDamageMutator is called on our mutator whenever a player takes damage from another one. The pawns in question are passed to us in the variables.</p>
+<p>We start by making sure we are only dealing with bots and playerpawns. There are pawns that are neither bots nor players and we don't want to deal with them. InstigatedBy refers to the player who dealt the damage. We do our core logic by adding to that pawn's health life equal to the damage dealt. RegisterDamageMutator always passes in an amount of damage <i>after</i> armor, so this is raw final damage. Finally, we don't want a player gaining so much life he becomes unkillable, so we limit the total life gain to 199 points.</p>
+<p>To finish the function off, we call MutatorTakeDamage on the next damage mutator in the list. It is <b>critical</b> that you pass along method calls like this. If you fail to, damage mutators loaded after your own won't work right. There are other functions that need to be passed along, which we'll look at below.</p>
+<p>So now you can save this file and rebuild your package. We aren't done yet, though, because the mutator won't show up in the menus without some more work. Open your package's .int file and add the following line to the <code>[Public]</code> section (in a single line):</p>
+<pre>
+ Object=(Name=SemperFi.Vampire,Class=Class,MetaClass=Engine.Mutator,
+   Description="Vampire,You gain life equal to the amount of damage you do to an enemy.")
+</pre>
+<p>When the game looks for mutators to list in the <i>Add Mutators</i> window, it searches all .int files for objects with a declared MetaClass of Engine.Mutator. We've also added a Description for the help bar. Now we are ready to run Unreal Tournament and load the mutator. Play around with it for a bit and you'll probably get ideas for your own mutators or ways of expanding Vampire.</p>
+<hr />
+<p>Prev Page: <a href="How_To_Build_Your_Package.html" title="Legacy:Mod Authoring/How To Build Your Package">Legacy:Mod Authoring/How To Build Your Package</a> – <b>Section 7 of 12</b> – Next Page: <a href="The_Anatomy_Of_Mutator.html" title="Legacy:Mod Authoring/The Anatomy Of Mutator">Legacy:Mod Authoring/The Anatomy Of Mutator</a></p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.037 seconds
+Real time usage: 0.038 seconds
+Preprocessor visited node count: 8/1000000
+Preprocessor generated node count: 56/1000000
+Post‐expand include size: 38/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:1794-0!*!0!*!*!*!* and timestamp 20161215143135 and revision id 4403
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Mod_Authoring/Making_A_Mutator?oldid=4403">https://wiki.beyondunreal.com/Legacy:Mod_Authoring/Making_A_Mutator?oldid=4403</a>"</div>
+					<div id='catlinks' class='catlinks catlinks-allhidden'></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Making_A_Mutator.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Mod_Authoring/Making_A_Mutator?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Mod_Authoring/Making_A_Mutator" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Mod_Authoring/Making_A_Mutator" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AMod+Authoring%2FMaking+A+Mutator&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AMod+Authoring%2FMaking+A+Mutator" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="../index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="../Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Mod_Authoring/Making_A_Mutator" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Mod_Authoring/Making_A_Mutator" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Mod_Authoring/Making_A_Mutator?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Mod_Authoring/Making_A_Mutator?oldid=4403" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Mod_Authoring/Making_A_Mutator" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 21:46, 19 May 2003.</li>
+									<li id="copyright">Licensed as <a href="../Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="../Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="../Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="../Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":80});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Mod_Authoring/Making_A_Mutator by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:51 GMT -->
+</html>

@@ -1,0 +1,9 @@
+﻿/**
+ * Copyright 1998-2007 Epic Games, Inc. All Rights Reserved.
+ *
+ * This is the static mesh label renderer
+ */
+class StaticMeshLabelRenderer extends ThumbnailLabelRenderer
+	native;
+
+

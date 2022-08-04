@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Netcode_Idioms by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:36:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Netcode Idioms - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Netcode_Idioms" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Netcode_Idioms" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_Netcode_Idioms.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Netcode_Idioms","wgTitle":"Netcode Idioms","wgCurRevisionId":5525,"wgRevisionId":5525,"wgArticleId":2287,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Netcode_Idioms","wgRelevantArticleId":2287,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Netcode_Idioms skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Mostly Harmless
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Netcode Idioms</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This is a cookbook of ways to get round some of the 'gotchas' in <a href="Legacy_Replication.html" title="Legacy:Replication">replication</a>.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Targetting_types_of_machine"><span class="tocnumber">1</span> <span class="toctext">Targetting types of machine</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Finding_the_Local_PlayerPawn_or_PlayerController"><span class="tocnumber">2</span> <span class="toctext">Finding the Local PlayerPawn or PlayerController</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#UnrealEngine1"><span class="tocnumber">2.1</span> <span class="toctext">UnrealEngine1</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#UnrealEngine2"><span class="tocnumber">2.2</span> <span class="toctext">UnrealEngine2</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#HUD_Mutators"><span class="tocnumber">3</span> <span class="toctext">HUD Mutators</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Replicating_Config_Variables"><span class="tocnumber">4</span> <span class="toctext">Replicating Config Variables</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Related_Topics"><span class="tocnumber">5</span> <span class="toctext">Related Topics</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Discussion"><span class="tocnumber">6</span> <span class="toctext">Discussion</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Targetting_types_of_machine">Targetting types of machine</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Netcode_Idioms?section=1" title="Edit section: Targetting types of machine">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>There are basically 5 types of machine:</p>
+<ul>
+<li><code>(Level.NetMode == NM_ListenServer)</code> – listen servers (with a local player)</li>
+<li><code>(Level.NetMode == NM_DedicatedServer)</code> – dedicated servers (no local player)</li>
+<li><code>(Level.NetMode == NM_Client)</code> – clients</li>
+<li><code>(Level.NetMode == NM_Client &amp;&amp; bNetOwner)</code> – owner clients (special case of client where the local player is the Owner of the actor in question)</li>
+<li><code>(Level.NetMode == NM_Standalone)</code> – standalone games</li>
+</ul>
+<p>You sometimes need things to happen only on certain types of machine. Here's how:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw2">if</span> <span class="br0">(</span><span class="kw7">Level</span>.<span class="me0">NetMode</span> <span class="sy0">!=</span> NM_DedicatedServer<span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// This could be offline, a listen server or a client, but we know</span>
+  <span class="co1">// we have a local player on this machine, someone who can see or hear things.</span>
+<span class="br0">}</span>
+<span class="kw2">if</span> <span class="br0">(</span><span class="kw7">Role</span> <span class="sy0">==</span> <span class="kw7">ROLE_Authority</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// This is the authorative copy of this actor, it was spawned on this machine.</span>
+  <span class="co1">// It is not a guarantee that we are on the server or in single player!</span>
+<span class="br0">}</span>
+<span class="kw2">if</span> <span class="br0">(</span><span class="kw7">Role</span> <span class="sy0">&lt;</span> ROLE_Authortity<span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// This is a non-authorative copy of this actor that was replicated</span>
+  <span class="co1">// from the server. In other words, we must be on a client.</span>
+<span class="br0">}</span>
+ 
+<span class="co1">// please add more!</span>
+</pre></div>
+</div>
+<p>See also: <a href="Legacy_NetMode.html" title="Legacy:NetMode">NetMode</a>, <a href="Legacy_Role.html" title="Legacy:Role">Role</a>.</p>
+<h2><span class="mw-headline" id="Finding_the_Local_PlayerPawn_or_PlayerController">Finding the Local PlayerPawn or PlayerController</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Netcode_Idioms?section=2" title="Edit section: Finding the Local PlayerPawn or PlayerController">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="UnrealEngine1">UnrealEngine1</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Netcode_Idioms?section=3" title="Edit section: UnrealEngine1">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The usual idiom for finding the local player's <a href="Legacy_PlayerPawn.html" title="Legacy:PlayerPawn">PlayerPawn</a> (UT) on a network client or a listen server is (after declaring a class-level <tt>var PlayerPawn PlayerLocal</tt>):</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw2">if</span> <span class="br0">(</span>PlayerLocal <span class="sy0">==</span> <span class="kw5">None</span><span class="br0">)</span>
+  <span class="kw2">foreach</span> <span class="kw2">AllActors</span><span class="br0">(</span><span class="kw1">class</span> <span class="st0">'PlayerPawn'</span>, PlayerLocal<span class="br0">)</span>
+    <span class="kw2">if</span> <span class="br0">(</span>Viewport<span class="br0">(</span>PlayerLocal.<span class="kw8">Player</span><span class="br0">)</span> <span class="sy0">!=</span> <span class="kw5">None</span><span class="br0">)</span>
+      <span class="kw2">break</span>;
+ 
+<span class="kw2">if</span> <span class="br0">(</span>PlayerLocal <span class="sy0">!=</span> <span class="kw5">None</span><span class="br0">)</span> <span class="br0">{</span> ... <span class="br0">}</span>  <span class="co1">// do something with it</span>
+</pre></div>
+</div>
+<p>If you have a <a href="Legacy_Canvas.html" title="Legacy:Canvas">Canvas</a> object handy (in engine events like RenderOverlays, for instance), there's even a more straightforward way to get hold of the local player:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+PlayerLocal <span class="sy0">=</span> <span class="kw8">Canvas</span>.<span class="me0">Viewport</span>.<span class="kw9">Actor</span>;
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="UnrealEngine2">UnrealEngine2</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Netcode_Idioms?section=4" title="Edit section: UnrealEngine2">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><a href="Legacy_UT2003.html" title="Legacy:UT2003" class="mw-redirect">UT2003</a> and <a href="Legacy_UT2004.html" title="Legacy:UT2004" class="mw-redirect">UT2004</a> have a function to get the local PlayerController which actually uses the PlayerController/DynamicActors combo (and stores the local controller for later use too):</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+PlayerLocal <span class="sy0">=</span> <span class="kw7">Level</span>.<span class="me0">GetLocalPlayerController</span><span class="br0">(</span><span class="br0">)</span>;
+</pre></div>
+</div>
+<p>Again, if you have a <a href="Legacy_Canvas.html" title="Legacy:Canvas">Canvas</a> object handy you should use the more straight forward version like in UT:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+PlayerLocal <span class="sy0">=</span> <span class="kw8">Canvas</span>.<span class="me0">Viewport</span>.<span class="kw9">Actor</span>;
+</pre></div>
+</div>
+<p>Note that the local <a href="Legacy_PlayerPawn.html" title="Legacy:PlayerPawn">PlayerPawn</a> or <a href="Legacy_PlayerController.html" title="Legacy:PlayerController">PlayerController</a> is always relevant (for obvious reasons) and thus always exists on its respective client.</p>
+<h2><span class="mw-headline" id="HUD_Mutators">HUD Mutators</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Netcode_Idioms?section=5" title="Edit section: HUD Mutators">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>See <a href="Legacy_Useful_Mutator_Functions.html" title="Legacy:Useful Mutator Functions">Useful Mutator Functions</a> or <a href="Legacy_Linked_List/Existing_Lists_In_Unreal_Tournament.html" title="Legacy:Linked List/Existing Lists In Unreal Tournament">Linked List/Existing Lists in Unreal Tournament</a> (use the Quick Navigation menu to browse to "HUD Mutators"). You'll find a description there how to set up a HUD mutator that actually works in network games.</p>
+<h2><span class="mw-headline" id="Replicating_Config_Variables">Replicating Config Variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Netcode_Idioms?section=6" title="Edit section: Replicating Config Variables">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Clients load the value of <tt>config</tt> or <tt>globalconfig</tt> variables from their own .ini files. Since these values are treated as defaults they are not replicated until they are changed through code. Clients will see their own customized configuration instead of the server's.</p>
+<p>To force replication of these variables use a second (non-config) variable:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">var</span> <span class="kw1">config</span> <span class="kw5">string</span> MySettings;
+<span class="kw1">var</span> <span class="kw5">string</span> ServerSettings;
+ 
+<span class="kw1">replication</span>
+<span class="br0">{</span>
+    <span class="co1">// replicate the ServerSettings variable to all (relevant) clients</span>
+    <span class="kw1">reliable</span> <span class="kw2">if</span> <span class="br0">(</span> <span class="kw7">Role</span> <span class="sy0">==</span> <span class="kw7">ROLE_Authority</span> <span class="br0">)</span>
+        ServerSettings;
+<span class="br0">}</span>
+ 
+<span class="kw1">function</span> <span class="kw4">PreBeginPlay</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+<span class="co1">// non-simulated PreBeginPlay() is only executed on the server - You can take away the 'if' expression below then.</span>
+<span class="co1">// simulated PreBeginPlay() is executed on both the server and the client. - You must include the 'if' expression below then.</span>
+    <span class="kw2">if</span> <span class="br0">(</span> <span class="kw7">Role</span> <span class="sy0">==</span> <span class="kw7">ROLE_Authority</span> <span class="br0">)</span>
+        ServerSettings <span class="sy0">=</span> MySettings;
+    <span class="kw6">Super</span>.<span class="kw4">PreBeginPlay</span><span class="br0">(</span><span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Netcode_Idioms?section=7" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_Replication.html" title="Legacy:Replication">Replication</a></li>
+</ul>
+<h2><span class="mw-headline" id="Discussion">Discussion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Netcode_Idioms?section=8" title="Edit section: Discussion">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>Matariel:</b> Correct me if Im wrong but... doesn't Role == Role_Authority simply mean that this is the authoritative copy of the actor? What if this actor was spawned on a client? I don't think a Role == Role_Authority check qualifies the machine as a server, but simply as the owner.</p>
+<p><b>Wormbo:</b> That's correct, but usually you only do any Role checks if you intend to replicate your actor.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.077 seconds
+Real time usage: 0.078 seconds
+Preprocessor visited node count: 85/1000000
+Preprocessor generated node count: 156/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:2287-0!*!0!!en!*!* and timestamp 20161215153236 and revision id 5525
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Netcode_Idioms?oldid=5525">https://wiki.beyondunreal.com/Legacy:Netcode_Idioms?oldid=5525</a>"</div>
+					<div id='catlinks' class='catlinks catlinks-allhidden'></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_Netcode_Idioms.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Netcode_Idioms?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Netcode_Idioms" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Netcode_Idioms" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ANetcode+Idioms&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ANetcode+Idioms" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Netcode_Idioms" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Netcode_Idioms" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Netcode_Idioms?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Netcode_Idioms?oldid=5525" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Netcode_Idioms" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 03:14, 5 May 2007.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":85});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Netcode_Idioms by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:36:51 GMT -->
+</html>

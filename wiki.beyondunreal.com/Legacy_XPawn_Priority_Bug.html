@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:XPawn_Priority_Bug by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:57:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:XPawn Priority Bug - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:XPawn_Priority_Bug" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:XPawn_Priority_Bug" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_XPawn_Priority_Bug.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:XPawn_Priority_Bug","wgTitle":"XPawn Priority Bug","wgCurRevisionId":9675,"wgRevisionId":9675,"wgArticleId":3824,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Mapping","Legacy Troubleshooting"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:XPawn_Priority_Bug","wgRelevantArticleId":3824,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_XPawn_Priority_Bug skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>My program doesn't have bugs. It just develops random features.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:XPawn Priority Bug</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Goal"><span class="tocnumber">1.1</span> <span class="toctext">Goal</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Volume_Priority"><span class="tocnumber">1.2</span> <span class="toctext">Volume Priority</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#The_Bug_-_In_Brief"><span class="tocnumber">1.3</span> <span class="toctext">The Bug - In Brief</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Cause"><span class="tocnumber">2</span> <span class="toctext">Cause</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#How_Volume_Priority_And_Splashing_Are_Handled"><span class="tocnumber">2.1</span> <span class="toctext">How Volume Priority And Splashing Are Handled</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#PlayerReplicationInfo"><span class="tocnumber">2.1.1</span> <span class="toctext">PlayerReplicationInfo</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#xPawn"><span class="tocnumber">2.1.2</span> <span class="toctext">xPawn</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#PhysicsVolume"><span class="tocnumber">2.1.3</span> <span class="toctext">PhysicsVolume</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="#The_Problem"><span class="tocnumber">2.2</span> <span class="toctext">The Problem</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Solutions"><span class="tocnumber">3</span> <span class="toctext">Solutions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Proposal_One:_Avoid_Overlapping_Volumes"><span class="tocnumber">3.1</span> <span class="toctext">Proposal One: Avoid Overlapping Volumes</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Proposal_Two:_Modify_xPawn"><span class="tocnumber">3.2</span> <span class="toctext">Proposal Two: Modify xPawn</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Overview">Overview</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:XPawn_Priority_Bug?section=1" title="Edit section: Overview">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Goal">Goal</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:XPawn_Priority_Bug?section=2" title="Edit section: Goal">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This page will describe, and will hopefully provide solutions to, the <a href="Legacy_XPawn.html" title="Legacy:XPawn">xPawn</a> "priority bug" in <a href="Legacy_UT2003.html" title="Legacy:UT2003" class="mw-redirect">UT2003</a> and <a href="Legacy_UT2004.html" title="Legacy:UT2004" class="mw-redirect">UT2004</a>.</p>
+<h3><span class="mw-headline" id="Volume_Priority">Volume Priority</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:XPawn_Priority_Bug?section=3" title="Edit section: Volume Priority">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The <tt>priority</tt> variable found in <a href="Legacy_PhysicsVolume.html" title="Legacy:PhysicsVolume">PhysicsVolume</a> determines which one of several overlapping PhysicsVolumes gets to apply its physics properties (Gravity, GroundFriction, ZoneVelocity and so on) on players and other actors in the overlapping area. The higher the value of <tt>priority</tt>, the higher the Priority. Every <a href="Legacy_PhysicsVolume.html" title="Legacy:PhysicsVolume">PhysicsVolume</a> added, however, even if <tt>priority</tt> is 0, has a higher priority than the <a href="Legacy_DefaultPhysicsVolume.html" title="Legacy:DefaultPhysicsVolume">DefaultPhysicsVolume</a>.</p>
+<h3><span class="mw-headline" id="The_Bug_-_In_Brief">The Bug - In Brief</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:XPawn_Priority_Bug?section=4" title="Edit section: The Bug - In Brief">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>There is a bug in the implementation of the priority scheme in <a href="Legacy_XPawn.html" title="Legacy:XPawn">xPawn</a> as it pertains to interactions with <a href="Legacy_PhysicsVolume.html" title="Legacy:PhysicsVolume">PhysicsVolumes</a>. If the player is contained within overlapping volumes and one of the volumes has <tt>bWaterVolume</tt> set to <tt>True</tt>, splashing sounds are likely to be played when a Player walks, dodges, or whatever, regardless of which volume has priority.</p>
+<h2><span class="mw-headline" id="Cause">Cause</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:XPawn_Priority_Bug?section=5" title="Edit section: Cause">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="How_Volume_Priority_And_Splashing_Are_Handled">How Volume Priority And Splashing Are Handled</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:XPawn_Priority_Bug?section=6" title="Edit section: How Volume Priority And Splashing Are Handled">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="PlayerReplicationInfo">PlayerReplicationInfo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:XPawn_Priority_Bug?section=7" title="Edit section: PlayerReplicationInfo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>The following code was extracted from an export of the <a href="Legacy_PlayerReplicationInfo.html" title="Legacy:PlayerReplicationInfo">PlayerReplicationInfo</a> class, <a href="Legacy_UT2004.html" title="Legacy:UT2004" class="mw-redirect">UT2004</a> build 3186</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> UpdatePlayerLocation<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">local</span> <span class="kw9">Volume</span> V, Best;
+    <span class="kw1">local</span> <span class="kw9">Pawn</span> P;
+    <span class="kw1">local</span> <span class="kw9">Controller</span> C;
+ 
+    C <span class="sy0">=</span> <span class="kw9">Controller</span><span class="br0">(</span><span class="kw7">Owner</span><span class="br0">)</span>;
+ 
+    <span class="kw2">if</span><span class="br0">(</span> C <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+        P <span class="sy0">=</span> C.<span class="kw9">Pawn</span>;
+ 
+    <span class="kw2">if</span><span class="br0">(</span> P <span class="sy0">==</span> <span class="kw5">None</span> <span class="br0">)</span>
+    <span class="br0">{</span>
+        PlayerVolume <span class="sy0">=</span> <span class="kw5">None</span>;
+        PlayerZone <span class="sy0">=</span> <span class="kw5">None</span>;
+        <span class="kw2">return</span>;
+    <span class="br0">}</span>
+ 
+    <span class="kw2">if</span> <span class="br0">(</span> PlayerZone <span class="sy0">!=</span> P.<span class="me0">Region</span>.<span class="me0">Zone</span> <span class="br0">)</span>
+		PlayerZone <span class="sy0">=</span> P.<span class="me0">Region</span>.<span class="me0">Zone</span>;
+ 
+    <span class="kw2">foreach</span> P.<span class="kw2">TouchingActors</span><span class="br0">(</span> <span class="kw1">class</span><span class="st0">'Volume'</span>, V <span class="br0">)</span>
+    <span class="br0">{</span>
+        <span class="kw2">if</span><span class="br0">(</span> V.<span class="me0">LocationName</span> <span class="sy0">==</span> <span class="st0">""</span><span class="br0">)</span>
+            <span class="kw2">continue</span>;
+ 
+        <span class="kw2">if</span><span class="br0">(</span> <span class="br0">(</span>Best <span class="sy0">!=</span> <span class="kw5">None</span><span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="br0">(</span>V.<span class="me0">LocationPriority</span> <span class="sy0">&lt;=</span> Best.<span class="me0">LocationPriority</span><span class="br0">)</span> <span class="br0">)</span>
+            <span class="kw2">continue</span>;
+ 
+        <span class="kw2">if</span><span class="br0">(</span> V.<span class="me0">Encompasses</span><span class="br0">(</span>P<span class="br0">)</span> <span class="br0">)</span>
+            Best <span class="sy0">=</span> V;
+    <span class="br0">}</span>
+    <span class="kw2">if</span> <span class="br0">(</span> PlayerVolume <span class="sy0">!=</span> Best <span class="br0">)</span>
+		PlayerVolume <span class="sy0">=</span> Best;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h4><span class="mw-headline" id="xPawn">xPawn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:XPawn_Priority_Bug?section=8" title="Edit section: xPawn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>The following code was extracted from an export of the <a href="Legacy_XPawn.html" title="Legacy:XPawn">xPawn</a> class, <a href="Legacy_UT2004.html" title="Legacy:UT2004" class="mw-redirect">UT2004</a> build 3186</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">simulated</span> <span class="kw1">function</span> FootStepping<span class="br0">(</span><span class="kw5">int</span> Side<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">local</span> <span class="kw5">int</span> SurfaceNum, i;
+	<span class="kw1">local</span> <span class="kw9">actor</span> A;
+	<span class="kw1">local</span> <span class="kw5">material</span> FloorMat;
+	<span class="kw1">local</span> <span class="kw5">vector</span> HL,HN,Start,End;
+ 
+    SurfaceNum <span class="sy0">=</span> <span class="nu0">0</span>;
+ 
+    <span class="kw2">for</span> <span class="br0">(</span> i<span class="sy0">=</span><span class="nu0">0</span>; i<span class="sy0">&lt;</span>Touching.<span class="me0">Length</span>; i<span class="sy0">++</span> <span class="br0">)</span>
+		<span class="kw2">if</span> <span class="br0">(</span> <span class="br0">(</span><span class="br0">(</span><span class="kw9">PhysicsVolume</span><span class="br0">(</span>Touching<span class="br0">[</span>i<span class="br0">]</span><span class="br0">)</span> <span class="sy0">!=</span> <span class="kw5">None</span><span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="kw9">PhysicsVolume</span><span class="br0">(</span>Touching<span class="br0">[</span>i<span class="br0">]</span><span class="br0">)</span>.<span class="me0">bWaterVolume</span><span class="br0">)</span>
+			<span class="sy0">||</span> <span class="br0">(</span><span class="kw9">FluidSurfaceInfo</span><span class="br0">(</span>Touching<span class="br0">[</span>i<span class="br0">]</span><span class="br0">)</span> <span class="sy0">!=</span> <span class="kw5">None</span><span class="br0">)</span> <span class="br0">)</span>
+		<span class="br0">{</span>
+			<span class="kw2">if</span> <span class="br0">(</span> <span class="kw3">FRand</span><span class="br0">(</span><span class="br0">)</span> <span class="sy0">&lt;</span> <span class="nu0">0.5</span> <span class="br0">)</span>
+				<span class="kw4">PlaySound</span><span class="br0">(</span><span class="kw5">sound</span><span class="st0">'PlayerSounds.FootStepWater2'</span>, <span class="kw7">SLOT_Interact</span>, FootstepVolume <span class="br0">)</span>;
+			<span class="kw2">else</span>
+				<span class="kw4">PlaySound</span><span class="br0">(</span><span class="kw5">sound</span><span class="st0">'PlayerSounds.FootStepWater1'</span>, <span class="kw7">SLOT_Interact</span>, FootstepVolume <span class="br0">)</span>;
+			<span class="kw2">return</span>;
+		<span class="br0">}</span>
+ 
+	<span class="kw2">if</span> <span class="br0">(</span> bIsCrouched <span class="sy0">||</span> bIsWalking <span class="br0">)</span>
+		<span class="kw2">return</span>;
+ 
+	<span class="kw2">if</span> <span class="br0">(</span> <span class="br0">(</span><span class="kw7">Base</span><span class="sy0">!=</span><span class="kw5">None</span><span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="br0">(</span><span class="sy0">!</span><span class="kw7">Base</span>.<span class="kw3">IsA</span><span class="br0">(</span><span class="st0">'LevelInfo'</span><span class="br0">)</span><span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="br0">(</span><span class="kw7">Base</span>.<span class="me0">SurfaceType</span><span class="sy0">!=</span><span class="nu0">0</span><span class="br0">)</span> <span class="br0">)</span>
+	<span class="br0">{</span>
+		SurfaceNum <span class="sy0">=</span> <span class="kw7">Base</span>.<span class="me0">SurfaceType</span>;
+	<span class="br0">}</span>
+	<span class="kw2">else</span>
+	<span class="br0">{</span>
+		Start <span class="sy0">=</span> <span class="kw7">Location</span> <span class="sy0">-</span> <span class="kw3">Vect</span><span class="br0">(</span><span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">)</span><span class="sy0">*</span><span class="kw7">CollisionHeight</span>;
+		End <span class="sy0">=</span> Start <span class="sy0">-</span> <span class="kw3">Vect</span><span class="br0">(</span><span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">16</span><span class="br0">)</span>;
+		A <span class="sy0">=</span> <span class="kw4">Trace</span><span class="br0">(</span>hl,hn,End,Start,<span class="kw6">false</span>,,FloorMat<span class="br0">)</span>;
+		<span class="kw2">if</span> <span class="br0">(</span>FloorMat <span class="sy0">!=</span><span class="kw5">None</span><span class="br0">)</span>
+			SurfaceNum <span class="sy0">=</span> FloorMat.<span class="me0">SurfaceType</span>;
+	<span class="br0">}</span>
+	<span class="kw4">PlaySound</span><span class="br0">(</span>SoundFootsteps<span class="br0">[</span>SurfaceNum<span class="br0">]</span>, <span class="kw7">SLOT_Interact</span>, FootstepVolume,,<span class="nu0">400</span> <span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h4><span class="mw-headline" id="PhysicsVolume">PhysicsVolume</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:XPawn_Priority_Bug?section=9" title="Edit section: PhysicsVolume">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>The following code was extracted from an export of the <a href="Legacy_PhysicsVolume.html" title="Legacy:PhysicsVolume">PhysicsVolume</a> class, <a href="Legacy_UT2004.html" title="Legacy:UT2004" class="mw-redirect">UT2004</a> build 3186</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">simulated</span> <span class="kw1">function</span> <span class="kw4">PostBeginPlay</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw6">super</span>.<span class="kw4">PostBeginPlay</span><span class="br0">(</span><span class="br0">)</span>;
+ 
+	BACKUP_Gravity		<span class="sy0">=</span> Gravity;
+	BACKUP_bPainCausing	<span class="sy0">=</span> bPainCausing;
+	<span class="kw2">if</span><span class="br0">(</span> VolumeEffect <span class="sy0">==</span> <span class="kw5">None</span> <span class="sy0">&amp;&amp;</span> bWaterVolume <span class="br0">)</span>
+		VolumeEffect <span class="sy0">=</span> <span class="kw1">new</span><span class="br0">(</span><span class="kw5">None</span><span class="br0">)</span> <span class="kw1">class</span><span class="st0">'EFFECT_WaterVolume'</span>;
+<span class="br0">}</span>
+ 
+ 
+<span class="co1">//</span>
+<span class="co1">// (...)</span>
+<span class="co1">//</span>
+ 
+ 
+<span class="kw1">event</span> <span class="kw4">touch</span><span class="br0">(</span><span class="kw9">Actor</span> Other<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw1">local</span> <span class="kw9">Pawn</span> P;
+	<span class="kw1">local</span> <span class="kw5">bool</span> bFoundPawn;
+ 
+	<span class="kw6">Super</span>.<span class="kw4">Touch</span><span class="br0">(</span>Other<span class="br0">)</span>;
+	<span class="kw2">if</span> <span class="br0">(</span> Other <span class="sy0">==</span> <span class="kw5">None</span> <span class="br0">)</span>
+		<span class="kw2">return</span>;
+	<span class="kw2">if</span> <span class="br0">(</span> bNoInventory <span class="sy0">&amp;&amp;</span> <span class="br0">(</span><span class="kw9">Pickup</span><span class="br0">(</span>Other<span class="br0">)</span> <span class="sy0">!=</span> <span class="kw5">None</span><span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="br0">(</span>Other.<span class="kw7">Owner</span> <span class="sy0">==</span> <span class="kw5">None</span><span class="br0">)</span> <span class="br0">)</span>
+	<span class="br0">{</span>
+		Other.<span class="kw7">LifeSpan</span> <span class="sy0">=</span> <span class="nu0">1.5</span>;
+		<span class="kw2">return</span>;
+	<span class="br0">}</span>
+	<span class="kw2">if</span> <span class="br0">(</span> bMoveProjectiles <span class="sy0">&amp;&amp;</span> <span class="br0">(</span>ZoneVelocity <span class="sy0">!=</span> <span class="kw3">vect</span><span class="br0">(</span><span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">)</span>
+	<span class="br0">{</span>
+		<span class="kw2">if</span> <span class="br0">(</span> Other.<span class="kw7">Physics</span> <span class="sy0">==</span> <span class="kw7">PHYS_Projectile</span> <span class="br0">)</span>
+			Other.<span class="kw7">Velocity</span> <span class="sy0">+=</span> ZoneVelocity;
+		<span class="kw2">else</span> <span class="kw2">if</span> <span class="br0">(</span> <span class="br0">(</span>Other.<span class="kw7">Base</span> <span class="sy0">==</span> <span class="kw5">None</span><span class="br0">)</span> <span class="sy0">&amp;&amp;</span> Other.<span class="kw3">IsA</span><span class="br0">(</span><span class="st0">'Emitter'</span><span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="br0">(</span>Other.<span class="kw7">Physics</span> <span class="sy0">==</span> <span class="kw7">PHYS_None</span><span class="br0">)</span> <span class="br0">)</span>
+		<span class="br0">{</span>
+			Other.<span class="kw4">SetPhysics</span><span class="br0">(</span><span class="kw7">PHYS_Projectile</span><span class="br0">)</span>;
+			Other.<span class="kw7">Velocity</span> <span class="sy0">+=</span> ZoneVelocity;
+		<span class="br0">}</span>
+	<span class="br0">}</span>
+	<span class="kw2">if</span> <span class="br0">(</span> bPainCausing <span class="br0">)</span>
+	<span class="br0">{</span>
+		<span class="kw2">if</span> <span class="br0">(</span> Other.<span class="me0">bDestroyInPainVolume</span> <span class="br0">)</span>
+		<span class="br0">{</span>
+			Other.<span class="kw4">Destroy</span><span class="br0">(</span><span class="br0">)</span>;
+			<span class="kw2">return</span>;
+		<span class="br0">}</span>
+		<span class="kw2">if</span> <span class="br0">(</span> Other.<span class="me0">bCanBeDamaged</span> <span class="sy0">&amp;&amp;</span> <span class="sy0">!</span>Other.<span class="me0">bStatic</span> <span class="br0">)</span>
+		<span class="br0">{</span>
+			CausePainTo<span class="br0">(</span>Other<span class="br0">)</span>;
+			<span class="kw2">if</span> <span class="br0">(</span> Other <span class="sy0">==</span> <span class="kw5">None</span> <span class="br0">)</span>
+				<span class="kw2">return</span>;
+			<span class="kw2">if</span> <span class="br0">(</span> PainTimer <span class="sy0">==</span> <span class="kw5">None</span> <span class="br0">)</span>
+				PainTimer <span class="sy0">=</span> <span class="kw4">Spawn</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'VolumeTimer'</span>, <span class="kw6">self</span><span class="br0">)</span>;
+			<span class="kw2">else</span> <span class="kw2">if</span> <span class="br0">(</span> <span class="kw9">Pawn</span><span class="br0">(</span>Other<span class="br0">)</span> <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+			<span class="br0">{</span>
+				<span class="kw2">ForEach</span> <span class="kw2">TouchingActors</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'Pawn'</span>, P<span class="br0">)</span>
+					<span class="kw2">if</span> <span class="br0">(</span> <span class="br0">(</span>P <span class="sy0">!=</span> Other<span class="br0">)</span> <span class="sy0">&amp;&amp;</span> P.<span class="me0">bCanBeDamaged</span> <span class="br0">)</span>
+					<span class="br0">{</span>
+						bFoundPawn <span class="sy0">=</span> <span class="kw6">true</span>;
+						<span class="kw2">break</span>;
+					<span class="br0">}</span>
+				<span class="kw2">if</span> <span class="br0">(</span> <span class="sy0">!</span>bFoundPawn <span class="br0">)</span>
+					PainTimer.<span class="kw4">SetTimer</span><span class="br0">(</span><span class="nu0">1.0</span>,<span class="kw6">true</span><span class="br0">)</span>;
+			<span class="br0">}</span>
+		<span class="br0">}</span>
+	<span class="br0">}</span>
+	<span class="kw2">if</span> <span class="br0">(</span> bWaterVolume <span class="sy0">&amp;&amp;</span> Other.<span class="me0">CanSplash</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span>
+		PlayEntrySplash<span class="br0">(</span>Other<span class="br0">)</span>;
+<span class="br0">}</span>
+ 
+ 
+<span class="co1">//</span>
+<span class="co1">// (...)</span>
+<span class="co1">//</span>
+ 
+ 
+<span class="kw1">function</span> PlayEntrySplash<span class="br0">(</span><span class="kw9">Actor</span> Other<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw1">local</span> <span class="kw5">float</span> SplashSize;
+	<span class="kw1">local</span> <span class="kw9">actor</span> splash;
+ 
+	splashSize <span class="sy0">=</span> <span class="kw3">FClamp</span><span class="br0">(</span><span class="nu0">0.00003</span> <span class="sy0">*</span> Other.<span class="kw7">Mass</span> <span class="sy0">*</span> <span class="br0">(</span><span class="nu0">250</span> <span class="sy0">-</span> <span class="nu0">0.5</span> <span class="sy0">*</span> <span class="kw3">FMax</span><span class="br0">(</span><span class="sy0">-</span><span class="nu0">600</span>,Other.<span class="kw7">Velocity</span>.<span class="me0">Z</span><span class="br0">)</span><span class="br0">)</span>, <span class="nu0">0.1</span>, <span class="nu0">1.0</span> <span class="br0">)</span>;
+	<span class="kw2">if</span><span class="br0">(</span> EntrySound <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+	<span class="br0">{</span>
+		<span class="kw4">PlaySound</span><span class="br0">(</span>EntrySound, <span class="kw7">SLOT_Interact</span>, splashSize<span class="br0">)</span>;
+		<span class="kw2">if</span> <span class="br0">(</span> Other.<span class="kw7">Instigator</span> <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+			<span class="kw4">MakeNoise</span><span class="br0">(</span>SplashSize<span class="br0">)</span>;
+	<span class="br0">}</span>
+	<span class="kw2">if</span><span class="br0">(</span> EntryActor <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+	<span class="br0">{</span>
+		splash <span class="sy0">=</span> <span class="kw4">Spawn</span><span class="br0">(</span>EntryActor<span class="br0">)</span>;
+		<span class="kw2">if</span> <span class="br0">(</span> splash <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+			splash.<span class="kw4">SetDrawScale</span><span class="br0">(</span>splashSize<span class="br0">)</span>;
+	<span class="br0">}</span>
+<span class="br0">}</span>
+ 
+ 
+<span class="kw1">event</span> <span class="kw4">untouch</span><span class="br0">(</span><span class="kw9">Actor</span> Other<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw2">if</span> <span class="br0">(</span> bWaterVolume <span class="sy0">&amp;&amp;</span> Other.<span class="me0">CanSplash</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span>
+		PlayExitSplash<span class="br0">(</span>Other<span class="br0">)</span>;
+<span class="br0">}</span>
+ 
+ 
+<span class="kw1">function</span> PlayExitSplash<span class="br0">(</span><span class="kw9">Actor</span> Other<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw1">local</span> <span class="kw5">float</span> SplashSize;
+	<span class="kw1">local</span> <span class="kw9">actor</span> splash;
+ 
+	splashSize <span class="sy0">=</span> <span class="kw3">FClamp</span><span class="br0">(</span><span class="nu0">0.003</span> <span class="sy0">*</span> Other.<span class="kw7">Mass</span>, <span class="nu0">0.1</span>, <span class="nu0">1.0</span> <span class="br0">)</span>;
+	<span class="kw2">if</span><span class="br0">(</span> ExitSound <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+		<span class="kw4">PlaySound</span><span class="br0">(</span>ExitSound, <span class="kw7">SLOT_Interact</span>, splashSize<span class="br0">)</span>;
+	<span class="kw2">if</span><span class="br0">(</span> ExitActor <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+	<span class="br0">{</span>
+		splash <span class="sy0">=</span> <span class="kw4">Spawn</span><span class="br0">(</span>ExitActor<span class="br0">)</span>;
+		<span class="kw2">if</span> <span class="br0">(</span> splash <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+			splash.<span class="kw4">SetDrawScale</span><span class="br0">(</span>splashSize<span class="br0">)</span>;
+	<span class="br0">}</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="The_Problem">The Problem</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:XPawn_Priority_Bug?section=10" title="Edit section: The Problem">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The most obvious problem is that the FootStepping() function in <a href="Legacy_XPawn.html" title="Legacy:XPawn">xPawn</a> takes it upon itself to check for touching <a href="Legacy_PhysicsVolume.html" title="Legacy:PhysicsVolume">PhysicsVolumes</a>, rather than using the <tt>PlayerVolume</tt> var in <a href="Legacy_PlayerReplicationInfo.html" title="Legacy:PlayerReplicationInfo">PlayerReplicationInfo</a>, in order to determine if a "splash" should be "played". In doing this, it bypasses the priority check made in the UpdatePlayerLocation() function of <a href="Legacy_PlayerReplicationInfo.html" title="Legacy:PlayerReplicationInfo">PlayerReplicationInfo</a>, thus eliminating the priority scheme for the "splashing" functionality.</p>
+<h2><span class="mw-headline" id="Solutions">Solutions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:XPawn_Priority_Bug?section=11" title="Edit section: Solutions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Proposal_One:_Avoid_Overlapping_Volumes">Proposal One: Avoid Overlapping Volumes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:XPawn_Priority_Bug?section=12" title="Edit section: Proposal One: Avoid Overlapping Volumes">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><i><b>Note:</b></i> Obviously, this is just a work-around...</p>
+<p>Just like the title says: Avoid overlapping <a href="Legacy_PhysicsVolume.html" title="Legacy:PhysicsVolume">PhysicsVolumes</a>.</p>
+<p><b>Pros:</b></p>
+<ul>
+<li>You avoid the issue all together</li>
+</ul>
+<p><b>Cons:</b></p>
+<ul>
+<li>You potentially sacrifice certain senarios–"dynamic" volumes attached to movers interacting with one another, for instance.</li>
+</ul>
+<h3><span class="mw-headline" id="Proposal_Two:_Modify_xPawn">Proposal Two: Modify xPawn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:XPawn_Priority_Bug?section=13" title="Edit section: Proposal Two: Modify xPawn">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>One solution may be to add a new check to the simulated function FootStepping() in xPawn (or in your own new pawn class) that compares touching volumes with <tt>bWaterVolume</tt> set to <tt>True</tt> with <tt>PlayerVolume</tt> in <a href="Legacy_PlayerReplicationInfo.html" title="Legacy:PlayerReplicationInfo">PlayerReplicationInfo</a>. If they are not one in the same, skip the splashing code.</p>
+<p><b>Pros:</b></p>
+<ul>
+<li>Will likely solve the problem</li>
+</ul>
+<p><b>Cons:</b></p>
+<ul>
+<li>By extending xPawn, you now essentially are forced into making a <a href="Legacy_Mod.html" title="Legacy:Mod" class="mw-redirect">mod</a>/<a href="Legacy_Mutator.html" title="Legacy:Mutator">mutator</a> in order to impliment your changes. Pawn-type is set in the <a href="Legacy_Player.html" title="Legacy:Player">player</a> class (by default, <a href="Legacy_XPlayer.html" title="Legacy:XPlayer">xPlayer</a>) which is in turn is set by a <a href="Legacy_GameInfo.html" title="Legacy:GameInfo">GameInfo</a> actor like xDeathMatch.</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.085 seconds
+Real time usage: 0.086 seconds
+Preprocessor visited node count: 79/1000000
+Preprocessor generated node count: 132/1000000
+Post‐expand include size: 36/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:3824-0!*!0!!en!*!* and timestamp 20161215143240 and revision id 9675
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:XPawn_Priority_Bug?oldid=9675">https://wiki.beyondunreal.com/Legacy:XPawn_Priority_Bug?oldid=9675</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Legacy_Mapping.html" title="Category:Legacy Mapping">Legacy Mapping</a></li><li><a href="Category_Legacy_Troubleshooting.html" title="Category:Legacy Troubleshooting">Legacy Troubleshooting</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_XPawn_Priority_Bug.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:XPawn_Priority_Bug?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:XPawn_Priority_Bug" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:XPawn_Priority_Bug" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AXPawn+Priority+Bug&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AXPawn+Priority+Bug" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:XPawn_Priority_Bug" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:XPawn_Priority_Bug" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:XPawn_Priority_Bug?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:XPawn_Priority_Bug?oldid=9675" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:XPawn_Priority_Bug" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 10:38, 7 April 2004.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":152});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:XPawn_Priority_Bug by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:57:37 GMT -->
+</html>

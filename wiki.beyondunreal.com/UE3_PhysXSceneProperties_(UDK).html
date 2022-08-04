@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:PhysXSceneProperties_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 11:32:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:WorldInfo structs (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:WorldInfo_structs_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:WorldInfo_structs_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_WorldInfo_structs_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="canonical" href="UE3_WorldInfo_structs_(UDK).html" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:WorldInfo_structs_(UDK)","wgTitle":"WorldInfo structs (UDK)","wgCurRevisionId":42312,"wgRevisionId":42312,"wgArticleId":28209,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:WorldInfo_structs_(UDK)","wgRelevantArticleId":28209,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"UE3:PhysXSceneProperties_(UDK)","wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgInternalRedirectTargetUrl":"/UE3:WorldInfo_structs_(UDK)#PhysXSceneProperties"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.redirect","mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_WorldInfo_structs_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I search for solutions in this order: Past Code, Unreal Source, Wiki, BUF, groups.yahoo, google, screaming at monitor. &#8211; RegularX
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:WorldInfo structs (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"><span class="mw-redirectedfrom">(Redirected from <a href="UE3_PhysXSceneProperties_(UDK)c25d.html?redirect=no" title="UE3:PhysXSceneProperties (UDK)">UE3:PhysXSceneProperties (UDK)</a>)</span></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a> &gt;&gt;&#160;<a href="UE3_Info_(UDK).html" title="UE3:Info (UDK)">Info</a> &gt;&gt;&#160;<a href="UE3_ZoneInfo_(UDK).html" title="UE3:ZoneInfo (UDK)">ZoneInfo</a> &gt;&gt;&#160;<a href="UE3_WorldInfo_(UDK).html" title="UE3:WorldInfo (UDK)">WorldInfo</a> <i>(structs)</i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Structs"><span class="tocnumber">1</span> <span class="toctext">Structs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#CompartmentRunList"><span class="tocnumber">1.1</span> <span class="toctext">CompartmentRunList</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#LightmassWorldInfoSettings"><span class="tocnumber">1.2</span> <span class="toctext">LightmassWorldInfoSettings</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#NavMeshPathConstraintCacheDatum"><span class="tocnumber">1.3</span> <span class="toctext">NavMeshPathConstraintCacheDatum</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#NavMeshPathGoalEvaluatorCacheDatum"><span class="tocnumber">1.4</span> <span class="toctext">NavMeshPathGoalEvaluatorCacheDatum</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#NetViewer"><span class="tocnumber">1.5</span> <span class="toctext">NetViewer</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#PhysXEmitterVerticalProperties"><span class="tocnumber">1.6</span> <span class="toctext">PhysXEmitterVerticalProperties</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#PhysXSceneProperties"><span class="tocnumber">1.7</span> <span class="toctext">PhysXSceneProperties</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#PhysXSimulationProperties"><span class="tocnumber">1.8</span> <span class="toctext">PhysXSimulationProperties</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#PhysXVerticalProperties"><span class="tocnumber">1.9</span> <span class="toctext">PhysXVerticalProperties</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#ScreenMessageString"><span class="tocnumber">1.10</span> <span class="toctext">ScreenMessageString</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#WorldFractureSettings"><span class="tocnumber">1.11</span> <span class="toctext">WorldFractureSettings</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>;Other member categories for this class::<span><a href="UE3_WorldInfo_internal_variables_(UDK).html" title="UE3:WorldInfo internal variables (UDK)">internal variables</a></span>, <span><a href="UE3_WorldInfo_native_functions_(UDK).html" title="UE3:WorldInfo native functions (UDK)">native functions</a></span></p>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Structs">Structs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:WorldInfo_structs_(UDK)?section=1" title="Edit section: Structs">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="CompartmentRunList">CompartmentRunList</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:WorldInfo_structs_(UDK)?section=2" title="Edit section: CompartmentRunList">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<p>For specifying which compartments should run on a given frame</p>
+<dl>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> RigidBody&#160;</dt>
+<dd>The rigid body compartment will run on this frame</dd>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> Fluid&#160;</dt>
+<dd>The fluid compartment will run on this frame</dd>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> Cloth&#160;</dt>
+<dd>The cloth compartment will run on this frame</dd>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> SoftBody&#160;</dt>
+<dd>The soft body compartment will run on this frame</dd>
+</dl>
+<p><b>Default values:</b></p>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td>Cloth</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Fluid</td>
+<td>True</td>
+</tr>
+<tr>
+<td>RigidBody</td>
+<td>True</td>
+</tr>
+<tr>
+<td>SoftBody</td>
+<td>True</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="LightmassWorldInfoSettings">LightmassWorldInfoSettings</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:WorldInfo_structs_(UDK)?section=3" title="Edit section: LightmassWorldInfoSettings">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> StaticLightingLevelScale&#160;</dt>
+<dd>Scale of the level relative to Gears of War 2 levels.</dd>
+</dl>
+<p>All scale-dependent Lightmass setting defaults have been tweaked to work well in Gears 2 levels, Any levels with a different scale should use this scale to compensate.</p>
+<dl>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> NumIndirectLightingBounces&#160;</dt>
+<dd>Number of times light is allowed to bounce off of surfaces, starting from the light source.</dd>
+</dl>
+<p>0 is direct lighting only, 1 is one bounce, etc. Bounce 1 takes the most time to calculate and contributes the most to visual quality, followed by bounce 2. Successive bounces are nearly free, but have a much lower impact.</p>
+<dl>
+<dt><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Object.Color</a> EnvironmentColor&#160;</dt>
+<dd>Color that rays which miss the scene will pick up.</dd>
+</dl>
+<p>This is effectively a light surrounding the entire level that is shadowed, but doesn't emit indirect lighting.</p>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> EnvironmentIntensity&#160;</dt>
+<dd>Scales EnvironmentColor to allow independent color and brightness controls.</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> EmissiveBoost&#160;</dt>
+<dd>Scales the emissive contribution of all materials in the scene.</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> DiffuseBoost&#160;</dt>
+<dd>Scales the diffuse contribution of all materials in the scene.</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> SpecularBoost&#160;</dt>
+<dd>Scales the specular contribution of all materials in the scene.</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> IndirectNormalInfluenceBoost&#160;</dt>
+<dd>Lerp factor that controls the influence of normal maps with directional lightmaps on indirect lighting.</dd>
+</dl>
+<p>A value of 0 gives a physically correct distribution of light, which may result in little normal influence in areas only lit by indirect lighting, but less lightmap compression artifacts. A value of .8 results in 80% of the lighting being redistributed in the dominant incident lighting direction, which effectively increases the per-pixel normal's influence, But causes more severe lightmap compression artifacts.</p>
+<dl>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> bUseAmbientOcclusion&#160;</dt>
+<dd>If TRUE, AmbientOcclusion will be enabled.</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> DirectIlluminationOcclusionFraction&#160;</dt>
+<dd>How much of the AO to apply to direct lighting.</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> IndirectIlluminationOcclusionFraction&#160;</dt>
+<dd>How much of the AO to apply to indirect lighting.</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> OcclusionExponent&#160;</dt>
+<dd>Higher exponents increase contrast.</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> FullyOccludedSamplesFraction&#160;</dt>
+<dd>Fraction of samples taken that must be occluded in order to reach full occlusion.</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> MaxOcclusionDistance&#160;</dt>
+<dd>Maximum distance for an object to cause occlusion on another object.</dd>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> bVisualizeMaterialDiffuse&#160;</dt>
+<dd>If TRUE, override normal direct and indirect lighting with just the exported diffuse term.</dd>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> bVisualizeAmbientOcclusion&#160;</dt>
+<dd>If TRUE, override normal direct and indirect lighting with just the AO term.</dd>
+</dl>
+<p><b>Default values:</b></p>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td>bUseAmbientOcclusion</td>
+<td>False</td>
+</tr>
+<tr>
+<td>bVisualizeAmbientOcclusion</td>
+<td>False</td>
+</tr>
+<tr>
+<td>bVisualizeMaterialDiffuse</td>
+<td>False</td>
+</tr>
+<tr>
+<td>DiffuseBoost</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>DirectIlluminationOcclusionFraction</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>EmissiveBoost</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>EnvironmentColor</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>EnvironmentIntensity</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>FullyOccludedSamplesFraction</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>IndirectIlluminationOcclusionFraction</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>IndirectNormalInfluenceBoost</td>
+<td>0.3</td>
+</tr>
+<tr>
+<td>MaxOcclusionDistance</td>
+<td>200.0</td>
+</tr>
+<tr>
+<td>NumIndirectLightingBounces</td>
+<td>3</td>
+</tr>
+<tr>
+<td>OcclusionExponent</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>SpecularBoost</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>StaticLightingLevelScale</td>
+<td>1.0</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="NavMeshPathConstraintCacheDatum">NavMeshPathConstraintCacheDatum</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:WorldInfo_structs_(UDK)?section=4" title="Edit section: NavMeshPathConstraintCacheDatum">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<dl>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> ListIdx&#160;</dt>
+<dt><a href="UE3_NavMeshPathConstraint_(UDK).html" title="UE3:NavMeshPathConstraint (UDK)">NavMeshPathConstraint</a> List[5] <i>(<a href="#MAX_INSTANCES_PER_CLASS">MAX_INSTANCES_PER_CLASS</a>)</i>&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="NavMeshPathGoalEvaluatorCacheDatum">NavMeshPathGoalEvaluatorCacheDatum</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:WorldInfo_structs_(UDK)?section=5" title="Edit section: NavMeshPathGoalEvaluatorCacheDatum">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<p>Path Goal evaluator pool</p>
+<dl>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> ListIdx&#160;</dt>
+<dt><a href="UE3_NavMeshPathGoalEvaluator_(UDK).html" title="UE3:NavMeshPathGoalEvaluator (UDK)">NavMeshPathGoalEvaluator</a> List[5] <i>(<a href="#MAX_INSTANCES_PER_CLASS">MAX_INSTANCES_PER_CLASS</a>)</i>&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="NetViewer">NetViewer</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:WorldInfo_structs_(UDK)?section=6" title="Edit section: NetViewer">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<p>stores information on a viewer that actors need to be checked against for relevancy</p>
+<dl>
+<dt><a href="UE3_PlayerController_(UDK).html" title="UE3:PlayerController (UDK)">PlayerController</a> InViewer&#160;</dt>
+<dt><a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a> Viewer&#160;</dt>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> ViewLocation&#160;</dt>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> ViewDir&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="PhysXEmitterVerticalProperties">PhysXEmitterVerticalProperties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:WorldInfo_structs_(UDK)?section=7" title="Edit section: PhysXEmitterVerticalProperties">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<p>Parameters for emitter vertical</p>
+<dl>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> bDisableLod&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> ParticlesLodMin&#160;</dt>
+<dd>Min value for particle LOD range.</dd>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> ParticlesLodMax&#160;</dt>
+<dd>Max value for particle LOD range.</dd>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> PacketsPerPhysXParticleSystemMax&#160;</dt>
+<dd>Limit for packets per PhysXParticleSystem. Caped to 900.</dd>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> bApplyCylindricalPacketCulling&#160;</dt>
+<dd>Selects either cylindrical or spherical packet range culling.</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> SpawnLodVsFifoBias&#160;</dt>
+<dd>Parameter for scaling spawn lod impact. 1.0: As much as possible lod through</dd>
+</dl>
+<p>emitter spawn rate/lifetime control. 0.0: Lod constraint handled only through fifo control.</p>
+<p><b>Default values:</b></p>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td>bApplyCylindricalPacketCulling</td>
+<td>True</td>
+</tr>
+<tr>
+<td>bDisableLod</td>
+<td>False</td>
+</tr>
+<tr>
+<td>PacketsPerPhysXParticleSystemMax</td>
+<td>500</td>
+</tr>
+<tr>
+<td>ParticlesLodMax</td>
+<td>15000</td>
+</tr>
+<tr>
+<td>ParticlesLodMin</td>
+<td>0</td>
+</tr>
+<tr>
+<td>SpawnLodVsFifoBias</td>
+<td>1.0</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="PhysXSceneProperties">PhysXSceneProperties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:WorldInfo_structs_(UDK)?section=8" title="Edit section: PhysXSceneProperties">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<p>Timings for primary and compartments.</p>
+<dl>
+<dt><a href="#PhysXSimulationProperties">PhysXSimulationProperties</a> PrimaryScene&#160;</dt>
+<dd>Timing settings for the PhysX primary scene</dd>
+<dt><a href="#PhysXSimulationProperties">PhysXSimulationProperties</a> CompartmentRigidBody&#160;</dt>
+<dd>Timing settings for the PhysX rigid body compartment</dd>
+<dt><a href="#PhysXSimulationProperties">PhysXSimulationProperties</a> CompartmentFluid&#160;</dt>
+<dd>Timing settings for the PhysX fluid compartment</dd>
+<dt><a href="#PhysXSimulationProperties">PhysXSimulationProperties</a> CompartmentCloth&#160;</dt>
+<dd>Timing settings for the PhysX cloth compartment</dd>
+<dt><a href="#PhysXSimulationProperties">PhysXSimulationProperties</a> CompartmentSoftBody&#160;</dt>
+<dd>Timing settings for the PhysX soft body compartment</dd>
+</dl>
+<p><b>Default values:</b></p>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td>CompartmentCloth</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="#PhysXSimulationProperties">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>bFixedTimeStep</td>
+<td>True</td>
+</tr>
+<tr>
+<td>bUseHardware</td>
+<td>True</td>
+</tr>
+<tr>
+<td>MaxSubSteps</td>
+<td>2</td>
+</tr>
+<tr>
+<td>TimeStep</td>
+<td>0.02</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>CompartmentFluid</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="#PhysXSimulationProperties">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>bFixedTimeStep</td>
+<td>False</td>
+</tr>
+<tr>
+<td>bUseHardware</td>
+<td>True</td>
+</tr>
+<tr>
+<td>MaxSubSteps</td>
+<td>1</td>
+</tr>
+<tr>
+<td>TimeStep</td>
+<td>0.02</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>CompartmentRigidBody</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="#PhysXSimulationProperties">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>bFixedTimeStep</td>
+<td>False</td>
+</tr>
+<tr>
+<td>bUseHardware</td>
+<td>False</td>
+</tr>
+<tr>
+<td>MaxSubSteps</td>
+<td>2</td>
+</tr>
+<tr>
+<td>TimeStep</td>
+<td>0.02</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>CompartmentSoftBody</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="#PhysXSimulationProperties">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>bFixedTimeStep</td>
+<td>True</td>
+</tr>
+<tr>
+<td>bUseHardware</td>
+<td>True</td>
+</tr>
+<tr>
+<td>MaxSubSteps</td>
+<td>2</td>
+</tr>
+<tr>
+<td>TimeStep</td>
+<td>0.02</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="PhysXSimulationProperties">PhysXSimulationProperties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:WorldInfo_structs_(UDK)?section=9" title="Edit section: PhysXSimulationProperties">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<p>Parameters used for a PhysX primary scene or compartment</p>
+<dl>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> bUseHardware&#160;</dt>
+<dd>Whether or not to put the scene (or compartment) in PhysX hardware, if available.</dd>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> bFixedTimeStep&#160;</dt>
+<dd>If true, substep sizes are fixed equal to TimeStep.</dd>
+</dl>
+<p>If false, substep sizes are varied to fit an integer number of times into the frame time.</p>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> TimeStep&#160;</dt>
+<dd>The fixed or maximum substep size, depending on the value of bFixedTimeStep.</dd>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> MaxSubSteps&#160;</dt>
+<dd>The maximum number of substeps allowed per frame.</dd>
+</dl>
+<p><b>Default values:</b></p>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td>bFixedTimeStep</td>
+<td>False</td>
+</tr>
+<tr>
+<td>bUseHardware</td>
+<td>False</td>
+</tr>
+<tr>
+<td>MaxSubSteps</td>
+<td>5</td>
+</tr>
+<tr>
+<td>TimeStep</td>
+<td>0.02</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="PhysXVerticalProperties">PhysXVerticalProperties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:WorldInfo_structs_(UDK)?section=10" title="Edit section: PhysXVerticalProperties">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<dl>
+<dt><a href="#PhysXEmitterVerticalProperties">PhysXEmitterVerticalProperties</a> Emitters&#160;</dt>
+<dd>Parameters for Emitter Vertical</dd>
+</dl>
+<h3><span class="mw-headline" id="ScreenMessageString">ScreenMessageString</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:WorldInfo_structs_(UDK)?section=11" title="Edit section: ScreenMessageString">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> transient, native</p>
+<p>Helper struct for tracking on screen messages.</p>
+<dl>
+<dt><a href="UE3_Object_structs_(UDK).html#qword" title="UE3:Object structs (UDK)">Object.qword</a> Key&#160;</dt>
+<dd>The 'key' for this message.</dd>
+<dt><a href="String.html" title="String">string</a> ScreenMessage&#160;</dt>
+<dd>The message to display.</dd>
+<dt><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Object.Color</a> DisplayColor&#160;</dt>
+<dd>The color to display the message in.</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> TimeToDisplay&#160;</dt>
+<dd>The number of frames to display it.</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> CurrentTimeDisplayed&#160;</dt>
+<dd>The number of frames it has been displayed so far.</dd>
+</dl>
+<h3><span class="mw-headline" id="WorldFractureSettings">WorldFractureSettings</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:WorldInfo_structs_(UDK)?section=12" title="Edit section: WorldFractureSettings">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<p>Struct used for passing back results from GetWorldFractureSettings</p>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> ChanceOfPhysicsChunkOverride&#160;</dt>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> bEnableChanceOfPhysicsChunkOverride&#160;</dt>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> bLimitExplosionChunkSize&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> MaxExplosionChunkSize&#160;</dt>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> bLimitDamageChunkSize&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> MaxDamageChunkSize&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> MaxNumFacturedChunksToSpawnInAFrame&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> FractureExplosionVelScale&#160;</dt>
+</dl>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.205 seconds
+Real time usage: 0.222 seconds
+Preprocessor visited node count: 1039/1000000
+Preprocessor generated node count: 3423/1000000
+Post‐expand include size: 6276/2097152 bytes
+Template argument size: 1820/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  142.605      1 - -total
+ 55.94%   79.774      1 - Template:Infobox_class_part
+ 52.48%   74.843      1 - Template:Infobox_class_part/core
+ 25.89%   36.916     18 - Template:Tl
+ 17.12%   24.409     10 - Template:Samegame
+ 11.04%   15.748      1 - Template:Ch
+  9.02%   12.868      4 - Template:Cl
+  4.50%    6.412      1 - Template:Autogenerated
+  3.14%    4.473      1 - Template:Ambox
+  2.93%    4.173      3 - Template:Gamename
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:28209-0!*!*!*!*!*!* and timestamp 20161215161333 and revision id 42312
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:WorldInfo_structs_(UDK)?oldid=42312#PhysXSceneProperties">https://wiki.beyondunreal.com/UE3:WorldInfo_structs_(UDK)?oldid=42312#PhysXSceneProperties</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_WorldInfo_structs_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:WorldInfo_structs_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:WorldInfo_structs_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:WorldInfo_structs_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AWorldInfo+structs+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AWorldInfo+structs+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:WorldInfo_structs_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:WorldInfo_structs_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:WorldInfo_structs_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:WorldInfo_structs_(UDK)?oldid=42312" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:WorldInfo_structs_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 08:04, 17 January 2010.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":91});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:PhysXSceneProperties_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 11:33:00 GMT -->
+</html>

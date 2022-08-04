@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Templating_In_Python by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Templating In Python - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Templating_In_Python" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Templating_In_Python" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_Templating_In_Python.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Templating_In_Python","wgTitle":"Templating In Python","wgCurRevisionId":40306,"wgRevisionId":40306,"wgArticleId":3172,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Templating_In_Python","wgRelevantArticleId":3172,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Templating_In_Python skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I don't need to test my programs. I have an error-correcting modem.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Templating In Python</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This was a quick, quick hack, because I got tired of having to do math when I move things in my mutator config or add elements. Just save the program text at the end to template.py, or whatever else you'd rather call it. It's a simple preprocessor which will generate new files from template files given on the command line. Any file specified will have its extension stripped to produce the name for the new file. Directories specified will be searched recursively for .template files, which will be processed into new files without the .template extension. Basically, it makes a clean environment for each file, in which commands embedded in the file can be executed. Anything between two lines starting with "!!exec" will be executed, but will produce no output in the processed file. Anything between a pair of "!!" on a line will be evaluated as an expression in Python, and will have its value converted to a string and inserted in place of the expression. The exec block feature is mostly for setting up constants. Also, you can change the formatting used for expression which yield floating-point values by setting "floatformat" to a Python format string in an exec block. Here's a quick sample, from some of the code I'm actually using this with (cut down a little bit):</p>
+<p>This is part of RadarConfig.uc.template:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="sy0">!!</span><span class="kw1">exec</span> set up constants <span class="kw2">for</span> <span class="kw8">GUI</span> layout
+gridw<span class="sy0">=</span><span class="nu0">21.0</span>
+gridh<span class="sy0">=</span><span class="nu0">19.0</span>
+llbll<span class="sy0">=</span><span class="nu0">1.0</span>
+nmlblw<span class="sy0">=</span><span class="nu0">4.0</span>
+elh<span class="sy0">=</span><span class="nu0">2.0</span>
+row1t<span class="sy0">=</span><span class="nu0">1.0</span>
+row2t<span class="sy0">=</span><span class="nu0">4.0</span>
+floatformat<span class="sy0">=</span><span class="st0">"%0.8f"</span>
+<span class="sy0">!!</span><span class="kw1">exec</span>
+<span class="kw1">defaultproperties</span>
+<span class="br0">{</span>
+	<span class="kw2">Begin</span> <span class="kw8">Object</span> <span class="kw1">Class</span><span class="sy0">=</span>GUIButton <span class="kw5">name</span><span class="sy0">=</span>DialogBackground
+		WinWidth<span class="sy0">=</span><span class="nu0">1.0</span>
+		WinHeight<span class="sy0">=</span><span class="nu0">1.0</span>
+		WinTop<span class="sy0">=</span><span class="nu0">0</span>
+		WinLeft<span class="sy0">=</span><span class="nu0">0</span>
+		bAcceptsInput<span class="sy0">=</span><span class="kw6">false</span>
+		bNeverFocus<span class="sy0">=</span><span class="kw6">true</span>
+		StyleName<span class="sy0">=</span><span class="st0">"ComboListBox"</span>
+		bBoundToParent<span class="sy0">=</span><span class="kw6">True</span>
+		bScaleToParent<span class="sy0">=</span><span class="kw6">True</span>
+	End <span class="kw8">Object</span>
+	Controls<span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="sy0">=</span>GUIButton<span class="st0">'TacticalDisplay.RadarConfig.DialogBackground'</span>
+	<span class="kw2">Begin</span> <span class="kw8">Object</span> <span class="kw1">Class</span><span class="sy0">=</span>GUILabel <span class="kw5">name</span><span class="sy0">=</span>DialogText
+		Caption<span class="sy0">=</span><span class="st0">"Tactical Display Configuration"</span>
+		TextAlign<span class="sy0">=</span>TXTA_Center
+		WinWidth<span class="sy0">=</span><span class="nu0">1.0</span>
+		WinHeight<span class="sy0">=!!</span>elh<span class="sy0">/</span>gridh<span class="sy0">!!</span>
+		WinLeft<span class="sy0">=</span><span class="nu0">0.0</span>
+		WinTop<span class="sy0">=!!</span>row1t<span class="sy0">/</span>gridh<span class="sy0">!!</span>
+		bBoundToParent<span class="sy0">=</span><span class="kw6">True</span>
+		bScaleToParent<span class="sy0">=</span><span class="kw6">True</span>
+	End <span class="kw8">Object</span>
+	Controls<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">=</span>GUILabel<span class="st0">'TacticalDisplay.RadarConfig.DialogText'</span>
+	<span class="kw2">Begin</span> <span class="kw8">Object</span> <span class="kw1">Class</span><span class="sy0">=</span>GUILabel <span class="kw5">name</span><span class="sy0">=</span>DetectRangeText
+		Caption<span class="sy0">=</span><span class="st0">"Maximum Range"</span>
+		WinWidth<span class="sy0">=!!</span>nmlblw<span class="sy0">/</span>gridw<span class="sy0">!!</span>
+		WinHeight<span class="sy0">=!!</span>elh<span class="sy0">/</span>gridh<span class="sy0">!!</span>
+		WinLeft<span class="sy0">=!!</span>llbll<span class="sy0">/</span>gridw<span class="sy0">!!</span>
+		WinTop<span class="sy0">=!!</span>row2t<span class="sy0">/</span>gridh<span class="sy0">!!</span>
+		bBoundToParent<span class="sy0">=</span><span class="kw6">True</span>
+		bScaleToParent<span class="sy0">=</span><span class="kw6">True</span>
+	End <span class="kw8">Object</span>
+	Controls<span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span><span class="sy0">=</span>GUILabel<span class="st0">'TacticalDisplay.RadarConfig.DetectRangeText'</span>
+</pre></div>
+</div>
+<p>Running template.py on it generates this:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">defaultproperties</span>
+<span class="br0">{</span>
+	<span class="kw2">Begin</span> <span class="kw8">Object</span> <span class="kw1">Class</span><span class="sy0">=</span>GUIButton <span class="kw5">name</span><span class="sy0">=</span>DialogBackground
+		WinWidth<span class="sy0">=</span><span class="nu0">1.0</span>
+		WinHeight<span class="sy0">=</span><span class="nu0">1.0</span>
+		WinTop<span class="sy0">=</span><span class="nu0">0</span>
+		WinLeft<span class="sy0">=</span><span class="nu0">0</span>
+		bAcceptsInput<span class="sy0">=</span><span class="kw6">false</span>
+		bNeverFocus<span class="sy0">=</span><span class="kw6">true</span>
+		StyleName<span class="sy0">=</span><span class="st0">"ComboListBox"</span>
+		bBoundToParent<span class="sy0">=</span><span class="kw6">True</span>
+		bScaleToParent<span class="sy0">=</span><span class="kw6">True</span>
+	End <span class="kw8">Object</span>
+	Controls<span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="sy0">=</span>GUIButton<span class="st0">'TacticalDisplay.RadarConfig.DialogBackground'</span>
+	<span class="kw2">Begin</span> <span class="kw8">Object</span> <span class="kw1">Class</span><span class="sy0">=</span>GUILabel <span class="kw5">name</span><span class="sy0">=</span>DialogText
+		Caption<span class="sy0">=</span><span class="st0">"Tactical Display Configuration"</span>
+		TextAlign<span class="sy0">=</span>TXTA_Center
+		WinWidth<span class="sy0">=</span><span class="nu0">1.0</span>
+		WinHeight<span class="sy0">=</span><span class="nu0">0.10526316</span>
+		WinLeft<span class="sy0">=</span><span class="nu0">0.0</span>
+		WinTop<span class="sy0">=</span><span class="nu0">0.05263158</span>
+		bBoundToParent<span class="sy0">=</span><span class="kw6">True</span>
+		bScaleToParent<span class="sy0">=</span><span class="kw6">True</span>
+	End <span class="kw8">Object</span>
+	Controls<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">=</span>GUILabel<span class="st0">'TacticalDisplay.RadarConfig.DialogText'</span>
+	<span class="kw2">Begin</span> <span class="kw8">Object</span> <span class="kw1">Class</span><span class="sy0">=</span>GUILabel <span class="kw5">name</span><span class="sy0">=</span>DetectRangeText
+		Caption<span class="sy0">=</span><span class="st0">"Maximum Range"</span>
+		WinWidth<span class="sy0">=</span><span class="nu0">0.19047619</span>
+		WinHeight<span class="sy0">=</span><span class="nu0">0.10526316</span>
+		WinLeft<span class="sy0">=</span><span class="nu0">0.04761905</span>
+		WinTop<span class="sy0">=</span><span class="nu0">0.21052632</span>
+		bBoundToParent<span class="sy0">=</span><span class="kw6">True</span>
+		bScaleToParent<span class="sy0">=</span><span class="kw6">True</span>
+	End <span class="kw8">Object</span>
+	Controls<span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span><span class="sy0">=</span>GUILabel<span class="st0">'TacticalDisplay.RadarConfig.DetectRangeText'</span>
+</pre></div>
+</div>
+<p>I've deleted the rest of the controls (there are 26 in this dialog), and the constants that are associated with them, but you get the idea. to add a new control at the bottom of the dialog, for example, I can make some new constants to define its location, and change gridh, then rerun template.py.</p>
+<p>And finally, here's the Python script:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="co2">#!/usr/bin/python</span>
+ 
+<span class="kw1">import</span> os, sys, re, types
+ 
+evalre <span class="sy0">=</span> re.<span class="me0">compile</span><span class="br0">(</span><span class="st0">'!!(.*?)!!'</span><span class="br0">)</span>
+ 
+def visitor <span class="br0">(</span>arg, dirname, names<span class="br0">)</span>:
+	<span class="kw2">for</span> filename in names:
+		<span class="kw2">if</span> filename.<span class="me0">endswith</span><span class="br0">(</span><span class="st0">".template"</span><span class="br0">)</span>:
+			processfile<span class="br0">(</span>os.<span class="me0">path</span>.<span class="me0">join</span><span class="br0">(</span>dirname,filename<span class="br0">)</span><span class="br0">)</span>
+ 
+def processfile<span class="br0">(</span>filename<span class="br0">)</span>:
+	envlocals<span class="sy0">=</span><span class="br0">{</span><span class="br0">}</span>
+	envglobals<span class="sy0">=</span><span class="br0">{</span><span class="br0">}</span>
+	execstring<span class="sy0">=</span><span class="st0">""</span>
+	inexec<span class="sy0">=</span><span class="kw6">False</span>
+	infile<span class="sy0">=</span>file<span class="br0">(</span>filename,<span class="st0">"r"</span><span class="br0">)</span>
+	outfile<span class="sy0">=</span>file<span class="br0">(</span>os.<span class="me0">path</span>.<span class="me0">splitext</span><span class="br0">(</span>filename<span class="br0">)</span><span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span>,<span class="st0">"w"</span><span class="br0">)</span>
+	<span class="kw2">for</span> line in infile:
+		<span class="kw2">if</span> line.<span class="me0">startswith</span><span class="br0">(</span><span class="st0">"!!exec"</span><span class="br0">)</span>:
+			<span class="kw2">if</span> inexec:
+				<span class="kw1">exec</span><span class="br0">(</span>execstring,envglobals,envlocals<span class="br0">)</span>
+				execstring<span class="sy0">=</span><span class="st0">""</span>
+				inexec<span class="sy0">=</span><span class="kw6">False</span>
+			<span class="kw2">else</span>:
+				inexec<span class="sy0">=</span><span class="kw6">True</span>
+ 
+			<span class="kw2">continue</span>
+		<span class="kw2">if</span> inexec:
+			execstring <span class="sy0">+=</span> line
+			<span class="kw2">continue</span>
+		index <span class="sy0">=</span> <span class="nu0">0</span>
+		newline <span class="sy0">=</span> <span class="st0">""</span>
+		match <span class="sy0">=</span> evalre.<span class="me0">search</span><span class="br0">(</span>line,index<span class="br0">)</span>
+		<span class="kw2">while</span> match:
+			val <span class="sy0">=</span> <span class="kw3">eval</span><span class="br0">(</span>match.<span class="me0">group</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span>,envglobals,envlocals<span class="br0">)</span>
+			<span class="kw2">if</span> type<span class="br0">(</span>val<span class="br0">)</span> <span class="sy0">==</span> <span class="kw5">float</span> and <span class="st0">"floatformat"</span> in envlocals:
+				val <span class="sy0">=</span> envlocals<span class="br0">[</span><span class="st0">"floatformat"</span><span class="br0">]</span> <span class="sy0">%</span> val
+			<span class="kw2">else</span>:
+				val <span class="sy0">=</span> str<span class="br0">(</span>val<span class="br0">)</span>
+			newline <span class="sy0">+=</span> line<span class="br0">[</span>index:match.<span class="me0">start</span><span class="br0">(</span><span class="br0">)</span><span class="br0">]</span>
+			newline <span class="sy0">+=</span> val
+			index <span class="sy0">=</span> match.<span class="me0">end</span><span class="br0">(</span><span class="br0">)</span>
+			match <span class="sy0">=</span> evalre.<span class="me0">search</span><span class="br0">(</span>line,index<span class="br0">)</span>
+		newline <span class="sy0">+=</span> line<span class="br0">[</span>index:<span class="br0">]</span>
+		outfile.<span class="me0">write</span><span class="br0">(</span>newline<span class="br0">)</span>
+		infile.<span class="me0">close</span><span class="br0">(</span><span class="br0">)</span>
+		outfile.<span class="me0">close</span><span class="br0">(</span><span class="br0">)</span>
+ 
+<span class="kw2">for</span> filename in sys.<span class="me0">argv</span><span class="br0">[</span><span class="nu0">1</span>:<span class="br0">]</span>:
+	<span class="kw2">if</span> os.<span class="me0">path</span>.<span class="me0">exists</span><span class="br0">(</span>filename<span class="br0">)</span>:
+		<span class="kw2">if</span> os.<span class="me0">path</span>.<span class="me0">isdir</span><span class="br0">(</span>filename<span class="br0">)</span>:
+			os.<span class="me0">path</span>.<span class="me0">walk</span><span class="br0">(</span>filename,visitor,<span class="kw5">None</span><span class="br0">)</span>
+		elif os.<span class="me0">path</span>.<span class="me0">isfile</span><span class="br0">(</span>filename<span class="br0">)</span>:
+			processfile<span class="br0">(</span>filename<span class="br0">)</span>
+</pre></div>
+</div>
+<p>In case your browse messes up the whitespace, you can also get the <a rel="nofollow" class="external text" href="http://chshrcat.homelinux.net/template.py">script in a file</a>.</p>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Templating_In_Python?section=1" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_Open_Source.html" title="Legacy:Open Source">Open Source</a></li>
+<li><a href="Legacy_Python.html" title="Legacy:Python">Python</a></li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.059 seconds
+Real time usage: 0.060 seconds
+Preprocessor visited node count: 30/1000000
+Preprocessor generated node count: 68/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:3172-0!*!0!*!*!*!* and timestamp 20161215143215 and revision id 40306
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Templating_In_Python?oldid=40306">https://wiki.beyondunreal.com/Legacy:Templating_In_Python?oldid=40306</a>"</div>
+					<div id='catlinks' class='catlinks catlinks-allhidden'></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_Templating_In_Python.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Templating_In_Python?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Templating_In_Python" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Templating_In_Python" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ATemplating+In+Python&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ATemplating+In+Python" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Templating_In_Python" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Templating_In_Python" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Templating_In_Python?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Templating_In_Python?oldid=40306" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Templating_In_Python" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 02:49, 3 December 2009.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":74});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Templating_In_Python by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:53 GMT -->
+</html>

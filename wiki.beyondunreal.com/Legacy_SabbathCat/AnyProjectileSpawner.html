@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:SabbathCat/AnyProjectileSpawner - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="/edit/Legacy:SabbathCat/AnyProjectileSpawner" />
+<link rel="edit" title="Edit" href="/edit/Legacy:SabbathCat/AnyProjectileSpawner" />
+<link rel="shortcut icon" href="/w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.beyondunreal.com/w/api.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="/Legacy:SabbathCat/AnyProjectileSpawner" />
+<link rel="copyright" href="/Unreal_Wiki:Copyrights" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="https://wiki.beyondunreal.com/w/load.php?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="https://wiki.beyondunreal.com/w/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="https://wiki.beyondunreal.com/w/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:SabbathCat/AnyProjectileSpawner","wgTitle":"SabbathCat/AnyProjectileSpawner","wgCurRevisionId":7692,"wgRevisionId":7692,"wgArticleId":2887,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:SabbathCat/AnyProjectileSpawner","wgRelevantArticleId":2887,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_SabbathCat_AnyProjectileSpawner skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Mostly Harmless
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:SabbathCat/AnyProjectileSpawner</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="/Legacy:SabbathCat" title="Legacy:SabbathCat">Legacy:SabbathCat</a></span></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+It's basically a MortarSpawner code, but now will fire any projectile.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="co1">//=============================================================================</span>
+<span class="co1">// MortarSpawner3. New (Improved?)</span>
+<span class="co1">//=============================================================================</span>
+<span class="kw1">class</span> GungHo <span class="kw1">extends</span> <span class="kw9">Effects</span>;
+ 
+<span class="co2">#exec mesh import mesh=gungho01 anivfile=Models\gungho01_a.3d datafile=Models\gungho01_d.3d x=0 y=0 z=0 mlod=0</span>
+<span class="co2">#exec mesh origin mesh=gungho01 x=0 y=0 z=0 YAW=-16384 PITCH=16384 ROLL=0</span>
+ 
+ 
+<span class="co2">#exec mesh sequence mesh=gungho01 seq=All startframe=0 numframes=1</span>
+ 
+<span class="co2">#exec meshmap new meshmap=gungho01 mesh=gungho01</span>
+<span class="co2">#exec meshmap scale meshmap=gungho01 x=0.13281 y=0.13281 z=0.26563</span>
+ 
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">int</span> ShellDamage;
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">int</span> ShellMomentumTransfer;
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">int</span> ShellBlastRadius;
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">int</span> RateOfFire;
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">float</span> ShellSpeed;
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">int</span> Deviation;
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">bool</span> bDeviate;
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">sound</span> FireSound;
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> Class<span class="sy0">&lt;</span>Projectile<span class="sy0">&gt;</span> ProjectileType;
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">float</span> ProjectileScale;
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">float</span> PCRM;
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">float</span> PCHM;
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">vector</span> VelocityMultiplyerJ;
+ 
+<span class="kw1">function</span> <span class="kw4">BeginPlay</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw4">SetTimer</span><span class="br0">(</span>RateOfFire, <span class="kw6">True</span><span class="br0">)</span>;
+<span class="br0">}</span>
+ 
+<span class="kw1">function</span> <span class="kw4">Timer</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	LaunchShell<span class="br0">(</span><span class="br0">)</span>;
+	<span class="kw4">PlaySound</span><span class="br0">(</span>FireSound, <span class="kw7">SLOT_None</span>, <span class="nu0">4.0</span><span class="br0">)</span>;	
+<span class="br0">}</span>
+ 
+<span class="kw1">function</span> LaunchShell<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw1">local</span> <span class="kw5">rotator</span> NewRot;
+	<span class="kw1">local</span> <span class="kw9">Projectile</span> shell;
+ 
+	<span class="kw2">if</span> <span class="br0">(</span>bDeviate<span class="br0">)</span>
+	<span class="br0">{</span>
+		NewRot.<span class="me0">Pitch</span> <span class="sy0">=</span> <span class="kw7">Rotation</span>.<span class="me0">Pitch</span> <span class="sy0">+</span> <span class="br0">(</span>Deviation<span class="sy0">/</span><span class="nu0">2</span><span class="br0">)</span> <span class="sy0">-</span> <span class="br0">(</span>Deviation <span class="sy0">*</span> <span class="kw3">FRand</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>;
+		NewRot.<span class="me0">Roll</span>  <span class="sy0">=</span> <span class="kw7">Rotation</span>.<span class="me0">Roll</span>  <span class="sy0">+</span> <span class="br0">(</span>Deviation<span class="sy0">/</span><span class="nu0">2</span><span class="br0">)</span> <span class="sy0">-</span> <span class="br0">(</span>Deviation <span class="sy0">*</span> <span class="kw3">FRand</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>;
+		NewRot.<span class="me0">Yaw</span>   <span class="sy0">=</span> <span class="kw7">Rotation</span>.<span class="me0">Yaw</span>   <span class="sy0">+</span> <span class="br0">(</span>Deviation<span class="sy0">/</span><span class="nu0">2</span><span class="br0">)</span> <span class="sy0">-</span> <span class="br0">(</span>Deviation <span class="sy0">*</span> <span class="kw3">FRand</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>;
+	<span class="br0">}</span>
+	<span class="kw2">else</span>
+		NewRot <span class="sy0">=</span> <span class="kw7">Rotation</span>;
+ 
+	shell <span class="sy0">=</span> <span class="kw4">Spawn</span><span class="br0">(</span>ProjectileType,,, <span class="kw7">Location</span><span class="sy0">+</span><span class="kw5">Vector</span><span class="br0">(</span><span class="kw7">Rotation</span><span class="br0">)</span><span class="sy0">*</span><span class="nu0">20</span>, NewRot<span class="br0">)</span>;
+        shell.<span class="me0">Speed</span> <span class="sy0">=</span> ShellSpeed;
+	shell.<span class="me0">Damage</span> <span class="sy0">=</span> ShellDamage;
+	shell.<span class="me0">MomentumTransfer</span> <span class="sy0">=</span> ShellMomentumTransfer;
+	shell.<span class="kw7">DrawScale</span><span class="sy0">=</span>ProjectileScale;
+<span class="co1">//	shell.CollisionHeight = shell.CollisionHeight*PCHM;</span>
+<span class="co1">//	shell.CollisionRadius = shell.CollisionRadius*PCRM;</span>
+        shell.<span class="kw7">Velocity</span><span class="sy0">=</span>shell.<span class="kw7">Velocity</span><span class="sy0">*</span>VelocityMultiplyerJ;
+ 
+<span class="br0">}</span>
+ 
+<span class="kw1">defaultproperties</span>
+<span class="br0">{</span>
+     ShellDamage<span class="sy0">=</span><span class="nu0">70</span>
+     ShellMomentumTransfer<span class="sy0">=</span><span class="nu0">150000</span>
+     ShellBlastRadius<span class="sy0">=</span><span class="nu0">400</span>
+     RateOfFire<span class="sy0">=</span><span class="nu0">5</span>
+     Deviation<span class="sy0">=</span><span class="nu0">4096</span>
+     bDeviate<span class="sy0">=</span><span class="kw6">True</span>
+     FireSound<span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'UnrealShare.flak.Explode1'</span>
+     bHidden<span class="sy0">=</span><span class="kw6">True</span>
+     bNetTemporary<span class="sy0">=</span><span class="kw6">False</span>
+     bDirectional<span class="sy0">=</span><span class="kw6">True</span>
+  <span class="kw7">DrawType</span><span class="sy0">=</span><span class="kw7">DT_Mesh</span>
+  <span class="kw5">Mesh</span><span class="sy0">=</span><span class="kw5">Mesh</span><span class="st0">'gungho01'</span>
+  bCollideWhenPlacing<span class="sy0">=</span><span class="kw6">False</span>
+  bCollideWorld<span class="sy0">=</span><span class="kw6">False</span>
+  <span class="kw7">CollisionRadius</span><span class="sy0">=</span><span class="nu0">17.00000</span>
+  <span class="kw7">CollisionHeight</span><span class="sy0">=</span><span class="nu0">34.00000</span>
+  MultiSkins<span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="sy0">=</span><span class="kw5">Texture</span><span class="st0">'UnrealI.Skins.JBlob1'</span>
+  MultiSkins<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">=</span><span class="kw5">Texture</span><span class="st0">'UnrealI.Skins.JBoulder1'</span>
+  MultiSkins<span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span><span class="sy0">=</span><span class="kw5">Texture</span><span class="st0">'UnrealI.Skins.AAsbSuit1'</span>
+     ProjectileScale<span class="sy0">=</span><span class="nu0">1.000000</span>
+     PCHM<span class="sy0">=</span><span class="nu0">1.000000</span> 
+     PCRM<span class="sy0">=</span><span class="nu0">1.000000</span>
+  VelocityMultiplyerJ<span class="sy0">=</span><span class="nu0">1.000000</span>,<span class="nu0">1.000000</span>,<span class="nu0">1.000000</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.034 seconds
+Real time usage: 0.034 seconds
+Preprocessor visited node count: 4/1000000
+Preprocessor generated node count: 24/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:2887-0!*!*!*!*!*!* and timestamp 20161216194433 and revision id 7692
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:SabbathCat/AnyProjectileSpawner?oldid=7692">https://wiki.beyondunreal.com/Legacy:SabbathCat/AnyProjectileSpawner?oldid=7692</a>"</div>
+					<div id='catlinks' class='catlinks catlinks-allhidden'></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="/Legacy:SabbathCat/AnyProjectileSpawner">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="/edit/Legacy_talk:SabbathCat/AnyProjectileSpawner?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="/edit/Legacy:SabbathCat/AnyProjectileSpawner" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="/history/Legacy:SabbathCat/AnyProjectileSpawner" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="/Special:UserLogin?returnto=Legacy%3ASabbathCat%2FAnyProjectileSpawner&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="/Special:UserLogin?returnto=Legacy%3ASabbathCat%2FAnyProjectileSpawner" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="/" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="/" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="/Unreal_Wiki:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="/Special:WhatLinksHere/Legacy:SabbathCat/AnyProjectileSpawner" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="/Special:RecentChangesLinked/Legacy:SabbathCat/AnyProjectileSpawner" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="/Legacy:SabbathCat/AnyProjectileSpawner?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="/Legacy:SabbathCat/AnyProjectileSpawner?oldid=7692" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="/info/Legacy:SabbathCat/AnyProjectileSpawner" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 17:04, 12 December 2003.</li>
+									<li id="copyright">Licensed as <a href="/Unreal_Wiki:Copyrights" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="/Unreal_Wiki:Privacy_policy" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="/Unreal_Wiki:About" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="/Unreal_Wiki:General_disclaimer" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":101});
+}</script></body></html>

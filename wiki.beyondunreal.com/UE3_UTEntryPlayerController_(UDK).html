@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:UTEntryPlayerController_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:12:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:UTEntryPlayerController (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_UTEntryPlayerController_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:UTEntryPlayerController_(UDK)","wgTitle":"UTEntryPlayerController (UDK)","wgCurRevisionId":42034,"wgRevisionId":42034,"wgArticleId":27690,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UDK-specific classes","Classes in UDK package UTGame","Classes implementing Interface NavigationHandle (UDK)","Subclasses of UTPlayerController (UDK)","Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:UTEntryPlayerController_(UDK)","wgRelevantArticleId":27690,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_UTEntryPlayerController_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I love the smell of UnrealEd crashing in the morning. &#8211; tarquin
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:UTEntryPlayerController (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a> &gt;&gt;&#160;<a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a> &gt;&gt;&#160;<a href="UE3_PlayerController_(UDK).html" title="UE3:PlayerController (UDK)">PlayerController</a> &gt;&gt;&#160;<a href="UE3_GamePlayerController_(UDK).html" title="UE3:GamePlayerController (UDK)">GamePlayerController</a> &gt;&gt;&#160;<a href="UE3_UTPlayerController_(UDK).html" title="UE3:UTPlayerController (UDK)">UTPlayerController</a> &gt;&gt;&#160;<b>UTEntryPlayerController</b></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Properties"><span class="tocnumber">1</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#EntryPostProcessChain"><span class="tocnumber">1.1</span> <span class="toctext">EntryPostProcessChain</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#OldPlayer"><span class="tocnumber">1.2</span> <span class="toctext">OldPlayer</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#OldPostProcessChain"><span class="tocnumber">1.3</span> <span class="toctext">OldPostProcessChain</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Default_values"><span class="tocnumber">1.4</span> <span class="toctext">Default values</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Subobjects"><span class="tocnumber">1.5</span> <span class="toctext">Subobjects</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#CollisionCylinder"><span class="tocnumber">1.5.1</span> <span class="toctext">CollisionCylinder</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Sprite"><span class="tocnumber">1.5.2</span> <span class="toctext">Sprite</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Functions"><span class="tocnumber">2</span> <span class="toctext">Functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Exec_functions"><span class="tocnumber">2.1</span> <span class="toctext">Exec functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-11"><a href="#ShowCommandMenu"><span class="tocnumber">2.1.1</span> <span class="toctext">ShowCommandMenu</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#UnlockChapter"><span class="tocnumber">2.1.2</span> <span class="toctext">UnlockChapter</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="#Events"><span class="tocnumber">2.2</span> <span class="toctext">Events</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="#Destroyed"><span class="tocnumber">2.2.1</span> <span class="toctext">Destroyed</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#InitInputSystem"><span class="tocnumber">2.2.2</span> <span class="toctext">InitInputSystem</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-16"><a href="#Other_instance_functions"><span class="tocnumber">2.3</span> <span class="toctext">Other instance functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-17"><a href="#LoadCharacterFromProfile"><span class="tocnumber">2.3.1</span> <span class="toctext">LoadCharacterFromProfile</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#OnConnectionStatusChange"><span class="tocnumber">2.3.2</span> <span class="toctext">OnConnectionStatusChange</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#OnControllerChanged"><span class="tocnumber">2.3.3</span> <span class="toctext">OnControllerChanged</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#OnFriendInviteReceived"><span class="tocnumber">2.3.4</span> <span class="toctext">OnFriendInviteReceived</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="#OnFriendMessageReceived"><span class="tocnumber">2.3.5</span> <span class="toctext">OnFriendMessageReceived</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="#OnGameInviteReceived"><span class="tocnumber">2.3.6</span> <span class="toctext">OnGameInviteReceived</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#OnLinkStatusChanged"><span class="tocnumber">2.3.7</span> <span class="toctext">OnLinkStatusChanged</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="#QuitToMainMenu"><span class="tocnumber">2.3.8</span> <span class="toctext">QuitToMainMenu</span></a></li>
+<li class="toclevel-3 tocsection-25"><a href="#RestorePostProcessing"><span class="tocnumber">2.3.9</span> <span class="toctext">RestorePostProcessing</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#SetPawnConstructionScene"><span class="tocnumber">2.3.10</span> <span class="toctext">SetPawnConstructionScene</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="#ShowMidGameMenu"><span class="tocnumber">2.3.11</span> <span class="toctext">ShowMidGameMenu</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="#ShowScoreboard"><span class="tocnumber">2.3.12</span> <span class="toctext">ShowScoreboard</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Package:&#160;</dt>
+<dd><a href="Category_Classes_in_UDK_package_UTGame.html" title="Category:Classes in UDK package UTGame">UTGame</a></dd>
+<dt><a href="Implements.html" title="Implements" class="mw-redirect">Implemented interfaces</a>:&#160;</dt>
+<dd><a href="UE3_Interface_NavigationHandle_(UDK).html" title="UE3:Interface NavigationHandle (UDK)">Interface_NavigationHandle</a></dd>
+<dt>This class in other games:</dt>
+<dd><span><a href="UE3_UTEntryPlayerController_(UT3).html" title="UE3:UTEntryPlayerController (UT3)">UT3</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<p>UTEntryPlayerController</p>
+<h2><span class="mw-headline" id="Properties">Properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=1" title="Edit section: Properties">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="EntryPostProcessChain">EntryPostProcessChain</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=2" title="Edit section: EntryPostProcessChain">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_PostProcessChain_(UDK).html" title="UE3:PostProcessChain (UDK)">PostProcessChain</a></p>
+<p><br />
+<b>Default value:</b> <a href="UE3_PostProcessChain_(UDK).html" title="UE3:PostProcessChain (UDK)">PostProcessChain</a>'FX_HitEffects.UTMenuPostProcess'</p>
+<h4><span class="mw-headline" id="OldPlayer">OldPlayer</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=3" title="Edit section: OldPlayer">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_LocalPlayer_(UDK).html" title="UE3:LocalPlayer (UDK)">LocalPlayer</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="OldPostProcessChain">OldPostProcessChain</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=4" title="Edit section: OldPostProcessChain">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_PostProcessChain_(UDK).html" title="UE3:PostProcessChain (UDK)">PostProcessChain</a>&gt;</p>
+<p><br /></p>
+<h3><span class="mw-headline" id="Default_values">Default values</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=5" title="Edit section: Default values">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td><a href="UE3_UTPlayerController_internal_variables_(UDK).html#CameraShakeLongWaveForm" title="UE3:UTPlayerController internal variables (UDK)">CameraShakeLongWaveForm</a></td>
+<td><a href="UE3_ForceFeedbackWaveform_(UDK).html" title="UE3:ForceFeedbackWaveform (UDK)">ForceFeedbackWaveform</a>'UTGame.Default__UTEntryPlayerController:ForceFeedbackWaveform8'</td>
+</tr>
+<tr>
+<td><a href="UE3_UTPlayerController_internal_variables_(UDK).html#CameraShakeShortWaveForm" title="UE3:UTPlayerController internal variables (UDK)">CameraShakeShortWaveForm</a></td>
+<td><a href="UE3_ForceFeedbackWaveform_(UDK).html" title="UE3:ForceFeedbackWaveform (UDK)">ForceFeedbackWaveform</a>'UTGame.Default__UTEntryPlayerController:ForceFeedbackWaveform7'</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Subobjects">Subobjects</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=6" title="Edit section: Subobjects">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="CollisionCylinder">CollisionCylinder</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=7" title="Edit section: CollisionCylinder">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Class:</b> <a href="UE3_CylinderComponent_(UDK).html" title="UE3:CylinderComponent (UDK)">Engine.CylinderComponent</a></p>
+<p><b>Inherits from:</b> <a href="UE3_UTPlayerController_(UDK).html#CollisionCylinder" title="UE3:UTPlayerController (UDK)">UTPlayerController.CollisionCylinder</a></p>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td><a href="UE3_PrimitiveComponent_properties_(UDK).html#ReplacementPrimitive" title="UE3:PrimitiveComponent properties (UDK)">ReplacementPrimitive</a></td>
+<td>None</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="Sprite">Sprite</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=8" title="Edit section: Sprite">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Class:</b> <a href="UE3_SpriteComponent_(UDK).html" title="UE3:SpriteComponent (UDK)">Engine.SpriteComponent</a></p>
+<p><b>Inherits from:</b> <a href="UE3_UTPlayerController_(UDK).html#Sprite" title="UE3:UTPlayerController (UDK)">UTPlayerController.Sprite</a></p>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td><a href="UE3_PrimitiveComponent_properties_(UDK).html#ReplacementPrimitive" title="UE3:PrimitiveComponent properties (UDK)">ReplacementPrimitive</a></td>
+<td>None</td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Functions">Functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=9" title="Edit section: Functions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Exec_functions">Exec functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=10" title="Edit section: Exec functions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="ShowCommandMenu">ShowCommandMenu</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=11" title="Edit section: ShowCommandMenu">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">exec function <b>ShowCommandMenu</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_UTPlayerController_exec_functions_(UDK).html#ShowCommandMenu" title="UE3:UTPlayerController exec functions (UDK)">UTPlayerController.ShowCommandMenu</a></p>
+<p>Stub - by default bound to "V" on the keyboard</p>
+<h4><span class="mw-headline" id="UnlockChapter">UnlockChapter</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=12" title="Edit section: UnlockChapter">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">exec function <b>UnlockChapter</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ChapterIndex</b>)</div>
+<p><br /></p>
+<h3><span class="mw-headline" id="Events">Events</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=13" title="Edit section: Events">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="Destroyed">Destroyed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=14" title="Edit section: Destroyed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>Destroyed</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_UTPlayerController_(UDK).html#Destroyed" title="UE3:UTPlayerController (UDK)">UTPlayerController.Destroyed</a></p>
+<p>Destroyed event for the PC, resets the post process chain to normal.</p>
+<h4><span class="mw-headline" id="InitInputSystem">InitInputSystem</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=15" title="Edit section: InitInputSystem">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>InitInputSystem</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_UTPlayerController_(UDK).html#InitInputSystem" title="UE3:UTPlayerController (UDK)">UTPlayerController.InitInputSystem</a></p>
+<p><br /></p>
+<h3><span class="mw-headline" id="Other_instance_functions">Other instance functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=16" title="Edit section: Other instance functions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="LoadCharacterFromProfile">LoadCharacterFromProfile</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=17" title="Edit section: LoadCharacterFromProfile">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>LoadCharacterFromProfile</b> (<a href="UE3_UTProfileSettings_(UDK).html" title="UE3:UTProfileSettings (UDK)">UTProfileSettings</a>&#160;<b>Profile</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_UTPlayerController_instance_functions_(UDK).html#LoadCharacterFromProfile" title="UE3:UTPlayerController instance functions (UDK)">UTPlayerController.LoadCharacterFromProfile</a></p>
+<p>Loads the player's custom character from their profile.</p>
+<h4><span class="mw-headline" id="OnConnectionStatusChange">OnConnectionStatusChange</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=18" title="Edit section: OnConnectionStatusChange">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>OnConnectionStatusChange</b> (<a href="UE3_OnlineSubsystem_enums_(UDK).html#EOnlineServerConnectionStatus" title="UE3:OnlineSubsystem enums (UDK)">OnlineSubsystem.EOnlineServerConnectionStatus</a>&#160;<b>ConnectionStatus</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_UTPlayerController_instance_functions_(UDK).html#OnConnectionStatusChange" title="UE3:UTPlayerController instance functions (UDK)">UTPlayerController.OnConnectionStatusChange</a></p>
+<p>Called when a system level connection change notification occurs. If we are playing a match through the platform's online service, we may need to notify and go back to the menu. Otherwise silently ignore this.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ConnectionStatus</i> - the new connection status.</li>
+</ul>
+<h4><span class="mw-headline" id="OnControllerChanged">OnControllerChanged</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=19" title="Edit section: OnControllerChanged">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>OnControllerChanged</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ControllerId</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bIsConnected</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_UTPlayerController_instance_functions_(UDK).html#OnControllerChanged" title="UE3:UTPlayerController instance functions (UDK)">UTPlayerController.OnControllerChanged</a></p>
+<p>Attempts to pause/unpause the game when a controller becomes disconnected/connected</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ControllerId</i> - the id of the controller that changed</li>
+<li><i>bIsConnected</i> - whether the controller is connected or not</li>
+</ul>
+<h4><span class="mw-headline" id="OnFriendInviteReceived">OnFriendInviteReceived</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=20" title="Edit section: OnFriendInviteReceived">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>OnFriendInviteReceived</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="UE3_OnlineSubsystem_structs_(UDK).html#UniqueNetId" title="UE3:OnlineSubsystem structs (UDK)">OnlineSubsystem.UniqueNetId</a>&#160;<b>RequestingPlayer</b>, <a href="String.html" title="String">string</a>&#160;<b>RequestingNick</b>, <a href="String.html" title="String">string</a>&#160;<b>Message</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_UTPlayerController_instance_functions_(UDK).html#OnFriendInviteReceived" title="UE3:UTPlayerController instance functions (UDK)">UTPlayerController.OnFriendInviteReceived</a></p>
+<p>Callback for when a friend request has been received.</p>
+<h4><span class="mw-headline" id="OnFriendMessageReceived">OnFriendMessageReceived</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=21" title="Edit section: OnFriendMessageReceived">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>OnFriendMessageReceived</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="UE3_OnlineSubsystem_structs_(UDK).html#UniqueNetId" title="UE3:OnlineSubsystem structs (UDK)">OnlineSubsystem.UniqueNetId</a>&#160;<b>SendingPlayer</b>, <a href="String.html" title="String">string</a>&#160;<b>SendingNick</b>, <a href="String.html" title="String">string</a>&#160;<b>Message</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_UTPlayerController_instance_functions_(UDK).html#OnFriendMessageReceived" title="UE3:UTPlayerController instance functions (UDK)">UTPlayerController.OnFriendMessageReceived</a></p>
+<p>Called when a friend invite arrives for a local player</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user that is receiving the invite</li>
+<li><i>SendingPlayer</i> - the player sending the friend request</li>
+<li><i>SendingNick</i> - the nick of the player sending the friend request</li>
+<li><i>Message</i> - the message to display to the recipient</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if successful, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="OnGameInviteReceived">OnGameInviteReceived</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=22" title="Edit section: OnGameInviteReceived">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>OnGameInviteReceived</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="String.html" title="String">string</a>&#160;<b>RequestingNick</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_UTPlayerController_instance_functions_(UDK).html#OnGameInviteReceived" title="UE3:UTPlayerController instance functions (UDK)">UTPlayerController.OnGameInviteReceived</a></p>
+<p>Callback for when a game invite has been received.</p>
+<h4><span class="mw-headline" id="OnLinkStatusChanged">OnLinkStatusChanged</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=23" title="Edit section: OnLinkStatusChanged">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>OnLinkStatusChanged</b> (<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bConnected</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_UTPlayerController_instance_functions_(UDK).html#OnLinkStatusChanged" title="UE3:UTPlayerController instance functions (UDK)">UTPlayerController.OnLinkStatusChanged</a></p>
+<p>Called when the platform's network link status changes. If we are playing a match on a remote server, we need to go back to the front end menus and notify the player.</p>
+<h4><span class="mw-headline" id="QuitToMainMenu">QuitToMainMenu</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=24" title="Edit section: QuitToMainMenu">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>QuitToMainMenu</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_UTPlayerController_instance_functions_(UDK).html#QuitToMainMenu" title="UE3:UTPlayerController instance functions (UDK)">UTPlayerController.QuitToMainMenu</a></p>
+<p>Called when returning to the main menu.</p>
+<h4><span class="mw-headline" id="RestorePostProcessing">RestorePostProcessing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=25" title="Edit section: RestorePostProcessing">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>RestorePostProcessing</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SetPawnConstructionScene">SetPawnConstructionScene</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=26" title="Edit section: SetPawnConstructionScene">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>SetPawnConstructionScene</b> (<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bShow</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ShowMidGameMenu">ShowMidGameMenu</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=27" title="Edit section: ShowMidGameMenu">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_UTUIScene_MidGameMenu_(UDK).html" title="UE3:UTUIScene MidGameMenu (UDK)">UTUIScene_MidGameMenu</a>&#160;<b>ShowMidGameMenu</b> (optional&#160;<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>TabTag</b>, optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bEnableInput</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_UTPlayerController_instance_functions_(UDK).html#ShowMidGameMenu" title="UE3:UTPlayerController instance functions (UDK)">UTPlayerController.ShowMidGameMenu</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ShowScoreboard">ShowScoreboard</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)?section=28" title="Edit section: ShowScoreboard">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ShowScoreboard</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_UTPlayerController_instance_functions_(UDK).html#ShowScoreboard" title="UE3:UTPlayerController instance functions (UDK)">UTPlayerController.ShowScoreboard</a></p>
+<p><br /></p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.346 seconds
+Real time usage: 0.513 seconds
+Preprocessor visited node count: 2474/1000000
+Preprocessor generated node count: 6871/1000000
+Post‐expand include size: 20699/2097152 bytes
+Template argument size: 7374/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  434.732      1 - -total
+ 58.52%  254.388      1 - Template:Infobox_class
+ 55.16%  239.799      1 - Template:Infobox_class/core
+ 20.82%   90.528     32 - Template:Samegame
+ 20.08%   87.306     22 - Template:Tl
+ 12.35%   53.695     10 - Template:Cl
+  9.43%   40.990      2 - Template:Ch
+  5.38%   23.376     16 - Template:Code
+  5.16%   22.447      2 - Template:Links
+  3.98%   17.320      1 - Template:Autogenerated
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:27690-0!*!*!*!*!*!* and timestamp 20161215173305 and revision id 42034
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:UTEntryPlayerController_(UDK)?oldid=42034">https://wiki.beyondunreal.com/UE3:UTEntryPlayerController_(UDK)?oldid=42034</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_UDK-specific_classes.html" title="Category:UDK-specific classes">UDK-specific classes</a></li><li><a href="Category_Classes_in_UDK_package_UTGame.html" title="Category:Classes in UDK package UTGame">Classes in UDK package UTGame</a></li><li><a href="Category_Classes_implementing_Interface_NavigationHandle_(UDK).html" title="Category:Classes implementing Interface NavigationHandle (UDK)">Classes implementing Interface NavigationHandle (UDK)</a></li><li><a href="Category_Subclasses_of_UTPlayerController_(UDK).html" title="Category:Subclasses of UTPlayerController (UDK)">Subclasses of UTPlayerController (UDK)</a></li><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_UTEntryPlayerController_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:UTEntryPlayerController_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:UTEntryPlayerController_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:UTEntryPlayerController_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AUTEntryPlayerController+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AUTEntryPlayerController+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:UTEntryPlayerController_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:UTEntryPlayerController_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:UTEntryPlayerController_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:UTEntryPlayerController_(UDK)?oldid=42034" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:UTEntryPlayerController_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 07:52, 17 January 2010.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":81});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:UTEntryPlayerController_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:12:08 GMT -->
+</html>

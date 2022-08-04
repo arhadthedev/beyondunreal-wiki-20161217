@@ -1,0 +1,2151 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+	
+<!-- Mirrored from www.microsoft.com/en-us/research/publication/wikis-at-work-success-factors-and-challenges-for-sustainability-of-enterprise-wikis/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 15 Dec 2016 13:19:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<meta name="ms.sitename" content="MSR">
+		<meta name="ms.sitever" content="0.2.1">
+		<meta name="ms.lang" content="en">
+		<meta name="ms.loc" content="us">
+				<meta name="ms.sitesec" content="publication single">
+		<meta name="ms.env" content="prod">
+
+		<title>Wikis at work: Success factors and challenges for sustainability of enterprise wikis - Microsoft Research</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v3.5 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Wikis at work: Success factors and challenges for sustainability of enterprise wikis - Microsoft Research" />
+<meta property="og:description" content="We examined wiki use in a range of enterprise settings. We found many thriving wikis, but they were a minority of the thousands for which we obtained data. Even an actively used wiki can disappoint some important stakeholders. Careful stakeholder analysis and education may be crucial to successful wiki deployment. We identify a range of &hellip;" />
+<meta property="og:url" content="https://www.microsoft.com/en-us/research/publication/wikis-at-work-success-factors-and-challenges-for-sustainability-of-enterprise-wikis/" />
+<meta property="og:site_name" content="Microsoft Research" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="We examined wiki use in a range of enterprise settings. We found many thriving wikis, but they were a minority of the thousands for which we obtained data. Even an actively used wiki can disappoint some important stakeholders. Careful stakeholder analysis and education may be crucial to successful wiki deployment. We identify a range of [&hellip;]" />
+<meta name="twitter:title" content="Wikis at work: Success factors and challenges for sustainability of enterprise wikis - Microsoft Research" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="Microsoft Research &raquo; Feed" href="../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Microsoft Research &raquo; Comments Feed" href="../../comments/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"https:\/\/www.microsoft.com\/en-us\/research\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.5.4"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;if(!g||!g.fillText)return!1;switch(g.textBaseline="top",g.font="600 32px Arial",a){case"flag":return g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3;case"diversity":return g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,d=c[0]+","+c[1]+","+c[2]+","+c[3],g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e;case"simple":return g.fillText(h(55357,56835),0,0),0!==g.getImageData(16,16,1,1).data[0];case"unicode8":return g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='taxonomy-image-plugin-public-css'  href='../../wp-content/plugins/taxonomy-images/css/styled6c3.html?ver=0.9.6' type='text/css' media='screen' />
+<link rel='stylesheet' id='ms-research-css'  href='../../wp-content/themes/microsoft-research-theme/assets/css/microsoft-research.minc2c0.html?ver=1481728971' type='text/css' media='all' />
+<link rel='stylesheet' id='azure-player-css-css'  href='../../../../../amp.azure.net/libs/amp/1.7.4/skins/amp-default/azuremediaplayer.minb34d.html?ver=1.7.4' type='text/css' media='all' />
+<link rel='stylesheet' id='cpsh-shortcodes-css'  href='../../wp-content/plugins/column-shortcodes/assets/css/shortcodesc47a.html?ver=0.6.6' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.microsoft.com/en-us/research/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.microsoft.com/en-us/research/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://www.youtube.com/player_api?ver=4.5.4'></script>
+<script type='text/javascript' src='http://amp.azure.net/libs/amp/1.7.4/azuremediaplayer.min.js?ver=1.7.4'></script>
+<link rel='https://api.w.org/' href='../../wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc0db0.html?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.html" /> 
+<meta name="generator" content="WordPress 4.5.4" />
+<link rel='shortlink' href='../../indexdb75.html?p=160214' />
+<link rel="alternate" type="application/json+oembed" href="../../wp-json/oembed/1.0/embeda092.html?url=https%3A%2F%2Fwww.microsoft.com%2Fen-us%2Fresearch%2Fpublication%2Fwikis-at-work-success-factors-and-challenges-for-sustainability-of-enterprise-wikis%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../wp-json/oembed/1.0/embeda2e2.html?url=https%3A%2F%2Fwww.microsoft.com%2Fen-us%2Fresearch%2Fpublication%2Fwikis-at-work-success-factors-and-challenges-for-sustainability-of-enterprise-wikis%2F&amp;format=xml" />
+<link href="../../../../../assets.onestore.ms/cdnfiles/onestorerolling-1612-12000/shell/v3/scss/shell.min.html" rel="stylesheet" type="text/css" />
+
+<!--[if lte IE 8]>
+    <link href="https://assets.onestore.ms/cdnfiles/onestorerolling-1612-12000/shell/common/respond-proxy.html" id="respond-proxy" rel="respond-proxy"/>
+<![endif]--><!-- Stream WordPress user activity plugin v3.0.7 -->
+<link type="text/plain" rel="author" href="../../wp-content/themes/microsoft-research-theme/humans.html" />	<link rel="alternate" hreflang="x-default" href="../../../../research/publication/wikis-at-work-success-factors-and-challenges-for-sustainability-of-enterprise-wikis/index.html">
+	<link rel="alternate" hreflang="en-us" href="index.html">
+
+<meta name="citation_title" content="Wikis at work: Success factors and challenges for sustainability of enterprise wikis" />
+<meta name="citation_author" content="Jonathan Grudin" />
+<meta name="citation_author" content="Erika Shehan Poole" />
+<meta name="citation_publication_date" content="2010/07/01" />
+<meta name="citation_pdf_url" content="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/WikiSymSustainability.pdf" />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+	<!--
+	generated in 0.418 seconds
+	112574 bytes batcached for 300 seconds
+-->
+
+                    <script type="text/javascript">
+                      var w=window;
+                      if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document,AKSB=AKSB||{};AKSB.q=[];AKSB.mark=function(a,b){AKSB.q.push(["mark",a,b||(new Date).getTime()])};AKSB.measure=function(a,b,c){AKSB.q.push(["measure",a,b,c||(new Date).getTime()])};AKSB.done=function(a){AKSB.q.push(["done",a])};AKSB.mark("firstbyte",(new Date).getTime());AKSB.prof={custid:"331274",ustr:"ECDHE-RSA-AES256-GCM-SHA384",originlat:0,clientrtt:188,ghostip:"23.60.69.194",
+                      ipv6:false,pct:10,clientip:"188.162.37.3",requestid:"26df06a0",protocol:"",blver:10,akM:"dspb",akN:"ae",akTT:"O",akTX:"1",akTI:"26df06a0",ai:"205055",ra:"",pmgn:"",pmgi:"",pmp:""};(function(a){var b=
+                      d.createElement("script");b.async="async";b.src=a;a=d.getElementsByTagName("script");a=a[a.length-1];a.parentNode.insertBefore(b,a)})(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")};
+                    </script>
+                    </head>
+
+		<body class="single single-msr-research-item postid-160214 microsoft-uhf">
+
+
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "../../../../../connect.facebook.net/en_US/sdk.html#xfbml=1&version=v2.5&appId=196313097106306";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
+
+		<header id="banner" class="site-header" ms.pgarea="header">
+			
+				<uhf_header>
+					<div id="shell-header" class="shell-header shell-responsive " ms.pgarea="header" role="banner">
+    
+    <div class="shell-header-wrapper">
+        <div class="shell-header-top" data-bi-area="HeaderL0" data-bi-view="L0V1">
+                <div class="shell-header-brand" ms.cmpgrp="logo">
+                            <a id="srv_shellHeaderMicrosoftLogo" href="https://www.microsoft.com/" ms.cmpnm="MicrosoftBrandLogo" ms.title="Microsoft" title="Microsoft" data-bi-name="BrandLogo" tabindex="10">
+            <img src="../../../../../assets.onestore.ms/cdnfiles/external/uhf/long/9a49a7e9d8e881327e81b9eb43dabc01de70a9bb/images/microsoft-gray.html" alt="Microsoft" />
+        </a>
+
+                </div>
+            <div class="shell-header-nav-wrapper" ms.cmpgrp="nav" role="navigation">
+                <ul class="shell-header-nav" role="menubar" id="srv_shellHeaderNav" data-bi-area="L1" data-bi-view="Hovermenus">
+                        <li class="shell-header-user-mobile-container">
+                        </li>
+                                    <li class="shell-header-dropdown  " data-navcontainer="shellmenu_0_NavContainer">
+                                        <div id="shellmenu_0" class="shell-header-dropdown-label">
+                                            <a id="Store-navigation" href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false" ms.title="Store" data-bi-name="Store" data-bi-slot="1" tabindex="20">
+                                                Store
+                                            </a>
+                                        </div>
+
+
+
+
+
+<div class="shell-header-dropdown-content " aria-hidden="true" role="menu">
+                <dl class="shell-header-dropdown-tab  " ms.cmpnm="Store; Store home">
+
+                            <dt id="shellmenu_1" class="shell-header-dropdown-tab-label shell-header-L2menu-direct-link">
+                                <a href="https://www.microsoftstore.com/store/msusa/en_US/home" ms.title="Store home" tabindex="20" data-bi-name="Store_StoreHome">Store home</a>                         
+                            </dt>
+
+                </dl>
+                <dl class="shell-header-dropdown-tab  " ms.cmpnm="Store; Devices">
+
+                            <dt id="shellmenu_2" class="shell-header-dropdown-tab-label">
+                                <a href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false" ms.title="Devices" ms.interactiontype="14" tabindex="20" data-bi-dnt="">
+                                    Devices
+                                    <i class="shell-icon-dropdown facing-right"></i>
+                                </a>
+                            </dt>
+                            <dd class="shell-header-dropdown-tab-content" data-col="0">
+
+
+
+    <ul class="shell-header-dropdown-tab-list">
+                    <li id="shellmenu_3">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/cat/All-Surface/categoryID.69403400?icid=en_US_Store_UH_devices_Surface" class="shell-l3-list-item" ms.title="Microsoft Surface" tabindex="20" data-bi-name="Store_Devices_MicrosoftSurface">
+                            Microsoft Surface
+                        </a>
+                    </li>
+                    <li id="shellmenu_4">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/cat/All-PCs-tablets/categoryID.69404700?icid=en_US_Store_UH_devices_Pctab" class="shell-l3-list-item" ms.title="PCs &amp; tablets" tabindex="20" data-bi-name="Store_Devices_PCsandTablets">
+                            PCs &amp; tablets
+                        </a>
+                    </li>
+                    <li id="shellmenu_5">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/cat/categoryID.69405400?icid=en_US_Store_UH_devices_Xbox" class="shell-l3-list-item" ms.title="Xbox" tabindex="20" data-bi-name="Store_Device_Xbox">
+                            Xbox
+                        </a>
+                    </li>
+                    <li id="shellmenu_6">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/cat/Virtual-and-Augmented-Reality/categoryID.594470000?icid=en_US_Store_UH_devices_vr" class="shell-l3-list-item" ms.title="Virtual reality" tabindex="20" data-bi-name="Store_Devices_Virtualreality">
+                            Virtual reality
+                        </a>
+                    </li>
+                    <li id="shellmenu_7">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/cat/All-accessories/categoryID.69407900?icid=en_US_Store_UH_devices_Acc" class="shell-l3-list-item" ms.title="Accessories" tabindex="20" data-bi-name="Store_Device_Accessories">
+                            Accessories
+                        </a>
+                    </li>
+                    <li id="shellmenu_8">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/cat/All-Windows-Phone/categoryID.69406200?icid=en_US_Store_UH_devices_WinPho" class="shell-l3-list-item" ms.title="Windows phone" tabindex="20" data-bi-name="Store_Device_WindowsPhone">
+                            Windows phone
+                        </a>
+                    </li>
+
+    </ul>
+
+
+
+                            </dd>
+
+                </dl>
+                <dl class="shell-header-dropdown-tab  " ms.cmpnm="Store; Software &amp; Apps">
+
+                            <dt id="shellmenu_9" class="shell-header-dropdown-tab-label">
+                                <a href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false" ms.title="Software &amp; Apps" ms.interactiontype="14" tabindex="20" data-bi-dnt="">
+                                    Software &amp; Apps
+                                    <i class="shell-icon-dropdown facing-right"></i>
+                                </a>
+                            </dt>
+                            <dd class="shell-header-dropdown-tab-content" data-col="0">
+
+
+
+    <ul class="shell-header-dropdown-tab-list">
+                    <li id="shellmenu_10">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/cat/All-Office/categoryID.69403900?icid=en_US_Store_UH_software_Office" class="shell-l3-list-item" ms.title="Office" tabindex="20" data-bi-name="Store_SoftwareAndApps_Office">
+                            Office
+                        </a>
+                    </li>
+                    <li id="shellmenu_11">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/cat/categoryID.70036700?=en_US_Store_UH_software_Win" class="shell-l3-list-item" ms.title="Windows" tabindex="20" data-bi-name="Store_SoftwareAndApps_Windows">
+                            Windows
+                        </a>
+                    </li>
+                    <li id="shellmenu_12">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/cat/All-additional-software/categoryID.69407400?icid=en_US_Store_UH_software_addlsoft" class="shell-l3-list-item" ms.title="Additional software" tabindex="20" data-bi-name="Store_SoftwareAndApps_AdditionalSoftware">
+                            Additional software
+                        </a>
+                    </li>
+                    <li id="shellmenu_13">
+                        <a href="https://www.microsoft.com/en-us/store/apps/windows?icid=en_US_Store_UH_apps_Win" class="shell-l3-list-item" ms.title="Windows apps" tabindex="20" data-bi-name="Store_SoftwareAndApps_WindowsApps">
+                            Windows apps
+                        </a>
+                    </li>
+                    <li id="shellmenu_14">
+                        <a href="https://www.microsoft.com/en-us/store/apps/windows-phone?icid=en_US_Store_UH_apps_WinPho" class="shell-l3-list-item" ms.title="Windows phone apps" tabindex="20" data-bi-name="Store_SoftwareAndApps_WindowsPhoneApps">
+                            Windows phone apps
+                        </a>
+                    </li>
+
+    </ul>
+
+
+
+                            </dd>
+
+                </dl>
+                <dl class="shell-header-dropdown-tab  " ms.cmpnm="Store; Games &amp; Entertainment">
+
+                            <dt id="shellmenu_15" class="shell-header-dropdown-tab-label">
+                                <a href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false" ms.title="Games &amp; Entertainment" ms.interactiontype="14" tabindex="20" data-bi-dnt="">
+                                    Games &amp; Entertainment
+                                    <i class="shell-icon-dropdown facing-right"></i>
+                                </a>
+                            </dt>
+                            <dd class="shell-header-dropdown-tab-content" data-col="0">
+
+
+
+    <ul class="shell-header-dropdown-tab-list">
+                    <li id="shellmenu_16">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/cat/Xbox-One-games/categoryID.69405600?icid=en_US_Store_UH_games_XBO" class="shell-l3-list-item" ms.title="Xbox One games" tabindex="20" data-bi-name="Games&amp;Entertainment _XboxOnegames">
+                            Xbox One games
+                        </a>
+                    </li>
+                    <li id="shellmenu_17">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/cat/Xbox-360-games/categoryID.69405800?icid=en_US_Store_UH_games_X360" class="shell-l3-list-item" ms.title="Xbox 360 games" tabindex="20" data-bi-name="Games&amp;Entertainment _Xbox360games">
+                            Xbox 360 games
+                        </a>
+                    </li>
+                    <li id="shellmenu_18">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/list/PC-games/categoryID.62688000?icid=en_US_Store_UH_games_PC" class="shell-l3-list-item" ms.title="PC games (disc)" tabindex="20" data-bi-name="Games&amp;Entertainment _PCgames">
+                            PC games (disc)
+                        </a>
+                    </li>
+                    <li id="shellmenu_19">
+                        <a href="https://www.microsoft.com/en-us/store/games/windows?icid=en_US_Store_UH_games_Win" class="shell-l3-list-item" ms.title="Windows digital games" tabindex="20" data-bi-name="Games&amp;Entertainment _Windowsdigitalgames">
+                            Windows digital games
+                        </a>
+                    </li>
+                    <li id="shellmenu_20">
+                        <a href="https://www.microsoft.com/en-us/store/games/windows-phone?icid=en_US_Store_UH_games_WinPho" class="shell-l3-list-item" ms.title="Windows phone games" tabindex="20" data-bi-name="Games&amp;Entertainment _Windowsdigitalgames">
+                            Windows phone games
+                        </a>
+                    </li>
+                    <li id="shellmenu_21">
+                        <a href="https://www.microsoft.com/en-us/store/movies-and-tv?icid=en_US_Store_UH_ent_MovTV" class="shell-l3-list-item" ms.title="Movies &amp; TV" tabindex="20" data-bi-name="Games&amp;Entertainment _MoviesandTV">
+                            Movies &amp; TV
+                        </a>
+                    </li>
+                    <li id="shellmenu_22">
+                        <a href="https://www.microsoft.com/en-us/store/music?icid=en_US_Store_UH_ent_Music" class="shell-l3-list-item" ms.title="Music" tabindex="20" data-bi-name="Games&amp;Entertainment _Music">
+                            Music
+                        </a>
+                    </li>
+
+    </ul>
+
+
+
+                            </dd>
+
+                </dl>
+                <dl class="shell-header-dropdown-tab  " ms.cmpnm="Store; Deals">
+
+                            <dt id="shellmenu_23" class="shell-header-dropdown-tab-label">
+                                <a href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false" ms.title="Deals" ms.interactiontype="14" tabindex="20" data-bi-dnt="">
+                                    Deals
+                                    <i class="shell-icon-dropdown facing-right"></i>
+                                </a>
+                            </dt>
+                            <dd class="shell-header-dropdown-tab-content" data-col="0">
+
+
+
+    <ul class="shell-header-dropdown-tab-list">
+                    <li id="shellmenu_24">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/cat/12-Days-of-Deals/categoryID.67001200?icid=en_US_Store_UH_sale_gm_17hol_12dd" class="shell-l3-list-item" ms.title="12 Days of Deals" tabindex="20" data-bi-name="Deals_12DaysofDeals">
+                            12 Days of Deals
+                        </a>
+                    </li>
+                    <li id="shellmenu_25">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/cat/Sale/categoryID.69403000?icid=en_US_Store_UH_sale_sale" class="shell-l3-list-item" ms.title="Sale" tabindex="20" data-bi-name="Deals_Sale">
+                            Sale
+                        </a>
+                    </li>
+                    <li id="shellmenu_26">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/cat/Holiday-Gift-Guide/categoryID.67001000?icid=topnav" class="shell-l3-list-item" ms.title="Holiday Gift Guide" tabindex="20" data-bi-name="Deals_HolidayGiftGuide">
+                            Holiday Gift Guide
+                        </a>
+                    </li>
+                    <li id="shellmenu_27">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/cat/categoryID.67871500" class="shell-l3-list-item" ms.title="Microsoft Surface deals" tabindex="20" data-bi-name="Deals_SurfaceDeals">
+                            Microsoft Surface deals
+                        </a>
+                    </li>
+                    <li id="shellmenu_28">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/cat/PC-sale/categoryID.69325700" class="shell-l3-list-item" ms.title="PC Deals" tabindex="20" data-bi-name="Deals_PCDeals">
+                            PC Deals
+                        </a>
+                    </li>
+                    <li id="shellmenu_29">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/cat/Xbox-deals/categoryID.67557100" class="shell-l3-list-item" ms.title="Xbox deals" tabindex="20" data-bi-name="Deals_XboxDeals">
+                            Xbox deals
+                        </a>
+                    </li>
+
+    </ul>
+
+
+
+                            </dd>
+
+                </dl>
+                <dl class="shell-header-dropdown-tab  " ms.cmpnm="Store; More">
+
+                            <dt id="shellmenu_30" class="shell-header-dropdown-tab-label">
+                                <a href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false" ms.title="More" ms.interactiontype="14" tabindex="20" data-bi-dnt="">
+                                    More
+                                    <i class="shell-icon-dropdown facing-right"></i>
+                                </a>
+                            </dt>
+                            <dd class="shell-header-dropdown-tab-content" data-col="0">
+
+
+
+    <ul class="shell-header-dropdown-tab-list">
+                    <li id="shellmenu_31">
+                        <a href="https://www.microsoft.com/en-us/store/gift-cards" class="shell-l3-list-item" ms.title="Gift cards" tabindex="20" data-bi-name="Store_More_GiftCards">
+                            Gift cards
+                        </a>
+                    </li>
+                    <li id="shellmenu_32">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/cat/Business/categoryID.69408700?icid=en_US_Store_UH_BusEd_BUS" class="shell-l3-list-item" ms.title="Business Store" tabindex="20" data-bi-name="Store_More_Business">
+                            Business Store
+                        </a>
+                    </li>
+                    <li id="shellmenu_33">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/edu?icid=en_US_Store_UH_BusEd_EDU" class="shell-l3-list-item" ms.title="Students &amp; educators" tabindex="20" data-bi-name="Store_More_StudentandEducators">
+                            Students &amp; educators
+                        </a>
+                    </li>
+                    <li id="shellmenu_34">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/cat/Developer/categoryID.69418300?icid=en_US_Store_UH_BusEd_Dev" class="shell-l3-list-item" ms.title="Developer" tabindex="20" data-bi-name="Store_More_Developer">
+                            Developer
+                        </a>
+                    </li>
+
+    </ul>
+
+
+
+                            </dd>
+
+                </dl>
+
+</div>
+                                    </li>
+                                    <li class="shell-header-dropdown  " data-navcontainer="shellmenu_35_NavContainer">
+                                        <div id="shellmenu_35" class="shell-header-dropdown-label">
+                                            <a id="Products-navigation" href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false" ms.title="Products" data-bi-name="Products" data-bi-slot="2" tabindex="20">
+                                                Products
+                                            </a>
+                                        </div>
+
+
+
+
+
+<div class="shell-header-dropdown-content " aria-hidden="true" role="menu">
+                <dl class="shell-header-dropdown-tab  " ms.cmpnm="Products; Software &amp; services">
+
+                            <dt id="shellmenu_36" class="shell-header-dropdown-tab-label">
+                                <a href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false" ms.title="Software &amp; services" ms.interactiontype="14" tabindex="20" data-bi-dnt="">
+                                    Software &amp; services
+                                    <i class="shell-icon-dropdown facing-right"></i>
+                                </a>
+                            </dt>
+                            <dd class="shell-header-dropdown-tab-content" data-col="0">
+
+
+
+    <ul class="shell-header-dropdown-tab-list">
+                    <li id="shellmenu_37">
+                        <a href="http://www.microsoft.com/en-us/windows" class="shell-l3-list-item" ms.title="Windows" tabindex="20" data-bi-name="Products_SoftwareAndServices_Windows">
+                            Windows
+                        </a>
+                    </li>
+                    <li id="shellmenu_38">
+                        <a href="https://products.office.com/en-us/home" class="shell-l3-list-item" ms.title="Office" tabindex="20" data-bi-name="Products_SoftwareAndServices_Office">
+                            Office
+                        </a>
+                    </li>
+                    <li id="shellmenu_39">
+                        <a href="https://www.microsoft.com/en-us/download/default.aspx" class="shell-l3-list-item" ms.title="Free downloads &amp; security" tabindex="20" data-bi-name="Products_SoftwareAndServices_FreeDownloadsAndSecurity">
+                            Free downloads &amp; security
+                        </a>
+                    </li>
+                    <li id="shellmenu_40">
+                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" class="shell-l3-list-item" ms.title="Internet Explorer" tabindex="20" data-bi-name="Products_SoftwareAndServices_InternetExplorer">
+                            Internet Explorer
+                        </a>
+                    </li>
+                    <li id="shellmenu_41">
+                        <a href="http://www.microsoft.com/en-us/windows/microsoft-edge" class="shell-l3-list-item" ms.title="Microsoft Edge" tabindex="20" data-bi-name="Products_SoftwareAndServices_MicrosoftEdge">
+                            Microsoft Edge
+                        </a>
+                    </li>
+                    <li id="shellmenu_42">
+                        <a href="http://www.skype.com/en/" class="shell-l3-list-item" ms.title="Skype" tabindex="20" data-bi-name="Products_SoftwareAndServices_Skype">
+                            Skype
+                        </a>
+                    </li>
+                    <li id="shellmenu_43">
+                        <a href="http://www.onenote.com/" class="shell-l3-list-item" ms.title="OneNote" tabindex="20" data-bi-name="Products_SoftwareAndServices_OneNote">
+                            OneNote
+                        </a>
+                    </li>
+                    <li id="shellmenu_44">
+                        <a href="https://onedrive.live.com/about/en-us/" class="shell-l3-list-item" ms.title="OneDrive" tabindex="20" data-bi-name="Products_SoftwareAndServices_OneDrive">
+                            OneDrive
+                        </a>
+                    </li>
+                    <li id="shellmenu_45">
+                        <a href="http://www.microsoft.com/microsoft-health/en-us" class="shell-l3-list-item" ms.title="Microsoft Health" tabindex="20" data-bi-name="Products_SoftwareAndServices_MicrosoftHealth">
+                            Microsoft Health
+                        </a>
+                    </li>
+                    <li id="shellmenu_46">
+                        <a href="http://www.msn.com/?ocid=HEA000" class="shell-l3-list-item" ms.title="MSN" tabindex="20" data-bi-name="Products_SoftwareAndServices_MSN">
+                            MSN
+                        </a>
+                    </li>
+                    <li id="shellmenu_47">
+                        <a href="../../../../../www.bing.com/index.html" class="shell-l3-list-item" ms.title="Bing" tabindex="20" data-bi-name="Products_SoftwareAndServices_Bing">
+                            Bing
+                        </a>
+                    </li>
+                    <li id="shellmenu_48">
+                        <a href="https://www.microsoft.com/en-us/groove" class="shell-l3-list-item" ms.title="Microsoft Groove" tabindex="20" data-bi-name="Products_SoftwareAndServices_XboxMusic">
+                            Microsoft Groove
+                        </a>
+                    </li>
+                    <li id="shellmenu_49">
+                        <a href="https://www.microsoft.com/en-us/movies-and-tv" class="shell-l3-list-item" ms.title="Microsoft Movies &amp; TV" tabindex="20" data-bi-name="Products_SoftwareAndServices_XboxVideo">
+                            Microsoft Movies &amp; TV
+                        </a>
+                    </li>
+
+    </ul>
+
+
+
+                            </dd>
+
+                </dl>
+                <dl class="shell-header-dropdown-tab  " ms.cmpnm="Products; Devices &amp; Xbox">
+
+                            <dt id="shellmenu_50" class="shell-header-dropdown-tab-label">
+                                <a href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false" ms.title="Devices &amp; Xbox" ms.interactiontype="14" tabindex="20" data-bi-dnt="">
+                                    Devices &amp; Xbox
+                                    <i class="shell-icon-dropdown facing-right"></i>
+                                </a>
+                            </dt>
+                            <dd class="shell-header-dropdown-tab-content" data-col="0">
+
+
+
+    <ul class="shell-header-dropdown-tab-list">
+                    <li id="shellmenu_51">
+                        <a href="https://www.microsoft.com/devices/en-us" class="shell-l3-list-item" ms.title="All Microsoft devices" tabindex="20" data-bi-name="Products_DevicesandXbox_AllMicrosoftDevices">
+                            All Microsoft devices
+                        </a>
+                    </li>
+                    <li id="shellmenu_52">
+                        <a href="http://www.microsoft.com/surface/en-us" class="shell-l3-list-item" ms.title="Microsoft Surface" tabindex="20" data-bi-name="Products_DevicesAndXbox_Surface">
+                            Microsoft Surface
+                        </a>
+                    </li>
+                    <li id="shellmenu_53">
+                        <a href="https://www.microsoftstore.com/store/msusa/en_US/cat/Computers/categoryID.62684600" class="shell-l3-list-item" ms.title="All Windows PCs &amp; tablets" tabindex="20" data-bi-name="Products_DevicesAndXbox_AllPCsAndTablets">
+                            All Windows PCs &amp; tablets
+                        </a>
+                    </li>
+                    <li id="shellmenu_54">
+                        <a href="https://www.microsoft.com/accessories/en-us" class="shell-l3-list-item" ms.title="PC accessories" tabindex="20" data-bi-name="Products_PCAccessories">
+                            PC accessories
+                        </a>
+                    </li>
+                    <li id="shellmenu_55">
+                        <a href="http://www.xbox.com/" class="shell-l3-list-item" ms.title="Xbox &amp; games" tabindex="20" data-bi-name="Products_DevicesAndXbox_XboxAndGames">
+                            Xbox &amp; games
+                        </a>
+                    </li>
+                    <li id="shellmenu_56">
+                        <a href="http://www.microsoft.com/en-us/mobile/" class="shell-l3-list-item" ms.title="Microsoft Lumia" tabindex="20" data-bi-name="Products_DevicesAndXbox_LumiaPhones">
+                            Microsoft Lumia
+                        </a>
+                    </li>
+                    <li id="shellmenu_57">
+                        <a href="https://www.microsoft.com/en-us/windows/phones" class="shell-l3-list-item" ms.title="All Windows phones" tabindex="20" data-bi-name="Products_DevicesAndXbox_AllWindowsPhones">
+                            All Windows phones
+                        </a>
+                    </li>
+                    <li id="shellmenu_58">
+                        <a href="http://www.microsoft.com/microsoft-hololens/en-us" class="shell-l3-list-item" ms.title="Microsoft HoloLens" tabindex="20" data-bi-name="Products_DevicesAndXbox_MicrosoftHololens">
+                            Microsoft HoloLens
+                        </a>
+                    </li>
+
+    </ul>
+
+
+
+                            </dd>
+
+                </dl>
+                <dl class="shell-header-dropdown-tab  " ms.cmpnm="Products; For business">
+
+                            <dt id="shellmenu_59" class="shell-header-dropdown-tab-label">
+                                <a href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false" ms.title="For business" ms.interactiontype="14" tabindex="20" data-bi-dnt="">
+                                    For business
+                                    <i class="shell-icon-dropdown facing-right"></i>
+                                </a>
+                            </dt>
+                            <dd class="shell-header-dropdown-tab-content" data-col="0">
+
+
+
+    <ul class="shell-header-dropdown-tab-list">
+                    <li id="shellmenu_60">
+                        <a href="http://www.microsoft.com/en-us/server-cloud/" class="shell-l3-list-item" ms.title="Cloud Platform" tabindex="20" data-bi-name="Products_ForBusiness_CloudPlatform">
+                            Cloud Platform
+                        </a>
+                    </li>
+                    <li id="shellmenu_61">
+                        <a href="http://azure.microsoft.com/" class="shell-l3-list-item" ms.title="Microsoft Azure" tabindex="20" data-bi-name="Products_ForBusiness_MicrosoftAzure">
+                            Microsoft Azure
+                        </a>
+                    </li>
+                    <li id="shellmenu_62">
+                        <a href="http://www.microsoft.com/en-us/dynamics/default.aspx" class="shell-l3-list-item" ms.title="Microsoft Dynamics" tabindex="20" data-bi-name="Products_ForBusiness_MicrosoftDynamics">
+                            Microsoft Dynamics
+                        </a>
+                    </li>
+                    <li id="shellmenu_63">
+                        <a href="http://www.microsoft.com/en-us/windows/business/default.aspx" class="shell-l3-list-item" ms.title="Windows for business" tabindex="20" data-bi-name="Products_ForBusiness_WindowsForBusiness">
+                            Windows for business
+                        </a>
+                    </li>
+                    <li id="shellmenu_64">
+                        <a href="https://products.office.com/en-us/business/office" class="shell-l3-list-item" ms.title="Office for business" tabindex="20" data-bi-name="Products_ForBusiness_OfficeForBusiness">
+                            Office for business
+                        </a>
+                    </li>
+                    <li id="shellmenu_65">
+                        <a href="https://products.office.com/en-us/skype-for-business" class="shell-l3-list-item" ms.title="Skype for business" tabindex="20" data-bi-name="Products_ForBusiness_SkypeForBusiness">
+                            Skype for business
+                        </a>
+                    </li>
+                    <li id="shellmenu_66">
+                        <a href="http://www.microsoft.com/surface/en-us/business/overview" class="shell-l3-list-item" ms.title="Surface for business" tabindex="20" data-bi-name="Products_ForBusiness_SurfaceForBusiness">
+                            Surface for business
+                        </a>
+                    </li>
+                    <li id="shellmenu_67">
+                        <a href="http://www.microsoft.com/enterprise" class="shell-l3-list-item" ms.title="Enterprise solutions" tabindex="20" data-bi-name="Products_ForBusiness_EnterpriseSolutions">
+                            Enterprise solutions
+                        </a>
+                    </li>
+                    <li id="shellmenu_68">
+                        <a href="https://business.microsoft.com/en-us/" class="shell-l3-list-item" ms.title="Small business solutions" tabindex="20" data-bi-name="Products_ForBusiness_SmallBusinessSolutions">
+                            Small business solutions
+                        </a>
+                    </li>
+                    <li id="shellmenu_69">
+                        <a href="https://pinpoint.microsoft.com/" class="shell-l3-list-item" ms.title="Find a solutions provider" tabindex="20" data-bi-name="Products_ForBusiness_FindASolutionsProvider">
+                            Find a solutions provider
+                        </a>
+                    </li>
+                    <li id="shellmenu_70">
+                        <a href="https://www.microsoft.com/en-us/licensing/default.aspx" class="shell-l3-list-item" ms.title="Volume Licensing" tabindex="20" data-bi-name="Products_ForBusiness_VolumeLicensing">
+                            Volume Licensing
+                        </a>
+                    </li>
+
+    </ul>
+
+
+
+                            </dd>
+
+                </dl>
+                <dl class="shell-header-dropdown-tab  " ms.cmpnm="Products; For developers &amp; IT pros">
+
+                            <dt id="shellmenu_71" class="shell-header-dropdown-tab-label">
+                                <a href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false" ms.title="For developers &amp; IT pros" ms.interactiontype="14" tabindex="20" data-bi-dnt="">
+                                    For developers &amp; IT pros
+                                    <i class="shell-icon-dropdown facing-right"></i>
+                                </a>
+                            </dt>
+                            <dd class="shell-header-dropdown-tab-content" data-col="0">
+
+
+
+    <ul class="shell-header-dropdown-tab-list">
+                    <li id="shellmenu_72">
+                        <a href="https://developer.microsoft.com/en-us/windows" class="shell-l3-list-item" ms.title="Develop Windows apps" tabindex="20" data-bi-name="Products_DeveloperAndITPro_DevelopWindowsApps">
+                            Develop Windows apps
+                        </a>
+                    </li>
+                    <li id="shellmenu_73">
+                        <a href="http://azure.microsoft.com/" class="shell-l3-list-item" ms.title="Microsoft Azure" tabindex="20" data-bi-name="Products_ForDevelopersAndITPros_Azure">
+                            Microsoft Azure
+                        </a>
+                    </li>
+                    <li id="shellmenu_74">
+                        <a href="http://msdn.microsoft.com/en-us/" class="shell-l3-list-item" ms.title="MSDN" tabindex="20" data-bi-name="Products_ForDevelopersAndITPros">
+                            MSDN
+                        </a>
+                    </li>
+                    <li id="shellmenu_75">
+                        <a href="http://technet.microsoft.com/en-us/" class="shell-l3-list-item" ms.title="TechNet" tabindex="20" data-bi-name="Products_ForDevelopersAndITPros_TechNet">
+                            TechNet
+                        </a>
+                    </li>
+                    <li id="shellmenu_76">
+                        <a href="http://www.visualstudio.com/" class="shell-l3-list-item" ms.title="Visual Studio" tabindex="20" data-bi-name="Products_ForDevelopersAndITPros_VisualStudio">
+                            Visual Studio
+                        </a>
+                    </li>
+
+    </ul>
+
+
+
+                            </dd>
+
+                </dl>
+                <dl class="shell-header-dropdown-tab  " ms.cmpnm="Products; For students &amp; educators">
+
+                            <dt id="shellmenu_77" class="shell-header-dropdown-tab-label">
+                                <a href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false" ms.title="For students &amp; educators" ms.interactiontype="14" tabindex="20" data-bi-dnt="">
+                                    For students &amp; educators
+                                    <i class="shell-icon-dropdown facing-right"></i>
+                                </a>
+                            </dt>
+                            <dd class="shell-header-dropdown-tab-content" data-col="0">
+
+
+
+    <ul class="shell-header-dropdown-tab-list">
+                    <li id="shellmenu_78">
+                        <a href="http://www.microsoft.com/en-us/education/products/office/default.aspx" class="shell-l3-list-item" ms.title="Office for students" tabindex="20" data-bi-name="Products_ForStudentsAndEducators_OfficeForStudents">
+                            Office for students
+                        </a>
+                    </li>
+                    <li id="shellmenu_79">
+                        <a href="http://www.microsoft.com/en-us/education/products/onenote/default.aspx" class="shell-l3-list-item" ms.title="OneNote in classroom" tabindex="20" data-bi-name="Products_ForStudentsAndEducators_OneNoteInClassroom">
+                            OneNote in classroom
+                        </a>
+                    </li>
+                    <li id="shellmenu_80">
+                        <a href="http://www.microsoftstore.com/store/msusa/en_US/edu" class="shell-l3-list-item" ms.title="Shop PCs &amp; tablets perfect for students" tabindex="20" data-bi-name="Products_ForStudentsAndEducators_ShopPCsAndTablets">
+                            Shop PCs &amp; tablets perfect for students
+                        </a>
+                    </li>
+                    <li id="shellmenu_81">
+                        <a href="http://www.microsoft.com/en-us/education" class="shell-l3-list-item" ms.title="Microsoft in Education" tabindex="20" data-bi-name="Products_ForStudentsAndEducators_MicrosoftInEducation">
+                            Microsoft in Education
+                        </a>
+                    </li>
+
+    </ul>
+
+
+
+                            </dd>
+
+                </dl>
+
+</div>
+                                    </li>
+                                    <li id="l1_support" class="shell-header-dropdown-label">
+                                        <a class="top-level-link-text ctl_headerNavLink" tabindex="20" href="https://support.microsoft.com/en-us" ms.title="Support" data-bi-name="Support" data-bi-slot="3">
+                                            Support
+                                        </a>
+                                    </li>
+
+                </ul>
+            </div>
+                <div class="shell-header-user-container">
+                    <dl class="shell-header-user">
+                        <dt>
+                            <span id="meControl">
+                                <div class="msame_Header" tabindex="60" style="display: inline-block; height: 48px; font-size: 14px; border: 1px solid transparent; border-bottom-style: none; width: 100%;">
+                                    <div class="msame_Header_name" style="line-height: 48px; max-width: 160px; display: inline-block; vertical-align: top; font-size: 86%; color: #505050; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; word-break: break-all">Sign in </div>
+                                </div>
+                            </span>
+                        </dt>
+                    </dl>
+                </div>
+            
+            <div class="shell-header-nav-toggle " ms.cmpgrp="nav">
+                <button class="shell-header-toggle-menu" ms.cmpnm="mobile global nav toggle button" ms.title="Toggle menu" title="Toggle Menu" type="button" data-bi-name="Toggle Menu" tabindex="55">
+                    <i class="shell-icon-menu"></i>
+                </button>
+            </div>
+
+            <ul class="shell-header-toggle" ms.cmpgrp="header actions">
+                    <li>
+                        <button class="shell-header-toggle-search" type="button" data-bi-name="Toggle Search Icon" ms.title="search toggle" title="Toggle Search" tabindex="45">
+                            <i class="shell-icon-search"></i>
+                        </button>
+                    </li>
+                            </ul>
+
+            <div class="shell-header-actions" ms.cmpgrp="header actions">
+                    <form id="srv_shellHeaderSearchForm" class="shell-search" role="search" action="https://www.microsoft.com/en-us/research/search/" method="GET" autocomplete="off" onsubmit=" return window.msCommonShell.onSearch(this) " ms.cmpnm="search">
+                        <div class="shell-search-wrapper">
+                            <label for="cli_shellHeaderSearchInput" class="sr-only">Search Microsoft</label>
+                            <input id="cli_shellHeaderSearchInput" type="search" title="" name="q" data-bi-dnt="" placeholder="" maxlength="200" tabindex="30" />
+
+
+                            <button type="submit" title="Search" data-bi-dnt="" tabindex="40">
+                                <i class="shell-icon-search"></i>
+                                <span class="sr-only">Search</span>
+                            </button>
+                            <div id="cli_searchSuggestionsContainer" class="shell-search-dropdown-container">
+                                <div class="search-dropdown">
+                                    <div class="dropdown-item">
+                                        <ul id="cli_searchSuggestionsResults" data-bi-name="Search Suggestions" data-bi-source="UnifiedSearch" ms.cmpgrp="search suggestions"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="fixed-global-nav-buffer"></div>
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 9]>
+<div class="shell-category-header lt-ie9 cat-theme-gray" ms.pgarea="categoryheader">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<div class="shell-category-header cat-theme-gray" ms.pgarea="categoryheader">
+    <!--<![endif]-->
+    <div role="navigation" aria-label="Category level navigation" class="shell-category-nav" ms.cmpgrp="cat nav" data-bi-area="CategoryHeader-" data-bi-view="C0">
+        <div class="c-nav-pagination c-nav-pagination-prev">
+            <i class="shell-icon-dropdown facing-left"></i>
+        </div>
+        <ul class="shell-category-top-level shell-category-brand">
+            <li class="c-logo-item">
+                                <a id="shell-cat-header-logo" class="c-logo c-top-nav-link" href="https://www.microsoft.com/en-us/research/" title="" ms.title="" data-bi-name="Category logo" tabindex="70">
+                    <span class="logo-text-label">Research</span>
+                </a>
+                <a id="shell-cat-header-logo-mobile" aria-expanded="false" role="button" aria-haspopup="true" class="c-logo-mobile c-top-nav-link c-nav-dropdown" href="javascript:void(0);" ms.title="" ms.interactiontype="14" data-bi-name="Mobile category logo" tabindex="70">
+                    <span class="logo-text-label">Research</span>
+                    <i class="shell-icon-dropdown"></i>
+                </a>
+            <ul class="c-nav-dropdown-menu" role="menu" data-bi-area="CategoryHeader-" data-bi-view="C1">
+
+
+
+                <li class="c-top-nav-item" id="home-mobilelist">
+                    <a id="home-mobile" tabindex="70" class="c-top-nav-link c-nav-link" href="https://www.microsoft.com/en-us/research/" ms.title="Research Home" data-bi-name="home-mobile" data-bi-slot="1" data-show-cta="False">
+                        <span>Research Home</span>
+                    </a>
+                </li>
+            <li class="c-top-nav-item" id="shellmenu_82-mobilelist">
+                <a id="shellmenu_82-mobile" tabindex="70" aria-haspopup="true"  aria-expanded="false" class="c-top-nav-link c-nav-link c-nav-dropdown" href="javascript:void(0);" ms.title="Research areas" role="button" ms.interactiontype="14" data-bi-name="ResearchAreas" data-bi-slot="2" data-show-cta="True">
+                    <span>Research areas<i class="shell-icon-dropdown"></i></span>
+                </a>
+                <ul aria-hidden="true" class="c-nav-dropdown-menu" data-bi-area="CategoryHeader-" data-bi-view="ResearchAreas-C2" ms.cmpnm="Research areas" role="menu">
+
+
+
+
+        <li class="c-nav-item ">
+            <a id="shellmenu_83-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/algorithms/" ms.title="Algorithms"
+                data-bi-name="ResearchAreas_Algorithms" data-bi-slot="1" tabindex="70"
+                >
+                <span>
+                    Algorithms
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="ResearchAreas_ArtificialIntelligence-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/artificial-intelligence/" ms.title="Artificial intelligence"
+                data-bi-name="ResearchAreas_ArtificialIntelligence" data-bi-slot="2" tabindex="70"
+                >
+                <span>
+                    Artificial intelligence
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_84-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/computer-systems-and-networking/" ms.title="Computer systems and networking"
+                data-bi-name="ResearchAreas_ComputerSystemsAndNetworking" data-bi-slot="3" tabindex="70"
+                >
+                <span>
+                    Computer systems and networking
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_85-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/computer-vision/" ms.title="Computer vision"
+                data-bi-name="ResearchAreas_ComputerVision" data-bi-slot="4" tabindex="70"
+                >
+                <span>
+                    Computer vision
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_86-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/data-visualization-analytics-platform/" ms.title="Data visualization, analytics, and platform"
+                data-bi-name="ResearchAreas_DataVisualizationAnalyticsPlatform" data-bi-slot="5" tabindex="70"
+                >
+                <span>
+                    Data visualization, analytics, and platform
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_87-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/ecology-environment/" ms.title="Ecology and environment"
+                data-bi-name="ResearchAreas_EcologyAndEnvironment" data-bi-slot="6" tabindex="70"
+                >
+                <span>
+                    Ecology and environment
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_88-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/economics/" ms.title="Economics"
+                data-bi-name="ResearchAreas_Economics" data-bi-slot="7" tabindex="70"
+                >
+                <span>
+                    Economics
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_89-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/graphics-and-multimedia/" ms.title="Graphics and multimedia"
+                data-bi-name="ResearchAreas_GraphicsAndMultimedia" data-bi-slot="8" tabindex="70"
+                >
+                <span>
+                    Graphics and multimedia
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_90-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/hardware-devices-quantum-computing/" ms.title="Hardware, devices, and quantum computing"
+                data-bi-name="ResearchAreas_HardwareDevicesAndQuantumComputing" data-bi-slot="9" tabindex="70"
+                >
+                <span>
+                    Hardware, devices, and quantum computing
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_91-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/human-centered-computing/" ms.title="Human-centered computing"
+                data-bi-name="ResearchAreas_HumanCenteredComputing" data-bi-slot="10" tabindex="70"
+                >
+                <span>
+                    Human-centered computing
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="ResearchAreas_HumanLanguageTechnologies-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/human-language-technologies/" ms.title="Human language technologies"
+                data-bi-name="ResearchAreas_HumanLanguageTechnologies" data-bi-slot="11" tabindex="70"
+                >
+                <span>
+                    Human language technologies
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_92-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/computational-sciences-mathematics/" ms.title="Mathematics"
+                data-bi-name="ResearchAreas_Mathematics" data-bi-slot="12" tabindex="70"
+                >
+                <span>
+                    Mathematics
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_93-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/medical-health-genomics/" ms.title="Medical, health, and genomics"
+                data-bi-name="ResearchAreas_MedicalHealthGenomics" data-bi-slot="13" tabindex="70"
+                >
+                <span>
+                    Medical, health, and genomics
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_94-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/programming-languages-software-engineering/" ms.title="Programming languages and software engineering"
+                data-bi-name="ResearchAreas_ProgramLanguagesAndSoftwareEngineering" data-bi-slot="14" tabindex="70"
+                >
+                <span>
+                    Programming languages and software engineering
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_95-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/search-information-retrieval/" ms.title="Search and information retrieval"
+                data-bi-name="ResearchAreas_SearchInformationRetrieval" data-bi-slot="15" tabindex="70"
+                >
+                <span>
+                    Search and information retrieval
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_96-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/security-privacy-cryptography/" ms.title="Security, privacy, and cryptography"
+                data-bi-name="ResearchAreas_SecurityPrivacyCryptography" data-bi-slot="16" tabindex="70"
+                >
+                <span>
+                    Security, privacy, and cryptography
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_97-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/social-sciences/" ms.title="Social Sciences"
+                data-bi-name="ResearchAreas_SocialSciences" data-bi-slot="17" tabindex="70"
+                >
+                <span>
+                    Social Sciences
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_98-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/technology-for-emerging-markets/" ms.title="Technology for emerging markets"
+                data-bi-name="ResearchAreas_TechnologyForEmergingMarkets" data-bi-slot="18" tabindex="70"
+                >
+                <span>
+                    Technology for emerging markets
+                </span>
+            </a>
+
+
+        </li>
+
+
+                </ul>
+            </li>
+                <li class="c-top-nav-item" id="shellmenu_99-mobilelist">
+                    <a id="shellmenu_99-mobile" tabindex="70" class="c-top-nav-link c-nav-link" href="https://www.microsoft.com/en-us/research/products/" ms.title="Products &amp; Downloads" data-bi-name="ProductsDownloads" data-bi-slot="3" data-show-cta="True">
+                        <span>Products &amp; Downloads</span>
+                    </a>
+                </li>
+            <li class="c-top-nav-item" id="shellmenu_100-mobilelist">
+                <a id="shellmenu_100-mobile" tabindex="70" aria-haspopup="true"  aria-expanded="false" class="c-top-nav-link c-nav-link c-nav-dropdown" href="javascript:void(0);" ms.title="Programs &amp; Events" role="button" ms.interactiontype="14" data-bi-name="ProgramsEvents" data-bi-slot="4" data-show-cta="True">
+                    <span>Programs &amp; Events<i class="shell-icon-dropdown"></i></span>
+                </a>
+                <ul aria-hidden="true" class="c-nav-dropdown-menu" data-bi-area="CategoryHeader-" data-bi-view="ProgramsEvents-C2" ms.cmpnm="Programs &amp; Events" role="menu">
+
+
+
+
+        <li class="c-nav-item ">
+            <a id="AcademicPrograms-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/academic-programs/" ms.title="Academic Programs"
+                data-bi-name="ProgramsEvents_AcademicPrograms" data-bi-slot="1" tabindex="70"
+                >
+                <span>
+                    Academic Programs
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="EventsConferences-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/events-conferences/" ms.title="Events &amp; Conferences"
+                data-bi-name="ProgramsEvents_EventsConferences" data-bi-slot="2" tabindex="70"
+                >
+                <span>
+                    Events &amp; Conferences
+                </span>
+            </a>
+
+
+        </li>
+
+
+                </ul>
+            </li>
+                <li class="c-top-nav-item" id="shellmenu_101-mobilelist">
+                    <a id="shellmenu_101-mobile" tabindex="70" class="c-top-nav-link c-nav-link" href="https://www.microsoft.com/en-us/research/people/" ms.title="People" data-bi-name="People" data-bi-slot="5" data-show-cta="True">
+                        <span>People</span>
+                    </a>
+                </li>
+                <li class="c-top-nav-item" id="shellmenu_102-mobilelist">
+                    <a id="shellmenu_102-mobile" tabindex="70" class="c-top-nav-link c-nav-link" href="https://www.microsoft.com/en-us/research/careers/" ms.title="Careers" data-bi-name="Careers" data-bi-slot="6" data-show-cta="True">
+                        <span>Careers</span>
+                    </a>
+                </li>
+            <li class="c-top-nav-item" id="shellmenu_103-mobilelist">
+                <a id="shellmenu_103-mobile" tabindex="70" aria-haspopup="true"  aria-expanded="false" class="c-top-nav-link c-nav-link c-nav-dropdown" href="javascript:void(0);" ms.title="About" role="button" ms.interactiontype="14" data-bi-name="About" data-bi-slot="7" data-show-cta="True">
+                    <span>About<i class="shell-icon-dropdown"></i></span>
+                </a>
+                <ul aria-hidden="true" class="c-nav-dropdown-menu" data-bi-area="CategoryHeader-" data-bi-view="About-C2" ms.cmpnm="About" role="menu">
+
+
+
+
+        <li class="c-nav-item ">
+            <a id="About-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/about/" ms.title="About"
+                data-bi-name="About" data-bi-slot="1" tabindex="70"
+                >
+                <span>
+                    About
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="MicrosoftResearchBlog-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/blog" ms.title="Microsoft Research blog"
+                data-bi-name="MicrosoftResearchBlog" data-bi-slot="2" tabindex="70"
+                >
+                <span>
+                    Microsoft Research blog
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="AsiaLab-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/" ms.title="Asia Lab"
+                data-bi-name="AsiaLab" data-bi-slot="3" tabindex="70"
+                >
+                <span>
+                    Asia Lab
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="CambridgeLab-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/lab/microsoft-research-cambridge/" ms.title="Cambridge Lab"
+                data-bi-name="CambridgeLab" data-bi-slot="4" tabindex="70"
+                >
+                <span>
+                    Cambridge Lab
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="IndiaLab-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/lab/microsoft-research-india/" ms.title="India Lab"
+                data-bi-name="IndiaLab" data-bi-slot="5" tabindex="70"
+                >
+                <span>
+                    India Lab
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="NewEnglandLab-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/lab/microsoft-research-new-england/" ms.title="New England Lab"
+                data-bi-name="NewEnglandLab" data-bi-slot="6" tabindex="70"
+                >
+                <span>
+                    New England Lab
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="NewYorkCityLab-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/lab/microsoft-research-new-york/" ms.title="New York City Lab"
+                data-bi-name="NewYorkCityLab" data-bi-slot="7" tabindex="70"
+                >
+                <span>
+                    New York City Lab
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="RedmondLab-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/lab/microsoft-research-redmond/" ms.title="Redmond Lab"
+                data-bi-name="RedmondLab" data-bi-slot="8" tabindex="70"
+                >
+                <span>
+                    Redmond Lab
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="StationQ-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/lab/station-q/" ms.title="Station Q"
+                data-bi-name="StationQ" data-bi-slot="9" tabindex="70"
+                >
+                <span>
+                    Station Q
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="AppliedSciencesLab-mobile" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/lab/applied-sciences-group/" ms.title="Applied Sciences Lab"
+                data-bi-name="AppliedSciencesLab" data-bi-slot="10" tabindex="70"
+                >
+                <span>
+                    Applied Sciences Lab
+                </span>
+            </a>
+
+
+        </li>
+
+
+                </ul>
+            </li>
+
+            </ul>
+
+            </li>
+
+        </ul>
+
+        
+        <ul class="c-menu-container shell-category-top-level shell-category-nav-wrapper" role="menu" data-bi-area="CategoryMenuItems-" data-bi-view="C1">
+
+
+
+            <li class="c-top-nav-item" id="shellmenu_82list">
+                <a id="shellmenu_82" tabindex="70" aria-haspopup="true"  aria-expanded="false" class="c-top-nav-link c-nav-link c-nav-dropdown" href="javascript:void(0);" ms.title="Research areas" role="button" ms.interactiontype="14" data-bi-name="ResearchAreas" data-bi-slot="1" data-show-cta="True">
+                    <span>Research areas<i class="shell-icon-dropdown"></i></span>
+                </a>
+                <ul aria-hidden="true" class="c-nav-dropdown-menu" data-bi-area="CategoryHeader-" data-bi-view="ResearchAreas-C2" ms.cmpnm="Research areas" role="menu">
+
+
+
+
+        <li class="c-nav-item ">
+            <a id="shellmenu_83" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/algorithms/" ms.title="Algorithms"
+                data-bi-name="ResearchAreas_Algorithms" data-bi-slot="1" tabindex="70"
+                >
+                <span>
+                    Algorithms
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="ResearchAreas_ArtificialIntelligence" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/artificial-intelligence/" ms.title="Artificial intelligence"
+                data-bi-name="ResearchAreas_ArtificialIntelligence" data-bi-slot="2" tabindex="70"
+                >
+                <span>
+                    Artificial intelligence
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_84" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/computer-systems-and-networking/" ms.title="Computer systems and networking"
+                data-bi-name="ResearchAreas_ComputerSystemsAndNetworking" data-bi-slot="3" tabindex="70"
+                >
+                <span>
+                    Computer systems and networking
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_85" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/computer-vision/" ms.title="Computer vision"
+                data-bi-name="ResearchAreas_ComputerVision" data-bi-slot="4" tabindex="70"
+                >
+                <span>
+                    Computer vision
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_86" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/data-visualization-analytics-platform/" ms.title="Data visualization, analytics, and platform"
+                data-bi-name="ResearchAreas_DataVisualizationAnalyticsPlatform" data-bi-slot="5" tabindex="70"
+                >
+                <span>
+                    Data visualization, analytics, and platform
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_87" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/ecology-environment/" ms.title="Ecology and environment"
+                data-bi-name="ResearchAreas_EcologyAndEnvironment" data-bi-slot="6" tabindex="70"
+                >
+                <span>
+                    Ecology and environment
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_88" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/economics/" ms.title="Economics"
+                data-bi-name="ResearchAreas_Economics" data-bi-slot="7" tabindex="70"
+                >
+                <span>
+                    Economics
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_89" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/graphics-and-multimedia/" ms.title="Graphics and multimedia"
+                data-bi-name="ResearchAreas_GraphicsAndMultimedia" data-bi-slot="8" tabindex="70"
+                >
+                <span>
+                    Graphics and multimedia
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_90" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/hardware-devices-quantum-computing/" ms.title="Hardware, devices, and quantum computing"
+                data-bi-name="ResearchAreas_HardwareDevicesAndQuantumComputing" data-bi-slot="9" tabindex="70"
+                >
+                <span>
+                    Hardware, devices, and quantum computing
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_91" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/human-centered-computing/" ms.title="Human-centered computing"
+                data-bi-name="ResearchAreas_HumanCenteredComputing" data-bi-slot="10" tabindex="70"
+                >
+                <span>
+                    Human-centered computing
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="ResearchAreas_HumanLanguageTechnologies" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/human-language-technologies/" ms.title="Human language technologies"
+                data-bi-name="ResearchAreas_HumanLanguageTechnologies" data-bi-slot="11" tabindex="70"
+                >
+                <span>
+                    Human language technologies
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_92" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/computational-sciences-mathematics/" ms.title="Mathematics"
+                data-bi-name="ResearchAreas_Mathematics" data-bi-slot="12" tabindex="70"
+                >
+                <span>
+                    Mathematics
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_93" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/medical-health-genomics/" ms.title="Medical, health, and genomics"
+                data-bi-name="ResearchAreas_MedicalHealthGenomics" data-bi-slot="13" tabindex="70"
+                >
+                <span>
+                    Medical, health, and genomics
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_94" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/programming-languages-software-engineering/" ms.title="Programming languages and software engineering"
+                data-bi-name="ResearchAreas_ProgramLanguagesAndSoftwareEngineering" data-bi-slot="14" tabindex="70"
+                >
+                <span>
+                    Programming languages and software engineering
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_95" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/search-information-retrieval/" ms.title="Search and information retrieval"
+                data-bi-name="ResearchAreas_SearchInformationRetrieval" data-bi-slot="15" tabindex="70"
+                >
+                <span>
+                    Search and information retrieval
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_96" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/security-privacy-cryptography/" ms.title="Security, privacy, and cryptography"
+                data-bi-name="ResearchAreas_SecurityPrivacyCryptography" data-bi-slot="16" tabindex="70"
+                >
+                <span>
+                    Security, privacy, and cryptography
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_97" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/social-sciences/" ms.title="Social Sciences"
+                data-bi-name="ResearchAreas_SocialSciences" data-bi-slot="17" tabindex="70"
+                >
+                <span>
+                    Social Sciences
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="shellmenu_98" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/research-area/technology-for-emerging-markets/" ms.title="Technology for emerging markets"
+                data-bi-name="ResearchAreas_TechnologyForEmergingMarkets" data-bi-slot="18" tabindex="70"
+                >
+                <span>
+                    Technology for emerging markets
+                </span>
+            </a>
+
+
+        </li>
+
+
+                </ul>
+            </li>
+                <li class="c-top-nav-item" id="shellmenu_99list">
+                    <a id="shellmenu_99" tabindex="70" class="c-top-nav-link c-nav-link" href="https://www.microsoft.com/en-us/research/products/" ms.title="Products &amp; Downloads" data-bi-name="ProductsDownloads" data-bi-slot="2" data-show-cta="True">
+                        <span>Products &amp; Downloads</span>
+                    </a>
+                </li>
+            <li class="c-top-nav-item" id="shellmenu_100list">
+                <a id="shellmenu_100" tabindex="70" aria-haspopup="true"  aria-expanded="false" class="c-top-nav-link c-nav-link c-nav-dropdown" href="javascript:void(0);" ms.title="Programs &amp; Events" role="button" ms.interactiontype="14" data-bi-name="ProgramsEvents" data-bi-slot="3" data-show-cta="True">
+                    <span>Programs &amp; Events<i class="shell-icon-dropdown"></i></span>
+                </a>
+                <ul aria-hidden="true" class="c-nav-dropdown-menu" data-bi-area="CategoryHeader-" data-bi-view="ProgramsEvents-C2" ms.cmpnm="Programs &amp; Events" role="menu">
+
+
+
+
+        <li class="c-nav-item ">
+            <a id="AcademicPrograms" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/academic-programs/" ms.title="Academic Programs"
+                data-bi-name="ProgramsEvents_AcademicPrograms" data-bi-slot="1" tabindex="70"
+                >
+                <span>
+                    Academic Programs
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="EventsConferences" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/events-conferences/" ms.title="Events &amp; Conferences"
+                data-bi-name="ProgramsEvents_EventsConferences" data-bi-slot="2" tabindex="70"
+                >
+                <span>
+                    Events &amp; Conferences
+                </span>
+            </a>
+
+
+        </li>
+
+
+                </ul>
+            </li>
+                <li class="c-top-nav-item" id="shellmenu_101list">
+                    <a id="shellmenu_101" tabindex="70" class="c-top-nav-link c-nav-link" href="https://www.microsoft.com/en-us/research/people/" ms.title="People" data-bi-name="People" data-bi-slot="4" data-show-cta="True">
+                        <span>People</span>
+                    </a>
+                </li>
+                <li class="c-top-nav-item" id="shellmenu_102list">
+                    <a id="shellmenu_102" tabindex="70" class="c-top-nav-link c-nav-link" href="https://www.microsoft.com/en-us/research/careers/" ms.title="Careers" data-bi-name="Careers" data-bi-slot="5" data-show-cta="True">
+                        <span>Careers</span>
+                    </a>
+                </li>
+            <li class="c-top-nav-item" id="shellmenu_103list">
+                <a id="shellmenu_103" tabindex="70" aria-haspopup="true"  aria-expanded="false" class="c-top-nav-link c-nav-link c-nav-dropdown" href="javascript:void(0);" ms.title="About" role="button" ms.interactiontype="14" data-bi-name="About" data-bi-slot="6" data-show-cta="True">
+                    <span>About<i class="shell-icon-dropdown"></i></span>
+                </a>
+                <ul aria-hidden="true" class="c-nav-dropdown-menu" data-bi-area="CategoryHeader-" data-bi-view="About-C2" ms.cmpnm="About" role="menu">
+
+
+
+
+        <li class="c-nav-item ">
+            <a id="About" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/about/" ms.title="About"
+                data-bi-name="About" data-bi-slot="1" tabindex="70"
+                >
+                <span>
+                    About
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="MicrosoftResearchBlog" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/blog" ms.title="Microsoft Research blog"
+                data-bi-name="MicrosoftResearchBlog" data-bi-slot="2" tabindex="70"
+                >
+                <span>
+                    Microsoft Research blog
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="AsiaLab" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/" ms.title="Asia Lab"
+                data-bi-name="AsiaLab" data-bi-slot="3" tabindex="70"
+                >
+                <span>
+                    Asia Lab
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="CambridgeLab" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/lab/microsoft-research-cambridge/" ms.title="Cambridge Lab"
+                data-bi-name="CambridgeLab" data-bi-slot="4" tabindex="70"
+                >
+                <span>
+                    Cambridge Lab
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="IndiaLab" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/lab/microsoft-research-india/" ms.title="India Lab"
+                data-bi-name="IndiaLab" data-bi-slot="5" tabindex="70"
+                >
+                <span>
+                    India Lab
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="NewEnglandLab" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/lab/microsoft-research-new-england/" ms.title="New England Lab"
+                data-bi-name="NewEnglandLab" data-bi-slot="6" tabindex="70"
+                >
+                <span>
+                    New England Lab
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="NewYorkCityLab" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/lab/microsoft-research-new-york/" ms.title="New York City Lab"
+                data-bi-name="NewYorkCityLab" data-bi-slot="7" tabindex="70"
+                >
+                <span>
+                    New York City Lab
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="RedmondLab" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/lab/microsoft-research-redmond/" ms.title="Redmond Lab"
+                data-bi-name="RedmondLab" data-bi-slot="8" tabindex="70"
+                >
+                <span>
+                    Redmond Lab
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="StationQ" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/lab/station-q/" ms.title="Station Q"
+                data-bi-name="StationQ" data-bi-slot="9" tabindex="70"
+                >
+                <span>
+                    Station Q
+                </span>
+            </a>
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="AppliedSciencesLab" class="c-nav-dropdown-item c-nav-link " href="https://www.microsoft.com/en-us/research/lab/applied-sciences-group/" ms.title="Applied Sciences Lab"
+                data-bi-name="AppliedSciencesLab" data-bi-slot="10" tabindex="70"
+                >
+                <span>
+                    Applied Sciences Lab
+                </span>
+            </a>
+
+
+        </li>
+
+
+                </ul>
+            </li>
+
+        </ul>
+
+        <div class="c-nav-pagination c-nav-pagination-next">
+            <i class="shell-icon-dropdown facing-right"></i>
+        </div>
+    </div>
+
+</div>
+<div class="fixed-category-nav-buffer"></div>
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    var shellInitOptions = {
+        lcaDisclaimerEnabled: false,
+        suggestedProductTitle : 'Suggested products'
+    };
+
+    
+    var meControlInitOptions = {
+        containerId: 'meControl',
+            enabled: true,
+        headerHeight: 48,
+        custom: { chevHtml: '<i class="msame_chev_uhf shell-icon-dropdown"></i>' },
+        
+
+        mobileBreakpoints: {
+            shortHeader: 1084
+        },
+
+        rpData:
+        {
+            msaInfo:
+            {
+                    
+                        signInUrl: '',
+                        signOutUrl: '',
+                        accountSettingsUrl: 'https://account.microsoft.com/',
+                        switchUrl: '',
+                        meUrl: 'https://login.live.com/me.srf?wa=wsignin1.0',
+                        isSupported: true
+                    
+            },
+            aadInfo:
+            {
+            },
+            preferredIdp: 'msa',
+        },
+        signInStr: 'Sign in',
+        signOutStr: 'Sign out'
+    };
+</script>				</uhf_header>
+
+					</header>
+<div class="picchu">
+			
+			
+								
+<div ms.pgarea="body" ms.sitesec="publication single">
+	<header role="banner" class="msr-banner bg-center margin-bottom-sp6" style="background-image: url( https://www.microsoft.com/en-us/research/wp-includes/images/media/default.png)">
+		
+		<div class="msr-banner-content gray-d4-bgc">
+			<div class="ms-grid msr-banner-grid padding-vertical-sp6">
+				<div class="ms-row msr-banner-row vc">
+					<div class="l-col-16-24">
+						<h1 class="header tight">
+							Wikis at work: Success factors and challenges for sustainability of enterprise wikis						</h1>
+						<p class="body no-margin-bottom">
+							July 1, 2010						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="ms-grid padding-bottom-sp6">
+		<div class="ms-row">
+			<div class="l-col-6-24">
+				<aside class="publications-siderail" ms.cmpgrp="sidebar" ms.cmpnm="details">
+	<div class="margin-bottom-sp4">
+		<ul class="stripped no-margin-bottom no-margin-last ms-row">
+							<li class="s-col-2-4 m-col-1-4 l-col-4-4 margin-bottom-sp1">
+										<a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/WikiSymSustainability.pdf" class="button-solid">
+						Download PDF					</a>
+				</li>
+									<li class="s-col-2-4 m-col-1-4 l-col-4-4">
+													<a href="https://www.microsoft.com/en-us/research/publication/wikis-at-work-success-factors-and-challenges-for-sustainability-of-enterprise-wikis/bibtex/" class="no-margin-bottom">
+						BibTex					</a>
+							</li>
+		</ul>
+	</div>
+
+	<div class="ms-row">
+					<div class="col-1-1 margin-bottom-sp4">
+				<h2 class="title tight">
+					Authors				</h2>
+
+				<ul class="stripped no-margin-bottom no-margin-last ms-row"><li class="s-col-2-4 m-col-1-4 l-col-4-4">
+															<a href="https://www.microsoft.com/en-us/research/people/jgrudin/">Jonathan Grudin</a>
+													</li><li class="s-col-2-4 m-col-1-4 l-col-4-4">
+															Erika Shehan Poole													</li></ul>
+			</div>
+		
+					<div class="s-col-2-4 m-col-1-4 l-col-4-4 margin-bottom-sp4">
+				<h2 class="title tight">Published In</h2>
+				<p>
+					Proc. WikiSym 2010, article 5.				</p>
+			</div>
+		
+					<div class="s-col-2-4 m-col-1-4 l-col-4-4 margin-bottom-sp4">
+				<h2 class="title tight">Publication Type</h2>
+				<p class="no-margin-bottom">
+					Inproceedings				</p>
+			</div>
+		
+					<div class="s-col-2-4 m-col-1-4 l-col-4-4 margin-bottom-sp4">
+				<h2 class="title tight">Book Title</h2>
+				<p class="no-margin-bottom">
+					Proc. WikiSym 2010, article 5.				</p>
+			</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+					<div class="s-col-2-4 m-col-1-4 l-col-4-4 margin-bottom-sp4">
+				<h2 class="title tight">Publisher</h2>
+				<p class="tight">
+					Association for Computing Machinery, Inc.				</p>
+							</div>
+			</div>
+</aside>
+			</div>
+
+			<main class="l-col-17-24 l-col-24-offset-1">
+				<div class="c-tabs" data-header="h2" ms.cmpgrp="tabs">
+					<div class="msr-tabs" ms.cmpnm="tabs">
+						<ul class="msr-tab-list c-tabs__tablist">
+							<li >
+								<a id="abstract_tab" href="#abstract">
+									Abstract								</a>
+							</li>
+													</ul>
+					</div>
+
+					<section id="abstract" class="c-tabs__tabpanel padding-top-sp3" ms.cmpnm="abstract">
+						<h2 class="visually-hidden">Abstract</h2>
+
+						<div class="ms-row">
+							<div class="l-col-22-24 xl-col-20-24">
+								<div class="asset-content">
+<p>We examined wiki use in a range of enterprise settings. We found many thriving wikis, but they were a minority of the thousands for which we obtained data. Even an actively used wiki can disappoint some important stakeholders. Careful stakeholder analysis and education may be crucial to successful wiki deployment. We identify a range of success factors, sources of wiki abandonment, and approaches to addressing the challenges. Some of our observations may extend to other social media.</p>
+</div>
+<p><!-- .asset-content --></p>
+							</div>
+						</div>
+					</section>
+
+									</div>
+			</main>
+		</div>
+	</div>
+</div>
+
+			
+			</div>
+
+
+		
+<div class="picchu" ms.pgarea="social">
+	<div class="ms-social-bar gray-l3-bgc">
+		<div class="ms-grid padding-vertical-sp2">
+			<div class="ms-row">
+				<div class="ms-social-bar__follow s-col-12-24 margin-bottom-sp2 s-no-margin-bottom" ms.cmpgrp="social" ms.cmpnm="follow">
+					<h2 class="ms-social-bar__follow-title body tight">
+						Follow Microsoft Research					</h2>
+
+					<ul class="ms-social-bar__follow-buttons-container">
+						<li class="ms-social-bar__follow-button ms-social-bar__follow-facebook">
+							<div class="fb-like" data-href="https://www.facebook.com/microsoftresearch" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+						</li>
+						<li class="ms-social-bar__follow-button ms-social-bar__follow-twitter">
+							<a href="https://twitter.com/MSFTResearch" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @MSFTResearch</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+						</li>
+						<li class="ms-social-bar__follow-button ms-social-bar__follow-youtube">
+							<script src="https://apis.google.com/js/platform.js"></script>
+							<div class="g-ytsubscribe" data-channel="MicrosoftResearch" data-layout="default" data-count="hidden"></div>
+						</li>
+					</ul>
+				</div>
+				<div class="ms-social-bar__share s-col-12-24" ms.cmpgrp="social" ms.cmpnm="share">
+					<h2 class="ms-social-bar__share-title body tight">
+						Share this page					</h2>
+
+					<ul class="ms-social-bar__share-buttons-container">
+						<li class="ms-social-bar__share-button ms-social-bar__share-facebook">
+							<div class="fb-share-button" data-layout="button"></div>
+						</li>
+						<li class="ms-social-bar__share-button ms-social-bar__share-twitter">
+							<a href="https://twitter.com/share" class="twitter-share-button" data-via="MSFTResearch">Tweet</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+						</li>
+						<li class="ms-social-bar__share-button ms-social-bar__share-linkedin">
+							<script src="http://platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+							<script type="IN/Share"></script>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+		<div id="playerModal" class="mfp-hide">
+			<div id="player"></div>
+		</div>
+
+		<div id="mq"></div>
+
+		
+			<div class="shell-footer" ms.pgarea="uhffooter" data-bi-area="Footer" data-bi-view="5xLinks">
+    <div class="shell-footer-wrapper">
+
+            <div class="shell-footer-menugroups" ms.cmpgrp="footer nav">
+                    <div class="sfm-group" ms.cmpnm="Learn">
+                        <div class="grp-title">
+                            Learn <i class="shell-icon-dropdown"></i>
+                        </div>
+                        <ul>
+                                    <li>
+                                        <a href="http://www.microsoft.com/en-us/windows" ms.title="Windows" data-bi-name="Learn_Windows" data-bi-slot="1" data-bi-source="Compass">
+                                            Windows
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://products.office.com/en-us/home" ms.title="Office" data-bi-name="Learn_Office" data-bi-slot="2" data-bi-source="Compass">
+                                            Office
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.skype.com/en/" ms.title="Skype" data-bi-name="Learn_Skype" data-bi-slot="3" data-bi-source="Compass">
+                                            Skype
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.microsoft.com/en-us/outlook-com/?cb=v8ho" ms.title="Outlook" data-bi-name="Learn_Outlook" data-bi-slot="4" data-bi-source="Compass">
+                                            Outlook
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://onedrive.live.com/about/en-us/" ms.title="OneDrive" data-bi-name="Learn_OneDrive" data-bi-slot="5" data-bi-source="Compass">
+                                            OneDrive
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.msn.com/?ocid=FOO000" ms.title="MSN" data-bi-name="Learn_MSN" data-bi-slot="6" data-bi-source="Compass">
+                                            MSN
+                                        </a>
+                                    </li>
+
+                        </ul>
+                    </div>
+                    <div class="sfm-group" ms.cmpnm="Devices">
+                        <div class="grp-title">
+                            Devices <i class="shell-icon-dropdown"></i>
+                        </div>
+                        <ul>
+                                    <li>
+                                        <a href="https://www.microsoft.com/surface/en-us" ms.title="Microsoft Surface" data-bi-name="Devices_MicrosoftSurface" data-bi-slot="1" data-bi-source="Compass">
+                                            Microsoft Surface
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.microsoft.com/xbox/" ms.title="Xbox" data-bi-name="Devices_Xbox" data-bi-slot="2" data-bi-source="Compass">
+                                            Xbox
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.microsoft.com/en-us/windows/devices" ms.title="PC and laptops" data-bi-name="Devices_PCandLaptops" data-bi-slot="3" data-bi-source="Compass">
+                                            PC and laptops
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.microsoft.com/en-us/mobile/" ms.title="Microsoft Lumia" data-bi-name="Devices_Lumia" data-bi-slot="4" data-bi-source="Compass">
+                                            Microsoft Lumia
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.microsoft.com/Microsoft-Band/en-us" ms.title="Microsoft Band" data-bi-name="Devices_MicrosoftBand" data-bi-slot="5" data-bi-source="Compass">
+                                            Microsoft Band
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.microsoft.com/microsoft-hololens/en-us" ms.title="Microsoft HoloLens" data-bi-name="Devices_MicrosoftHoloLens" data-bi-slot="6" data-bi-source="Compass">
+                                            Microsoft HoloLens
+                                        </a>
+                                    </li>
+
+                        </ul>
+                    </div>
+                    <div class="sfm-group" ms.cmpnm="Microsoft Store">
+                        <div class="grp-title">
+                            Microsoft Store <i class="shell-icon-dropdown"></i>
+                        </div>
+                        <ul>
+                                    <li>
+                                        <a href="https://www.microsoftstore.com/store/msusa/en_US/DisplayEditProfilePage/" ms.title="View account" data-bi-name="MicrosoftStore_ViewAccount" data-bi-slot="1" data-bi-source="Compass">
+                                            View account
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.microsoftstore.com/store?Action=DisplayFindYourOrderPage&amp;Env=BASE&amp;Locale=en_US&amp;SiteID=msusa&amp;nextAction=DisplayAccountOrderListPage" ms.title="Order tracking" data-bi-name="MicrosoftStore_OrderTracking" data-bi-slot="2" data-bi-source="Compass">
+                                            Order tracking
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.microsoft.com/en-us/store/locations/find-a-store" ms.title="Retail store locations" data-bi-name="MicrosoftStore_RetailStoreLocations" data-bi-slot="3" data-bi-source="Compass">
+                                            Retail store locations
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.microsoftstore.com/store/msusa/en_US/DisplayHelpReturnsRefundsPage/" ms.title="Returns" data-bi-name="MicrosoftStore_Returns" data-bi-slot="4" data-bi-source="Compass">
+                                            Returns
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.microsoftstore.com/store/msusa/en_US/DisplayHelpContactUsPage/" ms.title="Sales &amp; support" data-bi-name="MicrosoftStore_ShoppingHelp" data-bi-slot="5" data-bi-source="Compass">
+                                            Sales &amp; support
+                                        </a>
+                                    </li>
+
+                        </ul>
+                    </div>
+                    <div class="sfm-group" ms.cmpnm="Downloads">
+                        <div class="grp-title">
+                            Downloads <i class="shell-icon-dropdown"></i>
+                        </div>
+                        <ul>
+                                    <li>
+                                        <a href="https://www.microsoft.com/en-us/download" ms.title="Download Center" data-bi-name="Downloads_DownloadCenter" data-bi-slot="1" data-bi-source="Compass">
+                                            Download Center
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://support.microsoft.com/en-us/help/17777/downloads-for-windows" ms.title="Windows downloads" data-bi-name="Downloads_WindowsDownloads" data-bi-slot="2" data-bi-source="Compass">
+                                            Windows downloads
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.microsoft.com/en-us/windows/apps-and-games" ms.title="Windows 10 apps" data-bi-name="Downloads_Windows10Apps" data-bi-slot="3" data-bi-source="Compass">
+                                            Windows 10 apps
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://store.office.com/en-us/?WT.mc_id=OAN_en-us_MSCOM_ShopforApps-Office" ms.title="Office apps" data-bi-name="Downloads_OfficeApps" data-bi-slot="4" data-bi-source="Compass">
+                                            Office apps
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.microsoft.com/en-us/mobile/apps/lumia/" ms.title="Microsoft Lumia apps" data-bi-name="Downloads_LumiaApps" data-bi-slot="5" data-bi-source="Compass">
+                                            Microsoft Lumia apps
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads" ms.title="Internet Explorer" data-bi-name="Downloads_InternetExplorer" data-bi-slot="6" data-bi-source="Compass">
+                                            Internet Explorer
+                                        </a>
+                                    </li>
+
+                        </ul>
+                    </div>
+                    <div class="sfm-group" ms.cmpnm="Values">
+                        <div class="grp-title">
+                            Values <i class="shell-icon-dropdown"></i>
+                        </div>
+                        <ul>
+                                    <li>
+                                        <a href="https://www.microsoft.com/en-us/diversity/" ms.title="Diversity and inclusion" data-bi-name="Values_DiversityandInclusion" data-bi-slot="1" data-bi-source="Compass">
+                                            Diversity and inclusion
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.microsoft.com/en-us/accessibility/home" ms.title="Accessibility" data-bi-name="Values_Accessility" data-bi-slot="2" data-bi-source="Compass">
+                                            Accessibility
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.microsoft.com/en-us/education" ms.title="Microsoft in education" data-bi-name="Values_MicrosoftinEducation" data-bi-slot="3" data-bi-source="Compass">
+                                            Microsoft in education
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.microsoft.com/about/philanthropies" ms.title="Microsoft philanthropies" data-bi-name="Values_CorporateCitizenship" data-bi-slot="4" data-bi-source="Compass">
+                                            Microsoft philanthropies
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.microsoft.com/about/csr" ms.title="Corporate social responsibility" data-bi-name="Values_CorporateSocialResponsibility" data-bi-slot="5" data-bi-source="Compass">
+                                            Corporate social responsibility
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://privacy.microsoft.com/en-us" ms.title="Privacy at Microsoft" data-bi-name="Values_PrivacyatMicrosoft" data-bi-slot="6" data-bi-source="Compass">
+                                            Privacy at Microsoft
+                                        </a>
+                                    </li>
+
+                        </ul>
+                    </div>
+                    <div class="sfm-group" ms.cmpnm="Company">
+                        <div class="grp-title">
+                            Company <i class="shell-icon-dropdown"></i>
+                        </div>
+                        <ul>
+                                    <li>
+                                        <a href="https://careers.microsoft.com/" ms.title="Careers" data-bi-name="Company_Careers" data-bi-slot="1" data-bi-source="Compass">
+                                            Careers
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.microsoft.com/en-us/about" ms.title="About Microsoft" data-bi-name="Company_AboutMicrosoft" data-bi-slot="2" data-bi-source="Compass">
+                                            About Microsoft
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://news.microsoft.com/" ms.title="Company news" data-bi-name="Company_CompanyNews" data-bi-slot="3" data-bi-source="Compass">
+                                            Company news
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.microsoft.com/investor/default.aspx" ms.title="Investors" data-bi-name="Company_Investors" data-bi-slot="4" data-bi-source="Compass">
+                                            Investors
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://microsoft.com/research" ms.title="Research" data-bi-name="Company_Research" data-bi-slot="5" data-bi-source="Compass">
+                                            Research
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.microsoft.com/en-us/sitemap.aspx" ms.title="Site map" data-bi-name="Company_SiteMap" data-bi-slot="6" data-bi-source="Compass">
+                                            Site map
+                                        </a>
+                                    </li>
+
+                        </ul>
+                    </div>
+
+            </div>
+
+        <div class="shell-footer-lang" ms.cmpgrp="loc picker" ms.cmpnm="loc picker" >
+                <ul>
+                    <li>English (United States)&lrm;</li>
+                </ul>
+        </div>
+        <div class="shell-footer-copyright" ms.cmpgrp="corp links" ms.cmpnm="corp" role="contentinfo">
+            <ul>
+                            <li>
+                                <a id="shellmenu_104" href="http://go.microsoft.com/?linkid=2028325" ms.title="Contact us" class="ctl_footerNavLink" data-bi-name="Footer_ContactUs" data-bi-slot="1">
+                                    Contact us
+                                </a>
+                            </li>
+                            <li>
+                                <a id="shellmenu_105" href="https://go.microsoft.com/fwlink/?LinkId=521839" ms.title="Privacy &amp; cookies " class="ctl_footerNavLink" data-bi-name="Footer_PrivacyandCookies" data-bi-slot="2">
+                                    Privacy &amp; cookies 
+                                </a>
+                            </li>
+                            <li>
+                                <a id="shellmenu_106" href="http://go.microsoft.com/fwlink/?LinkID=206977" ms.title="Terms of use" class="ctl_footerNavLink" data-bi-name="Footer_TermsOfUse" data-bi-slot="3">
+                                    Terms of use
+                                </a>
+                            </li>
+                            <li>
+                                <a id="shellmenu_107" href="https://www.microsoft.com/trademarks" ms.title="Trademarks" class="ctl_footerNavLink" data-bi-name="Footer_Trademarks" data-bi-slot="4">
+                                    Trademarks
+                                </a>
+                            </li>
+                            <li>
+                                <a id="shellmenu_108" href="../../../../../choice.microsoft.com/index.html" ms.title="About our ads" class="ctl_footerNavLink" data-bi-name="Footer_AboutourAds" data-bi-slot="5">
+                                    About our ads
+                                </a>
+                            </li>
+
+                <li class="ctl_footerCopyright">
+                    &copy; 2016 Microsoft
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+		
+		<script type='text/javascript'>
+/* <![CDATA[ */
+var microsoftUhfSettings = {"loginUrl":"http:\/\/www.microsoft.com\/en-us\/research\/wp-login.php","logoutUrl":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.microsoft.com/en-us/research/wp-content/plugins/microsoft-uhf/assets/microsoft-uhf.js?ver=0.2.0'></script>
+<script type='text/javascript' src='https://www.microsoft.com/en-us/research/wp-content/themes/microsoft-research-theme/assets/js/plugins.min.js?ver=1481728971'></script>
+<script type='text/javascript' src='https://www.microsoft.com/en-us/research/wp-content/themes/microsoft-research-theme/assets/js/microsoft-research.min.js?ver=1481728971'></script>
+<!--[if lte IE 9]>
+<script type='text/javascript' src='https://www.microsoft.com/en-us/research/wp-content/themes/microsoft-research-theme/bower_components/flexibility/dist/flexibility.js?ver=4.5.4'></script>
+<![endif]-->
+<script type='text/javascript' src='https://www.microsoft.com/en-us/research/wp-includes/js/wp-embed.min.js?ver=4.5.4'></script>
+<!--[if lte IE 8]>
+    <script src="https://assets.onestore.ms/cdnfiles/onestorerolling-1612-12000/shell/common/js/shell_ie8.js"></script>
+<![endif]-->
+
+
+
+<script async src="https://mem.gfx.ms/meversion?partner=msresearch&amp;market=en-US"></script>
+
+<script src="https://assets.onestore.ms/cdnfiles/onestorerolling-1612-12000/shell/generated/shellservice.v3.min.js"></script>
+
+<script src="https://www.microsoft.com/uniblends/scripts/blender.js"></script>
+		<script type='text/javascript'>
+			(function(win,doc){
+				var scriptElement, scrSrc;
+				if (typeof (win.ClickTaleCreateDOMElement) != "function")
+				{
+					win.ClickTaleCreateDOMElement = function(tagName)
+					{
+						if (doc.createElementNS)
+						{
+							return doc.createElementNS('http://www.w3.org/1999/xhtml', tagName);
+						}
+						return doc.createElement(tagName);
+					}
+				}
+				win.WRInitTime=(new Date()).getTime();
+				scriptElement = ClickTaleCreateDOMElement('script');
+				scriptElement.type = "text/javascript";
+				scrSrc = doc.location.protocol=='https:'? 'https://cdnssl.clicktale.net/':	'http://cdn.clicktale.net/';
+				scrSrc += 'www07/ptc/c4baab37-83ce-400a-be08-1688f94e4635.js';
+				scriptElement.src = scrSrc;
+				doc.getElementsByTagName('body')[0].appendChild(scriptElement);
+			})(window,document);
+		</script>
+		<script type="text/javascript">
+			var varAutoFirePV = 1;
+			var varClickTracking = 0;
+			var varCustomerTracking = 1;
+			var Route = "route_id";
+			var Ctrl = "control_id";
+			document.write("<script type='text/javascript' src='" + (window.location.protocol) + "//c.microsoft.com/ms.js'" + "'><\/script>");
+		</script>​
+	</body>
+
+<!-- Mirrored from www.microsoft.com/en-us/research/publication/wikis-at-work-success-factors-and-challenges-for-sustainability-of-enterprise-wikis/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 15 Dec 2016 13:19:24 GMT -->
+</html>

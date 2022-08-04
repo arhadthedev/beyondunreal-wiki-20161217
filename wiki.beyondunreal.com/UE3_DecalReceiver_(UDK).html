@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:DecalReceiver_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:30:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:DecalComponent (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_DecalComponent_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="canonical" href="UE3_DecalComponent_(UDK).html" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:DecalComponent_(UDK)","wgTitle":"DecalComponent (UDK)","wgCurRevisionId":36889,"wgRevisionId":36889,"wgArticleId":25353,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UDK-specific classes","Classes in UDK package Engine","Subclasses of PrimitiveComponent (UDK)","Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:DecalComponent_(UDK)","wgRelevantArticleId":25353,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"UE3:DecalReceiver_(UDK)","wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgInternalRedirectTargetUrl":"/UE3:DecalComponent_(UDK)#DecalReceiver"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.redirect","mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_DecalComponent_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Gah - a solution with more questions. &#8211; EntropicLqd
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:DecalComponent (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"><span class="mw-redirectedfrom">(Redirected from <a href="UE3_DecalReceiver_(UDK)c25d.html?redirect=no" title="UE3:DecalReceiver (UDK)">UE3:DecalReceiver (UDK)</a>)</span></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<a href="UE3_Component_(UDK).html" title="UE3:Component (UDK)">Component</a> &gt;&gt;&#160;<a href="UE3_ActorComponent_(UDK).html" title="UE3:ActorComponent (UDK)">ActorComponent</a> &gt;&gt;&#160;<a href="UE3_PrimitiveComponent_(UDK).html" title="UE3:PrimitiveComponent (UDK)">PrimitiveComponent</a> &gt;&gt;&#160;<b>DecalComponent</b></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Properties"><span class="tocnumber">1</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Property_group_.27Decal.27"><span class="tocnumber">1.1</span> <span class="toctext">Property group 'Decal'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#bNoClip"><span class="tocnumber">1.1.1</span> <span class="toctext">bNoClip</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#DecalMaterial"><span class="tocnumber">1.1.2</span> <span class="toctext">DecalMaterial</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#DecalRotation"><span class="tocnumber">1.1.3</span> <span class="toctext">DecalRotation</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#FarPlane"><span class="tocnumber">1.1.4</span> <span class="toctext">FarPlane</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Height"><span class="tocnumber">1.1.5</span> <span class="toctext">Height</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#NearPlane"><span class="tocnumber">1.1.6</span> <span class="toctext">NearPlane</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#OffsetX"><span class="tocnumber">1.1.7</span> <span class="toctext">OffsetX</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#OffsetY"><span class="tocnumber">1.1.8</span> <span class="toctext">OffsetY</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#TileX"><span class="tocnumber">1.1.9</span> <span class="toctext">TileX</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#TileY"><span class="tocnumber">1.1.10</span> <span class="toctext">TileY</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#Width"><span class="tocnumber">1.1.11</span> <span class="toctext">Width</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="#Property_group_.27DecalFilter.27"><span class="tocnumber">1.2</span> <span class="toctext">Property group 'DecalFilter'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="#bProjectOnBackfaces"><span class="tocnumber">1.2.1</span> <span class="toctext">bProjectOnBackfaces</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#bProjectOnBSP"><span class="tocnumber">1.2.2</span> <span class="toctext">bProjectOnBSP</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#bProjectOnHidden"><span class="tocnumber">1.2.3</span> <span class="toctext">bProjectOnHidden</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#bProjectOnSkeletalMeshes"><span class="tocnumber">1.2.4</span> <span class="toctext">bProjectOnSkeletalMeshes</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#bProjectOnStaticMeshes"><span class="tocnumber">1.2.5</span> <span class="toctext">bProjectOnStaticMeshes</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#bProjectOnTerrain"><span class="tocnumber">1.2.6</span> <span class="toctext">bProjectOnTerrain</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="#Filter"><span class="tocnumber">1.2.7</span> <span class="toctext">Filter</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="#FilterMode"><span class="tocnumber">1.2.8</span> <span class="toctext">FilterMode</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#ReceiverImages"><span class="tocnumber">1.2.9</span> <span class="toctext">ReceiverImages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-24"><a href="#Property_group_.27DecalRender.27"><span class="tocnumber">1.3</span> <span class="toctext">Property group 'DecalRender'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-25"><a href="#BackfaceAngle"><span class="tocnumber">1.3.1</span> <span class="toctext">BackfaceAngle</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#BlendRange"><span class="tocnumber">1.3.2</span> <span class="toctext">BlendRange</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="#DepthBias"><span class="tocnumber">1.3.3</span> <span class="toctext">DepthBias</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="#ParentRelativeLocation"><span class="tocnumber">1.3.4</span> <span class="toctext">ParentRelativeLocation</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="#ParentRelativeOrientation"><span class="tocnumber">1.3.5</span> <span class="toctext">ParentRelativeOrientation</span></a></li>
+<li class="toclevel-3 tocsection-30"><a href="#SlopeScaleDepthBias"><span class="tocnumber">1.3.6</span> <span class="toctext">SlopeScaleDepthBias</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="#SortOrder"><span class="tocnumber">1.3.7</span> <span class="toctext">SortOrder</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-32"><a href="#Internal_variables"><span class="tocnumber">1.4</span> <span class="toctext">Internal variables</span></a>
+<ul>
+<li class="toclevel-3 tocsection-33"><a href="#bFlipBackfaceDirection"><span class="tocnumber">1.4.1</span> <span class="toctext">bFlipBackfaceDirection</span></a></li>
+<li class="toclevel-3 tocsection-34"><a href="#bHasBeenAttached"><span class="tocnumber">1.4.2</span> <span class="toctext">bHasBeenAttached</span></a></li>
+<li class="toclevel-3 tocsection-35"><a href="#bMovableDecal"><span class="tocnumber">1.4.3</span> <span class="toctext">bMovableDecal</span></a></li>
+<li class="toclevel-3 tocsection-36"><a href="#bStaticDecal"><span class="tocnumber">1.4.4</span> <span class="toctext">bStaticDecal</span></a></li>
+<li class="toclevel-3 tocsection-37"><a href="#DecalReceivers"><span class="tocnumber">1.4.5</span> <span class="toctext">DecalReceivers</span></a></li>
+<li class="toclevel-3 tocsection-38"><a href="#DecalTransform"><span class="tocnumber">1.4.6</span> <span class="toctext">DecalTransform</span></a></li>
+<li class="toclevel-3 tocsection-39"><a href="#FieldOfView"><span class="tocnumber">1.4.7</span> <span class="toctext">FieldOfView</span></a></li>
+<li class="toclevel-3 tocsection-40"><a href="#FracturedStaticMeshComponentIndex"><span class="tocnumber">1.4.8</span> <span class="toctext">FracturedStaticMeshComponentIndex</span></a></li>
+<li class="toclevel-3 tocsection-41"><a href="#HitBinormal"><span class="tocnumber">1.4.9</span> <span class="toctext">HitBinormal</span></a></li>
+<li class="toclevel-3 tocsection-42"><a href="#HitBone"><span class="tocnumber">1.4.10</span> <span class="toctext">HitBone</span></a></li>
+<li class="toclevel-3 tocsection-43"><a href="#HitComponent"><span class="tocnumber">1.4.11</span> <span class="toctext">HitComponent</span></a></li>
+<li class="toclevel-3 tocsection-44"><a href="#HitLevelIndex"><span class="tocnumber">1.4.12</span> <span class="toctext">HitLevelIndex</span></a></li>
+<li class="toclevel-3 tocsection-45"><a href="#HitLocation"><span class="tocnumber">1.4.13</span> <span class="toctext">HitLocation</span></a></li>
+<li class="toclevel-3 tocsection-46"><a href="#HitNodeIndex"><span class="tocnumber">1.4.14</span> <span class="toctext">HitNodeIndex</span></a></li>
+<li class="toclevel-3 tocsection-47"><a href="#HitNodeIndices"><span class="tocnumber">1.4.15</span> <span class="toctext">HitNodeIndices</span></a></li>
+<li class="toclevel-3 tocsection-48"><a href="#HitNormal"><span class="tocnumber">1.4.16</span> <span class="toctext">HitNormal</span></a></li>
+<li class="toclevel-3 tocsection-49"><a href="#HitTangent"><span class="tocnumber">1.4.17</span> <span class="toctext">HitTangent</span></a></li>
+<li class="toclevel-3 tocsection-50"><a href="#Location"><span class="tocnumber">1.4.18</span> <span class="toctext">Location</span></a></li>
+<li class="toclevel-3 tocsection-51"><a href="#Orientation"><span class="tocnumber">1.4.19</span> <span class="toctext">Orientation</span></a></li>
+<li class="toclevel-3 tocsection-52"><a href="#OriginalParentRelativeLocation"><span class="tocnumber">1.4.20</span> <span class="toctext">OriginalParentRelativeLocation</span></a></li>
+<li class="toclevel-3 tocsection-53"><a href="#OriginalParentRelativeOrientationVec"><span class="tocnumber">1.4.21</span> <span class="toctext">OriginalParentRelativeOrientationVec</span></a></li>
+<li class="toclevel-3 tocsection-54"><a href="#Planes"><span class="tocnumber">1.4.22</span> <span class="toctext">Planes</span></a></li>
+<li class="toclevel-3 tocsection-55"><a href="#ReleaseResourcesFence"><span class="tocnumber">1.4.23</span> <span class="toctext">ReleaseResourcesFence</span></a></li>
+<li class="toclevel-3 tocsection-56"><a href="#StaticReceivers"><span class="tocnumber">1.4.24</span> <span class="toctext">StaticReceivers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-57"><a href="#Default_values"><span class="tocnumber">1.5</span> <span class="toctext">Default values</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-58"><a href="#Enums"><span class="tocnumber">2</span> <span class="toctext">Enums</span></a>
+<ul>
+<li class="toclevel-2 tocsection-59"><a href="#EDecalTransform"><span class="tocnumber">2.1</span> <span class="toctext">EDecalTransform</span></a></li>
+<li class="toclevel-2 tocsection-60"><a href="#EFilterMode"><span class="tocnumber">2.2</span> <span class="toctext">EFilterMode</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-61"><a href="#Structs"><span class="tocnumber">3</span> <span class="toctext">Structs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-62"><a href="#DecalReceiver"><span class="tocnumber">3.1</span> <span class="toctext">DecalReceiver</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-63"><a href="#Native_functions"><span class="tocnumber">4</span> <span class="toctext">Native functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-64"><a href="#GetDecalMaterial"><span class="tocnumber">4.1</span> <span class="toctext">GetDecalMaterial</span></a></li>
+<li class="toclevel-2 tocsection-65"><a href="#ResetToDefaults"><span class="tocnumber">4.2</span> <span class="toctext">ResetToDefaults</span></a></li>
+<li class="toclevel-2 tocsection-66"><a href="#SetDecalMaterial"><span class="tocnumber">4.3</span> <span class="toctext">SetDecalMaterial</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Package:&#160;</dt>
+<dd><a href="Category_Classes_in_UDK_package_Engine.html" title="Category:Classes in UDK package Engine">Engine</a></dd>
+<dt>Direct subclass:</dt>
+<dd><a href="UE3_GameDecal_(UDK).html" title="UE3:GameDecal (UDK)">GameDecal</a></dd>
+<dt>This class in other games:</dt>
+<dd><span><a href="UE3_DecalComponent_(UT3).html" title="UE3:DecalComponent (UT3)">UT3</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<p><br /></p>
+<h2><span class="mw-headline" id="Properties">Properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=1" title="Edit section: Properties">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Property_group_.27Decal.27">Property group 'Decal'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=2" title="Edit section: Property group 'Decal'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="bNoClip">bNoClip</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=3" title="Edit section: bNoClip">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If FALSE (the default), use precise clipping to compute the decal geometry. If TRUE, decal geometry generation is faster, but the decal material will have to use clamped texture coordinates.</p>
+<h4><span class="mw-headline" id="DecalMaterial">DecalMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=4" title="Edit section: DecalMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_MaterialInterface_(UDK).html" title="UE3:MaterialInterface (UDK)">MaterialInterface</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private, const</p>
+<p>Decal material.</p>
+<h4><span class="mw-headline" id="DecalRotation">DecalRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=5" title="Edit section: DecalRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Decal in-plane rotation, in degrees.</p>
+<h4><span class="mw-headline" id="FarPlane">FarPlane</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=6" title="Edit section: FarPlane">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Far plane clip distance.</p>
+<p><b>Default value:</b> 300.0</p>
+<h4><span class="mw-headline" id="Height">Height</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=7" title="Edit section: Height">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Decal world space height.</p>
+<p><b>Default value:</b> 200.0</p>
+<h4><span class="mw-headline" id="NearPlane">NearPlane</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=8" title="Edit section: NearPlane">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Near plane clip distance.</p>
+<h4><span class="mw-headline" id="OffsetX">OffsetX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=9" title="Edit section: OffsetX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Decal offset along the tangent.</p>
+<h4><span class="mw-headline" id="OffsetY">OffsetY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=10" title="Edit section: OffsetY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Decal offset along the binormal.</p>
+<h4><span class="mw-headline" id="TileX">TileX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=11" title="Edit section: TileX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Decal tiling along the tangent.</p>
+<p><b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="TileY">TileY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=12" title="Edit section: TileY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Decal tiling along the binormal.</p>
+<p><b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="Width">Width</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=13" title="Edit section: Width">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Decal world space width.</p>
+<p><b>Default value:</b> 200.0</p>
+<h3><span class="mw-headline" id="Property_group_.27DecalFilter.27">Property group 'DecalFilter'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=14" title="Edit section: Property group 'DecalFilter'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="bProjectOnBackfaces">bProjectOnBackfaces</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=15" title="Edit section: bProjectOnBackfaces">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If FALSE (the default), don't project decal onto back-facing polygons.</p>
+<h4><span class="mw-headline" id="bProjectOnBSP">bProjectOnBSP</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=16" title="Edit section: bProjectOnBSP">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If FALSE, don't project decal onto BSP.</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bProjectOnHidden">bProjectOnHidden</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=17" title="Edit section: bProjectOnHidden">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If FALSE (the default), don't project decal onto hidden receivers.</p>
+<h4><span class="mw-headline" id="bProjectOnSkeletalMeshes">bProjectOnSkeletalMeshes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=18" title="Edit section: bProjectOnSkeletalMeshes">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If FALSE, don't project decal onto skeletal meshes.</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bProjectOnStaticMeshes">bProjectOnStaticMeshes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=19" title="Edit section: bProjectOnStaticMeshes">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If FALSE, don't project decal onto static meshes.</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bProjectOnTerrain">bProjectOnTerrain</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=20" title="Edit section: bProjectOnTerrain">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If FALSE, don't project decal onto terrain.</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="Filter">Filter</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=21" title="Edit section: Filter">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&gt;</p>
+<p>Component filter.</p>
+<h4><span class="mw-headline" id="FilterMode">FilterMode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=22" title="Edit section: FilterMode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="#EFilterMode">EFilterMode</a></p>
+<p>Current filter application mode.</p>
+<h4><span class="mw-headline" id="ReceiverImages">ReceiverImages</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=23" title="Edit section: ReceiverImages">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_PrimitiveComponent_(UDK).html" title="UE3:PrimitiveComponent (UDK)">PrimitiveComponent</a>&gt;</p>
+<p><b>Hack:</b> Gears hack to avoid an octree look-up for level-placed decals. To be replaced with receiver serialization after ship.</p>
+<h3><span class="mw-headline" id="Property_group_.27DecalRender.27">Property group 'DecalRender'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=24" title="Edit section: Property group 'DecalRender'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="BackfaceAngle">BackfaceAngle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=25" title="Edit section: BackfaceAngle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Dot product of the minimum angle that surfaces can make with the decal normal to be considered backfacing.</p>
+<p><b>Default value:</b> 0.0010</p>
+<h4><span class="mw-headline" id="BlendRange">BlendRange</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=26" title="Edit section: BlendRange">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Object.Vector2D</a></p>
+<p>Start/End blend range specified as an angle in degrees. Controls where to start blending out the decal on a surface</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>X</td>
+<td>89.5</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>180.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="DepthBias">DepthBias</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=27" title="Edit section: DepthBias">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> -6.0E-5</p>
+<h4><span class="mw-headline" id="ParentRelativeLocation">ParentRelativeLocation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=28" title="Edit section: ParentRelativeLocation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p>Decal location relative to parent transform used with DecalTransform_OwnerRelative mode</p>
+<h4><span class="mw-headline" id="ParentRelativeOrientation">ParentRelativeOrientation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=29" title="Edit section: ParentRelativeOrientation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a></p>
+<p>Decal orientation vector relative to parent transform used with DecalTransform_OwnerRelative mode</p>
+<h4><span class="mw-headline" id="SlopeScaleDepthBias">SlopeScaleDepthBias</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=30" title="Edit section: SlopeScaleDepthBias">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="SortOrder">SortOrder</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=31" title="Edit section: SortOrder">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Controls the order in which decal elements are rendered. Higher values draw later (on top).</p>
+<h3><span class="mw-headline" id="Internal_variables">Internal variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=32" title="Edit section: Internal variables">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="bFlipBackfaceDirection">bFlipBackfaceDirection</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=33" title="Edit section: bFlipBackfaceDirection">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If TRUE, invert the direction considered to be backfacing receiver triangles. Set e.g. when decal actors are mirrored.</p>
+<h4><span class="mw-headline" id="bHasBeenAttached">bHasBeenAttached</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=34" title="Edit section: bHasBeenAttached">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private, transient</p>
+<p>TRUE if the decal has already been attached once. Allows for static decals to be reattached</p>
+<h4><span class="mw-headline" id="bMovableDecal">bMovableDecal</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=35" title="Edit section: bMovableDecal">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If TRUE, then the decal will recompute its receivers whenever its transform is updated. Allowing for dynamic movable decals</p>
+<h4><span class="mw-headline" id="bStaticDecal">bStaticDecal</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=36" title="Edit section: bStaticDecal">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>TRUE for decals created in the editor, FALSE for decals created at runtime.</p>
+<h4><span class="mw-headline" id="DecalReceivers">DecalReceivers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=37" title="Edit section: DecalReceivers">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="#DecalReceiver">DecalReceiver</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private, noimport, duplicatetransient, const</p>
+<p>List of receivers to which this decal is attached.</p>
+<h4><span class="mw-headline" id="DecalTransform">DecalTransform</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=38" title="Edit section: DecalTransform">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="#EDecalTransform">EDecalTransform</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Determines how the Location/Orientation of the decal are used</p>
+<p><b>Default value:</b> <a href="#EDecalTransform">DecalTransform_SpawnRelative</a></p>
+<h4><span class="mw-headline" id="FieldOfView">FieldOfView</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=39" title="Edit section: FieldOfView">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Horizontal field of view.</p>
+<p><b>Default value:</b> 80.0</p>
+<h4><span class="mw-headline" id="FracturedStaticMeshComponentIndex">FracturedStaticMeshComponentIndex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=40" title="Edit section: FracturedStaticMeshComponentIndex">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>If not -1, specifies the index of the FracturedStaticMeshComponent we hit</p>
+<h4><span class="mw-headline" id="HitBinormal">HitBinormal</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=41" title="Edit section: HitBinormal">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p>Decal's impact binormal, as computed by eg weapon trace.</p>
+<h4><span class="mw-headline" id="HitBone">HitBone</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=42" title="Edit section: HitBone">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>The name of hit bone.</p>
+<h4><span class="mw-headline" id="HitComponent">HitComponent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=43" title="Edit section: HitComponent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_PrimitiveComponent_(UDK).html" title="UE3:PrimitiveComponent (UDK)">PrimitiveComponent</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>If non-NULL, consider HitComponent only when computing receivers.</p>
+<h4><span class="mw-headline" id="HitLevelIndex">HitLevelIndex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=44" title="Edit section: HitLevelIndex">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>If not -1, specifies the level into the world's level array of the BSP node that was hit.</p>
+<h4><span class="mw-headline" id="HitLocation">HitLocation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=45" title="Edit section: HitLocation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p>Decal's impact location, as computed by eg weapon trace.</p>
+<h4><span class="mw-headline" id="HitNodeIndex">HitNodeIndex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=46" title="Edit section: HitNodeIndex">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>If not -1, specifies the index of the BSP node that was hit.</p>
+<h4><span class="mw-headline" id="HitNodeIndices">HitNodeIndices</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=47" title="Edit section: HitNodeIndices">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Int.html" title="Int" class="mw-redirect">int</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private, const, transient</p>
+<p>Used to pass information of which BSP nodes where hit</p>
+<h4><span class="mw-headline" id="HitNormal">HitNormal</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=48" title="Edit section: HitNormal">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p>Decal's impact normal, as computed by eg weapon trace.</p>
+<h4><span class="mw-headline" id="HitTangent">HitTangent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=49" title="Edit section: HitTangent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p>Decal's impact tangent, as computed by eg weapon trace.</p>
+<h4><span class="mw-headline" id="Location">Location</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=50" title="Edit section: Location">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Decal's frustum location, set in code or copied from DecalActor in UnrealEd.</p>
+<h4><span class="mw-headline" id="Orientation">Orientation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=51" title="Edit section: Orientation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Decal's frustum orientation, set in code or copied from DecalActor in UnrealEd.</p>
+<h4><span class="mw-headline" id="OriginalParentRelativeLocation">OriginalParentRelativeLocation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=52" title="Edit section: OriginalParentRelativeLocation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, private, transient</p>
+<p>Decal location relative to parent transform when first attached</p>
+<h4><span class="mw-headline" id="OriginalParentRelativeOrientationVec">OriginalParentRelativeOrientationVec</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=53" title="Edit section: OriginalParentRelativeOrientationVec">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, private, transient</p>
+<p>Decal orientation vector relative to parent transform when first attached</p>
+<h4><span class="mw-headline" id="Planes">Planes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=54" title="Edit section: Planes">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Object_structs_(UDK).html#Plane" title="UE3:Object structs (UDK)">Object.Plane</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private, transient</p>
+<p>Ortho planes.</p>
+<h4><span class="mw-headline" id="ReleaseResourcesFence">ReleaseResourcesFence</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=55" title="Edit section: ReleaseResourcesFence">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Pointer.html" title="Pointer" class="mw-redirect">pointer</a><i>{FRenderCommandFence}</i></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> native, const, transient, duplicatetransient</p>
+<p>Command fence used to shut down properly.</p>
+<h4><span class="mw-headline" id="StaticReceivers">StaticReceivers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=56" title="Edit section: StaticReceivers">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Pointer.html" title="Pointer" class="mw-redirect">pointer</a><i>{class FStaticReceiverData}</i>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> native, private, noimport, transient, duplicatetransient, const</p>
+<p>List of receivers for static decals. Empty if the decal has bStaticDecal=FALSE.</p>
+<h3><span class="mw-headline" id="Default_values">Default values</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=57" title="Edit section: Default values">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td><a href="UE3_PrimitiveComponent_properties_(UDK).html#bAcceptsDynamicDecals" title="UE3:PrimitiveComponent properties (UDK)">bAcceptsDynamicDecals</a></td>
+<td>False</td>
+</tr>
+<tr>
+<td><a href="UE3_PrimitiveComponent_properties_(UDK).html#bAcceptsDynamicLights" title="UE3:PrimitiveComponent properties (UDK)">bAcceptsDynamicLights</a></td>
+<td>False</td>
+</tr>
+<tr>
+<td><a href="UE3_PrimitiveComponent_properties_(UDK).html#bCastDynamicShadow" title="UE3:PrimitiveComponent properties (UDK)">bCastDynamicShadow</a></td>
+<td>False</td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Enums">Enums</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=58" title="Edit section: Enums">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="EDecalTransform">EDecalTransform</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=59" title="Edit section: EDecalTransform">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<dl>
+<dt>DecalTransform_OwnerAbsolute&#160;</dt>
+<dd>Location/Orientation are obtained from the owning actor's absolute world coordinates</dd>
+<dt>DecalTransform_OwnerRelative&#160;</dt>
+<dd>Location/Orientation are transformed relative to the owning actor's coordinates</dd>
+<dt>DecalTransform_SpawnRelative&#160;</dt>
+<dd>Location/Orientation are relative to the original spawn point in world coordinates</dd>
+</dl>
+<h4><span class="mw-headline" id="EFilterMode">EFilterMode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=60" title="Edit section: EFilterMode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Specifies how the decal application filter should be interpreted.</p>
+<dl>
+<dt>FM_None&#160;</dt>
+<dd>Filter is ignored.</dd>
+<dt>FM_Ignore&#160;</dt>
+<dd>Filter specifies list of components to ignore.</dd>
+<dt>FM_Affect&#160;</dt>
+<dd>Filter specifies list of components to affect.</dd>
+</dl>
+<h2><span class="mw-headline" id="Structs">Structs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=61" title="Edit section: Structs">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="DecalReceiver">DecalReceiver</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=62" title="Edit section: DecalReceiver">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<p>A decal receiver and its associated render data.</p>
+<dl>
+<dt><a href="UE3_PrimitiveComponent_(UDK).html" title="UE3:PrimitiveComponent (UDK)">PrimitiveComponent</a> Component&#160;</dt>
+<dt><a href="Pointer.html" title="Pointer" class="mw-redirect">pointer</a><i>{class FDecalRenderData}</i> RenderData&#160;</dt>
+</dl>
+<h2><span class="mw-headline" id="Native_functions">Native functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=63" title="Edit section: Native functions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="GetDecalMaterial">GetDecalMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=64" title="Edit section: GetDecalMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <a href="UE3_MaterialInterface_(UDK).html" title="UE3:MaterialInterface (UDK)">MaterialInterface</a>&#160;<b>GetDecalMaterial</b> () const</div>
+<p>Accessor for decal material</p>
+<h4><span class="mw-headline" id="ResetToDefaults">ResetToDefaults</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=65" title="Edit section: ResetToDefaults">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <b>ResetToDefaults</b> ()</div>
+<p>detaches the component and resets the component's properties to the values of its template</p>
+<h4><span class="mw-headline" id="SetDecalMaterial">SetDecalMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)?section=66" title="Edit section: SetDecalMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <b>SetDecalMaterial</b> (<a href="UE3_MaterialInterface_(UDK).html" title="UE3:MaterialInterface (UDK)">MaterialInterface</a>&#160;<b>NewDecalMaterial</b>)</div>
+<p>setting decal material on decal component. This will force the decal to reattach</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.310 seconds
+Real time usage: 0.323 seconds
+Preprocessor visited node count: 2022/1000000
+Preprocessor generated node count: 5826/1000000
+Post‐expand include size: 10705/2097152 bytes
+Template argument size: 2976/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  225.199      1 - -total
+ 49.51%  111.501      1 - Template:Infobox_class
+ 47.11%  106.083      1 - Template:Infobox_class/core
+ 30.81%   69.380     20 - Template:Tl
+ 25.03%   56.366     23 - Template:Samegame
+  9.93%   22.365      7 - Template:Cl
+  7.60%   17.126      2 - Template:Ch
+  3.62%    8.161      3 - Template:Code
+  2.95%    6.654      1 - Template:Autogenerated
+  2.44%    5.506      1 - Template:Classname
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:25353-0!*!*!*!*!*!* and timestamp 20161215180704 and revision id 36889
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:DecalComponent_(UDK)?oldid=36889#DecalReceiver">https://wiki.beyondunreal.com/UE3:DecalComponent_(UDK)?oldid=36889#DecalReceiver</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_UDK-specific_classes.html" title="Category:UDK-specific classes">UDK-specific classes</a></li><li><a href="Category_Classes_in_UDK_package_Engine.html" title="Category:Classes in UDK package Engine">Classes in UDK package Engine</a></li><li><a href="Category_Subclasses_of_PrimitiveComponent_(UDK).html" title="Category:Subclasses of PrimitiveComponent (UDK)">Subclasses of PrimitiveComponent (UDK)</a></li><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_DecalComponent_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:DecalComponent_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:DecalComponent_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:DecalComponent_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3ADecalComponent+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3ADecalComponent+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:DecalComponent_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:DecalComponent_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:DecalComponent_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:DecalComponent_(UDK)?oldid=36889" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:DecalComponent_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 13:47, 6 November 2009.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":103});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:DecalReceiver_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:30:29 GMT -->
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:MapToHUD by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:MapToHUD - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:MapToHUD" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:MapToHUD" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_MapToHUD.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:MapToHUD","wgTitle":"MapToHUD","wgCurRevisionId":4961,"wgRevisionId":4961,"wgArticleId":2034,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:MapToHUD","wgRelevantArticleId":2034,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_MapToHUD skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Worst-case scenario: the UEd Goblin wipes the map and burns down your house.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:MapToHUD</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>The MapToHUD function calculates screen coordinates based on a directional vector, the view rotation, the FOV and the target <a href="Legacy_Canvas.html" title="Legacy:Canvas">Canvas</a>.</p>
+<p><b>Note:</b> In <a href="Legacy_UT2003.html" title="Legacy:UT2003" class="mw-redirect">UT2003</a> you can and should use the WorldToScreen function of the Canvas or <a href="Legacy_Interaction.html" title="Legacy:Interaction">Interaction</a> class.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Return_Value"><span class="tocnumber">2</span> <span class="toctext">Return Value</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Code"><span class="tocnumber">3</span> <span class="toctext">Code</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Example"><span class="tocnumber">4</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#WorldToScreen"><span class="tocnumber">5</span> <span class="toctext">WorldToScreen</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Alternate_version"><span class="tocnumber">6</span> <span class="toctext">Alternate version</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Floating_Names"><span class="tocnumber">7</span> <span class="toctext">Floating Names</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#MouseTrace"><span class="tocnumber">8</span> <span class="toctext">MouseTrace</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Related_Classes"><span class="tocnumber">9</span> <span class="toctext">Related Classes</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Related_Topics"><span class="tocnumber">10</span> <span class="toctext">Related Topics</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Parameters">Parameters</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:MapToHUD?section=1" title="Edit section: Parameters">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<dl>
+<dt>out vector Result&#160;</dt>
+<dd>The X and Y components of this vector will contain the absolute canvas coordinates calculated by the function.</dd>
+<dt>rotator ViewRotation&#160;</dt>
+<dd>The rotation of the camera.</dd>
+<dt>float FOV&#160;</dt>
+<dd>The FOV of the camera. This value must be specified in degrees like the <a href="Legacy_PlayerPawn.html" title="Legacy:PlayerPawn">PlayerPawn</a>'s FOVAngle property.</dd>
+<dt>vector TargetDir&#160;</dt>
+<dd>A vector pointing from the camera's location to the location which should be converted to screen coordinates. For <a href="Legacy_PlayerPawn.html" title="Legacy:PlayerPawn">PlayerPawns</a> this is <code>PlayerPawn.Location + PlayerPawn.EyeHeight * vect(0,0,1)</code>.</dd>
+<dt><a href="Legacy_Canvas.html" title="Legacy:Canvas">Canvas</a> Canvas&#160;</dt>
+<dd>The <a href="Legacy_Canvas.html" title="Legacy:Canvas">Canvas</a> the coordinates are calculated for.</dd>
+</dl>
+<h2><span class="mw-headline" id="Return_Value">Return Value</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:MapToHUD?section=2" title="Edit section: Return Value">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The function returns whether the coordinates it calculated are on the screen or not. This is only reliable for FOV values less than 180°.</p>
+<h2><span class="mw-headline" id="Code">Code</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:MapToHUD?section=3" title="Edit section: Code">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="coMULTI">/********************************************************************************
+* Converts a given directional vector to canvas coordinates.                    *
+* X and Y values of the returned vector contain absolute coordinates.           *
+* The function returns, whether the target direction is visible for the player. *
+* Created by Wormbo                                                             *
+********************************************************************************/</span>
+<span class="kw1">simulated</span> <span class="kw1">function</span> <span class="kw5">bool</span> MapToHUD<span class="br0">(</span><span class="kw1">out</span> <span class="kw5">vector</span> Result, <span class="kw5">rotator</span> ViewRotation, <span class="kw5">float</span> FOV, <span class="kw5">vector</span> TargetDir, <span class="kw8">Canvas</span> <span class="kw8">Canvas</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw1">local</span> <span class="kw5">float</span> TanFOVx, TanFOVy;
+	<span class="kw1">local</span> <span class="kw5">float</span> TanX, TanY;
+	<span class="kw1">local</span> <span class="kw5">float</span> dx, dy;
+	<span class="kw1">local</span> <span class="kw5">vector</span> X, Y, Dir, XY;
+ 
+	TanFOVx <span class="sy0">=</span> <span class="kw3">Tan</span><span class="br0">(</span>FOV <span class="sy0">*</span> <span class="kw6">Pi</span> <span class="sy0">/</span> <span class="nu0">360</span><span class="br0">)</span>;
+	TanFOVy <span class="sy0">=</span> <span class="br0">(</span><span class="kw8">Canvas</span>.<span class="me0">ClipY</span> <span class="sy0">/</span> <span class="kw8">Canvas</span>.<span class="me0">ClipX</span><span class="br0">)</span> <span class="sy0">*</span> TanFOVx;
+	<span class="kw3">GetAxes</span><span class="br0">(</span>ViewRotation, Dir, X, Y<span class="br0">)</span>;
+ 
+	Dir <span class="sy0">*=</span> TargetDir dot Dir;
+	XY <span class="sy0">=</span> TargetDir <span class="sy0">-</span> Dir;
+	dx <span class="sy0">=</span> XY dot X;
+	dy <span class="sy0">=</span> XY dot Y;
+ 
+	TanX <span class="sy0">=</span> dx <span class="sy0">/</span> <span class="kw3">VSize</span><span class="br0">(</span>dir<span class="br0">)</span>;
+	TanY <span class="sy0">=</span> dy <span class="sy0">/</span> <span class="kw3">VSize</span><span class="br0">(</span>dir<span class="br0">)</span>;
+ 
+	Result.<span class="me0">X</span> <span class="sy0">=</span> <span class="kw8">Canvas</span>.<span class="me0">ClipX</span> <span class="sy0">*</span> <span class="nu0">0.5</span> <span class="sy0">*</span> <span class="br0">(</span><span class="nu0">1</span> <span class="sy0">+</span> TanX <span class="sy0">/</span> TanFOVx<span class="br0">)</span>;
+	Result.<span class="me0">Y</span> <span class="sy0">=</span> <span class="kw8">Canvas</span>.<span class="me0">ClipY</span> <span class="sy0">*</span> <span class="nu0">0.5</span> <span class="sy0">*</span> <span class="br0">(</span><span class="nu0">1</span> <span class="sy0">-</span> TanY <span class="sy0">/</span> TanFOVy<span class="br0">)</span>;
+ 
+	<span class="kw2">return</span> Dir dot <span class="kw5">vector</span><span class="br0">(</span>ViewRotation<span class="br0">)</span> <span class="sy0">&gt;</span> <span class="nu0">0</span> <span class="sy0">&amp;&amp;</span> Result.<span class="me0">X</span> <span class="sy0">==</span> <span class="kw3">FClamp</span><span class="br0">(</span>Result.<span class="me0">X</span>, <span class="kw8">Canvas</span>.<span class="me0">OrgX</span>, <span class="kw8">Canvas</span>.<span class="me0">ClipX</span><span class="br0">)</span>
+			<span class="sy0">&amp;&amp;</span> Result.<span class="me0">Y</span> <span class="sy0">==</span> <span class="kw3">FClamp</span><span class="br0">(</span>Result.<span class="me0">Y</span>, <span class="kw8">Canvas</span>.<span class="me0">OrgY</span>, <span class="kw8">Canvas</span>.<span class="me0">ClipY</span><span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="Example">Example</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:MapToHUD?section=4" title="Edit section: Example">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>In this example CurrentTarget is a targeted actor (e.g. another player) and Reticle is a <a href="Legacy_Texture_(UT).html" title="Legacy:Texture (UT)">Texture (UT)</a> which will be drawn with its center at the target's location. It will only be drawn when the target is on screen (return value of MapToHUD) and there's no level geometry between the point of vision and the target (FastTrace).</p>
+<p>Reticle.USize and .VSize are the width and height of the texture.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">simulated</span> <span class="kw1">function</span> PostRender<span class="br0">(</span><span class="kw8">canvas</span> <span class="kw8">Canvas</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw1">local</span> <span class="kw5">vector</span> dir, POV, DrawPos;
+	<span class="kw1">local</span> PlayerPawn P;
+ 
+	P <span class="sy0">=</span> PlayerPawn<span class="br0">(</span><span class="kw7">Owner</span><span class="br0">)</span>;
+	<span class="kw2">if</span> <span class="br0">(</span> P <span class="sy0">==</span> <span class="kw5">None</span> <span class="sy0">||</span> CurrentTarget <span class="sy0">==</span> <span class="kw5">None</span> <span class="br0">)</span>
+		<span class="kw2">return</span>;
+ 
+	POV <span class="sy0">=</span> <span class="kw7">Owner</span>.<span class="kw7">Location</span> <span class="sy0">+</span> <span class="kw3">vect</span><span class="br0">(</span><span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">)</span> <span class="sy0">*</span> P.<span class="me0">EyeHeight</span>;
+	Dir <span class="sy0">=</span> CurrentTarget.<span class="kw7">Location</span> <span class="sy0">-</span> POV; <span class="co1">// direction to target</span>
+ 
+	<span class="kw2">if</span> <span class="br0">(</span> MapToHUD<span class="br0">(</span>DrawPos, P.<span class="me0">ViewRotation</span>, P.<span class="me0">FOVAngle</span>, Dir, <span class="kw8">Canvas</span><span class="br0">)</span>
+			<span class="sy0">&amp;&amp;</span> <span class="kw4">FastTrace</span><span class="br0">(</span>CurrentTarget.<span class="kw7">Location</span>, POV<span class="br0">)</span> <span class="br0">)</span> <span class="br0">{</span>
+		<span class="kw8">Canvas</span>.<span class="me0">SetPos</span><span class="br0">(</span>DrawPos.<span class="me0">X</span> <span class="sy0">-</span> Reticle.<span class="me0">USize</span> <span class="sy0">*</span> <span class="nu0">0.5</span>, DrawPos.<span class="me0">Y</span> <span class="sy0">-</span> Reticle.<span class="kw3">VSize</span> <span class="sy0">*</span> <span class="nu0">0.5</span><span class="br0">)</span>;
+		<span class="kw8">Canvas</span>.<span class="me0">DrawIcon</span><span class="br0">(</span>Reticle, <span class="nu0">1.0</span><span class="br0">)</span>;
+	<span class="br0">}</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="WorldToScreen">WorldToScreen</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:MapToHUD?section=5" title="Edit section: WorldToScreen">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The MapToHUD function can be used to create UT2003's WorldToScreen function for UT. (In case you prefer using that.)</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="coMULTI">/********************************************************************************
+* Converts a given world location to canvas coordinates.                        *
+* X and Y values of the returned vector contain absolute coordinates.           *
+* Created by Wormbo                                                             *
+********************************************************************************/</span>
+<span class="kw1">simulated</span> <span class="kw1">function</span> <span class="kw5">vector</span> WorldToScreen<span class="br0">(</span><span class="kw8">Canvas</span> C, <span class="kw5">vector</span> WorldLoc<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw1">local</span> <span class="kw5">vector</span> CamLoc, ScreenLoc;
+	<span class="kw1">local</span> <span class="kw5">rotator</span> CamRot;
+	<span class="kw1">local</span> <span class="kw9">Actor</span> Camera;
+ 
+	C.<span class="me0">ViewPort</span>.<span class="kw9">Actor</span>.<span class="me0">PlayerCalcView</span><span class="br0">(</span>Camera, CamLoc, CamRot<span class="br0">)</span>;
+	MapToHUD<span class="br0">(</span>ScreenLoc, CamRot, C.<span class="me0">ViewPort</span>.<span class="kw9">Actor</span>.<span class="me0">FOVAngle</span>, <span class="kw3">Normal</span><span class="br0">(</span>WorldLoc <span class="sy0">-</span> CamLoc<span class="br0">)</span>, C<span class="br0">)</span>;
+ 
+	<span class="kw2">return</span> ScreenLoc;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="Alternate_version">Alternate version</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:MapToHUD?section=6" title="Edit section: Alternate version">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Here's an alternate version that I cooked up for Esc. I put it in the base HUD class:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="co1">// Created by M.C. Spanky, aka Martin C. Martin, for Esc (www.esconline.org)</span>
+ 
+<span class="kw1">simulated</span> <span class="kw1">static</span> <span class="kw1">function</span> <span class="kw5">bool</span> WorldToScreen<span class="br0">(</span><span class="kw5">Vector</span> WorldLocation, <span class="kw9">Pawn</span> ThePlayer, 
+     <span class="kw5">float</span> ScreenWidth, <span class="kw5">float</span> ScreenHeight, <span class="kw1">out</span> <span class="kw5">float</span> X, <span class="kw1">out</span> <span class="kw5">float</span> Y<span class="br0">)</span>
+<span class="br0">{</span>
+   <span class="kw1">local</span> <span class="kw5">vector</span> EyePos, RelativeToPlayer;
+   <span class="kw1">local</span> <span class="kw5">float</span> <span class="kw5">Scale</span>;
+ 
+   EyePos <span class="sy0">=</span> ThePlayer.<span class="kw7">Location</span>;
+   EyePos.<span class="me0">Z</span> <span class="sy0">+=</span> ThePlayer.<span class="me0">BaseEyeHeight</span>; <span class="co1">// Maybe ThePlayer.EyeHeight instead?</span>
+ 
+   RelativeToPlayer <span class="sy0">=</span> <span class="br0">(</span>WorldLocation <span class="sy0">-</span> EyePos<span class="br0">)</span> <span class="sy0">&lt;&lt;</span> ThePlayer.<span class="me0">ViewRotation</span>;
+ 
+   <span class="kw2">if</span> <span class="br0">(</span>RelativeToPlayer.<span class="me0">X</span> <span class="sy0">&lt;</span> <span class="nu0">0.01</span><span class="br0">)</span>
+      <span class="kw2">return</span> <span class="kw6">false</span>;
+ 
+   <span class="kw5">Scale</span> <span class="sy0">=</span> <span class="br0">(</span>ScreenWidth <span class="sy0">/</span> <span class="nu0">2</span><span class="br0">)</span> <span class="sy0">/</span> <span class="kw3">Tan</span><span class="br0">(</span>ThePlayer.<span class="me0">FovAngle</span><span class="sy0">/</span><span class="nu0">2</span><span class="sy0">/</span><span class="nu0">180</span><span class="sy0">*</span><span class="kw6">Pi</span><span class="br0">)</span>;
+ 
+   X <span class="sy0">=</span> RelativeToPlayer.<span class="me0">Y</span> <span class="sy0">/</span> RelativeToPlayer.<span class="me0">X</span> <span class="sy0">*</span> <span class="kw5">Scale</span> <span class="sy0">+</span> ScreenWidth <span class="sy0">/</span> <span class="nu0">2</span>;
+   Y <span class="sy0">=</span> <span class="sy0">-</span> RelativeToPlayer.<span class="me0">Z</span> <span class="sy0">/</span> RelativeToPlayer.<span class="me0">X</span> <span class="sy0">*</span> <span class="kw5">Scale</span> <span class="sy0">+</span> ScreenHeight <span class="sy0">/</span> <span class="nu0">2</span>;
+ 
+   <span class="kw2">return</span> <span class="kw6">true</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>To call it from the HUD, you could do something like this:</p>
+<p>local float X, Y;</p>
+<p>WorldToScreen(&lt;trace result&gt;, Pawn(Owner), Canvas.ClipX, Canvas.ClipY, X, Y);</p>
+<p>A couple notes:</p>
+<p>-It returns "false" if the WorldLocation is behind the player (or so close that we risk a division by zero.)-</p>
+<p>-This assumes that you're in first person view, i.e. not in a cut scene or bBehindView. It should be easy enough to find the "true" camera location &amp; rotation &amp; FOV in all cases, by looking at the player's ViewTarget. I'm unsure of the details, so I'll leave that to you.&#160;:)-</p>
+<p>-Canvas.Clip[XY] don't always equal the screen resolution, although they usually do, and I can't find a better pair of vars.-</p>
+<h2><span class="mw-headline" id="Floating_Names">Floating Names</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:MapToHUD?section=7" title="Edit section: Floating Names">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Here's an example of how to use it, some really simple "floating names" code. Put this in your HUD:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="co1">// Created by M.C. Spanky, aka Martin C. Martin, for Esc (www.esconline.org)</span>
+<span class="kw1">simulated</span> <span class="kw1">function</span> PostRender<span class="br0">(</span> <span class="kw8">canvas</span> <span class="kw8">Canvas</span> <span class="br0">)</span>
+<span class="br0">{</span>
+   <span class="kw1">local</span> <span class="kw9">Pawn</span> thisPawn;
+   <span class="kw1">local</span> <span class="kw5">float</span> X, Y;
+   <span class="kw1">local</span> <span class="kw5">float</span> W, H;
+   <span class="kw1">local</span> <span class="kw5">bool</span> bOnScreen;
+   <span class="kw1">local</span> <span class="kw5">vector</span> worldPosition;
+ 
+   <span class="kw6">Super</span>.<span class="me0">PostRender</span><span class="br0">(</span><span class="kw8">Canvas</span><span class="br0">)</span>;
+   <span class="kw2">for</span> <span class="br0">(</span>thisPawn <span class="sy0">=</span> <span class="kw7">Level</span>.<span class="me0">PawnList</span>; thisPawn <span class="sy0">!=</span> <span class="kw5">None</span>; thisPawn <span class="sy0">=</span> thisPawn.<span class="me0">NextPawn</span><span class="br0">)</span> <span class="br0">{</span>
+      worldPosition <span class="sy0">=</span> thisPawn.<span class="kw7">Location</span>;
+      worldPosition.<span class="me0">Z</span> <span class="sy0">+=</span> thisPawn.<span class="kw7">CollisionHeight</span>;
+      bOnScreen <span class="sy0">=</span> WorldToScreen<span class="br0">(</span>worldPosition, <span class="kw9">Pawn</span><span class="br0">(</span><span class="kw7">Owner</span><span class="br0">)</span>, <span class="kw8">Canvas</span>.<span class="me0">ClipX</span>, <span class="kw8">Canvas</span>.<span class="me0">ClipY</span>, X, Y<span class="br0">)</span>;
+      <span class="kw2">if</span> <span class="br0">(</span>bOnScreen <span class="sy0">&amp;&amp;</span> X <span class="sy0">&gt;</span> <span class="nu0">0</span> <span class="sy0">&amp;&amp;</span> X <span class="sy0">&lt;</span> <span class="kw8">Canvas</span>.<span class="me0">ClipX</span> <span class="sy0">&amp;&amp;</span> Y <span class="sy0">&gt;</span> <span class="nu0">0</span> <span class="sy0">&amp;&amp;</span> Y <span class="sy0">&lt;</span> <span class="kw8">Canvas</span>.<span class="me0">ClipY</span><span class="br0">)</span> <span class="br0">{</span>
+         <span class="kw8">Canvas</span>.<span class="me0">SetPos</span><span class="br0">(</span><span class="nu0">0</span>, <span class="nu0">0</span><span class="br0">)</span>;
+         <span class="kw8">Canvas</span>.<span class="me0">TextSize</span><span class="br0">(</span>thisPawn.<span class="me0">MenuName</span>, W, H<span class="br0">)</span>;
+         <span class="kw8">Canvas</span>.<span class="me0">SetPos</span><span class="br0">(</span>X <span class="sy0">-</span> W<span class="sy0">/</span><span class="nu0">2</span>, Y <span class="sy0">-</span> H<span class="sy0">/</span><span class="nu0">2</span><span class="br0">)</span>;
+         <span class="kw8">Canvas</span>.<span class="me0">DrawText</span><span class="br0">(</span>thisPawn.<span class="me0">MenuName</span>, <span class="kw6">false</span><span class="br0">)</span>;
+      <span class="br0">}</span>
+   <span class="br0">}</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>(If you already have a PostRender(), merge it with that.) Start a level and spawn some Kralls or Nalis or whatever puts a glide in your stride and a dip in your hip. The name will be in the right place no matter whether they're above you and looking up or below you and looking down. You'll even see your own name above you if you look up.&#160;:)</p>
+<p><b>Xian:</b> Thought I should mention that the above code would not work online as Level.PawnList is inaccessible client-side.</p>
+<h2><span class="mw-headline" id="MouseTrace">MouseTrace</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:MapToHUD?section=8" title="Edit section: MouseTrace">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Here's a function that goes the other way: given an X and Y on the screen, it figures out what direction in space this corresponds to, and does a trace to find the first actor along that direction. Esc uses this so that you can click on another player to select them. This one's written to be in PlayerPawn, but you could modify it to take the player as an arg, as above.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">simulated</span> <span class="kw1">function</span> <span class="kw9">Actor</span> MouseTrace<span class="br0">(</span><span class="kw5">float</span> MouseX, <span class="kw5">float</span> MouseY, <span class="kw5">float</span> ScreenWidth, <span class="kw5">float</span> ScreenHeight<span class="br0">)</span>
+<span class="br0">{</span>
+   <span class="kw1">local</span> <span class="kw9">Actor</span> Other;
+   <span class="kw1">local</span> <span class="kw5">vector</span> HitLocation, HitNormal, StartTrace, EndTrace;
+   <span class="kw1">local</span> <span class="kw5">vector</span> MouseDirection;
+ 
+   <span class="co1">// This is right, we divide by ScreenWidth/2 for both x and y.</span>
+   MouseDirection.<span class="me0">X</span> <span class="sy0">=</span> <span class="nu0">1</span> <span class="sy0">/</span> <span class="kw3">tan</span><span class="br0">(</span>FovAngle<span class="sy0">/</span><span class="nu0">2</span><span class="sy0">/</span><span class="nu0">180</span><span class="sy0">*</span><span class="kw6">Pi</span><span class="br0">)</span>;
+   MouseDirection.<span class="me0">Y</span> <span class="sy0">=</span> <span class="br0">(</span>MouseX <span class="sy0">-</span> ScreenWidth <span class="sy0">/</span> <span class="nu0">2</span><span class="br0">)</span> <span class="sy0">/</span> <span class="br0">(</span>ScreenWidth <span class="sy0">/</span> <span class="nu0">2</span><span class="br0">)</span>;
+   MouseDirection.<span class="me0">Z</span> <span class="sy0">=</span> <span class="sy0">-</span><span class="br0">(</span>MouseY <span class="sy0">-</span> ScreenHeight <span class="sy0">/</span> <span class="nu0">2</span><span class="br0">)</span> <span class="sy0">/</span> <span class="br0">(</span>ScreenWidth <span class="sy0">/</span> <span class="nu0">2</span><span class="br0">)</span>;
+ 
+   MouseDirection <span class="sy0">=</span> <span class="kw3">Normal</span><span class="br0">(</span>MouseDirection<span class="br0">)</span>;
+ 
+   StartTrace <span class="sy0">=</span> <span class="kw7">Location</span>;
+   StartTrace.<span class="me0">Z</span> <span class="sy0">+=</span> BaseEyeHeight;
+ 
+   <span class="co1">// Spawn( class'UnrealShare.FatRing',,,StartTrace + 500 *(MouseDirection &gt;&gt; ViewRotation) );</span>
+ 
+   EndTrace <span class="sy0">=</span> StartTrace <span class="sy0">+</span> <span class="br0">(</span>MouseDirection <span class="sy0">&gt;&gt;</span> ViewRotation<span class="br0">)</span> <span class="sy0">*</span> <span class="nu0">1000.0</span>;
+   Other <span class="sy0">=</span> <span class="kw4">Trace</span><span class="br0">(</span>HitLocation, HitNormal, EndTrace, StartTrace, <span class="kw6">true</span><span class="br0">)</span>;
+ 
+   <span class="kw2">return</span> Other;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>The UT2003 class <a href="Legacy_Interaction.html" title="Legacy:Interaction">Interaction</a> comes with the functions ScreenToWorld and WorldToScreen. These functions are meant to do the above conversions.</p>
+<p><b>A word of warning, if you override the CalcPlayerView function and don't set ViewActor to something then the engine will crash when calling ScreenToWorld and WorldToScreen.</b></p>
+<p><b>Foxpaw:</b> I had a question but I realize now that this was a function you wrote yourself, not one that epic included.</p>
+<p><b>Wormbo:</b> To quote your original question:</p>
+<blockquote class="legacyquote">
+<p>Why do you suppose epic used a different computation to align the targeting reticles on the redeemer view? I'm curious if this method might have a drawback that makes it unfeasable in that application?</p>
+</blockquote>
+<p>The method Epic used for the Redeemer was way too inaccurate for what I needed in Rockets UT, so I wrote MapToHUD. The only drawback of this function might be the difficult syntax, but I never saw any other accurate world -&gt; screen conversion before.</p>
+<p><b>Daid303:</b> I'm wondering, there are 2 totaly diffrent methodes used above here, but they both seem to give the same result. Is there a diffrence? in accuracy maybe, or speed?</p>
+<p><b>UArch</b> its a little unrelated but ive adapted the mousetrace function for another use, is there any way to have it trace out in a fisheye-style fov instead?&#160;:0</p>
+<p><b>Xian:</b> Although this is trivial, I was wondering... Isn't it better (optimization-wise) to do</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw2">if</span> <span class="br0">(</span><span class="kw4">FastTrace</span><span class="br0">(</span>CurrentTarget.<span class="kw7">Location</span>,POV<span class="br0">)</span>
+         <span class="sy0">&amp;&amp;</span> MapToHUD<span class="br0">(</span>DrawPos,P.<span class="me0">ViewRotation</span>,P.<span class="me0">FOVAngle</span>,Dir,<span class="kw8">Canvas</span><span class="br0">)</span><span class="br0">)</span>
+</pre></div>
+</div>
+<p>instead of</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw2">if</span> <span class="br0">(</span> MapToHUD<span class="br0">(</span>DrawPos, P.<span class="me0">ViewRotation</span>, P.<span class="me0">FOVAngle</span>, Dir, <span class="kw8">Canvas</span><span class="br0">)</span>
+            <span class="sy0">&amp;&amp;</span> <span class="kw4">FastTrace</span><span class="br0">(</span>CurrentTarget.<span class="kw7">Location</span>, POV<span class="br0">)</span> <span class="br0">)</span>
+</pre></div>
+</div>
+<p>That way, the game will only calculate if the Target is in front of us, instead of bothering to do all the coord coversions/calculus and then saying "ah nevermind, the dude isn't in front of us".</p>
+<p><b>Wormbo:</b> (Fast)Tracing is an expensive operation. It really depends on whether FastTrace() is faster than MapToHud(), but I'm pretty sure it's not.</p>
+<p><b>Xian:</b> Ah, I see what you mean&#160;:) Thanks.</p>
+<h2><span class="mw-headline" id="Related_Classes">Related Classes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:MapToHUD?section=9" title="Edit section: Related Classes">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_Canvas_(UT).html" title="Legacy:Canvas (UT)">Canvas (UT)</a></li>
+<li><a href="Legacy_PlayerPawn.html" title="Legacy:PlayerPawn">PlayerPawn</a></li>
+<li><a href="Legacy_Canvas.html" title="Legacy:Canvas">Canvas</a> (UT2003)</li>
+</ul>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:MapToHUD?section=10" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_Open_Source.html" title="Legacy:Open Source">Open Source</a></li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.117 seconds
+Real time usage: 0.119 seconds
+Preprocessor visited node count: 122/1000000
+Preprocessor generated node count: 257/1000000
+Post‐expand include size: 502/2097152 bytes
+Template argument size: 203/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.684      1 - -total
+100.00%    2.684      1 - Template:Innerbox
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:2034-0!*!0!!en!*!* and timestamp 20161215143208 and revision id 4961
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:MapToHUD?oldid=4961">https://wiki.beyondunreal.com/Legacy:MapToHUD?oldid=4961</a>"</div>
+					<div id='catlinks' class='catlinks catlinks-allhidden'></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_MapToHUD.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:MapToHUD?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:MapToHUD" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:MapToHUD" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AMapToHUD&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AMapToHUD" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:MapToHUD" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:MapToHUD" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:MapToHUD?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:MapToHUD?oldid=4961" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:MapToHUD" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 06:23, 20 January 2008.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":80});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:MapToHUD by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:53 GMT -->
+</html>

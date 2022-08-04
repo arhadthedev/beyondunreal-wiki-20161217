@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:UTPawn_internal_variables_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:56:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:UTPawn internal variables (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_UTPawn_internal_variables_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:UTPawn_internal_variables_(UDK)","wgTitle":"UTPawn internal variables (UDK)","wgCurRevisionId":42090,"wgRevisionId":42090,"wgArticleId":27815,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:UTPawn_internal_variables_(UDK)","wgRelevantArticleId":27815,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_UTPawn_internal_variables_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Always snap to grid
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:UTPawn internal variables (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a> &gt;&gt;&#160;<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a> &gt;&gt;&#160;<a href="UE3_GamePawn_(UDK).html" title="UE3:GamePawn (UDK)">GamePawn</a> &gt;&gt;&#160;<a href="UE3_UTPawn_(UDK).html" title="UE3:UTPawn (UDK)">UTPawn</a> <i>(internal variables)</i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Internal_variables"><span class="tocnumber">1</span> <span class="toctext">Internal variables</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#AccumulateDamage"><span class="tocnumber">1.1</span> <span class="toctext">AccumulateDamage</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#AccumulationTime"><span class="tocnumber">1.2</span> <span class="toctext">AccumulationTime</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#AimNode"><span class="tocnumber">1.3</span> <span class="toctext">AimNode</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#AppliedBob"><span class="tocnumber">1.4</span> <span class="toctext">AppliedBob</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#ArmorHitSound"><span class="tocnumber">1.5</span> <span class="toctext">ArmorHitSound</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#ArmsMesh"><span class="tocnumber">1.6</span> <span class="toctext">ArmsMesh</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#ArmsOverlay"><span class="tocnumber">1.7</span> <span class="toctext">ArmsOverlay</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#AttachedProj"><span class="tocnumber">1.8</span> <span class="toctext">AttachedProj</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#bArmsAttached"><span class="tocnumber">1.9</span> <span class="toctext">bArmsAttached</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#BaseTranslationOffset"><span class="tocnumber">1.10</span> <span class="toctext">BaseTranslationOffset</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#bBlendOutTakeHitPhysics"><span class="tocnumber">1.11</span> <span class="toctext">bBlendOutTakeHitPhysics</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#bCanDoubleJump"><span class="tocnumber">1.12</span> <span class="toctext">bCanDoubleJump</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#bCanPlayFallingImpacts"><span class="tocnumber">1.13</span> <span class="toctext">bCanPlayFallingImpacts</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#bComponentDebug"><span class="tocnumber">1.14</span> <span class="toctext">bComponentDebug</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#bDodging"><span class="tocnumber">1.15</span> <span class="toctext">bDodging</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#bEnableFootPlacement"><span class="tocnumber">1.16</span> <span class="toctext">bEnableFootPlacement</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#bFeigningDeath"><span class="tocnumber">1.17</span> <span class="toctext">bFeigningDeath</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#bFixedView"><span class="tocnumber">1.18</span> <span class="toctext">bFixedView</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#bForcedFeignDeath"><span class="tocnumber">1.19</span> <span class="toctext">bForcedFeignDeath</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#bGibbed"><span class="tocnumber">1.20</span> <span class="toctext">bGibbed</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#bHasHoverboard"><span class="tocnumber">1.21</span> <span class="toctext">bHasHoverboard</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#bHeadGibbed"><span class="tocnumber">1.22</span> <span class="toctext">bHeadGibbed</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#bHideOnListenServer"><span class="tocnumber">1.23</span> <span class="toctext">bHideOnListenServer</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#BigTeleportCount"><span class="tocnumber">1.24</span> <span class="toctext">BigTeleportCount</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#BioBurnAway"><span class="tocnumber">1.25</span> <span class="toctext">BioBurnAway</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#BioBurnAwayTime"><span class="tocnumber">1.26</span> <span class="toctext">BioBurnAwayTime</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#BioEffectName"><span class="tocnumber">1.27</span> <span class="toctext">BioEffectName</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#bIsHoverboardAnimPawn"><span class="tocnumber">1.28</span> <span class="toctext">bIsHoverboardAnimPawn</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#bIsInvisible"><span class="tocnumber">1.29</span> <span class="toctext">bIsInvisible</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#bIsInvulnerable"><span class="tocnumber">1.30</span> <span class="toctext">bIsInvulnerable</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#bIsTyping"><span class="tocnumber">1.31</span> <span class="toctext">bIsTyping</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#bJustDroppedOrb"><span class="tocnumber">1.32</span> <span class="toctext">bJustDroppedOrb</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#bJustLanded"><span class="tocnumber">1.33</span> <span class="toctext">bJustLanded</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#bKilledByBio"><span class="tocnumber">1.34</span> <span class="toctext">bKilledByBio</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#bKillsAffectHead"><span class="tocnumber">1.35</span> <span class="toctext">bKillsAffectHead</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#bLandRecovery"><span class="tocnumber">1.36</span> <span class="toctext">bLandRecovery</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#bNoJumpAdjust"><span class="tocnumber">1.37</span> <span class="toctext">bNoJumpAdjust</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#bNotifyStopFalling"><span class="tocnumber">1.38</span> <span class="toctext">bNotifyStopFalling</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#Bob"><span class="tocnumber">1.39</span> <span class="toctext">Bob</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#bobtime"><span class="tocnumber">1.40</span> <span class="toctext">bobtime</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#BodyMatColor"><span class="tocnumber">1.41</span> <span class="toctext">BodyMatColor</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#BodyMaterialInstances"><span class="tocnumber">1.42</span> <span class="toctext">BodyMaterialInstances</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="#BodyMatFadeDuration"><span class="tocnumber">1.43</span> <span class="toctext">BodyMatFadeDuration</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="#bPlayingFeignDeathRecovery"><span class="tocnumber">1.44</span> <span class="toctext">bPlayingFeignDeathRecovery</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href="#bPostRenderOtherTeam"><span class="tocnumber">1.45</span> <span class="toctext">bPostRenderOtherTeam</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#bPostRenderTraceSucceeded"><span class="tocnumber">1.46</span> <span class="toctext">bPostRenderTraceSucceeded</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="#bPuttingDownWeapon"><span class="tocnumber">1.47</span> <span class="toctext">bPuttingDownWeapon</span></a></li>
+<li class="toclevel-2 tocsection-49"><a href="#bReadyToDoubleJump"><span class="tocnumber">1.48</span> <span class="toctext">bReadyToDoubleJump</span></a></li>
+<li class="toclevel-2 tocsection-50"><a href="#bReceivedValidTeam"><span class="tocnumber">1.49</span> <span class="toctext">bReceivedValidTeam</span></a></li>
+<li class="toclevel-2 tocsection-51"><a href="#bRechargeHealth"><span class="tocnumber">1.50</span> <span class="toctext">bRechargeHealth</span></a></li>
+<li class="toclevel-2 tocsection-52"><a href="#bRequiresDoubleJump"><span class="tocnumber">1.51</span> <span class="toctext">bRequiresDoubleJump</span></a></li>
+<li class="toclevel-2 tocsection-53"><a href="#bShieldAbsorb"><span class="tocnumber">1.52</span> <span class="toctext">bShieldAbsorb</span></a></li>
+<li class="toclevel-2 tocsection-54"><a href="#bSpawnDone"><span class="tocnumber">1.53</span> <span class="toctext">bSpawnDone</span></a></li>
+<li class="toclevel-2 tocsection-55"><a href="#bSpawnIn"><span class="tocnumber">1.54</span> <span class="toctext">bSpawnIn</span></a></li>
+<li class="toclevel-2 tocsection-56"><a href="#bStopDeathCamera"><span class="tocnumber">1.55</span> <span class="toctext">bStopDeathCamera</span></a></li>
+<li class="toclevel-2 tocsection-57"><a href="#bStopOnDoubleLanding"><span class="tocnumber">1.56</span> <span class="toctext">bStopOnDoubleLanding</span></a></li>
+<li class="toclevel-2 tocsection-58"><a href="#bTearOffGibs"><span class="tocnumber">1.57</span> <span class="toctext">bTearOffGibs</span></a></li>
+<li class="toclevel-2 tocsection-59"><a href="#bUpdateEyeheight"><span class="tocnumber">1.58</span> <span class="toctext">bUpdateEyeheight</span></a></li>
+<li class="toclevel-2 tocsection-60"><a href="#bWeaponAttachmentVisible"><span class="tocnumber">1.59</span> <span class="toctext">bWeaponAttachmentVisible</span></a></li>
+<li class="toclevel-2 tocsection-61"><a href="#bWeaponBob"><span class="tocnumber">1.60</span> <span class="toctext">bWeaponBob</span></a></li>
+<li class="toclevel-2 tocsection-62"><a href="#bWinnerCam"><span class="tocnumber">1.61</span> <span class="toctext">bWinnerCam</span></a></li>
+<li class="toclevel-2 tocsection-63"><a href="#CameraScale"><span class="tocnumber">1.62</span> <span class="toctext">CameraScale</span></a></li>
+<li class="toclevel-2 tocsection-64"><a href="#CameraScaleMax"><span class="tocnumber">1.63</span> <span class="toctext">CameraScaleMax</span></a></li>
+<li class="toclevel-2 tocsection-65"><a href="#CameraScaleMin"><span class="tocnumber">1.64</span> <span class="toctext">CameraScaleMin</span></a></li>
+<li class="toclevel-2 tocsection-66"><a href="#CameraZOffset"><span class="tocnumber">1.65</span> <span class="toctext">CameraZOffset</span></a></li>
+<li class="toclevel-2 tocsection-67"><a href="#ClientBodyMatDuration"><span class="tocnumber">1.66</span> <span class="toctext">ClientBodyMatDuration</span></a></li>
+<li class="toclevel-2 tocsection-68"><a href="#ClientSideWeaponPawn"><span class="tocnumber">1.67</span> <span class="toctext">ClientSideWeaponPawn</span></a></li>
+<li class="toclevel-2 tocsection-69"><a href="#CompressedBodyMatColor"><span class="tocnumber">1.68</span> <span class="toctext">CompressedBodyMatColor</span></a></li>
+<li class="toclevel-2 tocsection-70"><a href="#CrouchMeshZOffset"><span class="tocnumber">1.69</span> <span class="toctext">CrouchMeshZOffset</span></a></li>
+<li class="toclevel-2 tocsection-71"><a href="#CrouchTranslationOffset"><span class="tocnumber">1.70</span> <span class="toctext">CrouchTranslationOffset</span></a></li>
+<li class="toclevel-2 tocsection-72"><a href="#CurrCharClassInfo"><span class="tocnumber">1.71</span> <span class="toctext">CurrCharClassInfo</span></a></li>
+<li class="toclevel-2 tocsection-73"><a href="#CurrentBodyMatColor"><span class="tocnumber">1.72</span> <span class="toctext">CurrentBodyMatColor</span></a></li>
+<li class="toclevel-2 tocsection-74"><a href="#CurrentCameraScale"><span class="tocnumber">1.73</span> <span class="toctext">CurrentCameraScale</span></a></li>
+<li class="toclevel-2 tocsection-75"><a href="#CurrentDir"><span class="tocnumber">1.74</span> <span class="toctext">CurrentDir</span></a></li>
+<li class="toclevel-2 tocsection-76"><a href="#CurrentSkelAim"><span class="tocnumber">1.75</span> <span class="toctext">CurrentSkelAim</span></a></li>
+<li class="toclevel-2 tocsection-77"><a href="#CurrentWeaponAttachment"><span class="tocnumber">1.76</span> <span class="toctext">CurrentWeaponAttachment</span></a></li>
+<li class="toclevel-2 tocsection-78"><a href="#CurrentWeaponAttachmentClass"><span class="tocnumber">1.77</span> <span class="toctext">CurrentWeaponAttachmentClass</span></a></li>
+<li class="toclevel-2 tocsection-79"><a href="#CustomGravityScaling"><span class="tocnumber">1.78</span> <span class="toctext">CustomGravityScaling</span></a></li>
+<li class="toclevel-2 tocsection-80"><a href="#DamageParameterName"><span class="tocnumber">1.79</span> <span class="toctext">DamageParameterName</span></a></li>
+<li class="toclevel-2 tocsection-81"><a href="#DeathAnimDamageType"><span class="tocnumber">1.80</span> <span class="toctext">DeathAnimDamageType</span></a></li>
+<li class="toclevel-2 tocsection-82"><a href="#DeathTime"><span class="tocnumber">1.81</span> <span class="toctext">DeathTime</span></a></li>
+<li class="toclevel-2 tocsection-83"><a href="#DefaultAirControl"><span class="tocnumber">1.82</span> <span class="toctext">DefaultAirControl</span></a></li>
+<li class="toclevel-2 tocsection-84"><a href="#DefaultMeshScale"><span class="tocnumber">1.83</span> <span class="toctext">DefaultMeshScale</span></a></li>
+<li class="toclevel-2 tocsection-85"><a href="#DesiredMeshScale"><span class="tocnumber">1.84</span> <span class="toctext">DesiredMeshScale</span></a></li>
+<li class="toclevel-2 tocsection-86"><a href="#DodgeSpeed"><span class="tocnumber">1.85</span> <span class="toctext">DodgeSpeed</span></a></li>
+<li class="toclevel-2 tocsection-87"><a href="#DodgeSpeedZ"><span class="tocnumber">1.86</span> <span class="toctext">DodgeSpeedZ</span></a></li>
+<li class="toclevel-2 tocsection-88"><a href="#DoubleJumpThreshold"><span class="tocnumber">1.87</span> <span class="toctext">DoubleJumpThreshold</span></a></li>
+<li class="toclevel-2 tocsection-89"><a href="#DrivenWeaponPawn"><span class="tocnumber">1.88</span> <span class="toctext">DrivenWeaponPawn</span></a></li>
+<li class="toclevel-2 tocsection-90"><a href="#DrivingNode"><span class="tocnumber">1.89</span> <span class="toctext">DrivingNode</span></a></li>
+<li class="toclevel-2 tocsection-91"><a href="#EmoteRepInfo"><span class="tocnumber">1.90</span> <span class="toctext">EmoteRepInfo</span></a></li>
+<li class="toclevel-2 tocsection-92"><a href="#FallImpactSound"><span class="tocnumber">1.91</span> <span class="toctext">FallImpactSound</span></a></li>
+<li class="toclevel-2 tocsection-93"><a href="#FallingDamageWaveForm"><span class="tocnumber">1.92</span> <span class="toctext">FallingDamageWaveForm</span></a></li>
+<li class="toclevel-2 tocsection-94"><a href="#FallSpeedThreshold"><span class="tocnumber">1.93</span> <span class="toctext">FallSpeedThreshold</span></a></li>
+<li class="toclevel-2 tocsection-95"><a href="#FeignDeathBlend"><span class="tocnumber">1.94</span> <span class="toctext">FeignDeathBlend</span></a></li>
+<li class="toclevel-2 tocsection-96"><a href="#FeignDeathBodyAtRestSpeed"><span class="tocnumber">1.95</span> <span class="toctext">FeignDeathBodyAtRestSpeed</span></a></li>
+<li class="toclevel-2 tocsection-97"><a href="#FeignDeathPhysicsBlendOutSpeed"><span class="tocnumber">1.96</span> <span class="toctext">FeignDeathPhysicsBlendOutSpeed</span></a></li>
+<li class="toclevel-2 tocsection-98"><a href="#FeignDeathRecoveryStartTime"><span class="tocnumber">1.97</span> <span class="toctext">FeignDeathRecoveryStartTime</span></a></li>
+<li class="toclevel-2 tocsection-99"><a href="#FeignDeathStartTime"><span class="tocnumber">1.98</span> <span class="toctext">FeignDeathStartTime</span></a></li>
+<li class="toclevel-2 tocsection-100"><a href="#FireRateMultiplier"><span class="tocnumber">1.99</span> <span class="toctext">FireRateMultiplier</span></a></li>
+<li class="toclevel-2 tocsection-101"><a href="#FirstPersonDeathVisionMesh"><span class="tocnumber">1.100</span> <span class="toctext">FirstPersonDeathVisionMesh</span></a></li>
+<li class="toclevel-2 tocsection-102"><a href="#FixedViewLoc"><span class="tocnumber">1.101</span> <span class="toctext">FixedViewLoc</span></a></li>
+<li class="toclevel-2 tocsection-103"><a href="#FixedViewRot"><span class="tocnumber">1.102</span> <span class="toctext">FixedViewRot</span></a></li>
+<li class="toclevel-2 tocsection-104"><a href="#FlyingBlend"><span class="tocnumber">1.103</span> <span class="toctext">FlyingBlend</span></a></li>
+<li class="toclevel-2 tocsection-105"><a href="#FlyingDirOffset"><span class="tocnumber">1.104</span> <span class="toctext">FlyingDirOffset</span></a></li>
+<li class="toclevel-2 tocsection-106"><a href="#FullBodyAnimSlot"><span class="tocnumber">1.105</span> <span class="toctext">FullBodyAnimSlot</span></a></li>
+<li class="toclevel-2 tocsection-107"><a href="#GunRecoilNode"><span class="tocnumber">1.106</span> <span class="toctext">GunRecoilNode</span></a></li>
+<li class="toclevel-2 tocsection-108"><a href="#HeadBone"><span class="tocnumber">1.107</span> <span class="toctext">HeadBone</span></a></li>
+<li class="toclevel-2 tocsection-109"><a href="#HeadHeight"><span class="tocnumber">1.108</span> <span class="toctext">HeadHeight</span></a></li>
+<li class="toclevel-2 tocsection-110"><a href="#HeadOffset"><span class="tocnumber">1.109</span> <span class="toctext">HeadOffset</span></a></li>
+<li class="toclevel-2 tocsection-111"><a href="#HeadRadius"><span class="tocnumber">1.110</span> <span class="toctext">HeadRadius</span></a></li>
+<li class="toclevel-2 tocsection-112"><a href="#HeadScale"><span class="tocnumber">1.111</span> <span class="toctext">HeadScale</span></a></li>
+<li class="toclevel-2 tocsection-113"><a href="#HeadshotNeckAttachment"><span class="tocnumber">1.112</span> <span class="toctext">HeadshotNeckAttachment</span></a></li>
+<li class="toclevel-2 tocsection-114"><a href="#HealthRechargeDelay"><span class="tocnumber">1.113</span> <span class="toctext">HealthRechargeDelay</span></a></li>
+<li class="toclevel-2 tocsection-115"><a href="#HealthRechargeRate"><span class="tocnumber">1.114</span> <span class="toctext">HealthRechargeRate</span></a></li>
+<li class="toclevel-2 tocsection-116"><a href="#HelmetArmor"><span class="tocnumber">1.115</span> <span class="toctext">HelmetArmor</span></a></li>
+<li class="toclevel-2 tocsection-117"><a href="#HoverboardClass"><span class="tocnumber">1.116</span> <span class="toctext">HoverboardClass</span></a></li>
+<li class="toclevel-2 tocsection-118"><a href="#HoverboardingNode"><span class="tocnumber">1.117</span> <span class="toctext">HoverboardingNode</span></a></li>
+<li class="toclevel-2 tocsection-119"><a href="#HUDLocation"><span class="tocnumber">1.118</span> <span class="toctext">HUDLocation</span></a></li>
+<li class="toclevel-2 tocsection-120"><a href="#IconCoords"><span class="tocnumber">1.119</span> <span class="toctext">IconCoords</span></a></li>
+<li class="toclevel-2 tocsection-121"><a href="#JumpBob"><span class="tocnumber">1.120</span> <span class="toctext">JumpBob</span></a></li>
+<li class="toclevel-2 tocsection-122"><a href="#JumpBootCharge"><span class="tocnumber">1.121</span> <span class="toctext">JumpBootCharge</span></a></li>
+<li class="toclevel-2 tocsection-123"><a href="#LandBob"><span class="tocnumber">1.122</span> <span class="toctext">LandBob</span></a></li>
+<li class="toclevel-2 tocsection-124"><a href="#LastDrivenWeaponPawn"><span class="tocnumber">1.123</span> <span class="toctext">LastDrivenWeaponPawn</span></a></li>
+<li class="toclevel-2 tocsection-125"><a href="#LastEmoteTime"><span class="tocnumber">1.124</span> <span class="toctext">LastEmoteTime</span></a></li>
+<li class="toclevel-2 tocsection-126"><a href="#LastHoverboardTime"><span class="tocnumber">1.125</span> <span class="toctext">LastHoverboardTime</span></a></li>
+<li class="toclevel-2 tocsection-127"><a href="#LastPainSound"><span class="tocnumber">1.126</span> <span class="toctext">LastPainSound</span></a></li>
+<li class="toclevel-2 tocsection-128"><a href="#LastPostRenderTraceTime"><span class="tocnumber">1.127</span> <span class="toctext">LastPostRenderTraceTime</span></a></li>
+<li class="toclevel-2 tocsection-129"><a href="#LastTakeHitInfo"><span class="tocnumber">1.128</span> <span class="toctext">LastTakeHitInfo</span></a></li>
+<li class="toclevel-2 tocsection-130"><a href="#LastTakeHitTimeout"><span class="tocnumber">1.129</span> <span class="toctext">LastTakeHitTimeout</span></a></li>
+<li class="toclevel-2 tocsection-131"><a href="#LeftFootBone"><span class="tocnumber">1.130</span> <span class="toctext">LeftFootBone</span></a></li>
+<li class="toclevel-2 tocsection-132"><a href="#LeftFootControlName"><span class="tocnumber">1.131</span> <span class="toctext">LeftFootControlName</span></a></li>
+<li class="toclevel-2 tocsection-133"><a href="#LeftHandIK"><span class="tocnumber">1.132</span> <span class="toctext">LeftHandIK</span></a></li>
+<li class="toclevel-2 tocsection-134"><a href="#LeftLegControl"><span class="tocnumber">1.133</span> <span class="toctext">LeftLegControl</span></a></li>
+<li class="toclevel-2 tocsection-135"><a href="#LeftRecoilNode"><span class="tocnumber">1.134</span> <span class="toctext">LeftRecoilNode</span></a></li>
+<li class="toclevel-2 tocsection-136"><a href="#LightEnvironment"><span class="tocnumber">1.135</span> <span class="toctext">LightEnvironment</span></a></li>
+<li class="toclevel-2 tocsection-137"><a href="#LookYaw"><span class="tocnumber">1.136</span> <span class="toctext">LookYaw</span></a></li>
+<li class="toclevel-2 tocsection-138"><a href="#MapSize"><span class="tocnumber">1.137</span> <span class="toctext">MapSize</span></a></li>
+<li class="toclevel-2 tocsection-139"><a href="#MaxDoubleJumpHeight"><span class="tocnumber">1.138</span> <span class="toctext">MaxDoubleJumpHeight</span></a></li>
+<li class="toclevel-2 tocsection-140"><a href="#MaxFootPlacementDistSquared"><span class="tocnumber">1.139</span> <span class="toctext">MaxFootPlacementDistSquared</span></a></li>
+<li class="toclevel-2 tocsection-141"><a href="#MaxFootstepDistSq"><span class="tocnumber">1.140</span> <span class="toctext">MaxFootstepDistSq</span></a></li>
+<li class="toclevel-2 tocsection-142"><a href="#MaxJumpSoundDistSq"><span class="tocnumber">1.141</span> <span class="toctext">MaxJumpSoundDistSq</span></a></li>
+<li class="toclevel-2 tocsection-143"><a href="#MaxLeanRoll"><span class="tocnumber">1.142</span> <span class="toctext">MaxLeanRoll</span></a></li>
+<li class="toclevel-2 tocsection-144"><a href="#MaxMultiJump"><span class="tocnumber">1.143</span> <span class="toctext">MaxMultiJump</span></a></li>
+<li class="toclevel-2 tocsection-145"><a href="#MinHoverboardInterval"><span class="tocnumber">1.144</span> <span class="toctext">MinHoverboardInterval</span></a></li>
+<li class="toclevel-2 tocsection-146"><a href="#MinTimeBetweenEmotes"><span class="tocnumber">1.145</span> <span class="toctext">MinTimeBetweenEmotes</span></a></li>
+<li class="toclevel-2 tocsection-147"><a href="#MultiJumpBoost"><span class="tocnumber">1.146</span> <span class="toctext">MultiJumpBoost</span></a></li>
+<li class="toclevel-2 tocsection-148"><a href="#MultiJumpRemaining"><span class="tocnumber">1.147</span> <span class="toctext">MultiJumpRemaining</span></a></li>
+<li class="toclevel-2 tocsection-149"><a href="#NoDriveBodies"><span class="tocnumber">1.148</span> <span class="toctext">NoDriveBodies</span></a></li>
+<li class="toclevel-2 tocsection-150"><a href="#OldCameraPosition"><span class="tocnumber">1.149</span> <span class="toctext">OldCameraPosition</span></a></li>
+<li class="toclevel-2 tocsection-151"><a href="#OldLocationZ"><span class="tocnumber">1.150</span> <span class="toctext">OldLocationZ</span></a></li>
+<li class="toclevel-2 tocsection-152"><a href="#OverlayMaterialInstance"><span class="tocnumber">1.151</span> <span class="toctext">OverlayMaterialInstance</span></a></li>
+<li class="toclevel-2 tocsection-153"><a href="#OverlayMesh"><span class="tocnumber">1.152</span> <span class="toctext">OverlayMesh</span></a></li>
+<li class="toclevel-2 tocsection-154"><a href="#PartialHealth"><span class="tocnumber">1.153</span> <span class="toctext">PartialHealth</span></a></li>
+<li class="toclevel-2 tocsection-155"><a href="#PawnAmbientSound"><span class="tocnumber">1.154</span> <span class="toctext">PawnAmbientSound</span></a></li>
+<li class="toclevel-2 tocsection-156"><a href="#PawnAmbientSoundCue"><span class="tocnumber">1.155</span> <span class="toctext">PawnAmbientSoundCue</span></a></li>
+<li class="toclevel-2 tocsection-157"><a href="#PawnEffectSockets"><span class="tocnumber">1.156</span> <span class="toctext">PawnEffectSockets</span></a></li>
+<li class="toclevel-2 tocsection-158"><a href="#RagdollLifespan"><span class="tocnumber">1.157</span> <span class="toctext">RagdollLifespan</span></a></li>
+<li class="toclevel-2 tocsection-159"><a href="#RemainingBodyMatDuration"><span class="tocnumber">1.158</span> <span class="toctext">RemainingBodyMatDuration</span></a></li>
+<li class="toclevel-2 tocsection-160"><a href="#ReplicatedBodyMaterial"><span class="tocnumber">1.159</span> <span class="toctext">ReplicatedBodyMaterial</span></a></li>
+<li class="toclevel-2 tocsection-161"><a href="#RightFootBone"><span class="tocnumber">1.160</span> <span class="toctext">RightFootBone</span></a></li>
+<li class="toclevel-2 tocsection-162"><a href="#RightFootControlName"><span class="tocnumber">1.161</span> <span class="toctext">RightFootControlName</span></a></li>
+<li class="toclevel-2 tocsection-163"><a href="#RightHandIK"><span class="tocnumber">1.162</span> <span class="toctext">RightHandIK</span></a></li>
+<li class="toclevel-2 tocsection-164"><a href="#RightLegControl"><span class="tocnumber">1.163</span> <span class="toctext">RightLegControl</span></a></li>
+<li class="toclevel-2 tocsection-165"><a href="#RightRecoilNode"><span class="tocnumber">1.164</span> <span class="toctext">RightRecoilNode</span></a></li>
+<li class="toclevel-2 tocsection-166"><a href="#RootRotControl"><span class="tocnumber">1.165</span> <span class="toctext">RootRotControl</span></a></li>
+<li class="toclevel-2 tocsection-167"><a href="#RootYaw"><span class="tocnumber">1.166</span> <span class="toctext">RootYaw</span></a></li>
+<li class="toclevel-2 tocsection-168"><a href="#RootYawSpeed"><span class="tocnumber">1.167</span> <span class="toctext">RootYawSpeed</span></a></li>
+<li class="toclevel-2 tocsection-169"><a href="#SaturationParameterName"><span class="tocnumber">1.168</span> <span class="toctext">SaturationParameterName</span></a></li>
+<li class="toclevel-2 tocsection-170"><a href="#ShieldBeltArmor"><span class="tocnumber">1.169</span> <span class="toctext">ShieldBeltArmor</span></a></li>
+<li class="toclevel-2 tocsection-171"><a href="#ShieldBeltMaterialInstance"><span class="tocnumber">1.170</span> <span class="toctext">ShieldBeltMaterialInstance</span></a></li>
+<li class="toclevel-2 tocsection-172"><a href="#ShieldBeltPickupClass"><span class="tocnumber">1.171</span> <span class="toctext">ShieldBeltPickupClass</span></a></li>
+<li class="toclevel-2 tocsection-173"><a href="#ShieldBeltTeamMaterialInstances"><span class="tocnumber">1.172</span> <span class="toctext">ShieldBeltTeamMaterialInstances</span></a></li>
+<li class="toclevel-2 tocsection-174"><a href="#SlopeBoostFriction"><span class="tocnumber">1.173</span> <span class="toctext">SlopeBoostFriction</span></a></li>
+<li class="toclevel-2 tocsection-175"><a href="#SoundGroupClass"><span class="tocnumber">1.174</span> <span class="toctext">SoundGroupClass</span></a></li>
+<li class="toclevel-2 tocsection-176"><a href="#SpawnProtectionColor"><span class="tocnumber">1.175</span> <span class="toctext">SpawnProtectionColor</span></a></li>
+<li class="toclevel-2 tocsection-177"><a href="#SpawnSound"><span class="tocnumber">1.176</span> <span class="toctext">SpawnSound</span></a></li>
+<li class="toclevel-2 tocsection-178"><a href="#StartDeathAnimTime"><span class="tocnumber">1.177</span> <span class="toctext">StartDeathAnimTime</span></a></li>
+<li class="toclevel-2 tocsection-179"><a href="#StartedFallingTime"><span class="tocnumber">1.178</span> <span class="toctext">StartedFallingTime</span></a></li>
+<li class="toclevel-2 tocsection-180"><a href="#StartFallImpactTime"><span class="tocnumber">1.179</span> <span class="toctext">StartFallImpactTime</span></a></li>
+<li class="toclevel-2 tocsection-181"><a href="#SuperHealthMax"><span class="tocnumber">1.180</span> <span class="toctext">SuperHealthMax</span></a></li>
+<li class="toclevel-2 tocsection-182"><a href="#TakeHitPhysicsBlendOutSpeed"><span class="tocnumber">1.181</span> <span class="toctext">TakeHitPhysicsBlendOutSpeed</span></a></li>
+<li class="toclevel-2 tocsection-183"><a href="#TakeHitPhysicsFixedBones"><span class="tocnumber">1.182</span> <span class="toctext">TakeHitPhysicsFixedBones</span></a></li>
+<li class="toclevel-2 tocsection-184"><a href="#TauntNames"><span class="tocnumber">1.183</span> <span class="toctext">TauntNames</span></a></li>
+<li class="toclevel-2 tocsection-185"><a href="#TeleportSound"><span class="tocnumber">1.184</span> <span class="toctext">TeleportSound</span></a></li>
+<li class="toclevel-2 tocsection-186"><a href="#ThighpadArmor"><span class="tocnumber">1.185</span> <span class="toctext">ThighpadArmor</span></a></li>
+<li class="toclevel-2 tocsection-187"><a href="#TimeLastTookDeathAnimDamage"><span class="tocnumber">1.186</span> <span class="toctext">TimeLastTookDeathAnimDamage</span></a></li>
+<li class="toclevel-2 tocsection-188"><a href="#TopHalfAnimSlot"><span class="tocnumber">1.187</span> <span class="toctext">TopHalfAnimSlot</span></a></li>
+<li class="toclevel-2 tocsection-189"><a href="#TorsoBoneName"><span class="tocnumber">1.188</span> <span class="toctext">TorsoBoneName</span></a></li>
+<li class="toclevel-2 tocsection-190"><a href="#Trackers"><span class="tocnumber">1.189</span> <span class="toctext">Trackers</span></a></li>
+<li class="toclevel-2 tocsection-191"><a href="#TransCameraAnim"><span class="tocnumber">1.190</span> <span class="toctext">TransCameraAnim</span></a></li>
+<li class="toclevel-2 tocsection-192"><a href="#TransInEffects"><span class="tocnumber">1.191</span> <span class="toctext">TransInEffects</span></a></li>
+<li class="toclevel-2 tocsection-193"><a href="#TranslocateColor"><span class="tocnumber">1.192</span> <span class="toctext">TranslocateColor</span></a></li>
+<li class="toclevel-2 tocsection-194"><a href="#Twisting"><span class="tocnumber">1.193</span> <span class="toctext">Twisting</span></a></li>
+<li class="toclevel-2 tocsection-195"><a href="#UnfeignFailedCount"><span class="tocnumber">1.194</span> <span class="toctext">UnfeignFailedCount</span></a></li>
+<li class="toclevel-2 tocsection-196"><a href="#VehicleNode"><span class="tocnumber">1.195</span> <span class="toctext">VehicleNode</span></a></li>
+<li class="toclevel-2 tocsection-197"><a href="#VestArmor"><span class="tocnumber">1.196</span> <span class="toctext">VestArmor</span></a></li>
+<li class="toclevel-2 tocsection-198"><a href="#WalkBob"><span class="tocnumber">1.197</span> <span class="toctext">WalkBob</span></a></li>
+<li class="toclevel-2 tocsection-199"><a href="#WeaponAmbientSound"><span class="tocnumber">1.198</span> <span class="toctext">WeaponAmbientSound</span></a></li>
+<li class="toclevel-2 tocsection-200"><a href="#WeaponAmbientSoundCue"><span class="tocnumber">1.199</span> <span class="toctext">WeaponAmbientSoundCue</span></a></li>
+<li class="toclevel-2 tocsection-201"><a href="#WeaponOverlayFlags"><span class="tocnumber">1.200</span> <span class="toctext">WeaponOverlayFlags</span></a></li>
+<li class="toclevel-2 tocsection-202"><a href="#WeaponSocket"><span class="tocnumber">1.201</span> <span class="toctext">WeaponSocket</span></a></li>
+<li class="toclevel-2 tocsection-203"><a href="#WeaponSocket2"><span class="tocnumber">1.202</span> <span class="toctext">WeaponSocket2</span></a></li>
+<li class="toclevel-2 tocsection-204"><a href="#ZSmoothingRate"><span class="tocnumber">1.203</span> <span class="toctext">ZSmoothingRate</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>UTPawn internal variables in other games:</dt>
+<dd><span><a href="UE3_UTPawn_internal_variables_(UT3).html" title="UE3:UTPawn internal variables (UT3)">UT3</a></span></dd>
+<dt>Other member categories for this class:</dt>
+<dd><span><a href="UE3_UTPawn_defaults_(UDK).html" title="UE3:UTPawn defaults (UDK)">defaults</a></span>, <span><a href="UE3_UTPawn_events_(UDK).html" title="UE3:UTPawn events (UDK)">events</a></span>, <span><a href="UE3_UTPawn_instance_functions_(UDK).html" title="UE3:UTPawn instance functions (UDK)">instance functions</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Internal_variables">Internal variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=1" title="Edit section: Internal variables">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="AccumulateDamage">AccumulateDamage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=2" title="Edit section: AccumulateDamage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Track damage accumulated during a tick - used for gibbing determination</p>
+<h4><span class="mw-headline" id="AccumulationTime">AccumulationTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=3" title="Edit section: AccumulationTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Tick time for which damage is being accumulated</p>
+<h4><span class="mw-headline" id="AimNode">AimNode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=4" title="Edit section: AimNode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_AnimNodeAimOffset_(UDK).html" title="UE3:AnimNodeAimOffset (UDK)">AnimNodeAimOffset</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="AppliedBob">AppliedBob</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=5" title="Edit section: AppliedBob">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ArmorHitSound">ArmorHitSound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=6" title="Edit section: ArmorHitSound">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SoundCue_(UDK).html" title="UE3:SoundCue (UDK)">SoundCue</a></p>
+<p><br />
+<b>Default value:</b> <a href="UE3_SoundCue_(UDK).html" title="UE3:SoundCue (UDK)">SoundCue</a>'A_Gameplay.Gameplay.A_Gameplay_ArmorHitCue'</p>
+<h4><span class="mw-headline" id="ArmsMesh">ArmsMesh</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=7" title="Edit section: ArmsMesh">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTSkeletalMeshComponent_(UDK).html" title="UE3:UTSkeletalMeshComponent (UDK)">UTSkeletalMeshComponent</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 2</p>
+<p>left and right arms, respectively.</p>
+<p><b>Default value, index 0:</b> <a href="UE3_UTSkeletalMeshComponent_(UDK).html" title="UE3:UTSkeletalMeshComponent (UDK)">UTSkeletalMeshComponent</a>'<a href="UE3_UTPawn_defaults_(UDK).html#FirstPersonArms" title="UE3:UTPawn defaults (UDK)">FirstPersonArms</a>'</p>
+<p><b>Default value, index 1:</b> <a href="UE3_UTSkeletalMeshComponent_(UDK).html" title="UE3:UTSkeletalMeshComponent (UDK)">UTSkeletalMeshComponent</a>'<a href="UE3_UTPawn_defaults_(UDK).html#FirstPersonArms2" title="UE3:UTPawn defaults (UDK)">FirstPersonArms2</a>'</p>
+<h4><span class="mw-headline" id="ArmsOverlay">ArmsOverlay</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=8" title="Edit section: ArmsOverlay">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTSkeletalMeshComponent_(UDK).html" title="UE3:UTSkeletalMeshComponent (UDK)">UTSkeletalMeshComponent</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 2</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="AttachedProj">AttachedProj</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=9" title="Edit section: AttachedProj">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTProjectile_(UDK).html" title="UE3:UTProjectile (UDK)">UTProjectile</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bArmsAttached">bArmsAttached</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=10" title="Edit section: bArmsAttached">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Weapon / Firing</p>
+<h4><span class="mw-headline" id="BaseTranslationOffset">BaseTranslationOffset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=11" title="Edit section: BaseTranslationOffset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 6.0</p>
+<h4><span class="mw-headline" id="bBlendOutTakeHitPhysics">bBlendOutTakeHitPhysics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=12" title="Edit section: bBlendOutTakeHitPhysics">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>if set, blend Mesh PhysicsWeight to 0.0 in C++ and call TakeHitBlendedOut() event when finished</p>
+<h4><span class="mw-headline" id="bCanDoubleJump">bCanDoubleJump</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=13" title="Edit section: bCanDoubleJump">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br />
+<b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bCanPlayFallingImpacts">bCanPlayFallingImpacts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=14" title="Edit section: bCanPlayFallingImpacts">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Whether this pawn can play a falling impact. Set to false upon the fall, but getting up should reset it</p>
+<h4><span class="mw-headline" id="bComponentDebug">bComponentDebug</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=15" title="Edit section: bComponentDebug">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>used by eyeheight adjustment. True if pawn recovering (eyeheight increasing) after lowering from a landing</p>
+<h4><span class="mw-headline" id="bDodging">bDodging</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=16" title="Edit section: bDodging">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>true while in air after dodging</p>
+<h4><span class="mw-headline" id="bEnableFootPlacement">bEnableFootPlacement</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=17" title="Edit section: bEnableFootPlacement">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br />
+<b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bFeigningDeath">bFeigningDeath</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=18" title="Edit section: bFeigningDeath">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> repnotify</p>
+<p>true when in ragdoll due to feign death</p>
+<h4><span class="mw-headline" id="bFixedView">bFixedView</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=19" title="Edit section: bFixedView">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bForcedFeignDeath">bForcedFeignDeath</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=20" title="Edit section: bForcedFeignDeath">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>true when feign death activation forced (e.g. knocked off hoverboard)</p>
+<h4><span class="mw-headline" id="bGibbed">bGibbed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=21" title="Edit section: bGibbed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>whether or not we have been gibbed already</p>
+<h4><span class="mw-headline" id="bHasHoverboard">bHasHoverboard</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=22" title="Edit section: bHasHoverboard">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Hoverboard</p>
+<h4><span class="mw-headline" id="bHeadGibbed">bHeadGibbed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=23" title="Edit section: bHeadGibbed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>whether or not we have been decapitated already</p>
+<h4><span class="mw-headline" id="bHideOnListenServer">bHideOnListenServer</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=24" title="Edit section: bHideOnListenServer">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Set when pawn died on listen server, but was hidden rather than ragdolling (for replication purposes)</p>
+<h4><span class="mw-headline" id="BigTeleportCount">BigTeleportCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=25" title="Edit section: BigTeleportCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> repnotify</p>
+<p>Use to replicate to clients when someone goes through a big teleportation.</p>
+<h4><span class="mw-headline" id="BioBurnAway">BioBurnAway</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=26" title="Edit section: BioBurnAway">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_ParticleSystemComponent_(UDK).html" title="UE3:ParticleSystemComponent (UDK)">ParticleSystemComponent</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="BioBurnAwayTime">BioBurnAwayTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=27" title="Edit section: BioBurnAwayTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="BioEffectName">BioEffectName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=28" title="Edit section: BioEffectName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bIsHoverboardAnimPawn">bIsHoverboardAnimPawn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=29" title="Edit section: bIsHoverboardAnimPawn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bIsInvisible">bIsInvisible</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=30" title="Edit section: bIsInvisible">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> repnotify</p>
+<p>whether this Pawn is invisible. Affects AI and also causes shadows to be disabled</p>
+<h4><span class="mw-headline" id="bIsInvulnerable">bIsInvulnerable</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=31" title="Edit section: bIsInvulnerable">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bIsTyping">bIsTyping</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=32" title="Edit section: bIsTyping">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>play typing anim if idle</p>
+<h4><span class="mw-headline" id="bJustDroppedOrb">bJustDroppedOrb</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=33" title="Edit section: bJustDroppedOrb">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>if orb dropped because knocked off hoverboard</p>
+<h4><span class="mw-headline" id="bJustLanded">bJustLanded</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=34" title="Edit section: bJustLanded">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bKilledByBio">bKilledByBio</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=35" title="Edit section: bKilledByBio">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>bio death effect - updates BioEffectName parameter in the mesh's materials from 0 to 10 over BioBurnAwayTime activated BioBurnAway particle system on death, deactivates it when BioBurnAwayTime expires could easily be overridden by a custom death effect to use other effects/materials,</p>
+<p><b>See:</b> UTDmgType_BioGoo</p>
+<h4><span class="mw-headline" id="bKillsAffectHead">bKillsAffectHead</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=36" title="Edit section: bKillsAffectHead">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If true, head size will change based on ratio of kills to deaths</p>
+<h4><span class="mw-headline" id="bLandRecovery">bLandRecovery</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=37" title="Edit section: bLandRecovery">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>used by eyeheight adjustment. True if pawn recently landed from a fall</p>
+<h4><span class="mw-headline" id="bNoJumpAdjust">bNoJumpAdjust</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=38" title="Edit section: bNoJumpAdjust">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>set to tell controller not to modify velocity of a jump/fall</p>
+<h4><span class="mw-headline" id="bNotifyStopFalling">bNotifyStopFalling</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=39" title="Edit section: bNotifyStopFalling">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>if true, StoppedFalling() is called when the physics mode changes from falling</p>
+<h4><span class="mw-headline" id="Bob">Bob</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=40" title="Edit section: Bob">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>view bob properties</p>
+<p><b>Default value:</b> 0.01</p>
+<h4><span class="mw-headline" id="bobtime">bobtime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=41" title="Edit section: bobtime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="BodyMatColor">BodyMatColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=42" title="Edit section: BodyMatColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p>This is the color that will be applied</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="BodyMaterialInstances">BodyMaterialInstances</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=43" title="Edit section: BodyMaterialInstances">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_MaterialInstanceConstant_(UDK).html" title="UE3:MaterialInstanceConstant (UDK)">MaterialInstanceConstant</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected</p>
+<p>This is the actual Material Instance that is used to affect the colors</p>
+<h4><span class="mw-headline" id="BodyMatFadeDuration">BodyMatFadeDuration</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=44" title="Edit section: BodyMatFadeDuration">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>How long will it take for the current Body Material to fade out</p>
+<h4><span class="mw-headline" id="bPlayingFeignDeathRecovery">bPlayingFeignDeathRecovery</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=45" title="Edit section: bPlayingFeignDeathRecovery">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>true while playing feign death recovery animation</p>
+<h4><span class="mw-headline" id="bPostRenderOtherTeam">bPostRenderOtherTeam</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=46" title="Edit section: bPostRenderOtherTeam">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If true, call postrenderfor() even if on different team</p>
+<h4><span class="mw-headline" id="bPostRenderTraceSucceeded">bPostRenderTraceSucceeded</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=47" title="Edit section: bPostRenderTraceSucceeded">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>true is last trace test check for drawing postrender beacon succeeded</p>
+<h4><span class="mw-headline" id="bPuttingDownWeapon">bPuttingDownWeapon</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=48" title="Edit section: bPuttingDownWeapon">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected, repnotify</p>
+<p>set when pawn is putting away its current weapon, for playing 3p animations - access with Set/GetPuttingDownWeapon()</p>
+<h4><span class="mw-headline" id="bReadyToDoubleJump">bReadyToDoubleJump</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=49" title="Edit section: bReadyToDoubleJump">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bReceivedValidTeam">bReceivedValidTeam</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=50" title="Edit section: bReceivedValidTeam">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>set on client when valid team info is received; future changes are then ignored unless this gets reset first this is used to prevent the problem where someone changes teams and their old dying pawn changes color because the team change was received before the pawn's dying</p>
+<h4><span class="mw-headline" id="bRechargeHealth">bRechargeHealth</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=51" title="Edit section: bRechargeHealth">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Whether health auto-recharges (after RechargeCombatDelay time after last damage)</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bRequiresDoubleJump">bRequiresDoubleJump</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=52" title="Edit section: bRequiresDoubleJump">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bShieldAbsorb">bShieldAbsorb</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=53" title="Edit section: bShieldAbsorb">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>set true when shield absorbs damage</p>
+<h4><span class="mw-headline" id="bSpawnDone">bSpawnDone</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=54" title="Edit section: bSpawnDone">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>true when spawn protection has been deactivated</p>
+<h4><span class="mw-headline" id="bSpawnIn">bSpawnIn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=55" title="Edit section: bSpawnIn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bStopDeathCamera">bStopDeathCamera</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=56" title="Edit section: bStopDeathCamera">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Stop death camera using OldCameraPosition if true</p>
+<h4><span class="mw-headline" id="bStopOnDoubleLanding">bStopOnDoubleLanding</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=57" title="Edit section: bStopOnDoubleLanding">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br />
+<b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bTearOffGibs">bTearOffGibs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=58" title="Edit section: bTearOffGibs">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bUpdateEyeheight">bUpdateEyeheight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=59" title="Edit section: bUpdateEyeheight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bWeaponAttachmentVisible">bWeaponAttachmentVisible</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=60" title="Edit section: bWeaponAttachmentVisible">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>client side flag indicating whether attachment should be visible - primarily used when spawning the initial weapon attachment as events that change its visibility might have happened before we received a CurrentWeaponAttachmentClass to spawn and call the visibility functions on</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bWeaponBob">bWeaponBob</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=61" title="Edit section: bWeaponBob">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>if true, UpdateEyeheight will get called every tick</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bWinnerCam">bWinnerCam</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=62" title="Edit section: bWinnerCam">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If true, use end of match "Hero" camera</p>
+<h4><span class="mw-headline" id="CameraScale">CameraScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=63" title="Edit section: CameraScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 9.0</p>
+<h4><span class="mw-headline" id="CameraScaleMax">CameraScaleMax</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=64" title="Edit section: CameraScaleMax">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>multiplier to default camera distance</p>
+<p><b>Default value:</b> 40.0</p>
+<h4><span class="mw-headline" id="CameraScaleMin">CameraScaleMin</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=65" title="Edit section: CameraScaleMin">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>multiplier to default camera distance</p>
+<p><b>Default value:</b> 3.0</p>
+<h4><span class="mw-headline" id="CameraZOffset">CameraZOffset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=66" title="Edit section: CameraZOffset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>used to smoothly adjust camera z offset in third person</p>
+<h4><span class="mw-headline" id="ClientBodyMatDuration">ClientBodyMatDuration</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=67" title="Edit section: ClientBodyMatDuration">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> repnotify</p>
+<p>This variable is used for replication of the value to remove clients</p>
+<h4><span class="mw-headline" id="ClientSideWeaponPawn">ClientSideWeaponPawn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=68" title="Edit section: ClientSideWeaponPawn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTClientSideWeaponPawn_(UDK).html" title="UE3:UTClientSideWeaponPawn (UDK)">UTClientSideWeaponPawn</a></p>
+<p>reference WeaponPawn spawned on non-owning clients for code that checks for DrivenVehicle</p>
+<h4><span class="mw-headline" id="CompressedBodyMatColor">CompressedBodyMatColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=69" title="Edit section: CompressedBodyMatColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> repnotify</p>
+<p>Replicate BodyMatColor as rotator to save bandwidth</p>
+<h4><span class="mw-headline" id="CrouchMeshZOffset">CrouchMeshZOffset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=70" title="Edit section: CrouchMeshZOffset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="CrouchTranslationOffset">CrouchTranslationOffset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=71" title="Edit section: CrouchTranslationOffset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="CurrCharClassInfo">CurrCharClassInfo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=72" title="Edit section: CurrCharClassInfo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_UTFamilyInfo_(UDK).html" title="UE3:UTFamilyInfo (UDK)">UTFamilyInfo</a>&gt;</p>
+<p>This pawn's current family/class info *</p>
+<h4><span class="mw-headline" id="CurrentBodyMatColor">CurrentBodyMatColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=73" title="Edit section: CurrentBodyMatColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p>This is the current Body Material Color with any fading applied in</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="CurrentCameraScale">CurrentCameraScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=74" title="Edit section: CurrentCameraScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="CurrentDir">CurrentDir</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=75" title="Edit section: CurrentDir">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Actor_enums_(UDK).html#EDoubleClickDir" title="UE3:Actor enums (UDK)">Actor.EDoubleClickDir</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="CurrentSkelAim">CurrentSkelAim</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=76" title="Edit section: CurrentSkelAim">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Object.Vector2D</a></p>
+<p>2D vector indicating aim direction relative to Pawn rotation. +/-1.0 indicating 180 degrees.</p>
+<h4><span class="mw-headline" id="CurrentWeaponAttachment">CurrentWeaponAttachment</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=77" title="Edit section: CurrentWeaponAttachment">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTWeaponAttachment_(UDK).html" title="UE3:UTWeaponAttachment (UDK)">UTWeaponAttachment</a></p>
+<p>This holds the local copy of the current attachment. This "attachment" actor will exist independantly on all clients</p>
+<h4><span class="mw-headline" id="CurrentWeaponAttachmentClass">CurrentWeaponAttachmentClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=78" title="Edit section: CurrentWeaponAttachmentClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_UTWeaponAttachment_(UDK).html" title="UE3:UTWeaponAttachment (UDK)">UTWeaponAttachment</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> repnotify</p>
+<p>Holds the class type of the current weapon attachment. Replicated to all clients.</p>
+<h4><span class="mw-headline" id="CustomGravityScaling">CustomGravityScaling</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=79" title="Edit section: CustomGravityScaling">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Custom gravity support</p>
+<p><b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="DamageParameterName">DamageParameterName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=80" title="Edit section: DamageParameterName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p>material parameter containing damage overlay color</p>
+<p><b>Default value:</b> 'DamageOverlay'</p>
+<h4><span class="mw-headline" id="DeathAnimDamageType">DeathAnimDamageType</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=81" title="Edit section: DeathAnimDamageType">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_UTDamageType_(UDK).html" title="UE3:UTDamageType (UDK)">UTDamageType</a>&gt;</p>
+<p>Type of damage that started the death anim</p>
+<h4><span class="mw-headline" id="DeathTime">DeathTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=82" title="Edit section: DeathTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="DefaultAirControl">DefaultAirControl</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=83" title="Edit section: DefaultAirControl">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>how much pawn should lean into turns</p>
+<p><b>Default value:</b> 0.35</p>
+<h4><span class="mw-headline" id="DefaultMeshScale">DefaultMeshScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=84" title="Edit section: DefaultMeshScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Mesh scaling default</p>
+<p><b>Default value:</b> 1.075</p>
+<h4><span class="mw-headline" id="DesiredMeshScale">DesiredMeshScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=85" title="Edit section: DesiredMeshScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>currently desired scale of the hero (switches between crouched and default)</p>
+<h4><span class="mw-headline" id="DodgeSpeed">DodgeSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=86" title="Edit section: DodgeSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>set by suggestjumpvelocity()</p>
+<p><b>Default value:</b> 600.0</p>
+<h4><span class="mw-headline" id="DodgeSpeedZ">DodgeSpeedZ</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=87" title="Edit section: DodgeSpeedZ">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 295.0</p>
+<h4><span class="mw-headline" id="DoubleJumpThreshold">DoubleJumpThreshold</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=88" title="Edit section: DoubleJumpThreshold">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 160.0</p>
+<h4><span class="mw-headline" id="DrivenWeaponPawn">DrivenWeaponPawn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=89" title="Edit section: DrivenWeaponPawn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTPawn_(UDK).html#DrivenWeaponPawnInfo" title="UE3:UTPawn (UDK)">DrivenWeaponPawnInfo</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> repnotify</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="DrivingNode">DrivingNode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=90" title="Edit section: DrivingNode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTAnimBlendByDriving_(UDK).html" title="UE3:UTAnimBlendByDriving (UDK)">UTAnimBlendByDriving</a></p>
+<p>Node used for blending between driving and non-driving state.</p>
+<h4><span class="mw-headline" id="EmoteRepInfo">EmoteRepInfo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=91" title="Edit section: EmoteRepInfo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTPawn_(UDK).html#PlayEmoteInfo" title="UE3:UTPawn (UDK)">PlayEmoteInfo</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> repnotify</p>
+<p>Used to replicate on emote to play.</p>
+<h4><span class="mw-headline" id="FallImpactSound">FallImpactSound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=92" title="Edit section: FallImpactSound">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SoundCue_(UDK).html" title="UE3:SoundCue (UDK)">SoundCue</a></p>
+<p>sound to be played by Falling Impact</p>
+<p><b>Default value:</b> <a href="UE3_SoundCue_(UDK).html" title="UE3:SoundCue (UDK)">SoundCue</a>'A_Character_BodyImpacts.BodyImpacts.A_Character_BodyImpact_BodyFall_Cue'</p>
+<h4><span class="mw-headline" id="FallingDamageWaveForm">FallingDamageWaveForm</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=93" title="Edit section: FallingDamageWaveForm">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_ForceFeedbackWaveform_(UDK).html" title="UE3:ForceFeedbackWaveform (UDK)">ForceFeedbackWaveform</a></p>
+<p>Controller vibration for taking falling damage.</p>
+<p><b>Default value:</b> <a href="UE3_ForceFeedbackWaveform_(UDK).html" title="UE3:ForceFeedbackWaveform (UDK)">ForceFeedbackWaveform</a>'UTGame.Default__UTPawn:ForceFeedbackWaveformFall'</p>
+<h4><span class="mw-headline" id="FallSpeedThreshold">FallSpeedThreshold</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=94" title="Edit section: FallSpeedThreshold">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Speed change that must be realized to trigger a fall sound</p>
+<p><b>Default value:</b> 125.0</p>
+<h4><span class="mw-headline" id="FeignDeathBlend">FeignDeathBlend</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=95" title="Edit section: FeignDeathBlend">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_AnimNodeBlend_(UDK).html" title="UE3:AnimNodeBlend (UDK)">AnimNodeBlend</a></p>
+<p>anim node used for feign death recovery animations</p>
+<h4><span class="mw-headline" id="FeignDeathBodyAtRestSpeed">FeignDeathBodyAtRestSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=96" title="Edit section: FeignDeathBodyAtRestSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>when a body in feign death's velocity is less than this, it is considered to be at rest (allowing the player to get up)</p>
+<p><b>Default value:</b> 12.0</p>
+<h4><span class="mw-headline" id="FeignDeathPhysicsBlendOutSpeed">FeignDeathPhysicsBlendOutSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=97" title="Edit section: FeignDeathPhysicsBlendOutSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>speed at which physics is blended out when bPlayingFeignDeathRecovery is true (amount subtracted from PhysicsWeight per second)</p>
+<p><b>Default value:</b> 2.0</p>
+<h4><span class="mw-headline" id="FeignDeathRecoveryStartTime">FeignDeathRecoveryStartTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=98" title="Edit section: FeignDeathRecoveryStartTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>When feign death recovery started. Used to pull feign death camera into body during recovery</p>
+<h4><span class="mw-headline" id="FeignDeathStartTime">FeignDeathStartTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=99" title="Edit section: FeignDeathStartTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>when we entered feign death; used to increase FeignDeathBodyAtRestSpeed over time so we get up in a reasonable amount of time</p>
+<h4><span class="mw-headline" id="FireRateMultiplier">FireRateMultiplier</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=100" title="Edit section: FireRateMultiplier">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> repnotify</p>
+<p><br />
+<b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="FirstPersonDeathVisionMesh">FirstPersonDeathVisionMesh</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=101" title="Edit section: FirstPersonDeathVisionMesh">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SkeletalMeshComponent_(UDK).html" title="UE3:SkeletalMeshComponent (UDK)">SkeletalMeshComponent</a></p>
+<p>A mesh that plays for the dying player in first person; e.g. Spidermine face-attac this is just a convenient holder for the component that can be added by the DamageType; the DamageType itself handles setting it up using UTDamageType::CalcDeathCamera() (when is has bSpecialDeathCamera set to true)</p>
+<h4><span class="mw-headline" id="FixedViewLoc">FixedViewLoc</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=102" title="Edit section: FixedViewLoc">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p>Camera related properties</p>
+<h4><span class="mw-headline" id="FixedViewRot">FixedViewRot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=103" title="Edit section: FixedViewRot">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="FlyingBlend">FlyingBlend</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=104" title="Edit section: FlyingBlend">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTAnimBlendBase_(UDK).html" title="UE3:UTAnimBlendBase (UDK)">UTAnimBlendBase</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="FlyingDirOffset">FlyingDirOffset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=105" title="Edit section: FlyingDirOffset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_AnimNodeAimOffset_(UDK).html" title="UE3:AnimNodeAimOffset (UDK)">AnimNodeAimOffset</a></p>
+<p>Flying</p>
+<h4><span class="mw-headline" id="FullBodyAnimSlot">FullBodyAnimSlot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=106" title="Edit section: FullBodyAnimSlot">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_AnimNodeSlot_(UDK).html" title="UE3:AnimNodeSlot (UDK)">AnimNodeSlot</a></p>
+<p>Slot node used for playing full body anims.</p>
+<h4><span class="mw-headline" id="GunRecoilNode">GunRecoilNode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=107" title="Edit section: GunRecoilNode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_GameSkelCtrl_Recoil_(UDK).html" title="UE3:GameSkelCtrl Recoil (UDK)">GameSkelCtrl_Recoil</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="HeadBone">HeadBone</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=108" title="Edit section: HeadBone">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p><br />
+<b>Default value:</b> 'b_head'</p>
+<h4><span class="mw-headline" id="HeadHeight">HeadHeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=109" title="Edit section: HeadHeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 5.0</p>
+<h4><span class="mw-headline" id="HeadOffset">HeadOffset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=110" title="Edit section: HeadOffset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>These values are used for determining headshots</p>
+<p><b>Default value:</b> 32.0</p>
+<h4><span class="mw-headline" id="HeadRadius">HeadRadius</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=111" title="Edit section: HeadRadius">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 9.0</p>
+<h4><span class="mw-headline" id="HeadScale">HeadScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=112" title="Edit section: HeadScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> repnotify</p>
+<p><br />
+<b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="HeadshotNeckAttachment">HeadshotNeckAttachment</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=113" title="Edit section: HeadshotNeckAttachment">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_StaticMeshComponent_(UDK).html" title="UE3:StaticMeshComponent (UDK)">StaticMeshComponent</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected</p>
+<p>We need to save a reference to the headshot neck attachment for the case of: Headshot then gibbed so we can hide this *</p>
+<h4><span class="mw-headline" id="HealthRechargeDelay">HealthRechargeDelay</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=114" title="Edit section: HealthRechargeDelay">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Delay after last damage before recharge starts</p>
+<p><b>Default value:</b> 30.0</p>
+<h4><span class="mw-headline" id="HealthRechargeRate">HealthRechargeRate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=115" title="Edit section: HealthRechargeRate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>How fast health recharges</p>
+<p><b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="HelmetArmor">HelmetArmor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=116" title="Edit section: HelmetArmor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="HoverboardClass">HoverboardClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=117" title="Edit section: HoverboardClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_UTVehicle_(UDK).html" title="UE3:UTVehicle (UDK)">UTVehicle</a>&gt;</p>
+<p>type of vehicle spawned when activating the hoverboard</p>
+<p><b>Default value:</b> <a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UTVehicle_Hoverboard_(UDK).html" title="UE3:UTVehicle Hoverboard (UDK)">UTGame.UTVehicle_Hoverboard</a>'</p>
+<h4><span class="mw-headline" id="HoverboardingNode">HoverboardingNode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=118" title="Edit section: HoverboardingNode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTAnimBlendByHoverboarding_(UDK).html" title="UE3:UTAnimBlendByHoverboarding (UDK)">UTAnimBlendByHoverboarding</a></p>
+<p>Node used for various hoverboarding actions.</p>
+<h4><span class="mw-headline" id="HUDLocation">HUDLocation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=119" title="Edit section: HUDLocation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p>HUD Icon</p>
+<h4><span class="mw-headline" id="IconCoords">IconCoords</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=120" title="Edit section: IconCoords">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">UIRoot.TextureCoordinates</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>U</td>
+<td>657.0</td>
+</tr>
+<tr>
+<td>UL</td>
+<td>68.0</td>
+</tr>
+<tr>
+<td>V</td>
+<td>129.0</td>
+</tr>
+<tr>
+<td>VL</td>
+<td>58.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="JumpBob">JumpBob</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=121" title="Edit section: JumpBob">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="JumpBootCharge">JumpBootCharge</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=122" title="Edit section: JumpBootCharge">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Mirrors the # of charges available to jump boots</p>
+<h4><span class="mw-headline" id="LandBob">LandBob</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=123" title="Edit section: LandBob">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastDrivenWeaponPawn">LastDrivenWeaponPawn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=124" title="Edit section: LastDrivenWeaponPawn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTPawn_(UDK).html#DrivenWeaponPawnInfo" title="UE3:UTPawn (UDK)">DrivenWeaponPawnInfo</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastEmoteTime">LastEmoteTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=125" title="Edit section: LastEmoteTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Last time emote was played.</p>
+<h4><span class="mw-headline" id="LastHoverboardTime">LastHoverboardTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=126" title="Edit section: LastHoverboardTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastPainSound">LastPainSound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=127" title="Edit section: LastPainSound">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> -1000.0</p>
+<h4><span class="mw-headline" id="LastPostRenderTraceTime">LastPostRenderTraceTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=128" title="Edit section: LastPostRenderTraceTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Last time trace test check for drawing postrender beacon was performed</p>
+<h4><span class="mw-headline" id="LastTakeHitInfo">LastTakeHitInfo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=129" title="Edit section: LastTakeHitInfo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTPawn_(UDK).html#UTTakeHitInfo" title="UE3:UTPawn (UDK)">UTTakeHitInfo</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> repnotify</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastTakeHitTimeout">LastTakeHitTimeout</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=130" title="Edit section: LastTakeHitTimeout">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>stop considering LastTakeHitInfo for replication when world time passes this (so we don't replicate out-of-date hits when pawns become relevant)</p>
+<h4><span class="mw-headline" id="LeftFootBone">LeftFootBone</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=131" title="Edit section: LeftFootBone">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p>Foot placement IK system</p>
+<h4><span class="mw-headline" id="LeftFootControlName">LeftFootControlName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=132" title="Edit section: LeftFootControlName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p><br />
+<b>Default value:</b> 'LeftFootControl'</p>
+<h4><span class="mw-headline" id="LeftHandIK">LeftHandIK</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=133" title="Edit section: LeftHandIK">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SkelControlLimb_(UDK).html" title="UE3:SkelControlLimb (UDK)">SkelControlLimb</a></p>
+<p>cached references to skeletal control for hand IK</p>
+<h4><span class="mw-headline" id="LeftLegControl">LeftLegControl</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=134" title="Edit section: LeftLegControl">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SkelControlFootPlacement_(UDK).html" title="UE3:SkelControlFootPlacement (UDK)">SkelControlFootPlacement</a></p>
+<p>cached references to skeletal controllers for foot placement</p>
+<h4><span class="mw-headline" id="LeftRecoilNode">LeftRecoilNode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=135" title="Edit section: LeftRecoilNode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_GameSkelCtrl_Recoil_(UDK).html" title="UE3:GameSkelCtrl Recoil (UDK)">GameSkelCtrl_Recoil</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LightEnvironment">LightEnvironment</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=136" title="Edit section: LightEnvironment">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_DynamicLightEnvironmentComponent_(UDK).html" title="UE3:DynamicLightEnvironmentComponent (UDK)">DynamicLightEnvironmentComponent</a></p>
+<p>The pawn's light environment</p>
+<p><b>Default value:</b> <a href="UE3_DynamicLightEnvironmentComponent_(UDK).html" title="UE3:DynamicLightEnvironmentComponent (UDK)">DynamicLightEnvironmentComponent</a>'<a href="UE3_UTPawn_defaults_(UDK).html#MyLightEnvironment" title="UE3:UTPawn defaults (UDK)">MyLightEnvironment</a>'</p>
+<h4><span class="mw-headline" id="LookYaw">LookYaw</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=137" title="Edit section: LookYaw">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>The Yaw Used to looking around</p>
+<h4><span class="mw-headline" id="MapSize">MapSize</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=138" title="Edit section: MapSize">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="MaxDoubleJumpHeight">MaxDoubleJumpHeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=139" title="Edit section: MaxDoubleJumpHeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 87.0</p>
+<h4><span class="mw-headline" id="MaxFootPlacementDistSquared">MaxFootPlacementDistSquared</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=140" title="Edit section: MaxFootPlacementDistSquared">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>if the pawn is farther than this away from the viewer, foot placement is skipped</p>
+<p><b>Default value:</b> 5.625E7</p>
+<h4><span class="mw-headline" id="MaxFootstepDistSq">MaxFootstepDistSq</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=141" title="Edit section: MaxFootstepDistSq">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Max distance from listener to play footstep sounds</p>
+<p><b>Default value:</b> 9000000.0</p>
+<h4><span class="mw-headline" id="MaxJumpSoundDistSq">MaxJumpSoundDistSq</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=142" title="Edit section: MaxJumpSoundDistSq">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Max distance from listener to play jump/land sounds</p>
+<p><b>Default value:</b> 1.6E7</p>
+<h4><span class="mw-headline" id="MaxLeanRoll">MaxLeanRoll</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=143" title="Edit section: MaxLeanRoll">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br />
+<b>Default value:</b> 2048</p>
+<h4><span class="mw-headline" id="MaxMultiJump">MaxMultiJump</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=144" title="Edit section: MaxMultiJump">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br />
+<b>Default value:</b> 1</p>
+<h4><span class="mw-headline" id="MinHoverboardInterval">MinHoverboardInterval</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=145" title="Edit section: MinHoverboardInterval">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 0.7</p>
+<h4><span class="mw-headline" id="MinTimeBetweenEmotes">MinTimeBetweenEmotes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=146" title="Edit section: MinTimeBetweenEmotes">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Controls how often you can send an emote.</p>
+<p><b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="MultiJumpBoost">MultiJumpBoost</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=147" title="Edit section: MultiJumpBoost">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br />
+<b>Default value:</b> -45</p>
+<h4><span class="mw-headline" id="MultiJumpRemaining">MultiJumpRemaining</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=148" title="Edit section: MultiJumpRemaining">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br />
+<b>Default value:</b> 1</p>
+<h4><span class="mw-headline" id="NoDriveBodies">NoDriveBodies</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=149" title="Edit section: NoDriveBodies">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Name.html" title="Name" class="mw-redirect">name</a>&gt;</p>
+<p>Array of bodies that should not have joint drive applied.</p>
+<h4><span class="mw-headline" id="OldCameraPosition">OldCameraPosition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=150" title="Edit section: OldCameraPosition">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p>OldCameraPosition saved when dead for use if fall below killz</p>
+<h4><span class="mw-headline" id="OldLocationZ">OldLocationZ</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=151" title="Edit section: OldLocationZ">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="OverlayMaterialInstance">OverlayMaterialInstance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=152" title="Edit section: OverlayMaterialInstance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_MaterialInterface_(UDK).html" title="UE3:MaterialInterface (UDK)">MaterialInterface</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected, repnotify</p>
+<p>material that is overlayed on the pawn via a separate slightly larger scaled version of the pawn's mesh Use SetOverlayMaterial() / GetOverlayMaterial() to access.</p>
+<h4><span class="mw-headline" id="OverlayMesh">OverlayMesh</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=153" title="Edit section: OverlayMesh">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SkeletalMeshComponent_(UDK).html" title="UE3:SkeletalMeshComponent (UDK)">SkeletalMeshComponent</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected</p>
+<p>mesh for overlay - should not be added to Components array in defaultproperties</p>
+<p><b>Default value:</b> <a href="UE3_SkeletalMeshComponent_(UDK).html" title="UE3:SkeletalMeshComponent (UDK)">SkeletalMeshComponent</a>'<a href="UE3_UTPawn_defaults_(UDK).html#OverlayMeshComponent0" title="UE3:UTPawn defaults (UDK)">OverlayMeshComponent0</a>'</p>
+<h4><span class="mw-headline" id="PartialHealth">PartialHealth</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=154" title="Edit section: PartialHealth">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Partial Health Recharge (&lt; 1 health)</p>
+<h4><span class="mw-headline" id="PawnAmbientSound">PawnAmbientSound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=155" title="Edit section: PawnAmbientSound">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_AudioComponent_(UDK).html" title="UE3:AudioComponent (UDK)">AudioComponent</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected</p>
+<p>pawn ambient sound (for powerups and such)</p>
+<p><b>Default value:</b> <a href="UE3_UTAmbientSoundComponent_(UDK).html" title="UE3:UTAmbientSoundComponent (UDK)">UTAmbientSoundComponent</a>'<a href="UE3_UTPawn_defaults_(UDK).html#AmbientSoundComponent" title="UE3:UTPawn defaults (UDK)">AmbientSoundComponent</a>'</p>
+<h4><span class="mw-headline" id="PawnAmbientSoundCue">PawnAmbientSoundCue</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=156" title="Edit section: PawnAmbientSoundCue">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SoundCue_(UDK).html" title="UE3:SoundCue (UDK)">SoundCue</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected, repnotify</p>
+<p>ambient cue played on PawnAmbientSound component; automatically replicated and played on clients. Access via SetPawnAmbientSound() / GetPawnAmbientSound()</p>
+<h4><span class="mw-headline" id="PawnEffectSockets">PawnEffectSockets</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=157" title="Edit section: PawnEffectSockets">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 2</p>
+<p>Socket to find the feet</p>
+<p><b>Default value, index 0:</b> 'L_JB'</p>
+<p><b>Default value, index 1:</b> 'R_JB'</p>
+<h4><span class="mw-headline" id="RagdollLifespan">RagdollLifespan</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=158" title="Edit section: RagdollLifespan">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 18.0</p>
+<h4><span class="mw-headline" id="RemainingBodyMatDuration">RemainingBodyMatDuration</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=159" title="Edit section: RemainingBodyMatDuration">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>how much time is left on this material</p>
+<h4><span class="mw-headline" id="ReplicatedBodyMaterial">ReplicatedBodyMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=160" title="Edit section: ReplicatedBodyMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> repnotify</p>
+<p>Skin swapping support</p>
+<h4><span class="mw-headline" id="RightFootBone">RightFootBone</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=161" title="Edit section: RightFootBone">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p>Foot placement IK system</p>
+<h4><span class="mw-headline" id="RightFootControlName">RightFootControlName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=162" title="Edit section: RightFootControlName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p><br />
+<b>Default value:</b> 'RightFootControl'</p>
+<h4><span class="mw-headline" id="RightHandIK">RightHandIK</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=163" title="Edit section: RightHandIK">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SkelControlLimb_(UDK).html" title="UE3:SkelControlLimb (UDK)">SkelControlLimb</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="RightLegControl">RightLegControl</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=164" title="Edit section: RightLegControl">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SkelControlFootPlacement_(UDK).html" title="UE3:SkelControlFootPlacement (UDK)">SkelControlFootPlacement</a></p>
+<p>cached references to skeletal controllers for foot placement</p>
+<h4><span class="mw-headline" id="RightRecoilNode">RightRecoilNode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=165" title="Edit section: RightRecoilNode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_GameSkelCtrl_Recoil_(UDK).html" title="UE3:GameSkelCtrl Recoil (UDK)">GameSkelCtrl_Recoil</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="RootRotControl">RootRotControl</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=166" title="Edit section: RootRotControl">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SkelControlSingleBone_(UDK).html" title="UE3:SkelControlSingleBone (UDK)">SkelControlSingleBone</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="RootYaw">RootYaw</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=167" title="Edit section: RootYaw">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Current yaw of the mesh root. This essentially lags behind the actual Pawn rotation yaw.</p>
+<h4><span class="mw-headline" id="RootYawSpeed">RootYawSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=168" title="Edit section: RootYawSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Output - how quickly RootYaw is changing (unreal rot units per second).</p>
+<h4><span class="mw-headline" id="SaturationParameterName">SaturationParameterName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=169" title="Edit section: SaturationParameterName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p>material parameter containing color saturation multiplier (for reducing to account for zoom)</p>
+<p><b>Default value:</b> 'Char_DistSatRangeMultiplier'</p>
+<h4><span class="mw-headline" id="ShieldBeltArmor">ShieldBeltArmor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=170" title="Edit section: ShieldBeltArmor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Armor</p>
+<h4><span class="mw-headline" id="ShieldBeltMaterialInstance">ShieldBeltMaterialInstance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=171" title="Edit section: ShieldBeltMaterialInstance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_MaterialInterface_(UDK).html" title="UE3:MaterialInterface (UDK)">MaterialInterface</a></p>
+<p>The default overlay to use when not in a team game</p>
+<p><b>Default value:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a>'Pickups.Armor_ShieldBelt.M_ShieldBelt_Overlay'</p>
+<h4><span class="mw-headline" id="ShieldBeltPickupClass">ShieldBeltPickupClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=172" title="Edit section: ShieldBeltPickupClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_UTDroppedItemPickup_(UDK).html" title="UE3:UTDroppedItemPickup (UDK)">UTDroppedItemPickup</a>&gt;</p>
+<p>class to spawn if shield belt is stolen; should be set by pickup that adds ShieldBeltArmor</p>
+<h4><span class="mw-headline" id="ShieldBeltTeamMaterialInstances">ShieldBeltTeamMaterialInstances</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=173" title="Edit section: ShieldBeltTeamMaterialInstances">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_MaterialInterface_(UDK).html" title="UE3:MaterialInterface (UDK)">MaterialInterface</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 4</p>
+<p>A collection of overlays to use in team games</p>
+<p><b>Default value, index 0:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a>'Pickups.Armor_ShieldBelt.M_ShieldBelt_Red'</p>
+<p><b>Default value, index 1:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a>'Pickups.Armor_ShieldBelt.M_ShieldBelt_Blue'</p>
+<p><b>Default value, index 2:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a>'Pickups.Armor_ShieldBelt.M_ShieldBelt_Red'</p>
+<p><b>Default value, index 3:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a>'Pickups.Armor_ShieldBelt.M_ShieldBelt_Blue'</p>
+<h4><span class="mw-headline" id="SlopeBoostFriction">SlopeBoostFriction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=174" title="Edit section: SlopeBoostFriction">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>which materials allow slope boosting</p>
+<p><b>Default value:</b> 0.2</p>
+<h4><span class="mw-headline" id="SoundGroupClass">SoundGroupClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=175" title="Edit section: SoundGroupClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_UTPawnSoundGroup_(UDK).html" title="UE3:UTPawnSoundGroup (UDK)">UTPawnSoundGroup</a>&gt;</p>
+<p><br />
+<b>Default value:</b> <a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UTPawnSoundGroup_(UDK).html" title="UE3:UTPawnSoundGroup (UDK)">UTGame.UTPawnSoundGroup</a>'</p>
+<h4><span class="mw-headline" id="SpawnProtectionColor">SpawnProtectionColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=176" title="Edit section: SpawnProtectionColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p>This is the color that will be applied when a pawn is first spawned in and is covered by protection</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>40.0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>40.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="SpawnSound">SpawnSound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=177" title="Edit section: SpawnSound">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SoundCue_(UDK).html" title="UE3:SoundCue (UDK)">SoundCue</a></p>
+<p>sound played when initially spawning in</p>
+<p><b>Default value:</b> <a href="UE3_SoundCue_(UDK).html" title="UE3:SoundCue (UDK)">SoundCue</a>'A_Gameplay.A_Gameplay_PlayerSpawn01Cue'</p>
+<h4><span class="mw-headline" id="StartDeathAnimTime">StartDeathAnimTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=178" title="Edit section: StartDeathAnimTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>World time that we started the death animation</p>
+<h4><span class="mw-headline" id="StartedFallingTime">StartedFallingTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=179" title="Edit section: StartedFallingTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>last time Pawn was falling and had non-zero velocity used to detect a rare bug where pawns get just barely embedded in a mesh and fall forever</p>
+<h4><span class="mw-headline" id="StartFallImpactTime">StartFallImpactTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=180" title="Edit section: StartFallImpactTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>time above bool was set to true (for time out)</p>
+<h4><span class="mw-headline" id="SuperHealthMax">SuperHealthMax</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=181" title="Edit section: SuperHealthMax">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br />
+<b>Default value:</b> 199</p>
+<h4><span class="mw-headline" id="TakeHitPhysicsBlendOutSpeed">TakeHitPhysicsBlendOutSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=182" title="Edit section: TakeHitPhysicsBlendOutSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>speed at which physics is blended out when bBlendOutTakeHitPhysics is true (amount subtracted from PhysicsWeight per second)</p>
+<p><b>Default value:</b> 0.5</p>
+<h4><span class="mw-headline" id="TakeHitPhysicsFixedBones">TakeHitPhysicsFixedBones</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=183" title="Edit section: TakeHitPhysicsFixedBones">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Name.html" title="Name" class="mw-redirect">name</a>&gt;</p>
+<p>bones to set fixed when doing the physics take hit effects</p>
+<h4><span class="mw-headline" id="TauntNames">TauntNames</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=184" title="Edit section: TauntNames">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 6</p>
+<p><br />
+<b>Default value, index 0:</b> 'TauntA'</p>
+<p><b>Default value, index 1:</b> 'TauntB'</p>
+<p><b>Default value, index 2:</b> 'TauntC'</p>
+<p><b>Default value, index 3:</b> 'TauntD'</p>
+<p><b>Default value, index 4:</b> 'TauntE'</p>
+<p><b>Default value, index 5:</b> 'TauntF'</p>
+<h4><span class="mw-headline" id="TeleportSound">TeleportSound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=185" title="Edit section: TeleportSound">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SoundCue_(UDK).html" title="UE3:SoundCue (UDK)">SoundCue</a></p>
+<p>sound played when we teleport</p>
+<p><b>Default value:</b> <a href="UE3_SoundCue_(UDK).html" title="UE3:SoundCue (UDK)">SoundCue</a>'A_Weapon_Translocator.Translocator.A_Weapon_Translocator_Teleport_Cue'</p>
+<h4><span class="mw-headline" id="ThighpadArmor">ThighpadArmor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=186" title="Edit section: ThighpadArmor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TimeLastTookDeathAnimDamage">TimeLastTookDeathAnimDamage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=187" title="Edit section: TimeLastTookDeathAnimDamage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Time that we took damage of type DeathAnimDamageType.</p>
+<h4><span class="mw-headline" id="TopHalfAnimSlot">TopHalfAnimSlot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=188" title="Edit section: TopHalfAnimSlot">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_AnimNodeSlot_(UDK).html" title="UE3:AnimNodeSlot (UDK)">AnimNodeSlot</a></p>
+<p>Slot node used for playing animations only on the top half.</p>
+<h4><span class="mw-headline" id="TorsoBoneName">TorsoBoneName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=189" title="Edit section: TorsoBoneName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p>name of the torso bone for playing impacts</p>
+<p><b>Default value:</b> 'b_Spine2'</p>
+<h4><span class="mw-headline" id="Trackers">Trackers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=190" title="Edit section: Trackers">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&gt;</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TransCameraAnim">TransCameraAnim</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=191" title="Edit section: TransCameraAnim">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_CameraAnim_(UDK).html" title="UE3:CameraAnim (UDK)">CameraAnim</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 3</p>
+<p>camera anim played when spawned/teleported</p>
+<p><b>Default value, index 0:</b> <a href="UE3_CameraAnim_(UDK).html" title="UE3:CameraAnim (UDK)">CameraAnim</a>'Envy_Effects.Camera_Shakes.C_Res_IN_Red'</p>
+<p><b>Default value, index 1:</b> <a href="UE3_CameraAnim_(UDK).html" title="UE3:CameraAnim (UDK)">CameraAnim</a>'Envy_Effects.Camera_Shakes.C_Res_IN_Blue'</p>
+<p><b>Default value, index 2:</b> <a href="UE3_CameraAnim_(UDK).html" title="UE3:CameraAnim (UDK)">CameraAnim</a>'Envy_Effects.Camera_Shakes.C_Res_IN'</p>
+<h4><span class="mw-headline" id="TransInEffects">TransInEffects</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=192" title="Edit section: TransInEffects">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&gt;</p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 2</p>
+<p><br />
+<b>Default value, index 0:</b> <a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UTEmit_TransLocateOutRed_(UDK).html" title="UE3:UTEmit TransLocateOutRed (UDK)">UTGame.UTEmit_TransLocateOutRed</a>'</p>
+<p><b>Default value, index 1:</b> <a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UTEmit_TransLocateOut_(UDK).html" title="UE3:UTEmit TransLocateOut (UDK)">UTGame.UTEmit_TransLocateOut</a>'</p>
+<h4><span class="mw-headline" id="TranslocateColor">TranslocateColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=193" title="Edit section: TranslocateColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 2</p>
+<p><br />
+<b>Default value, index 0:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>20.0</td>
+</tr>
+</table>
+<p><b>Default value, index 1:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>20.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="Twisting">Twisting</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=194" title="Edit section: Twisting">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Maximum allowable boosted health</p>
+<h4><span class="mw-headline" id="UnfeignFailedCount">UnfeignFailedCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=195" title="Edit section: UnfeignFailedCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>count of failed unfeign attempts - kill pawn if too many</p>
+<h4><span class="mw-headline" id="VehicleNode">VehicleNode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=196" title="Edit section: VehicleNode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UTAnimBlendByVehicle_(UDK).html" title="UE3:UTAnimBlendByVehicle (UDK)">UTAnimBlendByVehicle</a></p>
+<p>Node used for blending between different types of vehicle.</p>
+<h4><span class="mw-headline" id="VestArmor">VestArmor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=197" title="Edit section: VestArmor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="WalkBob">WalkBob</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=198" title="Edit section: WalkBob">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="WeaponAmbientSound">WeaponAmbientSound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=199" title="Edit section: WeaponAmbientSound">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_AudioComponent_(UDK).html" title="UE3:AudioComponent (UDK)">AudioComponent</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected</p>
+<p>separate replicated ambient sound for weapon firing - access via SetWeaponAmbientSound() / GetWeaponAmbientSound()</p>
+<p><b>Default value:</b> <a href="UE3_UTAmbientSoundComponent_(UDK).html" title="UE3:UTAmbientSoundComponent (UDK)">UTAmbientSoundComponent</a>'<a href="UE3_UTPawn_defaults_(UDK).html#AmbientSoundComponent2" title="UE3:UTPawn defaults (UDK)">AmbientSoundComponent2</a>'</p>
+<h4><span class="mw-headline" id="WeaponAmbientSoundCue">WeaponAmbientSoundCue</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=200" title="Edit section: WeaponAmbientSoundCue">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SoundCue_(UDK).html" title="UE3:SoundCue (UDK)">SoundCue</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected, repnotify</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="WeaponOverlayFlags">WeaponOverlayFlags</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=201" title="Edit section: WeaponOverlayFlags">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> repnotify</p>
+<p>Use SetWeaponOverlayFlag() / ClearWeaponOverlayFlag to adjust</p>
+<h4><span class="mw-headline" id="WeaponSocket">WeaponSocket</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=202" title="Edit section: WeaponSocket">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p>WeaponSocket contains the name of the socket used for attaching weapons to this pawn.</p>
+<p><b>Default value:</b> 'WeaponPoint'</p>
+<h4><span class="mw-headline" id="WeaponSocket2">WeaponSocket2</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=203" title="Edit section: WeaponSocket2">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p>WeaponSocket contains the name of the socket used for attaching weapons to this pawn.</p>
+<p><b>Default value:</b> 'DualWeaponPoint'</p>
+<h4><span class="mw-headline" id="ZSmoothingRate">ZSmoothingRate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)?section=204" title="Edit section: ZSmoothingRate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.706 seconds
+Real time usage: 1.073 seconds
+Preprocessor visited node count: 5385/1000000
+Preprocessor generated node count: 6273/1000000
+Post‐expand include size: 30512/2097152 bytes
+Template argument size: 6314/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  675.238      1 - -total
+ 42.37%  286.075    102 - Template:Samegame
+ 38.99%  263.309     73 - Template:Cl
+ 27.21%  183.758      1 - Template:Infobox_class_part
+ 26.38%  178.146      1 - Template:Infobox_class_part/core
+ 22.37%  151.045     29 - Template:Tl
+  5.52%   37.254      1 - Template:Ch
+  2.02%   13.614      1 - Template:Autogenerated
+  1.58%   10.647      1 - Template:Ambox
+  1.52%   10.261      3 - Template:Gamename
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:27815-0!*!*!*!*!*!* and timestamp 20161215183420 and revision id 42090
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:UTPawn_internal_variables_(UDK)?oldid=42090">https://wiki.beyondunreal.com/UE3:UTPawn_internal_variables_(UDK)?oldid=42090</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_UTPawn_internal_variables_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:UTPawn_internal_variables_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:UTPawn_internal_variables_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:UTPawn_internal_variables_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AUTPawn+internal+variables+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AUTPawn+internal+variables+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:UTPawn_internal_variables_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:UTPawn_internal_variables_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:UTPawn_internal_variables_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:UTPawn_internal_variables_(UDK)?oldid=42090" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:UTPawn_internal_variables_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 08:01, 17 January 2010.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":159});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:UTPawn_internal_variables_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:56:24 GMT -->
+</html>

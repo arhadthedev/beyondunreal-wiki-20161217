@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:UnrealScript_Grammar by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:55:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:UnrealScript Grammar - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Grammar" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Grammar" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_UnrealScript_Grammar.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:UnrealScript_Grammar","wgTitle":"UnrealScript Grammar","wgCurRevisionId":8854,"wgRevisionId":8854,"wgArticleId":3441,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:UnrealScript_Grammar","wgRelevantArticleId":3441,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_UnrealScript_Grammar skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Cogito, ergo sum
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:UnrealScript Grammar</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This is a <a href="http://en.wikipedia.org/wiki/EBNF" class="extiw" title="wikipedia:EBNF">Wikipedia:EBNF</a> Specification of the <a href="Legacy_UnrealScript.html" title="Legacy:UnrealScript">UnrealScript</a> grammar.</p>
+<p>It can be useful if you are going to write a parser for the UnrealScript language.</p>
+<p><b>Note:</b> this is not the official specification, it's made by visitors of the UnrealWiki.</p>
+<p><i><b>Important note:</b></i> the stock UnrealScript compiler doesn't follow strict rules as usually specified by a grammar like this. It is very well possible that the compiler accepts constructions not documented here. See <a href="Legacy_UnrealScript_Language_Test.html" title="Legacy:UnrealScript Language Test">UnrealScript Language Test</a> for actual examples of various constructions.</p>
+<p><b>Edit guidelines:</b></p>
+<ul>
+<li>all non-terminals should have all uppercase characters. Keep everything aligned. If you leave things <i>open</i> use '...' to make that clear.</li>
+<li>Always use as much brackets as needed, don't optimize because this can result in confusion.</li>
+<li>Terminals that are words can be used directly in the production rules, otherwise you must use a terminal rule.</li>
+</ul>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Non-Terminals"><span class="tocnumber">1</span> <span class="toctext">Non-Terminals</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Declaration_parts"><span class="tocnumber">1.1</span> <span class="toctext">Declaration parts</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Replication_parts"><span class="tocnumber">1.2</span> <span class="toctext">Replication parts</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Body_parts"><span class="tocnumber">1.3</span> <span class="toctext">Body parts</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#State_parts"><span class="tocnumber">1.3.1</span> <span class="toctext">State parts</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Function_parts"><span class="tocnumber">1.3.2</span> <span class="toctext">Function parts</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Code_parts"><span class="tocnumber">1.3.3</span> <span class="toctext">Code parts</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Defaultproperties"><span class="tocnumber">1.4</span> <span class="toctext">Defaultproperties</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Terminals"><span class="tocnumber">2</span> <span class="toctext">Terminals</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Notes"><span class="tocnumber">3</span> <span class="toctext">Notes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#Case"><span class="tocnumber">3.1</span> <span class="toctext">Case</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Unreal_Engine"><span class="tocnumber">3.2</span> <span class="toctext">Unreal Engine</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Related_Topics"><span class="tocnumber">4</span> <span class="toctext">Related Topics</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Discussion"><span class="tocnumber">5</span> <span class="toctext">Discussion</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Non-Terminals">Non-Terminals</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Grammar?section=1" title="Edit section: Non-Terminals">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+PROGRAM                  <span class="sy0">=</span> CLASSDECL 
+                           <span class="br0">(</span> DECLARATIONS <span class="br0">)</span><span class="sy0">*</span>
+                           <span class="br0">(</span> REPLICATIONBLOCK <span class="br0">)</span>? 
+                           BODY 
+                           <span class="br0">(</span> DEFAULTPROPERTIESBLOCK <span class="br0">)</span>?
+ 
+CLASSDECL                <span class="sy0">=</span> <span class="kw1">class</span> IDENTIFIER <span class="br0">(</span> <span class="kw1">extends</span> PACKAGEIDENTIFIER <span class="br0">)</span>? 
+                           <span class="br0">(</span> CLASSPARAMS <span class="br0">)</span><span class="sy0">*</span> SEMICOLON
+ 
+CLASSPARAMS              <span class="sy0">=</span> CONSTCLASSPARAMS <span class="sy0">|</span> within PACKAGEIDENTIFIER <span class="sy0">|</span> 
+                           dependson LBRACK PACKAGEIDENTIFIER RBRACK <span class="sy0">|</span>
+                           <span class="kw1">config</span> <span class="br0">(</span> LBRACK PACKAGEIDENTIFIER RBRACK <span class="br0">)</span>? <span class="sy0">|</span>
+                           hidecategories LBRACK IDENTIFIERLIST RBRACK <span class="sy0">|</span>
+                           showcategories LBRACK IDENTIFIERLIST RBRACK                           
+ 
+IDENTIFIER               <span class="sy0">=</span> <span class="br0">(</span> ALPHA <span class="sy0">|</span> UNDERSCORE <span class="br0">)</span> <span class="br0">(</span> ALPHA <span class="sy0">|</span> UNDERSCORE <span class="sy0">|</span> DIGIT <span class="br0">)</span><span class="sy0">*</span>
+                           <span class="co1">// packagename.classname or classname.structname</span>
+PACKAGEIDENTIFIER        <span class="sy0">=</span> <span class="br0">(</span> IDENTIFIER DOT <span class="br0">)</span>? IDENTIFIER
+QUALIFIEDIDENTIFIER      <span class="sy0">=</span> <span class="br0">(</span> <span class="br0">(</span> <span class="kw1">class</span> SQUOTE PACKAGEIDENTIFIER SQUOTE DOT <span class="kw1">default</span> DOT IDENTIFIER <span class="br0">)</span>
+                           <span class="sy0">|</span> <span class="br0">(</span> <span class="br0">(</span> IDENTIFIER DOT <span class="br0">)</span><span class="sy0">*</span> IDENTIFIER <span class="br0">)</span> 
+                           <span class="br0">)</span>
+IDENTIFIERLIST           <span class="sy0">=</span> IDENTIFIER <span class="br0">(</span> COMMA IDENTIFIER <span class="br0">)</span><span class="sy0">*</span>
+ 
+STRINGVAL                <span class="sy0">=</span> DQUOTE PRINTABLE DQUOTE
+INTVAL                   <span class="sy0">=</span> <span class="br0">(</span> DIGIT<span class="sy0">+</span> <span class="sy0">|</span> <span class="br0">(</span> <span class="st0">'0x'</span> <span class="br0">(</span> HEXDIGIT <span class="br0">)</span><span class="sy0">+</span> <span class="br0">)</span> <span class="br0">)</span>
+FLOATVAL                 <span class="sy0">=</span> <span class="br0">(</span> DIGIT <span class="br0">)</span><span class="sy0">+</span> DOT <span class="br0">(</span> DIGIT <span class="br0">)</span><span class="sy0">*</span>
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="Declaration_parts">Declaration parts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Grammar?section=2" title="Edit section: Declaration parts">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+DECLARATIONS             <span class="sy0">=</span> <span class="br0">(</span> CONSTDECL <span class="sy0">|</span> VARDECL <span class="sy0">|</span> ENUMDECL <span class="sy0">|</span> STRUCTDECL <span class="br0">)</span> SEMICOLON
+ 
+CONSTDECL                <span class="sy0">=</span> <span class="kw1">const</span> IDENTIFIER <span class="sy0">=</span> CONSTVALUE
+CONSTVALUE               <span class="sy0">=</span> <span class="br0">(</span> STRINGVAL <span class="sy0">|</span> INTVAL <span class="sy0">|</span> FLOATVAL <span class="sy0">|</span> BOOLVAL <span class="br0">)</span>
+ 
+VARDECL                  <span class="sy0">=</span> <span class="kw1">var</span> <span class="br0">(</span> CONFIGGROUP <span class="br0">)</span>? <span class="br0">(</span> VARPARAMS <span class="br0">)</span><span class="sy0">*</span> 
+                           VARTYPE VARIDENTIFIER <span class="br0">(</span> COMMA VARIDENTIFIER <span class="br0">)</span><span class="sy0">*</span>
+CONFIGGROUP              <span class="sy0">=</span> LBRACK <span class="br0">(</span> IDENTIFIER <span class="br0">)</span>? RBRACK
+VARTYPE                  <span class="sy0">=</span> PACKAGEIDENTIFIER <span class="sy0">|</span> ENUMDECL <span class="sy0">|</span> STRUCTDECL <span class="sy0">|</span> ARRAYDECL <span class="sy0">|</span> CLASSTYPE <span class="sy0">|</span> BASICTYPE
+VARIDENTIFIER            <span class="sy0">=</span> IDENTIFIER
+ 
+ARRAYDECL                <span class="sy0">=</span> IDENTIFIER LSBRACK INTVAL RSBRACK
+DYNARRAYDECL             <span class="sy0">=</span> array LABRACK <span class="br0">(</span>PACKAGEIDENTIFIER <span class="sy0">|</span> CLASSTYPE <span class="sy0">|</span> BASICTYPE<span class="br0">)</span> RABRACK
+CLASSTYPE                <span class="sy0">=</span> <span class="kw1">class</span> LABRACK PACKAGEIDENTIFIER RABRACK
+ 
+ENUMDECL                 <span class="sy0">=</span> <span class="kw1">enum</span> IDENTIFIER LCBRACK ENUMOPTIONS RCBRACK
+ENUMOPTIONS              <span class="sy0">=</span> IDENTIFIER <span class="br0">(</span> COMMA IDENTIFIER <span class="br0">)</span><span class="sy0">*</span>
+ 
+STRUCTDECL               <span class="sy0">=</span> <span class="kw1">struct</span> <span class="br0">(</span> STRUCTPARAMS <span class="br0">)</span><span class="sy0">*</span> IDENTIFIER <span class="br0">(</span> <span class="kw1">extends</span> PACKAGEIDENTIFIER <span class="br0">)</span>? 
+                           LCBRACK STRUCTBODY RCBRACK
+STRUCTPARAMS             <span class="sy0">=</span> <span class="br0">(</span> <span class="kw1">native</span> <span class="sy0">|</span> export <span class="br0">)</span>
+STRUCTBODY               <span class="sy0">=</span> <span class="br0">(</span> VARDECL SEMICOLON <span class="br0">)</span><span class="sy0">+</span>
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="Replication_parts">Replication parts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Grammar?section=3" title="Edit section: Replication parts">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+REPLICATIONBLOCK         <span class="sy0">=</span> <span class="kw1">replication</span> LCBRACK <span class="br0">(</span> REPLICATIONBODY <span class="br0">)</span><span class="sy0">*</span> RCBRACK
+REPLICATIONBODY          <span class="sy0">=</span> <span class="br0">(</span> <span class="kw1">reliable</span> <span class="sy0">|</span> <span class="kw1">unreliable</span> <span class="br0">)</span> <span class="kw2">if</span> LBRACK EXPR RBRACK 
+                           IDENTIFIER <span class="br0">(</span> COMMA IDENTIFIER <span class="br0">)</span><span class="sy0">*</span> SEMICOLON
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="Body_parts">Body parts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Grammar?section=4" title="Edit section: Body parts">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+BODY                     <span class="sy0">=</span> <span class="br0">(</span> STATEDECL <span class="sy0">|</span> FUNCTIONDECL <span class="br0">)</span><span class="sy0">*</span>
+</pre></div>
+</div>
+<h4><span class="mw-headline" id="State_parts">State parts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Grammar?section=5" title="Edit section: State parts">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+STATEDECL                <span class="sy0">=</span> <span class="br0">(</span> STATEPARAMS <span class="br0">)</span><span class="sy0">*</span> <span class="kw1">state</span> IDENTIFIER <span class="br0">(</span> CONFIGGROUP <span class="br0">)</span>? <span class="br0">(</span> <span class="kw1">extends</span> IDENTIFIER <span class="br0">)</span>? STATEBODY
+STATEBODY                <span class="sy0">=</span> LCBRACK <span class="br0">(</span> STATEIGNORE <span class="br0">)</span>? <span class="br0">(</span> FUNCTIONDECL <span class="br0">)</span><span class="sy0">*</span> STATELABELS RCBRACK
+STATEIGNORE              <span class="sy0">=</span> <span class="kw1">ignores</span> IDENTIFIER <span class="br0">(</span> COMMA IDENTIFIER <span class="br0">)</span><span class="sy0">*</span> SEMICOLON
+STATELABELS              <span class="sy0">=</span> <span class="br0">(</span> IDENTIFIER COLON <span class="br0">(</span> CODELINE <span class="br0">)</span><span class="sy0">*</span> <span class="br0">)</span><span class="sy0">*</span>
+</pre></div>
+</div>
+<h4><span class="mw-headline" id="Function_parts">Function parts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Grammar?section=6" title="Edit section: Function parts">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+                           <span class="co1">// operators require an set amouth of arguments</span>
+FUNCTIONDECL             <span class="sy0">=</span> <span class="br0">(</span> NORMALFUNC <span class="sy0">|</span> OPERATORFUNC <span class="br0">)</span>
+ 
+NORMALFUNC               <span class="sy0">=</span> <span class="br0">(</span> FUNCTIONPARAMS <span class="br0">)</span><span class="sy0">*</span> FUNCTIONTYPE <span class="br0">(</span> LOCALTYPE <span class="br0">)</span>? 
+                           IDENTIFIER LBRACK <span class="br0">(</span> FUNCTIONARGS <span class="br0">(</span> COMMA FUNCTIONARGS <span class="br0">)</span><span class="sy0">*</span> <span class="br0">)</span>? RBRACK 
+                           FUNCTIONBODY
+ 
+FUNCTIONPARAMS           <span class="sy0">=</span> CONSTFUNCPARAMS <span class="sy0">|</span> <span class="kw1">native</span> <span class="br0">(</span> LBRACK INTVAL RBRACK <span class="br0">)</span>?
+ 
+OPERATORFUNC             <span class="sy0">=</span> <span class="br0">(</span> FUNCTIONPARAMS <span class="br0">)</span><span class="sy0">*</span> OPERATORTYPE FUNCTIONBODY
+OPERATORTYPE             <span class="sy0">=</span> <span class="br0">(</span> BINARYOPERATOR <span class="sy0">|</span> UNARYOPERATOR <span class="br0">)</span>
+                           <span class="co1">// requires two arguments</span>
+BINARYOPERATOR           <span class="sy0">=</span> <span class="kw1">operator</span> LBRACK INTVAL RBRACK PACKAGEIDENTIFIER OPIDENTIFIER 
+                           LBRACK FUNCTIONARGS COMMA FUNCTIONARGS RBRACK  
+                           <span class="co1">// requires one argument</span>
+UNARYOPERATOR            <span class="sy0">=</span> <span class="br0">(</span> <span class="kw1">preoperator</span> <span class="sy0">|</span> postoperator <span class="br0">)</span> PACKAGEIDENTIFIER OPIDENTIFIER 
+                           LBRACK FUNCTIONARGS RBRACK  
+OPIDENTIFIER             <span class="sy0">=</span> IDENTIFIER <span class="sy0">|</span> OPERATORNAMES
+ 
+FUNCTIONARGS             <span class="sy0">=</span> <span class="br0">(</span> <span class="kw1">optional</span> <span class="sy0">|</span> <span class="kw1">out</span> <span class="sy0">|</span> <span class="kw1">coerce</span> <span class="br0">)</span>? FUNCTIONARGTYPE IDENTIFIER
+FUNCTIONARGTYPE          <span class="sy0">=</span> BASICTYPE <span class="sy0">|</span> PACKAGEIDENTIFIER
+FUNCTIONBODY             <span class="sy0">=</span> <span class="br0">(</span> SEMICOLON <span class="sy0">|</span> <span class="br0">(</span> <span class="br0">(</span> LOCALDECL <span class="br0">)</span><span class="sy0">*</span> <span class="br0">(</span> CODELINE <span class="br0">)</span><span class="sy0">*</span> <span class="br0">)</span> <span class="br0">(</span> SEMICOLON <span class="br0">)</span>? <span class="br0">)</span>
+LOCALDECL                <span class="sy0">=</span> <span class="kw1">local</span> LOCALTYPE IDENTIFIER <span class="br0">(</span> COMMA IDENTIFIER <span class="br0">)</span><span class="sy0">*</span>
+LOCALTYPE                <span class="sy0">=</span> PACKAGEIDENTIFIER <span class="sy0">|</span> ARRAYDECL <span class="sy0">|</span> CLASSTYPE <span class="sy0">|</span> BASICTYPE
+</pre></div>
+</div>
+<h4><span class="mw-headline" id="Code_parts">Code parts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Grammar?section=7" title="Edit section: Code parts">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+CODELINE                 <span class="sy0">=</span> <span class="br0">(</span> STATEMENT <span class="sy0">|</span> ASSIGNMENT <span class="sy0">|</span> IFTHENELSE <span class="sy0">|</span> WHILELOOP <span class="sy0">|</span> DOLOOP 
+                           <span class="sy0">|</span> SWITCHCASE <span class="sy0">|</span> RETURNFUNC <span class="sy0">|</span> FOREACHLOOP <span class="sy0">|</span> FORLOOP <span class="br0">)</span>
+CODEBLOCK                <span class="sy0">=</span> <span class="br0">(</span> CODELINE <span class="sy0">|</span> <span class="br0">(</span> LCBRACK <span class="br0">(</span> CODELINE <span class="br0">)</span><span class="sy0">*</span> RCBRACK <span class="br0">)</span> <span class="br0">)</span>
+ 
+STATEMENT                <span class="sy0">=</span> FUNCCALL SEMICOLON
+ASSIGNMENT               <span class="sy0">=</span> IDENTIFIER EQUALS EXPR SEMICOLON
+IFTHENELSE               <span class="sy0">=</span> <span class="kw2">if</span> LBRACK EXPR RBRACK CODEBLOCK <span class="br0">(</span> <span class="kw2">else</span> CODEBLOCK <span class="br0">)</span>?
+WHILELOOP                <span class="sy0">=</span> <span class="kw2">while</span> LBRACK EXPR RBRACK CODEBLOCK
+DOLOOP                   <span class="sy0">=</span> <span class="kw2">do</span> CODEBLOCK until LBRACK EXPR RBRACK
+ 
+SWITCHCASE               <span class="sy0">=</span> <span class="kw2">switch</span> LBRACK EXPR RBRACK LCBRACK <span class="br0">(</span> CASERULE <span class="br0">)</span><span class="sy0">+</span> <span class="br0">(</span> DEFAULTRULE <span class="br0">)</span>? RCBRACK
+CASERULE                 <span class="sy0">=</span> <span class="kw2">case</span> INTVAL COLON CODEBLOCK
+DEFAULTRULE              <span class="sy0">=</span> <span class="kw1">default</span> CODEBLOCK
+ 
+RETURNFUNC               <span class="sy0">=</span> <span class="kw2">return</span> <span class="br0">(</span> EXPR <span class="br0">)</span>? SEMICOLON
+FOREACHLOOP              <span class="sy0">=</span> <span class="kw2">foreach</span> FUNCCALL CODEBLOCK
+FORLOOP                  <span class="sy0">=</span> <span class="kw2">for</span> LBRACK ASSIGNMENT SEMICOLON EXPR SEMICOLON EXPR RBRACK CODEBLOCK
+ 
+EXPR                     <span class="sy0">=</span> OPERAND <span class="br0">(</span> OPIDENTIFIER OPERAND <span class="br0">)</span><span class="sy0">*</span>
+OPERAND                  <span class="sy0">=</span> <span class="br0">(</span> CONSTVALUE <span class="sy0">|</span> QUALIFIEDIDENTIFIER <span class="sy0">|</span> FUNCCALL <span class="br0">)</span>
+FUNCCALL                 <span class="sy0">=</span> <span class="br0">(</span> <span class="br0">(</span> <span class="kw1">class</span> SQUOTE PACKAGEIDENTIFIER SQUOTE DOT <span class="kw1">static</span> DOT <span class="br0">)</span> 
+                           <span class="sy0">|</span> <span class="br0">(</span> <span class="br0">(</span> IDENTIFIER DOT <span class="br0">)</span><span class="sy0">+</span> <span class="br0">)</span>
+                           <span class="br0">)</span>? 
+                           IDENTIFIER LBRACK <span class="br0">(</span> EXPR <span class="br0">(</span> COMMA EXPR <span class="br0">)</span><span class="sy0">*</span> <span class="br0">)</span>? RBRACK
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="Defaultproperties">Defaultproperties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Grammar?section=8" title="Edit section: Defaultproperties">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+DEFAULTPROPERTIESBLOCK   <span class="sy0">=</span> <span class="kw1">defaultproperties</span> LCBRACK <span class="br0">(</span> DEFPROP <span class="br0">)</span><span class="sy0">*</span> RCBRACK
+DEFPROP                  <span class="sy0">=</span> DEFPROPIDENTIFIER EQUALS PRINTABLE
+DEFPROPIDENTIFIER        <span class="sy0">=</span> IDENTIFIER <span class="br0">(</span> <span class="br0">(</span> LBRACK INTVAL RBRACK <span class="br0">)</span> <span class="sy0">|</span> <span class="br0">(</span> LSBRACK INTVAL RSBRACK <span class="br0">)</span> <span class="br0">)</span>?
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="Terminals">Terminals</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Grammar?section=9" title="Edit section: Terminals">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+PRINTABLE                <span class="sy0">=</span> all printable characters
+ALPHA                    <span class="sy0">=</span> <span class="st0">'a'</span> .. <span class="st0">'z'</span>
+DIGIT                    <span class="sy0">=</span> <span class="st0">'0'</span> .. <span class="st0">'9'</span>
+HEXDIGIT                 <span class="sy0">=</span> DIGIT <span class="sy0">|</span> <span class="st0">'a'</span> .. <span class="st0">'f'</span>
+SEMICOLON                <span class="sy0">=</span> <span class="st0">';'</span>
+COLON                    <span class="sy0">=</span> <span class="st0">':'</span>
+UNDERSCORE               <span class="sy0">=</span> <span class="st0">'_'</span>
+LBRACK                   <span class="sy0">=</span> <span class="st0">'('</span>
+RBRACK                   <span class="sy0">=</span> <span class="st0">')'</span>
+LABRACK                  <span class="sy0">=</span> <span class="st0">'&lt;'</span>
+RABRACK                  <span class="sy0">=</span> <span class="st0">'&gt;'</span>
+LCBRACK                  <span class="sy0">=</span> <span class="st0">'{'</span>
+RCBRACK                  <span class="sy0">=</span> <span class="st0">'}'</span>
+LSBRACK                  <span class="sy0">=</span> <span class="st0">'['</span>
+RSBRACK                  <span class="sy0">=</span> <span class="st0">']'</span>
+DOT                      <span class="sy0">=</span> <span class="st0">'.'</span>
+COMMA                    <span class="sy0">=</span> <span class="st0">','</span>
+SQUOTE                   <span class="sy0">=</span> <span class="st0">''</span><span class="st0">'
+DQUOTE                   = '</span><span class="st0">"'
+EQUALS                   = '='
+ 
+CONSTCLASSPARAMS         = abstract | native | nativereplication | safereplace |
+                           perobjectconfig | transient | noexport | exportstructs |
+                           // available but obsolete:
+                           guid(INTVAL,INTVAL,INTVAL,INTVAL)
+                           // available from warfare and up:
+                           collapsecategories | dontcollapsecategories | placeable |
+                           notplaceable | editinlinenew | noteditinlinenew
+BOOLVAL                  = true | false
+VARPARAMS                = config | const | editconst | export | globalconfig | input |
+                           localized | native | private | protected | transient | travel |
+                           // available from warfare and up:
+                           editinline | deprecated | edfindable | editinlineuse
+STATEPARAMS              = auto | simulated
+CONSTFUNCPARAMS          = final | iterator | latent | simulated | singular | static |
+                           exec | protected | private 
+BASICTYPE                = byte | int | float | string | bool | name | class
+FUNCTIONTYPE             = function | event | delegate
+OPERATORNAMES            = '~' | '!' | '@' | '#' | '$' | '%' | '^' | '&amp;' | '*' | 
+                           '-' | '=' | '+' | '|' | '<span class="es0">\'</span> | ':' | '&lt;' | '&gt;' | '/' |
+                           '?' | '`' |
+                           '&lt;&lt;' | '&gt;&gt;' | '!=' | '&lt;=' | '&gt;=' | '++' | '--' | '?-' | '+=' | 
+                           '-=' | '*=' | '/=' | '&amp;&amp;' | '||' | '^^' | '==' | '**' |
+                           '~=' | '@=' | '&gt;&gt;&gt;'</span>
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="Notes">Notes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Grammar?section=10" title="Edit section: Notes">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Case">Case</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Grammar?section=11" title="Edit section: Case">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>UnrealScript is case insensitive, so all terminals may be written in any case format. Because of this the uppercase variants for ALPHA and HEXDIGIT are omitted.</p>
+<h3><span class="mw-headline" id="Unreal_Engine">Unreal Engine</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Grammar?section=12" title="Edit section: Unreal Engine">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This grammar applies to the UnrealEngine 2. Older versions of the Unreal engine have a few differences. Here's a list of changes to this grammar to be applied for older versions.</p>
+<ul>
+<li><i>extends</i> can be replaced with <i>expands</i></li>
+<li>The ARRAYDECL rule does not apply</li>
+<li>in the CLASSPARAMS rule the following do not apply:
+<ul>
+<li><i>within PACKAGEIDENTIFIER</i></li>
+<li><i>dependson LBRACK PACKAGEIDENTIFIER RBRACK</i></li>
+<li><i>hidecategories LBRACK IDENTIFIERLIST RBRACK</i></li>
+<li><i>showcategories LBRACK IDENTIFIERLIST RBRACK</i></li>
+</ul>
+</li>
+<li>In CONSTCLASSPARAMS <i>nousercreate</i> is allowed to replace notplaceable</li>
+<li>STRUCTPARAMS does not apply</li>
+</ul>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Grammar?section=13" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_Class_Syntax.html" title="Legacy:Class Syntax">Class Syntax</a></li>
+<li><a href="Legacy_Function_Syntax.html" title="Legacy:Function Syntax">Function Syntax</a></li>
+<li><a href="Legacy_Variable_Syntax.html" title="Legacy:Variable Syntax">Variable Syntax</a></li>
+<li><a rel="nofollow" class="external free" href="http://mimesis.csc.ncsu.edu/Unreal/Syntax.htm">http://mimesis.csc.ncsu.edu/Unreal/Syntax.htm</a></li>
+<li><a href="Legacy_UnrealScript_Language_Test.html" title="Legacy:UnrealScript Language Test">UnrealScript Language Test</a></li>
+</ul>
+<h2><span class="mw-headline" id="Discussion">Discussion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Grammar?section=14" title="Edit section: Discussion">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>El Muerte TDS:</b> As suggested in <a href="Legacy_UnDox_Revisited.html" title="Legacy:UnDox Revisited">UnDox Revisited</a> , so hell why not&#160;:)</p>
+<p><b>Tarquin:</b> Nice&#160;:)</p>
+<p><b>Jerome-X</b> This can be very useful for the parser in the UCEditor plugin. Thanks&#160;:)</p>
+<p><b>El Muerte TDS:</b> The only <i>open</i> things are the class, var and function params, for the rest is should be done. So if anyone could verify the stuff I wrote down, I might have missed some things.</p>
+<p><b>El Muerte TDS:</b> done, no more open rules</p>
+<p><b>CaptainNuss:</b> Greetings, just added the local keyword for variable declarations. Btw, why aren't the basic built-in variable types listed in this specification?</p>
+<p><b>Mychaeel:</b> "local" is covered by LOCALDECL already. In VARDECL it's a bug.</p>
+<p><b>CaptainNuss:</b> Oops, I'm sorry. Didn't see that.&#160;:(</p>
+<p><b>El Muerte TDS:</b> you're right about the basic types, added them now, also the function return type was incorrect (functions can also return arrays, etc..)</p>
+<p>The reson why <b>var</b> and <b>local</b> are diffirent is because inline enum and struct definitions are not allowed in <b>local</b> but are in <b>var</b>.</p>
+<p><b>Wormbo:</b> Is there a (free) program that can check a source code file against an EBNF definition?</p>
+<p><b>El Muerte TDS:</b> not that I know of. But there are programs that create a parser from a EBNF definition (needs some chaning tho): <a rel="nofollow" class="external free" href="http://catalog.compilertools.net/lexparse.html">http://catalog.compilertools.net/lexparse.html</a> and one not in that list <a rel="nofollow" class="external text" href="http://www.antlr.org/">ANTLR</a></p>
+<p><b>Tarquin:</b> I've changed:</p>
+<pre>
+CONFIGGROUP              = LBRACK IDENTIFIER RBRACK
+</pre>
+<p>as the actual IDENTIFIER is optional, right?</p>
+<p><b>El Muerte:</b> uh, yeah. there are a few other things that might also be changed, I've come across a couple of "hacks" that are apperently legal too&#160;:( Not to speak of the things Unreal2 allows. Also there are a couple of new UT2004 keywords missing.</p>
+<p><b>Iainmcgin:</b> i changed FUNCTIONARGS so that the type of the parameter can include the basic types (int, float etc). I'm working on a SableCC grammar file for UnrealScript at the moment, so I'll note down other errors in this EBNF as i find them.</p>
+<p><b>sprfreak14:</b> Should comments be included in this EBNF?<br />
+Proposal:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+COMMENT                    <span class="sy0">=</span> <span class="br0">(</span> SINGLELINECOMMENT <span class="sy0">|</span> DELIMITEDCOMMENT <span class="br0">)</span>
+SINGLELINECOMMENT          <span class="sy0">=</span> <span class="st0">'//'</span> <span class="br0">(</span> NOTNEWLINE <span class="br0">)</span><span class="sy0">*</span>
+NOTNEWLINE                 <span class="sy0">=</span> Any character except a <span class="kw1">new</span> line character
+DELIMITEDCOMMENT           <span class="sy0">=</span> <span class="st0">'/*'</span> <span class="br0">(</span> DELIMITEDCOMMENTCHARACTERS <span class="br0">)</span><span class="sy0">*</span> <span class="st0">'*/'</span>
+DELIMITEDCOMMENTCHARACTERS <span class="sy0">=</span> <span class="br0">(</span> NOTASTERISK <span class="sy0">|</span> <span class="st0">'*'</span> NOTSLASH <span class="br0">)</span>
+NOTASTERISK                <span class="sy0">=</span> Any character except <span class="st0">'*'</span>
+NOTSLASH                   <span class="sy0">=</span> Any character except <span class="st0">'/'</span>
+</pre></div>
+</div>
+<p><b>Sweavo:</b> the usual way (i.e. the way I would do it writing a C parser) to deal with comments is at the <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/Lexer">Lexing stage</a>, i.e. there is a stage before parsing that recognizes tokens. Comments are reduced to whitespace at that stage. While the comment stuff above looks OK at a glance, the problem is that you then have to put <tt>COMMENT</tt> all over the place in the grammar to reflect all the valid places for a comment. Pretty much destroys the usefulness of the grammar. But I agree, if this is to be useful to people writing syntax highlighters, comments should be addressed.</p>
+<p><b>sprfreak14:</b> Is <tt>DOT default DOT IDENTIFIER</tt> in <tt>QUALIFIEDIDENTIFIER</tt> optional?</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.174 seconds
+Real time usage: 0.176 seconds
+Preprocessor visited node count: 140/1000000
+Preprocessor generated node count: 262/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:3441-0!*!0!!en!*!* and timestamp 20161215142631 and revision id 8854
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:UnrealScript_Grammar?oldid=8854">https://wiki.beyondunreal.com/Legacy:UnrealScript_Grammar?oldid=8854</a>"</div>
+					<div id='catlinks' class='catlinks catlinks-allhidden'></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_UnrealScript_Grammar.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:UnrealScript_Grammar?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Grammar" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:UnrealScript_Grammar" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AUnrealScript+Grammar&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AUnrealScript+Grammar" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:UnrealScript_Grammar" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:UnrealScript_Grammar" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:UnrealScript_Grammar?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:UnrealScript_Grammar?oldid=8854" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:UnrealScript_Grammar" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 13:56, 19 January 2008.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":91});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:UnrealScript_Grammar by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:55:22 GMT -->
+</html>

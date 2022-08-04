@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:Vehicle_instance_functions_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:43:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:Vehicle instance functions (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_Vehicle_instance_functions_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:Vehicle_instance_functions_(UDK)","wgTitle":"Vehicle instance functions (UDK)","wgCurRevisionId":39699,"wgRevisionId":39699,"wgArticleId":28162,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:Vehicle_instance_functions_(UDK)","wgRelevantArticleId":28162,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_Vehicle_instance_functions_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I don't need to test my programs. I have an error-correcting modem.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:Vehicle instance functions (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a> &gt;&gt;&#160;<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a> &gt;&gt;&#160;<a href="UE3_Vehicle_(UDK).html" title="UE3:Vehicle (UDK)">Vehicle</a> <i>(instance functions)</i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Instance_functions"><span class="tocnumber">1</span> <span class="toctext">Instance functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#AdjustDriverDamage"><span class="tocnumber">1.1</span> <span class="toctext">AdjustDriverDamage</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#AnySeatAvailable"><span class="tocnumber">1.2</span> <span class="toctext">AnySeatAvailable</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#AttachDriver"><span class="tocnumber">1.3</span> <span class="toctext">AttachDriver</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#CanEnterVehicle"><span class="tocnumber">1.4</span> <span class="toctext">CanEnterVehicle</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#CheatFly"><span class="tocnumber">1.5</span> <span class="toctext">CheatFly</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#CheatGhost"><span class="tocnumber">1.6</span> <span class="toctext">CheatGhost</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#CheatWalk"><span class="tocnumber">1.7</span> <span class="toctext">CheatWalk</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#CrushedBy"><span class="tocnumber">1.8</span> <span class="toctext">CrushedBy</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Destroyed_HandleDriver"><span class="tocnumber">1.9</span> <span class="toctext">Destroyed_HandleDriver</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#DetachDriver"><span class="tocnumber">1.10</span> <span class="toctext">DetachDriver</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Died"><span class="tocnumber">1.11</span> <span class="toctext">Died</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#DisplayDebug"><span class="tocnumber">1.12</span> <span class="toctext">DisplayDebug</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#DriverDied"><span class="tocnumber">1.13</span> <span class="toctext">DriverDied</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#DriverEnter"><span class="tocnumber">1.14</span> <span class="toctext">DriverEnter</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#DriverLeft"><span class="tocnumber">1.15</span> <span class="toctext">DriverLeft</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#DriverRadiusDamage"><span class="tocnumber">1.16</span> <span class="toctext">DriverRadiusDamage</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#DrivingStatusChanged"><span class="tocnumber">1.17</span> <span class="toctext">DrivingStatusChanged</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#EntryAnnouncement"><span class="tocnumber">1.18</span> <span class="toctext">EntryAnnouncement</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#FaceRotation"><span class="tocnumber">1.19</span> <span class="toctext">FaceRotation</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#FindAutoExit"><span class="tocnumber">1.20</span> <span class="toctext">FindAutoExit</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#GetCollisionDamageInstigator"><span class="tocnumber">1.21</span> <span class="toctext">GetCollisionDamageInstigator</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#GetDefaultCameraMode"><span class="tocnumber">1.22</span> <span class="toctext">GetDefaultCameraMode</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#GetExitRotation"><span class="tocnumber">1.23</span> <span class="toctext">GetExitRotation</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#HandleDeadVehicleDriver"><span class="tocnumber">1.24</span> <span class="toctext">HandleDeadVehicleDriver</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#NotifyDriverTakeHit"><span class="tocnumber">1.25</span> <span class="toctext">NotifyDriverTakeHit</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#NotifyTeamChanged"><span class="tocnumber">1.26</span> <span class="toctext">NotifyTeamChanged</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#PancakeOther"><span class="tocnumber">1.27</span> <span class="toctext">PancakeOther</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#PlaceExitingDriver"><span class="tocnumber">1.28</span> <span class="toctext">PlaceExitingDriver</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#PlayDying"><span class="tocnumber">1.29</span> <span class="toctext">PlayDying</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#PlayerChangedTeam"><span class="tocnumber">1.30</span> <span class="toctext">PlayerChangedTeam</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#PossessedBy"><span class="tocnumber">1.31</span> <span class="toctext">PossessedBy</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#SetBaseEyeheight"><span class="tocnumber">1.32</span> <span class="toctext">SetBaseEyeheight</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#SetDriving"><span class="tocnumber">1.33</span> <span class="toctext">SetDriving</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#SetInputs"><span class="tocnumber">1.34</span> <span class="toctext">SetInputs</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#SetKillInstigator"><span class="tocnumber">1.35</span> <span class="toctext">SetKillInstigator</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#Suicide"><span class="tocnumber">1.36</span> <span class="toctext">Suicide</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#TakeRadiusDamage"><span class="tocnumber">1.37</span> <span class="toctext">TakeRadiusDamage</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#ThrowActiveWeapon"><span class="tocnumber">1.38</span> <span class="toctext">ThrowActiveWeapon</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#TryExitPos"><span class="tocnumber">1.39</span> <span class="toctext">TryExitPos</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#TryToDrive"><span class="tocnumber">1.40</span> <span class="toctext">TryToDrive</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#UnPossessed"><span class="tocnumber">1.41</span> <span class="toctext">UnPossessed</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#ZeroMovementVariables"><span class="tocnumber">1.42</span> <span class="toctext">ZeroMovementVariables</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Vehicle instance functions in other games:</dt>
+<dd><span><a href="UE2_Vehicle_instance_functions_(U2).html" title="UE2:Vehicle instance functions (U2)">U2</a></span>, <span><a href="UE2_Vehicle_instance_functions_(UT2004).html" title="UE2:Vehicle instance functions (UT2004)">UT2004</a></span>, <span><a href="UE3_Vehicle_instance_functions_(UT3).html" title="UE3:Vehicle instance functions (UT3)">UT3</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Instance_functions">Instance functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=1" title="Edit section: Instance functions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="AdjustDriverDamage">AdjustDriverDamage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=2" title="Edit section: AdjustDriverDamage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AdjustDriverDamage</b> (out&#160;<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>Damage</b>, <a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>InstigatedBy</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>HitLocation</b>, out&#160;<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>Momentum</b>, <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_DamageType_(UDK).html" title="UE3:DamageType (UDK)">DamageType</a>&gt;&#160;<b>DamageType</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="AnySeatAvailable">AnySeatAvailable</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=3" title="Edit section: AnySeatAvailable">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>AnySeatAvailable</b> ()</div>
+<p>SeatAvailable() returns true if a seat is available for a pawn</p>
+<h4><span class="mw-headline" id="AttachDriver">AttachDriver</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=4" title="Edit section: AttachDriver">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>AttachDriver</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>P</b>)</div>
+<p>Attach driver to vehicle. Sets up the Pawn to drive the vehicle (rendering, physics, collision..). Called only if bAttachDriver is true. Network&#160;: ALL</p>
+<h4><span class="mw-headline" id="CanEnterVehicle">CanEnterVehicle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=5" title="Edit section: CanEnterVehicle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>CanEnterVehicle</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>P</b>)</div>
+<p>CanEnterVehicle() return true if Pawn P is allowed to enter this vehicle</p>
+<h4><span class="mw-headline" id="CheatFly">CheatFly</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=6" title="Edit section: CheatFly">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>CheatFly</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_Pawn_instance_functions_(UDK).html#CheatFly" title="UE3:Pawn instance functions (UDK)">Pawn.CheatFly</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="CheatGhost">CheatGhost</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=7" title="Edit section: CheatGhost">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>CheatGhost</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_Pawn_instance_functions_(UDK).html#CheatGhost" title="UE3:Pawn instance functions (UDK)">Pawn.CheatGhost</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="CheatWalk">CheatWalk</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=8" title="Edit section: CheatWalk">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>CheatWalk</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_Pawn_instance_functions_(UDK).html#CheatWalk" title="UE3:Pawn instance functions (UDK)">Pawn.CheatWalk</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="CrushedBy">CrushedBy</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=9" title="Edit section: CrushedBy">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>CrushedBy</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>OtherPawn</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_Pawn_instance_functions_(UDK).html#CrushedBy" title="UE3:Pawn instance functions (UDK)">Pawn.CrushedBy</a></p>
+<p>CrushedBy() Called for pawns that have bCanBeBaseForPawns=false when another pawn becomes based on them</p>
+<h4><span class="mw-headline" id="Destroyed_HandleDriver">Destroyed_HandleDriver</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=10" title="Edit section: Destroyed HandleDriver">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>Destroyed_HandleDriver</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="DetachDriver">DetachDriver</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=11" title="Edit section: DetachDriver">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>DetachDriver</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>P</b>)</div>
+<p>Detach Driver from vehicle. Network&#160;: ALL</p>
+<h4><span class="mw-headline" id="Died">Died</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=12" title="Edit section: Died">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>Died</b> (<a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>Killer</b>, <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_DamageType_(UDK).html" title="UE3:DamageType (UDK)">DamageType</a>&gt;&#160;<b>DamageType</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>HitLocation</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_Pawn_instance_functions_(UDK).html#Died" title="UE3:Pawn instance functions (UDK)">Pawn.Died</a></p>
+<p><i>(Description copied from <a href="UE3_Pawn_instance_functions_(UDK).html#Died" title="UE3:Pawn instance functions (UDK)">Pawn.Died</a>)</i><br />
+This pawn has died.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>Killer</i> - Who killed this pawn</li>
+<li><i>DamageType</i> - What killed it</li>
+<li><i>HitLocation</i> - Where did the hit occur</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if allowed</dd>
+</dl>
+<h4><span class="mw-headline" id="DisplayDebug">DisplayDebug</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=13" title="Edit section: DisplayDebug">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>DisplayDebug</b> (<a href="UE3_HUD_(UDK).html" title="UE3:HUD (UDK)">HUD</a>&#160;<b>HUD</b>, out&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>out_YL</b>, out&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>out_YPos</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_Pawn_instance_functions_(UDK).html#DisplayDebug" title="UE3:Pawn instance functions (UDK)">Pawn.DisplayDebug</a></p>
+<p><b>See:</b> Actor::DisplayDebug</p>
+<h4><span class="mw-headline" id="DriverDied">DriverDied</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=14" title="Edit section: DriverDied">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>DriverDied</b> (<a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_DamageType_(UDK).html" title="UE3:DamageType (UDK)">DamageType</a>&gt;&#160;<b>DamageType</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="DriverEnter">DriverEnter</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=15" title="Edit section: DriverEnter">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>DriverEnter</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>P</b>)</div>
+<p>DriverEnter() Make Pawn P the new driver of this vehicle Changes controller ownership across pawns</p>
+<h4><span class="mw-headline" id="DriverLeft">DriverLeft</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=16" title="Edit section: DriverLeft">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>DriverLeft</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="DriverRadiusDamage">DriverRadiusDamage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=17" title="Edit section: DriverRadiusDamage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>DriverRadiusDamage</b> (<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>DamageAmount</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>DamageRadius</b>, <a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>EventInstigator</b>, <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_DamageType_(UDK).html" title="UE3:DamageType (UDK)">DamageType</a>&gt;&#160;<b>DamageType</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>Momentum</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>HitLocation</b>, <a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>DamageCauser</b>, optional&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>DamageFalloffExponent</b>)</div>
+<p>DriverRadiusDamage() determine if radius damage that hit the vehicle should damage the driver</p>
+<h4><span class="mw-headline" id="DrivingStatusChanged">DrivingStatusChanged</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=18" title="Edit section: DrivingStatusChanged">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>DrivingStatusChanged</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="EntryAnnouncement">EntryAnnouncement</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=19" title="Edit section: EntryAnnouncement">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>EntryAnnouncement</b> (<a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>C</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="FaceRotation">FaceRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=20" title="Edit section: FaceRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>FaceRotation</b> (<a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a>&#160;<b>NewRotation</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>DeltaTime</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_Pawn_instance_functions_(UDK).html#FaceRotation" title="UE3:Pawn instance functions (UDK)">Pawn.FaceRotation</a></p>
+<p>Vehicles ignore 'face rotation'.</p>
+<h4><span class="mw-headline" id="FindAutoExit">FindAutoExit</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=21" title="Edit section: FindAutoExit">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>FindAutoExit</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>ExitingDriver</b>)</div>
+<p>FindAutoExit(Pawn ExitingDriver) Tries to find exit position on either side of vehicle, in back, or in front returns true if driver successfully exited.</p>
+<h4><span class="mw-headline" id="GetCollisionDamageInstigator">GetCollisionDamageInstigator</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=22" title="Edit section: GetCollisionDamageInstigator">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>GetCollisionDamageInstigator</b> ()</div>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the Controller that should receive credit for damage caused by this vehicle colliding with others</dd>
+</dl>
+<h4><span class="mw-headline" id="GetDefaultCameraMode">GetDefaultCameraMode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=23" title="Edit section: GetDefaultCameraMode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>GetDefaultCameraMode</b> (<a href="UE3_PlayerController_(UDK).html" title="UE3:PlayerController (UDK)">PlayerController</a>&#160;<b>RequestedBy</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_Pawn_instance_functions_(UDK).html#GetDefaultCameraMode" title="UE3:Pawn instance functions (UDK)">Pawn.GetDefaultCameraMode</a></p>
+<p><i>(Description copied from <a href="UE3_Pawn_instance_functions_(UDK).html#GetDefaultCameraMode" title="UE3:Pawn instance functions (UDK)">Pawn.GetDefaultCameraMode</a>)</i><br />
+returns default camera mode when viewing this pawn. Mainly called when controller possesses this pawn.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>PlayerController</i> - requesting the default camera view</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>default camera view player should use when controlling this pawn.</dd>
+</dl>
+<h4><span class="mw-headline" id="GetExitRotation">GetExitRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=24" title="Edit section: GetExitRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a>&#160;<b>GetExitRotation</b> (<a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>C</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="HandleDeadVehicleDriver">HandleDeadVehicleDriver</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=25" title="Edit section: HandleDeadVehicleDriver">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>HandleDeadVehicleDriver</b> ()</div>
+<p>handles the driver pawn of the dead vehicle (decide whether to ragdoll it, etc)</p>
+<h4><span class="mw-headline" id="NotifyDriverTakeHit">NotifyDriverTakeHit</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=26" title="Edit section: NotifyDriverTakeHit">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>NotifyDriverTakeHit</b> (<a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>InstigatedBy</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>HitLocation</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>Damage</b>, <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_DamageType_(UDK).html" title="UE3:DamageType (UDK)">DamageType</a>&gt;&#160;<b>DamageType</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>Momentum</b>)</div>
+<p>called when the driver of this vehicle takes damage</p>
+<h4><span class="mw-headline" id="NotifyTeamChanged">NotifyTeamChanged</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=27" title="Edit section: NotifyTeamChanged">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>NotifyTeamChanged</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_Pawn_instance_functions_(UDK).html#NotifyTeamChanged" title="UE3:Pawn instance functions (UDK)">Pawn.NotifyTeamChanged</a></p>
+<p>NotifyTeamChanged() Called when PlayerReplicationInfo is replicated to this pawn, or PlayerReplicationInfo team property changes.</p>
+<p>Network: client</p>
+<h4><span class="mw-headline" id="PancakeOther">PancakeOther</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=28" title="Edit section: PancakeOther">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>PancakeOther</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>Other</b>)</div>
+<p>Crush the pawn vehicle is encroaching</p>
+<h4><span class="mw-headline" id="PlaceExitingDriver">PlaceExitingDriver</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=29" title="Edit section: PlaceExitingDriver">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>PlaceExitingDriver</b> (optional&#160;<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>ExitingDriver</b>)</div>
+<p>PlaceExitingDriver() Find an acceptable position to place the exiting driver pawn, and move it there. Returns true if pawn was successfully placed.</p>
+<h4><span class="mw-headline" id="PlayDying">PlayDying</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=30" title="Edit section: PlayDying">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>PlayDying</b> (<a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_DamageType_(UDK).html" title="UE3:DamageType (UDK)">DamageType</a>&gt;&#160;<b>DamageType</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>HitLoc</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_Pawn_instance_functions_(UDK).html#PlayDying" title="UE3:Pawn instance functions (UDK)">Pawn.PlayDying</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="PlayerChangedTeam">PlayerChangedTeam</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=31" title="Edit section: PlayerChangedTeam">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>PlayerChangedTeam</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_Pawn_instance_functions_(UDK).html#PlayerChangedTeam" title="UE3:Pawn instance functions (UDK)">Pawn.PlayerChangedTeam</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="PossessedBy">PossessedBy</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=32" title="Edit section: PossessedBy">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>PossessedBy</b> (<a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>C</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bVehicleTransition</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_Pawn_instance_functions_(UDK).html#PossessedBy" title="UE3:Pawn instance functions (UDK)">Pawn.PossessedBy</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="SetBaseEyeheight">SetBaseEyeheight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=33" title="Edit section: SetBaseEyeheight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>SetBaseEyeheight</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_Pawn_instance_functions_(UDK).html#SetBaseEyeheight" title="UE3:Pawn instance functions (UDK)">Pawn.SetBaseEyeheight</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="SetDriving">SetDriving</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=34" title="Edit section: SetDriving">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>SetDriving</b> (<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>b</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SetInputs">SetInputs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=35" title="Edit section: SetInputs">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>SetInputs</b> (<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>InForward</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>InStrafe</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>InUp</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SetKillInstigator">SetKillInstigator</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=36" title="Edit section: SetKillInstigator">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>SetKillInstigator</b> (<a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>InstigatedBy</b>, <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_DamageType_(UDK).html" title="UE3:DamageType (UDK)">DamageType</a>&gt;&#160;<b>DamageType</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_Pawn_instance_functions_(UDK).html#SetKillInstigator" title="UE3:Pawn instance functions (UDK)">Pawn.SetKillInstigator</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Suicide">Suicide</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=37" title="Edit section: Suicide">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>Suicide</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_Pawn_instance_functions_(UDK).html#Suicide" title="UE3:Pawn instance functions (UDK)">Pawn.Suicide</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TakeRadiusDamage">TakeRadiusDamage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=38" title="Edit section: TakeRadiusDamage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>TakeRadiusDamage</b> (<a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>InstigatedBy</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>BaseDamage</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>DamageRadius</b>, <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_DamageType_(UDK).html" title="UE3:DamageType (UDK)">DamageType</a>&gt;&#160;<b>DamageType</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>Momentum</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>HurtOrigin</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bFullDamage</b>, <a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>DamageCauser</b>, optional&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>DamageFalloffExponent</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_Actor_instance_functions_(UDK).html#TakeRadiusDamage" title="UE3:Actor instance functions (UDK)">Actor.TakeRadiusDamage</a></p>
+<p>Take Radius Damage by default scales damage based on distance from HurtOrigin to Actor's location. This can be overriden by the actor receiving the damage for special conditions (see KAsset.uc).</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>InstigatedBy</i> - instigator of the damage</li>
+<li><i>Base</i> - Damage</li>
+<li><i>Damage</i> - Radius (from Origin)</li>
+<li><i>DamageType</i> - class</li>
+<li><i>Momentum</i> - float)</li>
+<li><i>HurtOrigin</i> - origin of the damage radius.</li>
+<li><i>DamageCauser</i> - the Actor that directly caused the damage (i.e. the Projectile that exploded, the Weapon that fired, etc)</li>
+</ul>
+<h4><span class="mw-headline" id="ThrowActiveWeapon">ThrowActiveWeapon</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=39" title="Edit section: ThrowActiveWeapon">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ThrowActiveWeapon</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_Pawn_instance_functions_(UDK).html#ThrowActiveWeapon" title="UE3:Pawn instance functions (UDK)">Pawn.ThrowActiveWeapon</a></p>
+<p><i>(Description copied from <a href="UE3_Pawn_instance_functions_(UDK).html#ThrowActiveWeapon" title="UE3:Pawn instance functions (UDK)">Pawn.ThrowActiveWeapon</a>)</i><br />
+Toss active weapon using default settings (location+velocity).</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>DamageType</i> - allows this function to do different behaviors based on the damage type</li>
+</ul>
+<h4><span class="mw-headline" id="TryExitPos">TryExitPos</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=40" title="Edit section: TryExitPos">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>TryExitPos</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>ExitingDriver</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>ExitPos</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bMustFindGround</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="TryToDrive">TryToDrive</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=41" title="Edit section: TryToDrive">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>TryToDrive</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>P</b>)</div>
+<p>TryToDrive() returns true if Pawn P successfully became driver of this vehicle</p>
+<h4><span class="mw-headline" id="UnPossessed">UnPossessed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=42" title="Edit section: UnPossessed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>UnPossessed</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_Pawn_instance_functions_(UDK).html#UnPossessed" title="UE3:Pawn instance functions (UDK)">Pawn.UnPossessed</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ZeroMovementVariables">ZeroMovementVariables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)?section=43" title="Edit section: ZeroMovementVariables">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>ZeroMovementVariables</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_Pawn_instance_functions_(UDK).html#ZeroMovementVariables" title="UE3:Pawn instance functions (UDK)">Pawn.ZeroMovementVariables</a></p>
+<p><br /></p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.461 seconds
+Real time usage: 0.469 seconds
+Preprocessor visited node count: 3634/1000000
+Preprocessor generated node count: 5589/1000000
+Post‐expand include size: 30900/2097152 bytes
+Template argument size: 9448/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  342.139      1 - -total
+ 47.94%  164.036     42 - Template:Code
+ 45.71%  156.388     66 - Template:Samegame
+ 37.33%  127.726     33 - Template:Tl
+ 29.06%   99.414     33 - Template:Cl
+ 19.59%   67.031      1 - Template:Infobox_class_part
+ 18.19%   62.232      1 - Template:Infobox_class_part/core
+  4.37%   14.940      1 - Template:Ch
+  1.86%    6.379      1 - Template:Autogenerated
+  1.24%    4.251      1 - Template:Ambox
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:28162-0!*!*!*!*!*!* and timestamp 20161215184049 and revision id 39699
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:Vehicle_instance_functions_(UDK)?oldid=39699">https://wiki.beyondunreal.com/UE3:Vehicle_instance_functions_(UDK)?oldid=39699</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_Vehicle_instance_functions_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:Vehicle_instance_functions_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:Vehicle_instance_functions_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:Vehicle_instance_functions_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AVehicle+instance+functions+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AVehicle+instance+functions+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:Vehicle_instance_functions_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:Vehicle_instance_functions_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:Vehicle_instance_functions_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:Vehicle_instance_functions_(UDK)?oldid=39699" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:Vehicle_instance_functions_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 13:47, 6 November 2009.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":90});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:Vehicle_instance_functions_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:43:04 GMT -->
+</html>

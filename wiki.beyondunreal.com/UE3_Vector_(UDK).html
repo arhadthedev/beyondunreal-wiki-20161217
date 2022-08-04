@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:Vector_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:42:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:Object structs (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_Object_structs_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="canonical" href="UE3_Object_structs_(UDK).html" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:Object_structs_(UDK)","wgTitle":"Object structs (UDK)","wgCurRevisionId":41227,"wgRevisionId":41227,"wgArticleId":26381,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:Object_structs_(UDK)","wgRelevantArticleId":26381,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"UE3:Vector_(UDK)","wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgInternalRedirectTargetUrl":"/UE3:Object_structs_(UDK)#Vector"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.redirect","mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_Object_structs_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I'm a doctor, not a mechanic
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:Object structs (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"><span class="mw-redirectedfrom">(Redirected from <a href="UE3_Vector_(UDK)c25d.html?redirect=no" title="UE3:Vector (UDK)">UE3:Vector (UDK)</a>)</span></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> <i>(structs)</i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Structs"><span class="tocnumber">1</span> <span class="toctext">Structs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Array_Mirror"><span class="tocnumber">1.1</span> <span class="toctext">Array_Mirror</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#BitArray_Mirror"><span class="tocnumber">1.2</span> <span class="toctext">BitArray_Mirror</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#BoneAtom"><span class="tocnumber">1.3</span> <span class="toctext">BoneAtom</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Box"><span class="tocnumber">1.4</span> <span class="toctext">Box</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#BoxSphereBounds"><span class="tocnumber">1.5</span> <span class="toctext">BoxSphereBounds</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Color"><span class="tocnumber">1.6</span> <span class="toctext">Color</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Cylinder"><span class="tocnumber">1.7</span> <span class="toctext">Cylinder</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#double"><span class="tocnumber">1.8</span> <span class="toctext">double</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Guid"><span class="tocnumber">1.9</span> <span class="toctext">Guid</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#IndirectArray_Mirror"><span class="tocnumber">1.10</span> <span class="toctext">IndirectArray_Mirror</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#InterpCurveFloat"><span class="tocnumber">1.11</span> <span class="toctext">InterpCurveFloat</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#InterpCurveLinearColor"><span class="tocnumber">1.12</span> <span class="toctext">InterpCurveLinearColor</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#InterpCurvePointFloat"><span class="tocnumber">1.13</span> <span class="toctext">InterpCurvePointFloat</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#InterpCurvePointLinearColor"><span class="tocnumber">1.14</span> <span class="toctext">InterpCurvePointLinearColor</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#InterpCurvePointQuat"><span class="tocnumber">1.15</span> <span class="toctext">InterpCurvePointQuat</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#InterpCurvePointTwoVectors"><span class="tocnumber">1.16</span> <span class="toctext">InterpCurvePointTwoVectors</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#InterpCurvePointVector"><span class="tocnumber">1.17</span> <span class="toctext">InterpCurvePointVector</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#InterpCurvePointVector2D"><span class="tocnumber">1.18</span> <span class="toctext">InterpCurvePointVector2D</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#InterpCurveQuat"><span class="tocnumber">1.19</span> <span class="toctext">InterpCurveQuat</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#InterpCurveTwoVectors"><span class="tocnumber">1.20</span> <span class="toctext">InterpCurveTwoVectors</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#InterpCurveVector"><span class="tocnumber">1.21</span> <span class="toctext">InterpCurveVector</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#InterpCurveVector2D"><span class="tocnumber">1.22</span> <span class="toctext">InterpCurveVector2D</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#IntPoint"><span class="tocnumber">1.23</span> <span class="toctext">IntPoint</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#LinearColor"><span class="tocnumber">1.24</span> <span class="toctext">LinearColor</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Map_Mirror"><span class="tocnumber">1.25</span> <span class="toctext">Map_Mirror</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#Matrix"><span class="tocnumber">1.26</span> <span class="toctext">Matrix</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#MultiMap_Mirror"><span class="tocnumber">1.27</span> <span class="toctext">MultiMap_Mirror</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#OctreeElementId"><span class="tocnumber">1.28</span> <span class="toctext">OctreeElementId</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#Plane"><span class="tocnumber">1.29</span> <span class="toctext">Plane</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#pointer"><span class="tocnumber">1.30</span> <span class="toctext">pointer</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#Quat"><span class="tocnumber">1.31</span> <span class="toctext">Quat</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#qword"><span class="tocnumber">1.32</span> <span class="toctext">qword</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#RawDistribution"><span class="tocnumber">1.33</span> <span class="toctext">RawDistribution</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#RenderCommandFence"><span class="tocnumber">1.34</span> <span class="toctext">RenderCommandFence</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#RenderCommandFence_Mirror"><span class="tocnumber">1.35</span> <span class="toctext">RenderCommandFence_Mirror</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#Rotator"><span class="tocnumber">1.36</span> <span class="toctext">Rotator</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#Set_Mirror"><span class="tocnumber">1.37</span> <span class="toctext">Set_Mirror</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#SHVector"><span class="tocnumber">1.38</span> <span class="toctext">SHVector</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#SHVectorRGB"><span class="tocnumber">1.39</span> <span class="toctext">SHVectorRGB</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#SparseArray_Mirror"><span class="tocnumber">1.40</span> <span class="toctext">SparseArray_Mirror</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#TAlphaBlend"><span class="tocnumber">1.41</span> <span class="toctext">TAlphaBlend</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#ThreadSafeCounter"><span class="tocnumber">1.42</span> <span class="toctext">ThreadSafeCounter</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="#TPOV"><span class="tocnumber">1.43</span> <span class="toctext">TPOV</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="#TwoVectors"><span class="tocnumber">1.44</span> <span class="toctext">TwoVectors</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href="#UntypedBulkData_Mirror"><span class="tocnumber">1.45</span> <span class="toctext">UntypedBulkData_Mirror</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#Vector"><span class="tocnumber">1.46</span> <span class="toctext">Vector</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="#Vector2D"><span class="tocnumber">1.47</span> <span class="toctext">Vector2D</span></a></li>
+<li class="toclevel-2 tocsection-49"><a href="#Vector4"><span class="tocnumber">1.48</span> <span class="toctext">Vector4</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Object structs in other games:</dt>
+<dd><span><a href="UE1_Object_structs_(RTNP).html" title="UE1:Object structs (RTNP)">RTNP</a></span>, <span><a href="UE1_Object_structs_(U1).html" title="UE1:Object structs (U1)">U1</a></span>, <span><a href="UE1_Object_structs_(UT).html" title="UE1:Object structs (UT)">UT</a></span>, <span><a href="UE2_Object_structs_(U2).html" title="UE2:Object structs (U2)">U2</a></span>, <span><a href="UE2_Object_structs_(U2XMP).html" title="UE2:Object structs (U2XMP)">U2XMP</a></span>, <span><a href="UE2_Object_structs_(UE2Runtime).html" title="UE2:Object structs (UE2Runtime)">UE2Runtime</a></span>, <span><a href="UE2_Object_structs_(UT2003).html" title="UE2:Object structs (UT2003)">UT2003</a></span>, <span><a href="UE2_Object_structs_(UT2004).html" title="UE2:Object structs (UT2004)">UT2004</a></span>, <span><a href="UE3_Object_structs_(UT3).html" title="UE3:Object structs (UT3)">UT3</a></span></dd>
+<dt>Other member categories for this class:</dt>
+<dd><span><a href="UE3_Object_functions_(UDK).html" title="UE3:Object functions (UDK)">functions</a></span>, <span><a href="UE3_Object_operators_(UDK).html" title="UE3:Object operators (UDK)">operators</a></span>, <span><a href="UE3_Object_static_native_functions_(UDK).html" title="UE3:Object static native functions (UDK)">static native functions</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Structs">Structs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=1" title="Edit section: Structs">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Array_Mirror">Array_Mirror</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=2" title="Edit section: Array Mirror">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Pointer.html" title="Pointer" class="mw-redirect">pointer</a> Data&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> ArrayNum&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> ArrayMax&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="BitArray_Mirror">BitArray_Mirror</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=3" title="Edit section: BitArray Mirror">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Pointer.html" title="Pointer" class="mw-redirect">pointer</a> IndirectData&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> InlineData[4] &#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> NumBits&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> MaxBits&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="BoneAtom">BoneAtom</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=4" title="Edit section: BoneAtom">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Bone Atom definition</p>
+<dl>
+<dt><a href="#Quat">Quat</a> Rotation&#160;</dt>
+<dt><a href="#Vector">Vector</a> Translation&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> Scale&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Box">Box</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=5" title="Edit section: Box">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> immutable</p>
+<dl>
+<dt><a href="#Vector">Vector</a> Min&#160;</dt>
+<dt><a href="#Vector">Vector</a> Max&#160;</dt>
+<dt><a href="Byte.html" title="Byte" class="mw-redirect">byte</a> IsValid&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="BoxSphereBounds">BoxSphereBounds</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=6" title="Edit section: BoxSphereBounds">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="#Vector">Vector</a> Origin&#160;</dt>
+<dt><a href="#Vector">Vector</a> BoxExtent&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> SphereRadius&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Color">Color</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=7" title="Edit section: Color">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> immutable</p>
+<dl>
+<dt><a href="Byte.html" title="Byte" class="mw-redirect">byte</a> B&#160;</dt>
+<dt><a href="Byte.html" title="Byte" class="mw-redirect">byte</a> G&#160;</dt>
+<dt><a href="Byte.html" title="Byte" class="mw-redirect">byte</a> R&#160;</dt>
+<dt><a href="Byte.html" title="Byte" class="mw-redirect">byte</a> A&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Cylinder">Cylinder</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=8" title="Edit section: Cylinder">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> Radius&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> Height&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="double">double</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=9" title="Edit section: double">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> A&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> B&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Guid">Guid</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=10" title="Edit section: Guid">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> immutable</p>
+<dl>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> A&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> B&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> C&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> D&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="IndirectArray_Mirror">IndirectArray_Mirror</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=11" title="Edit section: IndirectArray Mirror">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Pointer.html" title="Pointer" class="mw-redirect">pointer</a> Data&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> ArrayNum&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> ArrayMax&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="InterpCurveFloat">InterpCurveFloat</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=12" title="Edit section: InterpCurveFloat">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Array.html" title="Array">array</a>&lt;<a href="#InterpCurvePointFloat">InterpCurvePointFloat</a>&gt; Points&#160;</dt>
+<dt><a href="UE3_Object_(UDK).html#EInterpMethodType" title="UE3:Object (UDK)">EInterpMethodType</a> InterpMethod&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="InterpCurveLinearColor">InterpCurveLinearColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=13" title="Edit section: InterpCurveLinearColor">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Array.html" title="Array">array</a>&lt;<a href="#InterpCurvePointLinearColor">InterpCurvePointLinearColor</a>&gt; Points&#160;</dt>
+<dt><a href="UE3_Object_(UDK).html#EInterpMethodType" title="UE3:Object (UDK)">EInterpMethodType</a> InterpMethod&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="InterpCurvePointFloat">InterpCurvePointFloat</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=14" title="Edit section: InterpCurvePointFloat">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> InVal&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> OutVal&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> ArriveTangent&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> LeaveTangent&#160;</dt>
+<dt><a href="UE3_Object_(UDK).html#EInterpCurveMode" title="UE3:Object (UDK)">EInterpCurveMode</a> InterpMode&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="InterpCurvePointLinearColor">InterpCurvePointLinearColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=15" title="Edit section: InterpCurvePointLinearColor">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> InVal&#160;</dt>
+<dt><a href="#LinearColor">LinearColor</a> OutVal&#160;</dt>
+<dt><a href="#LinearColor">LinearColor</a> ArriveTangent&#160;</dt>
+<dt><a href="#LinearColor">LinearColor</a> LeaveTangent&#160;</dt>
+<dt><a href="UE3_Object_(UDK).html#EInterpCurveMode" title="UE3:Object (UDK)">EInterpCurveMode</a> InterpMode&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="InterpCurvePointQuat">InterpCurvePointQuat</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=16" title="Edit section: InterpCurvePointQuat">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> InVal&#160;</dt>
+<dt><a href="#Quat">Quat</a> OutVal&#160;</dt>
+<dt><a href="#Quat">Quat</a> ArriveTangent&#160;</dt>
+<dt><a href="#Quat">Quat</a> LeaveTangent&#160;</dt>
+<dt><a href="UE3_Object_(UDK).html#EInterpCurveMode" title="UE3:Object (UDK)">EInterpCurveMode</a> InterpMode&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="InterpCurvePointTwoVectors">InterpCurvePointTwoVectors</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=17" title="Edit section: InterpCurvePointTwoVectors">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> InVal&#160;</dt>
+<dt><a href="#TwoVectors">TwoVectors</a> OutVal&#160;</dt>
+<dt><a href="#TwoVectors">TwoVectors</a> ArriveTangent&#160;</dt>
+<dt><a href="#TwoVectors">TwoVectors</a> LeaveTangent&#160;</dt>
+<dt><a href="UE3_Object_(UDK).html#EInterpCurveMode" title="UE3:Object (UDK)">EInterpCurveMode</a> InterpMode&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="InterpCurvePointVector">InterpCurvePointVector</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=18" title="Edit section: InterpCurvePointVector">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> InVal&#160;</dt>
+<dt><a href="#Vector">Vector</a> OutVal&#160;</dt>
+<dt><a href="#Vector">Vector</a> ArriveTangent&#160;</dt>
+<dt><a href="#Vector">Vector</a> LeaveTangent&#160;</dt>
+<dt><a href="UE3_Object_(UDK).html#EInterpCurveMode" title="UE3:Object (UDK)">EInterpCurveMode</a> InterpMode&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="InterpCurvePointVector2D">InterpCurvePointVector2D</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=19" title="Edit section: InterpCurvePointVector2D">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> InVal&#160;</dt>
+<dt><a href="#Vector2D">Vector2D</a> OutVal&#160;</dt>
+<dt><a href="#Vector2D">Vector2D</a> ArriveTangent&#160;</dt>
+<dt><a href="#Vector2D">Vector2D</a> LeaveTangent&#160;</dt>
+<dt><a href="UE3_Object_(UDK).html#EInterpCurveMode" title="UE3:Object (UDK)">EInterpCurveMode</a> InterpMode&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="InterpCurveQuat">InterpCurveQuat</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=20" title="Edit section: InterpCurveQuat">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Array.html" title="Array">array</a>&lt;<a href="#InterpCurvePointQuat">InterpCurvePointQuat</a>&gt; Points&#160;</dt>
+<dt><a href="UE3_Object_(UDK).html#EInterpMethodType" title="UE3:Object (UDK)">EInterpMethodType</a> InterpMethod&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="InterpCurveTwoVectors">InterpCurveTwoVectors</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=21" title="Edit section: InterpCurveTwoVectors">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Array.html" title="Array">array</a>&lt;<a href="#InterpCurvePointTwoVectors">InterpCurvePointTwoVectors</a>&gt; Points&#160;</dt>
+<dt><a href="UE3_Object_(UDK).html#EInterpMethodType" title="UE3:Object (UDK)">EInterpMethodType</a> InterpMethod&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="InterpCurveVector">InterpCurveVector</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=22" title="Edit section: InterpCurveVector">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Array.html" title="Array">array</a>&lt;<a href="#InterpCurvePointVector">InterpCurvePointVector</a>&gt; Points&#160;</dt>
+<dt><a href="UE3_Object_(UDK).html#EInterpMethodType" title="UE3:Object (UDK)">EInterpMethodType</a> InterpMethod&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="InterpCurveVector2D">InterpCurveVector2D</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=23" title="Edit section: InterpCurveVector2D">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Array.html" title="Array">array</a>&lt;<a href="#InterpCurvePointVector2D">InterpCurvePointVector2D</a>&gt; Points&#160;</dt>
+<dt><a href="UE3_Object_(UDK).html#EInterpMethodType" title="UE3:Object (UDK)">EInterpMethodType</a> InterpMethod&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="IntPoint">IntPoint</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=24" title="Edit section: IntPoint">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> immutable</p>
+<p>Screen coordinates</p>
+<dl>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> X&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> Y&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="LinearColor">LinearColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=25" title="Edit section: LinearColor">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> immutable</p>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> R&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> G&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> B&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> A&#160;</dt>
+</dl>
+<p><b>Default values:</b></p>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Map_Mirror">Map_Mirror</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=26" title="Edit section: Map Mirror">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="#Set_Mirror">Set_Mirror</a> Pairs&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Matrix">Matrix</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=27" title="Edit section: Matrix">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> immutable</p>
+<dl>
+<dt><a href="#Plane">Plane</a> XPlane&#160;</dt>
+<dt><a href="#Plane">Plane</a> YPlane&#160;</dt>
+<dt><a href="#Plane">Plane</a> ZPlane&#160;</dt>
+<dt><a href="#Plane">Plane</a> WPlane&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="MultiMap_Mirror">MultiMap_Mirror</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=28" title="Edit section: MultiMap Mirror">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="#Set_Mirror">Set_Mirror</a> Pairs&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="OctreeElementId">OctreeElementId</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=29" title="Edit section: OctreeElementId">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Mirror for FElementId used in generic Octree</p>
+<dl>
+<dt><a href="Pointer.html" title="Pointer" class="mw-redirect">pointer</a> Node&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> ElementIndex&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Plane">Plane</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=30" title="Edit section: Plane">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b>Extends:</b> <a href="#Vector">Vector</a></p>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> immutable</p>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> W&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="pointer">pointer</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=31" title="Edit section: pointer">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> Dummy&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Quat">Quat</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=32" title="Edit section: Quat">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> immutable</p>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> X&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> Y&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> Z&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> W&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="qword">qword</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=33" title="Edit section: qword">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> A&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> B&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="RawDistribution">RawDistribution</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=34" title="Edit section: RawDistribution">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Byte.html" title="Byte" class="mw-redirect">byte</a> Type&#160;</dt>
+<dt><a href="Byte.html" title="Byte" class="mw-redirect">byte</a> Op&#160;</dt>
+<dt><a href="Byte.html" title="Byte" class="mw-redirect">byte</a> LookupTableNumElements&#160;</dt>
+<dt><a href="Byte.html" title="Byte" class="mw-redirect">byte</a> LookupTableChunkSize&#160;</dt>
+<dt><a href="Array.html" title="Array">array</a>&lt;<a href="Float.html" title="Float" class="mw-redirect">float</a>&gt; LookupTable&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> LookupTableTimeScale&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> LookupTableStartTime&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="RenderCommandFence">RenderCommandFence</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=35" title="Edit section: RenderCommandFence">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A fence used to track rendering thread command execution.</p>
+<dl>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> NumPendingFences&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="RenderCommandFence_Mirror">RenderCommandFence_Mirror</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=36" title="Edit section: RenderCommandFence Mirror">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> NumPendingFences&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Rotator">Rotator</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=37" title="Edit section: Rotator">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> immutable</p>
+<dl>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> Pitch&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> Yaw&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> Roll&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Set_Mirror">Set_Mirror</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=38" title="Edit section: Set Mirror">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="#SparseArray_Mirror">SparseArray_Mirror</a> Elements&#160;</dt>
+<dt><a href="Pointer.html" title="Pointer" class="mw-redirect">pointer</a> Hash&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> InlineHash&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> HashSize&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="SHVector">SHVector</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=39" title="Edit section: SHVector">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A vector of spherical harmonic coefficients.</p>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> V[9] &#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> Padding[3] &#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="SHVectorRGB">SHVectorRGB</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=40" title="Edit section: SHVectorRGB">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A vector of spherical harmonic coefficients for each color component.</p>
+<dl>
+<dt><a href="#SHVector">SHVector</a> R&#160;</dt>
+<dt><a href="#SHVector">SHVector</a> G&#160;</dt>
+<dt><a href="#SHVector">SHVector</a> B&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="SparseArray_Mirror">SparseArray_Mirror</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=41" title="Edit section: SparseArray Mirror">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Array.html" title="Array">array</a>&lt;<a href="Int.html" title="Int" class="mw-redirect">int</a>&gt; Elements&#160;</dt>
+<dt><a href="#BitArray_Mirror">BitArray_Mirror</a> AllocationFlags&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> FirstFreeIndex&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> NumFreeIndices&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="TAlphaBlend">TAlphaBlend</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=42" title="Edit section: TAlphaBlend">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Structure to encompass Alpha Interpolation.</p>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> AlphaIn&#160;</dt>
+<dd>Internal Lerped value for Alpha</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> AlphaOut&#160;</dt>
+<dd>Resulting Alpha value, between 0.f and 1.f</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> AlphaTarget&#160;</dt>
+<dd>Target to reach</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> BlendTime&#160;</dt>
+<dd>Default blend time</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> BlendTimeToGo&#160;</dt>
+<dd>Time left to reach target</dd>
+<dt><a href="UE3_Object_(UDK).html#AlphaBlendType" title="UE3:Object (UDK)">AlphaBlendType</a> BlendType&#160;</dt>
+<dd>Type of blending used (Linear, Cubic, etc.)</dd>
+</dl>
+<p><b>Default values:</b></p>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td>BlendTime</td>
+<td>0.67</td>
+</tr>
+<tr>
+<td>BlendType</td>
+<td><a href="UE3_Object_(UDK).html#AlphaBlendType" title="UE3:Object (UDK)">ABT_Linear</a></td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="ThreadSafeCounter">ThreadSafeCounter</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=43" title="Edit section: ThreadSafeCounter">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> Value&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="TPOV">TPOV</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=44" title="Edit section: TPOV">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Point Of View type.</p>
+<dl>
+<dt><a href="#Vector">Vector</a> Location&#160;</dt>
+<dd>Location</dd>
+<dt><a href="#Rotator">Rotator</a> Rotation&#160;</dt>
+<dd>Rotation</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> FOV&#160;</dt>
+<dd>FOV angle</dd>
+</dl>
+<p><b>Default values:</b></p>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td>FOV</td>
+<td>90.0</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="TwoVectors">TwoVectors</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=45" title="Edit section: TwoVectors">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> immutable</p>
+<dl>
+<dt><a href="#Vector">Vector</a> v1&#160;</dt>
+<dt><a href="#Vector">Vector</a> v2&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="UntypedBulkData_Mirror">UntypedBulkData_Mirror</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=46" title="Edit section: UntypedBulkData Mirror">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Pointer.html" title="Pointer" class="mw-redirect">pointer</a> VfTable&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> BulkDataFlags&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> ElementCount&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> BulkDataOffsetInFile&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> BulkDataSizeOnDisk&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> SavedBulkDataFlags&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> SavedElementCount&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> SavedBulkDataOffsetInFile&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> SavedBulkDataSizeOnDisk&#160;</dt>
+<dt><a href="Pointer.html" title="Pointer" class="mw-redirect">pointer</a> BulkData&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> LockStatus&#160;</dt>
+<dt><a href="Pointer.html" title="Pointer" class="mw-redirect">pointer</a> AttachedAr&#160;</dt>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> bShouldFreeOnEmpty&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Vector">Vector</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=47" title="Edit section: Vector">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> immutable</p>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> X&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> Y&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> Z&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Vector2D">Vector2D</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=48" title="Edit section: Vector2D">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> immutable</p>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> X&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> Y&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Vector4">Vector4</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)?section=49" title="Edit section: Vector4">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> immutable</p>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> X&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> Y&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> Z&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> W&#160;</dt>
+</dl>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.316 seconds
+Real time usage: 0.329 seconds
+Preprocessor visited node count: 2158/1000000
+Preprocessor generated node count: 4808/1000000
+Post‐expand include size: 8163/2097152 bytes
+Template argument size: 2018/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  208.136      1 - -total
+ 47.72%   99.326     57 - Template:Tl
+ 38.55%   80.239      1 - Template:Infobox_class_part
+ 36.73%   76.457      1 - Template:Infobox_class_part/core
+ 16.10%   33.508     14 - Template:Samegame
+  5.63%   11.725      1 - Template:Ch
+  2.91%    6.066      1 - Template:Autogenerated
+  2.00%    4.168      1 - Template:Ambox
+  1.62%    3.371      3 - Template:Gamename
+  0.81%    1.695      1 - Template:UDK
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:26381-0!*!*!*!*!*!* and timestamp 20161215151103 and revision id 41227
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:Object_structs_(UDK)?oldid=41227#Vector">https://wiki.beyondunreal.com/UE3:Object_structs_(UDK)?oldid=41227#Vector</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_Object_structs_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:Object_structs_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:Object_structs_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:Object_structs_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-anonuserpage"><a href="User_188.162.37.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">188.162.37.3</a></li>
+													<li id="pt-anontalk"><a href="User_talk_188.162.37.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AObject+structs+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AObject+structs+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:Object_structs_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:Object_structs_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:Object_structs_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:Object_structs_(UDK)?oldid=41227" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:Object_structs_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 07:42, 17 January 2010.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":100});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:Vector_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:42:54 GMT -->
+</html>

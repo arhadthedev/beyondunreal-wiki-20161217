@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Proximity-_And_Damage-Triggered_Doors by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Proximity- And Damage-Triggered Doors - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Proximity-_And_Damage-Triggered_Doors" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Proximity-_And_Damage-Triggered_Doors" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_Proximity-_And_Damage-Triggered_Doors.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Proximity-_And_Damage-Triggered_Doors","wgTitle":"Proximity- And Damage-Triggered Doors","wgCurRevisionId":6070,"wgRevisionId":6070,"wgArticleId":2538,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Mapping","Legacy Tutorial"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Proximity-_And_Damage-Triggered_Doors","wgRelevantArticleId":2538,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Proximity-_And_Damage-Triggered_Doors skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I'm a doctor, not a mechanic
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Proximity- And Damage-Triggered Doors</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This tutorial will show you a way to create doors that can open when shot or when a player approaches it. The door will close after some time if no player is near it anymore.</p>
+<p>Using this type of door might help a lot when porting Quake maps. It might add a new tactical twist to your map since players now can't rely on the opponent being near a door when it opens. On the other hand, closing doors will not be as harmful for a fire fight anymore because the players can simply shoot it to instantly reopen it, even if the door hasn't finished closing yet.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Prerequisites"><span class="tocnumber">1</span> <span class="toctext">Prerequisites</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Door_Movers"><span class="tocnumber">2</span> <span class="toctext">Door Movers</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Door_Controls"><span class="tocnumber">3</span> <span class="toctext">Door Controls</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Open.2C_Wait.2C_Close"><span class="tocnumber">3.1</span> <span class="toctext">Open, Wait, Close</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Don.27t_hurt_me.21"><span class="tocnumber">3.2</span> <span class="toctext">Don't hurt me!</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Open_up_wide.21"><span class="tocnumber">3.3</span> <span class="toctext">Open up wide!</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Related_Topics"><span class="tocnumber">4</span> <span class="toctext">Related Topics</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Comments"><span class="tocnumber">5</span> <span class="toctext">Comments</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Prerequisites">Prerequisites</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Proximity-_And_Damage-Triggered_Doors?section=1" title="Edit section: Prerequisites">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>In this tutorial we will be creating a multi-part door. When any of the door parts is hit, the whole door should open, i.e. all parts should start moving at the same time. Unfortunalety, regular movers don't provide the neccessary functionality, so we need to use the custom <a href="Legacy_DamageTriggerMover.html" title="Legacy:DamageTriggerMover">DamageTriggerMover</a>. Single-part doors with similar functionality are probably possible with a regular <a href="Legacy_Mover.html" title="Legacy:Mover">Mover</a> as well, but will require a different trigger setup then.</p>
+<p>Our door mechanism will consist of:</p>
+<ul>
+<li>two <a href="Legacy_DamageTriggerMover.html" title="Legacy:DamageTriggerMover">DamageTriggerMovers</a> as the door parts (You can add more movers to your door, if you like. This trigger/mover system can be extended quite easily.)</li>
+<li>one <a href="Legacy_Trigger.html" title="Legacy:Trigger">Trigger</a> to detect player proximity</li>
+<li>one <a href="Legacy_TriggeredCondition.html" title="Legacy:TriggeredCondition">TriggeredCondition</a> to store the Trigger's state for...</li>
+<li>one <a href="Legacy_ScriptedTrigger.html" title="Legacy:ScriptedTrigger">ScriptedTrigger</a> (1) that closes the door after some time when no player is nearby</li>
+<li>another <a href="Legacy_ScriptedTrigger.html" title="Legacy:ScriptedTrigger">ScriptedTrigger</a> (2) that opens the door when a player touches the Trigger</li>
+</ul>
+<h2><span class="mw-headline" id="Door_Movers">Door Movers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Proximity-_And_Damage-Triggered_Doors?section=2" title="Edit section: Door Movers">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Place your DamageTriggerMovers like you would place any regular mover. Set their Object -&gt; InitialState to <i>TriggerToggle</i>, match their ReturnGroup -&gt; ReturnGroup names and give them the same MoverEvents -&gt; DamageEvent names. It's probably also a good idea to set their Mover -&gt; MoverEncroachType to <i>ME_CrushWhenEncroach</i> or <i>ME_IgnoreWhenEncroach</i>, so they don't get out of sync when something blocks one of them.</p>
+<p>Now you need to decide, which of your movers will be the leader of your door's <i>ReturnGroup</i>. This "leading mover" will receive the events for opening or closing the door. Set its Events -&gt; <a href="Legacy_Tag.html" title="Legacy:Tag">Tag</a> to the <a href="Legacy_Event.html" title="Legacy:Event">event</a> you want to control the door with. That event will be fired by the ScriptedTriggers and should be unique for each door. You also need to specify an event name in MoverEvents -&gt; OpenedEvent, that will be used by ScriptedTrigger (1) to find out, when to start checking whether the door should close again.</p>
+<p>Example of mover properties so far:</p>
+<table class="wikitable">
+<tr>
+<td style="text-align: center"><b><i>Property</i></b></td>
+<td style="text-align: center"><b><i>Leading Mover</i></b></td>
+<td style="text-align: center"><b><i>Other Door Parts</i></b></td>
+</tr>
+<tr>
+<td><b>Events -&gt; Tag</b></td>
+<td>MyDoor</td>
+<td>→</td>
+</tr>
+<tr>
+<td><b>Mover -&gt; MoverEncroachType</b></td>
+<td>ME_CrushWhenEncroach</td>
+<td>ME_CrushWhenEncroach</td>
+<td>You could also use <i>ME_IgnoreWhenEncraoch</i> here.</td>
+</tr>
+<tr>
+<td><b>MoverEvents -&gt; DamageEvent</b></td>
+<td>MyDoorHit</td>
+<td>MyDoorHit</td>
+</tr>
+<tr>
+<td><b>MoverEvents -&gt; OpenedEvent</b></td>
+<td>MyDoorOpened</td>
+<td>→</td>
+</tr>
+<tr>
+<td><b>Object -&gt; InitialState</b></td>
+<td>TriggerToggle</td>
+<td>TriggerToggle</td>
+</tr>
+<tr>
+<td><b>ReturnGroup -&gt; bIsLeader</b></td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr>
+<td><b>ReturnGroup -&gt; ReturnGroup</b></td>
+<td>MyDoor</td>
+<td>MyDoor</td>
+<td>This is not associated with Tags/Events in any way, it's just convenient to use the same name as the leader's Tag.</td>
+</tr>
+</table>
+<p>After setting up the movers as described above, you can <a href="Legacy_Playtest.html" title="Legacy:Playtest">playtest</a> your map and the movers will do exactly... <i>nothing</i>.</p>
+<p>If your movers activate when you run into them or shoot them, something is wrong! Make sure they are really <a href="Legacy_DamageTriggerMover.html" title="Legacy:DamageTriggerMover">DamageTriggerMovers</a> and that their initial state really is TriggerToggle.</p>
+<h2><span class="mw-headline" id="Door_Controls">Door Controls</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Proximity-_And_Damage-Triggered_Doors?section=3" title="Edit section: Door Controls">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Let's add some functionality to the door. The basic door control will be handled by a <a href="Legacy_ScriptedTrigger.html" title="Legacy:ScriptedTrigger">ScriptedTrigger</a> that opens the door when triggered and closes it again after some time. Player proximity is detected by a Trigger.</p>
+<h3><span class="mw-headline" id="Open.2C_Wait.2C_Close">Open, Wait, Close</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Proximity-_And_Damage-Triggered_Doors?section=4" title="Edit section: Open, Wait, Close">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><a href="Legacy_Add_An_Actor.html" title="Legacy:Add An Actor">Add an Actor</a> &gt;&gt; Keypoint &gt;&gt; AIScript &gt;&gt; ScriptedSequence &gt;&gt; ScriptedTrigger. It will control the door movers with a script that works like this:</p>
+<pre>
+<i>door is closed or closing</i>
+<b>Wait for event</b> <i>MyDoorHit</i>
+<b>Trigger event</b> <i>MyDoor</i> (to open the door)
+<b>Wait for event</b> <i>MyDoorOpened</i>
+<i>door is open</i>
+<b>Wait</b> <i>2 seconds</i>
+<b>If</b> <i>player is near door</i> (starts a new subsection)
+  <b>Go to</b> "<i>door is open</i>" (to wait a little longer)
+<b>End subsection</b>
+<b>Trigger event</b> <i>MyDoor</i> (to close the door)
+<b>Go to</b> "<i>door is closed or closing</i>"
+</pre>
+<p>The lines starting with <b>bold</b> words in the above algorithm can be translated directly into <a href="Legacy_ScriptedAction.html" title="Legacy:ScriptedAction">ScriptedActions</a> for <a href="Legacy_ScriptedTrigger.html" title="Legacy:ScriptedTrigger">ScriptedTrigger</a> (1):</p>
+<table>
+<tr>
+<td></td>
+<td style="text-align: center"><b><i>Action</i></b></td>
+<td style="text-align: center"><b><i>Parameter Name</i></b></td>
+<td style="text-align: center"><b><i>Parameter Value</i></b></td>
+<td style="text-align: center"><b><i>Comment</i></b></td>
+</tr>
+<tr>
+<td>0</td>
+<td><a href="Legacy_ACTION_WaitForEvent.html" title="Legacy:ACTION WaitForEvent">ACTION_WaitForEvent</a></td>
+<td style="text-align: center">ExternalEvent</td>
+<td style="text-align: center">MyDoorHit</td>
+<td>waits for the door to be hit</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://wiki.beyondunreal.com/edit/Legacy:ACTION_TriggerEvent?redlink=1" class="new" title="Legacy:ACTION TriggerEvent (page does not exist)">ACTION_TriggerEvent</a></td>
+<td style="text-align: center">Event</td>
+<td style="text-align: center">MyDoor</td>
+<td>opens the door</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="Legacy_ACTION_WaitForEvent.html" title="Legacy:ACTION WaitForEvent">ACTION_WaitForEvent</a></td>
+<td style="text-align: center">ExternalEvent</td>
+<td style="text-align: center">MyDoorOpened</td>
+<td>waits for the door to finish opening</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://wiki.beyondunreal.com/edit/Legacy:ACTION_WaitForTimer?redlink=1" class="new" title="Legacy:ACTION WaitForTimer (page does not exist)">ACTION_WaitForTimer</a></td>
+<td style="text-align: center">PauseTime</td>
+<td style="text-align: center">2</td>
+<td>wait 2 seconds</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="Legacy_ACTION_IfCondition.html" title="Legacy:ACTION IfCondition">ACTION_IfCondition</a></td>
+<td style="text-align: center">TriggeredConditionTag</td>
+<td style="text-align: center">MyDoorProximity</td>
+<td>check, if player is near the door (see next section of this tutorial)</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="Legacy_ACTION_GotoAction.html" title="Legacy:ACTION GotoAction">ACTION_GotoAction</a></td>
+<td style="text-align: center">ActionNumber</td>
+<td style="text-align: center">3</td>
+<td>go to action 3 ("wait 2 seconds")</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="https://wiki.beyondunreal.com/edit/Legacy:ACTION_EndSection?redlink=1" class="new" title="Legacy:ACTION EndSection (page does not exist)">ACTION_EndSection</a></td>
+<td style="text-align: center">→</td>
+<td style="text-align: center">→</td>
+<td>end of the IfCondition section</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="https://wiki.beyondunreal.com/edit/Legacy:ACTION_TriggerEvent?redlink=1" class="new" title="Legacy:ACTION TriggerEvent (page does not exist)">ACTION_TriggerEvent</a></td>
+<td style="text-align: center">Event</td>
+<td style="text-align: center">MyDoor</td>
+<td>close the door</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="Legacy_ACTION_GotoAction.html" title="Legacy:ACTION GotoAction">ACTION_GotoAction</a></td>
+<td style="text-align: center">ActionNumber</td>
+<td style="text-align: center">0</td>
+<td>go to action 0 ("wait for the door to be hit")</td>
+</tr>
+</table>
+<p>You can playtest the map again and the doors should already open when you shoot them, even though the If Condition in the script will probably throw an error because we haven't placed the specified <a href="Legacy_TriggeredCondition.html" title="Legacy:TriggeredCondition">TriggeredCondition</a> yet. The door doesn't yet react to player proximity, so you can get crushed it you stand between the movers when they close.</p>
+<h3><span class="mw-headline" id="Don.27t_hurt_me.21">Don't hurt me!</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Proximity-_And_Damage-Triggered_Doors?section=5" title="Edit section: Don't hurt me!">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>To tell the door that a player is still nearby, we <a href="Legacy_Add_An_Actor.html" title="Legacy:Add An Actor">add an actor</a> &gt;&gt; Triggers &gt;&gt; Trigger to the doorway and adjust its collision size. If a cylinder doesn't really fit the area you need, <a href="Legacy_Add_A_Volume.html" title="Legacy:Add A Volume">add a volume</a> with the desired shape and match its Volume -&gt; AssociatedActorTag with the Trigger's Events -&gt; Tag. Specify the Trigger's Events -&gt; Event (in our example "MyDoorProximity") and check that its Object -&gt; InitialState is <i>NormalTrigger</i>.</p>
+<p><a href="Legacy_Add_An_Actor.html" title="Legacy:Add An Actor">Add an actor</a> &gt;&gt; Triggers &gt;&gt; TriggeredCondition and set its Events -&gt; Tag to the same as the Trigger's event (in our case "MyDoorProximity", again). Match its Events -&gt; Tag with the Trigger's Events -&gt; Event and set its TriggeredCondition -&gt; bTriggerControlled to True and the other properties in that group to false.</p>
+<p>Summary of properties:</p>
+<table class="wikitable">
+<tr>
+<td style="text-align: center"><b><i>Property</i></b></td>
+<td style="text-align: center"><b><i>TriggeredCondition</i></b></td>
+<td style="text-align: center"><b><i>Trigger</i></b></td>
+</tr>
+<tr>
+<td>Events -&gt; Event</td>
+<td style="text-align: center">→</td>
+<td style="text-align: center">MyDoorProximity</td>
+</tr>
+<tr>
+<td>Events -&gt; Tag</td>
+<td style="text-align: center">MyDoorProximity</td>
+<td style="text-align: center">MyDoorProximityVolume<br />
+<i>(only when using a volume as described above)</i></td>
+</tr>
+<tr>
+<td>Object -&gt; InitialState</td>
+<td style="text-align: center">→</td>
+<td style="text-align: center">NormalTrigger</td>
+</tr>
+<tr>
+<td>TriggeredCondition -&gt; bEnabled</td>
+<td style="text-align: center">False</td>
+</tr>
+<tr>
+<td>TriggeredCondition -&gt; bToggled</td>
+<td style="text-align: center">False</td>
+</tr>
+<tr>
+<td>TriggeredCondition -&gt; bTriggerControlled</td>
+<td style="text-align: center">True</td>
+</tr>
+</table>
+<p>After adding these two actors your damage-triggered door should already stay open when a player is nearby, but it still only opens when you shoot it.</p>
+<h3><span class="mw-headline" id="Open_up_wide.21">Open up wide!</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Proximity-_And_Damage-Triggered_Doors?section=6" title="Edit section: Open up wide!">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Our door is only missing a single feature: It doesn't open automatically when a player walks up close to it. We already have a Trigger that fires an event when a player touches it, so let's just use it to open the door.</p>
+<p>Add another ScriptedTrigger and set it up to translate the player proximity event into the door hit event, which already opens the door properly:</p>
+<table>
+<tr>
+<td></td>
+<td style="text-align: center"><b><i>Action</i></b></td>
+<td style="text-align: center"><b><i>Parameter Name</i></b></td>
+<td style="text-align: center"><b><i>Parameter Value</i></b></td>
+<td style="text-align: center"><b><i>Comment</i></b></td>
+</tr>
+<tr>
+<td>0</td>
+<td><a href="Legacy_ACTION_WaitForEvent.html" title="Legacy:ACTION WaitForEvent">ACTION_WaitForEvent</a></td>
+<td style="text-align: center">ExternalEvent</td>
+<td style="text-align: center">MyDoorProximity</td>
+<td>waits for a player to touch the trigger</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://wiki.beyondunreal.com/edit/Legacy:ACTION_WaitForTimer?redlink=1" class="new" title="Legacy:ACTION WaitForTimer (page does not exist)">ACTION_WaitForTimer</a></td>
+<td style="text-align: center">PauseTime</td>
+<td style="text-align: center">0.01</td>
+<td>In my tests the script managed to crash the game with an Infinite Recursion message – this prevented it from happening.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://wiki.beyondunreal.com/edit/Legacy:ACTION_TriggerEvent?redlink=1" class="new" title="Legacy:ACTION TriggerEvent (page does not exist)">ACTION_TriggerEvent</a></td>
+<td style="text-align: center">Event</td>
+<td style="text-align: center">MyDoorHit</td>
+<td>triggers the other ScriptedTrigger, which opens the door</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="Legacy_ACTION_GotoAction.html" title="Legacy:ACTION GotoAction">ACTION_GotoAction</a></td>
+<td style="text-align: center">ActionNumber</td>
+<td style="text-align: center">0</td>
+<td>go to action 0 ("wait for player touch")</td>
+</tr>
+</table>
+<p>That's all! Your door should now open when it gets hit or when a player approaches it and will only close again if the player is no longer nearby.</p>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Proximity-_And_Damage-Triggered_Doors?section=7" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_Mover_Topics.html" title="Legacy:Mover Topics">Mover Topics</a></li>
+</ul>
+<h2><span class="mw-headline" id="Comments">Comments</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Proximity-_And_Damage-Triggered_Doors?section=8" title="Edit section: Comments">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>FreshMeat:</b> Would you kindly put some notes in here for those of us who only want to proximity trigger double doors? Trying to sort out the damage stuff from the proximity stuff has me confused.</p>
+<p><b>Wormbo:</b> Only proximity triggering can be done with regular movers and a much simpler setup. I think a good example of proximity-triggered movers is the UT2004 map <a rel="nofollow" class="external text" href="http://angelmapper.com/inforeconstruct.htm">DM-Reconstruct</a> by AngelMapper, which uses it in a very unique way.</p>
+<p><b>Tarquin:</b> Indeed. IIRC, you just stick a <a href="Legacy_Trigger.html" title="Legacy:Trigger">Trigger</a> to detect player presence, and change a few settings of the mover.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.047 seconds
+Real time usage: 0.048 seconds
+Preprocessor visited node count: 34/1000000
+Preprocessor generated node count: 54/1000000
+Post‐expand include size: 74/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:2538-0!*!0!!en!*!* and timestamp 20161216053126 and revision id 6070
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Proximity-_And_Damage-Triggered_Doors?oldid=6070">https://wiki.beyondunreal.com/Legacy:Proximity-_And_Damage-Triggered_Doors?oldid=6070</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Legacy_Mapping.html" title="Category:Legacy Mapping">Legacy Mapping</a></li><li><a href="Category_Legacy_Tutorial.html" title="Category:Legacy Tutorial">Legacy Tutorial</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_Proximity-_And_Damage-Triggered_Doors.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Proximity-_And_Damage-Triggered_Doors?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Proximity-_And_Damage-Triggered_Doors" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Proximity-_And_Damage-Triggered_Doors" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AProximity-+And+Damage-Triggered+Doors&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AProximity-+And+Damage-Triggered+Doors" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Proximity-_And_Damage-Triggered_Doors" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Proximity-_And_Damage-Triggered_Doors" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Proximity-_And_Damage-Triggered_Doors?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Proximity-_And_Damage-Triggered_Doors?oldid=6070" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Proximity-_And_Damage-Triggered_Doors" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 05:53, 26 August 2006.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":83});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Proximity-_And_Damage-Triggered_Doors by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:38 GMT -->
+</html>

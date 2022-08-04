@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:UIMessageBoxBase_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:42:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:UIMessageBoxBase (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_UIMessageBoxBase_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:UIMessageBoxBase_(UDK)","wgTitle":"UIMessageBoxBase (UDK)","wgCurRevisionId":38969,"wgRevisionId":38969,"wgArticleId":27432,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UDK-specific classes","Classes in UDK package Engine","Subclasses of UIScene (UDK)","Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:UIMessageBoxBase_(UDK)","wgRelevantArticleId":27432,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_UIMessageBoxBase_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Worst-case scenario: the UEd Goblin wipes the map and burns down your house.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:UIMessageBoxBase (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<a href="UE3_UIRoot_(UDK).html" title="UE3:UIRoot (UDK)">UIRoot</a> &gt;&gt;&#160;<a href="UE3_UIScreenObject_(UDK).html" title="UE3:UIScreenObject (UDK)">UIScreenObject</a> &gt;&gt;&#160;<a href="UE3_UIScene_(UDK).html" title="UE3:UIScene (UDK)">UIScene</a> &gt;&gt;&#160;<i><b>UIMessageBoxBase</b></i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Properties"><span class="tocnumber">1</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Property_group_.27UIMessageBoxBase.27"><span class="tocnumber">1.1</span> <span class="toctext">Property group 'UIMessageBoxBase'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#bPerformAutomaticLayout"><span class="tocnumber">1.1.1</span> <span class="toctext">bPerformAutomaticLayout</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#ButtonBarButtonBGStyleName"><span class="tocnumber">1.1.2</span> <span class="toctext">ButtonBarButtonBGStyleName</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#ButtonBarButtonTextStyleName"><span class="tocnumber">1.1.3</span> <span class="toctext">ButtonBarButtonTextStyleName</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#ChoicesWidgetName"><span class="tocnumber">1.1.4</span> <span class="toctext">ChoicesWidgetName</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#MessageWidgetName"><span class="tocnumber">1.1.5</span> <span class="toctext">MessageWidgetName</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#QuestionWidgetImageName"><span class="tocnumber">1.1.6</span> <span class="toctext">QuestionWidgetImageName</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#QuestionWidgetName"><span class="tocnumber">1.1.7</span> <span class="toctext">QuestionWidgetName</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#TitleWidgetName"><span class="tocnumber">1.1.8</span> <span class="toctext">TitleWidgetName</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-11"><a href="#Internal_variables"><span class="tocnumber">1.2</span> <span class="toctext">Internal variables</span></a>
+<ul>
+<li class="toclevel-3 tocsection-12"><a href="#btnbarChoices"><span class="tocnumber">1.2.1</span> <span class="toctext">btnbarChoices</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#imgQuestion"><span class="tocnumber">1.2.2</span> <span class="toctext">imgQuestion</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#lblMessage"><span class="tocnumber">1.2.3</span> <span class="toctext">lblMessage</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#lblQuestion"><span class="tocnumber">1.2.4</span> <span class="toctext">lblQuestion</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#lblTitle"><span class="tocnumber">1.2.5</span> <span class="toctext">lblTitle</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-17"><a href="#Default_values"><span class="tocnumber">1.3</span> <span class="toctext">Default values</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Subobjects"><span class="tocnumber">1.4</span> <span class="toctext">Subobjects</span></a>
+<ul>
+<li class="toclevel-3 tocsection-19"><a href="#SceneEventComponent"><span class="tocnumber">1.4.1</span> <span class="toctext">SceneEventComponent</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#Delegates"><span class="tocnumber">2</span> <span class="toctext">Delegates</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="#OnOptionSelected"><span class="tocnumber">2.1</span> <span class="toctext">OnOptionSelected</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="#Instance_functions"><span class="tocnumber">3</span> <span class="toctext">Instance functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-23"><a href="#AddButton"><span class="tocnumber">3.1</span> <span class="toctext">AddButton</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#FindButtonIndex"><span class="tocnumber">3.2</span> <span class="toctext">FindButtonIndex</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#GetButtonBar"><span class="tocnumber">3.3</span> <span class="toctext">GetButtonBar</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#GetMessageLabel"><span class="tocnumber">3.4</span> <span class="toctext">GetMessageLabel</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#GetTitleLabel"><span class="tocnumber">3.5</span> <span class="toctext">GetTitleLabel</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#HandleSceneActivated"><span class="tocnumber">3.6</span> <span class="toctext">HandleSceneActivated</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#HasButton"><span class="tocnumber">3.7</span> <span class="toctext">HasButton</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#LayoutControls"><span class="tocnumber">3.8</span> <span class="toctext">LayoutControls</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#OptionChosen"><span class="tocnumber">3.9</span> <span class="toctext">OptionChosen</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#RemoveButton"><span class="tocnumber">3.10</span> <span class="toctext">RemoveButton</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#SetButtonCallback"><span class="tocnumber">3.11</span> <span class="toctext">SetButtonCallback</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#SetMessage"><span class="tocnumber">3.12</span> <span class="toctext">SetMessage</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#SetQuestion"><span class="tocnumber">3.13</span> <span class="toctext">SetQuestion</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#SetTitle"><span class="tocnumber">3.14</span> <span class="toctext">SetTitle</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#SetupDockingRelationships"><span class="tocnumber">3.15</span> <span class="toctext">SetupDockingRelationships</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#SetupMessageBox"><span class="tocnumber">3.16</span> <span class="toctext">SetupMessageBox</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Package:&#160;</dt>
+<dd><a href="Category_Classes_in_UDK_package_Engine.html" title="Category:Classes in UDK package Engine">Engine</a></dd>
+<dt>Direct subclass:</dt>
+<dd><a href="UE3_UIMessageBox_(UDK).html" title="UE3:UIMessageBox (UDK)">UIMessageBox</a></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<p>Base class for message box scene types.</p>
+<p>Copyright 1998-2009 Epic Games, Inc. All Rights Reserved</p>
+<h2><span class="mw-headline" id="Properties">Properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=1" title="Edit section: Properties">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Property_group_.27UIMessageBoxBase.27">Property group 'UIMessageBoxBase'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=2" title="Edit section: Property group 'UIMessageBoxBase'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="bPerformAutomaticLayout">bPerformAutomaticLayout</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=3" title="Edit section: bPerformAutomaticLayout">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Whether or not you want the message box to handle the layout and docking automatically or not</p>
+<h4><span class="mw-headline" id="ButtonBarButtonBGStyleName">ButtonBarButtonBGStyleName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=4" title="Edit section: ButtonBarButtonBGStyleName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p>Name of the style to use for the image of the buttonbar buttons</p>
+<h4><span class="mw-headline" id="ButtonBarButtonTextStyleName">ButtonBarButtonTextStyleName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=5" title="Edit section: ButtonBarButtonTextStyleName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p>Name of the style to use for the string of the buttonbar buttons</p>
+<h4><span class="mw-headline" id="ChoicesWidgetName">ChoicesWidgetName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=6" title="Edit section: ChoicesWidgetName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="MessageWidgetName">MessageWidgetName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=7" title="Edit section: MessageWidgetName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="QuestionWidgetImageName">QuestionWidgetImageName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=8" title="Edit section: QuestionWidgetImageName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="QuestionWidgetName">QuestionWidgetName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=9" title="Edit section: QuestionWidgetName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TitleWidgetName">TitleWidgetName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=10" title="Edit section: TitleWidgetName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p>Names of the above widgets</p>
+<h3><span class="mw-headline" id="Internal_variables">Internal variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=11" title="Edit section: Internal variables">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="btnbarChoices">btnbarChoices</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=12" title="Edit section: btnbarChoices">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UICalloutButtonPanel_(UDK).html" title="UE3:UICalloutButtonPanel (UDK)">UICalloutButtonPanel</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="imgQuestion">imgQuestion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=13" title="Edit section: imgQuestion">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIImage_(UDK).html" title="UE3:UIImage (UDK)">UIImage</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="lblMessage">lblMessage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=14" title="Edit section: lblMessage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UILabel_(UDK).html" title="UE3:UILabel (UDK)">UILabel</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="lblQuestion">lblQuestion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=15" title="Edit section: lblQuestion">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UILabel_(UDK).html" title="UE3:UILabel (UDK)">UILabel</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="lblTitle">lblTitle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=16" title="Edit section: lblTitle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UILabel_(UDK).html" title="UE3:UILabel (UDK)">UILabel</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>References to the widgets in the scene</p>
+<h3><span class="mw-headline" id="Default_values">Default values</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=17" title="Edit section: Default values">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td><a href="UE3_UIScene_(UDK).html#OnSceneActivated" title="UE3:UIScene (UDK)">OnSceneActivated</a></td>
+<td><a href="#HandleSceneActivated">HandleSceneActivated</a></td>
+</tr>
+<tr>
+<td><a href="UE3_UIScene_properties_(UDK).html#bPauseGameWhileActive" title="UE3:UIScene properties (UDK)">bPauseGameWhileActive</a></td>
+<td>False</td>
+</tr>
+<tr>
+<td><a href="UE3_UIScene_properties_(UDK).html#bRenderParentScenes" title="UE3:UIScene properties (UDK)">bRenderParentScenes</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE3_UIScreenObject_(UDK).html#Position" title="UE3:UIScreenObject (UDK)">Position</a></td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIScreenValue_Bounds" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>Value[0]</td>
+<td>0.25</td>
+</tr>
+<tr>
+<td>Value[1]</td>
+<td>0.25</td>
+</tr>
+<tr>
+<td>Value[2]</td>
+<td>0.75</td>
+</tr>
+<tr>
+<td>Value[3]</td>
+<td>0.75</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><a href="UE3_UIScene_properties_(UDK).html#SceneRenderMode" title="UE3:UIScene properties (UDK)">SceneRenderMode</a></td>
+<td><a href="UE3_UIRoot_enums_(UDK).html#ESplitscreenRenderMode" title="UE3:UIRoot enums (UDK)">SPLITRENDER_Fullscreen</a></td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Subobjects">Subobjects</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=18" title="Edit section: Subobjects">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="SceneEventComponent">SceneEventComponent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=19" title="Edit section: SceneEventComponent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Class:</b> <a href="UE3_UIComp_Event_(UDK).html" title="UE3:UIComp Event (UDK)">Engine.UIComp_Event</a></p>
+<p><b>Inherits from:</b> <a href="UE3_UIScene_properties_(UDK).html#SceneEventComponent" title="UE3:UIScene properties (UDK)">UIScene.SceneEventComponent</a></p>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td>DisabledEventAliases[0]</td>
+<td>'CloseScene'</td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Delegates">Delegates</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=20" title="Edit section: Delegates">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="OnOptionSelected">OnOptionSelected</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=21" title="Edit section: OnOptionSelected">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">delegate <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>OnOptionSelected</b> (<strong class="selflink">UIMessageBoxBase</strong>&#160;<b>Sender</b>, <a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>SelectedInputAlias</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>PlayerIndex</b>)</div>
+<p>Called when the user selects an option.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>Sender</i> - the message box that generated this call</li>
+<li><i>SelectedInputAlias</i> - the alias of the button that the user selected. Should match one of the aliases passed into this message box.</li>
+<li><i>PlayerIndex</i> - the index of the player that selected the option.</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE to indicate that the message box should close itself.</dd>
+</dl>
+<h2><span class="mw-headline" id="Instance_functions">Instance functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=22" title="Edit section: Instance functions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="AddButton">AddButton</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=23" title="Edit section: AddButton">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>AddButton</b> (<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>ButtonAlias</b>)</div>
+<p>Adds a button to the button bar, enabling the message box to respond to the input key associated with the button alias.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ButtonAlias</i> - the buttonbar alias of the button that should be added to the buttonbar. This determines which options are available as well as which input keys the message box responds to. Aliases must be registered in the Engine.UIDataStore_InputAlias section of the input .ini file.</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE if the button was successfully added to the buttonbar. FALSE if the alias wasn't registered or the button already existed in the buttonbar.</dd>
+</dl>
+<h4><span class="mw-headline" id="FindButtonIndex">FindButtonIndex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=24" title="Edit section: FindButtonIndex">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>FindButtonIndex</b> (<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>ButtonAlias</b>)</div>
+<p>Find the location of a button in the buttonbar's list of buttons.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ButtonAlias</i> - the buttonbar alias associated with the button to search for.</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the index into the buttonbar's list of buttons, or INDEX_NONE if it isn't found.</dd>
+</dl>
+<h4><span class="mw-headline" id="GetButtonBar">GetButtonBar</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=25" title="Edit section: GetButtonBar">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_UICalloutButtonPanel_(UDK).html" title="UE3:UICalloutButtonPanel (UDK)">UICalloutButtonPanel</a>&#160;<b>GetButtonBar</b> ()</div>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the buttonbar for the message box</dd>
+</dl>
+<h4><span class="mw-headline" id="GetMessageLabel">GetMessageLabel</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=26" title="Edit section: GetMessageLabel">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_UILabel_(UDK).html" title="UE3:UILabel (UDK)">UILabel</a>&#160;<b>GetMessageLabel</b> ()</div>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the label that displays the message box's message</dd>
+</dl>
+<h4><span class="mw-headline" id="GetTitleLabel">GetTitleLabel</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=27" title="Edit section: GetTitleLabel">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_UILabel_(UDK).html" title="UE3:UILabel (UDK)">UILabel</a>&#160;<b>GetTitleLabel</b> ()</div>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the label that displays the message box's title string</dd>
+</dl>
+<h4><span class="mw-headline" id="HandleSceneActivated">HandleSceneActivated</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=28" title="Edit section: HandleSceneActivated">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>HandleSceneActivated</b> (<a href="UE3_UIScene_(UDK).html" title="UE3:UIScene (UDK)">UIScene</a>&#160;<b>ActivatedScene</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bInitialActivation</b>)</div>
+<p>Handler for scene's OnSceneActivated delegate.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ActivatedScene</i> - the scene that was activated</li>
+<li><i>bInitialActivation</i> - TRUE if this is the first time this scene is being activated; FALSE if this scene has become active as a result of closing another scene or manually moving this scene in the stack.</li>
+</ul>
+<h4><span class="mw-headline" id="HasButton">HasButton</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=29" title="Edit section: HasButton">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>HasButton</b> (<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>ButtonAlias</b>)</div>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE if the button bar contains a button which has the specified alias.</dd>
+</dl>
+<h4><span class="mw-headline" id="LayoutControls">LayoutControls</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=30" title="Edit section: LayoutControls">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>LayoutControls</b> ()</div>
+<p>Applies any special formatting to the message box's internal controls.</p>
+<h4><span class="mw-headline" id="OptionChosen">OptionChosen</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=31" title="Edit section: OptionChosen">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>OptionChosen</b> (<a href="UE3_UIScreenObject_(UDK).html" title="UE3:UIScreenObject (UDK)">UIScreenObject</a>&#160;<b>EventObject</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>PlayerIndex</b>)</div>
+<p>Handler for the buttonbar buttons' OnClicked delegate. Routes the notification to the scene's OnOptionSelected delegate.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>EventObject</i> - Object that issued the event.</li>
+<li><i>PlayerIndex</i> - Player that performed the action that issued the event.</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>return TRUE to prevent the kismet OnClick event from firing.</dd>
+</dl>
+<h4><span class="mw-headline" id="RemoveButton">RemoveButton</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=32" title="Edit section: RemoveButton">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>RemoveButton</b> (<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>ButtonAlias</b>)</div>
+<p>Removes a button from the buttonbar. The messagebox will no longer respond to the input key associated with the button alias.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ButtonAlias</i> - the buttonbar alias associated with the button that should be removed.</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE if the button was successfully removed.</dd>
+</dl>
+<h4><span class="mw-headline" id="SetButtonCallback">SetButtonCallback</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=33" title="Edit section: SetButtonCallback">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function protected <b>SetButtonCallback</b> (<a href="UE3_UICalloutButton_(UDK).html" title="UE3:UICalloutButton (UDK)">UICalloutButton</a>&#160;<b>TargetButton</b>)</div>
+<p>Assign the button's OnClick delegate to a function in this scene, and set the styles for both the background and the text</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>TargetButton</i> - the button to set the callback for.</li>
+</ul>
+<h4><span class="mw-headline" id="SetMessage">SetMessage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=34" title="Edit section: SetMessage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>SetMessage</b> (<a href="String.html" title="String">string</a>&#160;<b>NewMessageString</b>)</div>
+<p>Sets the text for the message box.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>NewMessageString</i> - the string or datastore markup to use for the message box text</li>
+</ul>
+<h4><span class="mw-headline" id="SetQuestion">SetQuestion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=35" title="Edit section: SetQuestion">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>SetQuestion</b> (<a href="String.html" title="String">string</a>&#160;<b>NewMessageString</b>)</div>
+<p>Sets the text for the question. Will hide the widget if the string is empty</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>NewMessageString</i> - the string or datastore markup to use for the question text</li>
+</ul>
+<h4><span class="mw-headline" id="SetTitle">SetTitle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=36" title="Edit section: SetTitle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>SetTitle</b> (<a href="String.html" title="String">string</a>&#160;<b>NewTitleString</b>)</div>
+<p>Sets the title for the message box.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>NewTitleString</i> - the string or datastore markup to use as the message box's title</li>
+</ul>
+<h4><span class="mw-headline" id="SetupDockingRelationships">SetupDockingRelationships</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=37" title="Edit section: SetupDockingRelationships">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>SetupDockingRelationships</b> ()</div>
+<p>Sets up the docking links for the message box's controls</p>
+<h4><span class="mw-headline" id="SetupMessageBox">SetupMessageBox</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)?section=38" title="Edit section: SetupMessageBox">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>SetupMessageBox</b> (<a href="String.html" title="String">string</a>&#160;<b>Title</b>, <a href="String.html" title="String">string</a>&#160;<b>Message</b>, <a href="String.html" title="String">string</a>&#160;<b>Question</b>, <a href="Array.html" title="Array">array</a>&lt;<a href="Name.html" title="Name" class="mw-redirect">name</a>&gt;&#160;<b>ButtonAliases</b>, optional&#160;<a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnOptionSelected">OnOptionSelected</a>&gt;&#160;<b>SelectionCallback</b>)</div>
+<p>Sets the values for the message box controls.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>Title</i> - the string or datastore markup to use as the message box title</li>
+<li><i>Message</i> - the string or datastore markup to use for the message box text</li>
+<li><i>Question</i> - the string or datastore markup to use for the question text</li>
+<li><i>ButtonAliases</i> - the list of aliases to use in the message box's button bar; this determines which options are available as well as which input keys the message box responds to. Aliases must be registered in the Engine.UIDataStore_InputAlias section of the input .ini file.</li>
+<li><i>SelectionCallback</i> - specifies the function to call when the user makes a selection.</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.276 seconds
+Real time usage: 0.285 seconds
+Preprocessor visited node count: 1766/1000000
+Preprocessor generated node count: 5772/1000000
+Post‐expand include size: 12210/2097152 bytes
+Template argument size: 3692/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  198.278      1 - -total
+ 52.95%  104.986      1 - Template:Infobox_class
+ 50.20%   99.528      1 - Template:Infobox_class/core
+ 23.31%   46.214     21 - Template:Samegame
+ 19.33%   38.324     13 - Template:Cl
+ 15.93%   31.593     10 - Template:Tl
+ 13.70%   27.167     17 - Template:Code
+  9.21%   18.271      2 - Template:Ch
+  3.21%    6.369      1 - Template:Autogenerated
+  2.86%    5.671      1 - Template:Classname
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:27432-0!*!*!*!*!*!* and timestamp 20161215183719 and revision id 38969
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:UIMessageBoxBase_(UDK)?oldid=38969">https://wiki.beyondunreal.com/UE3:UIMessageBoxBase_(UDK)?oldid=38969</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_UDK-specific_classes.html" title="Category:UDK-specific classes">UDK-specific classes</a></li><li><a href="Category_Classes_in_UDK_package_Engine.html" title="Category:Classes in UDK package Engine">Classes in UDK package Engine</a></li><li><a href="Category_Subclasses_of_UIScene_(UDK).html" title="Category:Subclasses of UIScene (UDK)">Subclasses of UIScene (UDK)</a></li><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_UIMessageBoxBase_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:UIMessageBoxBase_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:UIMessageBoxBase_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:UIMessageBoxBase_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AUIMessageBoxBase+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AUIMessageBoxBase+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:UIMessageBoxBase_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:UIMessageBoxBase_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:UIMessageBoxBase_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:UIMessageBoxBase_(UDK)?oldid=38969" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:UIMessageBoxBase_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 13:47, 6 November 2009.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":99});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:UIMessageBoxBase_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:42:12 GMT -->
+</html>

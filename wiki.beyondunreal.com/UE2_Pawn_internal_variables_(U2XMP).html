@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE2:Pawn_internal_variables_(U2XMP) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:46:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE2:Pawn internal variables (U2XMP) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE2_Pawn_internal_variables_(U2XMP).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE2","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":104,"wgPageName":"UE2:Pawn_internal_variables_(U2XMP)","wgTitle":"Pawn internal variables (U2XMP)","wgCurRevisionId":22025,"wgRevisionId":22025,"wgArticleId":14296,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE2:Pawn_internal_variables_(U2XMP)","wgRelevantArticleId":14296,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-104 ns-subject page-UE2_Pawn_internal_variables_U2XMP skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>The three virtues of a programmer: Laziness, Impatience, and Hubris. &#8211; Larry Wall
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE2:Pawn internal variables (U2XMP)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_2_Expanded_Multiplayer.html" title="Unreal 2 Expanded Multiplayer"><img alt="U2XMP" src="w/images/Icon-U2XMP.png" width="30" height="14" /></a></td>
+<td><a href="UE2_Object_(U2XMP).html" title="UE2:Object (U2XMP)">Object</a> &gt;&gt;&#160;<a href="UE2_Actor_(U2XMP).html" title="UE2:Actor (U2XMP)">Actor</a> &gt;&gt;&#160;<a href="UE2_Pawn_(U2XMP).html" title="UE2:Pawn (U2XMP)">Pawn</a> <i>(internal variables)</i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Internal_variables"><span class="tocnumber">1</span> <span class="toctext">Internal variables</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#AccelRate"><span class="tocnumber">1.1</span> <span class="toctext">AccelRate</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#AirControl"><span class="tocnumber">1.2</span> <span class="toctext">AirControl</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#AirSpeed"><span class="tocnumber">1.3</span> <span class="toctext">AirSpeed</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Anchor"><span class="tocnumber">1.4</span> <span class="toctext">Anchor</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#AnimAction"><span class="tocnumber">1.5</span> <span class="toctext">AnimAction</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#AnimStatus"><span class="tocnumber">1.6</span> <span class="toctext">AnimStatus</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#AvgPhysicsTime"><span class="tocnumber">1.7</span> <span class="toctext">AvgPhysicsTime</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#bAlert"><span class="tocnumber">1.8</span> <span class="toctext">bAlert</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#bAmbientCreature"><span class="tocnumber">1.9</span> <span class="toctext">bAmbientCreature</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#BaseEyeHeight"><span class="tocnumber">1.10</span> <span class="toctext">BaseEyeHeight</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#bAutoActivate"><span class="tocnumber">1.11</span> <span class="toctext">bAutoActivate</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#bAvoidLedges"><span class="tocnumber">1.12</span> <span class="toctext">bAvoidLedges</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#bBlockAdjustJump"><span class="tocnumber">1.13</span> <span class="toctext">bBlockAdjustJump</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#bCanAdjustJump"><span class="tocnumber">1.14</span> <span class="toctext">bCanAdjustJump</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#bCanClimbLadders"><span class="tocnumber">1.15</span> <span class="toctext">bCanClimbLadders</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#bCanCrawl"><span class="tocnumber">1.16</span> <span class="toctext">bCanCrawl</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#bCanCrouch"><span class="tocnumber">1.17</span> <span class="toctext">bCanCrouch</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#bCanDiscardInventory"><span class="tocnumber">1.18</span> <span class="toctext">bCanDiscardInventory</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#bCanDoSpecial"><span class="tocnumber">1.19</span> <span class="toctext">bCanDoSpecial</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#bCanFly"><span class="tocnumber">1.20</span> <span class="toctext">bCanFly</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#bCanJump"><span class="tocnumber">1.21</span> <span class="toctext">bCanJump</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#bCanOpenDoors"><span class="tocnumber">1.22</span> <span class="toctext">bCanOpenDoors</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#bCanPickupInventory"><span class="tocnumber">1.23</span> <span class="toctext">bCanPickupInventory</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#bCanStrafe"><span class="tocnumber">1.24</span> <span class="toctext">bCanStrafe</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#bCanSwim"><span class="tocnumber">1.25</span> <span class="toctext">bCanSwim</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#bCanWalk"><span class="tocnumber">1.26</span> <span class="toctext">bCanWalk</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#bCanWalkOffLedges"><span class="tocnumber">1.27</span> <span class="toctext">bCanWalkOffLedges</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#bCountJumps"><span class="tocnumber">1.28</span> <span class="toctext">bCountJumps</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#bCrawler"><span class="tocnumber">1.29</span> <span class="toctext">bCrawler</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#bFallingHitWallNotifications"><span class="tocnumber">1.30</span> <span class="toctext">bFallingHitWallNotifications</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#bIgnoreExtraCosts"><span class="tocnumber">1.31</span> <span class="toctext">bIgnoreExtraCosts</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#bInitializeAnimation"><span class="tocnumber">1.32</span> <span class="toctext">bInitializeAnimation</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#bInvulnerableBody"><span class="tocnumber">1.33</span> <span class="toctext">bInvulnerableBody</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#bIsFemale"><span class="tocnumber">1.34</span> <span class="toctext">bIsFemale</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#bIsRealPlayer"><span class="tocnumber">1.35</span> <span class="toctext">bIsRealPlayer</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#bIsTurning"><span class="tocnumber">1.36</span> <span class="toctext">bIsTurning</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#bIsWalking"><span class="tocnumber">1.37</span> <span class="toctext">bIsWalking</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#bJustLanded"><span class="tocnumber">1.38</span> <span class="toctext">bJustLanded</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#BloodEffect"><span class="tocnumber">1.39</span> <span class="toctext">BloodEffect</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#bNoVelocityUpdate"><span class="tocnumber">1.40</span> <span class="toctext">bNoVelocityUpdate</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#BodyLandedSound"><span class="tocnumber">1.41</span> <span class="toctext">BodyLandedSound</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#bPhysicsAnimUpdate"><span class="tocnumber">1.42</span> <span class="toctext">bPhysicsAnimUpdate</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="#bPlayedDeath"><span class="tocnumber">1.43</span> <span class="toctext">bPlayedDeath</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="#BreathTime"><span class="tocnumber">1.44</span> <span class="toctext">BreathTime</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href="#bReducedSpeed"><span class="tocnumber">1.45</span> <span class="toctext">bReducedSpeed</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#bSilentCrouch"><span class="tocnumber">1.46</span> <span class="toctext">bSilentCrouch</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="#bSimulateGravity"><span class="tocnumber">1.47</span> <span class="toctext">bSimulateGravity</span></a></li>
+<li class="toclevel-2 tocsection-49"><a href="#bSpecialNavigation"><span class="tocnumber">1.48</span> <span class="toctext">bSpecialNavigation</span></a></li>
+<li class="toclevel-2 tocsection-50"><a href="#bSteadyFiring"><span class="tocnumber">1.49</span> <span class="toctext">bSteadyFiring</span></a></li>
+<li class="toclevel-2 tocsection-51"><a href="#bStopAtLedges"><span class="tocnumber">1.50</span> <span class="toctext">bStopAtLedges</span></a></li>
+<li class="toclevel-2 tocsection-52"><a href="#bThumped"><span class="tocnumber">1.51</span> <span class="toctext">bThumped</span></a></li>
+<li class="toclevel-2 tocsection-53"><a href="#bTurningLeft"><span class="tocnumber">1.52</span> <span class="toctext">bTurningLeft</span></a></li>
+<li class="toclevel-2 tocsection-54"><a href="#bUpAndOut"><span class="tocnumber">1.53</span> <span class="toctext">bUpAndOut</span></a></li>
+<li class="toclevel-2 tocsection-55"><a href="#bUpdateEyeheight"><span class="tocnumber">1.54</span> <span class="toctext">bUpdateEyeheight</span></a></li>
+<li class="toclevel-2 tocsection-56"><a href="#bUpdatingDisplay"><span class="tocnumber">1.55</span> <span class="toctext">bUpdatingDisplay</span></a></li>
+<li class="toclevel-2 tocsection-57"><a href="#bWarping"><span class="tocnumber">1.56</span> <span class="toctext">bWarping</span></a></li>
+<li class="toclevel-2 tocsection-58"><a href="#bWasCrouched"><span class="tocnumber">1.57</span> <span class="toctext">bWasCrouched</span></a></li>
+<li class="toclevel-2 tocsection-59"><a href="#bWasFalling"><span class="tocnumber">1.58</span> <span class="toctext">bWasFalling</span></a></li>
+<li class="toclevel-2 tocsection-60"><a href="#bWasOnGround"><span class="tocnumber">1.59</span> <span class="toctext">bWasOnGround</span></a></li>
+<li class="toclevel-2 tocsection-61"><a href="#bWasWalking"><span class="tocnumber">1.60</span> <span class="toctext">bWasWalking</span></a></li>
+<li class="toclevel-2 tocsection-62"><a href="#ControlledActor"><span class="tocnumber">1.61</span> <span class="toctext">ControlledActor</span></a></li>
+<li class="toclevel-2 tocsection-63"><a href="#Controller"><span class="tocnumber">1.62</span> <span class="toctext">Controller</span></a></li>
+<li class="toclevel-2 tocsection-64"><a href="#CrouchCostMultiplier"><span class="tocnumber">1.63</span> <span class="toctext">CrouchCostMultiplier</span></a></li>
+<li class="toclevel-2 tocsection-65"><a href="#CrouchEyeHeight"><span class="tocnumber">1.64</span> <span class="toctext">CrouchEyeHeight</span></a></li>
+<li class="toclevel-2 tocsection-66"><a href="#DamageScaling"><span class="tocnumber">1.65</span> <span class="toctext">DamageScaling</span></a></li>
+<li class="toclevel-2 tocsection-67"><a href="#DeathObservers"><span class="tocnumber">1.66</span> <span class="toctext">DeathObservers</span></a></li>
+<li class="toclevel-2 tocsection-68"><a href="#DesiredSpeed"><span class="tocnumber">1.67</span> <span class="toctext">DesiredSpeed</span></a></li>
+<li class="toclevel-2 tocsection-69"><a href="#DesiredStance"><span class="tocnumber">1.68</span> <span class="toctext">DesiredStance</span></a></li>
+<li class="toclevel-2 tocsection-70"><a href="#DestinationOffset"><span class="tocnumber">1.69</span> <span class="toctext">DestinationOffset</span></a></li>
+<li class="toclevel-2 tocsection-71"><a href="#Die"><span class="tocnumber">1.70</span> <span class="toctext">Die</span></a></li>
+<li class="toclevel-2 tocsection-72"><a href="#DoorCostMultiplier"><span class="tocnumber">1.71</span> <span class="toctext">DoorCostMultiplier</span></a></li>
+<li class="toclevel-2 tocsection-73"><a href="#EyeHeight"><span class="tocnumber">1.72</span> <span class="toctext">EyeHeight</span></a></li>
+<li class="toclevel-2 tocsection-74"><a href="#FlashCount"><span class="tocnumber">1.73</span> <span class="toctext">FlashCount</span></a></li>
+<li class="toclevel-2 tocsection-75"><a href="#Floor"><span class="tocnumber">1.74</span> <span class="toctext">Floor</span></a></li>
+<li class="toclevel-2 tocsection-76"><a href="#FlyCostMultiplier"><span class="tocnumber">1.75</span> <span class="toctext">FlyCostMultiplier</span></a></li>
+<li class="toclevel-2 tocsection-77"><a href="#GibForSureHealth"><span class="tocnumber">1.76</span> <span class="toctext">GibForSureHealth</span></a></li>
+<li class="toclevel-2 tocsection-78"><a href="#GibMaybeHealth"><span class="tocnumber">1.77</span> <span class="toctext">GibMaybeHealth</span></a></li>
+<li class="toclevel-2 tocsection-79"><a href="#GibMaybeOdds"><span class="tocnumber">1.78</span> <span class="toctext">GibMaybeOdds</span></a></li>
+<li class="toclevel-2 tocsection-80"><a href="#GroundSpeed"><span class="tocnumber">1.79</span> <span class="toctext">GroundSpeed</span></a></li>
+<li class="toclevel-2 tocsection-81"><a href="#HeadVolume"><span class="tocnumber">1.80</span> <span class="toctext">HeadVolume</span></a></li>
+<li class="toclevel-2 tocsection-82"><a href="#HitDamageType"><span class="tocnumber">1.81</span> <span class="toctext">HitDamageType</span></a></li>
+<li class="toclevel-2 tocsection-83"><a href="#HitSound"><span class="tocnumber">1.82</span> <span class="toctext">HitSound</span></a></li>
+<li class="toclevel-2 tocsection-84"><a href="#JumpCostMultiplier"><span class="tocnumber">1.83</span> <span class="toctext">JumpCostMultiplier</span></a></li>
+<li class="toclevel-2 tocsection-85"><a href="#JumpZ"><span class="tocnumber">1.84</span> <span class="toctext">JumpZ</span></a></li>
+<li class="toclevel-2 tocsection-86"><a href="#LadderCostMultiplier"><span class="tocnumber">1.85</span> <span class="toctext">LadderCostMultiplier</span></a></li>
+<li class="toclevel-2 tocsection-87"><a href="#LadderSpeed"><span class="tocnumber">1.86</span> <span class="toctext">LadderSpeed</span></a></li>
+<li class="toclevel-2 tocsection-88"><a href="#Land"><span class="tocnumber">1.87</span> <span class="toctext">Land</span></a></li>
+<li class="toclevel-2 tocsection-89"><a href="#LandMovementState"><span class="tocnumber">1.88</span> <span class="toctext">LandMovementState</span></a></li>
+<li class="toclevel-2 tocsection-90"><a href="#LastPainAnimTime"><span class="tocnumber">1.89</span> <span class="toctext">LastPainAnimTime</span></a></li>
+<li class="toclevel-2 tocsection-91"><a href="#LastPainSound"><span class="tocnumber">1.90</span> <span class="toctext">LastPainSound</span></a></li>
+<li class="toclevel-2 tocsection-92"><a href="#LeapMaxRange"><span class="tocnumber">1.91</span> <span class="toctext">LeapMaxRange</span></a></li>
+<li class="toclevel-2 tocsection-93"><a href="#LeapMinRange"><span class="tocnumber">1.92</span> <span class="toctext">LeapMinRange</span></a></li>
+<li class="toclevel-2 tocsection-94"><a href="#LeapOdds"><span class="tocnumber">1.93</span> <span class="toctext">LeapOdds</span></a></li>
+<li class="toclevel-2 tocsection-95"><a href="#LowDetailBlood"><span class="tocnumber">1.94</span> <span class="toctext">LowDetailBlood</span></a></li>
+<li class="toclevel-2 tocsection-96"><a href="#LowGoreBlood"><span class="tocnumber">1.95</span> <span class="toctext">LowGoreBlood</span></a></li>
+<li class="toclevel-2 tocsection-97"><a href="#MaxDesiredSpeed"><span class="tocnumber">1.96</span> <span class="toctext">MaxDesiredSpeed</span></a></li>
+<li class="toclevel-2 tocsection-98"><a href="#MaxFallSpeed"><span class="tocnumber">1.97</span> <span class="toctext">MaxFallSpeed</span></a></li>
+<li class="toclevel-2 tocsection-99"><a href="#MaxJumpDistance"><span class="tocnumber">1.98</span> <span class="toctext">MaxJumpDistance</span></a></li>
+<li class="toclevel-2 tocsection-100"><a href="#MaxJumpDownDistance"><span class="tocnumber">1.99</span> <span class="toctext">MaxJumpDownDistance</span></a></li>
+<li class="toclevel-2 tocsection-101"><a href="#MaxJumpUpDistance"><span class="tocnumber">1.100</span> <span class="toctext">MaxJumpUpDistance</span></a></li>
+<li class="toclevel-2 tocsection-102"><a href="#MaxStepHeight"><span class="tocnumber">1.101</span> <span class="toctext">MaxStepHeight</span></a></li>
+<li class="toclevel-2 tocsection-103"><a href="#MeleeOdds"><span class="tocnumber">1.102</span> <span class="toctext">MeleeOdds</span></a></li>
+<li class="toclevel-2 tocsection-104"><a href="#MeleeRange"><span class="tocnumber">1.103</span> <span class="toctext">MeleeRange</span></a></li>
+<li class="toclevel-2 tocsection-105"><a href="#MenuName"><span class="tocnumber">1.104</span> <span class="toctext">MenuName</span></a></li>
+<li class="toclevel-2 tocsection-106"><a href="#MinIsTurningRate"><span class="tocnumber">1.105</span> <span class="toctext">MinIsTurningRate</span></a></li>
+<li class="toclevel-2 tocsection-107"><a href="#MovementAnimRate"><span class="tocnumber">1.106</span> <span class="toctext">MovementAnimRate</span></a></li>
+<li class="toclevel-2 tocsection-108"><a href="#MovementAnims"><span class="tocnumber">1.107</span> <span class="toctext">MovementAnims</span></a></li>
+<li class="toclevel-2 tocsection-109"><a href="#MovementBlendStartTime"><span class="tocnumber">1.108</span> <span class="toctext">MovementBlendStartTime</span></a></li>
+<li class="toclevel-2 tocsection-110"><a href="#NavigationStance"><span class="tocnumber">1.109</span> <span class="toctext">NavigationStance</span></a></li>
+<li class="toclevel-2 tocsection-111"><a href="#NextPathRadius"><span class="tocnumber">1.110</span> <span class="toctext">NextPathRadius</span></a></li>
+<li class="toclevel-2 tocsection-112"><a href="#nextPawn"><span class="tocnumber">1.111</span> <span class="toctext">nextPawn</span></a></li>
+<li class="toclevel-2 tocsection-113"><a href="#noise1loudness"><span class="tocnumber">1.112</span> <span class="toctext">noise1loudness</span></a></li>
+<li class="toclevel-2 tocsection-114"><a href="#noise1other"><span class="tocnumber">1.113</span> <span class="toctext">noise1other</span></a></li>
+<li class="toclevel-2 tocsection-115"><a href="#noise1spot"><span class="tocnumber">1.114</span> <span class="toctext">noise1spot</span></a></li>
+<li class="toclevel-2 tocsection-116"><a href="#noise1time"><span class="tocnumber">1.115</span> <span class="toctext">noise1time</span></a></li>
+<li class="toclevel-2 tocsection-117"><a href="#noise2loudness"><span class="tocnumber">1.116</span> <span class="toctext">noise2loudness</span></a></li>
+<li class="toclevel-2 tocsection-118"><a href="#noise2other"><span class="tocnumber">1.117</span> <span class="toctext">noise2other</span></a></li>
+<li class="toclevel-2 tocsection-119"><a href="#noise2spot"><span class="tocnumber">1.118</span> <span class="toctext">noise2spot</span></a></li>
+<li class="toclevel-2 tocsection-120"><a href="#noise2time"><span class="tocnumber">1.119</span> <span class="toctext">noise2time</span></a></li>
+<li class="toclevel-2 tocsection-121"><a href="#OldAcceleration"><span class="tocnumber">1.120</span> <span class="toctext">OldAcceleration</span></a></li>
+<li class="toclevel-2 tocsection-122"><a href="#OldPhysics"><span class="tocnumber">1.121</span> <span class="toctext">OldPhysics</span></a></li>
+<li class="toclevel-2 tocsection-123"><a href="#OldRotYaw"><span class="tocnumber">1.122</span> <span class="toctext">OldRotYaw</span></a></li>
+<li class="toclevel-2 tocsection-124"><a href="#OldZ"><span class="tocnumber">1.123</span> <span class="toctext">OldZ</span></a></li>
+<li class="toclevel-2 tocsection-125"><a href="#OnLadder"><span class="tocnumber">1.124</span> <span class="toctext">OnLadder</span></a></li>
+<li class="toclevel-2 tocsection-126"><a href="#OwnerName"><span class="tocnumber">1.125</span> <span class="toctext">OwnerName</span></a></li>
+<li class="toclevel-2 tocsection-127"><a href="#PendingWeapon"><span class="tocnumber">1.126</span> <span class="toctext">PendingWeapon</span></a></li>
+<li class="toclevel-2 tocsection-128"><a href="#PlayerReplicationInfo"><span class="tocnumber">1.127</span> <span class="toctext">PlayerReplicationInfo</span></a></li>
+<li class="toclevel-2 tocsection-129"><a href="#PreviousDesiredRotationYaw"><span class="tocnumber">1.128</span> <span class="toctext">PreviousDesiredRotationYaw</span></a></li>
+<li class="toclevel-2 tocsection-130"><a href="#ProneEyeHeight"><span class="tocnumber">1.129</span> <span class="toctext">ProneEyeHeight</span></a></li>
+<li class="toclevel-2 tocsection-131"><a href="#ReducedDamageType"><span class="tocnumber">1.130</span> <span class="toctext">ReducedDamageType</span></a></li>
+<li class="toclevel-2 tocsection-132"><a href="#SelectedItem"><span class="tocnumber">1.131</span> <span class="toctext">SelectedItem</span></a></li>
+<li class="toclevel-2 tocsection-133"><a href="#SerpentineDir"><span class="tocnumber">1.132</span> <span class="toctext">SerpentineDir</span></a></li>
+<li class="toclevel-2 tocsection-134"><a href="#SerpentineDist"><span class="tocnumber">1.133</span> <span class="toctext">SerpentineDist</span></a></li>
+<li class="toclevel-2 tocsection-135"><a href="#SerpentineTime"><span class="tocnumber">1.134</span> <span class="toctext">SerpentineTime</span></a></li>
+<li class="toclevel-2 tocsection-136"><a href="#ShadowA"><span class="tocnumber">1.135</span> <span class="toctext">ShadowA</span></a></li>
+<li class="toclevel-2 tocsection-137"><a href="#ShadowB"><span class="tocnumber">1.136</span> <span class="toctext">ShadowB</span></a></li>
+<li class="toclevel-2 tocsection-138"><a href="#SoundDampening"><span class="tocnumber">1.137</span> <span class="toctext">SoundDampening</span></a></li>
+<li class="toclevel-2 tocsection-139"><a href="#SpecialNavigationList"><span class="tocnumber">1.138</span> <span class="toctext">SpecialNavigationList</span></a></li>
+<li class="toclevel-2 tocsection-140"><a href="#SplashTime"><span class="tocnumber">1.139</span> <span class="toctext">SplashTime</span></a></li>
+<li class="toclevel-2 tocsection-141"><a href="#Stance"><span class="tocnumber">1.140</span> <span class="toctext">Stance</span></a></li>
+<li class="toclevel-2 tocsection-142"><a href="#SwimCostMultiplier"><span class="tocnumber">1.141</span> <span class="toctext">SwimCostMultiplier</span></a></li>
+<li class="toclevel-2 tocsection-143"><a href="#TakeHitLocation"><span class="tocnumber">1.142</span> <span class="toctext">TakeHitLocation</span></a></li>
+<li class="toclevel-2 tocsection-144"><a href="#TearOffMomentum"><span class="tocnumber">1.143</span> <span class="toctext">TearOffMomentum</span></a></li>
+<li class="toclevel-2 tocsection-145"><a href="#TurnLeftAnim"><span class="tocnumber">1.144</span> <span class="toctext">TurnLeftAnim</span></a></li>
+<li class="toclevel-2 tocsection-146"><a href="#TurnRightAnim"><span class="tocnumber">1.145</span> <span class="toctext">TurnRightAnim</span></a></li>
+<li class="toclevel-2 tocsection-147"><a href="#UncrouchTime"><span class="tocnumber">1.146</span> <span class="toctext">UncrouchTime</span></a></li>
+<li class="toclevel-2 tocsection-148"><a href="#UnderWaterTime"><span class="tocnumber">1.147</span> <span class="toctext">UnderWaterTime</span></a></li>
+<li class="toclevel-2 tocsection-149"><a href="#Visibility"><span class="tocnumber">1.148</span> <span class="toctext">Visibility</span></a></li>
+<li class="toclevel-2 tocsection-150"><a href="#WalkingPct"><span class="tocnumber">1.149</span> <span class="toctext">WalkingPct</span></a></li>
+<li class="toclevel-2 tocsection-151"><a href="#WaterMovementState"><span class="tocnumber">1.150</span> <span class="toctext">WaterMovementState</span></a></li>
+<li class="toclevel-2 tocsection-152"><a href="#WaterSpeed"><span class="tocnumber">1.151</span> <span class="toctext">WaterSpeed</span></a></li>
+<li class="toclevel-2 tocsection-153"><a href="#Weapon"><span class="tocnumber">1.152</span> <span class="toctext">Weapon</span></a></li>
+<li class="toclevel-2 tocsection-154"><a href="#YawRateMultiplier"><span class="tocnumber">1.153</span> <span class="toctext">YawRateMultiplier</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Pawn internal variables in other games:</dt>
+<dd><span><a href="UE1_Pawn_internal_variables_(RTNP).html" title="UE1:Pawn internal variables (RTNP)">RTNP</a></span>, <span><a href="UE1_Pawn_internal_variables_(U1).html" title="UE1:Pawn internal variables (U1)">U1</a></span>, <span><a href="UE1_Pawn_internal_variables_(UT).html" title="UE1:Pawn internal variables (UT)">UT</a></span>, <span><a href="UE2_Pawn_internal_variables_(U2).html" title="UE2:Pawn internal variables (U2)">U2</a></span>, <span><a href="UE2_Pawn_internal_variables_(UE2Runtime).html" title="UE2:Pawn internal variables (UE2Runtime)">UE2Runtime</a></span>, <span><a href="UE2_Pawn_internal_variables_(UT2003).html" title="UE2:Pawn internal variables (UT2003)">UT2003</a></span>, <span><a href="UE2_Pawn_internal_variables_(UT2004).html" title="UE2:Pawn internal variables (UT2004)">UT2004</a></span>, <span><a href="UE3_Pawn_internal_variables_(UT3).html" title="UE3:Pawn internal variables (UT3)">UT3</a></span>, <span><a href="UE3_Pawn_internal_variables_(UDK).html" title="UE3:Pawn internal variables (UDK)">UDK</a></span></dd>
+<dt>Other member categories for this class:</dt>
+<dd><span><a href="UE2_Pawn_instance_functions_(U2XMP).html" title="UE2:Pawn instance functions (U2XMP)">instance functions</a></span>, <span><a href="UE2_Pawn_properties_(U2XMP).html" title="UE2:Pawn properties (U2XMP)">properties</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Internal_variables">Internal variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=1" title="Edit section: Internal variables">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="AccelRate">AccelRate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=2" title="Edit section: AccelRate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>max acceleration rate</p>
+<p><b>Default value:</b> 2048.0</p>
+<h4><span class="mw-headline" id="AirControl">AirControl</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=3" title="Edit section: AirControl">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>amount of AirControl available to the pawn</p>
+<p><b>Default value:</b> 0.05</p>
+<h4><span class="mw-headline" id="AirSpeed">AirSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=4" title="Edit section: AirSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>The maximum flying speed.</p>
+<h4><span class="mw-headline" id="Anchor">Anchor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=5" title="Edit section: Anchor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_NavigationPoint_(U2XMP).html" title="UE2:NavigationPoint (U2XMP)">NavigationPoint</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="AnimAction">AnimAction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=6" title="Edit section: AnimAction">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="AnimStatus">AnimStatus</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=7" title="Edit section: AnimStatus">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="AvgPhysicsTime">AvgPhysicsTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=8" title="Edit section: AvgPhysicsTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Physics updating time monitoring (for AI monitoring reaching destinations)</p>
+<p><b>Default value:</b> 0.1</p>
+<h4><span class="mw-headline" id="bAlert">bAlert</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=9" title="Edit section: bAlert">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bAmbientCreature">bAmbientCreature</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=10" title="Edit section: bAmbientCreature">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>AIs will ignore me</p>
+<h4><span class="mw-headline" id="BaseEyeHeight">BaseEyeHeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=11" title="Edit section: BaseEyeHeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Base eye height above collision center.</p>
+<p><b>Default value:</b> 64.0</p>
+<h4><span class="mw-headline" id="bAutoActivate">bAutoActivate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=12" title="Edit section: bAutoActivate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>if true, automatically activate Powerups which have their bAutoActivate==true</p>
+<h4><span class="mw-headline" id="bAvoidLedges">bAvoidLedges</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=13" title="Edit section: bAvoidLedges">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>don't get too close to ledges</p>
+<h4><span class="mw-headline" id="bBlockAdjustJump">bBlockAdjustJump</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=14" title="Edit section: bBlockAdjustJump">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>set to tell controller not to modify velocity of next jump/fall</p>
+<h4><span class="mw-headline" id="bCanAdjustJump">bCanAdjustJump</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=15" title="Edit section: bCanAdjustJump">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>set to tell controller never to modify velocity of a jump/fall (we don't want most singleplayer NPCs jumping to their next destination when they start to fall)</p>
+<h4><span class="mw-headline" id="bCanClimbLadders">bCanClimbLadders</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=16" title="Edit section: bCanClimbLadders">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bCanCrawl">bCanCrawl</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=17" title="Edit section: bCanCrawl">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bCanCrouch">bCanCrouch</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=18" title="Edit section: bCanCrouch">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>NEW (mdf) if true, this pawn is capable of crouch walking/crouching</p>
+<h4><span class="mw-headline" id="bCanDiscardInventory">bCanDiscardInventory</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=19" title="Edit section: bCanDiscardInventory">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>NEW (mib) if true, will drop inventory when killed</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bCanDoSpecial">bCanDoSpecial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=20" title="Edit section: bCanDoSpecial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>NEW (mdf) moved Controller //Com: must be true for NPCs to be able to teleport...</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bCanFly">bCanFly</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=21" title="Edit section: bCanFly">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bCanJump">bCanJump</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=22" title="Edit section: bCanJump">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>movement capabilities - used by AI</p>
+<h4><span class="mw-headline" id="bCanOpenDoors">bCanOpenDoors</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=23" title="Edit section: bCanOpenDoors">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>NEW (mdf) moved here from Controller</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bCanPickupInventory">bCanPickupInventory</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=24" title="Edit section: bCanPickupInventory">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>if true, will pickup inventory when touching pickup actors</p>
+<h4><span class="mw-headline" id="bCanStrafe">bCanStrafe</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=25" title="Edit section: bCanStrafe">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bCanSwim">bCanSwim</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=26" title="Edit section: bCanSwim">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bCanWalk">bCanWalk</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=27" title="Edit section: bCanWalk">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bCanWalkOffLedges">bCanWalkOffLedges</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=28" title="Edit section: bCanWalkOffLedges">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>if false, PC/NPC can't walk off ledges when walking (moving at walking speed / bIsWalking=true)</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bCountJumps">bCountJumps</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=29" title="Edit section: bCountJumps">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>if true, inventory wants message whenever this pawn jumps</p>
+<h4><span class="mw-headline" id="bCrawler">bCrawler</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=30" title="Edit section: bCrawler">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>crawling - pitch and roll based on surface pawn is on</p>
+<h4><span class="mw-headline" id="bFallingHitWallNotifications">bFallingHitWallNotifications</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=31" title="Edit section: bFallingHitWallNotifications">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>NEW (mib) turns on hit wall events for leaping / flying creatures</p>
+<h4><span class="mw-headline" id="bIgnoreExtraCosts">bIgnoreExtraCosts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=32" title="Edit section: bIgnoreExtraCosts">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bInitializeAnimation">bInitializeAnimation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=33" title="Edit section: bInitializeAnimation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bInvulnerableBody">bInvulnerableBody</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=34" title="Edit section: bInvulnerableBody">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bIsFemale">bIsFemale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=35" title="Edit section: bIsFemale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bIsRealPlayer">bIsRealPlayer</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=36" title="Edit section: bIsRealPlayer">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>is a real player</p>
+<h4><span class="mw-headline" id="bIsTurning">bIsTurning</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=37" title="Edit section: bIsTurning">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>updated when turning in place (for animation)</p>
+<h4><span class="mw-headline" id="bIsWalking">bIsWalking</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=38" title="Edit section: bIsWalking">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>currently walking (can't jump, affects animations)</p>
+<h4><span class="mw-headline" id="bJustLanded">bJustLanded</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=39" title="Edit section: bJustLanded">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>used by eyeheight adjustment</p>
+<h4><span class="mw-headline" id="BloodEffect">BloodEffect</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=40" title="Edit section: BloodEffect">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE2_Effects_(U2XMP).html" title="UE2:Effects (U2XMP)">Effects</a>&gt;</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bNoVelocityUpdate">bNoVelocityUpdate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=41" title="Edit section: bNoVelocityUpdate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="BodyLandedSound">BodyLandedSound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=42" title="Edit section: BodyLandedSound">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Sound_(U2XMP).html" title="UE2:Sound (U2XMP)">Sound</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bPhysicsAnimUpdate">bPhysicsAnimUpdate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=43" title="Edit section: bPhysicsAnimUpdate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bPlayedDeath">bPlayedDeath</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=44" title="Edit section: bPlayedDeath">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="BreathTime">BreathTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=45" title="Edit section: BreathTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>used for getting BreathTimer() messages (for no air, etc.)</p>
+<h4><span class="mw-headline" id="bReducedSpeed">bReducedSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=46" title="Edit section: bReducedSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>used by movement natives</p>
+<h4><span class="mw-headline" id="bSilentCrouch">bSilentCrouch</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=47" title="Edit section: bSilentCrouch">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>NEW (mdf) true for NPCs which need to crouch to navigate but don't have crouch animations and don't slow down (!!mdf -- ideally fix the problem at the source)</p>
+<h4><span class="mw-headline" id="bSimulateGravity">bSimulateGravity</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=48" title="Edit section: bSimulateGravity">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>simulate gravity for this pawn on network clients when predicting position (true if pawn is walking or falling)</p>
+<h4><span class="mw-headline" id="bSpecialNavigation">bSpecialNavigation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=49" title="Edit section: bSpecialNavigation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>NEW (mdf) if not set, SpecialNavigationList is ignored during pathing</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bSteadyFiring">bSteadyFiring</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=50" title="Edit section: bSteadyFiring">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bStopAtLedges">bStopAtLedges</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=51" title="Edit section: bStopAtLedges">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bThumped">bThumped</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=52" title="Edit section: bThumped">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bTurningLeft">bTurningLeft</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=53" title="Edit section: bTurningLeft">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>updated when turning in place (for animation)</p>
+<h4><span class="mw-headline" id="bUpAndOut">bUpAndOut</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=54" title="Edit section: bUpAndOut">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>used by swimming</p>
+<h4><span class="mw-headline" id="bUpdateEyeheight">bUpdateEyeheight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=55" title="Edit section: bUpdateEyeheight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bUpdatingDisplay">bUpdatingDisplay</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=56" title="Edit section: bUpdatingDisplay">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>to avoid infinite recursion through inventory setdisplay</p>
+<h4><span class="mw-headline" id="bWarping">bWarping</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=57" title="Edit section: bWarping">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Set when travelling through warpzone (so shouldn't telefrag)</p>
+<h4><span class="mw-headline" id="bWasCrouched">bWasCrouched</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=58" title="Edit section: bWasCrouched">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bWasFalling">bWasFalling</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=59" title="Edit section: bWasFalling">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bWasOnGround">bWasOnGround</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=60" title="Edit section: bWasOnGround">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bWasWalking">bWasWalking</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=61" title="Edit section: bWasWalking">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ControlledActor">ControlledActor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=62" title="Edit section: ControlledActor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Actor_(U2XMP).html" title="UE2:Actor (U2XMP)">Actor</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Controller">Controller</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=63" title="Edit section: Controller">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Controller_(U2XMP).html" title="UE2:Controller (U2XMP)">Controller</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="CrouchCostMultiplier">CrouchCostMultiplier</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=64" title="Edit section: CrouchCostMultiplier">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>NEW (mdf) cost (length) of paths which require crouching scaled by this ( x 1/WalkingPct )</p>
+<p><b>Default value:</b> 1.5</p>
+<h4><span class="mw-headline" id="CrouchEyeHeight">CrouchEyeHeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=65" title="Edit section: CrouchEyeHeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>NEW (mdf) set on startup</p>
+<h4><span class="mw-headline" id="DamageScaling">DamageScaling</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=66" title="Edit section: DamageScaling">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="DeathObservers">DeathObservers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=67" title="Edit section: DeathObservers">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE2_Actor_(U2XMP).html" title="UE2:Actor (U2XMP)">Actor</a>&gt;</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="DesiredSpeed">DesiredSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=68" title="Edit section: DesiredSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="DesiredStance">DesiredStance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=69" title="Edit section: DesiredStance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private</p>
+<p>desired stance -- engine will continually try to switch to desired stance if different from stance</p>
+<p><b>Default value:</b> 1</p>
+<h4><span class="mw-headline" id="DestinationOffset">DestinationOffset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=70" title="Edit section: DestinationOffset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>used to vary destination over NavigationPoints</p>
+<h4><span class="mw-headline" id="Die">Die</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=71" title="Edit section: Die">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Sound_(U2XMP).html" title="UE2:Sound (U2XMP)">Sound</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="DoorCostMultiplier">DoorCostMultiplier</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=72" title="Edit section: DoorCostMultiplier">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>NEW (mdf) cost (length) of paths through doors scaled by this</p>
+<p><b>Default value:</b> 1.2</p>
+<h4><span class="mw-headline" id="EyeHeight">EyeHeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=73" title="Edit section: EyeHeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Current eye height, adjusted for bobbing and stairs.</p>
+<p><b>Default value:</b> 54.0</p>
+<h4><span class="mw-headline" id="FlashCount">FlashCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=74" title="Edit section: FlashCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Floor">Floor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=75" title="Edit section: Floor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(U2XMP).html#Vector" title="UE2:Object structs (U2XMP)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Normal of floor pawn is standing on (only used by PHYS_Spider and PHYS_Walking)</p>
+<h4><span class="mw-headline" id="FlyCostMultiplier">FlyCostMultiplier</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=76" title="Edit section: FlyCostMultiplier">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>NEW (mdf) cost (length) of paths which require flying scaled by this</p>
+<p><b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="GibForSureHealth">GibForSureHealth</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=77" title="Edit section: GibForSureHealth">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>will always gib when health is lower</p>
+<p><b>Default value:</b> -9999.0</p>
+<h4><span class="mw-headline" id="GibMaybeHealth">GibMaybeHealth</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=78" title="Edit section: GibMaybeHealth">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>if health &lt; this when taking damage, NPC gibs depending on GibMaybeOdds</p>
+<p><b>Default value:</b> -9999.0</p>
+<h4><span class="mw-headline" id="GibMaybeOdds">GibMaybeOdds</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=79" title="Edit section: GibMaybeOdds">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="GroundSpeed">GroundSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=80" title="Edit section: GroundSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>The maximum ground speed.</p>
+<h4><span class="mw-headline" id="HeadVolume">HeadVolume</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=81" title="Edit section: HeadVolume">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_PhysicsVolume_(U2XMP).html" title="UE2:PhysicsVolume (U2XMP)">PhysicsVolume</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="HitDamageType">HitDamageType</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=82" title="Edit section: HitDamageType">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE2_DamageType_(U2XMP).html" title="UE2:DamageType (U2XMP)">DamageType</a>&gt;</p>
+<p>damage type of last hit (for playing hit/death anims)</p>
+<h4><span class="mw-headline" id="HitSound">HitSound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=83" title="Edit section: HitSound">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Sound_(U2XMP).html" title="UE2:Sound (U2XMP)">Sound</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 4</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="JumpCostMultiplier">JumpCostMultiplier</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=84" title="Edit section: JumpCostMultiplier">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>NEW (mdf) cost (length) of paths which require jumping scaled by this</p>
+<p><b>Default value:</b> 3.0</p>
+<h4><span class="mw-headline" id="JumpZ">JumpZ</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=85" title="Edit section: JumpZ">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>vertical acceleration w/ jump</p>
+<h4><span class="mw-headline" id="LadderCostMultiplier">LadderCostMultiplier</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=86" title="Edit section: LadderCostMultiplier">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>NEW (mdf) cost (length) of ladder paths scaled by this</p>
+<p><b>Default value:</b> 1.2</p>
+<h4><span class="mw-headline" id="LadderSpeed">LadderSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=87" title="Edit section: LadderSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Ladder climbing speed</p>
+<h4><span class="mw-headline" id="Land">Land</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=88" title="Edit section: Land">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Sound_(U2XMP).html" title="UE2:Sound (U2XMP)">Sound</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LandMovementState">LandMovementState</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=89" title="Edit section: LandMovementState">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p>PlayerControllerState to use when moving on land or air</p>
+<p><b>Default value:</b> <i>PlayerWalking</i></p>
+<h4><span class="mw-headline" id="LastPainAnimTime">LastPainAnimTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=90" title="Edit section: LastPainAnimTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>last time pawn played a pain animation (updated in PlayTakeHit())</p>
+<h4><span class="mw-headline" id="LastPainSound">LastPainSound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=91" title="Edit section: LastPainSound">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LeapMaxRange">LeapMaxRange</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=92" title="Edit section: LeapMaxRange">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>max range for EnemyInLeapRange events (distance between actors)</p>
+<h4><span class="mw-headline" id="LeapMinRange">LeapMinRange</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=93" title="Edit section: LeapMinRange">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>min range for EnemyInLeapRange events (distance between actors)</p>
+<h4><span class="mw-headline" id="LeapOdds">LeapOdds</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=94" title="Edit section: LeapOdds">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>odds NPC will leap if enemy within MinLeapRange..MaxLeapRange</p>
+<h4><span class="mw-headline" id="LowDetailBlood">LowDetailBlood</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=95" title="Edit section: LowDetailBlood">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE2_Effects_(U2XMP).html" title="UE2:Effects (U2XMP)">Effects</a>&gt;</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LowGoreBlood">LowGoreBlood</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=96" title="Edit section: LowGoreBlood">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE2_Effects_(U2XMP).html" title="UE2:Effects (U2XMP)">Effects</a>&gt;</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="MaxDesiredSpeed">MaxDesiredSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=97" title="Edit section: MaxDesiredSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 1.5</p>
+<h4><span class="mw-headline" id="MaxFallSpeed">MaxFallSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=98" title="Edit section: MaxFallSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>max speed pawn can land without taking damage (also limits what paths AI can use)</p>
+<p><b>Default value:</b> 1200.0</p>
+<h4><span class="mw-headline" id="MaxJumpDistance">MaxJumpDistance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=99" title="Edit section: MaxJumpDistance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>NEW (mdf) NPC will try to avoid jumping more than this distance</p>
+<p><b>Default value:</b> 3.4028235E38</p>
+<h4><span class="mw-headline" id="MaxJumpDownDistance">MaxJumpDownDistance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=100" title="Edit section: MaxJumpDownDistance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>NEW (mdf) NPC will try to avoid jumping down more than this distance (collapse with MaxFallSpeed?)</p>
+<p><b>Default value:</b> 3.4028235E38</p>
+<h4><span class="mw-headline" id="MaxJumpUpDistance">MaxJumpUpDistance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=101" title="Edit section: MaxJumpUpDistance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>NEW (mdf) NPC will try to avoid jumping up more than this distance</p>
+<h4><span class="mw-headline" id="MaxStepHeight">MaxStepHeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=102" title="Edit section: MaxStepHeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 35.0</p>
+<h4><span class="mw-headline" id="MeleeOdds">MeleeOdds</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=103" title="Edit section: MeleeOdds">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>odds NPC will melee if enemy within MeleeRange</p>
+<h4><span class="mw-headline" id="MeleeRange">MeleeRange</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=104" title="Edit section: MeleeRange">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>max range for melee attack (distance between collision cylinders)</p>
+<h4><span class="mw-headline" id="MenuName">MenuName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=105" title="Edit section: MenuName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> localized</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="MinIsTurningRate">MinIsTurningRate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=106" title="Edit section: MinIsTurningRate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 1000.0</p>
+<h4><span class="mw-headline" id="MovementAnimRate">MovementAnimRate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=107" title="Edit section: MovementAnimRate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 4</p>
+<p>anim rate scaling for each direction (rate will be blended)</p>
+<p><b>Default value, index 0:</b> 1.0</p>
+<p><b>Default value, index 1:</b> 1.0</p>
+<p><b>Default value, index 2:</b> 1.0</p>
+<p><b>Default value, index 3:</b> 1.0</p>
+<h4><span class="mw-headline" id="MovementAnims">MovementAnims</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=108" title="Edit section: MovementAnims">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 4</p>
+<p>Forward, Left, Back, Right</p>
+<h4><span class="mw-headline" id="MovementBlendStartTime">MovementBlendStartTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=109" title="Edit section: MovementBlendStartTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>used for delaying the start of run blending</p>
+<h4><span class="mw-headline" id="NavigationStance">NavigationStance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=110" title="Edit section: NavigationStance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="NextPathRadius">NextPathRadius</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=111" title="Edit section: NextPathRadius">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>radius of next path in route</p>
+<h4><span class="mw-headline" id="nextPawn">nextPawn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=112" title="Edit section: nextPawn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Pawn_(U2XMP).html" title="UE2:Pawn (U2XMP)">Pawn</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="noise1loudness">noise1loudness</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=113" title="Edit section: noise1loudness">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="noise1other">noise1other</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=114" title="Edit section: noise1other">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Pawn_(U2XMP).html" title="UE2:Pawn (U2XMP)">Pawn</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="noise1spot">noise1spot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=115" title="Edit section: noise1spot">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(U2XMP).html#Vector" title="UE2:Object structs (U2XMP)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="noise1time">noise1time</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=116" title="Edit section: noise1time">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br />
+<b>Default value:</b> -10.0</p>
+<h4><span class="mw-headline" id="noise2loudness">noise2loudness</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=117" title="Edit section: noise2loudness">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="noise2other">noise2other</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=118" title="Edit section: noise2other">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Pawn_(U2XMP).html" title="UE2:Pawn (U2XMP)">Pawn</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="noise2spot">noise2spot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=119" title="Edit section: noise2spot">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(U2XMP).html#Vector" title="UE2:Object structs (U2XMP)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="noise2time">noise2time</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=120" title="Edit section: noise2time">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br />
+<b>Default value:</b> -10.0</p>
+<h4><span class="mw-headline" id="OldAcceleration">OldAcceleration</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=121" title="Edit section: OldAcceleration">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(U2XMP).html#Vector" title="UE2:Object structs (U2XMP)">Object.Vector</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="OldPhysics">OldPhysics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=122" title="Edit section: OldPhysics">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Actor_enums_(U2XMP).html#EPhysics" title="UE2:Actor enums (U2XMP)">Actor.EPhysics</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="OldRotYaw">OldRotYaw</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=123" title="Edit section: OldRotYaw">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>used for determining if pawn is turning</p>
+<h4><span class="mw-headline" id="OldZ">OldZ</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=124" title="Edit section: OldZ">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Old Z Location - used for eyeheight smoothing</p>
+<h4><span class="mw-headline" id="OnLadder">OnLadder</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=125" title="Edit section: OnLadder">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_LadderVolume_(U2XMP).html" title="UE2:LadderVolume (U2XMP)">LadderVolume</a></p>
+<p>ladder currently being climbed</p>
+<h4><span class="mw-headline" id="OwnerName">OwnerName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=126" title="Edit section: OwnerName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p>Name of owning player (for save games, coop)</p>
+<h4><span class="mw-headline" id="PendingWeapon">PendingWeapon</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=127" title="Edit section: PendingWeapon">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Weapon_(U2XMP).html" title="UE2:Weapon (U2XMP)">Weapon</a></p>
+<p>Will become weapon once current weapon is put down</p>
+<h4><span class="mw-headline" id="PlayerReplicationInfo">PlayerReplicationInfo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=128" title="Edit section: PlayerReplicationInfo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_PlayerReplicationInfo_(U2XMP).html" title="UE2:PlayerReplicationInfo (U2XMP)">PlayerReplicationInfo</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="PreviousDesiredRotationYaw">PreviousDesiredRotationYaw</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=129" title="Edit section: PreviousDesiredRotationYaw">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>tracks DesiredRotation.Yaw in physicsRotation in order to scale rotation rate to delta Yaw.</p>
+<p><b>Default value:</b> 9999999</p>
+<h4><span class="mw-headline" id="ProneEyeHeight">ProneEyeHeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=130" title="Edit section: ProneEyeHeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>NEW (mdf) set on startup</p>
+<h4><span class="mw-headline" id="ReducedDamageType">ReducedDamageType</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=131" title="Edit section: ReducedDamageType">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE2_DamageType_(U2XMP).html" title="UE2:DamageType (U2XMP)">DamageType</a>&gt;</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="SelectedItem">SelectedItem</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=132" title="Edit section: SelectedItem">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Powerups_(U2XMP).html" title="UE2:Powerups (U2XMP)">Powerups</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> travel</p>
+<p>currently selected inventory item</p>
+<h4><span class="mw-headline" id="SerpentineDir">SerpentineDir</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=133" title="Edit section: SerpentineDir">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(U2XMP).html#Vector" title="UE2:Object structs (U2XMP)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>serpentine direction</p>
+<h4><span class="mw-headline" id="SerpentineDist">SerpentineDist</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=134" title="Edit section: SerpentineDist">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="SerpentineTime">SerpentineTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=135" title="Edit section: SerpentineTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>how long to stay straight before strafing again</p>
+<h4><span class="mw-headline" id="ShadowA">ShadowA</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=136" title="Edit section: ShadowA">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Projector_(U2XMP).html" title="UE2:Projector (U2XMP)">Projector</a></p>
+<p>Shadow for static lights.</p>
+<h4><span class="mw-headline" id="ShadowB">ShadowB</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=137" title="Edit section: ShadowB">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Projector_(U2XMP).html" title="UE2:Projector (U2XMP)">Projector</a></p>
+<p>Shadow for static lights.</p>
+<h4><span class="mw-headline" id="SoundDampening">SoundDampening</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=138" title="Edit section: SoundDampening">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="SpecialNavigationList">SpecialNavigationList</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=139" title="Edit section: SpecialNavigationList">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE2_Pawn_(U2XMP).html#TSpecialNavigationEntry" title="UE2:Pawn (U2XMP)">TSpecialNavigationEntry</a>&gt;</p>
+<p>NEW (mdf) if bSpecialNavigation set, used during path building to boost cost of NavigationPoint classes which aren't in the list</p>
+<h4><span class="mw-headline" id="SplashTime">SplashTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=140" title="Edit section: SplashTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Stance">Stance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=141" title="Edit section: Stance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private</p>
+<p>current stance</p>
+<p><b>Default value:</b> 1</p>
+<h4><span class="mw-headline" id="SwimCostMultiplier">SwimCostMultiplier</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=142" title="Edit section: SwimCostMultiplier">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 2.0</p>
+<h4><span class="mw-headline" id="TakeHitLocation">TakeHitLocation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=143" title="Edit section: TakeHitLocation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(U2XMP).html#Vector" title="UE2:Object structs (U2XMP)">Object.Vector</a></p>
+<p>location of last hit (for playing hit/death anims)</p>
+<h4><span class="mw-headline" id="TearOffMomentum">TearOffMomentum</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=144" title="Edit section: TearOffMomentum">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(U2XMP).html#Vector" title="UE2:Object structs (U2XMP)">Object.Vector</a></p>
+<p>momentum to apply when torn off (bTearOff == true)</p>
+<h4><span class="mw-headline" id="TurnLeftAnim">TurnLeftAnim</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=145" title="Edit section: TurnLeftAnim">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TurnRightAnim">TurnRightAnim</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=146" title="Edit section: TurnRightAnim">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p>turning anims when standing in place (scaled by turn speed)</p>
+<h4><span class="mw-headline" id="UncrouchTime">UncrouchTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=147" title="Edit section: UncrouchTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="UnderWaterTime">UnderWaterTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=148" title="Edit section: UnderWaterTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Visibility">Visibility</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=149" title="Edit section: Visibility">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p>How visible is the pawn? 0=invisible, 128=normal, 255=highly visible //NEW (mdf) NOTE: scales seeing Pawn's SightRadius by 1/128 * Visibility</p>
+<p><b>Default value:</b> 128</p>
+<h4><span class="mw-headline" id="WalkingPct">WalkingPct</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=150" title="Edit section: WalkingPct">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>pct. of running speed that walking speed is</p>
+<h4><span class="mw-headline" id="WaterMovementState">WaterMovementState</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=151" title="Edit section: WaterMovementState">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p><br />
+<b>Default value:</b> <i>PlayerSwimming</i></p>
+<h4><span class="mw-headline" id="WaterSpeed">WaterSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=152" title="Edit section: WaterSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>The maximum swimming speed.</p>
+<h4><span class="mw-headline" id="Weapon">Weapon</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=153" title="Edit section: Weapon">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Weapon_(U2XMP).html" title="UE2:Weapon (U2XMP)">Weapon</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> travel</p>
+<p>The pawn's current weapon.</p>
+<h4><span class="mw-headline" id="YawRateMultiplier">YawRateMultiplier</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)?section=154" title="Edit section: YawRateMultiplier">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br />
+<b>Default value:</b> 1.0</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.391 seconds
+Real time usage: 0.407 seconds
+Preprocessor visited node count: 2380/1000000
+Preprocessor generated node count: 4287/1000000
+Post‐expand include size: 12363/2097152 bytes
+Template argument size: 1814/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  220.672      1 - -total
+ 39.04%   86.156      1 - Template:Infobox_class_part
+ 36.64%   80.863      1 - Template:Infobox_class_part/core
+ 34.41%   75.925     33 - Template:Samegame
+ 32.67%   72.085     24 - Template:Cl
+ 16.06%   35.449      9 - Template:Tl
+  6.37%   14.062      1 - Template:Ch
+  2.83%    6.238      1 - Template:Autogenerated
+  1.97%    4.354      1 - Template:Ambox
+  1.62%    3.572      3 - Template:Gamename
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:14296-0!*!*!*!*!*!* and timestamp 20161216072651 and revision id 22025
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE2:Pawn_internal_variables_(U2XMP)?oldid=22025">https://wiki.beyondunreal.com/UE2:Pawn_internal_variables_(U2XMP)?oldid=22025</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue2" class="selected"><a href="UE2_Pawn_internal_variables_(U2XMP).html">UE2</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE2_talk:Pawn_internal_variables_(U2XMP)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE2:Pawn_internal_variables_(U2XMP)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE2:Pawn_internal_variables_(U2XMP)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-anonuserpage"><a href="User_188.162.37.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">188.162.37.3</a></li>
+													<li id="pt-anontalk"><a href="User_talk_188.162.37.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE2%3APawn+internal+variables+%28U2XMP%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE2%3APawn+internal+variables+%28U2XMP%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE2:Pawn_internal_variables_(U2XMP)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE2:Pawn_internal_variables_(U2XMP)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE2:Pawn_internal_variables_(U2XMP)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE2:Pawn_internal_variables_(U2XMP)?oldid=22025" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE2:Pawn_internal_variables_(U2XMP)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 11:10, 17 May 2008.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":554});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE2:Pawn_internal_variables_(U2XMP) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:46:05 GMT -->
+</html>

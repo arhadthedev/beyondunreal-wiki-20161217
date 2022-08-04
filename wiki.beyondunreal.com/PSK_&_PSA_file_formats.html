@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/PSK_%26_PSA_file_formats by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:07:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>PSK &amp; PSA file formats - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="PSK_%26_PSA_file_formats.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"PSK_\u0026_PSA_file_formats","wgTitle":"PSK \u0026 PSA file formats","wgCurRevisionId":46314,"wgRevisionId":46314,"wgArticleId":29720,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["File formats"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"PSK_\u0026_PSA_file_formats","wgRelevantArticleId":29720,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-PSK_PSA_file_formats skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I'm a doctor, not a mechanic
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">PSK &amp; PSA file formats</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>A <b>PSK file</b> stores shape and bone tree data for a skeletal mesh. A <b>PSA file</b> stores animation data for a particular skeletal bone tree. The two file types share a similar format and purpose, which is why they are described in the same article.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Shared_binary_format"><span class="tocnumber">1</span> <span class="toctext">Shared binary format</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Chunk_layout"><span class="tocnumber">1.1</span> <span class="toctext">Chunk layout</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#PSK_file_layout"><span class="tocnumber">1.2</span> <span class="toctext">PSK file layout</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#PSA_file_layout"><span class="tocnumber">1.3</span> <span class="toctext">PSA file layout</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Individual_data_structures"><span class="tocnumber">2</span> <span class="toctext">Individual data structures</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Byte"><span class="tocnumber">2.1</span> <span class="toctext">Byte</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Short"><span class="tocnumber">2.2</span> <span class="toctext">Short</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Int"><span class="tocnumber">2.3</span> <span class="toctext">Int</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Float"><span class="tocnumber">2.4</span> <span class="toctext">Float</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Char.5Bn.5D"><span class="tocnumber">2.5</span> <span class="toctext">Char[n]</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Vector"><span class="tocnumber">2.6</span> <span class="toctext">Vector</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Quat"><span class="tocnumber">2.7</span> <span class="toctext">Quat</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#ChunkHeader"><span class="tocnumber">2.8</span> <span class="toctext">ChunkHeader</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Point"><span class="tocnumber">2.9</span> <span class="toctext">Point</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Vertex"><span class="tocnumber">2.10</span> <span class="toctext">Vertex</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Triangle"><span class="tocnumber">2.11</span> <span class="toctext">Triangle</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Triangle_2"><span class="tocnumber">2.12</span> <span class="toctext">Triangle</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Material"><span class="tocnumber">2.13</span> <span class="toctext">Material</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#JointPos"><span class="tocnumber">2.14</span> <span class="toctext">JointPos</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Bone"><span class="tocnumber">2.15</span> <span class="toctext">Bone</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#RawBoneInfluence"><span class="tocnumber">2.16</span> <span class="toctext">RawBoneInfluence</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#AnimInfo"><span class="tocnumber">2.17</span> <span class="toctext">AnimInfo</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#QuatAnimKey"><span class="tocnumber">2.18</span> <span class="toctext">QuatAnimKey</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-24"><a href="#External_links"><span class="tocnumber">3</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Shared_binary_format">Shared binary format</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=1" title="Edit section: Shared binary format">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Generally PSK and PSA files consist of a number of binary chunks with a common header. The first chunk is empty and serves as the file header.</p>
+<h3><span class="mw-headline" id="Chunk_layout">Chunk layout</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=2" title="Edit section: Chunk layout">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<table class="wikitable">
+<caption>General chunk layout, offsets and lengths in decimal numbers</caption>
+<tr>
+<th>Byte Offset</th>
+<th>Byte Length</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>0</td>
+<td>20</td>
+<td>Char[20]</td>
+<td>Chunk ID.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>4</td>
+<td>Int</td>
+<td>Type flags. If this value is decimal 1999801 or smaller, you are seeing the version of PSK/PSA files described here.</td>
+</tr>
+<tr>
+<td>24</td>
+<td>4</td>
+<td>Int</td>
+<td>Data size - how long each of the following data records are.</td>
+</tr>
+<tr>
+<td>28</td>
+<td>4</td>
+<td>Int</td>
+<td>Data count - how many data records will follow this header.</td>
+</tr>
+<tr>
+<td>32</td>
+<td>data size</td>
+<td>binary</td>
+<td>First data record in the chunk.</td>
+</tr>
+<tr>
+<td>32 + data size</td>
+<td>data size</td>
+<td>binary</td>
+<td>Second data record in the chunk.</td>
+</tr>
+<tr>
+<td colspan="4">...</td>
+</tr>
+<tr>
+<td>32 + (data count - 1) * data size</td>
+<td>data size</td>
+<td>binary</td>
+<td>Last data record in the chunk.</td>
+</tr>
+</table>
+<p>A chunk may be empty, which is indicated by a data count of zero. In that case, data size may be zero as well. This is particularly true for the file header chunk.</p>
+<h3><span class="mw-headline" id="PSK_file_layout">PSK file layout</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=3" title="Edit section: PSK file layout">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A PSK file specifies the skeletal mesh in its reference pose. PSK files seem to always consist of the following types of chunks in the specified order:</p>
+<dl>
+<dt>File header&#160;</dt>
+<dd>Chunk ID is "ACTRHEAD", type flags value is decimal 1999801 or lower for the file version described in this article. Data size and data count are zero, denoting an empty chunk body.</dd>
+<dt>Points&#160;</dt>
+<dd>Lists the vertex points the mesh consists of. Data set type is <a href="#Point">Point</a>.</dd>
+<dt>Wedges&#160;</dt>
+<dd>Lists the wedges, which basically assign a material UV coordinate to a particular mesh point. Data set type is <a href="#Vertex">Vertex</a>.</dd>
+<dt>Faces&#160;</dt>
+<dd>List of triangle faces, combining three wedges to a triangle. Data set type is <a href="#Triangle">Triangle</a>.</dd>
+<dt>Materials&#160;</dt>
+<dd>List of materials used by the mesh. Data set type is <a href="#Material">Material</a>.</dd>
+<dt>Reference bones&#160;</dt>
+<dd>List of skeletal bones, their reference position and how the skeletal bone tree looks. Data set type is <a href="#Bone">Bone</a>.</dd>
+<dt>Influences&#160;</dt>
+<dd>Defines how points are affected when bones move. Data set type is <a href="#RawBoneInfluence">RawBoneInfluence</a>.</dd>
+</dl>
+<h3><span class="mw-headline" id="PSA_file_layout">PSA file layout</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=4" title="Edit section: PSA file layout">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A PSA file specifies animation data for a skeletal bone tree. PSA files seem to always consist of the following types of chunks in the specified order:</p>
+<dl>
+<dt>File header&#160;</dt>
+<dd>Chunk ID is "ANIMHEAD", type flags value is decimal 1999801 or lower for the file version described in this article. Data size and data count are zero, denoting an empty chunk body.</dd>
+<dt>Bone names&#160;</dt>
+<dd>List of skeletal bones, their reference position and how the skeletal bone tree looks. Data set type is <a href="#Bone">Bone</a>. (Same as for PSK files.)</dd>
+<dt>Animation infos&#160;</dt>
+<dd>Specifies the animations contained in this file, including name, group, length and affected bones. Data set type is <a href="#AnimInfo">AnimInfo</a>.</dd>
+<dt>Animation keys&#160;</dt>
+<dd>Specifies the position, orientation and time index for a single bone. Data set type is <a href="#QuatAnimKey">QuatAnimKey</a>.</dd>
+</dl>
+<h2><span class="mw-headline" id="Individual_data_structures">Individual data structures</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=5" title="Edit section: Individual data structures">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>This section lists the data structures involved in the file format. Generally, all multi-byte basic types are considered to be in little endian byte order.</p>
+<h3><span class="mw-headline" id="Byte">Byte</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=6" title="Edit section: Byte">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>An 8 bit unsigned integer value corresponding to the UnrealScript type <a href="Byte.html" title="Byte" class="mw-redirect">byte</a>.</p>
+<h3><span class="mw-headline" id="Short">Short</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=7" title="Edit section: Short">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A 16 bit integer value, usually assumed to be unsigned.</p>
+<h3><span class="mw-headline" id="Int">Int</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=8" title="Edit section: Int">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A 32 bit integer value corresponding to the UnrealScript type <a href="Int.html" title="Int" class="mw-redirect">int</a>, but usually assumed to be unsigned.</p>
+<h3><span class="mw-headline" id="Float">Float</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=9" title="Edit section: Float">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A 32 bit floating point value corresponding to the UnrealScript type <a href="Float.html" title="Float" class="mw-redirect">float</a> or generally a <a href="http://en.wikipedia.org/wiki/single-precision_floating-point_format" class="extiw" title="wp:single-precision floating-point format">single-precision floating-point number</a>.</p>
+<h3><span class="mw-headline" id="Char.5Bn.5D">Char[n]</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=10" title="Edit section: Char[n]">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A series of exactly <i>n</i> bytes that are interpreted as a zero-terminated ASCII string filled with additional zero bytes to the required length.</p>
+<h3><span class="mw-headline" id="Vector">Vector</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=11" title="Edit section: Vector">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>An Euclidian vector denoting a position in 3D space, corresponding to the UnrealScript struct type <a href="Vector.html" title="Vector">Vector</a>. Length: 12 bytes.</p>
+<table class="wikitable">
+<tr>
+<th>Byte Offset</th>
+<th>Byte Length</th>
+<th>Type</th>
+<th>Name</th>
+</tr>
+<tr>
+<td>0</td>
+<td>4</td>
+<td>Float</td>
+<td>X</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>Float</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>8</td>
+<td>4</td>
+<td>Float</td>
+<td>Z</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Quat">Quat</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=12" title="Edit section: Quat">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A unit <a href="Quaternion.html" title="Quaternion">quaternion</a> denoting an orientation or rotation in 3D space, corresponding to the UnrealScript struct type <a href="Quat.html" title="Quat" class="mw-redirect">Quat</a>. Length: 16 bytes.</p>
+<table class="wikitable">
+<tr>
+<th>Byte Offset</th>
+<th>Byte Length</th>
+<th>Type</th>
+<th>Name</th>
+</tr>
+<tr>
+<td>0</td>
+<td>4</td>
+<td>Float</td>
+<td>X</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>Float</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>8</td>
+<td>4</td>
+<td>Float</td>
+<td>Z</td>
+</tr>
+<tr>
+<td>12</td>
+<td>4</td>
+<td>Float</td>
+<td>W</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="ChunkHeader">ChunkHeader</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=13" title="Edit section: ChunkHeader">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The chunk header structure. Length: 32 bytes.</p>
+<table class="wikitable">
+<tr>
+<th>Byte Offset</th>
+<th>Byte Length</th>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>0</td>
+<td>20</td>
+<td>Char[20]</td>
+<td>ChunkID</td>
+<td>The chunk name. The Unreal Engine does not really care about this value.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>4</td>
+<td>Int</td>
+<td>TypeFlags</td>
+<td>The Unreal Engine does not really care about this value either, even though it supposedly specifies a file version identifier.</td>
+</tr>
+<tr>
+<td>24</td>
+<td>4</td>
+<td>Int</td>
+<td>DataSize</td>
+<td>The size of each data record potentially following this header.</td>
+</tr>
+<tr>
+<td>28</td>
+<td>4</td>
+<td>Int</td>
+<td>DataCount</td>
+<td>The number of data records following this header.</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Point">Point</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=14" title="Edit section: Point">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Specifies a skeletal mesh vertex point. Length: 12 bytes.</p>
+<table class="wikitable">
+<tr>
+<th>Byte Offset</th>
+<th>Byte Length</th>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>0</td>
+<td>12</td>
+<td>Vector</td>
+<td>Point</td>
+<td>The location of the point in the skeletal mesh's reference pose.</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Vertex">Vertex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=15" title="Edit section: Vertex">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Associates skeletal mesh points with a UV coordinate of a material. Length: 12 bytes.</p>
+<table class="wikitable">
+<tr>
+<th>Byte Offset</th>
+<th>Byte Length</th>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>0</td>
+<td>2</td>
+<td>Short</td>
+<td>PointIndex</td>
+<td>Index of the point in the points list.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+<td>Float</td>
+<td>U</td>
+<td>U coordinate in the material.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>4</td>
+<td>Float</td>
+<td>V</td>
+<td>V coordinate in the material.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1</td>
+<td>Byte</td>
+<td>MatIndex</td>
+<td>Index of the material in the materials list. (seems unused, probably overridden by face's own MatIndex)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>1</td>
+<td>Byte</td>
+<td>Reserved</td>
+<td>Padding byte to get to a multiple of four bytes for the structure.</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Triangle">Triangle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=16" title="Edit section: Triangle">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Combined three vertices to a triangle face. Length: 12 bytes.</p>
+<table class="wikitable">
+<tr>
+<th>Byte Offset</th>
+<th>Byte Length</th>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>0</td>
+<td>3x 2</td>
+<td>3x Short</td>
+<td>WedgeIndex</td>
+<td>Indices of the three vertices in the wedges list.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1</td>
+<td>Byte</td>
+<td>Matindex</td>
+<td>Index of the face's material in the materials list.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1</td>
+<td>Byte</td>
+<td>AuxMatIndex</td>
+<td>Index of an additional material in the materials list.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>4</td>
+<td>Int</td>
+<td>SmoothingGroups</td>
+<td>Bit field of smoothing groups this face belongs to.</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Triangle_2">Triangle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=17" title="Edit section: Triangle">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Combined three vertices to a triangle face. Length: 12 bytes.</p>
+<table class="wikitable">
+<tr>
+<th>Byte Offset</th>
+<th>Byte Length</th>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>0</td>
+<td>3x 2</td>
+<td>3x Short</td>
+<td>WedgeIndex</td>
+<td>Indices of the three vertices in the wedges list.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1</td>
+<td>Byte</td>
+<td>MatIndex</td>
+<td>Index of the face's material in the materials list.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1</td>
+<td>Byte</td>
+<td>AuxMatIndex</td>
+<td>Index of an additional material in the materials list. (seems unused)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>4</td>
+<td>Int</td>
+<td>SmoothingGroups</td>
+<td>Bit field of smoothing groups this face belongs to. (Does the engine actually care about this for skeletal meshes?)</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Material">Material</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=18" title="Edit section: Material">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Specifies a surface material. Length: 88 bytes.</p>
+<table class="wikitable">
+<tr>
+<th>Byte Offset</th>
+<th>Byte Length</th>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>0</td>
+<td>64</td>
+<td>Char[64]</td>
+<td>MaterialName</td>
+<td>Name of the material. The Unreal Engine will use this to find a texture or other material with this name in any package.</td>
+</tr>
+<tr>
+<td>64</td>
+<td>4</td>
+<td>Int</td>
+<td>TextureIndex</td>
+<td>Should be the same as this material's index in the materials list. (But it's probably a good idea to not rely on the value being correct.)</td>
+</tr>
+<tr>
+<td>68</td>
+<td>4</td>
+<td>Int</td>
+<td>PolyFlags</td>
+<td>Poly flags for all faces with this material. (seems unused)</td>
+</tr>
+<tr>
+<td>72</td>
+<td>4</td>
+<td>Int</td>
+<td>AuxMaterial</td>
+<td>&#160;??? (seems unused)</td>
+</tr>
+<tr>
+<td>76</td>
+<td>4</td>
+<td>Int</td>
+<td>AuxFlags</td>
+<td>&#160;??? (seems unused)</td>
+</tr>
+<tr>
+<td>80</td>
+<td>4</td>
+<td>Int</td>
+<td>LodBias</td>
+<td>&#160;??? (seems unused)</td>
+</tr>
+<tr>
+<td>84</td>
+<td>4</td>
+<td>Int</td>
+<td>LodStyle</td>
+<td>&#160;??? (seems unused)</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="JointPos">JointPos</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=19" title="Edit section: JointPos">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A helper struct for storing the bone position. Length: 44 bytes.</p>
+<table class="wikitable">
+<tr>
+<th>Byte Offset</th>
+<th>Byte Length</th>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>0</td>
+<td>16</td>
+<td>Quat</td>
+<td>Orientation</td>
+<td>Rotation of the bone, relative to its parent.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>12</td>
+<td>Vector</td>
+<td>Position</td>
+<td>Location of the bone, relative to its parent.</td>
+</tr>
+<tr>
+<td>28</td>
+<td>4</td>
+<td>Float</td>
+<td>Length</td>
+<td>&#160;??? (seems unused)</td>
+</tr>
+<tr>
+<td>32</td>
+<td>4</td>
+<td>Float</td>
+<td>XSize</td>
+<td>&#160;??? (seems unused)</td>
+</tr>
+<tr>
+<td>36</td>
+<td>4</td>
+<td>Float</td>
+<td>YSize</td>
+<td>&#160;??? (seems unused)</td>
+</tr>
+<tr>
+<td>40</td>
+<td>4</td>
+<td>Float</td>
+<td>ZSize</td>
+<td>&#160;??? (seems unused)</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Bone">Bone</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=20" title="Edit section: Bone">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Specifies a node in the skeletal bone tree for both the skeletal mesh and its animations. Length: 120 bytes.</p>
+<table class="wikitable">
+<tr>
+<th>Byte Offset</th>
+<th>Byte Length</th>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>0</td>
+<td>64</td>
+<td>Char[64]</td>
+<td>Name</td>
+<td>Name of the bone.</td>
+</tr>
+<tr>
+<td>64</td>
+<td>4</td>
+<td>Int</td>
+<td>Flags</td>
+<td>&#160;??? (seems unused)</td>
+</tr>
+<tr>
+<td>68</td>
+<td>4</td>
+<td>Int</td>
+<td>NumChildren</td>
+<td>Number of child nodes in the skeletal bone tree.</td>
+</tr>
+<tr>
+<td>72</td>
+<td>4</td>
+<td>Int</td>
+<td>ParentIndex</td>
+<td>Index of this bone's parent in the bone list. The root bone must be the first in the bone list and have ParentIndex zero.</td>
+</tr>
+<tr>
+<td>76</td>
+<td>4</td>
+<td><a href="#JointPos">JointPos</a></td>
+<td>BonePos</td>
+<td>Bone position information.</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="RawBoneInfluence">RawBoneInfluence</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=21" title="Edit section: RawBoneInfluence">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Specifies the influence of a bone's movement (through animation or otherwise) on a skeletal mesh point's position. Length: 12 bytes.</p>
+<table class="wikitable">
+<tr>
+<th>Byte Offset</th>
+<th>Byte Length</th>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>0</td>
+<td>4</td>
+<td>Float</td>
+<td>Weight</td>
+<td>How strongly the bone's movement affects the point's location. Values are in the range (0.0; 1.0], i.e. zero weights should not appear in the influences list, because they are meaningless.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>Int</td>
+<td>PointIndex</td>
+<td>Index of the affected point in the points list.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>4</td>
+<td>Int</td>
+<td>BoneIndex</td>
+<td>Index of the affecting bone in the bones list.</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="AnimInfo">AnimInfo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=22" title="Edit section: AnimInfo">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Specifies an animation sequence. Length: 168 bytes.</p>
+<table class="wikitable">
+<tr>
+<th>Byte Offset</th>
+<th>Byte Length</th>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>0</td>
+<td>64</td>
+<td>Char[64]</td>
+<td>Name</td>
+<td>Name of the animation sequence.</td>
+</tr>
+<tr>
+<td>64</td>
+<td>64</td>
+<td>Char[64]</td>
+<td>Group</td>
+<td>Group name for the animation sequence. While an animation sequence can be part of multiple groups in the Unreal Engine, the PSA format allows only a single group name to be specified here. You can use the AnimIsInGroup() UnrealScript function in Unreal Engine 2 to check if the currently playing animation in a specified channel is part of a particular animation group. You can use the GetAnimGroup() UnrealScript function in Unreal Engine 1 to get the group name of the currently playing animation.</td>
+</tr>
+<tr>
+<td>128</td>
+<td>4</td>
+<td>Int</td>
+<td>TotalBones</td>
+<td>Total number of bones involved in this animation.</td>
+</tr>
+<tr>
+<td>132</td>
+<td>4</td>
+<td>Int</td>
+<td>RootInclude</td>
+<td>&#160;??? (seems unused)</td>
+</tr>
+<tr>
+<td>136</td>
+<td>4</td>
+<td>Int</td>
+<td>KeyCompressionStyle</td>
+<td>&#160;??? (related to animation compression)</td>
+</tr>
+<tr>
+<td>140</td>
+<td>4</td>
+<td>Int</td>
+<td>KeyQuotum</td>
+<td>&#160;??? (related to animation compression)</td>
+</tr>
+<tr>
+<td>144</td>
+<td>4</td>
+<td>Float</td>
+<td>KeyReduction</td>
+<td>&#160;??? (related to animation compression)</td>
+</tr>
+<tr>
+<td>148</td>
+<td>4</td>
+<td>Float</td>
+<td>TrackTime</td>
+<td>&#160;??? (seems unused as it's overridden by AnimRate * NumRawFrames)</td>
+</tr>
+<tr>
+<td>152</td>
+<td>4</td>
+<td>Float</td>
+<td>AnimRate</td>
+<td>Default animation speed in frames per second.</td>
+</tr>
+<tr>
+<td>156</td>
+<td>4</td>
+<td>Int</td>
+<td>StartBone</td>
+<td>&#160;??? (something about partial animations, seems unused)</td>
+</tr>
+<tr>
+<td>160</td>
+<td>4</td>
+<td>Int</td>
+<td>FirstRawFrame</td>
+<td>First entry in the animation keys list for this animation.</td>
+</tr>
+<tr>
+<td>164</td>
+<td>4</td>
+<td>Int</td>
+<td>NumRawFrames</td>
+<td>Number of entries in the animation keys list for this animation.</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="QuatAnimKey">QuatAnimKey</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=23" title="Edit section: QuatAnimKey">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Specifies the position, orientation and time index for a single bone in an animation sequence. Length: 32 bytes.</p>
+<table class="wikitable">
+<tr>
+<th>Byte Offset</th>
+<th>Byte Length</th>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>0</td>
+<td>12</td>
+<td>Vector</td>
+<td>Position</td>
+<td>Position of the bone at this time index, relative to the parent bone.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>16</td>
+<td>Quat</td>
+<td>Orientation</td>
+<td>Orientation of the bone at this time index, relative to the parent bone.</td>
+</tr>
+<tr>
+<td>28</td>
+<td>4</td>
+<td>Float</td>
+<td>Time</td>
+<td>The duration until the next key.</td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats?section=24" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="http://udn.epicgames.com/Two/BinaryFormatSpecifications" class="extiw" title="udn2:BinaryFormatSpecifications">Binary format specifications for skeletal and vertex animation source files</a></li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.055 seconds
+Real time usage: 0.058 seconds
+Preprocessor visited node count: 95/1000000
+Preprocessor generated node count: 100/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:29720-0!*!0!!en!*!* and timestamp 20161215071154 and revision id 46314
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/PSK_%26_PSA_file_formats?oldid=46314">https://wiki.beyondunreal.com/PSK_%26_PSA_file_formats?oldid=46314</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_File_formats.html" title="Category:File formats">File formats</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="PSK_%26_PSA_file_formats.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Talk:PSK_%26_PSA_file_formats?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/PSK_%26_PSA_file_formats" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/PSK_%26_PSA_file_formats" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=PSK+%26+PSA+file+formats&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=PSK+%26+PSA+file+formats" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/PSK_%26_PSA_file_formats" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/PSK_%26_PSA_file_formats" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/PSK_%26_PSA_file_formats?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/PSK_%26_PSA_file_formats?oldid=46314" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/PSK_%26_PSA_file_formats" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 13:56, 13 March 2016.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":79});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/PSK_%26_PSA_file_formats by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:07:54 GMT -->
+</html>

@@ -1,0 +1,94 @@
+Usage:
+    ucc uengineppc.parse project=[<project_dir>/<project_file>]  [-option...] [-globals...] 
+    
+*Parameters:  
+    - <project_dir> - relative project directory.
+    - <project_file> - file (.upc extension) conaining all options. If file is detected, no fuhrer modifiers are checked
+**Options:
+    -clean - deletes preprocessor directives from .uc file
+    -debug - turns on debug mode (prints every operation on parsed .uc file)
+    -printglobals - prints all global variables
+    -normalizeeol - tries to find \r and \n and change them into \r\n  
+    -bIsPackage - when defining <project_dir> you can type only name of package. Path will be detected automatically.
+ **Globals:
+    Each other parameter will be concidered as global variable. If = is not detected, global variable is equal null. Example:
+    
+    val1=1 val val2=3
+    
+
+*Directives:
+
+`process				- should be in the first line of .uc file. Tells preprocessor to parse file
+`include(file)				- embade file in the currently opened .uc (do not parses it)
+`include(file,false)			- embade file in the currently opened .uc (do not parses it)
+`include(file,true)			- embade file in the currently opened .uc and parses it
+`require(file)				- embade file in the currently opened .uc (do not parses it). If required file doesn't exists, it stops parsing current file and produce error.
+`require(file,false)			- embade file in the currently opened .uc (do not parses it). If required file doesn't exists, it stops parsing current file and produce error.
+`require(file,true)			- embade file in the currently opened .uc and parses it. If required file doesn't exists, it stops parsing current file and produce error.
+`define(name)				- defines variable name (used in `ifdef and `ifndef directives)
+`define(name=value)			- defines variable name with specified value (used in `if and ternary operation)
+`undef(name)				- removes name from local definitions
+`error(name1,true)			- produces error message and exits commandlet
+`error(name1)				- produces error message and stops parsing current file
+`warn(name1)				- produces warning message
+`log(name1)				- produces message
+`ifdef(name)				- evaluates to true if variable name is defined
+`ifndef(name)				- evaluates to true if variable name is not defined
+`if(name1==name2)			- evaluates to true if variable name1 equals variable name2. Used in strings, floats, integers.
+`if(name1<name2)			- evaluates to true if variable name1 does not match variable name2. Used in strings, floats, integers.
+`if(name1>name2)			- evaluates to true if variable name1 is greater then variable name2. Used in floats, integers.
+`if(name1<name2)			- evaluates to true if variable name1 is less then name2. Used in floats, integers.
+`else					- part of conditional statement
+`endif					- ends conditional statement
+`write(name)				- writes defined variable name
+`write(name1==name2option1:option2)	- if statemente evaluate to true (variable name1 equals variable name2) writes option1 otherwise writes option 2
+`write(name1<>name2?option1:option2)	- if statemente evaluate to true (variable name1 does not match variable name2) writes option1 otherwise writes option 2
+`write(name1>name2?option1:option2)	- if statemente evaluate to true (variable name1 is greater then variable name2) writes option1 otherwise writes option 2
+`write(name1<name2?option1:option2)	- if statemente evaluate to true (variable name1 is less then variable name2) writes option1 otherwise writes option 2
+`write(name1?option1:option2)		- if statemente evaluate to true (variable name1 is defined) writes option1 otherwise writes option 2
+`import(directory,extension,type,group,lodset,flags,package) - can be used to import textures/sounds from chosen directory
+
+Notice that all variables used in directive `if and trenary operation are parsed in following order:
+
+1. Returns value from global variables if correct name is found, otherwise...
+2. Returns value from local variables if correct name is found, otherwise...
+3. Assumes that name is value.
+
+UnrealEngine 1 Commandlet preprocessor  macros:
+
+__FILE__ - will write name of currently parsed file
+__CLASS__ - will write name of currently parsed class
+__DATE__ - will write time
+__FILE_DATE__ - will write file creation time
+
+*Project file
+
+[project]                 - project informations
+path=path                 - path to project
+debug=true                - turns on debug mode (prints every operation on parsed .uc)
+make=true                 - if true ucc commandlet will run make after parsing all files
+make_ini=make.ini         - ini used in ucc make commandlet
+clean=true                - if true will delete preprocessor directives
+output=folder             - override default output folder where parsed .uc files are written
+input=folder              - override default input folder where parsed .uc files are stored
+bIsPackage=true           - when defining path you can type only name of package. Path will be detected automatically.
+
+
+[globals]                 - group contatin global variables for whole project
+someglobal=somevalue      - global variable (sample)
+
+example:
+
+[project]
+path=../MyProject/
+debug=true
+make=true
+make_ini=make.ini
+clean=true
+output=classes
+input=classes/preprocessor
+bIsPackage=false
+
+[globals]
+global_value1=test1
+global_value2=test2

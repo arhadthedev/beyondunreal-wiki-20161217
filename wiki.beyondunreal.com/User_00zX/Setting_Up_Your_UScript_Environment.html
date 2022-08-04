@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/User:00zX/Setting_Up_Your_UScript_Environment by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 19:39:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>User:00zX/Setting Up Your UScript Environment - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="shortcut icon" href="../w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="../w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="../w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Setting_Up_Your_UScript_Environment.html" />
+<link rel="copyright" href="../Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="../w/loadd984.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.bash%2Cdos%2Cnsis%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="../w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"User","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":2,"wgPageName":"User:00zX/Setting_Up_Your_UScript_Environment","wgTitle":"00zX/Setting Up Your UScript Environment","wgCurRevisionId":45048,"wgRevisionId":45048,"wgArticleId":29235,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"User:00zX/Setting_Up_Your_UScript_Environment","wgRelevantArticleId":29235,"wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRelevantUserName":"00zX","wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-2 ns-subject page-User_00zX_Setting_Up_Your_UScript_Environment skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>There is no spoon
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">User:00zX/Setting Up Your UScript Environment</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../User_00zX.html" title="User:00zX">User:00zX</a></span></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Step by step process of installing, setting up jEdit for use with Uscript. From start to finish, using/committing to repository's and building using Apache Ant. A major portion of this tutorial is dedicated to giving you the knowledge to editing/customizing your programming environment to your liking (I do feel this can help to improve workflow).</p>
+<table style="" class="metadata plainlinks ambox ambox-notice">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text">you can replace any of these with a program of your choosing, some of the <a href="../Unreal_Wiki_Basic_procedures.html" title="Unreal Wiki:Basic procedures">basic procedure</a> in this tutorial are generic enough that program doesnt matter. Some of these steps however are only directly relevant to the programs listed below.</td>
+</tr>
+</table>
+<p>Tools suggested for this tutorial:</p>
+<ul>
+<li><a href="https://wiki.beyondunreal.com/edit/JEdit?redlink=1" class="new" title="JEdit (page does not exist)">jEdit</a> - Programmers text editor <a href="../Legacy_JEdit.html" title="Legacy:JEdit">jEdit</a></li>
+<li><a href="https://wiki.beyondunreal.com/edit/GIT?redlink=1" class="new" title="GIT (page does not exist)">GIT</a> - Source/Build Repository</li>
+<li><a href="../UnCodeX.html" title="UnCodeX">UnCodeX</a> - UScript Class Browser</li>
+<li><a href="https://wiki.beyondunreal.com/edit/NSIS?redlink=1" class="new" title="NSIS (page does not exist)">NSIS</a> - Installer/Packaging</li>
+</ul>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction_to_jEdit"><span class="tocnumber">1</span> <span class="toctext">Introduction to jEdit</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Edit_Modes"><span class="tocnumber">1.1</span> <span class="toctext">Edit Modes</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#Setting_jEdits_Mode"><span class="tocnumber">1.1.1</span> <span class="toctext">Setting jEdits Mode</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-4"><a href="#Recommended_Plugins"><span class="tocnumber">1.2</span> <span class="toctext">Recommended Plugins</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Plugin_Installation_and_Settings"><span class="tocnumber">1.3</span> <span class="toctext">Plugin Installation and Settings</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Creating_your_first_Project"><span class="tocnumber">1.4</span> <span class="toctext">Creating your first Project</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#Directory_Structure_and_creating_Package_Folders"><span class="tocnumber">1.4.1</span> <span class="toctext">Directory Structure and creating Package Folders</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Creating_your_first_Class"><span class="tocnumber">1.5</span> <span class="toctext">Creating your first Class</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="#More_on_jEdit_Modes"><span class="tocnumber">1.5.1</span> <span class="toctext">More on jEdit Modes</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Customizing_Project_Viewer"><span class="tocnumber">1.5.2</span> <span class="toctext">Customizing Project Viewer</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Introduction_to_UnCodex"><span class="tocnumber">2</span> <span class="toctext">Introduction to UnCodex</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Setting_Up_UnCodex"><span class="tocnumber">2.1</span> <span class="toctext">Setting Up UnCodex</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Introduction_to_Git"><span class="tocnumber">3</span> <span class="toctext">Introduction to Git</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#GIT_command_prompt"><span class="tocnumber">3.1</span> <span class="toctext">GIT command prompt</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Compiling"><span class="tocnumber">4</span> <span class="toctext">Compiling</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#Using_Batch_.28Windows.29"><span class="tocnumber">4.1</span> <span class="toctext">Using Batch (Windows)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#Running_Unreal_Engine_with_your_package"><span class="tocnumber">5</span> <span class="toctext">Running Unreal Engine with your package</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="#archetypes"><span class="tocnumber">5.1</span> <span class="toctext">archetypes</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#ini.27s_setup"><span class="tocnumber">5.2</span> <span class="toctext">ini's setup</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Main_Menu"><span class="tocnumber">5.3</span> <span class="toctext">Main Menu</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#localization"><span class="tocnumber">5.4</span> <span class="toctext">localization</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="#Introduction_to_NSIS"><span class="tocnumber">6</span> <span class="toctext">Introduction to NSIS</span></a>
+<ul>
+<li class="toclevel-2 tocsection-23"><a href="#Creating_an_NSIS_package_script"><span class="tocnumber">6.1</span> <span class="toctext">Creating an NSIS package script</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Introduction_to_jEdit">Introduction to jEdit</span></h2>
+<dl>
+<dd><a rel="nofollow" class="external text" href="http://www.jedit.org/">jEdit</a> is a powerful, cross platform, java based programmers text editor.<br /></dd>
+</dl>
+<h3><span class="mw-headline" id="Edit_Modes">Edit Modes</span></h3>
+<dl>
+<dd>jEdit uses what is called edit modes, these specify:
+<dl>
+<dd>
+<ul>
+<li>Syntax highlighting rules</li>
+<li>Auto indent behavior</li>
+<li>Various other customizations for editing a certain filetype</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>These edit modes are easily installed an updated, they use the XML language and jEdits own document type definition for modes (xmode.dtd). More information on edit modes can be found within jEdits Help section along with a section on writing edit modes so you can customize jEdits UScript mode to your liking.<br /></dd>
+</dl>
+<h4><span class="mw-headline" id="Setting_jEdits_Mode">Setting jEdits Mode</span></h4>
+<dl>
+<dd>
+<dl>
+<dd>By default jEdit comes with a UScript mode which can be located in the {<b>jEdit Home Directory</b>}\Modes this edit mode is very light weight and doesnt cover all engine versions.<br /></dd>
+<dd>Im going to recommend not using this directory if you plan to modify your edit mode or use one of the custom ones provided below, the reason for this is simpler backups when using the document directory.<br /></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd>On jEdits main toolbar you will find the utilities button, under that is the global options which contains the options for all edit modes. Syntax highlighting colours can be found in here also.</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd><a href="../User_Wormbo/UScript_edit_mode.html" title="User:Wormbo/UScript edit mode">Wormbo's UScript jEdit Mode</a><br /></dd>
+<dd><a href="UScript.html" title="User:00zX/UScript.xml">My modified UScript jEdit Mode</a><br /></dd>
+</dl>
+</dd>
+</dl>
+<h3><span class="mw-headline" id="Recommended_Plugins">Recommended Plugins</span></h3>
+<dl>
+<dd>
+<ul>
+<li>Project Viewer: Usability.</li>
+<li>Buffer Tabs: Usability.</li>
+<li>Dirty Gutter: Diff.</li>
+<li>TaskList: TODO, NOTE, FIXME's</li>
+<li>Text Autocomplete: Usability - Code Completion.</li>
+<li>WhiteSpace: Usability/Readability.</li>
+</ul>
+</dd>
+</dl>
+<h3><span class="mw-headline" id="Plugin_Installation_and_Settings">Plugin Installation and Settings</span></h3>
+<dl>
+<dd>
+<dl>
+<dd>jEdits Plugin Manager and Settings can be accessed through the Plugins button on the main toolbar (show picture).<br /></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>
+<dl>
+<dd>To install new plugins, click on the plugin manager and you will notice a tab up the top of the new window which says install (show picture).</dd>
+</dl>
+</dd>
+</dl>
+<p>Navigate to this and select the check-boxes for all plugins you wish to install then hit install in the lower left of the panel.</p>
+<dl>
+<dd>
+<dl>
+<dd>The plugin settings can be found under the Plugins/Plugin Option button on jEdits main toolbar at the top.</dd>
+</dl>
+</dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-notice">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text">I'll guide you through the settings for each of the recommended plugins to show you which options I prefer as you may want to adjust these or similar to your liking.</td>
+</tr>
+</table>
+<p><br /></p>
+<h3><span class="mw-headline" id="Creating_your_first_Project">Creating your first Project</span></h3>
+<dl>
+<dd>In this part of the tutorial we will be creating a project using jEdit and Project Viewer.</dd>
+</dl>
+<dl>
+<dd>First off I prefer to have the project viewer docked on the left hand side of jEdit, you can however put it anywhere you wish to place it.</dd>
+</dl>
+<p>Right click on All Projects which you should see in your project viewer, add a new group (this is a recommendation), this will help to keep all your UScript UT3/UDK etc separate from any other projects you may wish to create. I have a group named <b>UE3</b> for example, then under that group I have <b>UT3</b> and <b>UDK</b> to house each of the projects I have for each.</p>
+<dl>
+<dd>Once you have your groups setup to your liking you are ready to create a project, this will require that you have a directory to scan for source files within.</dd>
+</dl>
+<p><br /></p>
+<h4><span class="mw-headline" id="Directory_Structure_and_creating_Package_Folders">Directory Structure and creating Package Folders</span></h4>
+<p>Firstly you will need to have an understanding of <b><a href="../Engine_Directory_Structure.html" title="Engine Directory Structure">Unreal Engine's directory structure</a></b>, from there you will be able to <a href="../Set_up_a_package_directory.html" title="Set up a package directory">create the required directory for a package</a> so you can <a href="https://wiki.beyondunreal.com/edit/Compile?redlink=1" class="new" title="Compile (page does not exist)">compile</a> the <a href="../UC_File.html" title="UC File">*.UC files</a> into a <a href="https://wiki.beyondunreal.com/edit/Script_Package_File?redlink=1" class="new" title="Script Package File (page does not exist)">script package file</a>(*.U). For Unreal Script <a href="../Classes.html" title="Classes">Classes</a> (<a href="../UC_File.html" title="UC File">*.UC files</a>) you will need to first make the <i>package</i> directory and then the <i>Classes</i> directory.</p>
+<p>Right click on the group you wish to create the project within, click <b>Add Project</b>. This will display the create project dialogs (show Picture) Select a name and the root directory for you project, for now select {<b>Your Package</b>} directory. Or alternatively if you wish to use multiple <a href="https://wiki.beyondunreal.com/edit/Package?redlink=1" class="new" title="Package (page does not exist)">package</a>'s for your project you may add the {<a href="https://wiki.beyondunreal.com/edit/Base_source_directory?redlink=1" class="new" title="Base source directory (page does not exist)">base source directory</a>}, you will however need to filter the imported folders so that only the ones you require for your project are displayed.</p>
+<p>Project Viewer would now have selected the project for you, you can navigate back to all projects using the drop down box at the top of Project Viewer.<br /></p>
+<h3><span class="mw-headline" id="Creating_your_first_Class">Creating your first Class</span></h3>
+<p>Go to file in jEdits main toolbar, select new and follow this basic procedure <a href="../Create_a_class.html" title="Create a class">Create a class</a>.</p>
+<p>You'll notice that Project Viewer doesnt automatically scan for new classes unless it has been selected to do so. Right click on your project in the Project Viewer panel and select 'Re-import files'. Make sure the Project and Classes directories are expanded and you should now see {<b>Your Class</b>} in there.</p>
+<h4><span class="mw-headline" id="More_on_jEdit_Modes">More on jEdit Modes</span></h4>
+<p>Creating a customized template an macro for creating a new class based on this template.</p>
+<h4><span class="mw-headline" id="Customizing_Project_Viewer">Customizing Project Viewer</span></h4>
+<p>Specialized section on setting up Project Viewer's context (Right Click) menu to contain a create class button which will create a class based on a UScript template.</p>
+<p>You may skip to <a href="../User_00zX.html#Compiling" title="User:00zX">Compiling</a> at this point, though I highly recommend you come back and follow up on <a href="https://wiki.beyondunreal.com/edit/UnCodex?redlink=1" class="new" title="UnCodex (page does not exist)">UnCodex</a>.</p>
+<h2><span class="mw-headline" id="Introduction_to_UnCodex">Introduction to UnCodex</span></h2>
+<p>This is basically a must have application for anyone doing UScript unless ofcoarse you opt to use other IDE's which contain their own class browsers. <a href="../UnCodeX.html" title="UnCodeX">UnCodeX</a> is still the best out there, it's quick with minimal overhead and is not merely a class browser, it allows you to hyperlink through class names giving you the ability to surf code flow with ease.</p>
+<p>There are two versions of <a href="../UnCodeX.html" title="UnCodeX">UnCodeX</a> that I use, I prefer using the older 227 for anything pre-UE3 or TribesV for those I use the newer 237-beta version.</p>
+<h3><span class="mw-headline" id="Setting_Up_UnCodex">Setting Up UnCodex</span></h3>
+<p>Working with multiple copies of unreal engine source (for example, numerous <a href="../UDK.html" title="UDK" class="mw-redirect">UDK</a> copies) can be tedious to continuously analyze all the time in <a href="https://wiki.beyondunreal.com/edit/UnCodex?redlink=1" class="new" title="UnCodex (page does not exist)">UnCodex</a> so I'll guide you through setting it up so you can have numerous shortcuts all which cache different versions of <a href="../Unreal_Engine.html" title="Unreal Engine" class="mw-redirect">Unreal Engine</a>. You have to be careful however, this can get confusing as to which copy is in which <a href="../UnCodeX.html" title="UnCodeX">UnCodeX</a> window but you can double check the title bar, which I highly recommend you do. I have been caught out a few times with this myself between <a href="../UT3.html" title="UT3" class="mw-redirect">UT3</a> and <a href="../UDK.html" title="UDK" class="mw-redirect">UDK</a> sources.<br /></p>
+<p>As a general rule of thumb I just use the naming convention:<br />
+"Drive:\{UnCodeX}\UnCodeX.exe" -config UnCodeX-{GameName/Version}.ini<br /></p>
+<dl>
+<dd>
+<dl>
+<dd><b>UT2004</b> - "Drive:\{UnCodeX227}\UnCodeX.exe" -config UnCodeX-UT2004.ini<br /></dd>
+<dd><b>DeusEx</b> - "Drive:\{UnCodeX227}\UnCodeX.exe" -config UnCodeX-DeusEx.ini<br /></dd>
+<dd><b>UT3</b> - "Drive:\{UnCodeX237-beta}\UnCodeX.exe" -config UnCodeX-UT3.ini<br /></dd>
+<dd><b>UDK</b> - "Drive:\{UnCodeX237-beta}\UnCodeX.exe" -config UnCodeX-UDK-2009-11-2.ini<br /></dd>
+<dd><b>UDK</b> - "Drive:\{UnCodeX237-beta}\UnCodeX.exe" -config UnCodeX-UDK-2010-03.ini<br /></dd>
+</dl>
+</dd>
+</dl>
+<p>Now these <a href="https://wiki.beyondunreal.com/edit/INI_File?redlink=1" class="new" title="INI File (page does not exist)">INI</a>'s will have to exist for this to work, so copy the default <i>UnCodeX.ini</i> and rename it to <i>UnCodeX-{GameName/Version}.ini</i>. Open this file in jEdit or notepad for editing,</p>
+<pre>
+[Sources]
+''Add your source directories here''
+</pre>
+<dl>
+<dd>
+<dl>
+<dd><b>UT2004</b> - {<a href="../Base_Directory.html" title="Base Directory">Base Directory</a>}\System\<br /></dd>
+<dd><b>UT3</b> - {<a href="https://wiki.beyondunreal.com/edit/User_Documents_Directory?redlink=1" class="new" title="User Documents Directory (page does not exist)">User Documents Directory</a>}\My Games\Unreal Tournament 3\UTGame\Src\<br /></dd>
+</dl>
+</dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-notice">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text">This can be done once <a href="../UnCodeX.html" title="UnCodeX">UnCodeX</a> is loaded for this mode.</td>
+</tr>
+</table>
+<p><br /></p>
+<table style="" class="metadata plainlinks ambox ambox-notice">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text">For UT3 you will require two directories selected for scanning, one is the exported script directory the other is Src directory within UTGame. With UT2.x and UDK you work along side Epic's Packages so it'll scan both, you can set <a href="../UnCodeX.html" title="UnCodeX">UnCodeX</a> to scan numerous directories for any mode.</td>
+</tr>
+</table>
+<p><br /></p>
+<table style="" class="metadata plainlinks ambox ambox-notice">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text">This is an absolute requirement for <a href="../UnCodeX.html" title="UnCodeX">UnCodeX</a> to function in multiple mode's correctly. In the past I have forgotten to do this and as the cache is not saved for that source directory you must rescan each time <a href="../UnCodeX.html" title="UnCodeX">UnCodeX</a> is loaded.</td>
+</tr>
+</table>
+<pre>
+[GUI.General]
+StateFile=UnCodeX-{GameName-Version}.ucx
+</pre>
+<dl>
+<dd>
+<dl>
+<dd><b>UT2004</b> - StateFile=UnCodeX-UT2004.ucx<br /></dd>
+<dd><b>DeusEx</b> - StateFile=UnCodeX-DeusEx.ucx<br /></dd>
+<dd><b>UT3</b> - StateFile=UnCodeX-UT3.ucx<br /></dd>
+<dd><b>UDK</b> - StateFile=UnCodeX-UDK-2009-11-2.ucx<br /></dd>
+<dd><b>UDK</b> - StateFile=UnCodeX-UDK-2010-03.ucx<br /></dd>
+</dl>
+</dd>
+</dl>
+<p>Once you have done that for your required modes you can boot the shortcut and analyze the source, now every time you boot you would be using the cache for that ini/source.</p>
+<h2><span class="mw-headline" id="Introduction_to_Git">Introduction to Git</span></h2>
+<p>Git is a free &amp; open source, distributed version control system. <a rel="nofollow" class="external text" href="http://git-scm.com/">GIT</a><br />
+<a rel="nofollow" class="external text" href="http://code.google.com/p/msysgit/">msysgit - windows</a><br /></p>
+<h3><span class="mw-headline" id="GIT_command_prompt">GIT command prompt</span></h3>
+<p><b>Creating a repository</b></p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="bash source-bash">
+<pre class="de1">
+<span class="co0"># cd hello</span>
+<span class="co0"># ls</span>
+<span class="co0"># git init</span>
+<span class="co0"># git add .</span>
+</pre></div>
+</div>
+<p><b>Pushing a repository to GitHub</b> Create a repository on GitHub then...</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="bash source-bash">
+<pre class="de1">
+<span class="co0"># cd hello</span>
+<span class="co0"># git remote add origin git@github.com:tabrez/hello.git</span>
+<span class="co0"># git push origin master</span>
+</pre></div>
+</div>
+<p><br />
+<b>GIT GUI</b></p>
+<h2><span class="mw-headline" id="Compiling">Compiling</span></h2>
+<h3><span class="mw-headline" id="Using_Batch_.28Windows.29">Using Batch (Windows)</span></h3>
+<p><b>UDK</b> <i>Make_64Full</i></p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="dos source-dos">
+<pre class="de1">
+<span class="kw3">cd</span>..
+<span class="kw3">cd</span> binaries\win64
+udk.com make -full -intermediate
+<span class="kw3">pause</span>
+</pre></div>
+</div>
+<p><i>Make_64Part</i></p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="dos source-dos">
+<pre class="de1">
+<span class="sy0">@</span><span class="kw3">echo</span> off
+<span class="kw3">cd</span>..
+<span class="kw3">cd</span> binaries\win64
+<span class="sy0">@</span><span class="kw3">echo</span> on
+udk.com make -intermediate
+<span class="sy0">@</span><span class="kw3">echo</span> off
+<span class="kw3">pause</span>
+</pre></div>
+</div>
+<p><br /></p>
+<p><i>UT3</i> - Multi-Package Compile batch</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="dos source-dos">
+<pre class="de1">
+<span class="sy0">@</span><span class="kw3">echo</span> Off
+prompt $g
+<span class="co1">rem BASE DIRECTORIES</span>
+<span class="kw3">set</span> UTDIR="D:\Midway\Unreal Tournament 3"
+<span class="kw3">set</span> UTCOM=<span class="sy0">%</span><span class="re3">UTDIR</span><span class="sy0">%</span>\Binaries\UT3.COM
+<span class="co1">
+rem PROJECT DETAILS</span>
+<span class="kw3">set</span> UP1=UT_
+<span class="kw3">set</span> UP2=UT_GDP_
+<span class="kw3">set</span> K1=MDB
+<span class="kw3">set</span> K2=GameDex
+<span class="kw3">set</span> K3=Newtators
+<span class="kw3">set</span> K4=Mutatoes
+<span class="co1">
+rem script</span>
+<span class="kw3">set</span> UTCONFIG=..\Config
+<span class="kw3">set</span> UTCOMSRC=..\Unpublished\CookedPC\Script
+<span class="kw3">set</span> MYCOMSRC=..\Unpublished\CookedPC\GameDex
+ 
+<span class="sy0">@</span><span class="kw3">echo</span> On
+<span class="kw3">del</span> <span class="sy0">%</span><span class="re3">MYCOMSRC</span><span class="sy0">%</span>\<span class="sy0">%</span><span class="re3">UP1</span><span class="sy0">%%</span><span class="re3">K1</span><span class="sy0">%</span>.u
+<span class="kw3">del</span> <span class="sy0">%</span><span class="re3">MYCOMSRC</span><span class="sy0">%</span>\<span class="sy0">%</span><span class="re3">UP1</span><span class="sy0">%%</span><span class="re3">K2</span><span class="sy0">%</span>.u
+<span class="kw3">del</span> <span class="sy0">%</span><span class="re3">MYCOMSRC</span><span class="sy0">%</span>\<span class="sy0">%</span><span class="re3">K3</span><span class="sy0">%</span>\<span class="sy0">%</span><span class="re3">UP2</span><span class="sy0">%%</span><span class="re3">K3</span><span class="sy0">%</span>.u
+<span class="co1">rem del %MYCOMSRC%\%K4%\%UP2%%K4%.u</span>
+ 
+<span class="sy0">%</span><span class="re3">UTCOM</span><span class="sy0">%</span> make -debug -useunpublished -log=CompileLog.log -full
+<span class="kw3">copy</span> <span class="sy0">%</span><span class="re3">UTCOMSRC</span><span class="sy0">%</span>\<span class="sy0">%</span><span class="re3">UP1</span><span class="sy0">%%</span><span class="re3">K1</span><span class="sy0">%</span>.u <span class="sy0">%</span><span class="re3">MYCOMSRC</span><span class="sy0">%</span>\<span class="sy0">%</span><span class="re3">UP1</span><span class="sy0">%%</span><span class="re3">K1</span><span class="sy0">%</span>.u
+<span class="kw3">copy</span> <span class="sy0">%</span><span class="re3">UTCOMSRC</span><span class="sy0">%</span>\<span class="sy0">%</span><span class="re3">UP1</span><span class="sy0">%%</span><span class="re3">K2</span><span class="sy0">%</span>.u <span class="sy0">%</span><span class="re3">MYCOMSRC</span><span class="sy0">%</span>\<span class="sy0">%</span><span class="re3">UP1</span><span class="sy0">%%</span><span class="re3">K2</span><span class="sy0">%</span>.u
+<span class="kw3">copy</span> <span class="sy0">%</span><span class="re3">UTCOMSRC</span><span class="sy0">%</span>\<span class="sy0">%</span><span class="re3">UP2</span><span class="sy0">%%</span><span class="re3">K3</span><span class="sy0">%</span>.u <span class="sy0">%</span><span class="re3">MYCOMSRC</span><span class="sy0">%</span>\<span class="sy0">%</span><span class="re3">K3</span><span class="sy0">%</span>\<span class="sy0">%</span><span class="re3">UP2</span><span class="sy0">%%</span><span class="re3">K3</span><span class="sy0">%</span>.u
+<span class="kw3">copy</span> <span class="sy0">%</span><span class="re3">UTCOMSRC</span><span class="sy0">%</span>\<span class="sy0">%</span><span class="re3">UP2</span><span class="sy0">%%</span><span class="re3">K4</span><span class="sy0">%</span>.u <span class="sy0">%</span><span class="re3">MYCOMSRC</span><span class="sy0">%</span>\<span class="sy0">%</span><span class="re3">K4</span><span class="sy0">%</span>\<span class="sy0">%</span><span class="re3">UP2</span><span class="sy0">%%</span><span class="re3">K4</span><span class="sy0">%</span>.u
+<span class="kw3">del</span> <span class="sy0">%</span><span class="re3">UTCOMSRC</span><span class="sy0">%</span>\<span class="sy0">%</span><span class="re3">UP1</span><span class="sy0">%%</span><span class="re3">K1</span><span class="sy0">%</span>.u
+<span class="kw3">del</span> <span class="sy0">%</span><span class="re3">UTCOMSRC</span><span class="sy0">%</span>\<span class="sy0">%</span><span class="re3">UP1</span><span class="sy0">%%</span><span class="re3">K2</span><span class="sy0">%</span>.u
+<span class="kw3">del</span> <span class="sy0">%</span><span class="re3">UTCOMSRC</span><span class="sy0">%</span>\<span class="sy0">%</span><span class="re3">UP2</span><span class="sy0">%%</span><span class="re3">K3</span><span class="sy0">%</span>.u
+<span class="kw3">del</span> <span class="sy0">%</span><span class="re3">UTCOMSRC</span><span class="sy0">%</span>\<span class="sy0">%</span><span class="re3">UP2</span><span class="sy0">%%</span><span class="re3">K4</span><span class="sy0">%</span>.u
+ 
+<span class="kw3">del</span> <span class="sy0">%</span><span class="re3">UTCONFIG</span><span class="sy0">%</span>\<span class="sy0">%</span><span class="re3">UP1</span><span class="sy0">%%</span><span class="re3">K2</span><span class="sy0">%</span>.ini
+<span class="kw3">del</span> <span class="sy0">%</span><span class="re3">UTCONFIG</span><span class="sy0">%</span>\<span class="sy0">%</span><span class="re3">UP2</span><span class="sy0">%%</span><span class="re3">K3</span><span class="sy0">%</span>.ini
+<span class="co1">rem del %UTCONFIG%\%UP2%%K4%.ini</span>
+ 
+<span class="kw3">pause</span>
+prompt $p$g
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="Running_Unreal_Engine_with_your_package">Running Unreal Engine with your package</span></h2>
+<h4><span class="mw-headline" id="archetypes">archetypes</span></h4>
+<h4><span class="mw-headline" id="ini.27s_setup">ini's setup</span></h4>
+<h4><span class="mw-headline" id="Main_Menu">Main Menu</span></h4>
+<h4><span class="mw-headline" id="localization">localization</span></h4>
+<h2><span class="mw-headline" id="Introduction_to_NSIS">Introduction to NSIS</span></h2>
+<p><a rel="nofollow" class="external text" href="http://nsis.sourceforge.net/Main_Page">NSIS</a></p>
+<p><a href="../File_RevengeTempt.html" class="image"><img alt="RevengeTempt.png" src="../w/images/RevengeTempt.png" width="164" height="314" /></a></p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="nsis source-nsis">
+<pre class="de1">
+<span class="co1">;</span>
+<span class="co1">; GameDex.nsh</span>
+<span class="co1">; Creation Date: 19/04/2010 10:33</span>
+<span class="co1">; Last Updated: 04/03/2012 22:33</span>
+<span class="co1">; Contributors: 00zX</span>
+<span class="co1">; Attribution-Noncommercial-Share Alike 3.0 Unported</span>
+<span class="co1">; http://creativecommons.org/licenses/by-nc-sa/3.0/</span>
+<span class="co1">;</span>
+ 
+<span class="kw2">XPStyle</span> <span class="kw5">on</span>
+<span class="co1">;SetCompressorDictSize dict_size_mb</span>
+<span class="kw3">SetDatablockOptimize</span> <span class="kw5">on</span>
+<span class="kw2">SetCompressor</span> <span class="kw6">/SOLID</span> <span class="kw5">lzma</span>
+ 
+<span class="co1">; HM NIS Edit Wizard helper defines</span>
+<span class="kw1">!define</span> PRODUCT_NAME <span class="st0">"Gamed"</span>
+<span class="kw1">!define</span> PRODUCT_VERSION <span class="st0">"v3.16"</span>
+<span class="kw1">!define</span> PRODUCT_PUBLISHER <span class="st0">"00zX"</span>
+<span class="co1">;!define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"</span>
+<span class="co1">;!define PRODUCT_UNINST_ROOT_KEY "HKLM"</span>
+ 
+<span class="co1">;--------------------------------</span>
+<span class="co1">;Include (Custom) Modern UI v2</span>
+<span class="kw1">!include</span> <span class="st0">"NSIS\Contrib\Gamed\MUI2_Unreal.nsh"</span>
+<span class="co1">;!include "${NSISDIR}\include\MultiUser.nsh"</span>
+ 
+<span class="co1">;!define MULTIUSER_MUI</span>
+ 
+<span class="co1">; MUI Settings</span>
+<span class="kw1">!define</span> <span class="kw8">MUI_ABORTWARNING</span>
+<span class="kw1">!define</span> <span class="kw8">MUI_ICON</span> <span class="st0">"NSIS\Contrib\Gamed\Graphics\Icons\SweetRevengeTemptIcon5s.ico"</span>
+<span class="kw1">!define</span> <span class="kw8">MUI_UNICON</span> <span class="st0">"NSIS\Contrib\Gamed\Graphics\Icons\SweetRevengeTemptIcon5s.ico"</span>
+ 
+<span class="co1">; UT3 Uninstall Registry Location</span>
+<span class="co1">;!define REG_UT "Software\Microsoft\Windows\CurrentVersion\Uninstall\{BFA90209-7AFF-4DB6-8E4B-E57305751AD7}"</span>
+ 
+<span class="co1">;Interface Configuration</span>
+<span class="kw1">!define</span> <span class="kw8">MUI_HEADERIMAGE</span>
+<span class="kw1">!define</span> <span class="kw8">MUI_HEADERIMAGE_BITMAP</span> <span class="st0">"NSIS\Contrib\Gamed\Graphics\Header\TemptHeader.bmp"</span>
+ 
+<span class="co1">;--------------------------------</span>
+<span class="co1">;Standard Pages</span>
+<span class="kw1">!insertmacro</span> <span class="kw8">MUI_PAGE_WELCOME</span>
+<span class="co1">;!insertmacro MUI_PAGE_LICENSE "NSIS\Contrib\Gamed\Docs\License.txt"</span>
+<span class="co1">;!insertmacro MULTIUSER_PAGE_INSTALLMODE</span>
+ 
+!ifdef PRODUCT_MODE_STANDARD
+	<span class="kw1">!define</span> PRODUCT_MODE <span class="st0">"Std"</span>
+	<span class="kw1">!insertmacro</span> <span class="kw8">MUI_PAGE_DIRECTORY</span>
+	<span class="kw1">!insertmacro</span> <span class="kw8">MUI_PAGE_INSTFILES</span>
+	<span class="kw1">!insertmacro</span> <span class="kw8">MUI_PAGE_FINISH</span>
+!endif
+!ifdef PRODUCT_MODE_DEVELOPMENT
+	<span class="kw1">!define</span> PRODUCT_MODE <span class="st0">"DevEd"</span>
+		<span class="kw1">!define</span> <span class="kw8">MUI_COMPONENTSPAGE_SMALLDESC</span> <span class="co1">;No value</span>
+	<span class="kw1">!insertmacro</span> <span class="kw8">MUI_PAGE_COMPONENTS</span>
+	<span class="kw1">!insertmacro</span> <span class="kw8">MUI_PAGE_DIRECTORY</span>
+	<span class="kw1">!insertmacro</span> <span class="kw8">MUI_PAGE_INSTFILES</span>
+<span class="co1">;		!define MUI_FINISHPAGE_SHOWREADME "$INSTDIR\UTGame\Published\CookedPC\Script\README_Newtators.txt"</span>
+	<span class="kw1">!insertmacro</span> <span class="kw8">MUI_PAGE_FINISH</span>
+	<span class="kw1">!insertmacro</span> <span class="kw8">MUI_UNPAGE_INSTFILES</span>
+!endif
+ 
+<span class="kw1">!insertmacro</span> <span class="kw8">MUI_LANGUAGE</span> <span class="st0">"English"</span>
+<span class="co1">; MUI end ------</span>
+ 
+<span class="kw2">Name</span> <span class="st0">"${PRODUCT_NAME} ${PRODUCT_VERSION}"</span>
+<span class="kw2">OutFile</span> <span class="st0">"${PRODUCT_NAME}-${PRODUCT_VERSION}-${PRODUCT_MODE}.exe"</span>
+<span class="kw2">ShowInstDetails</span> <span class="kw5">hide</span>
+ 
+<span class="co1">;!macro MULTIUSER_INIT_TEXTS</span>
+<span class="co1">;!macroend</span>
+ 
+<span class="co1">;!ifdef PRODUCT_MODE</span>
+<span class="co1">;!endif</span>
+ 
+<span class="co1">;--------------------------------</span>
+<span class="co1">;Util</span>
+<span class="kw1">!macro</span> redef olddef newdef
+	!ifdef <span class="re5">$<span class="br0">{</span>olddef<span class="br0">}</span></span>
+		<span class="kw1">!undef</span> <span class="re5">$<span class="br0">{</span>olddef<span class="br0">}</span></span>
+	!endif
+	<span class="kw1">!define</span> <span class="re5">$<span class="br0">{</span>olddef<span class="br0">}</span></span> <span class="st0">"${newdef}"</span>
+<span class="kw1">!macroend</span>
+ 
+<span class="co1">;--------------------------------</span>
+<span class="kw1">!define</span> UDK <span class="st0">"UDKGame"</span>
+<span class="kw1">!define</span> UDK_SRC <span class="st0">"Development\Src"</span>
+<span class="kw1">!define</span> UDK_CONT <span class="st0">"UDKGame\Content"</span>
+<span class="co1">;!define UDK_PAK_PATH "$INSTDIR\${UDK_CONT}"</span>
+<span class="co1">;!define UDK_UNPAK_PATH "$INSTDIR\UDKGame\Content\GamedEx"</span>
+ 
+<span class="kw1">!define</span> GAMED <span class="st0">"Gamed"</span>
+ 
+<span class="kw1">!macro</span> GPAK_SECG GPAK_NAME _a _b
+	<span class="kw1">!insertmacro</span> redef GPAK_INST <span class="st0">"$INSTDIR\${UDK_CONT}\${GPAK_NAME}"</span>
+	<span class="kw1">!insertmacro</span> redef GPAK_TXT <span class="st0">"${UDK_SRC}\${GPAK_NAME}"</span>
+	<span class="kw1">!insertmacro</span> redef GPAK_UC <span class="st0">"${UDK_SRC}\${GPAK_NAME}\Classes"</span>
+	<span class="kw1">!insertmacro</span> redef GPAK_U <span class="st0">"${UDK}\script"</span>
+	<span class="kw1">!insertmacro</span> redef GPAK_CONT <span class="st0">"${UDK_CONT}\${GPAK_NAME}"</span>
+	<span class="kw2">SectionGroup</span> <span class="re5">$<span class="br0">{</span>GPAK_NAME<span class="br0">}</span> SEC_$<span class="br0">{</span>GPAK_NAME<span class="br0">}</span></span>
+		<span class="kw3">SetOverwrite</span> <span class="kw5">ifnewer</span>
+		<span class="kw2">Section</span> <span class="re5">$<span class="br0">{</span>_a<span class="br0">}</span> $<span class="br0">{</span>GPAK_NAME<span class="br0">}</span></span>01
+			<span class="kw4">SetOutPath</span> <span class="st0">"$GPAK_INST"</span>
+			<span class="kw4">File</span> <span class="st0">"${GPAK_TXT}\${GPAK_NAME}_README.txt"</span>
+			<span class="kw4">File</span> <span class="st0">"${GPAK_TXT}\${GPAK_NAME}_ChangeLog.txt"</span>
+			<span class="kw4">File</span> <span class="st0">"${GPAK_U}\${GPAK_NAME}.u"</span>
+		<span class="kw2">SectionEnd</span>
+ 
+		!ifdef <span class="re5">$<span class="br0">{</span>_b<span class="br0">}</span></span>
+		<span class="kw2">Section</span> <span class="re5">$<span class="br0">{</span>_b<span class="br0">}</span> $<span class="br0">{</span>GPAK_NAME<span class="br0">}</span></span>02
+			<span class="kw4">SetOutPath</span> <span class="st0">"${GPAK_INST}${GPAK_CONT}"</span>
+			<span class="kw4">File</span> <span class="st0">"${GPAK_CONT}\${GPAK_NAME}\*.udk"</span>
+			<span class="kw4">File</span> <span class="st0">"${GPAK_CONT}\${GPAK_NAME}\*.upk"</span>
+		<span class="kw2">SectionEnd</span>
+		!endif
+ 
+		!ifdef <span class="re5">$<span class="br0">{</span>_c<span class="br0">}</span></span>
+		<span class="kw2">Section</span> <span class="re5">$<span class="br0">{</span>_c<span class="br0">}</span> $<span class="br0">{</span>GPAK_NAME<span class="br0">}</span></span>03
+			<span class="kw4">SetOutPath</span> <span class="st0">"$GPAK_INST$GPAK_CONT"</span>
+			<span class="co1">;File "${GAMED_PAK}\config\${GPAK_NAME}.ini"</span>
+			<span class="co1">;File "${GAMED_PAK}\${GPAK_NAME}.int"</span>
+		<span class="kw2">SectionEnd</span>
+		!endif
+ 
+		!ifdef <span class="re5">$<span class="br0">{</span>_d<span class="br0">}</span></span>
+		<span class="kw2">Section</span> <span class="re5">$<span class="br0">{</span>_d<span class="br0">}</span> $<span class="br0">{</span>GPAK_NAME<span class="br0">}</span></span>04
+			<span class="co1">;SetOutPath "$GPAK_INST$GPAK_CONT"</span>
+			<span class="co1">;File "${GPAK_CONT}\${GPAK_NAME}\*.uc"</span>
+			<span class="co1">;File "${GPAK_CONT}\${GPAK_NAME}\*.uci"</span>
+		<span class="kw2">SectionEnd</span>
+		!endif
+ 
+		!ifdef <span class="re5">$<span class="br0">{</span>_c<span class="br0">}</span></span>
+		<span class="kw2">Section</span> <span class="re5">$<span class="br0">{</span>_c<span class="br0">}</span> $<span class="br0">{</span>GPAK_NAME<span class="br0">}</span></span>05
+			<span class="co1">;SetOutPath "$GPAK_INST$GPAK_CONT"</span>
+			<span class="co1">;File "${GPAK_CONT}\${GPAK_NAME}\*.pdf"</span>
+			<span class="co1">;File "${GPAK_CONT}\${GPAK_NAME}\*.upk"</span>
+		<span class="kw2">SectionEnd</span>
+		!endif
+	<span class="kw2">SectionGroupEnd</span>
+<span class="kw1">!macroend</span>
+ 
+<span class="kw1">!macro</span> UN_GPAK_SECG GPAK_NAME _a _b
+ 
+<span class="kw1">!macroend</span>
+</pre></div>
+</div>
+<p><a href="../File_TemptHeader.html" class="image"><img alt="TemptHeader.png" src="../w/images/TemptHeader.png" width="150" height="57" /></a></p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="nsis source-nsis">
+<pre class="de1">
+<span class="co1">;</span>
+<span class="co1">; GameDex-DevEd.nsi</span>
+<span class="co1">; Creation Date:</span>
+<span class="co1">; Last Updated: 19/04/2010 10:21</span>
+<span class="co1">; Contributors: 00zX</span>
+<span class="co1">; Attribution-Noncommercial-Share Alike 3.0 Unported</span>
+<span class="co1">; http://creativecommons.org/licenses/by-nc-sa/3.0/</span>
+<span class="co1">;</span>
+<span class="co1">;--------------------------------</span>
+<span class="kw1">!define</span> PRODUCT_MODE_DEVELOPMENT
+ 
+<span class="kw1">!include</span> <span class="st0">"Gamed.nsh"</span>
+ 
+<span class="kw2">ShowUnInstDetails</span> <span class="kw5">show</span>
+<span class="co1">;--------------------------------</span>
+<span class="co1">;Package SubTypes</span>
+<span class="kw1">!define</span> SCR Script
+<span class="kw1">!define</span> CONT Content
+<span class="kw1">!define</span> CFG Config
+<span class="kw1">!define</span> SRC Source
+<span class="kw1">!define</span> Mod ModDesign
+ 
+<span class="co1">;Packages</span>
+<span class="kw1">!define</span> GPAKA_DESC <span class="st0">"Core Plugin"</span>
+<span class="kw1">!define</span> GPAKB_DESC <span class="st0">"Gamed"</span>
+<span class="kw1">!define</span> GPAKC_DESC <span class="st0">"Scaleform Interface"</span>
+<span class="kw1">!define</span> GPAKD_DESC <span class="st0">"Project: Caster"</span>
+ 
+<span class="kw1">!macro</span> GPAK GPAK_NAME <span class="co1">;GPAK_DESC</span>
+	!ifdef GPAK_NAME
+		<span class="kw1">!insertmacro</span> redef GPAK_PATH <span class="st0">"${GAMED_PAK}\${GPAK_NAME}"</span>
+		<span class="kw1">!insertmacro</span> GPAK_SECG <span class="re5">$<span class="br0">{</span>GPAK_NAME<span class="br0">}</span> $<span class="br0">{</span>SCR<span class="br0">}</span> $<span class="br0">{</span>CONT<span class="br0">}</span></span>
+	!endif
+<span class="kw1">!macroend</span>
+ 
+<span class="kw2">SectionGroup</span> <span class="kw6">/e</span> <span class="st0">"!UDK Packages"</span> SECG_UDK
+	<span class="kw1">!insertmacro</span> GPAK GamedPlug
+	<span class="kw1">!insertmacro</span> GPAK GamedEx
+	<span class="kw1">!insertmacro</span> GPAK GamedGFx
+	<span class="kw1">!insertmacro</span> GPAK GamedCaster
+<span class="kw2">SectionGroupEnd</span>
+ 
+<span class="kw2">SectionGroup</span> <span class="st0">"ModTool"</span> SECG_MOD
+	<span class="kw2">Section</span> /o <span class="st0">"QuadMX"</span> SEC07
+	<span class="kw2">SectionEnd</span>
+	<span class="kw2">Section</span> /o <span class="st0">"jEdit Theme"</span> SEC08
+	<span class="kw2">SectionEnd</span>
+	<span class="kw2">Section</span> /o <span class="st0">"MonoDevelop Theme"</span> SEC09
+	<span class="kw2">SectionEnd</span>
+	<span class="kw2">Section</span> /o <span class="st0">"Wiki MonoBook (CodeNoir) Theme"</span> SEC10
+	<span class="kw2">SectionEnd</span>
+	<span class="kw2">Section</span> /o <span class="st0">"NSIS Theme"</span> SEC11
+		<span class="kw3">SetOverwrite</span> <span class="kw5">ifnewer</span>
+		<span class="kw4">SetOutPath</span> <span class="st0">"$INSTDIR\NSIS\Contrib\Gamed"</span>
+		<span class="kw4">File</span> <span class="st0">"Gamed-DevEd.nsi"</span>
+		<span class="kw4">File</span> <span class="st0">"Gamed-Std.nsi"</span>
+		<span class="kw4">File</span> <span class="st0">"NSIS\Contrib\Gamed\Docs\License.txt"</span>
+		<span class="kw4">File</span> <span class="st0">"NSIS\Contrib\Gamed\Graphics\Header\TemptHeader.bmp"</span>
+		<span class="kw4">File</span> <span class="st0">"NSIS\Contrib\Gamed\Graphics\Icons\SweetRevengeTemptIcon5s.ico"</span>
+		<span class="kw4">File</span> <span class="st0">"NSIS\Contrib\Gamed\Graphics\Wizard\RevengeTempt.bmp"</span>
+	<span class="kw2">SectionEnd</span>
+<span class="kw2">SectionGroupEnd</span>
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="Creating_an_NSIS_package_script">Creating an NSIS package script</span></h3>
+<p><a href="../File_SweetRevengeTemptIcon6l.html" class="image"><img alt="SweetRevengeTemptIcon6l.png" src="../w/images/SweetRevengeTemptIcon6l.png" width="555" height="555" /></a></p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.183 seconds
+Real time usage: 0.192 seconds
+Preprocessor visited node count: 295/1000000
+Preprocessor generated node count: 560/1000000
+Post‐expand include size: 1792/2097152 bytes
+Template argument size: 1037/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   11.268      1 - -total
+ 82.07%    9.247      5 - Template:Ambox
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:29235-0!*!0!!en!5!* and timestamp 20161215145528 and revision id 45048
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/User:00zX/Setting_Up_Your_UScript_Environment?oldid=45048">https://wiki.beyondunreal.com/User:00zX/Setting_Up_Your_UScript_Environment?oldid=45048</a>"</div>
+					<div id='catlinks' class='catlinks catlinks-allhidden'></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-user" class="selected"><a href="Setting_Up_Your_UScript_Environment.html" title="View the user page [c]" accesskey="c">User page</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/User_talk:00zX/Setting_Up_Your_UScript_Environment?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-viewsource"><a href="https://wiki.beyondunreal.com/edit/User:00zX/Setting_Up_Your_UScript_Environment" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/User:00zX/Setting_Up_Your_UScript_Environment" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=User%3A00zX%2FSetting+Up+Your+UScript+Environment&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=User%3A00zX%2FSetting+Up+Your+UScript+Environment" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="../index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="../Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/User:00zX/Setting_Up_Your_UScript_Environment" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/User:00zX/Setting_Up_Your_UScript_Environment" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-contributions"><a href="https://wiki.beyondunreal.com/Special:Contributions/00zX" title="A list of contributions of this user">User contributions</a></li>
+											<li id="t-log"><a href="https://wiki.beyondunreal.com/Special:Log/00zX">Logs</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/User:00zX/Setting_Up_Your_UScript_Environment?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/User:00zX/Setting_Up_Your_UScript_Environment?oldid=45048" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/User:00zX/Setting_Up_Your_UScript_Environment" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 06:03, 6 March 2012.</li>
+									<li id="copyright">Licensed as <a href="../Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="../Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="../Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="../Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":150});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/User:00zX/Setting_Up_Your_UScript_Environment by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 19:39:00 GMT -->
+</html>

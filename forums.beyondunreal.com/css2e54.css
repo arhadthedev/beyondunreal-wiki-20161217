@@ -1,0 +1,1222 @@
+@charset "UTF-8";
+
+/* --- discussion_list.css --- */
+
+.discussionList
+{
+	position: relative;
+	zoom: 1;
+}
+
+/** column style and width **/
+
+.discussionList .sectionHeaders,
+.discussionListItem
+{
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	word-wrap: normal;
+}
+
+	.discussionList .sectionHeaders dt,
+	.discussionList .sectionHeaders dd,
+	.discussionListItem .listBlock
+	{
+		display: table-cell;
+		vertical-align: middle;
+	}
+	
+		.discussionList .posterAvatar
+		{
+			width: 52px;
+		}
+		
+		.discussionList .main
+		{
+			width: auto;
+		}
+
+			.discussionList .sectionHeaders .main .postDate
+			{
+				text-align: right;
+			}
+		
+		.discussionList .stats
+		{
+			width: 140px;
+		}
+			
+			.discussionList .sectionHeaders .stats .minor
+			{
+				text-align: right;
+			}
+		
+		.discussionList .lastPost
+		{
+			width: 150px;
+			text-align: right;
+			overflow: hidden;
+		}
+		
+		.discussionList .statsLastPost /* combined last two columns */
+		{
+			width: 290px;
+		}
+	
+
+/* column headers */
+
+.discussionList .sectionHeaders
+{	
+	font-size: 15px;
+font-family: 'Open Sans', sans-serif;
+color: rgb(255, 255, 255);
+background-color: rgb(203, 119, 0);
+padding: 12px 10px;
+margin: 3px auto 0;
+border-radius: 0px;
+
+	
+	padding: 0;
+}
+
+	.discussionList .sectionHeaders dt span
+	{
+		display: none !important;
+	}
+		
+	.discussionList .sectionHeaders a
+	{
+		display: block;
+		color: rgb(255, 255, 255);
+		outline: none;
+	}
+	
+	.discussionList .sectionHeaders a:hover
+	{
+		text-decoration: none;
+	}
+			
+	.discussionList .sectionHeaders dd a[href]:hover
+	{
+		text-decoration: none;
+background: url(rgbadbba.png?r=232&amp;g=232&amp;b=232&amp;a=25); background: rgba(232, 232, 232, 0.1); _filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#19E8E8E8,endColorstr=#19E8E8E8);
+
+	}
+		
+	.discussionList .sectionHeaders .main a,
+	.discussionList .sectionHeaders .stats a
+	{
+		float: left;
+		width: 50%;
+		white-space: nowrap;
+	}
+	
+		.discussionList .sectionHeaders a span
+		{
+			padding: 12px 10px;
+			display: block;
+		}
+		
+/** IE <8 **/
+.discussionList .sectionHeaders,
+.discussionListItem                { *display: block; _vertical-align: bottom; }
+.discussionList .sectionHeaders dt,
+.discussionList .sectionHeaders dd,
+.discussionListItem .listBlock     { *display: block; *float: left; }
+.discussionListItem .listBlock     { _height: 52px; *min-height: 52px; } /* todo: should be calculation */
+.discussionList .posterAvatar      { *width: 6.98%; }
+.discussionListItem .posterAvatar  { *font-size: 0; }	
+.discussionList .main              { *width: 56.98%; }
+.discussionList .stats             { *width: 15.97%; }	
+.discussionList .lastPost          { *width: 19.97%; }
+.discussionList .statsLastPost     { *width: 35.97%; }
+.discussionList .sectionHeaders dt,
+.discussionList .sectionHeaders dd { *padding: 5px 0; }
+.discussionList .sectionHeaders a,
+.discussionList .sectionHeaders a span { *display: inline !important; *float: none !important; }
+
+/* items in thread list */
+
+.discussionListItems
+{
+}
+
+
+
+	
+/* individual thread list item */
+	
+/** main **/
+
+.discussionListItem
+{
+	background-color: rgb(34, 34, 34);
+	
+	border-bottom: 1px solid rgb(45, 45, 45);
+	padding: 8px 0px;
+}
+	/* avatar section */
+	
+	.discussionListItem .posterAvatar .avatarContainer
+	{
+		display: block;
+		position: relative;
+	}
+	
+	.discussionListItem .posterAvatar .avatar
+	{
+		padding: 5px;
+display: block;
+width: 36px;
+height: 36px;
+
+		
+		width: auto;
+		height: auto;
+	}
+	
+		.discussionListItem .posterAvatar .avatar img
+		{
+			width: 36px;
+			height: 36px;
+			display: block;
+		}
+		
+		.discussionListItem .posterAvatar .miniMe
+		{
+			padding: 0;
+position: absolute;
+bottom: 1px;
+left: 29px;
+z-index: 10;
+
+		}
+		
+			.discussionListItem .posterAvatar .miniMe img
+			{
+				padding: 1px;
+border: 1px none black;
+border-radius: 0px;
+box-shadow: 1px 1px 5px rgba(0,0,0, 0.5);
+width: 20px;
+height: 20px;
+				
+			}		
+		
+		
+	/* title, poster section */
+	
+	.discussionListItem .titleText
+	{
+		padding: 5px;
+		overflow: hidden; zoom: 1;
+		position: relative;
+	}
+	
+		/* unread indicator */
+		
+		.LoggedIn .discussionListItem .titleText
+		{			
+			padding-left: 20px;
+		}
+		
+		.LoggedIn .discussionListItem .unreadLink,
+		.LoggedIn .discussionListItem .ReadToggle
+		{
+			display: block;
+			width: 10px;
+			height: 10px;
+			
+			position: absolute;
+			left: 5px;
+			top: 10px;
+			
+			
+			white-space: nowrap;
+			color: rgb(155, 155, 155);
+			font-size: 11px;
+		}
+		
+		
+			.LoggedIn .discussionListItem .ReadToggle:hover
+			{
+				background-position: -25px -42px;
+			}
+	
+		/* first row */
+	
+		.discussionListItem .title
+		{
+			font-size: 15px;
+margin-bottom: 5px;
+line-height: 18px;
+
+			max-width: 100%;
+			word-wrap: break-word;
+		}
+		
+			.discussionListItems .unread .title a
+			{
+				font-weight: bold;
+/*padding-right: 18px;
+				background: transparent url('styles/flatawesomedark/xenforo/widgets/discussion-new.png') no-repeat right center;*/
+
+			}
+			
+		
+		.discussionListItem .iconKey span
+		{
+			margin-left: 5px;
+float: right;
+font-size: 15px;
+width: 16px;
+height: 16px;
+
+		}
+		
+		/* second row */
+		
+		.discussionListItem .secondRow
+		{
+			font-size: 12px;
+
+			clear: both;
+		}
+		
+			.discussionListItem .secondRow .controls
+			{
+				float: right;
+				padding-left: 20px;
+			}
+				
+				.discussionListItem.AjaxProgress .controls
+				{
+					background: transparent url('styles/flatawesomedark/xenforo/widgets/ajaxload.info_B4B4DC_facebook.gif') no-repeat left center;
+				}
+			
+			.discussionListItem .posterDate
+			{
+				float: left;
+			}
+			
+			
+			
+	/* stats section */
+	
+	.discussionListItem .stats dl
+	{
+		padding: 0 10px;
+		border-left: 1px solid rgb(48, 48, 48);
+		border-right: 1px solid rgb(48, 48, 48);
+	}
+		.discussionListItem .stats .major
+		{
+			font-size: 15px;
+margin-bottom: 5px;
+line-height: 18px;
+
+			
+			margin-top: 5px;
+		}
+			
+		.discussionListItem .stats .minor
+		{
+			font-size: 12px;
+
+			
+			margin-bottom: 5px;
+		}
+			
+	/* last post section */
+	
+	.discussionListItem .lastPostInfo
+	{
+		padding: 5px;
+	}
+	
+		.discussionListItem .lastPostInfo .username
+		{
+			font-size: 15px;
+margin-bottom: 5px;
+line-height: 18px;
+
+		}
+		
+	
+			.discussionListItems .unread .lastPostInfo .username
+			{
+				font-weight: bold;
+/*padding-right: 18px;
+				background: transparent url('styles/flatawesomedark/xenforo/widgets/discussion-new.png') no-repeat right center;*/
+
+			}
+		
+		.discussionListItem .lastPostInfo .dateTime
+		{
+			font-size: 12px;
+
+		}
+
+
+/* extra note row */
+
+.discussionListItem .noteRow
+{
+	background-color: rgb(34, 34, 34);
+	padding: 5px;
+	text-align: center;
+	font-size: 11px;
+	color: rgb(70, 70, 70);
+}
+
+
+
+
+/* deleted item */
+
+.discussionList .discussionListItem.deleted
+{
+}
+
+	.discussionList .discussionListItem.deleted .avatar img
+	{
+		opacity: 0.5;
+		filter: alpha(opacity='50');
+	}
+		
+	.discussionList .discussionListItem.deleted .deletionNote
+	{
+		float: left;
+		color: rgb(150,0,0);
+	}
+		
+/* moderated item */
+
+.discussionList .discussionListItem.moderated .listBlock
+{
+	background-color: rgb(34, 34, 34);
+}
+
+		
+		
+		
+		
+		
+			
+/* inline mod selected/checked classes */
+
+.discussionListItem.InlineModChecked,
+.discussionListItem.InlineModChecked .posterAvatar,
+.discussionListItem.InlineModChecked .main,
+.discussionListItem.InlineModChecked .stats,
+.discussionListItem.InlineModChecked .lastPost,
+.discussionListItem.deleted.InlineModChecked,
+.discussionListItem.moderated.InlineModChecked
+{
+	background-color: rgb(58, 58, 58);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+/** bottom summary **/
+
+.discussionList .sectionFooter
+{
+	overflow: hidden; zoom: 1;
+}
+
+	.discussionList .sectionFooter .contentSummary
+	{
+		float: left;
+		display: block;
+	}
+
+		
+/** thread list options **/
+
+.DiscussionListOptions
+{
+	margin: 10px auto;
+border: 1px solid rgb(70, 70, 70);
+border-radius: 0px;
+line-height: 20px;
+overflow: hidden;
+zoom: 1;
+
+}
+
+.hasJs .DiscussionListOptions
+{
+	display: none;
+}
+
+	.DiscussionListOptions dl,
+	.DiscussionListOptions .controlGroup
+	{
+		float: left;
+		margin-right: 10px;
+		
+		overflow: hidden; zoom: 1;
+	}
+	
+		.DiscussionListOptions dt
+		{
+			float: left;
+		}
+		
+		.DiscussionListOptions dd
+		{
+			margin-left: 120px;
+		}
+		
+	.DiscussionListOptions .buttonGroup
+	{
+		float: right;
+	}
+	
+		.DiscussionListOptions .buttonGroup input
+		{
+			min-width: 75px;
+		}
+	
+#DiscussionListOptionsHandle
+{
+	position: absolute;
+bottom: -17px;
+line-height: 16px;
+text-align: center;
+right: 50%;
+white-space: nowrap;
+
+}
+	
+	#DiscussionListOptionsHandle a
+	{
+		font-size: 12px;
+color: rgb(203, 119, 0);
+background-color: ;
+padding: 5px 20px;
+margin: 0 auto;
+border: 1px solid rgb(70, 70, 70);
+border-top: 1px none black;
+border-bottom-right-radius: 0px;
+border-bottom-left-radius: 0px;
+display: inline-block;
+outline: 0;
+position: relative;
+right: -50%;
+top: 10px;
+
+	}
+	
+.afterDiscussionListHandle
+{
+	margin-top: 20px;
+}
+	
+/** item page nav **/
+
+.discussionListItem .itemPageNav
+{
+	visibility: hidden;
+}
+
+.discussionListItem:hover .itemPageNav,
+.Touch .discussionListItem .itemPageNav
+{
+	visibility: visible;
+}
+
+	.itemPageNav a,
+	.itemPageNav span
+	{
+		font-size: 12px;
+color: rgb(45, 45, 45) !important;
+padding: 0 3px;
+border-radius: 0px;
+display: inline-block;
+text-align: center;
+
+	}
+	
+	body .itemPageNav a
+	{
+		color: rgb(45, 45, 45) !important;
+background-color: rgb(232, 232, 232);
+border: 1px solid rgb(203, 203, 203);
+
+	}
+	
+	body .itemPageNav a:hover
+	{
+		color: rgb(73, 73, 73);
+text-decoration: none;
+background-color: rgb(203, 203, 203);
+border-color: rgb(156, 156, 156);
+
+	}
+
+/** filters **/
+		
+.discussionListFilters
+{
+	font-size: 11px;
+	overflow: hidden; zoom: 1;
+}
+
+	.discussionListFilters .filtersHeading
+	{
+		float: left;
+		margin-right: 5px;
+		color: rgb(112, 112, 112);
+		font-weight: bold;
+	}
+	
+	.discussionListFilters .removeFilter,
+	.discussionListFilters .removeAllFilters
+	{
+		color: rgb(70, 70, 70);
+		background-color rgb(48, 48, 48);
+		border: 1px solid rgb(48, 48, 48);
+		border-radius: 5px;
+		padding: 2px 10px;
+	}
+	
+		.discussionListFilters .gadget
+		{
+			color: rgb(112, 112, 112);
+			font-weight: bold;
+			margin-left: 3px;
+		}
+
+	
+		.discussionListFilters .removeFilter:hover,
+		.discussionListFilters .removeAllFilters:hover
+		{
+			background-color: rgb(60, 60, 60);
+			text-decoration: none;
+			color: rgb(113, 113, 113);
+			box-shadow: 1px 1px 5px rgba(0,0,0, 0.15);
+		}
+		
+	.discussionListFilters .pairsInline dt
+	{
+		display: none;
+	}
+	
+	.discussionListFilters .filterPairs
+	{
+		float: left;
+	}
+	
+	.discussionListFilters .removeAll
+	{
+		float: right;
+	}
+	
+		.discussionListFilters .removeAllFilters
+		{
+			padding: 2px 6px;
+		}
+
+
+@media (max-width:610px)
+{
+	.Responsive .discussionList .sectionHeaders .stats
+	{
+		display: none;
+	}
+	
+	.Responsive .discussionList .sectionHeaders .main .title
+	{
+		float: none;
+		width: auto;
+	}
+	
+	.Responsive .discussionList .sectionHeaders .main .postDate
+	{
+		display: none;
+	}
+	
+	.Responsive .discussionList .statsLastPost
+	{
+		display: none;
+	}
+
+	.Responsive .discussionListItem .listBlock.main,
+	.Responsive .discussionListItem .listBlock.stats,
+	.Responsive .discussionListItem .listBlock.lastPost
+	{
+		display: block;
+	}
+	
+	.Responsive .discussionListItem .listBlock.stats
+	{
+		float: left;
+		width: auto;
+		margin-top: -5px;
+		border: none;
+		background: none;
+		padding-left: 5px;
+	}
+	
+		.Responsive.LoggedIn .discussionListItem .listBlock.stats
+		{			
+			padding-left: 20px;
+		}
+	
+		.Responsive .discussionListItem .listBlock.stats dl
+		{
+			border: none;
+			padding: 0;
+		}
+		
+		.Responsive .discussionListItem .listBlock.stats dd,
+		.Responsive .discussionListItem .listBlock.stats dt
+		{
+			float: none;
+			display: inline;
+		}
+	
+		.Responsive .discussionListItem .listBlock.stats .minor
+		{
+			display: none;
+		}
+		
+		.Responsive .discussionListItem .listBlock.stats .major
+		{
+			font-size: 11px;
+			margin-top: 0;
+		}
+	
+	.Responsive .discussionListItem .listBlock.lastPost
+	{
+		float: right;
+		width: auto;
+		margin-top: -5px;
+	}
+		.Responsive .discussionListItem .listBlock.lastPost .lastPostInfo
+		{
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	
+		.Responsive .discussionListItem .listBlock.lastPost dt
+		{
+			display: none;
+		}
+}
+
+@media (max-width:800px)
+{
+	.Responsive .discussionList .sectionHeaders .lastPost,
+	.Responsive .discussionList .lastPost
+	{
+		width: 125px;
+	}
+}
+
+@media (max-width:480px)
+{
+	.Responsive .discussionListItem .secondRow .startDate,
+	.Responsive .discussionListItem .secondRow .EditControl
+	{
+		display: none;
+	}
+}
+
+
+/* --- fa_socialicons.css --- */
+
+.socialicons
+{
+	float: right;
+	margin-top: 10px;
+}
+.socialicons li
+{
+	display: inline-block;
+}
+.socialicons li a
+{
+	padding: 10px;
+	font-size: 24px;
+	color: rgb(235, 235, 235);
+}
+.socialicons li a:hover
+{
+	color: rgb(203, 119, 0);
+}
+
+/* --- login_bar.css --- */
+
+/** Login bar basics **/
+
+#loginBar
+{
+	color: rgb(235, 235, 235);
+background-color: rgb(45, 45, 45);
+border-bottom: 1px solid rgb(88, 88, 88);
+position: relative;
+z-index: 1000;
+
+}
+
+	#loginBar .ctrlWrapper
+	{
+		margin: 0 10px;
+	}
+
+	#loginBar .pageContent
+	{
+		padding-top: 5px;
+		position: relative;
+		_height: 0px;
+	}
+
+	#loginBar a
+	{
+		color: rgb(112, 112, 112);
+
+	}
+
+	#loginBar form
+	{
+		padding: 5px 0;
+margin: 0 auto;
+display: none;
+line-height: 20px;
+position: relative;
+
+	}
+	
+		#loginBar .xenForm .ctrlUnit,		
+		#loginBar .xenForm .ctrlUnit > dt label
+		{
+			margin: 0;
+			border: none;
+		}
+	
+		#loginBar .xenForm .ctrlUnit > dd
+		{
+			position: relative;
+		}
+	
+	#loginBar .lostPassword,
+	#loginBar .lostPasswordLogin
+	{
+		font-size: 11px;
+	}
+	
+	#loginBar .rememberPassword
+	{
+		font-size: 11px;
+	}
+
+	#loginBar .textCtrl
+	{
+		color: rgb(155, 155, 155);
+background-color: rgb(50, 50, 50);
+border-color: rgb(88, 88, 88);
+
+	}
+	
+	#loginBar .textCtrl[type=text]
+	{
+		font-weight: bold;
+font-size: 18px;
+
+	}
+
+	#loginBar .textCtrl:-webkit-autofill /* http://code.google.com/p/chromium/issues/detail?id=1334#c35 */
+	{
+		background: rgb(50, 50, 50) !important;
+		color: rgb(155, 155, 155);
+	}
+
+	#loginBar .textCtrl:focus
+	{
+		background: black none;
+
+	}
+	
+	#loginBar input.textCtrl.disabled
+	{
+		color: rgb(70, 70, 70);
+background-color: rgb(45, 45, 45);
+border-style: dashed;
+
+	}
+	
+	#loginBar .button
+	{
+		min-width: 85px;
+		*width: 85px;
+	}
+	
+		#loginBar .button.primary
+		{
+			font-weight: bold;
+		}
+		
+/** changes when eAuth is present **/
+
+#loginBar form.eAuth
+{
+	-x-max-width: 700px; /* normal width + 170px */
+}
+
+	#loginBar form.eAuth .ctrlWrapper
+	{
+		border-right: 1px dotted rgb(70, 70, 70);
+		margin-right: 200px;
+		box-sizing: border-box;
+	}
+
+	#loginBar form.eAuth #eAuthUnit
+	{
+		position: absolute;
+		top: 0px;
+		right: 10px;
+	}
+
+		#eAuthUnit li
+		{
+			margin-top: 10px;
+			line-height: 0;
+		}
+	
+/** handle **/
+
+#loginBar #loginBarHandle
+{
+	font-size: 11px;
+color: rgb(235, 235, 235);
+background-color: rgb(45, 45, 45);
+padding: 0 10px;
+margin-right: 20px;
+border-bottom-right-radius: 0px;
+border-bottom-left-radius: 0px;
+position: absolute;
+right: 180px;
+bottom: -20px;
+text-align: center;
+z-index: 1;
+line-height: 20px;
+box-shadow: 0px 2px 5px rgb(45, 45, 45);
+
+}
+
+
+@media (max-width:800px)
+{
+	.Responsive #loginBar form.eAuth .ctrlWrapper
+	{
+		border-right: none;
+		margin-right: 10px;
+	}
+
+	.Responsive #loginBar form.eAuth #eAuthUnit
+	{
+		position: static;
+		width: 180px;
+		margin: 0 auto 10px;
+	}
+}
+
+
+/* --- notices.css --- */
+
+.hasJs .FloatingContainer .Notice
+{
+	display: none;
+}
+
+.FloatingContainer
+{
+	position: fixed;
+	width: 300px;
+	z-index: 9997;
+	top: auto;
+	left: auto;
+	bottom: 0;
+	right: 20px;
+}
+
+.Notices .Notice .blockImage
+{
+	padding: 10px 0 5px 10px;
+}
+
+.Notices .Notice .blockImage,
+.FloatingContainer .floatingImage
+{
+	float: left;
+}
+
+.Notices .Notice .blockImage img,
+.FloatingContainer .floatingImage img
+{
+	max-width: 48px;
+	max-height: 48px;
+}
+
+.Notices .hasImage,
+.FloatingContainer .hasImage
+{
+	margin-left: 64px;
+	min-height: 52px;
+}
+
+.FloatingContainer .floatingItem
+{
+	display: block;
+	padding: 10px;
+	font-size: 11px;
+	position: relative;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 6px;
+	box-shadow: 1px 1px 3px rgba(0,0,0, 0.25);
+}
+
+.FloatingContainer .floatingItem.primary
+{
+	background-color: rgb(45, 45, 45);
+	border-color: rgb(70, 70, 70);
+}
+
+.FloatingContainer .floatingItem.secondary
+{
+	color: rgb(73, 73, 73);
+	background-color: rgb(156, 156, 156);
+	border-color: rgb(203, 203, 203);
+}
+
+.FloatingContainer .floatingItem.dark
+{
+	color: #fff;
+	background: black;
+	background: url(rgbaf42d.png?r=0&amp;g=0&amp;b=0&amp;a=204); background: rgba(0,0,0, 0.8); _filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000,endColorstr=#CC000000);
+	border-color: #333;
+}
+
+.FloatingContainer .floatingItem.light
+{
+	color: #000;
+	background: white;
+	background: url(rgba571f.png?r=255&amp;g=255&amp;b=255&amp;a=204); background: rgba(255,255,255, 0.8); _filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF);
+	border-color: #ddd;
+}
+
+.FloatingContainer .floatingItem .title
+{
+	font-size: 14px;
+	padding-bottom: 5px;
+	font-weight: bold;
+	display: block;
+}
+
+.FloatingContainer .floatingItem .DismissCtrl
+{
+	position: static;
+	float: right;
+	margin-left: 5px;
+	margin-right: -5px;
+	margin-top: -5px;
+}
+
+.Notices
+{
+	display: none;
+}
+
+
+	@media (max-width:800px)
+	{
+		.Responsive .Notice.wide { display: none !important; }
+	}
+	
+	@media (max-width:610px)
+	{
+		.Responsive .Notice.medium { display: none !important; }
+	}
+	
+	@media (max-width:480px)
+	{
+		.Responsive .Notice.narrow { display: none !important; }
+		
+		.Responsive .FloatingContainer
+		{
+			right: 50%;
+			margin-right: -150px;
+		}
+	}
+
+
+/* --- panel_scroller.css --- */
+
+.hasJs .Notices.PanelScroller { display: none; }
+
+.PanelScroller .scrollContainer,
+.PanelScrollerOff .panel
+{
+	background-color: rgb(25, 175, 126);
+padding: 3px;
+margin-bottom: 10px;
+border-radius: 0px;
+font-size: 13pt;
+
+}
+
+.PanelScroller .PanelContainer
+{
+	position: relative;
+	clear: both;
+	width: 100%;
+	overflow: auto;
+}
+
+	.hasJs .PanelScroller .Panels
+	{
+		position: absolute;
+	}
+
+	.PanelScroller .Panels
+	{
+		clear: both;
+		margin: 0;
+		padding: 0;
+	}
+	
+		.PanelScroller .panel,
+		.PanelScrollerOff .panel
+		{
+			overflow: hidden;
+			position: relative;
+			padding: 0 !important;
+
+			padding: 10px;
+color: #FFF;
+
+		}
+			
+		.PanelScroller .panel .noticeContent,
+		.PanelScrollerOff .panel .noticeContent
+		{
+			padding: 10px;
+		}
+
+/** panel scroller nav **/
+
+.PanelScroller .navContainer
+{
+	margin: -11px 21px 10px;
+overflow: hidden;
+zoom: 1;
+
+}
+
+.PanelScroller .navControls
+{
+	float: right;
+}
+
+/* clearfix */ .PanelScroller .navControls { zoom: 1; } .PanelScroller .navControls:after { content: '.'; display: block; height: 0; clear: both; visibility: hidden; }
+
+	.PanelScroller .navControls a
+	{
+		font-size: 11px;
+color: rgb(255, 255, 255);
+background-color: rgb(25, 175, 126);
+padding: 3px 6px 2px;
+margin-right: 3px;
+margin-left: -1px;
+float: left;
+display: block;
+position: relative;
+
+		
+		border-radius: 0px;
+		border-radius: 0;
+	}
+	
+		.PanelScroller .navControls > a:first-child
+		{
+			border-bottom-left-radius: 0px;
+		}
+		
+		.PanelScroller .navControls > a:last-child
+		{
+			border-bottom-right-radius: 0px;
+		}
+		
+		.PanelScroller .navControls a:hover
+		{
+			color: rgb(228, 228, 228);
+text-decoration: none;
+
+		}
+		
+		.PanelScroller .navControls a.current
+		{
+			
+		}
+		
+			.PanelScroller .navControls a .arrow
+			{
+				display: none;
+			}
+			
+			.PanelScroller .navControls a.current span
+			{
+				display: block;
+				line-height: 0px;
+				width: 0px;
+				height: 0px;
+				border-top: 5px solid rgb(70, 70, 70);
+				border-right: 5px solid transparent;
+				border-bottom: 1px none black;
+				border-left: 5px solid transparent;
+				-moz-border-bottom-colors: rgb(70, 70, 70);
+				position: absolute;
+			}
+			
+			.PanelScroller .navControls a.current .arrow
+			{
+				border-top-color: ;
+				top: 0px;
+				left: 50%;
+				margin-left: -5px;
+			}
+			
+				.PanelScroller .navControls a .arrow span
+				{
+					border-top-color: rgb(25, 175, 126);
+					top: -6px;
+					left: -5px;
+				}
+				
+/* notices */
+
+.Notices .panel .noticeContent
+{
+	padding-right: 25px;
+}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Chain_Of_Events_At_Level_Startup by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:53:18 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Chain Of Events At Level Startup - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Chain_Of_Events_At_Level_Startup" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Chain_Of_Events_At_Level_Startup" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_Chain_Of_Events_At_Level_Startup.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Chain_Of_Events_At_Level_Startup","wgTitle":"Chain Of Events At Level Startup","wgCurRevisionId":2355,"wgRevisionId":2355,"wgArticleId":843,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Chain_Of_Events_At_Level_Startup","wgRelevantArticleId":843,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Chain_Of_Events_At_Level_Startup skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>There is no spoon
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Chain Of Events At Level Startup</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This page describes what happens right after a level was loaded. It lists the startup engine events and the UnrealScript functions subsequently called by those events and gives a short description how these events and functions could be used.</p>
+<p>Actors that were created because they are listed in the ServerActors list of a server's <a href="Legacy_INI_File.html" title="Legacy:INI File">INI file</a> also use the chain of events described on this page. Other actors spawned during this chain of events (e.g. <a href="Legacy_Mutator.html" title="Legacy:Mutator">Mutators</a> or <a href="Legacy_GameRules.html" title="Legacy:GameRules">GameRules</a>) use the <a href="Legacy_Chain_Of_Events_When_Spawning_Actors.html" title="Legacy:Chain Of Events When Spawning Actors">chain of events when spawning actors</a> and are not included here (unless UnrealEngine1 is used) except for the last event in this list.</p>
+<p><i>This whole page is based on a snippet of native UT2004 code posted on the UT2003Mods mailing list. Most parts will be similar in older engine versions, but there might be important differences in the functions called by these events.</i></p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Chain_Of_Events"><span class="tocnumber">1</span> <span class="toctext">Chain Of Events</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#GameInfo.InitGame.28.29"><span class="tocnumber">1.1</span> <span class="toctext">GameInfo.InitGame()</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#GameInfo.SetGrammar.28.29_.28UT2004.29"><span class="tocnumber">1.2</span> <span class="toctext">GameInfo.SetGrammar() <i>(UT2004)</i></span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Actor.PreBeginPlay.28.29"><span class="tocnumber">1.3</span> <span class="toctext">Actor.PreBeginPlay()</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#...in_UT2003"><span class="tocnumber">1.3.1</span> <span class="toctext">...in UT2003</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#...in_UT"><span class="tocnumber">1.3.2</span> <span class="toctext">...in UT</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#Actor.BeginPlay.28.29"><span class="tocnumber">1.4</span> <span class="toctext">Actor.BeginPlay()</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Actor_Zones"><span class="tocnumber">1.5</span> <span class="toctext">Actor Zones</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Actor_Volumes"><span class="tocnumber">1.6</span> <span class="toctext">Actor Volumes</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Actor.PostBeginPlay.28.29"><span class="tocnumber">1.7</span> <span class="toctext">Actor.PostBeginPlay()</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Actor.PostNetBeginPlay.28.29"><span class="tocnumber">1.8</span> <span class="toctext">Actor.PostNetBeginPlay()</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Actor.SetInitialState.28.29"><span class="tocnumber">1.9</span> <span class="toctext">Actor.SetInitialState()</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Actor_Bases"><span class="tocnumber">1.10</span> <span class="toctext">Actor Bases</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Related_Topics"><span class="tocnumber">2</span> <span class="toctext">Related Topics</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Chain_Of_Events">Chain Of Events</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Chain_Of_Events_At_Level_Startup?section=1" title="Edit section: Chain Of Events">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>These are the events directly called from native code. See the sections below for more details about functions called by these events.</p>
+<p>Here "all actors" means all actors that were placed in the map by the mapper or were created as ServerActors. Actors that have been created with the Spawn() function or that have received a Destroy() call are excluded from this chain of events.</p>
+<ol>
+<li>the <a href="Legacy_GameInfo.html" title="Legacy:GameInfo">GameInfo</a>'s InitGame() event is called</li>
+<li>the <a href="Legacy_GameInfo.html" title="Legacy:GameInfo">GameInfo</a>'s SetGrammar() event is called <i>(UT2004)</i></li>
+<li>all <a href="Legacy_Actor.html" title="Legacy:Actor">Actors</a>' PreBeginPlay() events are called</li>
+<li>all <a href="Legacy_Actor.html" title="Legacy:Actor">Actors</a>' BeginPlay() events are called</li>
+<li>all <a href="Legacy_Actor.html" title="Legacy:Actor">Actors</a>' zones are set</li>
+<li>all <a href="Legacy_Actor.html" title="Legacy:Actor">Actors</a>' volumes are set</li>
+<li>all <a href="Legacy_Actor.html" title="Legacy:Actor">Actors</a>' PostBeginPlay() events are called</li>
+<li>all <a href="Legacy_Actor.html" title="Legacy:Actor">Actors</a>' PostNetBeginPlay() events are called</li>
+<li>all <a href="Legacy_Actor.html" title="Legacy:Actor">Actors</a>' SetInitialState() events are called</li>
+<li>all <a href="Legacy_Actor.html" title="Legacy:Actor">Actors</a> either with bShouldBaseAtStartup=True and Physics set to PHYS_None or PHYS_Rotating or with an AttachTag get their base set</li>
+</ol>
+<p>After all this players can start joining. This is especially also true for single player/instant action mode and means that the <a href="Legacy_Chain_Of_Events_When_A_Player_Logs_In.html" title="Legacy:Chain Of Events When A Player Logs In">chain of events when a player logs in</a> is only executed after these events.</p>
+<h3><span class="mw-headline" id="GameInfo.InitGame.28.29">GameInfo.InitGame()</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Chain_Of_Events_At_Level_Startup?section=2" title="Edit section: GameInfo.InitGame()">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This initializes the GameInfo. At this point all the mapper-placed actors already exist, they just didn't get any of their initialization functions called yet.</p>
+<ol>
+<li>The <a href="Legacy_GameProfile.html" title="Legacy:GameProfile">GameProfile</a> class specified in the "SaveGame" parameter is loaded and initialized. (if specified)</li>
+<li>The GameSpeed is set according to the "GameSpeed" parameter. (SetGameSpeed(), if specified)</li>
+<li>The base mutator is added via AddMutator().<br />
+<b>Note:</b> Any actors spawned before this or during the base mutator's initialization (see <a href="Legacy_Chain_Of_Events_When_Spawning_Actors.html" title="Legacy:Chain Of Events When Spawning Actors">Chain Of Events When Spawning Actors</a>) must have <tt>bGameRelevant=True</tt> set or they will cause an <a href="Legacy_Accessed_None.html" title="Legacy:Accessed None" class="mw-redirect">Accessed None</a> when trying to call the base mutator's CheckRelevance() function and as a result of this destroy themselves.</li>
+<li>The BroadcastHandlerClass is spawned.</li>
+<li>The AccessControl class is spawned. Either the class specified in the "AccessControl" parameter will be used or the AccessControlClass. If neither of those are set, Engine.<a href="Legacy_AccessControl.html" title="Legacy:AccessControl">AccessControl</a> is used.</li>
+<li>All <a href="Legacy_GameRules.html" title="Legacy:GameRules">GameRules</a> specified in the "GameRules" parameter will be spawned.</li>
+<li>All <a href="Legacy_Mutator.html" title="Legacy:Mutator">Mutators</a> specified in the "Mutator" parameter will be added via AddMutator().<br />
+AddMutator() only adds a mutator if its GroupName is an empty string or is not the same as the GroupName of any other mutator (including the base mutator) already added. The mutator's <tt>bUserAdded</tt> variable is set to False for the base mutator and to True for all mutators added via the "Mutator" parameter.</li>
+</ol>
+<p>For subclasses of <a href="Legacy_DeathMatch.html" title="Legacy:DeathMatch">DeathMatch</a> InitGame() looks for a <a href="Legacy_LevelGameRules.html" title="Legacy:LevelGameRules">LevelGameRules</a> actor before going though the things described above. The first <a href="Legacy_LevelGameRules.html" title="Legacy:LevelGameRules">LevelGameRules</a> actor found will receive an UpdateGame() call.</p>
+<p>InitGame() also reads some other parameters specified in the level URL, but these mostly don't call any important functions.</p>
+<h3><span class="mw-headline" id="GameInfo.SetGrammar.28.29_.28UT2004.29">GameInfo.SetGrammar() <i>(UT2004)</i></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Chain_Of_Events_At_Level_Startup?section=3" title="Edit section: GameInfo.SetGrammar() (UT2004)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This loads the appropriate speech recognition grammar file.</p>
+<p><i>(no additional information about this so far)</i></p>
+<h3><span class="mw-headline" id="Actor.PreBeginPlay.28.29">Actor.PreBeginPlay()</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Chain_Of_Events_At_Level_Startup?section=4" title="Edit section: Actor.PreBeginPlay()">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="...in_UT2003">...in UT2003</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Chain_Of_Events_At_Level_Startup?section=5" title="Edit section: ...in UT2003">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>If the actor has <tt>bGameRelevant == False</tt> and this event is not executed on a client, the game's base <a href="Legacy_Mutator.html" title="Legacy:Mutator">mutator</a>'s CheckRelevance() function is called.</p>
+<p>CheckRelevance() first calls the base mutator's AlwaysRelevant() function which recursively calls the other mutators' AlwaysRelevant() functions. If this function returns True the actor is considered game relevant and CheckRelevance() returns True resulting in the Actor continuing to exist.</p>
+<p>If AlwaysRelevant() returns False, the base mutator's IsRelevant() function is called. This function calls the mutator's CheckReplacement() function and returns its result if it's False. Otherwise IsRelevant() returns the result of the next mutator's IsRelevant() function.</p>
+<p>Finally the result of the base mutator's IsRelevant() function is returned by CheckRelevance() and again, if that result is True the actor will continue to exist, otherwise it will destroy itself.</p>
+<h4><span class="mw-headline" id="...in_UT">...in UT</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Chain_Of_Events_At_Level_Startup?section=6" title="Edit section: ...in UT">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>If the actor has <tt>bGameRelevant == False</tt> and this event is not executed on a client, the <a href="Legacy_GameInfo.html" title="Legacy:GameInfo">GameInfo</a>'s IsRelevant() function is called.</p>
+<p>IsRelevant() first calls the base mutator's AlwaysRelevant() function which recursively calls the other mutators' AlwaysRelevant() functions. If this function returns True the actor is concidered game relevant and GameInfo.IsRelevant() returns True resulting in the Actor continuing to exist.</p>
+<p>If AlwaysRelevant() returns False, the base <a href="Legacy_Mutator.html" title="Legacy:Mutator">mutator</a>'s IsRelevant() function is called. This function calls the mutator's CheckReplacement() function and returns its result if it's False. Otherwise IsRelevant() returns the result of the next mutator's IsRelevant() function.</p>
+<p>If the base mutator's IsRelevant() function returns False the GameInfo's IsRelevant() function also returns False and the actor destroys itself. Otherwise if the bSuperRelevant property is set to 1 GameInfo.IsRelevant() returns True resulting in the Actor continuing to exist.</p>
+<p>If the base mutator's IsRelevant() function returns True but the bSuperRelevant property is not set to 1 the GameInfo's IsRelevant() function checks whether the actor may appear in the current difficulty level, if it's a "monster" (a non-player <a href="Legacy_Pawn_(UT).html" title="Legacy:Pawn (UT)">Pawn (UT)</a>) and if there's a random chance for the actor to not appear in the game (<tt>OddsOfAppearing</tt>). The GameInfo.IsRelevant() function will also update the number of secret goals, item goals and kill goals before returning True and allowing the actor to exist.</p>
+<h3><span class="mw-headline" id="Actor.BeginPlay.28.29">Actor.BeginPlay()</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Chain_Of_Events_At_Level_Startup?section=7" title="Edit section: Actor.BeginPlay()">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This event is called after an Actor is considered "relevant" for this game, i.e. no <a href="Legacy_Mutator.html" title="Legacy:Mutator">Mutator</a> wanted to get rid of it.</p>
+<p>Most actors don't use this event, but if you're looking for an event that is called before the actor is initialized, but after the mutator checks are done, then this is the place for you.</p>
+<h3><span class="mw-headline" id="Actor_Zones">Actor Zones</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Chain_Of_Events_At_Level_Startup?section=8" title="Edit section: Actor Zones">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>At this point the <a href="Legacy_Actor.html" title="Legacy:Actor">Actor</a>.Region.Zone value becomes valid. This event also causes the ZoneChange() event to be called.</p>
+<h3><span class="mw-headline" id="Actor_Volumes">Actor Volumes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Chain_Of_Events_At_Level_Startup?section=9" title="Edit section: Actor Volumes">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>At this point the <a href="Legacy_Actor.html" title="Legacy:Actor">Actor</a>.PhysicsVolume value becomes valid. This event also causes the PhysicsVolumeChange() event to be called.</p>
+<h3><span class="mw-headline" id="Actor.PostBeginPlay.28.29">Actor.PostBeginPlay()</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Chain_Of_Events_At_Level_Startup?section=10" title="Edit section: Actor.PostBeginPlay()">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Most actors use PostBeginPlay() to initialize their UnrealScript values. The actor's PhysicsVolume and Zone are valid but the actor is not yet in any state.</p>
+<h3><span class="mw-headline" id="Actor.PostNetBeginPlay.28.29">Actor.PostNetBeginPlay()</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Chain_Of_Events_At_Level_Startup?section=11" title="Edit section: Actor.PostNetBeginPlay()">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>PostNetBeginPlay() is called directly after PostBeginPlay() on the server. On clients it will be called when the initial replication is completed.</p>
+<h3><span class="mw-headline" id="Actor.SetInitialState.28.29">Actor.SetInitialState()</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Chain_Of_Events_At_Level_Startup?section=12" title="Edit section: Actor.SetInitialState()">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>At this point the actor is concidered "initialized" by the engine (bScriptInitialized is set to True in this event) and the actor's initial state is set. If the <a href="Legacy_InitialState.html" title="Legacy:InitialState">InitialState</a> property is set, it will be used, otherwise the actor goes to its auto state. Since SetInitialState() is a <a href="Legacy_Simulated_Function.html" title="Legacy:Simulated Function">simulated function</a> by default this happens on server and clients.</p>
+<p>This event uses GotoState to change the state, so during its executing the initial state's BeginState() event is called. The state's state code will however not yet start executing at this point. This will happen after all the events described on this page have finished doing their work.</p>
+<h3><span class="mw-headline" id="Actor_Bases">Actor Bases</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Chain_Of_Events_At_Level_Startup?section=13" title="Edit section: Actor Bases">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Actors with an AttachTag other than <tt>None</tt> are attached to the first actor with a matching <a href="Legacy_Tag.html" title="Legacy:Tag">Tag</a> or name via <code>SetBase(theMatchingActor)</code>. Actors with <tt>bCollideWorld = true</tt> and <tt>bShouldBaseAtStartup = true</tt> which use either PHYS_None or PHYS_Rotating try to find a suiting base as well. The AttachTag is evaluated first and if set bShouldBaseAtStartup is ignored, whether or not the AttachTag matches anything.</p>
+<p>In both cases when a base is set the actor's BaseChange() event will be called. Note that this final step of startup initialization also includes actors that were <code>Spawn()</code>ed during any of the previous initialization steps.</p>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Chain_Of_Events_At_Level_Startup?section=14" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_UnrealScript.html" title="Legacy:UnrealScript">UnrealScript</a></li>
+<li><a href="Legacy_Chain_Of_Events_When_Spawning_Actors.html" title="Legacy:Chain Of Events When Spawning Actors">Chain Of Events When Spawning Actors</a></li>
+<li><a href="Legacy_Chain_Of_Events_When_A_Player_Logs_In.html" title="Legacy:Chain Of Events When A Player Logs In">Chain Of Events When A Player Logs In</a></li>
+<li><a href="Legacy_Creating_Actors_And_Objects.html" title="Legacy:Creating Actors And Objects">Creating Actors And Objects</a></li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.034 seconds
+Real time usage: 0.036 seconds
+Preprocessor visited node count: 57/1000000
+Preprocessor generated node count: 64/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:843-0!*!0!!en!*!* and timestamp 20161215141833 and revision id 2355
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Chain_Of_Events_At_Level_Startup?oldid=2355">https://wiki.beyondunreal.com/Legacy:Chain_Of_Events_At_Level_Startup?oldid=2355</a>"</div>
+					<div id='catlinks' class='catlinks catlinks-allhidden'></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_Chain_Of_Events_At_Level_Startup.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Chain_Of_Events_At_Level_Startup?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Chain_Of_Events_At_Level_Startup" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Chain_Of_Events_At_Level_Startup" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AChain+Of+Events+At+Level+Startup&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AChain+Of+Events+At+Level+Startup" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Chain_Of_Events_At_Level_Startup" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Chain_Of_Events_At_Level_Startup" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Chain_Of_Events_At_Level_Startup?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Chain_Of_Events_At_Level_Startup?oldid=2355" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Chain_Of_Events_At_Level_Startup" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 03:57, 28 June 2006.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":78});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Chain_Of_Events_At_Level_Startup by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:53:18 GMT -->
+</html>

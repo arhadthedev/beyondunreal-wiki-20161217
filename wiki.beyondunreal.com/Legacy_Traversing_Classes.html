@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Traversing_Classes by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:30 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Traversing Classes - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Traversing_Classes" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Traversing_Classes" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_Traversing_Classes.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Traversing_Classes","wgTitle":"Traversing Classes","wgCurRevisionId":44370,"wgRevisionId":44370,"wgArticleId":3105,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Refactor Me"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Traversing_Classes","wgRelevantArticleId":3105,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Traversing_Classes skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I'm a doctor, not a mechanic
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Traversing Classes</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This page is an extension to <a href="Legacy_Package.html" title="Legacy:Package">Package</a>. I will attempt to explain the basic methods used in accessing and manipulating variables, functions, properties, etc. in other classes.</p>
+<p>This tutorial is designed for new scripters. After reading this document, hopefully you will be able to:</p>
+<ul>
+<li>Recognize if an arbitrary class is accessible from within the class you're currently editing</li>
+<li>Retrieve the values of variables defined in other classes</li>
+<li>Modify and save variables in other classes from within the class you're currently editing</li>
+<li>Execute functions in other classes</li>
+<li>Spawn new instances of other classes</li>
+<li>Gain valid references to any class from within any other class in UT (this one can be tough)</li>
+</ul>
+<p>This tutorial assumes you are already familiar with:</p>
+<ul>
+<li><a href="Legacy_Class_Syntax.html" title="Legacy:Class Syntax">Defining Classes</a></li>
+<li><a href="Legacy_Variable_Syntax.html" title="Legacy:Variable Syntax">Variable Types and Syntax</a></li>
+<li>Basics Structure of Class Files</li>
+<li>Class Hierarchy</li>
+<li>SubClasses &amp; ParentClasses</li>
+</ul>
+<p>After reading this tutorial, you should next learn about:</p>
+<ul>
+<li><a href="Legacy_Iterator.html" title="Legacy:Iterator">Working with Iterators</a></li>
+<li>Manipulating return types for functions</li>
+<li>Working with static/default</li>
+<li>When to override functions</li>
+</ul>
+<h2><span class="mw-headline" id="Variable_Types">Variable Types</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Traversing_Classes?section=1" title="Edit section: Variable Types">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Defining_Variables">Defining Variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Traversing_Classes?section=2" title="Edit section: Defining Variables">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>MyVar = SomeOtherVariable;</p>
+<p>Here I'm setting the value of the MyVar variable to the value of SomeOtherVariable. Pretty simple. Well, that's fine if SomeOtherVariable is in our own class, but what if SomeOtherVariable is in another class? Actually, it depends a lot on where you are attempting to access this variable from, and what you want to use it for. Another big part of how we'll do this is exactly what type of variable it is, such as a regular variable, like the ones you define at the top of your class's script, a local variable, or argument variables. Let's define these real quick.</p>
+<dl>
+<dt>Global variable</dt>
+<dd>Defined at the beginning of the class, before any functions, after the class statement and any #exec lines. Global variables are public variables, and can be accessed and modified by any other class. These variables are the only kind that can be config variables (can be saved to an .ini file). Likewise, only global variables can be defined in defaultproperties{ }. Global variables can be used throughout the class that they are defined in, as well as any child classes (without being redefined in those child classes).</dd>
+<dd>Global variables look like this:</dd>
+</dl>
+<pre>
+         var int NumUsers;
+         var config bool bTournament;
+         var class&lt;Pawn&gt; MyPawnType;
+</pre>
+<dl>
+<dt>Local variables</dt>
+<dd>Local variables are defined in the beginning of functions, before any statements are executed. Local variables may only be used within the function that they are defined in, and will be reset to their null value (0 for integers, "" for strings, None for actors, false for booleans, 0.00 for floats, etc.) each time that function is called. Local variables are inaccessible to functions outside of the function it is contained in, including functions in the same class or child classes. Local variables look like this:</dd>
+</dl>
+<pre>
+         local int i;
+         local PlayerPawn P;
+         local Names[128] UserName;
+</pre>
+<dl>
+<dt>Argument variables</dt>
+<dd>Argument variables are essentially local variables, which are declared and assigned a value in one step. Argument variables are the variables you use in function definitions, such as:</dd>
+</dl>
+<pre>
+function DoSomething(string ArugmentVariableString, int ArgumentVariableInt, bool ArgumentVariableBool)
+</pre>
+<dl>
+<dd>Argument variables, like local variables, may only be used in the function that they are defined within. You do not need to declare argument variables manually in your function ( i.e. local bool bSomething )</dd>
+</dl>
+<h3><span class="mw-headline" id="Working_with_Variables">Working with Variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Traversing_Classes?section=3" title="Edit section: Working with Variables">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The key to learning how to effectively work with variables and functions in other classes is to understand the difference between a <b>class</b> and an <b>object of that class</b>. Let's say we're working with the HealthVial class, and we want to get the value of the "HealingAmount" variable from that class. Let's say we're doing this from a mutator (since most who read this will probably be working on their first or second mutator).</p>
+<p>There are essentially two methods to do this, depending on whether we only need the starting value of the HealingAmount variable, or whether we need the "real-time" value of the HealingAmount variable.</p>
+<p>It's helpful to think of classes (classes in this case being the actual script that you write) as templates for objects. Inside the game engine, when it is time to create your object, the engine looks at the class for your object, and creates an object that has all of the parameters and characteristics of your script. If a default value for any of your global variables is listed, it assigns those values to the object. From that point on, the global variable values may be changed or affected by methods within that object, or other objects within the game. The original default value, however, is not affected by any changes made to the object that was spawned.</p>
+<p>To understand what an "instance" is, and how to access instances of objects, think about a car lot. Imagine you go to a car dealer, and give the dealer a list of parameters for the car that you want. Let's say you are looking for a Ford Mustang, manual transmission, red exterior, white interior, convertible. So, the dealer thinks for a minute, reaches under the desk, and hands you a set of keys and tells you your car is outside in the lot. You walk outside where there are thousands of cars. Of those thousands of cars, there are a few hundred Mustangs. Of those few hundred Mustangs, there are about 100 that have red exteriors. Of those, there a few dozen that have white interiors.....so on and so forth. Your key will only work in ONE of these cars, but the dealer hasn't told you which one. Since it isn't really feasible to try the key in every one of those thousands of cars, you're stuck.</p>
+<p>This is very similar to how objects and classes work inside the game engine. The description you gave the dealer, describing the characteristics of the car you're looking for is like a class. Attempting to access a variable in a class without first having a valid reference to an object is like the dealer handing you they keys to the car without telling you which car they belong to, then telling you to go start it up. You won't be able to start it up until the dealer tells you exactly which car the keys belong to.</p>
+<p>OK, so now we know the difference between a class and an object in a very basic abstract sense, but what does that *really* mean?? How does knowing this help me write a mod? Where does the madness end?</p>
+<p>woot! I wrote another paragragh&#160;:) I swear I'm going to finish this document one day&#160;:P</p>
+<p>The first, and easiest way to do this, is to call an iterator function.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">var</span> BigHealthVial BHV1;
+<span class="kw1">var</span> BigHealthVial BHV2;
+<span class="kw1">var</span> BigHealthVial BHV3;
+ 
+<span class="kw1">function</span> <span class="kw4">PostBeginPlay</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw1">local</span> HealthVial HV;
+ 
+ 
+	<span class="kw2">foreach</span> <span class="kw2">AllActors</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'HealthVial'</span>, HV<span class="br0">)</span>
+	<span class="br0">{</span>
+		<span class="kw2">if</span> <span class="br0">(</span>HV.<span class="me0">HealingAmount</span> <span class="sy0">&gt;</span> <span class="nu0">25</span><span class="br0">)</span>
+		<span class="br0">{</span>
+			<span class="kw2">if</span> <span class="br0">(</span>BHV1 <span class="sy0">==</span> <span class="kw5">None</span><span class="br0">)</span>
+				BHV1 <span class="sy0">=</span> HV;
+			<span class="kw2">else</span> <span class="kw2">if</span> <span class="br0">(</span>BHV2 <span class="sy0">==</span> <span class="kw5">None</span><span class="br0">)</span>
+				BHV2 <span class="sy0">=</span> HV;
+			<span class="kw2">else</span> <span class="kw2">if</span> <span class="br0">(</span>BHV3 <span class="sy0">==</span> <span class="kw5">None</span><span class="br0">)</span>
+				BHV3 <span class="sy0">=</span> HV;
+		<span class="br0">}</span>
+	<span class="br0">}</span>
+ 
+	<span class="kw3">log</span><span class="br0">(</span><span class="st0">"Found all the Big Health Vials!"</span><span class="br0">)</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>To be continued <a href="https://wiki.beyondunreal.com/edit/User:Evolution?redlink=1" class="new" title="User:Evolution (page does not exist)">Evolution</a></p>
+<p>the following is a cut-n-paste from a conversation I had in IRC in which I covered most of the material I was going to write here, so I'm leaving it here (so I don't lose it) until I have time to edit and clean it up a bit:</p>
+<pre>
+well, there are two different methods
+
+in method one, you have a reference to an actual object in the game
+
+method 2, you don't have an actual object, but want to access the class anyway
+
+but I think you'd be safer with doing the first way, and accessing ACTUAL health vials that exist in the game
+well, you're dealing with instance variables
+so you'll need a valid reference to each instance of the class 'HealthVial'
+ok, say we're in the game and we have 100 health vials in the level
+
+i want to access HealthAmount variable
+maybe something like
+if (HealthAmount != 25) { do my code }
+so far so good?
+but in the game, "MedBox" doesn't exist
+"MedBox" is a class
+(20:31) (Dorkorama|VolatileHEALTH) "in the game" is refering to the hypothetical, right?
+(20:32) (Evolution) no, in the game, referring to "as our code is executing in the game"
+
+only OBJECTS of the class 'MedBox' exist in the game
+so to access their variables, we must use a "class reference variable" (read: class-reference variable, or reference-to-object-of-XXClass variable)
+so we declare a variable like: var MedBox MB;
+
+to access a variable in an object of a particular class, we must first have a class reference variable to work with
+the class reference variable will represent the objects whose variables we want to access
+
+MB is still nothing
+because we haven't assigned anything to it
+we've only declared it
+
+it means, "whatever we assign to MB, it must be this type of thing"
+(20:36) (Evolution) so then we can do an iterator
+(20:36) (Evolution) let's use Foreach AllActors
+(20:37) (Evolution) the syntax for that is "foreach allactors(&lt;class we're looking for&gt;, &lt;our class variable&gt;)
+(20:37) (Evolution) so in this case, it would be "ForEach AllActors(class'MedBox', MB)"
+
+Okay... that searches every actor and if it matches the class we're looking for it's data is copied to the class variable (MB)
+
+
+when that happens, it will execute whatever code is in the brackets
+sooooooo, ForEach AllActors(class'MedBox', MB) { if (MB.HealthAmount != 25) MB.HealthAmount = 25; }
+after it executes whatever code is in the brackets, then it will continue searching all the actors for another medbox, then it will do it all over again
+(20:41) (Evolution) is HealthVial a subclassof MedBox?
+(20:41) (Dorkorama|VolatileHEALTH) No
+(20:41) (Evolution) then that wouldn't work
+(20:41) (Dorkorama|VolatileHEALTH) Huh?
+(20:42) (Evolution) nesting foreach?
+(20:42) (Dorkorama|VolatileHEALTH) Yeah
+(20:42) (Evolution) avoid that
+(20:42) (Dorkorama|VolatileHEALTH) Crud....
+(20:42) (Evolution) until you're more familiar with using iterators, anyway
+(20:42) (Dorkorama|VolatileHEALTH) bleh....
+(20:42) (Evolution) cuz that's a real easy way to make UT grind to a halt
+(20:42) (Dorkorama|VolatileHEALTH) 8-\
+(20:43) (Evolution) if you're doing the iterator in a singlular function, like PostBeginPlay()
+(20:43) (Dorkorama|VolatileHEALTH) I still wonder what's in the latest PURE builds that makes gameplay go slower and slower
+(20:43) (Dorkorama|VolatileHEALTH) ANyway...
+(20:43) (Evolution) just do two iterators
+(20:43) (Evolution) one for medbox, one for healthvial
+</pre>
+<pre>
+To be Continued....  →<a href="Legacy_Evolution.html" title="Legacy:Evolution">Evolution</a>
+</pre>
+<p><b>Tarquin:</b> Ev, I think this will be a multi-page topic. Do you want to take material from <a href="Legacy_Communication_Between_Objects.html" title="Legacy:Communication Between Objects">Communication Between Objects</a> for this? (BTW, I think this page title is way better than "Communication Between Objects" )</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.033 seconds
+Real time usage: 0.034 seconds
+Preprocessor visited node count: 18/1000000
+Preprocessor generated node count: 64/1000000
+Post‐expand include size: 18/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:3105-0!*!0!!*!*!* and timestamp 20161215142750 and revision id 44370
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Traversing_Classes?oldid=44370">https://wiki.beyondunreal.com/Legacy:Traversing_Classes?oldid=44370</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Legacy_Refactor_Me.html" title="Category:Legacy Refactor Me">Legacy Refactor Me</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_Traversing_Classes.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Traversing_Classes?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Traversing_Classes" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Traversing_Classes" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ATraversing+Classes&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ATraversing+Classes" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Traversing_Classes" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Traversing_Classes" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Traversing_Classes?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Traversing_Classes?oldid=44370" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Traversing_Classes" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 19:06, 10 April 2011.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":97});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Traversing_Classes by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:30 GMT -->
+</html>

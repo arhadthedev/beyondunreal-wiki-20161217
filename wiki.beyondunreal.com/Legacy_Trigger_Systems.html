@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Trigger_Systems by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Trigger Systems - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_Trigger_Systems.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Trigger_Systems","wgTitle":"Trigger Systems","wgCurRevisionId":46136,"wgRevisionId":46136,"wgArticleId":3064,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Mapping","Legacy Tutorial"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Trigger_Systems","wgRelevantArticleId":3064,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Trigger_Systems skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Worst-case scenario: the UEd Goblin wipes the map and burns down your house.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Trigger Systems</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This page is reserved for concepts behind and examples of complex behaviour using systems of <a href="Legacy_Trigger.html" title="Legacy:Trigger">Triggers</a> or other actors capable of triggering <a href="Legacy_Event.html" title="Legacy:Event">Events</a>. There are large differences in the available Trigger classes between UT and UT200x.</p>
+<p>For the UT version of this page, see <a href="Legacy_Trigger_Systems_(UT).html" title="Legacy:Trigger Systems (UT)">Trigger Systems (UT)</a>.</p>
+<p>A Trigger System is any collection of actors that produce results (Lights, Effects, Movers, Damage, game points, etc.) from some stimulus or stimuli. (Events, Actor Proximity, Mover action, game condition, etc.) This is an open-ended definition by design. The label "Trigger System" can include something as simple as a lift Mover activated by a Trigger actor, or something as complex as a lever Puzzle, like the example linked to from the bottom of this page. Although these methods can be complex, utilizing Trigger Systems is a rudimentary way for the level designer to achieve complex behavior from stock actors and without coding in UScript.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Trigger_Systems_as_a_kind_of_AI"><span class="tocnumber">1</span> <span class="toctext">Trigger Systems as a kind of AI</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#What.27s_the_difference_between_a_Trigger_and_a_trigger.3F"><span class="tocnumber">1.1</span> <span class="toctext">What's the difference between a Trigger and a trigger?</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Activation_.26_Detection"><span class="tocnumber">1.2</span> <span class="toctext">Activation &amp; Detection</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Decision-making"><span class="tocnumber">1.3</span> <span class="toctext">Decision-making</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Managing_Trigger_Systems"><span class="tocnumber">2</span> <span class="toctext">Managing Trigger Systems</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Construction_workflow"><span class="tocnumber">2.1</span> <span class="toctext">Construction workflow</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Testing_.2F_Debugging_methods"><span class="tocnumber">2.2</span> <span class="toctext">Testing / Debugging methods</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Triggers"><span class="tocnumber">2.3</span> <span class="toctext">Triggers</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Trigger"><span class="tocnumber">2.4</span> <span class="toctext">Trigger</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="#InitialState"><span class="tocnumber">2.4.1</span> <span class="toctext">InitialState</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Proximity_types.2C_TT_Shoot_and_TT_ClassProximity"><span class="tocnumber">2.4.2</span> <span class="toctext">Proximity types, TT_Shoot and TT_ClassProximity</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#CollisionCylinder"><span class="tocnumber">2.4.3</span> <span class="toctext">CollisionCylinder</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#ReTriggerDelay_vs_RepeatTriggerTime"><span class="tocnumber">2.4.4</span> <span class="toctext">ReTriggerDelay vs RepeatTriggerTime</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="#Instigators"><span class="tocnumber">2.5</span> <span class="toctext">Instigators</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#ScriptedTriggers"><span class="tocnumber">2.6</span> <span class="toctext">ScriptedTriggers</span></a>
+<ul>
+<li class="toclevel-3 tocsection-16"><a href="#Using_ScriptedActions_within_TriggerSystems"><span class="tocnumber">2.6.1</span> <span class="toctext">Using ScriptedActions within TriggerSystems</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-17"><a href="#TriggeredConditions_.26_Action_IfCondition"><span class="tocnumber">2.7</span> <span class="toctext">TriggeredConditions &amp; Action_IfCondition</span></a>
+<ul>
+<li class="toclevel-3 tocsection-18"><a href="#Managing_conditional_script_flow"><span class="tocnumber">2.7.1</span> <span class="toctext">Managing conditional script flow</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#Trigger-controlled_conditions"><span class="tocnumber">2.7.2</span> <span class="toctext">Trigger-controlled conditions</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#Toggled_conditions:_Your_TriggerSystem_having_.22memory.22"><span class="tocnumber">2.7.3</span> <span class="toctext">Toggled conditions: Your TriggerSystem having "memory"</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-21"><a href="#Using_various_actors_within_Trigger_Systems"><span class="tocnumber">2.8</span> <span class="toctext">Using various actors within Trigger Systems</span></a>
+<ul>
+<li class="toclevel-3 tocsection-22"><a href="#Movers"><span class="tocnumber">2.8.1</span> <span class="toctext">Movers</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#Pawns"><span class="tocnumber">2.8.2</span> <span class="toctext">Pawns</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="#PlayerStarts"><span class="tocnumber">2.8.3</span> <span class="toctext">PlayerStarts</span></a></li>
+<li class="toclevel-3 tocsection-25"><a href="#Emitters"><span class="tocnumber">2.8.4</span> <span class="toctext">Emitters</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#Matinee_SubAction_Trigger"><span class="tocnumber">2.8.5</span> <span class="toctext">Matinee SubAction_Trigger</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="#GameObjectives_and_gametype-specific_Events"><span class="tocnumber">2.8.6</span> <span class="toctext">GameObjectives and gametype-specific Events</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-28"><a href="#Examples"><span class="tocnumber">3</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-2 tocsection-29"><a href="#Triggered_Lift_.28Triggered_Elevator.29"><span class="tocnumber">3.1</span> <span class="toctext">Triggered Lift (Triggered Elevator)</span></a>
+<ul>
+<li class="toclevel-3 tocsection-30"><a href="#Touch-Triggered_Lift"><span class="tocnumber">3.1.1</span> <span class="toctext">Touch-Triggered Lift</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="#Shoot-Triggered_Lift"><span class="tocnumber">3.1.2</span> <span class="toctext">Shoot-Triggered Lift</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-32"><a href="#An_Alarm"><span class="tocnumber">3.2</span> <span class="toctext">An Alarm</span></a>
+<ul>
+<li class="toclevel-3 tocsection-33"><a href="#Unstoppable_Alarm"><span class="tocnumber">3.2.1</span> <span class="toctext">Unstoppable Alarm</span></a></li>
+<li class="toclevel-3 tocsection-34"><a href="#Stoppable_Alarm"><span class="tocnumber">3.2.2</span> <span class="toctext">Stoppable Alarm</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-35"><a href="#Clue_.2F_Hint_Decoration"><span class="tocnumber">3.3</span> <span class="toctext">Clue / Hint Decoration</span></a>
+<ul>
+<li class="toclevel-3 tocsection-36"><a href="#Timed_Clue"><span class="tocnumber">3.3.1</span> <span class="toctext">Timed Clue</span></a></li>
+<li class="toclevel-3 tocsection-37"><a href="#Toggled_Clue"><span class="tocnumber">3.3.2</span> <span class="toctext">Toggled Clue</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-38"><a href="#External_Links"><span class="tocnumber">4</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-39"><a href="#Related_Topics"><span class="tocnumber">5</span> <span class="toctext">Related Topics</span></a></li>
+<li class="toclevel-1 tocsection-40"><a href="#Discussion"><span class="tocnumber">6</span> <span class="toctext">Discussion</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Trigger_Systems_as_a_kind_of_AI">Trigger Systems as a kind of AI</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=1" title="Edit section: Trigger Systems as a kind of AI">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><a href="Legacy_Artificial_Intelligence.html" title="Legacy:Artificial Intelligence">Artificial Intelligence</a>, as it pertains to games, can be defined as designed behavior. Trigger Systems could be thought of as the very simplest form of AI in games, because although they may do very little decision-making, they do recieve stimuli and react to it. And as the complexity of the Trigger System grows so does the complexity of the behavior that can result.</p>
+<h3><span class="mw-headline" id="What.27s_the_difference_between_a_Trigger_and_a_trigger.3F">What's the difference between a Trigger and a trigger?</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=2" title="Edit section: What's the difference between a Trigger and a trigger?">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>No, this is not a trick question. Often in discussing Trigger Systems, there will be a problem in communicating precisely because of the distinction between these two words. The actors <a href="Legacy_Triggers.html" title="Legacy:Triggers">Triggers</a> or <a href="Legacy_Trigger.html" title="Legacy:Trigger">Trigger</a> are classes that are meant to handle the firing of Events and/or behave in a certain way according to stimuli they have recieved. However, trigger is a word that can be used as a verb (describing the act of firing an Event) or noun (describing the general mechanism that is meant to react to stimuli). This can get confusing quickly. When describing the details of Trigger Systems, be aware of this distinction and try to avoid the trapping of using a phrase like, <i>"How can I trigger a Trigger to trigger another Trigger after one Trigger is triggered by a Trigger?"</i> (A limrick about a woodchuck comes to mind.&#160;:)) Instead use words like, "Activate", "Fire", "Turn on", etc. to replace the verb form of "trigger" and use words like, "Initiator", "Activator", "Mechanism", etc. to replace the noun form of the word.</p>
+<h3><span class="mw-headline" id="Activation_.26_Detection">Activation &amp; Detection</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=3" title="Edit section: Activation &amp; Detection">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Depending on the type of actor that is used, they will be activated according to different stimuli recieved. A normal Trigger, for example, can either be Touched by a player (or valid actor class) colliding with it's CollisionCylinder, or it can itself be triggered, by firing an Event that matches it's Tag. Additionally, different actors will have unique reactions to stimuli. While a Trigger actor will simply fire it's Event, a Mover set to <tt>InitialState -&gt; TriggerOpenTimed</tt> will move. Also, some actors that can fire an Event will keep track of and pass along the identity of the Pawn who is responsible (if any), called the Instigator, while some actors will not pass this along to the next element in the Trigger System. It is up to the level designer to familiarize themselves with the nuances of each actor that can be used in their desired Trigger System design.</p>
+<h3><span class="mw-headline" id="Decision-making">Decision-making</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=4" title="Edit section: Decision-making">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Beyond simply reacting to stimuli, Trigger Systems can actually make more complex decisions. Instead of simply, "If the player is <i>here</i>, do <i>that</i>", a Trigger System can go steps beyond and check, "only do <i>that</i> if <i>this</i> condition is true. Otherwise, do <i>something else</i>". The point is, by using some of the more sophisticated actors available, more complex behavior is possible using Trigger Systems. Level Designers are only limited by the amount of time and available will power to meticulously configure extremely complex Trigger Systems.</p>
+<h2><span class="mw-headline" id="Managing_Trigger_Systems">Managing Trigger Systems</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=5" title="Edit section: Managing Trigger Systems">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Developing robust Trigger Systems can be difficult to the impatient or careless. Trigger Systems are built by matching Tag and Event names, sometimes following complex logic and keeping track of a lot of variables. The only "trick" to successful Trigger System development is to be meticulous. Go one step at a time and test each step as it's developed.</p>
+<h3><span class="mw-headline" id="Construction_workflow">Construction workflow</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=6" title="Edit section: Construction workflow">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A level designer's first step in Trigger System development is the design. A logical schematic, flow chart or list of notes should be drafted that will produce the intended results amidst any stimuli the system may recieve. Start with the basic idea of the system and think of examples in real-life that corralate. Then, think of how such a system would react in the game environment. You should have a clear idea of the necessary actors and their roles in the system before you proceed to construction.</p>
+<p>During construction, you'll want to vigorously test each element of the Trigger System as it's put in place. The worst situation that can happen results from spending a lot of time putting many elements together only to find that the system doesn't work as intended and the one or more elements responsible for the malfunction must be tracked down. This can often take much longer than the original construction.</p>
+<h3><span class="mw-headline" id="Testing_.2F_Debugging_methods">Testing / Debugging methods</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=7" title="Edit section: Testing / Debugging methods">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The easiest and most reliable way to test the Trigger System is to use it as it is intended to be used in the game. If that option isn't available, temporary measures can be taken to stimulate the Trigger System elements or detect their reactions to stimuli.</p>
+<p>Often times a Trigger System requires a specific Event to be fired. To test this, level designers can take advantage of the console command, "<tt>causeevent &lt;EventName&gt;</tt>". This is an instant brute force way to fire an Event at any time. Sometimes a temporary Trigger can be placed and set to the appropriate Event so that the level designer can test elements of the Trigger System. Other times, a Trigger System will require a player Pawn or other class actor to be present at a particular location, like within the CollisionCylinder of a Trigger actor. The level designer can either simply playtest the level and travel to that location or they may have to spawn a particular actor at that location, using the console command, "<tt>summon &lt;PackageName&gt;.&lt;ClassName&gt;</tt>", or by placing or otherwise spawning the actor class required to test.</p>
+<p>Detecting subtle elements of a Trigger System can be a problem at times, but temporary measures can be taken to help test elements of the Trigger System. Sometimes level designers can make use of a TriggerLight for a visual indication of the Event fire by that element. A ScriptedTrigger can be set up to ACTION_WaitForEvent and execute an ACTION_PlaySound. Even particle Emitters or Movers set to be triggered can be used for this temporary purpose. The level designer will want to make sure their temporary measures are set up correctly before testing and removed completely after testing.</p>
+<h3><span class="mw-headline" id="Triggers">Triggers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=8" title="Edit section: Triggers">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><a href="Legacy_Triggers.html" title="Legacy:Triggers">Triggers</a> is the parent class for all triggers, included those not intended to be activated by the Touch of players or other actors. <a href="Legacy_Trigger.html" title="Legacy:Trigger">Trigger</a> is a specific subclass that can expect to be Touched (and UnTouched) to activate and deactivate.</p>
+<p>Some of the many useful <i>Triggers classes</i> in Trigger Systems are:</p>
+<ul>
+<li><a href="Legacy_Counter.html" title="Legacy:Counter">Counter</a> - Listens for a specific number of Events before activating</li>
+<li><a href="Legacy_UseTrigger.html" title="Legacy:UseTrigger">UseTrigger</a> - Can be activated only by a Pawn within it's CollisionCylinder who hits the Use key, or performs a Use function (as Bots often do).</li>
+<li><a href="Legacy_VolumeTrigger.html" title="Legacy:VolumeTrigger">VolumeTrigger</a> - Listens for an Event and in turn will activate/deactivate Volumes (as in PhysicsVolume bPainCausing property)</li>
+</ul>
+<h3><span class="mw-headline" id="Trigger">Trigger</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=9" title="Edit section: Trigger">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><a href="Legacy_Trigger.html" title="Legacy:Trigger">Triggers</a> (those actors designed to be Touched by actors), have a set of properties that allow a very wide range of functionality. These classes are also able to "UnTrigger", when UnTouched by the appropriate actors. UnTriggering can effect some actors such as Movers set to InitialState-&gt;TriggerControlled or TriggerAdvance, or TriggerLights set to TriggerControlled, etc.</p>
+<h4><span class="mw-headline" id="InitialState">InitialState</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=10" title="Edit section: InitialState">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Under Object-&gt;InitialState, Trigger classes have a few settings that allow them to act in different ways. They may be become active or inactive, waiting for an Event to either turn on, turn off or toggle.</p>
+<h4><span class="mw-headline" id="Proximity_types.2C_TT_Shoot_and_TT_ClassProximity">Proximity types, TT_Shoot and TT_ClassProximity</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=11" title="Edit section: Proximity types, TT Shoot and TT ClassProximity">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Although Trigger classes can always be activated by an Event that matches their Tag (<i>triggering the Trigger</i>), Trigger classes can also be set to a TriggerType enum that will define which stimuli they will respond to. If set to TT_Shoot, they will expect to be activated via damage. Otherwise, the Trigger class will be activated when an actor enters it's CollisionCylinder. The type of actor it responds to will depend on the Proximity type set. If set to TT_ClassProximity, the Trigger class will only respond to the actors of the class (or subclass) defined in the property Trigger-&gt;ClassProximityType.</p>
+<h4><span class="mw-headline" id="CollisionCylinder">CollisionCylinder</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=12" title="Edit section: CollisionCylinder">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Adjusting the CollisionCylinder or other Collision properties is a common way to make the Trigger class perform the intended function for the Trigger System. Often a stock Trigger will not cover the entire area a player can occupy without some editing of CollisionRadius. Keep in mind the CollisionCylinder can be as large as it needs to be to detect the actor it listens for.</p>
+<h4><span class="mw-headline" id="ReTriggerDelay_vs_RepeatTriggerTime">ReTriggerDelay vs RepeatTriggerTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=13" title="Edit section: ReTriggerDelay vs RepeatTriggerTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Sometimes these two properties can confuse even veteran level designers. Keep in mind that the <i>"Re"</i> in "ReTriggerDelay", means the Trigger class must be deactivated (or UnTriggered) for this to have any bearing on the situation. It is the time the Trigger class will wait before checking to see if it should again switch from deactivated to activated. RepeatTriggerTime is the time the Trigger class will wait before firing it's Event <i>again</i>, even though it is already active.</p>
+<h3><span class="mw-headline" id="Instigators">Instigators</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=14" title="Edit section: Instigators">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Most elements of a Trigger System, whether Triggers class or Trigger class, will keep track of the Pawn who initiated the activation, if any. This Pawn is called the Instigator. If a player walks into the CollisionCylinder of a stock Trigger, that player's Pawn is the Instigator. If a Trigger class is set to TT_Shoot, the player Pawn who shot it is the Instigator. This distinction is important for a number of situations where Trigger Systems are used. Sometimes a Trigger System is designed to act upon that Pawn, as in: damage it, heal it, give inventory, award points, send a discreet message, assign it as an Enemy to an AI agent, etc. Technically, the Instigator is an arguement of the TriggerEvent() Actor function. As one element of the TriggerSystem triggers another, the original Instigator is normally passed along. Several Trigger System elements can pass along the Instigator identity to the element that needs it. But, depending on how the Trigger System is designed, the Instigator can be lost. It is important for the level designer to try and maintain the Instigator through Trigger Systems which will need to know the Instigator as part of the result.</p>
+<h3><span class="mw-headline" id="ScriptedTriggers">ScriptedTriggers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=15" title="Edit section: ScriptedTriggers">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><a href="Legacy_AIScript.html" title="Legacy:AIScript">AIScript</a> classes (<a href="Legacy_ScriptedSequence.html" title="Legacy:ScriptedSequence">ScriptedSequences</a>, <a href="Legacy_ScriptedTrigger.html" title="Legacy:ScriptedTrigger">ScriptedTriggers</a>, <a href="Legacy_UnrealScriptedSequence.html" title="Legacy:UnrealScriptedSequence">UnrealScriptedSequences</a>) are meant to execute a series of <a href="Legacy_ScriptedAction.html" title="Legacy:ScriptedAction">ScriptedActions</a>, small commands that can perform a wide variety of tasks. While ScriptedSequence is meant largely for controling Pawns, the subclass ScriptedTrigger is meant for more general purposes and are often very useful in Trigger Systems. They are capable of executing many of the ScriptedActions that ScriptedSequences are, but are restricted from executing those ScriptedActions that control Pawns, like ACTION_PlayAnim, ACTION_SetViewTarget, ACTION_DestroyPawn, etc.</p>
+<p>It's important to note that ScriptedTriggers are not Triggers. They do not by default check to see if an appropriate actor has entered it's CollisionCylinder to execute an Event. In fact, they do not do <i>anything</i> by default. ScriptedTriggers, like all AIScript classes, must be set up with a series of ScriptedActions to do <i>anything</i>. These actors are merely named "trigger", but do not share the same functionality by default.</p>
+<h4><span class="mw-headline" id="Using_ScriptedActions_within_TriggerSystems">Using ScriptedActions within TriggerSystems</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=16" title="Edit section: Using ScriptedActions within TriggerSystems">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>The value of using ScriptedActions stems from the modular nature. A series of ScriptedActions (sometimes called a "script", not to be confused by UScript coding) can be in any order and can be of any length. Some ScriptedActions are active and some are known as latent, meaning that they wait for a stimulus of some kind before proceeding. An example of an active ScriptedAction is ACTION_TriggerEvent, which simply fires an Event immediately upon execution. An example of a latent ScriptedAction would be ACTION_WaitForEvent, which halts all execution until the Event it is listening for is fired. There is a wide selection of ScriptedActions to choose from and custom ones are fairly easy to code. For those used to UScript, making custom ScriptedActions are a very easy way to set up complex custom code that any level designer can use.</p>
+<p>The series of ScriptedActions normally execute in a linear way, going through each step from the first to the next and so on, <i>("do this, then do that, then do the next thing...")</i> but they can also execute non-linearly <i>("do this, then go back and do this again, do that, then go back and do this again")</i>. The main way of altering the order in which the series of ScriptedActions run (aka, the script flow), is by using ACTION_GotoAction. This simply directs the AIScript to begin executing from the step specified in the ACTION_GotoAction properties and go on from there. <i><b>Warning:</b></i> If you set up an AIScript of any kind to execute an ACTION_GotoAction that loops back and eventually returns to the same ACTION_GotoAction <b>without</b> inserting any kind of delay, by using ACTION_WaitForTimer or some other latent ScriptedAction, this will crash the engine with an "Infinite Script Recursion" error.</p>
+<p>Some ScriptedActions can be grouped into a <i>conditional block</i>, a subset of actions that may or may not execute, depending on a particular condition. These ScriptedActions are sometimes called "conditionals" and will start with the keyword, "If", as in, ACTION_IfCondition or ACTION_IfRandomPct. The conditional ScriptedAction will mark the beginnnig of the conditional block, while a special ScriptedAction called ACTION_EndSection, marks the end. If the condition is true, the block will be executed, if the condition is false, the entire block will be skipped and the next ScriptedAction to be executed will be the one directly after the ACTION_EndSection step.</p>
+<h3><span class="mw-headline" id="TriggeredConditions_.26_Action_IfCondition">TriggeredConditions &amp; Action_IfCondition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=17" title="Edit section: TriggeredConditions &amp; Action IfCondition">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><a href="Legacy_TriggeredCondition.html" title="Legacy:TriggeredCondition">TriggeredCondition</a> is a special subclass of Triggers. It will listen for an Event which matches it's Tag property, like many other Triggers classes. The difference is, TriggerConditions do not do anything with that stimuli. Instead, TriggerConditions are placeholders for that information, so that a ScriptedSequence of some kind, using an ACTION_IfCondition, can "read" it. ACTION_IfCondition and TriggeredCondition are used in tandem to allow ScriptedTriggers (and the like) to be able to read various conditions in game and then execute a conditional block if that condition is true.</p>
+<h4><span class="mw-headline" id="Managing_conditional_script_flow">Managing conditional script flow</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=18" title="Edit section: Managing conditional script flow">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Managing the script flow with respect to TriggeredConditions the at the heart of all complex ScriptedSequences. While a ScriptedSequence can be designed with flexibility using the modular functionality of ScriptedActions, it is a static series of commands that does not change. However, by recieving and reacting to variable stimuli via TriggeredConditions and ACTION_IfCondition, the script can become itself flexible and can react to changing conditions in game.</p>
+<h4><span class="mw-headline" id="Trigger-controlled_conditions">Trigger-controlled conditions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=19" title="Edit section: Trigger-controlled conditions">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>TriggeredConditions can be set to bTriggerControlled True. This means, if the Event is triggered, it will register and the TriggeredCondition is active. But as soon as the Event is untriggered, it will become inactive again. Movers set to Object-&gt;InitialState TriggerControlled act the same way; they will begin to open when triggered, but immediately begin to close when untriggered. A normal Trigger can send both trigger and untrigger Events.</p>
+<p>An example use for a Trigger-controlled IfCondition would be a situation where the script is doing some repetitive behavior and has to react immediately to both a stimuli and to the absencce of that stimuli. Say a script is making the sounds of an internal combustion engine. While idling the sound, "putt", is regular and repetitive. However when the accelerator is pressed, the script should play a different sound instead of the regular idling sound: "vroom". And as soon as the accelerator is released, the idling "putt" sound should be resumed each loop. By setting up the accelerator to trigger the Event matched by a TriggeredCondition (set to TriggerControlled), an IfCondition that checks for it every "putt" loop can divert the flow of the script to instead play the "vroom" sound before continuing the loop as normal. Here's schematic of how that script might look:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> ACTION_WaitForTimer <span class="br0">(</span><span class="nu0">0.2</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span> ACTION_IfCondition <span class="br0">(</span><span class="st0">"accel"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span> ACTION_GotoAction <span class="br0">(</span><span class="nu0">6</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span> ACTION_EndSection
+<span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span> ACTION_PlaySound <span class="br0">(</span><span class="st0">"putt"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span> ACTION_GotoAction <span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">6</span><span class="br0">]</span> ACTION_PlaySound <span class="br0">(</span><span class="st0">"vroom"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">7</span><span class="br0">]</span> ACTION_GotoAction <span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span>
+</pre></div>
+</div>
+<p>Here the script is listening for an Event "accel" to be active while it loops. When it is, the script plays the "vroom" sound <i>instead</i> of playing the "putt" sound, as it does normally.</p>
+<h4><span class="mw-headline" id="Toggled_conditions:_Your_TriggerSystem_having_.22memory.22">Toggled conditions: Your TriggerSystem having "memory"</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=20" title="Edit section: Toggled conditions: Your TriggerSystem having &quot;memory&quot;">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>TriggeredConditions can also be set to bToggled True. This means they will toggle between activated and deactivated each time an Event matching their Tag is fired. As opposed to bTriggerControlled, TriggerConditions set to bToggled True have the unique ability of retaining the condition in memory. Because it will stay in either the activated or deactivated state after the Event, a TriggeredCondition set in this way is able act like one Bit of memory, retaining either an on or off state. An ACTION_IfCondition acts the same way towards this TriggeredCondition, but now this can serve a very different purpose.</p>
+<p>An example use for a TriggeredCondition set to bToggled would be any instance where a script will need to act one way if an Event has been fired, but act a different way if the Event hasn't. Say a script is used as the "brains" of a control panel. When the player activates a button, this control panel is meant to flash a green TriggerLight if the area has been undisturbed, or a red TriggerLight if an enemy has ever entered the area. A simple Trigger can be used to detect the presence of an enemy in the area. A TriggeredCondition (set to bToggled) will listen for the Event that Trigger fires and switch from deactivated to activated. Now, whenever the player hits the button on the control panel, a ScriptedTrigger will run a short script that checks the condition and either lights up the red or green light temporarily. The script might look like this:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> ACTION_WaitForEvent <span class="br0">(</span><span class="st0">"ButtonPushed"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span> ACTION_IfCondition <span class="br0">(</span><span class="st0">"EnemyDetected"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span> ACTION_GotoAction <span class="br0">(</span><span class="nu0">6</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span> ACTION_EndSection
+<span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span> ACTION_TriggerEvent <span class="br0">(</span><span class="st0">"GreenLight"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span> ACTION_GotoAction <span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">6</span><span class="br0">]</span> ACTION_TriggerEvent <span class="br0">(</span><span class="st0">"RedLight"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">7</span><span class="br0">]</span> ACTION_GotoAction <span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span>
+</pre></div>
+</div>
+<p>In this case, the script listens for the button to be pushed, then checks the TriggeredCondition with the Tag, "EnemyDetected". As long as the Trigger set up to detect the enemy hasn't fired, this should cause the TriggerLight with the Tag, "GreenLight", to be turned on. After either case, the script loops back to wait for the next button push.</p>
+<h3><span class="mw-headline" id="Using_various_actors_within_Trigger_Systems">Using various actors within Trigger Systems</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=21" title="Edit section: Using various actors within Trigger Systems">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Complex Trigger Systems are rarely comprised of just Trigger classes. Often times, other actors are used if they are capable of either listening for Events and reacting or firing Events based on certain factors.</p>
+<p>Several actors will indicate to the level designer that they may be used as part of a Trigger System by their name, such as <a href="Legacy_TriggerLight.html" title="Legacy:TriggerLight">TriggerLight</a>. But, sometimes an actor's ability to be triggered or to trigger another actor is not obvious. It is up to the level designer to research actors to see if they can be used as part of a Trigger System. Looking for certain functions within the code helps; such as <tt>Trigger()</tt> or <tt>TriggerEvent()</tt>.</p>
+<p>One very important aspect of using various actors within a Trigger System is keeping track of how the Instigator is handled. Some actors are capable of relaying the Instigator to the next actor, some are not. One clear indication of this is whether a Pawn was able to initiate the Event chain. If a ScriptedTrigger is simply looping at a regular interval and fires an Event according to a random condition, there is no Instigator. Some cases are not so clear. A Matinee may be initiated by a player, however the Matinee's SubAction_Trigger will not be able to relay that player Pawn as the Instigator to other actors. Level designers must playtest and use trial and error to make their Trigger Systems reliable in that respect.</p>
+<h4><span class="mw-headline" id="Movers">Movers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=22" title="Edit section: Movers">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Movers are often used in Trigger Systems. Level designers are encouraged to use the Mover Events group of properties to trigger various Events during the Mover operation. Also, Movers set to TriggerOpenTimed, TriggerAdvance, etc. can themselves be triggered. Buttons, Valves and Levers are examples of "lead in" Movers in a Trigger System, which will fire Events for other actors. Doors, Lifts and Trap items are examples of "lead out" Movers, which will listen for Events and move. If a player's Pawn initiates the Mover, as in a lift set to StandOpenTimed, the Mover will relay that Pawn as the Instigator to other actors.</p>
+<p>Movers have an extra ability that make them particularly useful in some very complex Trigger Systems. Movers have the ability to move in and out of a Trigger actor's CollisionCylinder, enabling them to indirectly cause both trigger and untrigger Events. This is a unique feature. In some cases where the Trigger System needs an element to deliver both trigger and untrigger Events, using a Trigger actor set to TT_ClassProximity and ClassProximityType Mover in conjunction with a small, hidden Mover with two keys (one outside the CollisionCylinder, one inside), is the only way to achieve the desired results.</p>
+<h4><span class="mw-headline" id="Pawns">Pawns</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=23" title="Edit section: Pawns">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Pawns (player pawns, bot pawns, vehicles, turrets, monsters, NPCs, etc.) are controlled by players or AI agents and are often an integral part of Trigger Systems. A Pawn who dies (or is destroyed) will fire it's Event. If another Pawn has actually killed (or destroyed) that Pawn, it is considered the Instigator of that Event. Also, an AI-controlled Pawn, such as a Bot, NPC or Monster, will listen for Events that match it's Tag and make any valid Instigator of the Event their enemy. This is useful in several situations related to singleplayer mapping.</p>
+<h4><span class="mw-headline" id="PlayerStarts">PlayerStarts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=24" title="Edit section: PlayerStarts">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>PlayerStarts will fire their Event whenever a player is spawned or respawned at it. The player Pawn becomes the Instigator of that Event. TriggeredPlayerStarts are a special subclass that are capable of being toggled from enabled to disabled by listening for an Event that matches it's Tag.</p>
+<h4><span class="mw-headline" id="Emitters">Emitters</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=25" title="Edit section: Emitters">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Emitters can be triggered by setting Trigger-&gt;bTriggerDisabled to False and matching the Emitter Tag to the Event in question. Other trigger-related properties can be found under Emitter-&gt;Trigger, Emitter-&gt;Local, Emitter-&gt;Spawning, etc.</p>
+<h4><span class="mw-headline" id="Matinee_SubAction_Trigger">Matinee SubAction_Trigger</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=26" title="Edit section: Matinee SubAction Trigger">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Matinees have a special SubAction (an action within a Matinee Action), called SubAction_Trigger, which will simply fire an Event at a specified time. Although an Event fired in this way has no Instigator, this SubAction is very useful for various starting various effects within a Matinee sequence.</p>
+<p><i><b>Warning:</b></i> Matinees do not run on Servers (online, over a LAN or even locally). So, if your Trigger System should run properly whether the Matinee runs or not, make sure you instead use a method other than SubAction_Trigger. Example: Use a separate ScriptedTrigger that simply waits for the same Event as the Matinee, then waits the appropriate time before firing the desired Event via ACTION_TriggerEvent.</p>
+<h4><span class="mw-headline" id="GameObjectives_and_gametype-specific_Events">GameObjectives and gametype-specific Events</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=27" title="Edit section: GameObjectives and gametype-specific Events">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Many GameObjectives are capable of firing Events. CTF FlagBases will fire their Event when a flag is picked up. A BombingRun BombdDelivery will fire it's Event when a score is made.</p>
+<p>Many gametypes trigger various Events related to the state of the match being played. All gametypes fire an "EndGame" Event at the end of the match. Assault fires a few different Events, depending on whether an intro cutscene is being played, at the end of the match, etc.</p>
+<h2><span class="mw-headline" id="Examples">Examples</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=28" title="Edit section: Examples">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>This section is reserved for posting specific examples of Trigger Systems.</p>
+<p><b>Note:</b> For the sake of helping as many other wiki users as possible, please limit examples to those that are most generalized and applicable to many situations. A specific, idiosynchratic Trigger System that only helped in one or a unique situation map (and can't be useful to others) should be omitted from posting.</p>
+<h3><span class="mw-headline" id="Triggered_Lift_.28Triggered_Elevator.29">Triggered Lift (Triggered Elevator)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=29" title="Edit section: Triggered Lift (Triggered Elevator)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This example will show a simple two-part Trigger System where a lift is controlled by a trigger the player can hit.</p>
+<h4><span class="mw-headline" id="Touch-Triggered_Lift">Touch-Triggered Lift</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=30" title="Edit section: Touch-Triggered Lift">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Two elements are used in this Trigger System: the lift (a Mover) and the trigger actor. The lift can be set up with a couple Keys, one at the lower position and one at the higher position. Other Mover properties such as MoveTime, StayOpenTime, etc. are set. The Mover is then set to Object -&gt; InitialState = TriggerOpenTimed to make sure this lift expects to be triggered in order to move. The Mover is given a unique Tag that will be matched with our Trigger actor's Event property. A Trigger actor is placed at the location of some obvious "lift button" decoration, where its collision cylinder is accessible by a player standing on the lift.</p>
+<p>That's pretty much it. The Mover here does most of the work, being set to TriggerOpenTimed. The Trigger actor set to NormalTrigger simply activates the Mover and sends it on its way.</p>
+<h4><span class="mw-headline" id="Shoot-Triggered_Lift">Shoot-Triggered Lift</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=31" title="Edit section: Shoot-Triggered Lift">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>For this variation, the only difference is <i>how</i> the Trigger actor is activated. Instead of expecting to be Touched, as in when the player Pawn enters its collision cylinder, we would like our Trigger actor to activate when the player shoots it. We place the Trigger actor in the location of our "shoot me"-looking decoration and set it to Trigger -&gt; TriggerType = TT_Shoot and set the DamageThreshold, the amount of damage needed to be delivered at one time in order for this Trigger to activate.</p>
+<p>Now, when the player shoots into the collision cylinder of our Trigger actor, it will activate our Mover as normal.</p>
+<h3><span class="mw-headline" id="An_Alarm">An Alarm</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=32" title="Edit section: An Alarm">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This example will show how a button can control an alarm with flashing lights and sound.</p>
+<h4><span class="mw-headline" id="Unstoppable_Alarm">Unstoppable Alarm</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=33" title="Edit section: Unstoppable Alarm">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Three elements will come together to make this Trigger System: a Mover, a TriggerLight and a ScriptedTrigger.</p>
+<p>A button will be made with a Mover set to InitialState-&gt;BumpButton, making it move when the player bumps into it. It will also be set to bTriggerOnceOnly = True and bToggleDirection = False, just as a measure to make the button press once (key 1) and stay in, as opposed to returning to key 0 after a certain time. The MoverEvent-&gt;OpenedEvent will be set to "Alarm".</p>
+<p>A flashing light will be made with a TriggerLight. It will be set to Object-&gt;InitialState = TriggerToggle, to make it toggle on/off when triggered, LightColor-&gt;LightSaturation = 64, to make it a deep red, and Lighting-&gt;LightType = LT_Pulse, just to make it flash a little. The TriggerLight's Tag will be set to "AlarmLight".</p>
+<p>The whole Alarm will be controlled by a ScriptedTrigger. The ScriptedTrigger will listen for the Event fired by the button Mover ("Alarm"), then it will trigger the TriggerLight and make a buzzing sound to complete the alarm effect. The buzzing sound will be made by the ScriptedTrigger itself, using a looping series of ScriptedActions to play a one second sound, wait, play the sound again, etc. The ScriptedTrigger's script will look like this:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> ACTION_WaitForEvent <span class="br0">(</span><span class="st0">"Alarm"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span> ACTION_TriggerEvent <span class="br0">(</span><span class="st0">"AlarmLight"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span> ACTION_PlaySound <span class="br0">(</span><span class="st0">"buzz"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span> ACTION_WaitForTimer <span class="br0">(</span><span class="nu0">2.0</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span> ACTION_GotoAction <span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span>
+</pre></div>
+</div>
+<h4><span class="mw-headline" id="Stoppable_Alarm">Stoppable Alarm</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=34" title="Edit section: Stoppable Alarm">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>To make a variation of the above Trigger System that will allow the player to press the button to toggle the Alarm on and off, the same elements are used with some minor tweaks and one addition: a TriggeredCondition.</p>
+<p>The Mover will be kept at the default bTriggerOnceOnly = False and bToggleDirection = True.</p>
+<p>The ScriptedTrigger will have some variation in its script to accomodate a check for the TriggeredCondition's status:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> ACTION_WaitForEvent <span class="br0">(</span><span class="st0">"Alarm"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span> ACTION_TriggerEvent <span class="br0">(</span><span class="st0">"AlarmLight"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span> ACTION_PlaySound <span class="br0">(</span><span class="st0">"buzz"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span> ACTION_WaitForTimer <span class="br0">(</span><span class="nu0">2.0</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span> ACTION_IfCondition <span class="br0">(</span><span class="st0">"Alarm"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span> ACTION_GotoAction <span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">6</span><span class="br0">]</span> ACTION_EndSection
+<span class="br0">[</span><span class="nu0">7</span><span class="br0">]</span> ACTION_TriggerEvent <span class="br0">(</span><span class="st0">"AlarmLight"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">8</span><span class="br0">]</span> ACTION_GotoAction <span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span>
+</pre></div>
+</div>
+<p>The crucial addition to this variation is the TriggerCondition, which will be given the Tag "Alarm" and set to bToggled = True. This TriggeredCondition will also hear the "Alarm" Event, along with the ScriptedTrigger. The TriggeredCondition will be toggled on and keep the loop going to make the buzz sound. When the button is pressed a second time and the Event "Alarm" is fired again, the TriggeredCondition will be toggled off and the script loop will instead toggle the TriggerLight off and wait for the next "Alarm" Event.</p>
+<h3><span class="mw-headline" id="Clue_.2F_Hint_Decoration">Clue / Hint Decoration</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=35" title="Edit section: Clue / Hint Decoration">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This example will show how to set up a decoration that a player can approach, hit the Use key, and see an image overlay. This is a common device in singleplayer games, showing hints or clues from books, papers, computer readouts, etc.</p>
+<h4><span class="mw-headline" id="Timed_Clue">Timed Clue</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=36" title="Edit section: Timed Clue">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Aside from the decoration that invites the player to take a closer look (a book, a computer monitor, etc.), two elements are used to make this Trigger System work: a UseTrigger and a ScriptedTrigger.</p>
+<p>The UseTrigger is given a unique Event name ("Clue") and placed at the decoration.</p>
+<p>The ScriptedTrigger handles the remainder of the Trigger System. It listens for the UseTrigger Event before playing a sound relevant to the decoration (paper rustling for a book or letter, a "beep" for a computer display, etc.), then it uses ACTION_DrawHUDMaterial to display the clue image for specified time. When that time has elapsed, the image is automatically cleared and the ScriptedTrigger continues by playing a second sound (same as before to "bookend" the effect) and looping back to again wait for the player to hit the Use key.</p>
+<p>The ScriptedTrigger's script would look like this:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> ACTION_WaitForEvent <span class="br0">(</span><span class="st0">"Clue"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span> ACTION_PlaySound <span class="br0">(</span><span class="st0">"beep"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span> ACTION_DrawHUDMaterial <span class="br0">(</span>the clue image <span class="kw5">material</span>, screen <span class="kw7">location</span>, image <span class="kw5">scale</span>, <span class="kw8">time</span> duration<span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span> ACTION_PlaySound <span class="br0">(</span><span class="st0">"beep"</span>, lower pitch<span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span> ACTION_GotoAction <span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span>
+</pre></div>
+</div>
+<h4><span class="mw-headline" id="Toggled_Clue">Toggled Clue</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=37" title="Edit section: Toggled Clue">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>This variation allows the user to either toggle the image or leave the vicinity of the decoration and allow the image to disappear automatically. <b>Note:</b> This variation is not perfect, as there is some "flicker" visible as the image is removed momentarily during the loop in this revised script. However, it is more important to show how this variation is constructed for academic purposes.</p>
+<p>This variation is more complex, adding two TriggeredConditions and a Trigger actor. These added elements will allow the script to detect both the player proximity and the clue toggle status.</p>
+<p>A normal Trigger is given an Event name of "PlayerPresent" and placed at the same location as the UseTrigger.</p>
+<p>Two TriggeredConditions are used: one set to bToggled and given the Tag "Clue", the other set to bTriggerControlled and given the Tag "PlayerPresent".</p>
+<p>The ScriptedTrigger's script is altered drastically to allow two conditional checks and control the script flow to keep activating the ACTION_DrawHUDMaterial as long as the player is both in proximity and has toggled the clue on.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> ACTION_WaitForEvent <span class="br0">(</span><span class="st0">"Clue"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span> ACTION_PlaySound <span class="br0">(</span><span class="st0">"beep"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span> ACTION_IfCondition <span class="br0">(</span><span class="st0">"PlayerPresent"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span> ACTION_GotoAction <span class="br0">(</span><span class="nu0">7</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span> ACTION_EndSection
+<span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span> ACTION_TriggerEvent <span class="br0">(</span><span class="st0">"Clue"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">6</span><span class="br0">]</span> ACTION_GotoAction <span class="br0">(</span><span class="nu0">11</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">7</span><span class="br0">]</span> ACTION_IfCondition <span class="br0">(</span><span class="st0">"Clue"</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">8</span><span class="br0">]</span> ACTION_DrawHUDMaterial <span class="br0">(</span>the clue image <span class="kw5">material</span>, screen <span class="kw7">location</span>, image <span class="kw5">scale</span> and a <span class="nu0">1</span> second <span class="kw8">time</span> duration<span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">9</span><span class="br0">]</span> ACTION_GotoAction <span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">10</span><span class="br0">]</span> ACTION_EndSection
+<span class="br0">[</span><span class="nu0">11</span><span class="br0">]</span> ACTION_PlaySound <span class="br0">(</span><span class="st0">"beep"</span>, lower pitch<span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">12</span><span class="br0">]</span> ACTION_WaitForTimer <span class="br0">(</span><span class="nu0">1.0</span><span class="br0">)</span>
+<span class="br0">[</span><span class="nu0">13</span><span class="br0">]</span> ACTION_GotoAction <span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span>
+</pre></div>
+</div>
+<p>This script handles two consecutive conditions, making sure both are true in order for there to yeild a positive result that causes the ACTION_DrawHUDMaterial to loop and appear to stay on beyond its 1 second duration. After the initial "Clue" Event, which is fired by the player via the UseTrigger, the initial sound is played to start this script off. The first conditional, "PlayerPresent", if true will lead to the second. Otherwise, this script assumes the player has left, resets the "Clue" toggled condition, plays the ending sound and loops back to the beginning to wait for the next time a player activates the UseTrigger. The second conditional, "Clue", if true will execute the ACTION_DrawHUDMaterial step for 1 second before looping back to the first conditional check. If false, the second conditional is simply skipped, so the ending sound will play before the script loops back to the beginning to wait for another "Clue" Event to be fired by the UseTrigger. The ACTION_WaitForTimer step (step #12) is there to avoid an infinite script recursion error.</p>
+<h2><span class="mw-headline" id="External_Links">External Links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=38" title="Edit section: External Links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://unrealplayground.com/forums/showpost.php?p=462150">An Example Puzzle Trigger System</a> - posted on UnrealPlayground forums by SuperApe</li>
+<li><a rel="nofollow" class="external text" href="http://unrealplayground.com/forums/showpost.php?p=493572">Another ScriptedAction Explanation</a> - posted on UnrealPlayground forums by SuperApe</li>
+</ul>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=39" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_Event.html" title="Legacy:Event">Event</a>, <a href="Legacy_Tag.html" title="Legacy:Tag">Tag</a> and <a href="Legacy_Match_These_Tags.html" title="Legacy:Match These Tags">Match These Tags</a></li>
+<li><a href="Legacy_Types_Of_Trigger.html" title="Legacy:Types Of Trigger">Types of Trigger</a></li>
+<li><a href="Legacy_Artificial_Intelligence.html" title="Legacy:Artificial Intelligence">Artificial Intelligence</a></li>
+<li><a href="Legacy_ScriptedAction.html" title="Legacy:ScriptedAction">ScriptedAction</a></li>
+<li><a href="Legacy_Creating_And_Using_ScriptedActions.html" title="Legacy:Creating And Using ScriptedActions">Creating and Using ScriptedActions</a></li>
+<li><a href="Legacy_RandomTrigger.html" title="Legacy:RandomTrigger">RandomTrigger</a> (custom)</li>
+<li><a href="Legacy_Dynamics.html" title="Legacy:Dynamics">Dynamics</a></li>
+</ul>
+<h2><span class="mw-headline" id="Discussion">Discussion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems?section=40" title="Edit section: Discussion">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>SuperApe:</b> Done. What do you think?</p>
+<p><b>Kedren:</b> Not just done but <b>really well done</b>. Thank you =) As an almost-total newbie, though, could you write a tutorial for a triggered lift? I'm thinking of the ones you used to get in Duke Nukem 3D where you had to <b>shoot</b> a button to make the lift move... surely that's feasible in Unreal? I'd be really grateful. But thank you for all your work: it's really good =)</p>
+<p><b>SuperApe:</b> Thanks for the compliment.&#160;:) A shoot-triggered lift tutorial? Well, perhaps this can go under the Examples section above. (...) That should do it. It turns out to be a good "starter" Example. Thanks for the suggestion.</p>
+<p><b>Kedren:</b> Thank you. That's just what I needed.&#160;:) *applause*</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.153 seconds
+Real time usage: 0.154 seconds
+Preprocessor visited node count: 215/1000000
+Preprocessor generated node count: 300/1000000
+Post‐expand include size: 30/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:3064-0!*!0!!en!*!* and timestamp 20161215142918 and revision id 46136
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Trigger_Systems?oldid=46136">https://wiki.beyondunreal.com/Legacy:Trigger_Systems?oldid=46136</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Legacy_Mapping.html" title="Category:Legacy Mapping">Legacy Mapping</a></li><li><a href="Category_Legacy_Tutorial.html" title="Category:Legacy Tutorial">Legacy Tutorial</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_Trigger_Systems.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Trigger_Systems?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Trigger_Systems" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Trigger_Systems" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ATrigger+Systems&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ATrigger+Systems" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Trigger_Systems" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Trigger_Systems" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Trigger_Systems?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Trigger_Systems?oldid=46136" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Trigger_Systems" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 10:31, 26 March 2015.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":104});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Trigger_Systems by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:39 GMT -->
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:TraceHitInfo_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 12:29:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:Actor structs (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:Actor_structs_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:Actor_structs_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_Actor_structs_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="canonical" href="UE3_Actor_structs_(UDK).html" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:Actor_structs_(UDK)","wgTitle":"Actor structs (UDK)","wgCurRevisionId":40653,"wgRevisionId":40653,"wgArticleId":25050,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:Actor_structs_(UDK)","wgRelevantArticleId":25050,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"UE3:TraceHitInfo_(UDK)","wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgInternalRedirectTargetUrl":"/UE3:Actor_structs_(UDK)#TraceHitInfo"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.redirect","mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_Actor_structs_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I search for solutions in this order: Past Code, Unreal Source, Wiki, BUF, groups.yahoo, google, screaming at monitor. &#8211; RegularX
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:Actor structs (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"><span class="mw-redirectedfrom">(Redirected from <a href="UE3_TraceHitInfo_(UDK)c25d.html?redirect=no" title="UE3:TraceHitInfo (UDK)">UE3:TraceHitInfo (UDK)</a>)</span></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a> <i>(structs)</i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Structs"><span class="tocnumber">1</span> <span class="toctext">Structs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#ActorReference"><span class="tocnumber">1.1</span> <span class="toctext">ActorReference</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#AnimSlotDesc"><span class="tocnumber">1.2</span> <span class="toctext">AnimSlotDesc</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#AnimSlotInfo"><span class="tocnumber">1.3</span> <span class="toctext">AnimSlotInfo</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#BasedPosition"><span class="tocnumber">1.4</span> <span class="toctext">BasedPosition</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#CollisionImpactData"><span class="tocnumber">1.5</span> <span class="toctext">CollisionImpactData</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#ImpactInfo"><span class="tocnumber">1.6</span> <span class="toctext">ImpactInfo</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#NavReference"><span class="tocnumber">1.7</span> <span class="toctext">NavReference</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#PhysEffectInfo"><span class="tocnumber">1.8</span> <span class="toctext">PhysEffectInfo</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#ReplicatedHitImpulse"><span class="tocnumber">1.9</span> <span class="toctext">ReplicatedHitImpulse</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#RigidBodyContactInfo"><span class="tocnumber">1.10</span> <span class="toctext">RigidBodyContactInfo</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#RigidBodyState"><span class="tocnumber">1.11</span> <span class="toctext">RigidBodyState</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#TimerData"><span class="tocnumber">1.12</span> <span class="toctext">TimerData</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#TraceHitInfo"><span class="tocnumber">1.13</span> <span class="toctext">TraceHitInfo</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Actor structs in other games:</dt>
+<dd><span><a href="UE3_Actor_structs_(UT3).html" title="UE3:Actor structs (UT3)">UT3</a></span></dd>
+<dt>Other member categories for this class:</dt>
+<dd><span><a href="UE3_Actor_enums_(UDK).html" title="UE3:Actor enums (UDK)">enums</a></span>, <span><a href="UE3_Actor_events_(UDK).html" title="UE3:Actor events (UDK)">events</a></span>, <span><a href="UE3_Actor_instance_functions_(UDK).html" title="UE3:Actor instance functions (UDK)">instance functions</a></span>, <span><a href="UE3_Actor_internal_variables_(UDK).html" title="UE3:Actor internal variables (UDK)">internal variables</a></span>, <span><a href="UE3_Actor_native_functions_(UDK).html" title="UE3:Actor native functions (UDK)">native functions</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Structs">Structs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_structs_(UDK)?section=1" title="Edit section: Structs">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="ActorReference">ActorReference</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_structs_(UDK)?section=2" title="Edit section: ActorReference">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> immutablewhencooked, native</p>
+<p>Struct used for cross level actor references</p>
+<dl>
+<dt><a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a> Actor&#160;</dt>
+<dt><a href="UE3_Object_structs_(UDK).html#Guid" title="UE3:Object structs (UDK)">Object.Guid</a> Guid&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="AnimSlotDesc">AnimSlotDesc</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_structs_(UDK)?section=3" title="Edit section: AnimSlotDesc">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native, transient</p>
+<p>Used to indicate each slot name and how many channels they have.</p>
+<dl>
+<dt><a href="Name.html" title="Name" class="mw-redirect">name</a> SlotName&#160;</dt>
+<dd>Name of the slot.</dd>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> NumChannels&#160;</dt>
+<dd>Number of channels that are available in this slot.</dd>
+</dl>
+<h3><span class="mw-headline" id="AnimSlotInfo">AnimSlotInfo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_structs_(UDK)?section=4" title="Edit section: AnimSlotInfo">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native, transient</p>
+<p>Struct used for passing information from Matinee to an Actor for blending animations during a sequence.</p>
+<dl>
+<dt><a href="Name.html" title="Name" class="mw-redirect">name</a> SlotName&#160;</dt>
+<dd>Name of slot that we want to play the animtion in.</dd>
+<dt><a href="Array.html" title="Array">array</a>&lt;<a href="Float.html" title="Float" class="mw-redirect">float</a>&gt; ChannelWeights&#160;</dt>
+<dd>Strength of each Channel within this Slot. Channel indexs are determined by track order in Matinee.</dd>
+</dl>
+<h3><span class="mw-headline" id="BasedPosition">BasedPosition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_structs_(UDK)?section=5" title="Edit section: BasedPosition">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<p>Struct for handling positions relative to a base actor, which is potentially moving</p>
+<dl>
+<dt><a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a> Base&#160;</dt>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> Position&#160;</dt>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> CachedBaseLocation&#160;</dt>
+<dt><a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a> CachedBaseRotation&#160;</dt>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> CachedTransPosition&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="CollisionImpactData">CollisionImpactData</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_structs_(UDK)?section=6" title="Edit section: CollisionImpactData">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Information about an overall collision, including contacts</p>
+<p><b>Warning:</b> C++ mirroring is in UnPhysPublic.h</p>
+<dl>
+<dt><a href="Array.html" title="Array">array</a>&lt;<a href="#RigidBodyContactInfo">RigidBodyContactInfo</a>&gt; ContactInfos&#160;</dt>
+<dd>all the contact points in the collision</dd>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> TotalNormalForceVector&#160;</dt>
+<dd>the total force applied as the two objects push against each other</dd>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> TotalFrictionForceVector&#160;</dt>
+<dd>the total counterforce applied of the two objects sliding against each other</dd>
+</dl>
+<h3><span class="mw-headline" id="ImpactInfo">ImpactInfo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_structs_(UDK)?section=7" title="Edit section: ImpactInfo">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native, transient</p>
+<p>Hit definition struct. Mainly used by Instant Hit Weapons.</p>
+<dl>
+<dt><a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a> HitActor&#160;</dt>
+<dd>Actor Hit</dd>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> HitLocation&#160;</dt>
+<dd>world location of hit impact</dd>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> HitNormal&#160;</dt>
+<dd>Hit normal of impact</dd>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> RayDir&#160;</dt>
+<dd>Direction of ray when hitting actor</dd>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> StartTrace&#160;</dt>
+<dd>Start location of trace</dd>
+<dt><a href="#TraceHitInfo">TraceHitInfo</a> HitInfo&#160;</dt>
+<dd>Trace Hit Info (material, bonename...)</dd>
+</dl>
+<h3><span class="mw-headline" id="NavReference">NavReference</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_structs_(UDK)?section=8" title="Edit section: NavReference">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> immutablewhencooked, native</p>
+<dl>
+<dt><a href="UE3_NavigationPoint_(UDK).html" title="UE3:NavigationPoint (UDK)">NavigationPoint</a> Nav&#160;</dt>
+<dt><a href="UE3_Object_structs_(UDK).html#Guid" title="UE3:Object structs (UDK)">Object.Guid</a> Guid&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="PhysEffectInfo">PhysEffectInfo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_structs_(UDK)?section=9" title="Edit section: PhysEffectInfo">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<p>Struct used to pass back information for physical impact effect</p>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> Threshold&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> ReFireDelay&#160;</dt>
+<dt><a href="UE3_ParticleSystem_(UDK).html" title="UE3:ParticleSystem (UDK)">ParticleSystem</a> Effect&#160;</dt>
+<dt><a href="UE3_SoundCue_(UDK).html" title="UE3:SoundCue (UDK)">SoundCue</a> Sound&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="ReplicatedHitImpulse">ReplicatedHitImpulse</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_structs_(UDK)?section=10" title="Edit section: ReplicatedHitImpulse">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<dl>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> AppliedImpulse&#160;</dt>
+<dd>contains DamageRadius in X and damageimpulse in y for radial impulse</dd>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> HitLocation&#160;</dt>
+<dd>HurtOrigin for radial impulse</dd>
+<dt><a href="Name.html" title="Name" class="mw-redirect">name</a> BoneName&#160;</dt>
+<dt><a href="Byte.html" title="Byte" class="mw-redirect">byte</a> ImpulseCount&#160;</dt>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> bRadialImpulse&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="RigidBodyContactInfo">RigidBodyContactInfo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_structs_(UDK)?section=11" title="Edit section: RigidBodyContactInfo">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Information about one contact between a pair of rigid bodies</p>
+<p><b>Warning:</b> C++ mirroring is in UnPhysPublic.h</p>
+<dl>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> ContactPosition&#160;</dt>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> ContactNormal&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> ContactPenetration&#160;</dt>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> ContactVelocity[2] &#160;</dt>
+<dt><a href="UE3_PhysicalMaterial_(UDK).html" title="UE3:PhysicalMaterial (UDK)">PhysicalMaterial</a> PhysMaterial[2] &#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="RigidBodyState">RigidBodyState</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_structs_(UDK)?section=12" title="Edit section: RigidBodyState">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>describes the physical state of a rigid body</p>
+<p><b>Warning:</b> C++ mirroring is in UnPhysPublic.h</p>
+<dl>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> Position&#160;</dt>
+<dt><a href="UE3_Object_structs_(UDK).html#Quat" title="UE3:Object structs (UDK)">Object.Quat</a> Quaternion&#160;</dt>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> LinVel&#160;</dt>
+<dd>RBSTATE_LINVELSCALE times actual (precision reasons)</dd>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> AngVel&#160;</dt>
+<dd>RBSTATE_ANGVELSCALE times actual (precision reasons)</dd>
+<dt><a href="Byte.html" title="Byte" class="mw-redirect">byte</a> bNewData&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="TimerData">TimerData</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_structs_(UDK)?section=13" title="Edit section: TimerData">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<dl>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> bLoop&#160;</dt>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> bPaused&#160;</dt>
+<dt><a href="Name.html" title="Name" class="mw-redirect">name</a> FuncName&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> Rate&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> Count&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> TimerTimeDilation&#160;</dt>
+<dt><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> TimerObj&#160;</dt>
+</dl>
+<p><b>Default values:</b></p>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td>TimerTimeDilation</td>
+<td>1.0</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="TraceHitInfo">TraceHitInfo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_structs_(UDK)?section=14" title="Edit section: TraceHitInfo">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native, transient</p>
+<dl>
+<dt><a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a> Material&#160;</dt>
+<dd>Material we hit.</dd>
+<dt><a href="UE3_PhysicalMaterial_(UDK).html" title="UE3:PhysicalMaterial (UDK)">PhysicalMaterial</a> PhysMaterial&#160;</dt>
+<dd>The Physical Material that was hit</dd>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> Item&#160;</dt>
+<dd>Extra info about thing we hit.</dd>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> LevelIndex&#160;</dt>
+<dd>Level index, if we hit BSP.</dd>
+<dt><a href="Name.html" title="Name" class="mw-redirect">name</a> BoneName&#160;</dt>
+<dd>Name of bone if we hit a skeletal mesh.</dd>
+<dt><a href="UE3_PrimitiveComponent_(UDK).html" title="UE3:PrimitiveComponent (UDK)">PrimitiveComponent</a> HitComponent&#160;</dt>
+<dd>Component of the actor that we hit.</dd>
+</dl>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.268 seconds
+Real time usage: 0.285 seconds
+Preprocessor visited node count: 1922/1000000
+Preprocessor generated node count: 3841/1000000
+Post‐expand include size: 10153/2097152 bytes
+Template argument size: 2372/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  218.582      1 - -total
+ 39.30%   85.910      1 - Template:Infobox_class_part
+ 37.55%   82.080     23 - Template:Tl
+ 37.04%   80.956      1 - Template:Infobox_class_part/core
+ 34.04%   74.400     32 - Template:Samegame
+ 15.28%   33.389     11 - Template:Cl
+  6.08%   13.293      1 - Template:Ch
+  3.06%    6.678      1 - Template:Autogenerated
+  2.05%    4.486      1 - Template:Ambox
+  1.91%    4.165      3 - Template:Gamename
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:25050-0!*!*!*!*!*!* and timestamp 20161216102801 and revision id 40653
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:Actor_structs_(UDK)?oldid=40653#TraceHitInfo">https://wiki.beyondunreal.com/UE3:Actor_structs_(UDK)?oldid=40653#TraceHitInfo</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_Actor_structs_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:Actor_structs_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_structs_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:Actor_structs_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AActor+structs+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AActor+structs+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:Actor_structs_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:Actor_structs_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:Actor_structs_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:Actor_structs_(UDK)?oldid=40653" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:Actor_structs_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 07:36, 17 January 2010.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":87});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:TraceHitInfo_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 12:29:48 GMT -->
+</html>

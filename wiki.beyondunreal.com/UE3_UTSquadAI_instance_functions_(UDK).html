@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:UTSquadAI_instance_functions_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 11:23:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:UTSquadAI instance functions (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_UTSquadAI_instance_functions_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:UTSquadAI_instance_functions_(UDK)","wgTitle":"UTSquadAI instance functions (UDK)","wgCurRevisionId":39487,"wgRevisionId":39487,"wgArticleId":27950,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:UTSquadAI_instance_functions_(UDK)","wgRelevantArticleId":27950,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_UTSquadAI_instance_functions_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>The three virtues of a programmer: Laziness, Impatience, and Hubris. &#8211; Larry Wall
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:UTSquadAI instance functions (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a> &gt;&gt;&#160;<a href="UE3_Info_(UDK).html" title="UE3:Info (UDK)">Info</a> &gt;&gt;&#160;<a href="UE3_ReplicationInfo_(UDK).html" title="UE3:ReplicationInfo (UDK)">ReplicationInfo</a> &gt;&gt;&#160;<a href="UE3_UTSquadAI_(UDK).html" title="UE3:UTSquadAI (UDK)">UTSquadAI</a> <i>(instance functions)</i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Instance_functions"><span class="tocnumber">1</span> <span class="toctext">Instance functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#AcceptableDefensivePosition"><span class="tocnumber">1.1</span> <span class="toctext">AcceptableDefensivePosition</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#AddBot"><span class="tocnumber">1.2</span> <span class="toctext">AddBot</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#AddEnemy"><span class="tocnumber">1.3</span> <span class="toctext">AddEnemy</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#AddTransientCosts"><span class="tocnumber">1.4</span> <span class="toctext">AddTransientCosts</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#AllowContinueOnFoot"><span class="tocnumber">1.5</span> <span class="toctext">AllowContinueOnFoot</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#AllowDetourTo"><span class="tocnumber">1.6</span> <span class="toctext">AllowDetourTo</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#AllowImpactJumpBy"><span class="tocnumber">1.7</span> <span class="toctext">AllowImpactJumpBy</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#AllowTaunt"><span class="tocnumber">1.8</span> <span class="toctext">AllowTaunt</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#AssessThreat"><span class="tocnumber">1.9</span> <span class="toctext">AssessThreat</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#AssignSquadResponsibility"><span class="tocnumber">1.10</span> <span class="toctext">AssignSquadResponsibility</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#BeDevious"><span class="tocnumber">1.11</span> <span class="toctext">BeDevious</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#BotEnteredVehicle"><span class="tocnumber">1.12</span> <span class="toctext">BotEnteredVehicle</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#BotSuitability"><span class="tocnumber">1.13</span> <span class="toctext">BotSuitability</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#CheckHoverboard"><span class="tocnumber">1.14</span> <span class="toctext">CheckHoverboard</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#CheckSquadObjectives"><span class="tocnumber">1.15</span> <span class="toctext">CheckSquadObjectives</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#CheckSuperItem"><span class="tocnumber">1.16</span> <span class="toctext">CheckSuperItem</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#CheckTowing"><span class="tocnumber">1.17</span> <span class="toctext">CheckTowing</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#CheckVehicle"><span class="tocnumber">1.18</span> <span class="toctext">CheckVehicle</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#ClearPathFor"><span class="tocnumber">1.19</span> <span class="toctext">ClearPathFor</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#CloseEnoughToObjective"><span class="tocnumber">1.20</span> <span class="toctext">CloseEnoughToObjective</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#CloseToLeader"><span class="tocnumber">1.21</span> <span class="toctext">CloseToLeader</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#CriticalObjectiveWarning"><span class="tocnumber">1.22</span> <span class="toctext">CriticalObjectiveWarning</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#DisplayDebug"><span class="tocnumber">1.23</span> <span class="toctext">DisplayDebug</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#EnterAndExitVehicle"><span class="tocnumber">1.24</span> <span class="toctext">EnterAndExitVehicle</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#FindDefensivePositionFor"><span class="tocnumber">1.25</span> <span class="toctext">FindDefensivePositionFor</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#FindNewEnemyFor"><span class="tocnumber">1.26</span> <span class="toctext">FindNewEnemyFor</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#FindPathToObjective"><span class="tocnumber">1.27</span> <span class="toctext">FindPathToObjective</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#FormationCenter"><span class="tocnumber">1.28</span> <span class="toctext">FormationCenter</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#FriendlyToward"><span class="tocnumber">1.29</span> <span class="toctext">FriendlyToward</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#GetFacingRotation"><span class="tocnumber">1.30</span> <span class="toctext">GetFacingRotation</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#GetLinkVehicle"><span class="tocnumber">1.31</span> <span class="toctext">GetLinkVehicle</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#GetMaxDefenseDistanceFrom"><span class="tocnumber">1.32</span> <span class="toctext">GetMaxDefenseDistanceFrom</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#GetOnHoverboard"><span class="tocnumber">1.33</span> <span class="toctext">GetOnHoverboard</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#GetOrders"><span class="tocnumber">1.34</span> <span class="toctext">GetOrders</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#GetOrderStringFor"><span class="tocnumber">1.35</span> <span class="toctext">GetOrderStringFor</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#GetShortOrderStringFor"><span class="tocnumber">1.36</span> <span class="toctext">GetShortOrderStringFor</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#GetSize"><span class="tocnumber">1.37</span> <span class="toctext">GetSize</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#GetStartObjective"><span class="tocnumber">1.38</span> <span class="toctext">GetStartObjective</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#GetTowingDestination"><span class="tocnumber">1.39</span> <span class="toctext">GetTowingDestination</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#GotoVehicle"><span class="tocnumber">1.40</span> <span class="toctext">GotoVehicle</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#HandlePathObstruction"><span class="tocnumber">1.41</span> <span class="toctext">HandlePathObstruction</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#HasOtherVisibleEnemy"><span class="tocnumber">1.42</span> <span class="toctext">HasOtherVisibleEnemy</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="#Initialize"><span class="tocnumber">1.43</span> <span class="toctext">Initialize</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="#IsDefending"><span class="tocnumber">1.44</span> <span class="toctext">IsDefending</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href="#IsOnPathToSquadObjective"><span class="tocnumber">1.45</span> <span class="toctext">IsOnPathToSquadObjective</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#IsOnSquad"><span class="tocnumber">1.46</span> <span class="toctext">IsOnSquad</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="#LeaveVehicleAtParkingSpot"><span class="tocnumber">1.47</span> <span class="toctext">LeaveVehicleAtParkingSpot</span></a></li>
+<li class="toclevel-2 tocsection-49"><a href="#LeaveVehicleToReachObjective"><span class="tocnumber">1.48</span> <span class="toctext">LeaveVehicleToReachObjective</span></a></li>
+<li class="toclevel-2 tocsection-50"><a href="#LostEnemy"><span class="tocnumber">1.49</span> <span class="toctext">LostEnemy</span></a></li>
+<li class="toclevel-2 tocsection-51"><a href="#MarkHuntingSpots"><span class="tocnumber">1.50</span> <span class="toctext">MarkHuntingSpots</span></a></li>
+<li class="toclevel-2 tocsection-52"><a href="#MaxVehicleDist"><span class="tocnumber">1.51</span> <span class="toctext">MaxVehicleDist</span></a></li>
+<li class="toclevel-2 tocsection-53"><a href="#MergeWith"><span class="tocnumber">1.52</span> <span class="toctext">MergeWith</span></a></li>
+<li class="toclevel-2 tocsection-54"><a href="#ModifyAggression"><span class="tocnumber">1.53</span> <span class="toctext">ModifyAggression</span></a></li>
+<li class="toclevel-2 tocsection-55"><a href="#ModifyThreat"><span class="tocnumber">1.54</span> <span class="toctext">ModifyThreat</span></a></li>
+<li class="toclevel-2 tocsection-56"><a href="#MustCompleteOnFoot"><span class="tocnumber">1.55</span> <span class="toctext">MustCompleteOnFoot</span></a></li>
+<li class="toclevel-2 tocsection-57"><a href="#MustKeepEnemy"><span class="tocnumber">1.56</span> <span class="toctext">MustKeepEnemy</span></a></li>
+<li class="toclevel-2 tocsection-58"><a href="#NearFormationCenter"><span class="tocnumber">1.57</span> <span class="toctext">NearFormationCenter</span></a></li>
+<li class="toclevel-2 tocsection-59"><a href="#NeverBail"><span class="tocnumber">1.58</span> <span class="toctext">NeverBail</span></a></li>
+<li class="toclevel-2 tocsection-60"><a href="#NotifyKilled"><span class="tocnumber">1.59</span> <span class="toctext">NotifyKilled</span></a></li>
+<li class="toclevel-2 tocsection-61"><a href="#OverrideFollowPlayer"><span class="tocnumber">1.60</span> <span class="toctext">OverrideFollowPlayer</span></a></li>
+<li class="toclevel-2 tocsection-62"><a href="#PickBotToReassign"><span class="tocnumber">1.61</span> <span class="toctext">PickBotToReassign</span></a></li>
+<li class="toclevel-2 tocsection-63"><a href="#PickNewLeader"><span class="tocnumber">1.62</span> <span class="toctext">PickNewLeader</span></a></li>
+<li class="toclevel-2 tocsection-64"><a href="#PickRetreatDestination"><span class="tocnumber">1.63</span> <span class="toctext">PickRetreatDestination</span></a></li>
+<li class="toclevel-2 tocsection-65"><a href="#PriorityObjective"><span class="tocnumber">1.64</span> <span class="toctext">PriorityObjective</span></a></li>
+<li class="toclevel-2 tocsection-66"><a href="#RateDefensivePosition"><span class="tocnumber">1.65</span> <span class="toctext">RateDefensivePosition</span></a></li>
+<li class="toclevel-2 tocsection-67"><a href="#RemoveBot"><span class="tocnumber">1.66</span> <span class="toctext">RemoveBot</span></a></li>
+<li class="toclevel-2 tocsection-68"><a href="#RemoveEnemy"><span class="tocnumber">1.67</span> <span class="toctext">RemoveEnemy</span></a></li>
+<li class="toclevel-2 tocsection-69"><a href="#RemovePlayer"><span class="tocnumber">1.68</span> <span class="toctext">RemovePlayer</span></a></li>
+<li class="toclevel-2 tocsection-70"><a href="#Retask"><span class="tocnumber">1.69</span> <span class="toctext">Retask</span></a></li>
+<li class="toclevel-2 tocsection-71"><a href="#SetAlternatePathTo"><span class="tocnumber">1.70</span> <span class="toctext">SetAlternatePathTo</span></a></li>
+<li class="toclevel-2 tocsection-72"><a href="#SetDefenseScriptFor"><span class="tocnumber">1.71</span> <span class="toctext">SetDefenseScriptFor</span></a></li>
+<li class="toclevel-2 tocsection-73"><a href="#SetEnemy"><span class="tocnumber">1.72</span> <span class="toctext">SetEnemy</span></a></li>
+<li class="toclevel-2 tocsection-74"><a href="#SetFacingActor"><span class="tocnumber">1.73</span> <span class="toctext">SetFacingActor</span></a></li>
+<li class="toclevel-2 tocsection-75"><a href="#SetObjective"><span class="tocnumber">1.74</span> <span class="toctext">SetObjective</span></a></li>
+<li class="toclevel-2 tocsection-76"><a href="#ShouldCheckSuperVehicle"><span class="tocnumber">1.75</span> <span class="toctext">ShouldCheckSuperVehicle</span></a></li>
+<li class="toclevel-2 tocsection-77"><a href="#ShouldDeferTo"><span class="tocnumber">1.76</span> <span class="toctext">ShouldDeferTo</span></a></li>
+<li class="toclevel-2 tocsection-78"><a href="#ShouldSuppressEnemy"><span class="tocnumber">1.77</span> <span class="toctext">ShouldSuppressEnemy</span></a></li>
+<li class="toclevel-2 tocsection-79"><a href="#ShouldUseAlternatePaths"><span class="tocnumber">1.78</span> <span class="toctext">ShouldUseAlternatePaths</span></a></li>
+<li class="toclevel-2 tocsection-80"><a href="#ShouldUseHoverboard"><span class="tocnumber">1.79</span> <span class="toctext">ShouldUseHoverboard</span></a></li>
+<li class="toclevel-2 tocsection-81"><a href="#TellBotToFollow"><span class="tocnumber">1.80</span> <span class="toctext">TellBotToFollow</span></a></li>
+<li class="toclevel-2 tocsection-82"><a href="#TryToIntercept"><span class="tocnumber">1.81</span> <span class="toctext">TryToIntercept</span></a></li>
+<li class="toclevel-2 tocsection-83"><a href="#UnderFire"><span class="tocnumber">1.82</span> <span class="toctext">UnderFire</span></a></li>
+<li class="toclevel-2 tocsection-84"><a href="#ValidEnemy"><span class="tocnumber">1.83</span> <span class="toctext">ValidEnemy</span></a></li>
+<li class="toclevel-2 tocsection-85"><a href="#VehicleDesireability"><span class="tocnumber">1.84</span> <span class="toctext">VehicleDesireability</span></a></li>
+<li class="toclevel-2 tocsection-86"><a href="#WaitAtThisPosition"><span class="tocnumber">1.85</span> <span class="toctext">WaitAtThisPosition</span></a></li>
+<li class="toclevel-2 tocsection-87"><a href="#WanderNearLeader"><span class="tocnumber">1.86</span> <span class="toctext">WanderNearLeader</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>UTSquadAI instance functions in other games:</dt>
+<dd><span><a href="UE3_UTSquadAI_instance_functions_(UT3).html" title="UE3:UTSquadAI instance functions (UT3)">UT3</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Instance_functions">Instance functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=1" title="Edit section: Instance functions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="AcceptableDefensivePosition">AcceptableDefensivePosition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=2" title="Edit section: AcceptableDefensivePosition">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>AcceptableDefensivePosition</b> (<a href="UE3_NavigationPoint_(UDK).html" title="UE3:NavigationPoint (UDK)">NavigationPoint</a>&#160;<b>N</b>, <a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="AddBot">AddBot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=3" title="Edit section: AddBot">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddBot</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="AddEnemy">AddEnemy</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=4" title="Edit section: AddEnemy">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>AddEnemy</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>NewEnemy</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="AddTransientCosts">AddTransientCosts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=5" title="Edit section: AddTransientCosts">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddTransientCosts</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>f</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="AllowContinueOnFoot">AllowContinueOnFoot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=6" title="Edit section: AllowContinueOnFoot">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>AllowContinueOnFoot</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>, <a href="UE3_UTVehicle_(UDK).html" title="UE3:UTVehicle (UDK)">UTVehicle</a>&#160;<b>V</b>)</div>
+<p><b>Returns:</b></p>
+<dl>
+<dd>whether bot should continue along its path on foot or stay in its current vehicle</dd>
+</dl>
+<h4><span class="mw-headline" id="AllowDetourTo">AllowDetourTo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=7" title="Edit section: AllowDetourTo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>AllowDetourTo</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>, <a href="UE3_NavigationPoint_(UDK).html" title="UE3:NavigationPoint (UDK)">NavigationPoint</a>&#160;<b>N</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="AllowImpactJumpBy">AllowImpactJumpBy</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=8" title="Edit section: AllowImpactJumpBy">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>AllowImpactJumpBy</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="AllowTaunt">AllowTaunt</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=9" title="Edit section: AllowTaunt">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>AllowTaunt</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="AssessThreat">AssessThreat</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=10" title="Edit section: AssessThreat">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>AssessThreat</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>, <a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>NewThreat</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bThreatVisible</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="AssignSquadResponsibility">AssignSquadResponsibility</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=11" title="Edit section: AssignSquadResponsibility">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>AssignSquadResponsibility</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="BeDevious">BeDevious</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=12" title="Edit section: BeDevious">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>BeDevious</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>Enemy</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="BotEnteredVehicle">BotEnteredVehicle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=13" title="Edit section: BotEnteredVehicle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>BotEnteredVehicle</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="BotSuitability">BotSuitability</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=14" title="Edit section: BotSuitability">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>BotSuitability</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="CheckHoverboard">CheckHoverboard</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=15" title="Edit section: CheckHoverboard">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>CheckHoverboard</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="CheckSquadObjectives">CheckSquadObjectives</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=16" title="Edit section: CheckSquadObjectives">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>CheckSquadObjectives</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="CheckSuperItem">CheckSuperItem</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=17" title="Edit section: CheckSuperItem">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>CheckSuperItem</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>SuperDist</b>)</div>
+<p>checks for super pickups, important vehicles, etc within the specified path distance</p>
+<h4><span class="mw-headline" id="CheckTowing">CheckTowing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=18" title="Edit section: CheckTowing">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>CheckTowing</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>, <a href="UE3_UTVehicle_(UDK).html" title="UE3:UTVehicle (UDK)">UTVehicle</a>&#160;<b>V</b>)</div>
+<p>considers giving bot actions to do with towing or being towed</p>
+<p><b>Returns:</b></p>
+<dl>
+<dd>whether the bot was given something to do</dd>
+</dl>
+<h4><span class="mw-headline" id="CheckVehicle">CheckVehicle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=19" title="Edit section: CheckVehicle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>CheckVehicle</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ClearPathFor">ClearPathFor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=20" title="Edit section: ClearPathFor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ClearPathFor</b> (<a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>C</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="CloseEnoughToObjective">CloseEnoughToObjective</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=21" title="Edit section: CloseEnoughToObjective">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>CloseEnoughToObjective</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>, <a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>O</b>)</div>
+<p>returns whether the bot shouldn't get any closer to the given objective with the vehicle it's using</p>
+<h4><span class="mw-headline" id="CloseToLeader">CloseToLeader</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=22" title="Edit section: CloseToLeader">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>CloseToLeader</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>P</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="CriticalObjectiveWarning">CriticalObjectiveWarning</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=23" title="Edit section: CriticalObjectiveWarning">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>CriticalObjectiveWarning</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>NewEnemy</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="DisplayDebug">DisplayDebug</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=24" title="Edit section: DisplayDebug">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>DisplayDebug</b> (<a href="UE3_HUD_(UDK).html" title="UE3:HUD (UDK)">HUD</a>&#160;<b>HUD</b>, out&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>YL</b>, out&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>YPos</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_Actor_instance_functions_(UDK).html#DisplayDebug" title="UE3:Actor instance functions (UDK)">Actor.DisplayDebug</a></p>
+<p><i>(Description copied from <a href="UE3_Actor_instance_functions_(UDK).html#DisplayDebug" title="UE3:Actor instance functions (UDK)">Actor.DisplayDebug</a>)</i><br />
+list important Actor variables on canvas. HUD will call DisplayDebug() on the current ViewTarget when the ShowDebug exec is used</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>HUD</i> - HUD with canvas to draw on</li>
+<li><i>out_YL</i> - Height of the current font</li>
+<li><i>out_YPos</i> - Y position on Canvas. out_YPos += out_YL, gives position to draw text for next debug line.</li>
+</ul>
+<h4><span class="mw-headline" id="EnterAndExitVehicle">EnterAndExitVehicle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=25" title="Edit section: EnterAndExitVehicle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>EnterAndExitVehicle</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p>used with bot's CustomAction interface to enter and exit a vehicle in the same action</p>
+<h4><span class="mw-headline" id="FindDefensivePositionFor">FindDefensivePositionFor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=26" title="Edit section: FindDefensivePositionFor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_NavigationPoint_(UDK).html" title="UE3:NavigationPoint (UDK)">NavigationPoint</a>&#160;<b>FindDefensivePositionFor</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="FindNewEnemyFor">FindNewEnemyFor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=27" title="Edit section: FindNewEnemyFor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>FindNewEnemyFor</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bSeeEnemy</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="FindPathToObjective">FindPathToObjective</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=28" title="Edit section: FindPathToObjective">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>FindPathToObjective</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>, <a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>O</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="FormationCenter">FormationCenter</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=29" title="Edit section: FormationCenter">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>FormationCenter</b> (<a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>C</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="FriendlyToward">FriendlyToward</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=30" title="Edit section: FriendlyToward">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>FriendlyToward</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>Other</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetFacingRotation">GetFacingRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=31" title="Edit section: GetFacingRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a>&#160;<b>GetFacingRotation</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetLinkVehicle">GetLinkVehicle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=32" title="Edit section: GetLinkVehicle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_UTVehicle_(UDK).html" title="UE3:UTVehicle (UDK)">UTVehicle</a>&#160;<b>GetLinkVehicle</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetMaxDefenseDistanceFrom">GetMaxDefenseDistanceFrom</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=33" title="Edit section: GetMaxDefenseDistanceFrom">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>GetMaxDefenseDistanceFrom</b> (<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>Center</b>, <a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the maximum distance a bot should be from the given Actor it wants to defend</dd>
+</dl>
+<h4><span class="mw-headline" id="GetOnHoverboard">GetOnHoverboard</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=34" title="Edit section: GetOnHoverboard">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>GetOnHoverboard</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p>used with bot's CustomAction interface to tell it to get on the hoverboard</p>
+<h4><span class="mw-headline" id="GetOrders">GetOrders</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=35" title="Edit section: GetOrders">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>GetOrders</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetOrderStringFor">GetOrderStringFor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=36" title="Edit section: GetOrderStringFor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="String.html" title="String">string</a>&#160;<b>GetOrderStringFor</b> (<a href="UE3_UTPlayerReplicationInfo_(UDK).html" title="UE3:UTPlayerReplicationInfo (UDK)">UTPlayerReplicationInfo</a>&#160;<b>PRI</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetShortOrderStringFor">GetShortOrderStringFor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=37" title="Edit section: GetShortOrderStringFor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="String.html" title="String">string</a>&#160;<b>GetShortOrderStringFor</b> (<a href="UE3_UTPlayerReplicationInfo_(UDK).html" title="UE3:UTPlayerReplicationInfo (UDK)">UTPlayerReplicationInfo</a>&#160;<b>PRI</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetSize">GetSize</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=38" title="Edit section: GetSize">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>GetSize</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetStartObjective">GetStartObjective</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=39" title="Edit section: GetStartObjective">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_UTGameObjective_(UDK).html" title="UE3:UTGameObjective (UDK)">UTGameObjective</a>&#160;<b>GetStartObjective</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the objective the given bot wants to spawn at</dd>
+</dl>
+<h4><span class="mw-headline" id="GetTowingDestination">GetTowingDestination</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=40" title="Edit section: GetTowingDestination">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>GetTowingDestination</b> (<a href="UE3_UTVehicle_(UDK).html" title="UE3:UTVehicle (UDK)">UTVehicle</a>&#160;<b>Towed</b>)</div>
+<p><b>Returns:</b></p>
+<dl>
+<dd>a good objective to tow the given Pawn to - if None is returned bot will just do its normal logic</dd>
+</dl>
+<h4><span class="mw-headline" id="GotoVehicle">GotoVehicle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=41" title="Edit section: GotoVehicle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>GotoVehicle</b> (<a href="UE3_UTVehicle_(UDK).html" title="UE3:UTVehicle (UDK)">UTVehicle</a>&#160;<b>SquadVehicle</b>, <a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p>tells the given bot to attempt to move toward and enter the given vehicle</p>
+<h4><span class="mw-headline" id="HandlePathObstruction">HandlePathObstruction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=42" title="Edit section: HandlePathObstruction">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>HandlePathObstruction</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>, <a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>BlockedBy</b>)</div>
+<p>called when a ReachSpec the given bot wants to use is blocked by a dynamic obstruction gives the AI an opportunity to do something to get rid of it instead of trying to find another path</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>B</i> - the bot whose path is blocked</li>
+<li><i>BlockedBy</i> - the object blocking the path</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the AI did something about the obstruction and should use the path anyway, false if the path is unusable and the bot must find some other way to go</dd>
+</dl>
+<p><b>Note:</b> MoveTarget is the actor the AI wants to move toward, CurrentPath the ReachSpec it wants to use</p>
+<h4><span class="mw-headline" id="HasOtherVisibleEnemy">HasOtherVisibleEnemy</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=43" title="Edit section: HasOtherVisibleEnemy">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>HasOtherVisibleEnemy</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><b>Returns:</b></p>
+<dl>
+<dd>whether the given bot knows of some visible enemy that is not its current enemy</dd>
+</dl>
+<h4><span class="mw-headline" id="Initialize">Initialize</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=44" title="Edit section: Initialize">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>Initialize</b> (<a href="UE3_UTTeamInfo_(UDK).html" title="UE3:UTTeamInfo (UDK)">UTTeamInfo</a>&#160;<b>T</b>, <a href="UE3_UTGameObjective_(UDK).html" title="UE3:UTGameObjective (UDK)">UTGameObjective</a>&#160;<b>O</b>, <a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>C</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="IsDefending">IsDefending</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=45" title="Edit section: IsDefending">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsDefending</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="IsOnPathToSquadObjective">IsOnPathToSquadObjective</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=46" title="Edit section: IsOnPathToSquadObjective">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsOnPathToSquadObjective</b> (<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>Goal</b>)</div>
+<p>returns whether the bot should be considered as moving towards SquadObjective if its goal is the given Actor</p>
+<h4><span class="mw-headline" id="IsOnSquad">IsOnSquad</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=47" title="Edit section: IsOnSquad">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsOnSquad</b> (<a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>C</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="LeaveVehicleAtParkingSpot">LeaveVehicleAtParkingSpot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=48" title="Edit section: LeaveVehicleAtParkingSpot">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>LeaveVehicleAtParkingSpot</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>, <a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>O</b>)</div>
+<p>called when the bot is trying to get to the given objective and has reached one of its parking spots</p>
+<h4><span class="mw-headline" id="LeaveVehicleToReachObjective">LeaveVehicleToReachObjective</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=49" title="Edit section: LeaveVehicleToReachObjective">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>LeaveVehicleToReachObjective</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>, <a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>O</b>)</div>
+<p>checks if the bot's vehicle is close enough to leave and proceed on foot (assumes the objective cannot be completed while inside a vehicle)</p>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the bot left the vehicle and is continuing on foot, false if it did nothing</dd>
+</dl>
+<h4><span class="mw-headline" id="LostEnemy">LostEnemy</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=50" title="Edit section: LostEnemy">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>LostEnemy</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="MarkHuntingSpots">MarkHuntingSpots</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=51" title="Edit section: MarkHuntingSpots">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>MarkHuntingSpots</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p>called when the given bot is hunting - gives the squad an opportunity to evaluate more accessible NavigationPoints for attacking the bot's Enemy than pathing towards it (e.g. sniper spots)</p>
+<h4><span class="mw-headline" id="MaxVehicleDist">MaxVehicleDist</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=52" title="Edit section: MaxVehicleDist">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>MaxVehicleDist</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>P</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="MergeWith">MergeWith</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=53" title="Edit section: MergeWith">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>MergeWith</b> (<a href="UE3_UTSquadAI_(UDK).html" title="UE3:UTSquadAI (UDK)">UTSquadAI</a>&#160;<b>S</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ModifyAggression">ModifyAggression</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=54" title="Edit section: ModifyAggression">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ModifyAggression</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>, out&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>Aggression</b>)</div>
+<p>gives Squad a chance to modify how aggressively the bot chases down enemies</p>
+<h4><span class="mw-headline" id="ModifyThreat">ModifyThreat</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=55" title="Edit section: ModifyThreat">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>ModifyThreat</b> (<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>current</b>, <a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>NewThreat</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bThreatVisible</b>, <a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="MustCompleteOnFoot">MustCompleteOnFoot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=56" title="Edit section: MustCompleteOnFoot">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>MustCompleteOnFoot</b> (<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>O</b>, optional&#160;<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>P</b>)</div>
+<p>returns whether bot must be on foot to use the given objective (if so, bot will get out of any vehicle just before reaching it)</p>
+<h4><span class="mw-headline" id="MustKeepEnemy">MustKeepEnemy</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=57" title="Edit section: MustKeepEnemy">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>MustKeepEnemy</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>E</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="NearFormationCenter">NearFormationCenter</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=58" title="Edit section: NearFormationCenter">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>NearFormationCenter</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>P</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="NeverBail">NeverBail</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=59" title="Edit section: NeverBail">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>NeverBail</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>P</b>)</div>
+<p><b>Returns:</b></p>
+<dl>
+<dd>whether bot should bail on a vehicle that has low health or is stuck</dd>
+</dl>
+<h4><span class="mw-headline" id="NotifyKilled">NotifyKilled</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=60" title="Edit section: NotifyKilled">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>NotifyKilled</b> (<a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>Killer</b>, <a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>Killed</b>, <a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>KilledPawn</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="OverrideFollowPlayer">OverrideFollowPlayer</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=61" title="Edit section: OverrideFollowPlayer">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>OverrideFollowPlayer</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PickBotToReassign">PickBotToReassign</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=62" title="Edit section: PickBotToReassign">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>PickBotToReassign</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PickNewLeader">PickNewLeader</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=63" title="Edit section: PickNewLeader">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>PickNewLeader</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PickRetreatDestination">PickRetreatDestination</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=64" title="Edit section: PickRetreatDestination">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>PickRetreatDestination</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PriorityObjective">PriorityObjective</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=65" title="Edit section: PriorityObjective">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>PriorityObjective</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="RateDefensivePosition">RateDefensivePosition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=66" title="Edit section: RateDefensivePosition">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>RateDefensivePosition</b> (<a href="UE3_NavigationPoint_(UDK).html" title="UE3:NavigationPoint (UDK)">NavigationPoint</a>&#160;<b>N</b>, <a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>CurrentBot</b>, <a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>Center</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="RemoveBot">RemoveBot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=67" title="Edit section: RemoveBot">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>RemoveBot</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="RemoveEnemy">RemoveEnemy</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=68" title="Edit section: RemoveEnemy">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>RemoveEnemy</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>E</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="RemovePlayer">RemovePlayer</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=69" title="Edit section: RemovePlayer">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>RemovePlayer</b> (<a href="UE3_PlayerController_(UDK).html" title="UE3:PlayerController (UDK)">PlayerController</a>&#160;<b>P</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Retask">Retask</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=70" title="Edit section: Retask">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>Retask</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SetAlternatePathTo">SetAlternatePathTo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=71" title="Edit section: SetAlternatePathTo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>SetAlternatePathTo</b> (<a href="UE3_NavigationPoint_(UDK).html" title="UE3:NavigationPoint (UDK)">NavigationPoint</a>&#160;<b>NewRouteObjective</b>, <a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>RouteMaker</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SetDefenseScriptFor">SetDefenseScriptFor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=72" title="Edit section: SetDefenseScriptFor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>SetDefenseScriptFor</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SetEnemy">SetEnemy</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=73" title="Edit section: SetEnemy">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>SetEnemy</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>, <a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>NewEnemy</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SetFacingActor">SetFacingActor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=74" title="Edit section: SetFacingActor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>SetFacingActor</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SetObjective">SetObjective</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=75" title="Edit section: SetObjective">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>SetObjective</b> (<a href="UE3_UTGameObjective_(UDK).html" title="UE3:UTGameObjective (UDK)">UTGameObjective</a>&#160;<b>O</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bForceUpdate</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ShouldCheckSuperVehicle">ShouldCheckSuperVehicle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=76" title="Edit section: ShouldCheckSuperVehicle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ShouldCheckSuperVehicle</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><b>Returns:</b></p>
+<dl>
+<dd>whether CheckSuperItem() should include vehicles</dd>
+</dl>
+<h4><span class="mw-headline" id="ShouldDeferTo">ShouldDeferTo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=77" title="Edit section: ShouldDeferTo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ShouldDeferTo</b> (<a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>C</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ShouldSuppressEnemy">ShouldSuppressEnemy</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=78" title="Edit section: ShouldSuppressEnemy">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ShouldSuppressEnemy</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ShouldUseAlternatePaths">ShouldUseAlternatePaths</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=79" title="Edit section: ShouldUseAlternatePaths">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ShouldUseAlternatePaths</b> ()</div>
+<p>returns whether bots should use an alternate squad route to reach SquadObjective instead of the shortest possible route</p>
+<h4><span class="mw-headline" id="ShouldUseHoverboard">ShouldUseHoverboard</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=80" title="Edit section: ShouldUseHoverboard">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ShouldUseHoverboard</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="TellBotToFollow">TellBotToFollow</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=81" title="Edit section: TellBotToFollow">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>TellBotToFollow</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>, <a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>C</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="TryToIntercept">TryToIntercept</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=82" title="Edit section: TryToIntercept">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>TryToIntercept</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>, <a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>P</b>, <a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>RouteGoal</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="UnderFire">UnderFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=83" title="Edit section: UnderFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>UnderFire</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>NewThreat</b>, <a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>Ignored</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ValidEnemy">ValidEnemy</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=84" title="Edit section: ValidEnemy">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ValidEnemy</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>NewEnemy</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="VehicleDesireability">VehicleDesireability</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=85" title="Edit section: VehicleDesireability">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>VehicleDesireability</b> (<a href="UE3_UTVehicle_(UDK).html" title="UE3:UTVehicle (UDK)">UTVehicle</a>&#160;<b>V</b>, <a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="WaitAtThisPosition">WaitAtThisPosition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=86" title="Edit section: WaitAtThisPosition">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>WaitAtThisPosition</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>P</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="WanderNearLeader">WanderNearLeader</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)?section=87" title="Edit section: WanderNearLeader">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>WanderNearLeader</b> (<a href="UE3_UTBot_(UDK).html" title="UE3:UTBot (UDK)">UTBot</a>&#160;<b>B</b>)</div>
+<p><br /></p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.719 seconds
+Real time usage: 1.149 seconds
+Preprocessor visited node count: 5435/1000000
+Preprocessor generated node count: 7147/1000000
+Post‐expand include size: 48146/2097152 bytes
+Template argument size: 12344/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  897.805      1 - -total
+ 76.39%  685.853     86 - Template:Code
+ 66.08%  593.236    114 - Template:Cl
+ 48.55%  435.846    117 - Template:Samegame
+ 10.74%   96.422      1 - Template:Infobox_class_part
+ 10.14%   91.050      1 - Template:Infobox_class_part/core
+  3.47%   31.123      3 - Template:Tl
+  1.74%   15.623      1 - Template:Ch
+  0.94%    8.460      1 - Template:Autogenerated
+  0.60%    5.361      1 - Template:Ambox
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:27950-0!*!*!*!*!*!* and timestamp 20161215165141 and revision id 39487
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:UTSquadAI_instance_functions_(UDK)?oldid=39487">https://wiki.beyondunreal.com/UE3:UTSquadAI_instance_functions_(UDK)?oldid=39487</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_UTSquadAI_instance_functions_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:UTSquadAI_instance_functions_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:UTSquadAI_instance_functions_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:UTSquadAI_instance_functions_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AUTSquadAI+instance+functions+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AUTSquadAI+instance+functions+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:UTSquadAI_instance_functions_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:UTSquadAI_instance_functions_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:UTSquadAI_instance_functions_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:UTSquadAI_instance_functions_(UDK)?oldid=39487" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:UTSquadAI_instance_functions_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 13:47, 6 November 2009.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":113});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:UTSquadAI_instance_functions_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 11:23:07 GMT -->
+</html>

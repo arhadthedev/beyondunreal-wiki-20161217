@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:PlayerController_Overview by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:41:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:PlayerController Overview - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController_Overview" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController_Overview" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_PlayerController_Overview.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:PlayerController_Overview","wgTitle":"PlayerController Overview","wgCurRevisionId":6087,"wgRevisionId":6087,"wgArticleId":2546,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Refactor Me"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:PlayerController_Overview","wgRelevantArticleId":2546,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_PlayerController_Overview skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Worst-case scenario: the UEd Goblin wipes the map and burns down your house.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:PlayerController Overview</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>A UT200x player is composed of a number of classes that all work together to accept and process input from the player and handle collision with the world. Bots use much the same system, so processing of AI also takes place (for Bot-specific subclasses; more on that in a minute) within the same code. What follows is an attempt to explain the different classes involved and how they interact.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#A_Quick_Nod_to_the_Controller_Class"><span class="tocnumber">1</span> <span class="toctext">A Quick Nod to the Controller Class</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#PlayerController"><span class="tocnumber">2</span> <span class="toctext">PlayerController</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Views"><span class="tocnumber">3</span> <span class="toctext">Views</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Spectators"><span class="tocnumber">4</span> <span class="toctext">Spectators</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Movement_and_Control"><span class="tocnumber">5</span> <span class="toctext">Movement and Control</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Capturing_Player_Input"><span class="tocnumber">5.1</span> <span class="toctext">Capturing Player Input</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Player_Movement_and_Replication"><span class="tocnumber">5.2</span> <span class="toctext">Player Movement and Replication</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Related_Topics"><span class="tocnumber">6</span> <span class="toctext">Related Topics</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Discussion"><span class="tocnumber">7</span> <span class="toctext">Discussion</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="A_Quick_Nod_to_the_Controller_Class">A Quick Nod to the Controller Class</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController_Overview?section=1" title="Edit section: A Quick Nod to the Controller Class">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Here's what the class header of Controller has to say.</p>
+<blockquote class="legacyquote">
+<p>Controllers are non-physical actors that can be attached to a pawn to control its actions. PlayerControllers are used by human players to control pawns, while AI Controllers implement the artificial intelligence for the pawns they control. Controllers take control of a pawn using their Possess() method, and relinquish control of the pawn by calling UnPossess().</p>
+<p>Controllers receive notifications for many of the events occuring for the Pawn they are controlling. This gives the controller the opportunity to implement the behavior in response to this event, intercepting the event and superceding the Pawn's default behavior.</p>
+</blockquote>
+<p>Although a full discussion of the properties of Controller is beyond the scope of this page there are a couple of interesting (to me anyway) properties defined at this level.</p>
+<ul>
+<li>bGodMode - Set at this level it allows computer controlled players to enter god mode.</li>
+<li>FovAngle - The controller's field of view - allows bots to have wider FOV's. There's potential here for some bot customisation for the competative, as some players use a non standard FOV.</li>
+</ul>
+<h2><span class="mw-headline" id="PlayerController">PlayerController</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController_Overview?section=2" title="Edit section: PlayerController">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The PlayerController class is where the real action happens as far as human players go. This class determines what the player sees when in first person view and in third person view and how the "camera" behaves. It handles things like view shaking and the display of fog. There are also handling functions in there for force-feedback events and support for more console commands than you can shake a stick at.</p>
+<p>The most important thing to remember about the PlayerController is that it serves two purposes. The controller's <b>ViewTarget</b> is responsible for driving the location and rotation of the scene the player sees. The controller's <b>Pawn</b> is the pawn that is actually controlled by the PlayerController class. They do not have to reference the same <a href="Legacy_Actor.html" title="Legacy:Actor">Actor</a>.</p>
+<dl>
+<dd><b>Mychaeel:</b> What do you mean by the last sentence?</dd>
+</dl>
+<dl>
+<dd><b>EntropicLqd:</b> When playing in the game the ViewTarget is normally the same object as the controlled Pawn. This does not have to be the case though, and it would be quite possible to set the ViewTarget to an actor that's trailing the controller Pawn for example. I say that ... but I've not tested it yet - hopefully I'll have the chance tonight. I should be working on <a href="Legacy_Customising_The_Player_View.html" title="Legacy:Customising The Player View">Customising the Player View</a> tonight so I'll probably cover it off in there. Watch this space so to speak.</dd>
+</dl>
+<dl>
+<dd><b>Mychaeel:</b> Ah, that. Yes, it works. &#160;:)</dd>
+</dl>
+<p>The PlayerController and the controlled Pawn are tied explicitly to each other. The controller receives many events to do with the current state and actions of the Pawn it's controlling. These <i>event functions</i> are actually invoked by the Pawn being controlled as it moves through the world and interacts with it's environment. The following code is fairly typical of the Pawn callbacks on offer. In the example below if the Pawn has a controller then it is up to the controller to return the view rotation. By <i>default</i> this will actually be the rotation of the Pawn.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">simulated</span> <span class="kw1">function</span> <span class="kw5">rotator</span> GetViewRotation<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw2">if</span> <span class="br0">(</span> <span class="kw9">Controller</span> <span class="sy0">==</span> <span class="kw5">None</span> <span class="br0">)</span>
+		<span class="kw2">return</span> <span class="kw7">Rotation</span>;
+	<span class="kw2">return</span> <span class="kw9">Controller</span>.<span class="me0">GetViewRotation</span><span class="br0">(</span><span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="Views">Views</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController_Overview?section=3" title="Edit section: Views">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The view you see as a player is driven by an event defined at the PlayerController level. The function definition is shown below.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">event</span> PlayerCalcView<span class="br0">(</span><span class="kw1">out</span> <span class="kw9">actor</span> ViewActor, <span class="kw1">out</span> <span class="kw5">vector</span> CameraLocation, <span class="kw1">out</span> <span class="kw5">rotator</span> CameraRotation <span class="br0">)</span>
+</pre></div>
+</div>
+<p>The values passed in ViewActor, CameraLocation, and CameraRotation are derived from an alternate universe (I've not found where yet). In essence this function performs the following steps.</p>
+<ul>
+<li>Calls the <i>SpecialCalcView()</i> function on the Pawn (possibly the view target, possibly the currently possessed pawn). This gives the Pawn an opportunity to construct a custom view based upon what it sees. (used for remote control robots and stuff I guess - possibly even the 'deemer although I've not looked). If this function calculates the view the player sees then it should return true. NOTE: The Pawn's bSpecialCalcView property must be true for this function to be called.</li>
+<li>If a special view was not constructed by the pawn then the current view target of the controller is checked to make sure it still exists or is not about to be deleted from the world. If deletion is pending then a new view target is obtained.</li>
+<li>If the current view target is the current "Pawn" associated with the controller then either CalcBehindView() or CalcFirstPersonView() is called to produce the camera location and rotation required.</li>
+<li>If the current view target is the controller itself then the controller's rotation is used as the camera rotation.</li>
+<li>If the current view target is a projectile then the camera location is set to the view target's collision height, and the camera rotation is set to that of the projectile being followed.</li>
+<li>If none of the above conditions are met then the view target is checked to see if it is a <a href="Legacy_Pawn.html" title="Legacy:Pawn">Pawn</a>. If this is the case then the following happens:
+<ul>
+<li>If we are a client of a networked game and our view target is a player pawn then we use the location of the view target and the rotation of the controller (it reduces the perception of lag and allows you to look around in behind view).</li>
+<li>If are the server (or running a standalone game) then both the location and rotation of the view target is used.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>The Default Behaviour</li>
+</ul>
+<p>So, lets examine the PlayerCalcView() function. I've reproduced it here in its entirety as there are a couple of things worth noting about it. I've taken the liberty of adding some additional comments to the code in order to cover the things I think are important.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+  <span class="co1">// If desired, call the possessed pawn's own view calculation function.  If this function</span>
+  <span class="co1">// calculates the view the player should see then it must return true.  Otherwise the</span>
+  <span class="co1">// calculated view will be replaced by the usual view.</span>
+  <span class="kw2">if</span><span class="br0">(</span> <span class="kw9">Pawn</span> <span class="sy0">!=</span> <span class="kw5">None</span> <span class="sy0">&amp;&amp;</span> <span class="kw9">Pawn</span>.<span class="me0">bSpecialCalcView</span> <span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">// try the 'special' calcview. This may return false if its not applicable, and we do the usual.</span>
+    <span class="kw2">if</span><span class="br0">(</span> <span class="kw9">Pawn</span>.<span class="me0">SpecialCalcView</span><span class="br0">(</span>ViewActor, CameraLocation, CameraRotation<span class="br0">)</span> <span class="br0">)</span>
+      <span class="kw2">return</span>; <span class="co1">// EXIT point from function.</span>
+  <span class="br0">}</span>
+ 
+  <span class="co1">// If the controller does not have a view target, or, it's view target is about to be removed from</span>
+  <span class="co1">// the level then we need to get one.</span>
+  <span class="kw2">if</span> <span class="br0">(</span> <span class="br0">(</span>ViewTarget <span class="sy0">==</span> <span class="kw5">None</span><span class="br0">)</span> <span class="sy0">||</span> ViewTarget.<span class="me0">bDeleteMe</span> <span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">if</span> <span class="br0">(</span> bViewBot <span class="sy0">&amp;&amp;</span> <span class="br0">(</span><span class="kw8">CheatManager</span> <span class="sy0">!=</span> <span class="kw5">None</span><span class="br0">)</span> <span class="br0">)</span>
+      <span class="kw8">CheatManager</span>.<span class="me0">ViewBot</span><span class="br0">(</span><span class="br0">)</span>;
+    <span class="kw2">else</span> <span class="kw2">if</span> <span class="br0">(</span> <span class="br0">(</span><span class="kw9">Pawn</span> <span class="sy0">!=</span> <span class="kw5">None</span><span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="sy0">!</span><span class="kw9">Pawn</span>.<span class="me0">bDeleteMe</span> <span class="br0">)</span>
+      SetViewTarget<span class="br0">(</span><span class="kw9">Pawn</span><span class="br0">)</span>;
+    <span class="kw2">else</span>
+      SetViewTarget<span class="br0">(</span><span class="kw6">self</span><span class="br0">)</span>;
+  <span class="br0">}</span>
+ 
+  ViewActor <span class="sy0">=</span> ViewTarget;               <span class="co1">// Set the output variable ViewActor with the new view target</span>
+  CameraLocation <span class="sy0">=</span> ViewTarget.<span class="kw7">Location</span>; <span class="co1">// Set the output variable CameraLocation with the view targets location</span>
+ 
+  <span class="co1">// If the view target of the controller is the currently possessed pawn then the</span>
+  <span class="co1">// calculation of the view the player sees is deferred to the first person and</span>
+  <span class="co1">// behind view calculation functions.</span>
+  <span class="kw2">if</span> <span class="br0">(</span> ViewTarget <span class="sy0">==</span> <span class="kw9">Pawn</span> <span class="br0">)</span>
+  <span class="br0">{</span>
+    <span class="kw2">if</span><span class="br0">(</span> bBehindView <span class="br0">)</span> <span class="co1">//up and behind</span>
+      CalcBehindView<span class="br0">(</span>CameraLocation, CameraRotation, CameraDist <span class="sy0">*</span> <span class="kw9">Pawn</span>.<span class="kw1">Default</span>.<span class="kw7">CollisionRadius</span><span class="br0">)</span>;
+    <span class="kw2">else</span>
+      CalcFirstPersonView<span class="br0">(</span> CameraLocation, CameraRotation <span class="br0">)</span>;
+    <span class="kw2">return</span>; <span class="co1">// EXIT point from function</span>
+  <span class="br0">}</span>
+ 
+  <span class="co1">// When all else fails the view target of the controller is itself.  If the camera</span>
+  <span class="co1">// position is locked then a fixed rotation is used.  If not then the output variable</span>
+  <span class="co1">// is set to the controller's rotation. </span>
+  <span class="kw2">if</span> <span class="br0">(</span> ViewTarget <span class="sy0">==</span> <span class="kw6">self</span> <span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">if</span> <span class="br0">(</span> bCameraPositionLocked <span class="br0">)</span>
+      CameraRotation <span class="sy0">=</span> <span class="kw8">CheatManager</span>.<span class="me0">LockedRotation</span>;
+    <span class="kw2">else</span>
+      CameraRotation <span class="sy0">=</span> <span class="kw7">Rotation</span>;
+    <span class="kw2">return</span>; <span class="co1">// EXIT point from function</span>
+  <span class="br0">}</span>
+ 
+  <span class="co1">// If we are watching a projectile and we are in first person view then raise the camera</span>
+  <span class="co1">// vertically upwards by the projectiles collision height.  The camera rotation is set to</span>
+  <span class="co1">// the rotation of the controller.</span>
+  <span class="kw2">if</span> <span class="br0">(</span> ViewTarget.<span class="kw3">IsA</span><span class="br0">(</span><span class="st0">'Projectile'</span><span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="sy0">!</span>bBehindView <span class="br0">)</span> <span class="br0">{</span>
+    CameraLocation <span class="sy0">+=</span> <span class="br0">(</span>ViewTarget.<span class="kw7">CollisionHeight</span><span class="br0">)</span> <span class="sy0">*</span> <span class="kw3">vect</span><span class="br0">(</span><span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">)</span>;
+    CameraRotation <span class="sy0">=</span> <span class="kw7">Rotation</span>;
+    <span class="kw2">return</span>; <span class="co1">// EXIT point from function</span>
+  <span class="br0">}</span>
+ 
+  <span class="co1">// Set the camera rotation to the rotation of the current view target.</span>
+  CameraRotation <span class="sy0">=</span> ViewTarget.<span class="kw7">Rotation</span>;
+ 
+  PTarget <span class="sy0">=</span> <span class="kw9">Pawn</span><span class="br0">(</span>ViewTarget<span class="br0">)</span>;
+  <span class="kw2">if</span> <span class="br0">(</span> PTarget <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">// If the view target is a pawn, and we are a client of a networked</span>
+    <span class="co1">// game then we need to do some additional processing</span>
+    <span class="kw2">if</span> <span class="br0">(</span> <span class="kw7">Level</span>.<span class="me0">NetMode</span> <span class="sy0">==</span> NM_Client <span class="br0">)</span> <span class="br0">{</span>
+      <span class="kw2">if</span> <span class="br0">(</span> PTarget.<span class="me0">IsPlayerPawn</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span> <span class="br0">{</span>
+        <span class="co1">// If we are looking at a player pawn then the view rotation</span>
+        <span class="co1">// is set to the TargetViewRotation (how the TargetViewRotation</span>
+        <span class="co1">// is set is a mystery).  The view target's rotation is also set</span>
+        <span class="co1">// to this value.</span>
+        PTarget.<span class="me0">SetViewRotation</span><span class="br0">(</span>TargetViewRotation<span class="br0">)</span>;
+        CameraRotation <span class="sy0">=</span> TargetViewRotation;
+      <span class="br0">}</span>
+ 
+      <span class="co1">// Adjust the view targets eye height.</span>
+      PTarget.<span class="me0">EyeHeight</span> <span class="sy0">=</span> TargetEyeHeight;
+      <span class="kw2">if</span> <span class="br0">(</span> PTarget.<span class="kw9">Weapon</span> <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+        PTarget.<span class="kw9">Weapon</span>.<span class="me0">PlayerViewOffset</span> <span class="sy0">=</span> TargetWeaponViewOffset;
+    <span class="br0">}</span>
+    <span class="kw2">else</span> <span class="kw2">if</span> <span class="br0">(</span> PTarget.<span class="me0">IsPlayerPawn</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span>
+      CameraRotation <span class="sy0">=</span> PTarget.<span class="me0">GetViewRotation</span><span class="br0">(</span><span class="br0">)</span>;
+ 
+    <span class="co1">// If we are not in behind view then the position the camera location</span>
+    <span class="co1">// at the view target's eye height.</span>
+    <span class="kw2">if</span> <span class="br0">(</span> <span class="sy0">!</span>bBehindView <span class="br0">)</span>
+      CameraLocation <span class="sy0">+=</span> PTarget.<span class="me0">EyePosition</span><span class="br0">(</span><span class="br0">)</span>;
+  <span class="br0">}</span>
+ 
+  <span class="co1">// This is the view calculations used to determine the "behind view" when</span>
+  <span class="co1">// the View Target is not the same as the Possessed pawn.</span>
+  <span class="kw2">if</span> <span class="br0">(</span> bBehindView <span class="br0">)</span> <span class="br0">{</span>
+    CameraLocation <span class="sy0">=</span> CameraLocation <span class="sy0">+</span> <span class="br0">(</span>ViewTarget.<span class="kw1">Default</span>.<span class="kw7">CollisionHeight</span> <span class="sy0">-</span> ViewTarget.<span class="kw7">CollisionHeight</span><span class="br0">)</span> <span class="sy0">*</span> <span class="kw3">vect</span><span class="br0">(</span><span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">)</span>;
+    CalcBehindView<span class="br0">(</span>CameraLocation, CameraRotation, CameraDist <span class="sy0">*</span> ViewTarget.<span class="kw1">Default</span>.<span class="kw7">CollisionRadius</span><span class="br0">)</span>;
+  <span class="br0">}</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p><b>OlympusMons:</b> I took this from <a rel="nofollow" class="external free" href="Wiki/Customising_The_Player_View.html">http://wiki.beyondunreal.com/wiki/Customising_The_Player_View</a> and put it here I though this was a better place.</p>
+<h2><span class="mw-headline" id="Spectators">Spectators</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController_Overview?section=4" title="Edit section: Spectators">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Spectating is also handled by the PlayerController class. A state hierarchy is used to enabled and disabled various player functions and generally keep things tidy. The hierarchy is shown below.</p>
+<pre>
+ BaseSpectating
+   +- Spectating
+   |    +- AttractMode (also defined in xGame.xPlayer)
+   +- PlayerWaiting
+   +- WaitingForPawn
+</pre>
+<p>If you spend any time looking through the spectating code (which does more or less what you'd expect) you'll notice something really odd. A pathalogical desire to set the view target.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="co1">// Spectating - AltFire() calls ServerViewSelf() to return to your corpse (if you've been killed or whatever)</span>
+ 
+<span class="co1">// ServerViewSelf() does the following:</span>
+    SetViewTarget<span class="br0">(</span><span class="kw6">self</span><span class="br0">)</span>;
+    ClientSetViewTarget<span class="br0">(</span><span class="kw6">self</span><span class="br0">)</span>;
+ 
+<span class="co1">// ClientSetViewTarget() is defined as:</span>
+<span class="kw1">function</span> ClientSetViewTarget<span class="br0">(</span> <span class="kw9">Actor</span> a <span class="br0">)</span>
+<span class="br0">{</span>
+    SetViewTarget<span class="br0">(</span> a <span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>In fact, every call to ClientSetViewTarget( target ) is preceded with a call to SetViewTarget( target ). Is this simply an example of redundant code within the code base or something more sinister? I'll leave it up to the reader to decide.</p>
+<p><b>DaWrecka</b>: More likely this is code that executes on the server. SetViewTarget() sets the server's copy of ViewTarget, but the client needs to have it updated; Hence the code calls ClientSetViewTarget(), which is replicated to the client and updates the client's side to match the server's. The presence of ClientSetViewTarget() in the replication block under "reliable if(Role == ROLE_Authority)" would seem to back me up.</p>
+<h2><span class="mw-headline" id="Movement_and_Control">Movement and Control</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController_Overview?section=5" title="Edit section: Movement and Control">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Player movement and control can be split into two sections. The first is capturing input from the player and doing stuff with it. The second is ensuring that the player's position in the world is consistent between the client and the server.</p>
+<h3><span class="mw-headline" id="Capturing_Player_Input">Capturing Player Input</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController_Overview?section=6" title="Edit section: Capturing Player Input">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>There are two classes shipped with UT2003 responsible for handling the player's input, and managing the <i>input configuration</i>. Both of these are in the Engine class. The two classes are shown below.</p>
+<pre>
+Engine.<a href="Legacy_PlayerInput.html" title="Legacy:PlayerInput">PlayerInput</a>
+   +- Engine.<a href="https://wiki.beyondunreal.com/edit/Legacy:XBoxPlayerInput?redlink=1" class="new" title="Legacy:XBoxPlayerInput (page does not exist)">XBoxPlayerInput</a>
+</pre>
+<p>The PlayerInput class is defined as being <i>within PlayerController</i>. This means that the class has visibility of the attributes of the PlayerController class. These classes only exist on the client. The entry points into the PlayerInput class from a handling point of view are shown below.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="co1">// This function is called from PlayerController.PlayerTick( float DeltaTime )</span>
+<span class="co1">// to figure out what the player is up to.</span>
+<span class="kw1">event</span> <span class="kw8">PlayerInput</span><span class="br0">(</span> <span class="kw5">float</span> DeltaTime <span class="br0">)</span>
+ 
+<span class="co1">// This function is called from PlayerController.PlayerMove( float DeltaTime )</span>
+<span class="co1">// it determines whether the player is dodging and if so, in which direction.</span>
+<span class="kw1">function</span> <span class="kw9">Actor</span>.<span class="me0">eDoubleClickDir</span> CheckForDoubleClickMove<span class="br0">(</span><span class="kw5">float</span> DeltaTime<span class="br0">)</span>
+</pre></div>
+</div>
+<p><i>It's pretty arcane in there. The logic within the double click move function is particularly tortuous. I'll need sleep before tackling that one.</i></p>
+<h3><span class="mw-headline" id="Player_Movement_and_Replication">Player Movement and Replication</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController_Overview?section=7" title="Edit section: Player Movement and Replication">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<blockquote class="legacyquote">
+<p><b>Mychaeel:</b> Player movement replication roughly works like this: Locally, the player moves freely, and the client sends information about that to the server. The server then tries to replay those moves when it receives them, and then sends information back to the client on whether the movements worked out or not (and, if not, where the player actually is right now). That way you don't experience any lag in your own movement when playing on a game server unless you interact with conflicting dynamic objects (for instance, other players or movers or projectiles).</p>
+</blockquote>
+<p>Here's what the PlayerController class has to say about the player's movement replication. It's a good summary of exactly what is going on.</p>
+<blockquote class="legacyquote">
+<p>Here's how player movement prediction, replication and correction works in network games:</p>
+</blockquote>
+<blockquote class="legacyquote">
+<p>Every tick, the PlayerTick() function is called. It calls the PlayerMove() function (which is implemented in various states). PlayerMove() figures out the acceleration and rotation, and then calls ProcessMove() (for single player or listen servers), or ReplicateMove() (if its a network client).</p>
+</blockquote>
+<blockquote class="legacyquote">
+<p>ReplicateMove() saves the move (in the PendingMove list), calls ProcessMove(), and then replicates the move to the server by calling the replicated function ServerMove() - passing the movement parameters, the client's resultant position, and a timestamp.</p>
+</blockquote>
+<blockquote class="legacyquote">
+<p>ServerMove() is executed on the server. It decodes the movement parameters and causes the appropriate movement to occur. It then looks at the resulting position and if enough time has passed since the last response, or the position error is significant enough, the server calls ClientAdjustPosition(), a replicated function.</p>
+</blockquote>
+<blockquote class="legacyquote">
+<p>ClientAdjustPosition() is executed on the client. The client sets its position to the servers version of position, and sets the bUpdatePosition flag to true.</p>
+</blockquote>
+<blockquote class="legacyquote">
+<p>When PlayerTick() is called on the client again, if bUpdatePosition is true, the client will call ClientUpdatePosition() before calling PlayerMove(). ClientUpdatePosition() replays all the moves in the pending move list which occured after the timestamp of the move the server was adjusting.</p>
+</blockquote>
+<p>I guess the above comments really beg the question, "How exactly do replicated functions work then?".</p>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController_Overview?section=8" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_Controller_Overview.html" title="Legacy:Controller Overview">Controller Overview</a></li>
+<li><a href="Legacy_Creating_An_Interaction_From_A_PlayerController.html" title="Legacy:Creating An Interaction From A PlayerController">Creating an Interaction from a PlayerController</a></li>
+<li><a href="Legacy_Customising_The_Player_View.html" title="Legacy:Customising The Player View">Customising the Player View</a></li>
+</ul>
+<h2><span class="mw-headline" id="Discussion">Discussion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController_Overview?section=9" title="Edit section: Discussion">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>OlympusMons:</b> Ok I put all the stuff that was on the player controller page here for an overview similar to <a href="Legacy_Controller_Overview.html" title="Legacy:Controller Overview">Controller Overview</a>. This is probably temporary until the <a href="Legacy_PlayerController.html" title="Legacy:PlayerController">PlayerController</a> page can be brought to standard formatting. If I was wrong in doing this please fix this&#160;;)</p>
+<p><b>SuperApe:</b> Looks pretty good for the most part.</p>
+<hr />
+<p><a href="Category_Legacy_Refactor_Me.html" title="Category:Legacy Refactor Me">Category:Legacy Refactor Me</a> – Some things here just need a little careful organization.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.126 seconds
+Real time usage: 0.135 seconds
+Preprocessor visited node count: 169/1000000
+Preprocessor generated node count: 341/1000000
+Post‐expand include size: 6079/2097152 bytes
+Template argument size: 2643/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   91.460      1 - -total
+  8.21%    7.508      8 - Template:Innerbox
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:2546-0!*!0!!en!*!* and timestamp 20161215155201 and revision id 6087
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:PlayerController_Overview?oldid=6087">https://wiki.beyondunreal.com/Legacy:PlayerController_Overview?oldid=6087</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Legacy_Refactor_Me.html" title="Category:Legacy Refactor Me">Legacy Refactor Me</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_PlayerController_Overview.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:PlayerController_Overview?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController_Overview" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:PlayerController_Overview" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-anonuserpage"><a href="User_188.162.37.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">188.162.37.3</a></li>
+													<li id="pt-anontalk"><a href="User_talk_188.162.37.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3APlayerController+Overview&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3APlayerController+Overview" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:PlayerController_Overview" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:PlayerController_Overview" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:PlayerController_Overview?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:PlayerController_Overview?oldid=6087" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:PlayerController_Overview" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 22:01, 18 December 2007.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":90});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:PlayerController_Overview by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:41:17 GMT -->
+</html>

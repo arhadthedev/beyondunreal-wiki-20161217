@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/User:SuperApe/OSMObjectiveManager?redirect=no by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:56:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>User:SuperApe/OSMObjectiveManager - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="shortcut icon" href="../w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="../w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="../w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="OSMObjectiveManager.html" />
+<link rel="copyright" href="../Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="../w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="../w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"User","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":2,"wgPageName":"User:SuperApe/OSMObjectiveManager","wgTitle":"SuperApe/OSMObjectiveManager","wgCurRevisionId":44978,"wgRevisionId":44978,"wgArticleId":4787,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Custom Class (UT2004)"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"User:SuperApe/OSMObjectiveManager","wgRelevantArticleId":4787,"wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRelevantUserName":"SuperApe","wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-2 ns-subject page-User_SuperApe_OSMObjectiveManager skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I'm a doctor, not a mechanic
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">User:SuperApe/OSMObjectiveManager</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../User_SuperApe.html" title="User:SuperApe">User:SuperApe</a></span></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This is the main actor responsible for Objective management in OSM Adventure maps. Level designers will use this actor to control a wide variety of aspects of their OSM Adventure. It includes a standardized database of information for each objective, but it's also responsible for launching Intro cutscene Matinees, forcing specific player character profiles, name and inventory. It is also responsible for defining the DeathScene Matinee. This actor handles many hidden aspects of cutscene operation, including player pawn script execution, "bullettime" management, per Objective timelimits and resuming Adrenaline combos that were running at the time a cutscene started. It also handles score/adrenaline awards per Objective.</p>
+<p>This actor is part of the <a href="Old_Skool_Monsta_Toolz.html" title="User:SuperApe/Old Skool Monsta Toolz">Old Skool Monsta Toolz</a> and designed specifically for use in the <a href="../Legacy_SuperApe/Mapping_For_OSM_Adventure.html" title="Legacy:SuperApe/Mapping For OSM Adventure" class="mw-redirect">OSM Adventure</a> gametype.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Struct"><span class="tocnumber">1</span> <span class="toctext">Struct</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Properties"><span class="tocnumber">2</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Main"><span class="tocnumber">2.1</span> <span class="toctext">Main</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Hidden"><span class="tocnumber">2.2</span> <span class="toctext">Hidden</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Operation.2C_Rules_.26_Tips"><span class="tocnumber">3</span> <span class="toctext">Operation, Rules &amp; Tips</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#External_Links"><span class="tocnumber">4</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Related_Topics"><span class="tocnumber">5</span> <span class="toctext">Related Topics</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Discussion"><span class="tocnumber">6</span> <span class="toctext">Discussion</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Struct">Struct</span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">struct</span>	ObjectiveInfo
+<span class="br0">{</span>
+	<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span>	<span class="kw5">name</span>	AchieveEvent;  <span class="co1">// The Event indicating Objective has been reached.</span>
+	<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span>	<span class="kw5">name</span>	CutSceneTag;  <span class="co1">// The Tag of the Matinee (SceneManager) to run.</span>
+	<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span>	<span class="kw5">bool</span>	bBulletTime;  <span class="co1">// Slow to "Bullet Time" during cutscene.</span>
+	<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span>	<span class="kw5">int</span> 	ScoringValue;  <span class="co1">// The score award for achieving this Objective.</span>
+	<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span>	<span class="kw5">int</span> 	AdrenalineAward;  <span class="co1">// The Adrenaline aware for achieving this Objective.</span>
+	<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span>	<span class="kw5">name</span>	PlayerStartTag;  <span class="co1">// The Tag of the TriggerPlayerStart(s) that should be turned on.</span>
+	<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span>	<span class="kw5">float</span>	NextObjectiveTimelimit;  <span class="co1">// Optional timelimit to reach next Objective.</span>
+	<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span>	<span class="kw5">string</span>	AdditionalEquipment<span class="br0">[</span><span class="nu0">16</span><span class="br0">]</span>;  <span class="co1">// Adds per Objective inventory. (OSMT v1.1 and later)</span>
+<span class="br0">}</span>;
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="Properties">Properties</span></h2>
+<h3><span class="mw-headline" id="Main">Main</span></h3>
+<dl>
+<dt>array&lt;ObjectiveInfo&gt; Objectives&#160;</dt>
+<dd>The database of Objectives a player can reach in this OSM Adventure map. These Objectives can be reached in any order, or skipped entirely, as in a branching Objective system.</dd>
+<dt>name IntroCutSceneTag&#160;</dt>
+<dd>The Tag of the Matinee (SceneManager) which should run as this adventure's intro cutscene.</dd>
+<dt>float IntroCutSceneLength&#160;</dt>
+<dd>The length of time to let the intro cutscene run before starting the countdown to match start.</dd>
+<dt>bool bPreventIntroInterrupt&#160;</dt>
+<dd>Allows the player to bypass the intro cutscene with a click. (fire)</dd>
+<dt>name BeginPlayerStartTag&#160;</dt>
+<dd>The Tag of the TriggeredPlayerStart(s) that begin the adventure. (These should be the only TriggeredPlayerStarts bEnabled)</dd>
+<dt>name DeathSceneTag&#160;</dt>
+<dd>The Tag of the Matinee (SceneManager) that is used as the DeathScene for this OSM Adventure map.</dd>
+<dt>string DefaultCharacter&#160;</dt>
+<dd>The character profile to force on the player's Pawn. The player will control this character no matter when their current settings indicate.</dd>
+<dt>string DefaultName&#160;</dt>
+<dd>The name to force on the player.</dd>
+<dt>string DefaultEquipment[16]&#160;</dt>
+<dd>The equipment the player will always start with (each respawn). This string property expects to be formatted as <tt>&lt;PackageName&gt;.&lt;InventoryName&gt;</tt>, such as <tt>XWeapons.LinkGun</tt>.</dd>
+</dl>
+<h3><span class="mw-headline" id="Hidden">Hidden</span></h3>
+<dl>
+<dt>int CurrentObjective&#160;</dt>
+<dd>This is the value of the currently playing Objective. (-1 = introductory objective)</dd>
+<dt>name CurrentPStartTag&#160;</dt>
+<dd>This is the Tag of the last TriggerPlayerStart(s) that were activated (or the BeginPlayerStarts).</dd>
+<dt>int MatchTimeLimit&#160;</dt>
+<dd>This is the total time limit, as set by the player in the game config menu.</dd>
+<dt>float MatchRemainingTime&#160;</dt>
+<dd>This is the total remaining time for the match.</dd>
+<dt>float SaveTime&#160;</dt>
+<dd>This is a placeholder for MatchRemainingTime, used during per Objective timelimits.</dd>
+<dt>bool bDeathScene&#160;</dt>
+<dd>Indicates the currently playing cutscene is a DeathScene.</dd>
+<dt><a href="../Legacy_AIScript.html" title="Legacy:AIScript">AIScript</a> NextScript&#160;</dt>
+<dd>Indentifies a ScriptedSequence that should be used to control the player Pawn.</dd>
+<dt>class&lt;<a href="../Legacy_Combo.html" title="Legacy:Combo">Combo</a>&gt; LocalPlayerCombo&#160;</dt>
+<dd>Placeholder for an Adrenaline combo that was running when a cutscene started, used to restart the combo once the cutscene is done.</dd>
+<dt><a href="../Legacy_Pawn.html" title="Legacy:Pawn">Pawn</a> LocalPlayerPawn&#160;</dt>
+<dd>Placeholder for the local player's Pawn.</dd>
+</dl>
+<h2><span class="mw-headline" id="Operation.2C_Rules_.26_Tips">Operation, Rules &amp; Tips</span></h2>
+<ul>
+<li>It's important to note that each of these properties the level designer can set are <b>optional</b>.</li>
+<li>It is not necessary for Triggers that fire Objective AchieveEvents to be set to bTriggerOnceOnly. OSMObjectiveManager automatically spawns OSMObjectiveTriggers at the start of the match for each Objective for this purpose.</li>
+<li>As long as the Objective cutscene is started by the OSMObjectiveManager, the player's Pawn will be controlled during the cutscene by the ScriptedSequence whose Tag matches the Matinee's (SceneManager) PlayerScriptTag property. <i>(This corrects a small bug in the stock code that prevented this operation)</i></li>
+<li>In order for the player's Pawn to be controlled by the appropriate ScriptedSequence identified by the Matinee (SceneManager), or for score or Adrenline to be awarded appropriately, the Objective's AchieveEvent <b>must</b> be Instigated by the player Pawn. For more on Trigger System Instigators, see <a href="../Legacy_Trigger_Systems.html" title="Legacy:Trigger Systems">Trigger Systems</a>.</li>
+<li>Player's who die during cutscenes are automatically revived after the cutscene is done.</li>
+<li>While IntroCutScenes can be interrupted (if configured by the level designer), both intermediate Objective cutscenes and DeathScenes are not interruptable. Level designers are encouraged to keep these short and to the point for the sake of the player's patience.</li>
+<li>If an IntroCutScne is interrupted the OSMGame actor fires a special Event meant to signal that the intro cutscene is over and the match is about to begin. This Event, "IntroInterrupted", is mean to help level designers clean up intro cutscene actors and move appropriate Movers to get ready for the start of the match.</li>
+<li>While Match TimeLimits set by the player in the game config menu will time the entire adventure, including the time cutscenes take, Per-Objective TimeLimits as defined by the level designer in the OSMObjectiveManager do not count the time taken during cutscenes. Per-Objective TimeLimits begin <i>after</i> the cutscene is finished and end <i>before</i> the start of the next Objective's cutscene.</li>
+<li>Adrenaline combos interrupted by cutscenes will be automatically continued after the cutscene ends.</li>
+<li>If Adrenaline is not desired in this map, simply use a LevelGameRules actor set to the NoAdrenaline mutator.</li>
+<li>DeathScenes are simply Matinees. If a DeathSceneTag matches a Matinee (SceneManager) Tag, that DeathScene will run whenever the player dies.</li>
+<li>A DeathScene always centers on the player Pawn or the Pawn's last location if gibbed.</li>
+<li>DeathScenes have their camera locked at a distance of about 256 UU automatically, so the DeathScene Matinee is simply used to provide camera angle motion.</li>
+<li>DeathScenes are always in "BulletTime".</li>
+<li>DeathScenes can utilize all Matinee features, including camera effects and camera overlays. A special bloody "You Died" texture is provided by this actor's Skins property. It is available under the OSMTex texture package for use as a stock DeathScene camera overlay.</li>
+</ul>
+<h2><span class="mw-headline" id="External_Links">External Links</span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://www.angelmapper.com/gamedev/tutorials/matinee.htm">Angel Mapper's Matinee Tutorial</a> - An excellent resource for learning to use cutscenes.</li>
+</ul>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span></h2>
+<ul>
+<li><a href="../Legacy_SuperApe/Old_Skool_Monsta_Toolz.html" title="Legacy:SuperApe/Old Skool Monsta Toolz" class="mw-redirect">Old Skool Monsta Toolz</a> - Hub for OSMT, the main toolset for monster support in any UT2004 gametype.
+<ul>
+<li><a href="../Legacy_SuperApe/Mapping_For_OSM_Adventure.html" title="Legacy:SuperApe/Mapping For OSM Adventure" class="mw-redirect">Mapping For OSM Adventure</a> - A guide for level designers of the OSM Adventure gametype.</li>
+</ul>
+</li>
+<li><a href="../Legacy_Matinee.html" title="Legacy:Matinee">Matinee</a> and <a href="../Legacy_SceneManager.html" title="Legacy:SceneManager">SceneManager</a>.</li>
+<li><a href="../Legacy_AIScript.html" title="Legacy:AIScript">AIScript</a>, <a href="../Legacy_ScriptedSequence.html" title="Legacy:ScriptedSequence">ScriptedSequence</a> and <a href="../Legacy_ScriptedAction.html" title="Legacy:ScriptedAction">ScriptedAction</a>.</li>
+<li><a href="../Legacy_TriggeredPlayerStart.html" title="Legacy:TriggeredPlayerStart" class="mw-redirect">TriggeredPlayerStart</a></li>
+<li><a href="../Legacy_Adrenaline.html" title="Legacy:Adrenaline">Adrenaline</a></li>
+<li><a href="../Legacy_Trigger_Systems.html" title="Legacy:Trigger Systems">Trigger Systems</a></li>
+</ul>
+<h2><span class="mw-headline" id="Discussion">Discussion</span></h2>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.039 seconds
+Real time usage: 0.041 seconds
+Preprocessor visited node count: 41/1000000
+Preprocessor generated node count: 64/1000000
+Post‐expand include size: 28/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:4787-0!*!0!!en!*!* and timestamp 20161215143814 and revision id 44978
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/User:SuperApe/OSMObjectiveManager?oldid=44978">https://wiki.beyondunreal.com/User:SuperApe/OSMObjectiveManager?oldid=44978</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../Category_Legacy_Custom_Class_(UT2004).html" title="Category:Legacy Custom Class (UT2004)">Legacy Custom Class (UT2004)</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-user" class="selected"><a href="OSMObjectiveManager.html" title="View the user page [c]" accesskey="c">User page</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/User_talk:SuperApe/OSMObjectiveManager?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-viewsource"><a href="https://wiki.beyondunreal.com/edit/User:SuperApe/OSMObjectiveManager" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/User:SuperApe/OSMObjectiveManager" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=User%3ASuperApe%2FOSMObjectiveManager&amp;returntoquery=redirect%3Dno&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=User%3ASuperApe%2FOSMObjectiveManager&amp;returntoquery=redirect%3Dno" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="../index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="../Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/User:SuperApe/OSMObjectiveManager" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/User:SuperApe/OSMObjectiveManager" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-contributions"><a href="https://wiki.beyondunreal.com/Special:Contributions/SuperApe" title="A list of contributions of this user">User contributions</a></li>
+											<li id="t-log"><a href="https://wiki.beyondunreal.com/Special:Log/SuperApe">Logs</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/User:SuperApe/OSMObjectiveManager?redirect=no&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/User:SuperApe/OSMObjectiveManager?oldid=44978" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/User:SuperApe/OSMObjectiveManager" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 09:54, 22 February 2012.</li>
+									<li id="copyright">Licensed as <a href="../Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="../Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="../Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="../Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":75});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/User:SuperApe/OSMObjectiveManager?redirect=no by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:56:22 GMT -->
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>El Muerte's UT2004 Creations - LibHTTP3</title>
+	<style>
+BODY {
+	background-color: slategray;
+	color: lightyellow;
+	font-family: sans-serif;
+	font-size: 14px;	
+}
+
+DIV.title {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 50px;
+	background-color: lightsteelblue;
+	border-bottom: 10px solid goldenrod;	
+}
+
+DIV.title_main {
+	position: absolute;
+	top: 0px;
+	left: 5px;
+	font-size: 40px;
+	font-weight: bold;
+	color: aliceblue;
+}
+
+DIV.title_sub {
+	position: absolute;
+	top: 22px;
+	left: 50px;
+	font-size: 30px;
+	font-weight: bold;
+	color: goldenrod;
+}
+
+DIV.title_sub1 {
+	position: absolute;
+	top: 21px;
+	left: 49px;
+	font-size: 30px;
+	font-weight: bold;
+	color: lightslategray;
+}
+
+DIV.title_copy {
+	position: absolute;
+	top: 36px;
+	text-align: right;
+	width: 100%;
+	font-size: 10px;
+	color: aliceblue;
+}
+
+DIV.menublock {
+        position: absolute;
+        top: 75px;
+        left: 10px;
+        width: 200px;
+	z-index: 1;
+}
+
+DIV.menu {
+	/*
+	position: absolute;
+	top: 75px;
+	left: 10px;
+	*/
+	width: 200px;
+	border: 1px solid aliceblue;
+	background-color: lightsteelblue;
+	z-index: 1;
+	color: black;
+	margin-bottom: 15px;
+}
+
+SPAN.menu_link {
+	display: block;
+	text-align: center;
+	vertical-align: bottom;
+	height: 20px;	
+	font-size: 15px;
+	font-weight: bold;	
+	cursor: pointer;
+}
+
+SPAN.menu_link:Hover {
+	background-color: slategray;
+}
+
+SPAN.menu_link_small {
+	display: block;
+	text-align: center;
+	vertical-align: bottom;
+	height: 17px;	
+	font-size: 11px;
+	font-weight: bold;	
+	cursor: pointer;
+}
+
+SPAN.menu_link_small:Hover {
+	background-color: slategray;
+}
+
+DIV.menu_div {
+	position: relative;
+	width: 180px;
+	height: 1px;
+	left: 10px;
+	border-top: 1px solid aliceblue;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+}
+
+A.menu_link {
+	color: lightslategray;		
+	text-decoration: none;	
+}
+
+A.menu_link:Visited {
+	color: lightslategray;		
+}
+
+A.menu_link:Hover {
+	background-color: slategray;
+	color: lightsteelblue;
+}
+
+DIV.content {
+	position: absolute;
+	left: 225px;
+	top: 75px;
+	right: 0px;
+}
+
+H1, H2, H3, H4, H5 {
+	margin-bottom: 2px;
+}
+
+H1 {
+	margin-top: 0px;
+	border-bottom: 2px solid lightsteelblue;
+}
+
+H2 {
+	border-bottom: 1px solid goldenrod;
+}
+
+H3 {
+	border-bottom: 1px solid lightsteelblue;
+}
+
+A {
+	color: gold;
+	text-decoration: none;	 	
+}
+
+A:Visited {
+	color: lightsteelblue;
+}
+
+A:Hover {
+	color: goldenrod;
+}
+
+PRE {
+	border: 1px solid darkgray;
+	background-color: lightslategray;
+	color: gainsboro;
+	padding-left: 2px;
+}
+
+PRE A {
+	color: silver;
+}
+
+PRE A:Visited {
+	color: silver;
+}
+
+PRE A:Hover {
+	color: goldenrod;
+}
+
+HR {
+	color: goldenrod;
+	border: 1px solid goldenrod;
+}
+
+
+DT {
+	font-weight: bold;
+	font-size: 13px;
+}
+
+IMG {
+	padding: 3px;
+	margin: 5px;
+	border: 2px solid goldenrod;
+	background-color: lightslategray;
+}
+
+FORM {
+	margin: 0px;
+}
+
+INPUT.shout, TEXTAREA.shout {
+	width: 198px;
+	background: lightgrey;
+	font-size: 12px;
+	border: 1px solid slategray;
+	font-family: monospace;
+}
+
+INPUT.shouts {
+	border: 1px solid goldenrod;
+	background: transparent;
+	font-weight: bold;
+	margin: 1px;
+	margin-left: 50px;
+	width: 100px;
+	color: slategray;
+}
+
+SPAN.shout_name {
+	border-bottom: 1px solid goldenrod;
+	font-weight: bold;
+	font-size: 12px;
+	color: slategray;
+	display: block;
+}
+
+SPAN.shout_msg {
+	font-size: 11px;
+}
+</style>
+	
+</head>
+<body>
+
+<div class="title">
+<div class="title_main">El Muerte's UT2004 Creations</div>
+<div class="title_sub1">LibHTTP3</div>
+<div class="title_sub">LibHTTP3</div>
+<div class="title_copy">Copyright &copy; 2004 Michiel "El Muerte" Hendriks&nbsp;</div>
+</div>
+
+<div class="menublock">
+<div class="menu" id="menu">
+<a href="http://ut2004.elmuerte.com/" class="menu_link"><span class="menu_link">News</span></a>
+<a href="http://ut2004.elmuerte.com/About" class="menu_link"><span class="menu_link">About</span></a>
+<div class="menu_div"></div>
+<a href="http://ut2004.elmuerte.com/LibHTTP3" class="menu_link"><span class="menu_link">LibHTTP3</span></a>
+<div class="menu_div"></div>
+<a href="http://www.drunksnipers.com/" class="menu_link" target="_blank"><span class="menu_link_small">the Drunk Snipers</span></a>
+<a href="http://www.epicgames.com/" class="menu_link" target="_blank"><span class="menu_link_small">Epic Games, Inc.</span></a>
+<a href="http://www.unrealtournament.com/" class="menu_link" target="_blank"><span class="menu_link_small">Unreal Tournament</span></a>
+<a href="http://www.unrealadmin.org/" class="menu_link" target="_blank"><span class="menu_link_small">the Unreal Admin page</span></a>
+<a href="http://www.beyondunreal.com/" class="menu_link" target="_blank"><span class="menu_link_small">Beyond Unreal</span></a>
+<a href="http://udn.epicgames.com/" class="menu_link" target="_blank"><span class="menu_link_small">Unreal Developer Network</span></a>
+<div align="center">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="margin: 2px;">
+<input type="hidden" name="cmd" value="_s-xclick" />
+<input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but04.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" />
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----
+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
+tSTUVME8Lf/WP5XSUVBOiK9/nFaXwcbqW/vf
+-----END PKCS7-----
+" />
+</form></div>
+</div>
+
+
+</div>
+
+<div class="content">
+<h1>LibHTTP 3.5</h1>
+LibHTTP is a general perpose library for UnrealEngine2. It allows you to fetch files stored on webservers. <br />
+Features:
+<ul>
+<li>Support for HTTP version 1.0 and 1.1</li>
+<li>Support for GET/POST/HEAD/TRACE request methods</li>
+<li>Normal and accelerated transfer modes (accelerated mode creates a performance hit)</li>
+<li>Response and Request Header managent</li>
+<li>Cookie management</li>
+<li>Authentication supports (both Basic and Digest methods are supported)</li>
+<li>Support for HTTP proxies</li>
+<li>Gracefull handling of connection timeouts</li>
+<li>Automatic decoding of chunked data</li>
+<li>Automatically follows redirections (creates a redirection history)</li>
+<li>Support for <code>multipart/form-data</code> POST data (prefered form)</li>
+</ul>
+
+<h2>Download</h2>
+The downloads include the binary .u file and the source. DO NOT recompile the source, use the binary, or else users can get a "modified package" error.
+<ul>
+<li>Version 3.5 <a href="http://ut2004.elmuerte.com/files/LibHTTP3_5.zip">[zip]</a> (UT2004)</li>
+<li>Version 3 <a href="http://ut2004.elmuerte.com/files/LibHTTP3.zip">[zip]</a> (UT2004)</li>
+<li>Version 2 <a href="http://ut2004.elmuerte.com/files/LibHTTP2.zip">[zip]</a> (UT2004)</li>
+<li>Version 2 <a href="http://ut2004.elmuerte.com/files/LibHTTP2x3.zip">[zip]</a> (UT2003)</li>
+<li>Version 1 <a href="http://www.drunksnipers.com/files/ut2003/LibHTTPv100.zip">[zip]</a> (LGPL, UT2003)</li>
+</ul>
+
+<h2>License</h2>
+<pre>
+Lesser Open Unreal Mod License 
+Version 1, March 2004
+
+0. Definitions
+"Program"       the work, either in binary or source form, that has a notice 
+                attached to it stating that it has been released under this 
+                license it by the copyright holder.
+"Modification"  a derivate of the Program or any other work based on the Program
+"Linking"       using parts of the Program, or using parts of any other work, 
+                thus creating a direct dependency
+"You"           the licensee
+"Runtime Environment"
+                the virtual machine or operating system required to run the 
+                Program, as released by the Publisher or Creator of said
+                runtime environment. This includes any extentions or updates
+                for the runtime environment released by the Publisher or 
+                Creator.
+
+1. License
+Herewith everybody is granted permission to copy and distribute verbatim copies 
+of this document. The only restriction lies on changing the content, with the 
+exception to translation of this license.
+
+This license applies to the Program that has been released under this license. 
+The license only applies to copying, distribution and modification of the 
+Program. Execution or output of the Program are not covered by this license, 
+however the right for additional limitations on the use (that do not cover 
+copying, distribution or modification) is granted to the copyright holder.
+This license is only valid when all terms in this license comply with the 
+licenses of the dependecies of the Program. This includes the license of the
+possible required runtime environment.
+
+2. Copying and distribution
+You are granted to copy or distribute verbatim copies of the Program, on any 
+medium, or in any format as you see fit. You are not limited to charging a fee 
+for the physical act of transferring the copy, nor are you limited to provide 
+warranty for the Program in return of a fee. Unless this is prohibited by the
+license of the Runtime Environment.
+
+Any distribution of the program should be accompanied with a verbatim copy of 
+this license.
+
+3. Modification
+You are allowed to modify the Program, or portions of it, therefore making it a 
+derivate of the Program. You are allowed to distribute your modifications under 
+the following conditions:
+        - You must clearly state that it is a modification or derivate of the 
+          Program
+        - The original copyright notice must be kept intact
+        - The modified files must contain notices of the changes made to it
+        - The Modification must be released under the same license as the Program
+        - Distribution happens in compliance with section 2
+
+4. Source
+The original source of the Program or Modification must be freely available on 
+request.
+
+5. Linking        
+The license grants exclusive right to link with any part of the Runtime 
+Environment, as provided by the publisher or creator of said Runtime 
+Environment. 
+Reusing pieces of source code available in the runtime environment in the 
+Program is only allowed under the following terms:
+        - the "borrowed" code is clearly marked to originate from the runtime
+          environment, quoting the original copyright.
+        - the following notice is added to the top of the file:
+          "This file contains portions of code from the runtime environment."
+
+The right to "port" the Program to another runtime environment is reserved for 
+the copyright holder.
+
+6. NON WARRANTY
+THIS SOFTWARE DOES NOT COME WITH A WARRANTY OF ANY KIND, UNLESS NOTED OTHERWISE 
+BY THE COPYRIGHT HOLDER OR WARRANTY PROVIDER. THE ENTIRE RISK OF THE PERFORMANCE 
+AND QUALITY OF THE PROGRAM LIES WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, 
+YOU WILL ASSUME ALL COSTS FOR REQUIRED REPAIR OR CORRECTION.
+</pre>
+
+<h2>UnrealEngine2 support</h2>
+Version 2 has been developed using the UT2004 build of the UnrealEngine2. However, there's a big chance that this library also works on other UnrealEngine2 build without much additional work. <br />
+If you are going to use this library on a diffirent build of the UnrealEngine2, please notify me (elmuerte <i>at</i> drunksnipers.com) so we can create a release version of that build.
+
+<h2>Documentation</h2>
+The documentation for this library can be created from the source using <a href="http://wiki.beyondunreal.com/wiki/UnCodeX" target="_blank">UnCodeX</a> but it is also available on the <a href="http://wiki.beyondunreal.com/wiki/LibHTTP" target="_blank">UnrealWiki</a>.
+
+<h2>Version history</h2>
+New in version 200:
+<ul>
+	<li> Supports HTTP 1.1</li>
+	<li> Cached resolves</li>
+	<li> Redirection history</li>
+	<li> Chuncked encoding automatically decoded</li>
+	<li> Added connection timeout</li>
+	<li> More delegates</li>
+</ul>
+
+New in version 300:
+<ul>
+	<li> bug fixes</li>
+	<li> Improved easy of use:
+		get(), post(), head()</li>
+	<li> Support for <code>multipart/form-data</code> POST data</li>
+	<li> Two different transfer modes: Normal and Fast (tries to download as much
+		data as allowed within a single tick)</li>
+	<li> Support for proxy authentication, you get the best performance by
+		setting the right user/pass in the beginning. Otherwise the code using
+		this library will have to do additional processing when the proxy
+		user and pass are not accepted.</li>
+	<li> Better support for various authentication methods</li>
+	<li> Support for digest authentication (more secure HTTP authentication). When
+		digest is used instead of basic the client has to make 2 requests. With
+		the first request the server will send information needed to construct
+		the response. Basic authentication doesn't have this issue.</li>
+	<li> Cookie storage class will automatically be created when
+		<code>bProcCookies</code> or <code>bSendCookies</code> is set to true
+		(and the cookies hasn't been set)</li>
+</ul>
+
+New in version 350:
+<ul>
+<li>All delegates contains a HttpSock Sender argument</li>
+<li>New function string randString(optional int length, optional coerce string prefix)</li>
+<li>MultiPart divider string is now more unique (prevents potential issues with the content data)</li>
+<li>Empty multipart items are never added</li>
+<li>Made more support functions public</li>
+<li>New utility function string timestampToString(int timestamp, optional string Timezone, optional string format) that will convert a UNIX timestamp to a string (RFC 1123, RFC 1036, RFC 2822, ANSI C asctime formats supported)</li>
+<li>Fixed potentional issues with timestamps and cookies</li>
+</ul>
+
+<h2>Copyright</h2>
+Copyright 2003, 2004, Michiel "El Muerte" Hendriks &lt;elmuerte <i>at</i> drunksnipers.com&gt;</div>
+
+</body>
+</html>

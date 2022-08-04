@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Bot_Pathing by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Bot Pathing - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_Bot_Pathing.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Bot_Pathing","wgTitle":"Bot Pathing","wgCurRevisionId":46148,"wgRevisionId":46148,"wgArticleId":646,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Mapping","Bot Support"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Bot_Pathing","wgRelevantArticleId":646,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Bot_Pathing skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Once I get that upgrade to 36-hour days, I will tackle that. &#8211; Mychaeel
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Bot Pathing</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This is the <a href="Legacy_Bot_Support.html" title="Legacy:Bot Support">Bot Support</a> system that allows bots to run around a map via a network of waypoints, or <b>bot paths</b>. This page describes the concepts and elements of bot path networks. For a simple tutorial, see <a href="Legacy_Basic_Bot_Pathing.html" title="Legacy:Basic Bot Pathing">Basic Bot Pathing</a>.</p>
+<p><b>If you are new to bot pathing</b>, see the <a href="Legacy_Basic_Bot_Pathing.html" title="Legacy:Basic Bot Pathing">Basic Bot Pathing</a> tutorial. After that, <a href="Legacy_Testing_Botplay.html" title="Legacy:Testing Botplay">Testing Botplay</a> will help clean up any problem areas in the bot path. When problems arise, see <a href="Legacy_Bot_Mind.html" title="Legacy:Bot Mind">Bot Mind</a> because understanding the bot's behavior can help. For special tasks you'd like bots to do, try <a href="Legacy_Strategic_Bots.html" title="Legacy:Strategic Bots">Strategic Bots</a> or reviewing the list of available <a href="Legacy_NavigationPoint.html" title="Legacy:NavigationPoint">NavigationPoints</a> for options that handle bot support.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#A_Quick_Note_About_Automatically_Building_The_Path_Network"><span class="tocnumber">1.1</span> <span class="toctext">A Quick Note About Automatically Building The Path Network</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Seeing_The_Network"><span class="tocnumber">2</span> <span class="toctext">Seeing The Network</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#UT200x_Color_Codes"><span class="tocnumber">2.1</span> <span class="toctext">UT200x Color Codes</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#UT_Color_Codes"><span class="tocnumber">2.2</span> <span class="toctext">UT Color Codes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Special_Navigation_Points"><span class="tocnumber">3</span> <span class="toctext">Special Navigation Points</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#JumpSpots"><span class="tocnumber">3.1</span> <span class="toctext">JumpSpots</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#AssaultPaths"><span class="tocnumber">3.2</span> <span class="toctext">AssaultPaths</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#GameObjectives"><span class="tocnumber">3.3</span> <span class="toctext">GameObjectives</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#RoadPathNodes_.26_FlyingPathNodes_.28UT2004.29"><span class="tocnumber">3.4</span> <span class="toctext">RoadPathNodes &amp; FlyingPathNodes (UT2004)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Special_Handling"><span class="tocnumber">4</span> <span class="toctext">Special Handling</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Forced_Paths"><span class="tocnumber">4.1</span> <span class="toctext">Forced Paths</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Proscribed_Paths"><span class="tocnumber">4.2</span> <span class="toctext">Proscribed Paths</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#AIScripts_.26_ScriptedSequences"><span class="tocnumber">4.3</span> <span class="toctext">AIScripts &amp; ScriptedSequences</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Pathing_Special_Areas"><span class="tocnumber">5</span> <span class="toctext">Pathing Special Areas</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#Water"><span class="tocnumber">5.1</span> <span class="toctext">Water</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Lifts"><span class="tocnumber">5.2</span> <span class="toctext">Lifts</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Ladders"><span class="tocnumber">5.3</span> <span class="toctext">Ladders</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#JumpPads"><span class="tocnumber">5.4</span> <span class="toctext">JumpPads</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Doors"><span class="tocnumber">5.5</span> <span class="toctext">Doors</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Teleporters"><span class="tocnumber">5.6</span> <span class="toctext">Teleporters</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="#Pathing_Topics"><span class="tocnumber">6</span> <span class="toctext">Pathing Topics</span></a></li>
+<li class="toclevel-1 tocsection-23"><a href="#Basic_Bot_Pathing_Tutorial"><span class="tocnumber">7</span> <span class="toctext">Basic Bot Pathing Tutorial</span></a></li>
+<li class="toclevel-1 tocsection-24"><a href="#Related_Topics"><span class="tocnumber">8</span> <span class="toctext">Related Topics</span></a></li>
+<li class="toclevel-1 tocsection-25"><a href="#External_Links"><span class="tocnumber">9</span> <span class="toctext">External Links</span></a></li>
+<li class="toclevel-1 tocsection-26"><a href="#Discussion"><span class="tocnumber">10</span> <span class="toctext">Discussion</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Overview">Overview</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=1" title="Edit section: Overview">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The AI code that drives bots doesn't have the power to interpret the 3D maps we see them in. Instead, a map has to have a set of waypoints, joined together to make a network which the bots follow.</p>
+<p>These waypoints are mostly actors of the class <a href="Legacy_Actor.html" title="Legacy:Actor">Actor</a> &gt;&gt; <a href="Legacy_NavigationPoint.html" title="Legacy:NavigationPoint">NavigationPoint</a> &gt;&gt; <a href="Legacy_PathNode.html" title="Legacy:PathNode">PathNode</a>. PathNodes are special actors specifically designed to tell bots of places that are safe and easy to travel. These nodes make up the bulk of most bot path networks. Other types allow bots to tackle more complex things, such as lifts, jumping, translocating and camping.</p>
+<p>Unless specifically told so, bots assume they can simply walk, run or jump through the entire bot path network. Simple obstacles like doors, lifts and ladders pose problems for bots and require special nodes to help them navigate as players do.</p>
+<h3><span class="mw-headline" id="A_Quick_Note_About_Automatically_Building_The_Path_Network">A Quick Note About Automatically Building The Path Network</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=2" title="Edit section: A Quick Note About Automatically Building The Path Network">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><i><b>NOTE:</b></i> It is the UnrealEd community consensus that use of <b>any</b> of these automatic pathnode network generators creates an inferior Bot Navigation system for your map. It is <b>highly</b> recommended that you do the pathing manually.</p>
+<p>There are actually three <a href="Legacy_UnrealEd_Console.html" title="Legacy:UnrealEd Console">UnrealEd Console</a> commands that will automatically build a botpath network for your map:</p>
+<pre>
+<i>PATHS BUILD</i>  auto create pathnode network - opt=1
+<i>PATHS BUILD HIGHOPT</i> auto create pathnode network - opt=2            
+<i>PATHS BUILD LOWOPT</i> auto create pathnode network - opt=0
+</pre>
+<p>Also, <a href="Legacy_PathLogic.html" title="Legacy:PathLogic">PathLogic</a> is a third-party application that lets you build the path network from within the game: you walk around your map, dropping path nodes as you go.</p>
+<h2><span class="mw-headline" id="Seeing_The_Network">Seeing The Network</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=3" title="Edit section: Seeing The Network">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>In UnrealEd 3, use Show Paths to troubleshoot the network after re-building paths. Do <a href="Legacy_Viewport_Caption_Context_Menu.html" title="Legacy:Viewport Caption Context Menu">Viewport Caption Context Menu</a> -&gt; View -&gt; Show Paths. It's possible to hide everything except the paths, which can be quite handy. Once the paths are visible, hit <b>Q</b> to hide the <a href="Legacy_BSP.html" title="Legacy:BSP">BSP</a>, and the 3D viewport shows just the network (see <a href="Legacy_Hiding_Actors.html" title="Legacy:Hiding Actors">Hiding Actors</a> for more on this). This is basically your map as a bot sees it: just a network.</p>
+<p>While running a game, you can see the paths a bot is considering (the route it is attempting) when you use <tt>showdebug</tt>, one of the <a href="Legacy_Console_Commands.html" title="Legacy:Console Commands">Console Commands</a> for UT200x. This will also show a lot of other information pertaining to the bot's weapon, pawn, controller status, etc.</p>
+<p>You should see a bunch of lines connecting the pathnodes. They are color coded depending on their nature:</p>
+<h3><span class="mw-headline" id="UT200x_Color_Codes">UT200x Color Codes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=4" title="Edit section: UT200x Color Codes">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The color of the line between path nodes indicates to bots the general width of the path and therefore the ease with which to use it.</p>
+<dl>
+<dt>White</dt>
+<dd>A nice, wide path for the bots to follow. The bots will have no trouble following this path, seeing this as the most availble route to take. Bots will also see these paths as traversable by vehicles. See <a href="Legacy_Pathing_For_Vehicles.html" title="Legacy:Pathing For Vehicles">Pathing for Vehicles</a>.</dd>
+<dt>Green</dt>
+<dd>Not as good as a white path, but still a perfectly good path. Bots prefer white paths but generally there are other factors that influence their decision so this is not as big of an issue.</dd>
+<dt>Blue</dt>
+<dd>This path is technically a good path, but is quite narrow. Bots will prefer a green or white path but will attempt to take this one if it is the only path available.</dd>
+<dt>Purple</dt>
+<dd>Purple paths designate jumpspots, lifts, teleporters, etc. They have their own UnrealScript to define how bots feel about this type of path. If paths are not shown, a pink arc will show the expected path that a pawn will take when launched from the jumppad. When paths are shown this pink line will disappear.</dd>
+<dt>Light Purple</dt>
+<dd>A path that takes the bot up or down a ladder.</dd>
+<dt>Yellow</dt>
+<dd>A forced path. Used to tell bots that this path is available when the editor doesn't automatically connect two nodes. A path must be specifically set as forced in the pathnode properties.</dd>
+<dt>Red</dt>
+<dd>A proscribed path. The pathnodes joined by this line, while technically connected, should never be used by bots. However, that is not to say that a bot will not end up at the other pathnode as a result of being hit, etc. and may continue along the path by "skipping" over the proscribed path. A path must be specifically set as proscibed in the pathnode properties.</dd>
+</dl>
+<h3><span class="mw-headline" id="UT_Color_Codes">UT Color Codes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=5" title="Edit section: UT Color Codes">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>In UT, there is only two colors of path - good ones and bad ones. Blue paths are good paths that the bots should have no trouble with. Red paths are not very good paths but the bot will attempt them anyway if it has no blue paths to take.</p>
+<h2><span class="mw-headline" id="Special_Navigation_Points">Special Navigation Points</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=6" title="Edit section: Special Navigation Points">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="JumpSpots">JumpSpots</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=7" title="Edit section: JumpSpots">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>JumpSpots are nodes that tell bots of good landing spots, good jumping <b>destinations</b>. They include information telling the bots whether the destination requires DoubleJumping, ImpactJumping or LiftJumping to reach it. They are also used to indicate good spots to translocate to. See also <a href="Legacy_JumpSpot.html" title="Legacy:JumpSpot">JumpSpot</a>.</p>
+<h3><span class="mw-headline" id="AssaultPaths">AssaultPaths</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=8" title="Edit section: AssaultPaths">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>These nodes are used to indicate a good route to attack the enemy. They not only add nodes to the bot path network, they label particular routes and are used give them a path weight that indicates to a bot how "good" the route is. Assault paths can also be used in games that require back and forth movement from one base to the other, as in CTF, to tell bots of better return routes. See also <a href="Legacy_AssaultPath.html" title="Legacy:AssaultPath">AssaultPath</a>.</p>
+<h3><span class="mw-headline" id="GameObjectives">GameObjectives</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=9" title="Edit section: GameObjectives">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>These are game goals, objects that players must handle to play the game. CTF FlagBases, Double Domination DomPoints, Bombing Run BombSpawns or BombDeliveries, Onslaught Nodes and Cores are all GameObjectives. Some of these are configured to indicate to bots if they should be defended, if they are destroyable, what <a href="Legacy_AIScript.html" title="Legacy:AIScript">AIScripts</a> should be used to defend it, etc. See also <a href="Legacy_GameObjective.html" title="Legacy:GameObjective">GameObjective</a>.</p>
+<h3><span class="mw-headline" id="RoadPathNodes_.26_FlyingPathNodes_.28UT2004.29">RoadPathNodes &amp; FlyingPathNodes (UT2004)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=10" title="Edit section: RoadPathNodes &amp; FlyingPathNodes (UT2004)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>These nodes are used for vehicles. They require the widest, clearest path possible (white color coded). They can be spread much farther apart than normal PathNodes. It is critical to have a full route of clear (White) <a href="Legacy_RoadPathNode.html" title="Legacy:RoadPathNode">RoadPathNodes</a> (or <a href="Legacy_FlyingPathNode.html" title="Legacy:FlyingPathNode">FlyingPathNodes</a>) from one GameObjective to another and to the vehicle factories in order for bots to effectively use vehicles. See also <a href="Legacy_Pathing_For_Vehicles.html" title="Legacy:Pathing For Vehicles">Pathing for Vehicles</a> and <a href="Legacy_Pathing_2k4_Flying_Vehicles.html" title="Legacy:Pathing 2k4 Flying Vehicles">Pathing 2k4 Flying Vehicles</a>.</p>
+<h2><span class="mw-headline" id="Special_Handling">Special Handling</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=11" title="Edit section: Special Handling">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Inevitably, mappers will encounter situations that require tweaking of the bot's normal navigation system. Sometimes the default bot path network will include a path leading directly into an obvious hazard. Sometimes the bots will need to be told a specific path to take from a particular node. Sometimes, a system complex behaviors is needed for specific purposes in a map.</p>
+<h3><span class="mw-headline" id="Forced_Paths">Forced Paths</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=12" title="Edit section: Forced Paths">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>All nodes that deal with navigation (from PlayerStarts to Vehicle Path nodes) have an array available to define Forced Paths. A forced path is a specific directive to bots traveling from a node, of which node to go to next.</p>
+<h3><span class="mw-headline" id="Proscribed_Paths">Proscribed Paths</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=13" title="Edit section: Proscribed Paths">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>All node that deal with navigation also have Proscribed Paths. Proscribed Paths tell bots of forbidden nodes to travel to from the node they're on. It is the opposite of a Forced Path.</p>
+<h3><span class="mw-headline" id="AIScripts_.26_ScriptedSequences">AIScripts &amp; ScriptedSequences</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=14" title="Edit section: AIScripts &amp; ScriptedSequences">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Bots can be told very specific things to do with an AIscript. An AIscript is a series of commands designed to override the normal Bot, TeamAI and SquadAI code with custom behavior. Almost anything that a player can do, can be achieved using AIscipts. A ScriptedSequence is an actor with a customizable array of actions it will perform. Some of these actions can be used to control bots, much like a simplified version of an AIScript. Often they are used as Defensive Scripts or Sniper Scripts. However, a misguided Script can simply make the bot predictable and easy to defeat. See also <a href="Legacy_Creating_And_Using_ScriptedActions.html" title="Legacy:Creating And Using ScriptedActions">Creating and Using ScriptedActions</a>, <a href="Legacy_ScriptedAction.html" title="Legacy:ScriptedAction">ScriptedAction</a>, <a href="Legacy_ScriptedSequence.html" title="Legacy:ScriptedSequence">ScriptedSequence</a> and <a href="Legacy_Strategic_Bots.html" title="Legacy:Strategic Bots">Strategic Bots</a>.</p>
+<h2><span class="mw-headline" id="Pathing_Special_Areas">Pathing Special Areas</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=15" title="Edit section: Pathing Special Areas">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Water">Water</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=16" title="Edit section: Water">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Don't place pathnodes above water but in it or bots will bob up and down under the pathnode trying to reach it.</p>
+<h3><span class="mw-headline" id="Lifts">Lifts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=17" title="Edit section: Lifts">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A lift system has an entry point and an exit point. Bots need to know where those points are and where the lift currently is. This is described with LiftCenter and LiftExit actors. See also <a href="Legacy_Pathing_Lifts.html" title="Legacy:Pathing Lifts">Pathing Lifts</a>.</p>
+<h3><span class="mw-headline" id="Ladders">Ladders</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=18" title="Edit section: Ladders">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>In UT2003/UT2004, a ladder is a special volume that allows a player inside to move up and down instead of forward and back. Bots need to be told where to enter and exit the ladder volume. This is done with Ladder actors. See also <a href="Legacy_Add_A_Ladder.html" title="Legacy:Add A Ladder">Add A Ladder</a>.</p>
+<h3><span class="mw-headline" id="JumpPads">JumpPads</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=19" title="Edit section: JumpPads">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>JumpPads are nodes that throw players and bots through the air to a destination node, like an ordinary PathNode. Bots know what that destination node is by the ForcedPath described in the UTJumpPad actor. See also <a href="Legacy_UTJumpPad.html" title="Legacy:UTJumpPad">UTJumpPad</a> and <a href="Legacy_Pathing_Kickers.html" title="Legacy:Pathing Kickers">Pathing Kickers</a>.</p>
+<h3><span class="mw-headline" id="Doors">Doors</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=20" title="Edit section: Doors">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Bots need to know if doors are closed they need to be opened to travel or shoot through. This is done with a Door actor. The Door actor tells the bots if there are any external triggers to open the door. The Door actor can also tell bots to ingore the path through the door if it is closed; used for locked or triggered doors that block the path. See also <a href="Legacy_Door.html" title="Legacy:Door">Door</a>.</p>
+<h3><span class="mw-headline" id="Teleporters">Teleporters</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=21" title="Edit section: Teleporters">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Teleporters simply hook up to the bot path network by the two end point nodes. Bots immediately know how to use them to navigate. See also <a href="Legacy_Teleportation_Basics.html" title="Legacy:Teleportation Basics">Teleportation Basics</a>.</p>
+<h2><span class="mw-headline" id="Pathing_Topics">Pathing Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=22" title="Edit section: Pathing Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Other pages cover in detail how to make bots tackle more complex elements of their environment:</p>
+<ul>
+<li><a href="Legacy_Pathing_Lifts.html" title="Legacy:Pathing Lifts">Pathing Lifts</a></li>
+<li><a href="Legacy_Pathing_Kickers.html" title="Legacy:Pathing Kickers">Pathing Kickers</a></li>
+<li><a href="Legacy_Pathing_Translocators.html" title="Legacy:Pathing Translocators">Pathing Translocators</a></li>
+<li><a href="Legacy_Pathing_For_Vehicles.html" title="Legacy:Pathing For Vehicles">Pathing For Vehicles</a></li>
+<li><a href="Legacy_Pathing_2k4_Flying_Vehicles.html" title="Legacy:Pathing 2k4 Flying Vehicles">Pathing 2k4 Flying Vehicles</a></li>
+</ul>
+<h2><span class="mw-headline" id="Basic_Bot_Pathing_Tutorial">Basic Bot Pathing Tutorial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=23" title="Edit section: Basic Bot Pathing Tutorial">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_Basic_Bot_Pathing.html" title="Legacy:Basic Bot Pathing">Basic Bot Pathing</a> – A tutorial on basic bot pathing</li>
+</ul>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=24" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_Bot_Support.html" title="Legacy:Bot Support">Bot Support</a> – Main topic
+<ul>
+<li><a href="Legacy_Strategic_Bots.html" title="Legacy:Strategic Bots">Strategic Bots</a> – Advanced bot support</li>
+<li><a href="Legacy_Bot_Mind.html" title="Legacy:Bot Mind">Bot Mind</a> – Understanding the bots</li>
+<li><a href="Legacy_Testing_Botplay.html" title="Legacy:Testing Botplay">Testing Botplay</a> – Ensures reliable bot support</li>
+</ul>
+</li>
+</ul>
+<h2><span class="mw-headline" id="External_Links">External Links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=25" title="Edit section: External Links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://unreal.epicgames.com/ut2ai.htm">UT200x Botpathing by Steven Polge</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.leveldesigner.com/index.php?action=doc&amp;ID=172">UT200x Advanced Bot Pathing Tutorial by Blitz</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.planetunreal.com/nucleus/UED2_pathing.html">The Nucleus - Basic Bot Pathing</a></li>
+</ul>
+<h2><span class="mw-headline" id="Discussion">Discussion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing?section=26" title="Edit section: Discussion">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>SuperApe:</b> Revision done. What do you think?</p>
+<p><b>Evil-System:</b> I don't understand how to get a specific ScriptedCharacter to start patrolling at one point. I have 3 patrol points set up the way I want, and a ScriptedCharacter nearby, and I want him to move the first point, and go to the second one and just walk back and forth between the second and third point.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.049 seconds
+Real time usage: 0.052 seconds
+Preprocessor visited node count: 104/1000000
+Preprocessor generated node count: 116/1000000
+Post‐expand include size: 11/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:646-0!*!0!!en!*!* and timestamp 20161216052936 and revision id 46148
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Bot_Pathing?oldid=46148">https://wiki.beyondunreal.com/Legacy:Bot_Pathing?oldid=46148</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Legacy_Mapping.html" title="Category:Legacy Mapping">Legacy Mapping</a></li><li><a href="https://wiki.beyondunreal.com/edit/Category:Bot_Support?redlink=1" class="new" title="Category:Bot Support (page does not exist)">Bot Support</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_Bot_Pathing.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Bot_Pathing?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Pathing" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Bot_Pathing" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ABot+Pathing&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ABot+Pathing" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Bot_Pathing" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Bot_Pathing" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Bot_Pathing?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Bot_Pathing?oldid=46148" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Bot_Pathing" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 17:13, 11 April 2015.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":99});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Bot_Pathing by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:06 GMT -->
+</html>

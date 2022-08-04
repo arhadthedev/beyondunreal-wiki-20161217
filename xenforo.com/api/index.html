@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html id="XenForo" class="Public Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<!-- Mirrored from xenforo.com/api/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 15 Dec 2016 03:12:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<base  />
+	
+	<title>License Validation API | XenForo</title>
+	<meta property="og:site_name" content="XenForo" />
+	
+	
+	
+	<link rel="stylesheet" type="text/css" href="../cssdc6a.css?css=xenforo,form,public&amp;style=1&amp;d=1474040978" />
+	 
+
+	<script type="text/javascript">
+	<!--
+	var _gaq = [['_setAccount', 'UA-10855523-4'], ['_trackPageview']];
+	!function(d, t)
+	{
+		var g = d.createElement(t),
+			s = d.getElementsByTagName(t)[0];	
+		g.async = true;
+		g.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g, s);
+	}
+	(document, 'script');
+	//-->
+	</script>
+	<script type="text/javascript" src="../js/jquery/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="../js/jquery/jquery.xenforo.rollup38c3.js?_v=2811c3c8"></script>
+<script type="text/javascript" src="../js/xenforo/xenforo38c3.js?_v=2811c3c8"></script>
+
+
+
+</head>
+<body>
+
+<div class="wrapperXfSite">
+
+<header>
+	<div id="header">
+		<div class="pageWidth">
+	<div class="pageContent ">
+		<div id="logo"><a href="#">
+			<span></span>
+			<img src="../styles/default/xenforo/logo.png" alt="XenForo" />
+		</a></div>
+
+		<div class="navMenu" id="NavMenuToggle"><span>Menu</span></div>
+				
+		<nav>
+		<ol id="nav">
+			<li class=""><a href="../index.html">Home</a></li>
+			<li class=""><a href="../purchase/index.html">Buy</a></li>
+			<li class=""><a href="../help/index.html">Help</a></li>
+			<li class=""><a href="../customers/index.html">Customers</a></li>
+			<li><a href="../community/index.html">Community</a></li>
+		</ol>
+		</nav>
+	</div>
+</div>
+	</div>
+</header>
+
+<div id="content" class="api_form">
+	<div class="pageWidth">
+		<div class="pageContent">
+			
+			<!-- main content area -->
+			
+
+												
+							<!-- h1 title, description -->
+							<div class="titleBar ">
+							
+								<h1>License Validation API</h1>
+								
+								
+							</div>
+						
+						
+						<!-- main template -->
+						
+
+<form action="https://xenforo.com/api/license-lookup" method="post" class="xenForm">
+	<dl class="ctrlUnit">
+		<dt>Validation Token:</dt>
+		<dd><input type="text" name="token" class="textCtrl" /></dd>
+	</dl>
+
+	<dl class="ctrlUnit">
+		<dt>Check Domain:</dt>
+		<dd>
+			<input type="text" name="domain" class="textCtrl" />
+			<p class="explain">If you want to check that the license is associated with a specific domain, enter it here.</p>
+		</dd>
+	</dl>
+
+	<dl class="ctrlUnit submitUnit">
+		<dt></dt>
+		<dd>
+			<input type="submit" value="Validate License" class="button primary" />
+		</dd>
+	</dl>
+
+	<div style="line-height: 1.5">
+		<h3 class="textHeading">Getting a Validation Token</h3>
+		<div class="baseHtml">
+			<p>You can generate a validation token from the customer area. Each license will have a "validation token" link under it.</p>
+
+			<p>Clicking that link will generate a token if you don't have one for that license or display the current token if one has been generated.</p>
+
+			<p>If you wish to change your token, it can be regenerated from there. Note that your previous tokens will immediately fail to validate.</p>
+
+			<p>In general, it is recommended that you provide your validation token to trusted parties only. After giving out a token and having it be verified, you may wish to regenerate your token. However, if you do this, it will break any ongoing checks that third-parties may do; you will need to balance these needs.</p>
+		</div>
+
+		<h3 class="textHeading">Using the License Validation API</h3>
+		<div class="baseHtml">
+			<ul>
+				<li>When requesting a validation token from a customer, you must explain how the token will be used. You may only use the token in this manner. You will not disclose a validation token to a third party (other than XenForo Ltd.).</li>
+				<li>Each IP can only make 1000 API requests per 24 hours. The request period restarts a midnight GMT. If you need more requests than this, contact us to discuss your requirements.</li>
+			</ul>
+
+			<p>If you are going to make use of license validation tokens, here are some best practices:</p>
+			<ul>
+				<li>Ask for the domain that is associated with a token. This provides an extra step of validation and helps confirm ownership.</li>
+				<li>If confirming ownership of a domain is important, you may wish to have the user upload a file to their domain with a particular name or content. Google Webmaster Tools uses this technique.</li>
+				<li>Accept a license_token or customer_token only once, as necessary.</li>
+				<li>Optionally consider storing the validation_token and periodically checking that it is still valid (and has the values that you require). Note that token regeneration will break this so you must handle this situation gracefully.</li>
+			</ul>
+		</div>
+
+		<h3 class="textHeading">Using the License Validation API Programmatically</h3>
+		<div class="baseHtml">
+			<p>While we provide the API via a human readable web interface, it can also be queried programmatically via JSON.</p>
+
+			<p>Send <code>POST</code> requests to <code>https://xenforo.com/api/license-lookup.json</code> with the following parameters:</p>
+			<ul>
+				<li><code>token</code> - the license validation token to look up</li>
+				<li><code>domain</code> - checks whether the license is attached to this domain (optional)</li>
+			</ul>
+
+			<p>A request for a valid token will return a JSON object with the following keys/values:</p>
+			<ul>
+				<li><code>validation_token</code> - (string) the token that was looked up</li>
+				<li><code>customer_token</code> - (string) a string that will uniquely identify the customer this license is associated with</li>
+				<li><code>license_token</code> - (string) this will unique represent the license in question. It will not change when the token is regenerated.</li>
+				<li><code>is_valid</code> - (boolean) this will be true unless the license is no longer legitimate. Licenses with expired support are still valid.</li>
+				<li><code>can_transfer</code> - (boolean) true if the license can be transferred</li>
+				<li><code>domain_match</code> - (boolean or null) if a domain was provided, this will be true/false based on whether it matched the license. If no domain was provided, this will be null</li>
+				<li><code>domain</code> - (string or null) if a domain was provided, the domain that we tested. This may be changed from original domain supplied in the request.</li>
+			</ul>
+
+			<p>A request for an invalid token will return a <code>404</code> HTTP response. If you have made too many requests, a <code>503</code> HTTP response will be returned.</p>
+		</div>
+	</div>
+</form>
+												
+					
+									
+		</div>
+	</div>
+</div>
+
+</div><!-- / .wrapperXfSite -->
+
+<footer>
+	
+
+<div class="footerXfSite">
+	<div class="pageWidth">
+	
+		<div class="content upper">
+			<a href="../index.html" class="logo"><img src="../styles/default/xenforo/logo.png" alt="XenForo logo" /></a>
+			
+			<div class="social">
+				<a href="../../www.facebook.com/xenforo.html" target="_blank"
+					title="Join XenForo on Facebook"
+					class="facebook Tooltip"					
+					data-tipclass="social"
+					data-position="top left"
+					data-offsetx="232"
+					data-offsety="-8">Facebook</a>
+				<a href="https://www.twitter.com/xenforo" target="_blank"
+					title="Follow @XenForo on Twitter"
+					class="twitter Tooltip"
+					data-tipclass="social"
+					data-position="top left"
+					data-offsetx="232"
+					data-offsety="-8">Twitter</a>
+			</div>
+			
+			<div class="sales">
+				<a href="../community/forums/xenforo-pre-sales-and-feedback.5/index.html" class="salesLink left">Pre-Sales Questions</a>
+				<a href="../purchase/index.html" class="cta buy" title="Lifetime license just $140"><strong>Buy XenForo Now!</strong></a>
+				<a href="../demo/index.html" class="cta demo" title="Three days to play with all the Admin features"><strong>Try a Free Demo</strong></a>
+				<span class="salesLink right">
+					<a href="../customers/index.html">Customer Area</a><br />
+					<a href="index.html">License Validation</a>
+				</span>
+			</div>
+		</div>
+		
+		<div class="content lower">	
+				
+			<div class="links left">
+				<nav>
+					<a href="../index.html" rel="home">Home</a>	
+					<a href="../community/forums/announcements">News</a>
+					<a href="../community/search/index.html">Search</a>
+					<a href="../contact/index.html" data-overlayOptions="{&quot;fixed&quot;:false}">Contact Us</a>
+					<a href="../demo/index.html">Admin Demo</a>
+					<a href="../help/index.html" rel="help">Help</a>
+					<a href="../license-agreement/index.html" rel="license">License Agreement</a>
+				</nav>
+			</div>
+			
+			<div class="links right">
+				<a>XenForo Ltd. is registered in England and Wales with company number 07294282.</a>
+			</div>
+			
+		</div>
+		
+		<div class="bottomInfo">
+			
+			<span id="copyright">&copy;2010-2016 XenForo Ltd.</span>
+			<a href="../privacy-policy/index.html" class="privacyPolicy">Privacy Policy</a>
+		</div>
+		
+	</div>
+</div>
+</footer>
+
+<script type="text/javascript">
+<!--
+
+$(function()
+{
+	$('#NavMenuToggle').click(function()
+	{
+		$('#nav').toggleClass('is-active');
+	});
+});
+
+jQuery.extend(true, XenForo,
+{
+	serverTimeInfo:
+	{
+		now: 1481771039,
+		today: 1481760000,
+		todayDow: 4
+	},
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(255, 255, 255)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_loadedScripts: [],
+	_cookieConfig: { path: "/", domain: "", prefix: "xfs_"},
+	_csrfToken: "",
+	_jsVersion: "2811c3c8"
+});
+jQuery.extend(XenForo.phrases,
+{
+	following_error_occurred: "The following error occurred",
+	cancel: "Cancel",
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat"
+});
+
+XenForo.Facebook.forceInit = false;
+//-->
+</script>
+
+</body>
+
+<!-- Mirrored from xenforo.com/api/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 15 Dec 2016 03:12:13 GMT -->
+</html>

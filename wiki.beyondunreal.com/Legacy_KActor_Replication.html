@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:KActor_Replication by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:59:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:KActor Replication - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:KActor_Replication" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:KActor_Replication" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_KActor_Replication.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:KActor_Replication","wgTitle":"KActor Replication","wgCurRevisionId":3987,"wgRevisionId":3987,"wgArticleId":1605,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Refactor Me","Legacy Journal","Legacy To Do"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:KActor_Replication","wgRelevantArticleId":1605,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_KActor_Replication skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Worst-case scenario: the UEd Goblin wipes the map and burns down your house.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:KActor Replication</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><h2><span class="mw-headline" id="How_it_works">How it works</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:KActor_Replication?section=1" title="Edit section: How it works">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The code is based on the replication technique found in <a href="Legacy_KCar.html" title="Legacy:KCar">KCar</a>. Every tick, the server checks the location, linear and angular velocity of the actor, and if it differs much from when the last replication occured or if more time than MaxNetUpdateInterval has elapsed, the state of the actor on the server will be stored in a variable that is replicated to clients. On recieving the new state, the actor on the client will apply the new state to itself.</p>
+<p>Note that RemoteRole is set to ROLE_SimulatedProxy, bNetNotify is set to true (so that PostNetReceive is called on the client) and the <a href="Legacy_KarmaParams.html" title="Legacy:KarmaParams">KarmaParams</a> property bClientOnly is set to false (so Karma is simulated on the server as well as the client).</p>
+<h2><span class="mw-headline" id="The_code">The code</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:KActor_Replication?section=2" title="Edit section: The code">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">class</span> LawDogsKActor <span class="kw1">extends</span> <span class="kw9">KActor</span>
+	<span class="kw1">placeable</span>;
+ 
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">float</span> MaxNetUpdateInterval;
+<span class="kw1">var</span> <span class="kw5">float</span> NextNetUpdateTime;
+ 
+<span class="kw1">var</span> <span class="kw5">KRigidBodyState</span> KState, KRepState;
+<span class="kw1">var</span> <span class="kw5">bool</span> bNewKState;
+<span class="kw1">var</span> <span class="kw5">int</span> StateCount, LastStateCount;
+ 
+<span class="kw1">replication</span>
+<span class="br0">{</span>
+	<span class="kw1">unreliable</span> <span class="kw2">if</span><span class="br0">(</span><span class="kw7">Role</span> <span class="sy0">==</span> <span class="kw7">ROLE_Authority</span><span class="br0">)</span>
+		KRepState, StateCount;
+<span class="br0">}</span>
+ 
+<span class="kw1">function</span> <span class="kw4">Tick</span><span class="br0">(</span><span class="kw5">float</span> Delta<span class="br0">)</span>
+<span class="br0">{</span>
+	PackState<span class="br0">(</span><span class="br0">)</span>;
+<span class="br0">}</span>
+ 
+<span class="co1">//Pack current state to be replicated</span>
+<span class="kw1">function</span> PackState<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw1">local</span> <span class="kw5">bool</span> bChanged;
+ 
+	<span class="kw2">if</span><span class="br0">(</span><span class="sy0">!</span>KIsAwake<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+		<span class="kw2">return</span>;
+ 
+	KGetRigidBodyState<span class="br0">(</span>KState<span class="br0">)</span>;
+ 
+	bChanged <span class="sy0">=</span> <span class="kw7">Level</span>.<span class="me0">TimeSeconds</span> <span class="sy0">&gt;</span> NextNetUpdateTime;
+	bChanged <span class="sy0">=</span> bChanged <span class="sy0">||</span> <span class="kw3">VSize</span><span class="br0">(</span>KRBVecToVector<span class="br0">(</span>KState.<span class="me0">Position</span><span class="br0">)</span> <span class="sy0">-</span> KRBVecToVector<span class="br0">(</span>KRepState.<span class="me0">Position</span><span class="br0">)</span><span class="br0">)</span> <span class="sy0">&gt;</span> <span class="nu0">5</span>;
+	bChanged <span class="sy0">=</span> bChanged <span class="sy0">||</span> <span class="kw3">VSize</span><span class="br0">(</span>KRBVecToVector<span class="br0">(</span>KState.<span class="me0">LinVel</span><span class="br0">)</span> <span class="sy0">-</span> KRBVecToVector<span class="br0">(</span>KRepState.<span class="me0">LinVel</span><span class="br0">)</span><span class="br0">)</span> <span class="sy0">&gt;</span> <span class="nu0">1</span>;
+	bChanged <span class="sy0">=</span> bChanged <span class="sy0">||</span> <span class="kw3">VSize</span><span class="br0">(</span>KRBVecToVector<span class="br0">(</span>KState.<span class="me0">AngVel</span><span class="br0">)</span> <span class="sy0">-</span> KRBVecToVector<span class="br0">(</span>KRepState.<span class="me0">AngVel</span><span class="br0">)</span><span class="br0">)</span> <span class="sy0">&gt;</span> <span class="nu0">1</span>;
+ 
+	<span class="kw2">if</span><span class="br0">(</span>bChanged<span class="br0">)</span>
+	<span class="br0">{</span>
+		NextNetUpdateTime <span class="sy0">=</span> <span class="kw7">Level</span>.<span class="me0">TimeSeconds</span> <span class="sy0">+</span> MaxNetUpdateInterval;
+		KRepState <span class="sy0">=</span> KState;
+		StateCount<span class="sy0">++</span>;
+	<span class="br0">}</span>
+	<span class="kw2">else</span>
+		<span class="kw2">return</span>;
+<span class="br0">}</span>
+ 
+<span class="co1">//New state recieved.</span>
+<span class="kw1">simulated</span> <span class="kw1">event</span> <span class="kw4">PostNetReceive</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw2">if</span><span class="br0">(</span>StateCount <span class="sy0">==</span> LastStateCount<span class="br0">)</span>
+		<span class="kw2">return</span>;
+<span class="br0">}</span>
+ 
+<span class="co1">//Apply new state.</span>
+<span class="kw1">simulated</span> <span class="kw1">event</span> <span class="kw5">bool</span> KUpdateState<span class="br0">(</span><span class="kw1">out</span> <span class="kw5">KRigidBodyState</span> newState<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="co1">//This should never get called on the server - but just in case!</span>
+	<span class="kw2">if</span><span class="br0">(</span><span class="kw7">Role</span> <span class="sy0">==</span> <span class="kw7">ROLE_Authority</span> <span class="sy0">||</span> StateCount <span class="sy0">==</span> LastStateCount<span class="br0">)</span>
+		<span class="kw2">return</span> <span class="kw6">false</span>;
+ 
+	<span class="co1">//Apply received data as new position of actor.</span>
+	newState <span class="sy0">=</span> KRepState;
+	StateCount <span class="sy0">=</span> LastStateCount;
+ 
+	<span class="kw2">return</span> <span class="kw6">true</span>;
+<span class="br0">}</span>
+ 
+<span class="kw1">defaultproperties</span>
+<span class="br0">{</span>
+	MaxNetUpdateInterval<span class="sy0">=</span><span class="nu0">0.5</span>
+ 
+	<span class="kw5">StaticMesh</span><span class="sy0">=</span><span class="kw5">StaticMesh</span><span class="st0">'MiscPhysicsMeshes.Barrels.Barrel'</span>
+ 
+    <span class="kw2">Begin</span> <span class="kw8">Object</span> <span class="kw1">Class</span><span class="sy0">=</span><span class="kw8">KarmaParams</span> <span class="kw5">Name</span><span class="sy0">=</span>KarmaParams0
+        KMass<span class="sy0">=</span><span class="nu0">0.5</span>
+        bHighDetailOnly<span class="sy0">=</span><span class="kw6">False</span>
+        bKAllowRotate<span class="sy0">=</span><span class="kw6">True</span>
+        KFriction<span class="sy0">=</span><span class="nu0">0.2</span>
+        KRestitution<span class="sy0">=</span><span class="nu0">0.5</span>
+        KImpactThreshold<span class="sy0">=</span><span class="nu0">1000.0</span>
+        bClientOnly<span class="sy0">=</span><span class="kw6">False</span>
+        <span class="kw5">Name</span><span class="sy0">=</span><span class="st0">"KarmaParams0"</span>
+    End <span class="kw8">Object</span>
+	KParams<span class="sy0">=</span><span class="kw8">KarmaParams</span><span class="st0">'KarmaParams0'</span>
+ 
+	<span class="kw7">RemoteRole</span><span class="sy0">=</span><span class="kw7">ROLE_SimulatedProxy</span>
+	bNetNotify<span class="sy0">=</span><span class="kw6">True</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:KActor_Replication?section=3" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_KActor.html" title="Legacy:KActor">KActor</a></li>
+</ul>
+<p><b>Foxpaw</b>: I think this page could be called something else.. KActor is just a class that you can use to make karma physics objects.. kind of like staticmeshactor. Any actor can have a static mesh, and any actor can use Karma physics.. so I think this should have a more general name seeing as this applies to more than just KActors.</p>
+<p><b>Kaoh</b>: Yeah but the replication technique is special for karma actors. Its not needed for other actors, So I feel it applies.</p>
+<p><b>Foxpaw:</b> What I'm saying is, KActor is just a class that happens to use Karma physics. There are many karma actors that aren't KActors, so I think a more general name would be better.</p>
+<p><b>UsAaR33:</b> Just wondering.. what is the point of that PostNetReceive() event?</p>
+<p><b>Foxpaw:</b> Err.. hmm. I hate to pick holes in someone's work, but you're right. In fact, that code is going to produce slide-show-esque physics client side, (as the physics never actually simulate client side, they get reset to the most recent server version every time the physics is simulated) and err, yeah. It's not doing half the stuff that it looks like it should be doing. However, if it was tested on the same machine, (so no latency or bandwidth limits) it would APPEAR as though it was working perfectly.</p>
+<p>Here's how I would have done it: (note that this code has not been tested or compiled in any way, I'm going on experience here. Some tweaks may be necessary. I also removed the "threshold" stuff, but you could put that back in if you really felt it was necessary.)</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">class</span> ReplicatedKActor <span class="kw1">extends</span> <span class="kw9">KActor</span> <span class="kw1">placeable</span>;
+ 
+<span class="kw1">struct</span> RepState
+<span class="br0">{</span>
+  <span class="kw1">var</span> <span class="kw5">KRigidBodyState</span> <span class="kw1">State</span>;
+  <span class="kw1">var</span> <span class="kw5">byte</span>	      Timestamp;
+<span class="br0">}</span>;
+ 
+<span class="kw1">var</span> <span class="kw5">bool</span>     bUpdateState;
+<span class="kw1">var</span> <span class="kw5">byte</span>     LastTimeStamp;
+<span class="kw1">var</span> RepState RepKState;
+ 
+<span class="kw1">replication</span>
+<span class="br0">{</span>
+  <span class="kw1">unreliable</span> <span class="kw2">if</span><span class="br0">(</span><span class="kw7">Role</span> <span class="sy0">==</span> <span class="kw7">ROLE_Authority</span><span class="br0">)</span>
+    RepKState;
+<span class="br0">}</span>
+ 
+<span class="kw1">function</span> <span class="kw4">Tick</span><span class="br0">(</span><span class="kw5">float</span> Delta<span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw6">Super</span>.<span class="kw4">Tick</span><span class="br0">(</span> Delta <span class="br0">)</span>;
+ 
+  PackState<span class="br0">(</span><span class="br0">)</span>;
+<span class="br0">}</span>
+ 
+<span class="co1">//Pack current state to be replicated</span>
+<span class="kw1">function</span> PackState<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw1">local</span> <span class="kw5">bool</span> bChanged;
+  <span class="kw1">local</span> <span class="kw5">KRigidBodyState</span> KState;
+ 
+  <span class="kw2">if</span><span class="br0">(</span><span class="sy0">!</span>KIsAwake<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+    <span class="kw2">return</span>;
+ 
+  KGetRigidBodyState<span class="br0">(</span>KState<span class="br0">)</span>;
+  <span class="kw2">if</span> <span class="br0">(</span> KState <span class="sy0">==</span> RepKState.<span class="kw1">State</span> <span class="br0">)</span>
+    <span class="kw2">return</span>;
+ 
+  RepKState.<span class="kw1">State</span> <span class="sy0">=</span> KState;
+  RepKState.<span class="me0">TimeStamp</span><span class="sy0">++</span>;
+<span class="br0">}</span>
+ 
+<span class="co1">//New state recieved.</span>
+<span class="kw1">simulated</span> <span class="kw1">event</span> <span class="kw4">PostNetReceive</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw6">Super</span>.<span class="me0">PostNetRecieve</span><span class="br0">(</span><span class="br0">)</span>;
+ 
+  <span class="kw2">if</span> <span class="br0">(</span> RepKState.<span class="me0">TimeStamp</span> <span class="sy0">!=</span> LastTimeStamp <span class="br0">)</span>
+  <span class="br0">{</span>
+    LastTimeStamp <span class="sy0">=</span> RepKState.<span class="me0">TimeStamp</span>;
+    bUpdateState <span class="sy0">=</span> <span class="kw6">true</span>;
+  <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="co1">//Apply new state.</span>
+<span class="kw1">simulated</span> <span class="kw1">event</span> <span class="kw5">bool</span> KUpdateState<span class="br0">(</span><span class="kw1">out</span> <span class="kw5">KRigidBodyState</span> newState<span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw6">Super</span>.<span class="me0">KUpdateState</span><span class="br0">(</span> newState <span class="br0">)</span>;
+ 
+  <span class="kw2">if</span> <span class="br0">(</span> bUpdateState <span class="br0">)</span>
+  <span class="br0">{</span>
+    newState <span class="sy0">=</span> KRepState;
+    bUpdateState <span class="sy0">=</span> <span class="kw6">false</span>;
+    <span class="kw2">return</span> <span class="kw6">true</span>;
+  <span class="br0">}</span>
+ 
+  <span class="kw2">return</span> <span class="kw6">false</span>;
+<span class="br0">}</span>
+ 
+<span class="kw1">defaultproperties</span>
+<span class="br0">{</span>
+  <span class="kw5">StaticMesh</span><span class="sy0">=</span><span class="kw5">StaticMesh</span><span class="st0">'MiscPhysicsMeshes.Barrels.Barrel'</span>
+ 
+  <span class="kw2">Begin</span> <span class="kw8">Object</span> <span class="kw1">Class</span><span class="sy0">=</span><span class="kw8">KarmaParams</span> <span class="kw5">Name</span><span class="sy0">=</span>KarmaParams0
+    KMass<span class="sy0">=</span><span class="nu0">0.5</span>
+    bHighDetailOnly<span class="sy0">=</span><span class="kw6">False</span>
+    bKAllowRotate<span class="sy0">=</span><span class="kw6">True</span>
+    KFriction<span class="sy0">=</span><span class="nu0">0.2</span>
+    KRestitution<span class="sy0">=</span><span class="nu0">0.5</span>
+    KImpactThreshold<span class="sy0">=</span><span class="nu0">1000.0</span>
+    bClientOnly<span class="sy0">=</span><span class="kw6">False</span>
+    <span class="kw5">Name</span><span class="sy0">=</span><span class="st0">"KarmaParams0"</span>
+  End <span class="kw8">Object</span>
+  KParams<span class="sy0">=</span><span class="kw8">KarmaParams</span><span class="st0">'KarmaParams0'</span>
+ 
+  <span class="kw7">RemoteRole</span><span class="sy0">=</span><span class="kw7">ROLE_SimulatedProxy</span>
+  bNetNotify<span class="sy0">=</span><span class="kw6">True</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p><b>CIpen:</b> Well I don't mean to break anyone's hearts but KCar isn't a KActor. KCar extends from KVehicle, and KVehicle extends from Vehicle. Lastly, Vehicle extends from Pawn.</p>
+<p>Even though it's not in KCar, I found this code that might help in SCar:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+cpptext
+<span class="br0">{</span>
+<span class="co2">#ifdef WITH_KARMA</span>
+	<span class="co1">// Actor interface.</span>
+	virtual UBOOL <span class="kw4">Tick</span><span class="br0">(</span><span class="kw5">FLOAT</span> DeltaTime, <span class="kw1">enum</span> ELevelTick TickType<span class="br0">)</span>;
+	virtual void <span class="kw4">PostNetReceive</span><span class="br0">(</span><span class="br0">)</span>;
+ 
+	<span class="co1">// SVehicle interface.</span>
+	virtual void UpdateVehicle<span class="br0">(</span><span class="kw5">FLOAT</span> DeltaTime<span class="br0">)</span>;
+ 
+	<span class="co1">// SCar interface.</span>
+	virtual void ProcessCarInput<span class="br0">(</span><span class="br0">)</span>;
+	virtual void ChangeGear<span class="br0">(</span>UBOOL bReverse<span class="br0">)</span>;
+	virtual void PackState<span class="br0">(</span><span class="br0">)</span>;
+<span class="co2">#endif</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>I find this interesting because I Have tried to make a rock that you could shoot and blow up(had health).</p>
+<p><b>Solid Snake:</b> This was written before SCar existed, aka UT2003. The above solution allowed for Karma to be replicated over the network thus allowing it to be used in network games for whatever reason you needed it for.</p>
+<p><b>ShrapnelMagnet:</b> I was hoping to replicate a simple box-like KActor in Unreal Tournament 2004. I'd like players to be able to roll boxes around in a little game, but I'm having trouble getting the KActor to replicate across the network. I see a lot of code here, but not being a big coder myself, I'm not sure what works or what doesn't. Any help would be appreciated, thanks.</p>
+<p><b>EricBlade:</b> Well, I have tested the above 2 sets of code, as well as the code from a package I found called "GoodKarma".. the "GoodKarma" developer appears to have disappeared off the face of the planet about a year or so ago, along with the small handful of users who claimed they'd seen it work. Not a bit of this seems to actually function, at least on engine build 2226. As far as I can tell, when running as dedicated server, karma is completely not simulated on the server. Using all three of the codes that I mentioned above, placing the modified kactor in a level, and using the following:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">simulated</span> <span class="kw1">function</span> DoPush<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+	<span class="kw1">local</span> <span class="kw5">vector</span> StartTrace, EndTrace, HitLocation, HitNormal;
+	<span class="kw1">local</span> <span class="kw9">Actor</span> hit;
+ 
+	StartTrace <span class="sy0">=</span> <span class="kw7">Location</span> <span class="sy0">+</span> EyePosition<span class="br0">(</span><span class="br0">)</span>;
+	EndTrace <span class="sy0">=</span> StartTrace <span class="sy0">+</span> <span class="nu0">196</span> <span class="sy0">*</span> <span class="kw5">vector</span><span class="br0">(</span><span class="kw9">Controller</span>.<span class="me0">GetViewRotation</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>;
+	hit <span class="sy0">=</span> <span class="kw4">Trace</span><span class="br0">(</span>HitLocation, HitNormal, EndTrace, StartTrace, <span class="kw6">true</span><span class="br0">)</span>;
+ 
+	Debug<span class="br0">(</span><span class="kw6">self</span><span class="sy0">$</span><span class="st0">": I hit a "</span><span class="sy0">$</span>hit<span class="br0">)</span>;
+	<span class="kw2">if</span><span class="br0">(</span>hit <span class="sy0">!=</span> <span class="kw5">None</span><span class="br0">)</span> <span class="br0">{</span>
+		hit.<span class="me0">KWake</span><span class="br0">(</span><span class="br0">)</span>;
+	   hit.<span class="kw4">KAddImpulse</span><span class="br0">(</span><span class="nu0">34000</span> <span class="sy0">*</span> <span class="br0">(</span><span class="sy0">-</span>hitnormal<span class="br0">)</span>, <span class="kw7">location</span><span class="br0">)</span>;
+	   bumpfactor <span class="sy0">=</span> <span class="nu0">7</span>; <span class="co1">// we add several wait-ticks before next bump, so we aren't adding that to it too</span>
+	<span class="br0">}</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>results in my log file on the server saying that my Pawn hit the "ball", accompanied by absolutely nothing. Same thing works in single player, with any of those codes. Logging the "ball"'s location property every tick, tells me that it's not moving anywhere, either. If I shoot it, it starts moving on the client, but not on the server.</p>
+<p>... and right after posting that, I had an apparently brilliant idea. Setting bClientOnly = false in DefaultProps doesn't work, but it does work if done in PreBeginPlay(). This results in the physics being simulated completely seperately on both ends. The code from the LawDogsKActor seems to get them following each other for the first tick or so, but very quickly you realise that the server has your KActor in a totally different place than the client put it. Foxpaw's seems to lock the KActor in place on the server, while making the client simulate somewhat slowly. The "GoodKarma" code has no effect over and above LawDogs.</p>
+<p><b>EricBlade:</b> Well, I spent all night playing with this, and thought I'd put up what I have, and see if anyone had any further suggestions. It's sort of a combination of all the code i've seen for dealing with this.. I was hoping to get something forgiveably accurate enough that I could do a little one-on-one soccer with, but unfortunatly, I don't think it's possible to get anywhere near that accurate.. but I will definitely take suggestions. The following code does not have a horribly lagging simulation, but at reasonably decent speeds using my test-ball (the severed head mesh from Land of the Dead), a moment or two after kicking it, the ball will snap into the place the server simulated it at, which is usually fairly close to where it came to rest on the client, however it can sometimes be quite a bit away. I also just now tested this on a test map that had about 6 of these on it. Then with only 2. Having more than one of these on a level causes absolute chaos, with the objects seemingly randomly warping about in the level.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">class</span> Ball <span class="kw1">extends</span> <span class="kw9">Actor</span>;
+ 
+<span class="kw1">var</span> <span class="kw5">float</span> MaxNetUpdateInterval;
+<span class="kw1">var</span> <span class="kw5">float</span> NextNetUpdateTime;
+<span class="kw1">var</span> <span class="kw5">float</span> LastUpdateTime;
+ 
+<span class="kw1">var</span> <span class="kw5">KRigidBodyState</span> KState;
+<span class="kw1">var</span> <span class="kw5">bool</span> bChanged;
+ 
+<span class="kw1">var</span> <span class="kw5">int</span> counter;
+ 
+ 
+<span class="kw1">struct</span> repinfo <span class="br0">{</span>
+	<span class="kw1">var</span> <span class="kw5">KRigidBodyState</span> <span class="kw1">state</span>;
+	<span class="kw1">var</span> <span class="kw5">float</span> timestamp;
+<span class="br0">}</span>;
+ 
+<span class="kw1">var</span> repinfo KRepState;
+ 
+<span class="kw1">replication</span>
+<span class="br0">{</span>
+    <span class="kw1">unreliable</span> <span class="kw2">if</span><span class="br0">(</span><span class="kw7">Role</span> <span class="sy0">==</span> <span class="kw7">ROLE_Authority</span><span class="br0">)</span>
+        KRepState, bChanged;
+<span class="br0">}</span>
+ 
+<span class="kw1">function</span> <span class="kw4">Tick</span><span class="br0">(</span><span class="kw5">float</span> Delta<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw2">if</span><span class="br0">(</span><span class="kw7">Role</span> <span class="sy0">==</span> <span class="kw7">ROLE_Authority</span><span class="br0">)</span> <span class="br0">{</span>
+	    <span class="kw2">if</span><span class="br0">(</span>KIsAwake<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+	        counter <span class="sy0">=</span> <span class="nu0">30</span>;
+	    <span class="br0">}</span> <span class="kw2">else</span> <span class="br0">{</span>
+	        <span class="kw2">if</span><span class="br0">(</span>counter <span class="sy0">&gt;</span> <span class="nu0">0</span><span class="br0">)</span> counter<span class="sy0">--</span>;
+	    <span class="br0">}</span>
+    	PackState<span class="br0">(</span><span class="br0">)</span>;
+    <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw1">function</span> PackState<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw2">if</span><span class="br0">(</span>counter <span class="sy0">&lt;</span> <span class="nu0">1</span> <span class="sy0">&amp;&amp;</span> <span class="sy0">!</span>KIsAwake<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+	    <span class="kw2">return</span>;
+    bChanged <span class="sy0">=</span> <span class="kw6">false</span>;
+    KGetRigidBodyState<span class="br0">(</span>KState<span class="br0">)</span>;
+ 
+    <span class="kw2">if</span><span class="br0">(</span><span class="kw3">VSize</span><span class="br0">(</span>KRBVecToVector<span class="br0">(</span>KState.<span class="me0">Position</span><span class="br0">)</span> <span class="sy0">-</span> KRBVecToVector<span class="br0">(</span>KRepState.<span class="kw1">state</span>.<span class="me0">Position</span><span class="br0">)</span><span class="br0">)</span> <span class="sy0">&gt;</span> <span class="nu0">10</span><span class="br0">)</span> <span class="br0">{</span>
+    	<span class="co1">//log(self@"Position Change");</span>
+        bChanged <span class="sy0">=</span> <span class="kw6">true</span>;
+    <span class="br0">}</span>
+    <span class="kw2">if</span><span class="br0">(</span><span class="kw3">VSize</span><span class="br0">(</span>KRBVecToVector<span class="br0">(</span>KState.<span class="me0">LinVel</span><span class="br0">)</span> <span class="sy0">-</span> KRBVecToVector<span class="br0">(</span>KRepState.<span class="kw1">state</span>.<span class="me0">LinVel</span><span class="br0">)</span><span class="br0">)</span> <span class="sy0">&gt;</span> <span class="nu0">10</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="co1">//log(self@"LinVel Change");</span>
+    	bChanged <span class="sy0">=</span> <span class="kw6">true</span>;
+    <span class="br0">}</span>
+    <span class="kw2">if</span><span class="br0">(</span><span class="kw3">VSize</span><span class="br0">(</span>KRBVecToVector<span class="br0">(</span>KState.<span class="me0">AngVel</span><span class="br0">)</span> <span class="sy0">-</span> KRBVecToVector<span class="br0">(</span>KRepState.<span class="kw1">state</span>.<span class="me0">AngVel</span><span class="br0">)</span><span class="br0">)</span> <span class="sy0">&gt;</span> <span class="nu0">10</span><span class="br0">)</span> <span class="br0">{</span>
+    	<span class="co1">//log(self@"AngVel");</span>
+        bChanged <span class="sy0">=</span> <span class="kw6">true</span>;
+    <span class="br0">}</span>
+    <span class="kw2">if</span><span class="br0">(</span>bChanged <span class="sy0">==</span> <span class="kw6">false</span> <span class="sy0">&amp;&amp;</span> <span class="kw7">Level</span>.<span class="me0">TimeSeconds</span> <span class="sy0">&gt;</span> NextNetUpdateTime<span class="br0">)</span> <span class="br0">{</span>
+    	<span class="co1">//log(self@"MaxNetUpdateInterval reached");</span>
+        bChanged <span class="sy0">=</span> <span class="kw6">true</span>;
+    <span class="br0">}</span>
+    <span class="kw2">if</span><span class="br0">(</span>bChanged <span class="sy0">==</span> <span class="kw6">true</span><span class="br0">)</span> <span class="br0">{</span>
+        KRepState.<span class="kw1">state</span> <span class="sy0">=</span> KState;
+        NextNetUpdateTime <span class="sy0">=</span> <span class="kw7">Level</span>.<span class="me0">TimeSeconds</span> <span class="sy0">+</span> MaxNetUpdateInterval;
+		KRepState.<span class="me0">timestamp</span> <span class="sy0">=</span> <span class="kw7">Level</span>.<span class="me0">TimeSeconds</span>;
+	<span class="br0">}</span>
+ 
+<span class="br0">}</span>
+ 
+<span class="kw1">simulated</span> <span class="kw1">event</span> <span class="kw5">bool</span> KUpdateState<span class="br0">(</span><span class="kw1">out</span> <span class="kw5">KRigidBodyState</span> newState<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw2">if</span><span class="br0">(</span><span class="kw7">Role</span> <span class="sy0">==</span> <span class="kw7">ROLE_Authority</span><span class="br0">)</span>
+        <span class="kw2">return</span> <span class="kw6">false</span>;
+    <span class="kw2">if</span><span class="br0">(</span>bChanged <span class="sy0">==</span> <span class="kw6">false</span><span class="br0">)</span> <span class="kw2">return</span> <span class="kw6">false</span>;
+    <span class="kw2">if</span><span class="br0">(</span>LastUpdateTime <span class="sy0">&gt;</span> KRepState.<span class="me0">timestamp</span><span class="br0">)</span> <span class="kw2">return</span> <span class="kw6">false</span>;
+    newState <span class="sy0">=</span> KRepState.<span class="kw1">state</span>;
+    LastUpdateTime <span class="sy0">=</span> KRepState.<span class="me0">timestamp</span>;
+	bChanged <span class="sy0">=</span> <span class="kw6">false</span>;
+    <span class="kw2">return</span> <span class="kw6">true</span>;
+<span class="br0">}</span>
+ 
+<span class="kw1">simulated</span> <span class="kw1">event</span> <span class="kw4">PreBeginPlay</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+	<span class="kw8">KarmaParams</span><span class="br0">(</span>KParams<span class="br0">)</span>.<span class="me0">bClientOnly</span> <span class="sy0">=</span> <span class="kw6">false</span>;
+<span class="br0">}</span>
+ 
+ 
+<span class="kw1">DefaultProperties</span>
+<span class="br0">{</span>
+	MaxNetUpdateInterval<span class="sy0">=</span><span class="nu0">0.2</span>
+	bBlockZeroExtentTraces <span class="sy0">=</span> <span class="kw6">true</span>
+	bBlockNonZeroExtentTraces <span class="sy0">=</span> <span class="kw6">true</span>
+    <span class="co1">//NetUpdateFrequency = 1</span>
+	<span class="co1">//bUpdateSimulatedPosition=true</span>
+	<span class="co1">//bGameRelevant=true</span>
+	bAlwaysRelevant<span class="sy0">=</span><span class="kw6">true</span>
+	bCollideWorld<span class="sy0">=</span><span class="kw6">true</span>
+	bNetNotify<span class="sy0">=</span><span class="kw6">true</span>
+	<span class="kw7">RemoteRole</span><span class="sy0">=</span><span class="kw7">ROLE_SimulatedProxy</span>
+	<span class="kw7">DrawScale</span><span class="sy0">=</span><span class="nu0">2.75</span>
+	<span class="kw7">Physics</span><span class="sy0">=</span><span class="kw7">PHYS_Karma</span>
+	<span class="kw2">Begin</span> <span class="kw8">Object</span> <span class="kw1">Class</span><span class="sy0">=</span><span class="kw8">KarmaParams</span> <span class="kw5">Name</span><span class="sy0">=</span>KParams0
+		bHighDetailOnly			<span class="sy0">=</span>	<span class="kw6">False</span>
+		bKNonSphericalInertia	<span class="sy0">=</span>	<span class="kw6">False</span>
+		KActorGravScale			<span class="sy0">=</span>	<span class="nu0">0.55</span>
+		KAngularDamping			<span class="sy0">=</span>	<span class="nu0">0.2</span>
+		KBuoyancy				<span class="sy0">=</span>	<span class="nu0">1.01</span>
+		KLinearDamping			<span class="sy0">=</span>	<span class="nu0">0.2</span>
+		KMass					<span class="sy0">=</span>	<span class="nu0">0.45</span>
+		KStartEnabled			<span class="sy0">=</span>	<span class="kw6">False</span>
+		KFriction				<span class="sy0">=</span>	<span class="nu0">0.40</span>
+		KRestitution			<span class="sy0">=</span>	<span class="nu0">0.50</span>
+		KImpactThreshold		<span class="sy0">=</span>	<span class="nu0">5</span>
+	End <span class="kw8">Object</span>
+	KParams<span class="sy0">=</span><span class="kw8">KarmaParams</span><span class="st0">'KParams0'</span>
+	<span class="kw5">StaticMesh</span><span class="sy0">=</span><span class="kw5">StaticMesh</span><span class="st0">'UZGMeshes.Body.Head'</span>
+	<span class="kw7">DrawType</span><span class="sy0">=</span><span class="kw7">DT_StaticMesh</span>
+<span class="co1">//	 bNoDelete=True</span>
+	 bCollideActors<span class="sy0">=</span><span class="kw6">True</span>
+	 bBlockActors<span class="sy0">=</span><span class="kw6">True</span>
+	 bBlockPlayers<span class="sy0">=</span><span class="kw6">True</span>
+	 bProjTarget<span class="sy0">=</span><span class="kw6">True</span>
+	 bBlockKarma<span class="sy0">=</span><span class="kw6">True</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<hr />
+<p><a href="Category_Legacy_Refactor_Me.html" title="Category:Legacy Refactor Me">Category:Legacy Refactor Me</a><br />
+<a href="Category_Legacy_Journal.html" title="Category:Legacy Journal">Category:Legacy Journal</a><br />
+<a href="Category_Legacy_To_Do.html" title="Category:Legacy To Do">Category:Legacy To Do</a> – If this really is stuff unique to <a href="Legacy_Karma.html" title="Legacy:Karma">Karma</a> and <a href="Legacy_Replication.html" title="Legacy:Replication">Replication</a> then <a href="https://wiki.beyondunreal.com/edit/Legacy:Replication/Karma?redlink=1" class="new" title="Legacy:Replication/Karma (page does not exist)">Replication/Karma</a>, <a href="https://wiki.beyondunreal.com/edit/Legacy:Karma/Replication?redlink=1" class="new" title="Legacy:Karma/Replication (page does not exist)">Karma/Replication</a> or <a href="https://wiki.beyondunreal.com/edit/Legacy:Karma_Replication?redlink=1" class="new" title="Legacy:Karma Replication (page does not exist)">Karma Replication</a> might be a better location for this. Otherwise this should probably be folded into the grand topic of <a href="Legacy_Replication.html" title="Legacy:Replication">Replication</a>. See <a href="Legacy_Replication/Discussing.html" title="Legacy:Replication/Discussing">Replication/Discussing</a></p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.132 seconds
+Real time usage: 0.134 seconds
+Preprocessor visited node count: 36/1000000
+Preprocessor generated node count: 144/1000000
+Post‐expand include size: 54/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:1605-0!*!0!!*!*!* and timestamp 20161215143401 and revision id 3987
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:KActor_Replication?oldid=3987">https://wiki.beyondunreal.com/Legacy:KActor_Replication?oldid=3987</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Legacy_Refactor_Me.html" title="Category:Legacy Refactor Me">Legacy Refactor Me</a></li><li><a href="Category_Legacy_Journal.html" title="Category:Legacy Journal">Legacy Journal</a></li><li><a href="Category_Legacy_To_Do.html" title="Category:Legacy To Do">Legacy To Do</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_KActor_Replication.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:KActor_Replication?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:KActor_Replication" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:KActor_Replication" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AKActor+Replication&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AKActor+Replication" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:KActor_Replication" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:KActor_Replication" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:KActor_Replication?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:KActor_Replication?oldid=3987" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:KActor_Replication" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 10:10, 19 November 2007.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":96});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:KActor_Replication by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:59:07 GMT -->
+</html>

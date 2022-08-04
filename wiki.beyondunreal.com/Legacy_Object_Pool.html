@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Object_Pool by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:53:18 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Object Pool - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Object_Pool" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Object_Pool" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_Object_Pool.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Object_Pool","wgTitle":"Object Pool","wgCurRevisionId":5579,"wgRevisionId":5579,"wgArticleId":2314,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Object_Pool","wgRelevantArticleId":2314,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Object_Pool skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>There is no spoon
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Object Pool</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#UT2003_Object_Pool"><span class="tocnumber">1</span> <span class="toctext">UT2003 Object Pool</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Overview"><span class="tocnumber">1.1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Allocating_Objects"><span class="tocnumber">1.2</span> <span class="toctext">Allocating Objects</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Freeing_Objects"><span class="tocnumber">1.3</span> <span class="toctext">Freeing Objects</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Important_Notes"><span class="tocnumber">1.4</span> <span class="toctext">Important Notes</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#You_should_clear_any_references_to_an_object_before_you_free_it_and_place_it_back_into_the_object_pool."><span class="tocnumber">1.4.1</span> <span class="toctext">You should clear any references to an object before you free it and place it back into the object pool.</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Properties_of_an_object_are_not_reset_to_default_when_placed_in_the_object_pool_but_instead_remain_intact."><span class="tocnumber">1.4.2</span> <span class="toctext">Properties of an object are not reset to default when placed in the object pool but instead remain intact.</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="UT2003_Object_Pool">UT2003 Object Pool</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Object_Pool?section=1" title="Edit section: UT2003 Object Pool">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Overview">Overview</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Object_Pool?section=2" title="Edit section: Overview">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The object pool allows you to dynamically assign and create objects during the game. A main use is that of allocating textures during the game as they are needed rather than creating all of them beforehand. This method is far easier and more versatile than manually creating all the files you may possibly need. There are of coures many other uses for the object pool but for this example I will use textures.</p>
+<h3><span class="mw-headline" id="Allocating_Objects">Allocating Objects</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Object_Pool?section=3" title="Edit section: Allocating Objects">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>When you allocate an object the game will first check if any existing objects of that type are available for use and if not, will create a new one to be used. Allocating an object is a simple process, here is an example using a shader.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">var</span> <span class="kw5">Shader</span> Shader1;
+ 
+Shader1 <span class="sy0">=</span> <span class="kw5">Shader</span><span class="br0">(</span><span class="kw7">Level</span>.<span class="kw8">ObjectPool</span>.<span class="me0">AllocateObject</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'Shader'</span><span class="br0">)</span><span class="br0">)</span>;
+</pre></div>
+</div>
+<p>That will first check the object pool for any existing Shader objects in the pool. If one is found it will be removed from the pool and returned as the reference. If none are available it will create a new Shader and return that instead.</p>
+<h3><span class="mw-headline" id="Freeing_Objects">Freeing Objects</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Object_Pool?section=4" title="Edit section: Freeing Objects">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Since most uses of the object pool are temporary you need to free up an object once you are done using it. This will add the object to the object pool for later use. This too is a simple process.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw7">Level</span>.<span class="kw8">ObjectPool</span>.<span class="me0">FreeObject</span><span class="br0">(</span>Shader1<span class="br0">)</span>;
+</pre></div>
+</div>
+<p>That line will add Shader1 back into the object pool where it can be re-allocated later as needed.</p>
+<table>
+<tr>
+<td></td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Important_Notes">Important Notes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Object_Pool?section=5" title="Edit section: Important Notes">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>While the object pool is very simple and powerful there are several things you should be aware of.</p>
+<h4><span class="mw-headline" id="You_should_clear_any_references_to_an_object_before_you_free_it_and_place_it_back_into_the_object_pool.">You should clear any references to an object before you free it and place it back into the object pool.</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Object_Pool?section=6" title="Edit section: You should clear any references to an object before you free it and place it back into the object pool.">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">var</span> <span class="kw5">Shader</span> Shader1;
+<span class="kw1">var</span> <span class="kw5">ConstantColor</span> Fader1;
+ 
+Fader1 <span class="sy0">=</span> <span class="kw5">ConstantColor</span><span class="br0">(</span><span class="kw7">Level</span>.<span class="kw8">ObjectPool</span>.<span class="me0">AllocateObject</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'ConstantColor'</span><span class="br0">)</span><span class="br0">)</span>;
+Shader1 <span class="sy0">=</span> <span class="kw5">Shader</span><span class="br0">(</span><span class="kw7">Level</span>.<span class="kw8">ObjectPool</span>.<span class="me0">AllocateObject</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'Shader'</span><span class="br0">)</span><span class="br0">)</span>;
+ 
+Shader1.<span class="me0">Opacity</span> <span class="sy0">=</span> Fader1;
+ 
+<span class="co1">//code here</span>
+ 
+<span class="kw7">Level</span>.<span class="kw8">ObjectPool</span>.<span class="me0">FreeObject</span><span class="br0">(</span>Fader1<span class="br0">)</span>;
+<span class="kw7">Level</span>.<span class="kw8">ObjectPool</span>.<span class="me0">FreeObject</span><span class="br0">(</span>Shader1<span class="br0">)</span>;
+</pre></div>
+</div>
+<p>Note that after allocating the Shader and ConstantColor I assign Fader1 as the opacity value for Shader1. I must be careful how I free these objects up once I am done with them. The code above is incorrect. You cannot properly free Fader1 because it is in use and referenced by Shader1. Although not necessarily required it is generally a good idea to manually clear the reference as well to ensure that no problems occur. Therefore the proper way to free these objects would be as follows.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+Shader1.<span class="me0">Opacity</span> <span class="sy0">=</span> <span class="kw5">None</span>;
+<span class="kw7">Level</span>.<span class="kw8">ObjectPool</span>.<span class="me0">FreeObject</span><span class="br0">(</span>Shader1<span class="br0">)</span>;
+<span class="kw7">Level</span>.<span class="kw8">ObjectPool</span>.<span class="me0">FreeObject</span><span class="br0">(</span>Fader1<span class="br0">)</span>;
+</pre></div>
+</div>
+<p>As I said this is not necessarily required but it should be done anyways to ensure maximum compatibility and avoid any possible problems. Even though problems relating to this seem rare we are dealing with objects not actors and any problems tend to cause a GPF crash so you are most likely better safe than sorry.</p>
+<table>
+<tr>
+<td></td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="Properties_of_an_object_are_not_reset_to_default_when_placed_in_the_object_pool_but_instead_remain_intact.">Properties of an object are not reset to default when placed in the object pool but instead remain intact.</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Object_Pool?section=7" title="Edit section: Properties of an object are not reset to default when placed in the object pool but instead remain intact.">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">var</span> <span class="kw5">Shader</span> Shader1;
+ 
+Shader1 <span class="sy0">=</span> <span class="kw5">Shader</span><span class="br0">(</span><span class="kw7">Level</span>.<span class="kw8">ObjectPool</span>.<span class="me0">AllocateObject</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'Shader'</span><span class="br0">)</span><span class="br0">)</span>;
+Shader1.<span class="me0">TwoSided</span> <span class="sy0">=</span> <span class="kw6">True</span>;
+ 
+<span class="kw7">Level</span>.<span class="kw8">ObjectPool</span>.<span class="me0">FreeObject</span><span class="br0">(</span>Shader1<span class="br0">)</span>;
+</pre></div>
+</div>
+<p>In that example we allocate a Shader, set the TwoSided variable to true, then free the Shader and place it back into the object pool. This creates a huge problem. When you free Shader1 the TwoSided variable is not reset but remains as you left it. The next person to allocate a Shader may now get one that has TwoSided set to true. This is not the default value so if they do not expect this it can cause major compatibility problems. Although you can reset the variables yourself before you free the object this only works for your code and there is no garuntee that other scripts also running will be as courteous. As you can imagine the lack of consistency with the objects you allocate can cause a great deal of problems. While you could manually set every variable of an object each time you allocate it there is a far more easy and effective solution to this problem. Instead of directly allocating the class you want create a custom subclass.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">class</span> MyTwoSidedShader <span class="kw1">extends</span> <span class="kw5">Shader</span>;
+ 
+<span class="kw1">defaultproperties</span>
+<span class="br0">{</span>
+	TwoSided<span class="sy0">=</span><span class="kw6">True</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>By using class'MyTwoSidedShader' instead of simply class'Shader' you ensure that nobody will be using objects of this type except you. Now you can assume with a reasonable amount of safety that the properties of these objects will not be changed unless you yourself change them. You can also save time, effort and performance by using default properties instead of having to manually set the variables every time you allocate the object. Overall it is a far cleaner and more compatible way of using the object pool.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.072 seconds
+Real time usage: 0.077 seconds
+Preprocessor visited node count: 68/1000000
+Preprocessor generated node count: 152/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:2314-0!*!*!!en!*!* and timestamp 20161215134915 and revision id 5579
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Object_Pool?oldid=5579">https://wiki.beyondunreal.com/Legacy:Object_Pool?oldid=5579</a>"</div>
+					<div id='catlinks' class='catlinks catlinks-allhidden'></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_Object_Pool.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Object_Pool?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Object_Pool" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Object_Pool" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AObject+Pool&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AObject+Pool" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Object_Pool" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Object_Pool" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Object_Pool?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Object_Pool?oldid=5579" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Object_Pool" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 18:51, 29 May 2003.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":84});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Object_Pool by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:53:18 GMT -->
+</html>

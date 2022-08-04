@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Bot_Vision by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Bot Vision - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Vision" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Vision" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_Bot_Vision.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Bot_Vision","wgTitle":"Bot Vision","wgCurRevisionId":1778,"wgRevisionId":1778,"wgArticleId":584,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Journal","Legacy Refactor Me"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Bot_Vision","wgRelevantArticleId":584,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Bot_Vision skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Gah - a solution with more questions. &#8211; EntropicLqd
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Bot Vision</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Bots can snipe through pea-soup fog...</p>
+<p><b>EntropicLqd:</b> I have a problem - my bots can snipe me from a mile away in dense fog. This is somewhat unfair since I can't actually see them (nor they me). I've tried reducing the bot's sight radius but that has had no effect. Anyone have any other thoughts on making the bots only able to see very close targets? I've included the code (from my mutator subclass) I'm using to adjust the sight radius below.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> ModifyPlayer<span class="br0">(</span> <span class="kw9">Pawn</span> Other <span class="br0">)</span> <span class="br0">{</span>
+	<span class="kw2">if</span> <span class="br0">(</span> Other.<span class="kw9">Controller</span> <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>	<span class="br0">{</span>
+		<span class="kw2">if</span> <span class="br0">(</span> Other.<span class="kw9">Controller</span>.<span class="me0">bIsPlayer</span> <span class="sy0">&amp;&amp;</span> <span class="sy0">!</span>Other.<span class="me0">IsHumanControlled</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span> <span class="br0">{</span>
+			<span class="kw3">Log</span><span class="br0">(</span><span class="st0">"Sight radius adjusted"</span><span class="br0">)</span>;
+<span class="co1">// repEndDist is the end distance of the fog</span>
+			Other.<span class="me0">SightRadius</span> <span class="sy0">=</span> repEndDist <span class="sy0">/</span> <span class="nu0">8</span>;
+		<span class="br0">}</span>
+	<span class="br0">}</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<dl>
+<dd><b>I'm still stuck on this one.</b></dd>
+</dl>
+<p><b>ZxAnPhOrIaN:</b> I need that code for my level, wich uses dense fog.</p>
+<p><b>EntropicLqd:</b> The SightRadius is reset within the function Bot.ResetSkill(). This in turn is called from Bot.Possess(), Bot.InitialiseSkill(), and Bot.Restart(). My guess is that the SightRadius value is being reset to it's original value after the ModifyPlayer() function is called. I'll have a go at proving that tonight if I get time.</p>
+<dl>
+<dd>What are the implicatons of changing the <i>Bot.Default.SightRadius</i> value within the mutator? Will it screw up subsequent normal games or will the value be reset with each new game?</dd>
+</dl>
+<p><b>Mychaeel:</b> In Unreal Tournament changes to a class's default properties persisted over level switches. I'm not so sure about that in UT2003 – it would be worth finding out for sure.</p>
+<p><b>EntropicLqd:</b> In UT2003 changes to a class's default properties persist not only over level changes, but also for the life of that instance of UT2003 - the value is not reset until you quit and re-load UT2003. Not only that but the SightRadius has bugger all effect on how far the bots can see to attack things - irrespective of what the code claims. I suspect the real problem lies within the AI attack code being able to pick out targets that the bot's <i>can't see</i> as it were.</p>
+<p><b>Foxpaw:</b> You could make a mutator that would subclass the bots - not the most compatible solution but maybe someone could find a better way. What you really want to do is to modify the Controller's PickTarget function... but you can't do that because it's native and final. So modify whatever calls it. Picktarget can take an argument that gives a maximum range for selecting a target. I'm not sure where it's called from. You could maybe call PickTarget every X amount of time (much more frequently than the bot's normally would) though that would not be very elegant. If you could find when the function is called you could maybe modify that function to pass an arbitrary maximum range to target people through the fog.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Bot_Vision_-_Better_than_X-Ray"><span class="tocnumber">1</span> <span class="toctext">Bot Vision - Better than X-Ray</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Finding_Objects_and_General_Navigation"><span class="tocnumber">1.1</span> <span class="toctext">Finding Objects and General Navigation</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Seeing_Enemies_and_Shooting_at_Them"><span class="tocnumber">1.2</span> <span class="toctext">Seeing Enemies and Shooting at Them</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#The_SightRadius_variable_and_its_effect_within_the_game:"><span class="tocnumber">2</span> <span class="toctext">The SightRadius variable and its effect within the game:</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#The_Problem:"><span class="tocnumber">2.1</span> <span class="toctext">The Problem:</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Solutions:"><span class="tocnumber">2.2</span> <span class="toctext">Solutions:</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#SeePlayer_function"><span class="tocnumber">3</span> <span class="toctext">SeePlayer function</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Discussion"><span class="tocnumber">4</span> <span class="toctext">Discussion</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Bot_Vision_-_Better_than_X-Ray">Bot Vision - Better than X-Ray</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Vision?section=1" title="Edit section: Bot Vision - Better than X-Ray">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>If you've ever spent any time attempting to make a mod that restricts the distance players can see, or their peripheral vision then you'll know that getting the Bots to behave in a believable manner is hard. This page will describe my on-going thoughts and musings on how to get things working in the manner you wish.</p>
+<h3><span class="mw-headline" id="Finding_Objects_and_General_Navigation">Finding Objects and General Navigation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Vision?section=2" title="Edit section: Finding Objects and General Navigation">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Now, in general a Bot's view of the world is a network of nodes. Some of the paths between the nodes are "more expensive" than others, and a Bot will generally try and take the easiest path to wherever it is trying to get to. Generally, this may be armour, health, a weapon, or another pick up. Left to it's own devices a Bot will quite happily run around a level collecting stuff. The Bot knows where everything on the level is - because it can navigate through the network of nodes to find any object in the level. Remember, the nodes are placed on the level as <a href="Legacy_PathNode.html" title="Legacy:PathNode">PathNode</a> objects, Inventory items, and other such stuff.</p>
+<p>When a Bot has decided to go somewhere it stores information about it's route through the level in its Controller. This makes sense - the controller is responsible to directing the Bot, and the pawn (representing the Bot in game) is responsible for the animation. This distinction is more or less true. I'm not convinced that it is as cut and dried as that. It's best to think of the Controller as the Bot's brain, and the Pawn as the Bot's representation in the world.</p>
+<p>The Controller class has some useful attributes to support this navigation, reproduced below for your pleasure and enjoyment.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">var</span> <span class="kw9">Actor</span>     RouteCache<span class="br0">[</span><span class="nu0">16</span><span class="br0">]</span>; <span class="co1">// A cache of pathnodes the Bot needs to travel along to reach its goal?</span>
+<span class="kw1">var</span> <span class="br0">[</span><span class="br0">[</span><span class="kw8">ReachSpec</span><span class="br0">]</span><span class="br0">]</span> CurrentPath;
+<span class="kw1">var</span> <span class="kw5">vector</span>    CurrentPathDir; <span class="co1">// Direction the bot needs to travel to remain on it's "path"</span>
+<span class="kw1">var</span> <span class="kw9">Actor</span>     RouteGoal;      <span class="co1">// final destination for current route</span>
+<span class="kw1">var</span> <span class="kw5">float</span>     RouteDist;      <span class="co1">// total distance for current route</span>
+<span class="kw1">var</span> <span class="kw5">float</span>     LastRouteFind;  <span class="co1">// time at which last route finding occured</span>
+ 
+<span class="co1">// Some useful functions for Bot navigation are:</span>
+<span class="co1">//Navigation functions - return the next path toward the goal</span>
+<span class="kw1">native</span><span class="br0">(</span><span class="nu0">518</span><span class="br0">)</span> <span class="kw1">final</span> <span class="kw1">function</span> <span class="kw9">Actor</span> FindPathTo<span class="br0">(</span><span class="kw5">vector</span> aPoint<span class="br0">)</span>;
+<span class="kw1">native</span><span class="br0">(</span><span class="nu0">517</span><span class="br0">)</span> <span class="kw1">final</span> <span class="kw1">function</span> <span class="kw9">Actor</span> FindPathToward<span class="br0">(</span><span class="kw9">actor</span> anActor, <span class="kw1">optional</span> <span class="kw5">bool</span> bWeightDetours<span class="br0">)</span>;
+<span class="kw1">native</span> <span class="kw1">final</span> <span class="kw1">function</span> <span class="kw9">Actor</span> FindPathToIntercept<span class="br0">(</span><span class="kw9">Pawn</span> P, <span class="kw9">Actor</span> RouteGoal, <span class="kw1">optional</span> <span class="kw5">bool</span> bWeightDetours<span class="br0">)</span>;
+<span class="kw1">native</span> <span class="kw1">final</span> <span class="kw1">function</span> <span class="kw9">Actor</span> FindPathTowardNearest<span class="br0">(</span>class<span class="sy0">&lt;</span>NavigationPoint<span class="sy0">&gt;</span> GoalClass, <span class="kw1">optional</span> <span class="kw5">bool</span> bWeightDetours<span class="br0">)</span>;
+<span class="kw1">native</span><span class="br0">(</span><span class="nu0">525</span><span class="br0">)</span> <span class="kw1">final</span> <span class="kw1">function</span> <span class="kw9">NavigationPoint</span> FindRandomDest<span class="br0">(</span><span class="br0">)</span>;
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="Seeing_Enemies_and_Shooting_at_Them">Seeing Enemies and Shooting at Them</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Vision?section=3" title="Edit section: Seeing Enemies and Shooting at Them">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>So, how do Bots see other players? Well, there are a few functions and attributes that would appear to affect this part of the Bot's behaviour. In my experience none of them seem to work well in low visibility conditions. I've listed all the ones I can find below.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="co1">// From the Controller class</span>
+<span class="kw5">float</span> FovAngle; <span class="co1">// The Field of View from the player's (human or bot) point of view</span>
+ 
+<span class="co1">// Enemy information</span>
+<span class="kw1">var</span> <span class="kw9">Pawn</span>   Enemy;         <span class="co1">// A reference to the current Enemy of the bot</span>
+<span class="kw1">var</span> <span class="kw9">Actor</span>  Target;
+<span class="kw1">var</span> <span class="kw5">vector</span> LastSeenPos;   <span class="co1">// enemy position when I last saw enemy (auto updated if EnemyNotVisible() enabled)</span>
+<span class="kw1">var</span> <span class="kw5">vector</span> LastSeeingPos; <span class="co1">// position where I last saw enemy (auto updated if EnemyNotVisible enabled)</span>
+<span class="kw1">var</span> <span class="kw5">float</span>  LastSeenTime;
+ 
+<span class="co1">// LineOfSightTo() returns true if any of several points of Other is visible (origin, top, bottom)</span>
+<span class="kw1">native</span><span class="br0">(</span><span class="nu0">514</span><span class="br0">)</span> <span class="kw1">final</span> <span class="kw1">function</span> <span class="kw5">bool</span> LineOfSightTo<span class="br0">(</span><span class="kw9">actor</span> Other<span class="br0">)</span>;
+ 
+<span class="co1">// CanSee() similar to line of sight, but also takes into account Pawn's peripheral (how big is that?) vision</span>
+<span class="kw1">native</span><span class="br0">(</span><span class="nu0">533</span><span class="br0">)</span> <span class="kw1">final</span> <span class="kw1">function</span> <span class="kw5">bool</span> CanSee<span class="br0">(</span><span class="kw9">Pawn</span> Other<span class="br0">)</span>; 
+ 
+<span class="kw1">function</span> <span class="kw5">bool</span> WouldReactToSeeing<span class="br0">(</span><span class="kw9">Pawn</span> Seen<span class="br0">)</span>
+<span class="kw1">event</span> HearNoise<span class="br0">(</span> <span class="kw5">float</span> Loudness, <span class="kw9">Actor</span> NoiseMaker<span class="br0">)</span>;
+<span class="kw1">event</span> SeePlayer<span class="br0">(</span> <span class="kw9">Pawn</span> Seen <span class="br0">)</span>;	<span class="co1">// called when a player (bIsPlayer==true) pawn is seen</span>
+<span class="kw1">event</span> SeeMonster<span class="br0">(</span> <span class="kw9">Pawn</span> Seen <span class="br0">)</span>;	<span class="co1">// called when a non-player (bIsPlayer==false) pawn is seen</span>
+<span class="kw1">event</span> EnemyNotVisible<span class="br0">(</span><span class="br0">)</span>;
+ 
+ 
+<span class="co1">// From the ScriptedController class</span>
+<span class="kw1">function</span> <span class="kw5">bool</span> CheckIfNearPlayer<span class="br0">(</span><span class="kw5">float</span> Distance<span class="br0">)</span>;
+ 
+ 
+<span class="co1">// From the Bot class</span>
+<span class="co1">// Calls the CanAttack() function of the current weapon to see if Other is in range</span>
+<span class="kw1">function</span> <span class="kw5">bool</span> CanAttack<span class="br0">(</span><span class="kw9">Actor</span> Other<span class="br0">)</span>;
+ 
+<span class="kw1">event</span> SeePlayer<span class="br0">(</span><span class="kw9">Pawn</span> SeenPlayer<span class="br0">)</span>; <span class="co1">// Called when a player has been seen</span>
+<span class="kw1">function</span> SetPeripheralVision<span class="br0">(</span><span class="br0">)</span>; <span class="co1">// Set's the peripheral vision of a Bot based on skill</span>
+ 
+<span class="co1">// SetAlertness()</span>
+<span class="co1">// Change creature's alertness, and appropriately modify attributes used by engine for</span>
+<span class="co1">// determining seeing and hearing.  SeePlayer() is affected by PeripheralVision, and</span>
+<span class="co1">// also by SightRadius and the target's visibility HearNoise() is affected by HearingThreshold</span>
+<span class="kw1">function</span> SetAlertness<span class="br0">(</span><span class="kw5">float</span> NewAlertness<span class="br0">)</span>;
+ 
+<span class="co1">// Attempts to determine if Bot has line of sight to Target deltatime from now.</span>
+<span class="kw1">function</span> <span class="kw5">bool</span> CheckFutureSight<span class="br0">(</span><span class="kw5">float</span> deltatime<span class="br0">)</span>;
+</pre></div>
+</div>
+<p>Irritatingly the control for the Bot's "sight" does not solely rest with the Controller. There are some attributes of the <a href="Legacy_Pawn.html" title="Legacy:Pawn">Pawn</a> class that have an impact. The most obvious one of these is <b>SightRadius</b>, which is allegdly the Bot's maximum seeing distance. However, as I have proved conclusively the Bot's maximum seeing distance&#160;!= the Bot's attacking distance.</p>
+<h2><span class="mw-headline" id="The_SightRadius_variable_and_its_effect_within_the_game:">The SightRadius variable and its effect within the game:</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Vision?section=4" title="Edit section: The SightRadius variable and its effect within the game:">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>I've experimented a lot with AI and this SightRadius variable while developing AI for CasterMod. I found out, that the suggestions on this page are not completely right about this variable and the AI function. <b>THE SIGHTRADIUS VARIABLE DOES DETERMINE HOW FAR A BOT CAN SEE OPPONENTS.</b></p>
+<h3><span class="mw-headline" id="The_Problem:">The Problem:</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Vision?section=5" title="Edit section: The Problem:">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The real problem here is that, once it has an enemy assigned, it tries to attack if possible. There are as mentioned above a load of functions to tell the bot what it can see. Three of them are of major importance. These are <b>LineOfSightTo()</b>, <b>CanSee()</b> and <b>SeePlayer()</b>.</p>
+<ul>
+<li><b>LineOfSightTo()</b>
+<ul>
+<li>LineOfSightTo() sais whether anything (solid as world geometry) blocks the direct view to the enemy. It does not consider FOV or SightRadius of the bot.</li>
+</ul>
+</li>
+<li><b>CanSee()</b>
+<ul>
+<li>CanSee() goes a step further. It checks the LineOfSightTo() and then checks whether the enemy is in the bots FOV. It still does not use the SightRadius for calculation.</li>
+</ul>
+</li>
+<li><b>SeePlayer()</b>
+<ul>
+<li>Now in contrast to the two functions above SeePlayer() takes everything , means LineOfSight, FOV and SightRadius into account, but as you can see it is not a boolean function, but an event called natively. What it does is to assign an enemy it sees just now. This can also be done by HearNoise() without being able to see the enemy or by getting hit by an enemy. After that assignment of an enemy the bot only uses LineOfSight() and CanSee() to check whether it can still see the enemy. That is the main problem.</li>
+</ul>
+</li>
+</ul>
+<h3><span class="mw-headline" id="Solutions:">Solutions:</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Vision?section=6" title="Edit section: Solutions:">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>I worked out some solutions which I currently implement into CasterMod. For one thing enemies should only be assigned if the bot does see them, so if it hears a noise it should not take on the enemy that produced it, but instead turn to the source of the noise. If it can now properly see the enemy SeePlayer() gets called by the engine. Problem 1 solved.</p>
+<p>Now to keep the bot from shooting at enemies it can't see we have to create a new function for check if it can see them properly. My experiments with this variable and the SeePlayer() function had the following result. SightRadius is the maximum range a bot can see some player with the Visibility==128 (default). So it can see someone with Visibility==255 almost twice as wide.</p>
+<p>This results in a simple UScript function for the check:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> <span class="kw5">bool</span> IsVisibleToMe<span class="br0">(</span><span class="kw9">Pawn</span> ThisPawn<span class="br0">)</span>
+<span class="br0">{</span>
+      <span class="kw1">local</span> <span class="kw5">float</span> Distance;         <span class="co1">//Distance between my pawn and pawn in question</span>
+      <span class="kw1">local</span> <span class="kw5">float</span> VisFactor;        <span class="co1">//converted visibility of enemy in float ranging from 0-2</span>
+ 
+      <span class="kw2">If</span> <span class="br0">(</span><span class="sy0">!</span>CanSee<span class="br0">(</span>ThisPawn<span class="br0">)</span><span class="br0">)</span>        <span class="co1">//view blocked or looking in other direction</span>
+             <span class="kw2">return</span> <span class="kw6">false</span>;
+ 
+      Distance <span class="sy0">=</span> <span class="kw3">VSize</span><span class="br0">(</span>ThisPawn.<span class="kw7">Location</span> <span class="sy0">-</span> <span class="kw9">Pawn</span>.<span class="kw7">Location</span><span class="br0">)</span>;
+      VisFactor <span class="sy0">=</span> ThisPawn.<span class="me0">Visibility</span> <span class="sy0">/</span> <span class="nu0">128</span>;
+ 
+      <span class="kw2">If</span> <span class="br0">(</span> <span class="br0">(</span>Distance<span class="sy0">/</span>VisFactor<span class="br0">)</span> <span class="sy0">&lt;=</span> <span class="kw9">Pawn</span>.<span class="me0">SightRadius</span><span class="br0">)</span> <span class="co1">//can see enemy</span>
+             <span class="kw2">return</span> <span class="kw6">true</span>;
+      <span class="kw2">return</span> <span class="kw6">false</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Now you'd have to replace the CanSee() and LineOfSightTo() calls everywhere you feel it's necessary with this function, e.g. before shooting someone. Notice that you may have to go very deeply into the bot code in order to do this.</p>
+<p>Then you'd have to change SightRadius accordingly to the conditions in the Zone the bot is in. If there's distance fog in closer range then SightRadius, set SightRadius to fog distance. Anyway, you should change the default SightRadius value from 12000 to sth., well, about 3000-4000. This is about as far away as you could usually notice an opponent in game as a human being without sniperrifle. Hope this contribution helped you understanding how bot vision basically works in Ut200x.:)</p>
+<p><i>(by Hazard.ep)</i></p>
+<p><b>ZxAnPhOrIaN:</b> Is sight radius how far the bot can see weapons, powerups, triggers, etc?</p>
+<p><b>Wormbo:</b> It would be possible to reset the bot's target to None from an external actor if the distance to the enemy gets too big. The Tick function might be handy (and hacky&#160;;)) here.</p>
+<p><b>UArch</b> would be intresting to expand this and add light/shadow detection into it, could be useful for stealth based games (like thievery for ut), i created a small mutator which adjusts pawns visibility so you can be stealthy in unreal/ut against the monsters (fun in coop)</p>
+<h2><span class="mw-headline" id="SeePlayer_function">SeePlayer function</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Vision?section=7" title="Edit section: SeePlayer function">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>This function is called by the engine on the AI when it can see a pawn where bIsPlayer == true. It is not called every tick, but instead at a rate based on the visibility of the pawn being seen and the distance between the AI and the pawn compared to the sightradius value of the AI's pawn. This is not a steady rate, but a rather sporadic one, especially near the lower threshold (I'm not sure how this rate is calculated).</p>
+<p>There is a simple threshold to this function. It is only called if the distance/sighradius &lt;= visibility/128. This means that by changing the visibility of a pawn the range at which the AI can see it can be decreased or increased.</p>
+<p>i.e. if a pawn's visibility is 64, it can only be seen when closer than half the AI's sightradius.</p>
+<h2><span class="mw-headline" id="Discussion">Discussion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Vision?section=8" title="Edit section: Discussion">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>SuperApe:</b> This page looks to be exclusively related to modding with bots in mind. I do not think this should be refactored into the bot navigation family of pages. This should be linked by and grouped with Mod-related pages only.</p>
+<hr />
+<p><a href="Category_Legacy_Journal.html" title="Category:Legacy Journal">Category:Legacy Journal</a></p>
+<p><a href="Category_Legacy_Refactor_Me.html" title="Category:Legacy Refactor Me">Category:Legacy Refactor Me</a> – Find a place for this in terms of Modding for bots.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.073 seconds
+Real time usage: 0.075 seconds
+Preprocessor visited node count: 69/1000000
+Preprocessor generated node count: 132/1000000
+Post‐expand include size: 20/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:584-0!*!0!!en!*!* and timestamp 20161215143154 and revision id 1778
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Bot_Vision?oldid=1778">https://wiki.beyondunreal.com/Legacy:Bot_Vision?oldid=1778</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Legacy_Journal.html" title="Category:Legacy Journal">Legacy Journal</a></li><li><a href="Category_Legacy_Refactor_Me.html" title="Category:Legacy Refactor Me">Legacy Refactor Me</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_Bot_Vision.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Bot_Vision?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Bot_Vision" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Bot_Vision" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ABot+Vision&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ABot+Vision" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Bot_Vision" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Bot_Vision" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Bot_Vision?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Bot_Vision?oldid=1778" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Bot_Vision" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 11:55, 18 November 2007.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":100});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Bot_Vision by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:52 GMT -->
+</html>

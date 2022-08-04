@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Basic_ScriptedPawn_Tutorial by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Basic ScriptedPawn Tutorial - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_Basic_ScriptedPawn_Tutorial.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Basic_ScriptedPawn_Tutorial","wgTitle":"Basic ScriptedPawn Tutorial","wgCurRevisionId":1950,"wgRevisionId":1950,"wgArticleId":662,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Mapping","Legacy Tutorial"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Basic_ScriptedPawn_Tutorial","wgRelevantArticleId":662,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Basic_ScriptedPawn_Tutorial skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Worst-case scenario: the UEd Goblin wipes the map and burns down your house.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Basic ScriptedPawn Tutorial</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This is a tutorial that sets up a UT NPC (Monster) via <a href="Legacy_ScriptedPawn.html" title="Legacy:ScriptedPawn">ScriptedPawn</a>.</p>
+<p>For a tutorial on using UT2004 <a href="Legacy_Monster.html" title="Legacy:Monster">Monsters</a>, see <a href="Legacy_A_UT2004_Monster_Tutorial.html" title="Legacy:A UT2004 Monster Tutorial">A UT2004 Monster Tutorial</a>.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Prerequisites"><span class="tocnumber">1</span> <span class="toctext">Prerequisites</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Overview"><span class="tocnumber">2</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Tutorial"><span class="tocnumber">3</span> <span class="toctext">Tutorial</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Setting_Up"><span class="tocnumber">3.1</span> <span class="toctext">Setting Up</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#Classes_Used"><span class="tocnumber">3.1.1</span> <span class="toctext">Classes Used</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="#Retreating"><span class="tocnumber">3.2</span> <span class="toctext">Retreating</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Alarm"><span class="tocnumber">3.3</span> <span class="toctext">Alarm</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Waiting"><span class="tocnumber">3.4</span> <span class="toctext">Waiting</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Ambushing"><span class="tocnumber">3.5</span> <span class="toctext">Ambushing</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Patroling"><span class="tocnumber">3.6</span> <span class="toctext">Patroling</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Guarding"><span class="tocnumber">3.7</span> <span class="toctext">Guarding</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#PawnSpecific_Orders"><span class="tocnumber">3.8</span> <span class="toctext">PawnSpecific Orders</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#CreatureFactory_and_SpawnPoints"><span class="tocnumber">3.9</span> <span class="toctext">CreatureFactory and SpawnPoints</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#External_Links"><span class="tocnumber">4</span> <span class="toctext">External Links</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Steve_Polge.27s_Docs"><span class="tocnumber">4.1</span> <span class="toctext">Steve Polge's Docs</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Matthias_Worch.27s_Tutorials"><span class="tocnumber">4.2</span> <span class="toctext">Matthias Worch's Tutorials</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#Related_Topics"><span class="tocnumber">5</span> <span class="toctext">Related Topics</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Discussion"><span class="tocnumber">6</span> <span class="toctext">Discussion</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Prerequisites">Prerequisites</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial?section=1" title="Edit section: Prerequisites">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>You should already be familiar with <a href="Legacy_Bot_Pathing.html" title="Legacy:Bot Pathing">Bot Pathing</a>, <a href="Legacy_Testing_Botplay.html" title="Legacy:Testing Botplay">Testing Botplay</a> and <a href="Legacy_Bot_Mind.html" title="Legacy:Bot Mind">Bot Mind</a>. Although we're not dealing with bots, creatures use the same bot path network and perform many similar actions in navigation. You should also be familiar with the properties available on <a href="Legacy_ScriptedPawn.html" title="Legacy:ScriptedPawn">ScriptedPawn</a>.</p>
+<h2><span class="mw-headline" id="Overview">Overview</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial?section=2" title="Edit section: Overview">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>"Scripting" <a href="Legacy_Pawn_(UT).html" title="Legacy:Pawn (UT)">Pawn (UT)s</a> was a common practice for mappers in <a href="Legacy_UT.html" title="Legacy:UT" class="mw-redirect">UT</a>. Whether scripting advanced bot support or setting up monsters to patrol the level, the native AI of the UT Pawns was used in conjuction with <a href="Legacy_AIScript.html" title="Legacy:AIScript">AIScripts</a> to create relatively realistic behavior.</p>
+<p>This tutorial will show how to implement UT creatures, subclasses of ScriptedPawn.</p>
+<h2><span class="mw-headline" id="Tutorial">Tutorial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial?section=3" title="Edit section: Tutorial">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>This is a general tutorial and guide designed to demonstrate the implementation of several different creatures set to perform several different tasks. After completing this tutorial, you should have a good idea how these AI functions work and be able to experiment combining them in different ways, with different settings, etc.</p>
+<h3><span class="mw-headline" id="Setting_Up">Setting Up</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial?section=4" title="Edit section: Setting Up">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>You should start with a bot pathed map that is working properly. See also <a href="Legacy_Bot_Pathing.html" title="Legacy:Bot Pathing">Bot Pathing</a>.</p>
+<h4><span class="mw-headline" id="Classes_Used">Classes Used</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial?section=5" title="Edit section: Classes Used">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<ul>
+<li><a href="Legacy_ScriptedPawn.html" title="Legacy:ScriptedPawn">ScriptedPawn</a></li>
+<li><a href="Legacy_HomeBase.html" title="Legacy:HomeBase">HomeBase</a></li>
+<li><a href="Legacy_AlarmPoint.html" title="Legacy:AlarmPoint">AlarmPoint</a></li>
+<li><a href="Legacy_AmbushPoint.html" title="Legacy:AmbushPoint">AmbushPoint</a></li>
+<li><a href="Legacy_PatrolPoint.html" title="Legacy:PatrolPoint">PatrolPoint</a></li>
+<li><a href="Legacy_CreatureFactory.html" title="Legacy:CreatureFactory">CreatureFactory</a></li>
+<li><a href="Legacy_SpawnPoint.html" title="Legacy:SpawnPoint">SpawnPoint</a></li>
+</ul>
+<h3><span class="mw-headline" id="Retreating">Retreating</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial?section=6" title="Edit section: Retreating">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This is an automatic function rather than an explicit Order. The creature can be made to retreat to a specific spot if hurt or otherwise frightened.</p>
+<ol>
+<li>Place a creature in the map and enter a unique Tag that will be used to associate this creature with a HomeBase.</li>
+<li>Place a HomeBase somewhere in the map. This will the place the creature will retreat to. Likely places to retreat to include out of the way places, spots "deeper" into the map's layout or objective sequence, or where other creatures can be found to help this creature in combat.</li>
+<li>Enter the Tag of the HomeBase to match the creature's Tag.</li>
+<li>Decide an appropriate Extend to set for the HomeBase. This is the radius (in UU) that the creature's "home" extends from the HomeBase actor. Note that the creature will only consider themselves at "home" if they are within the Extend and have a line of sight to the HomeBase.</li>
+<li>Decide an appropriate LookDir for the HomeBase. This is the direction the creature will face once they are at "home."</li>
+</ol>
+<h3><span class="mw-headline" id="Alarm">Alarm</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial?section=7" title="Edit section: Alarm">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Although this is not an explicit Order, Alarm functions can direct a creature to perform complex tasks when an enemy player is first seen. In practical terms, the creature will attempt to perform these tasks at all cost. After the task is complete, the creature will attack the enemy, if still available. After combat, the creature will return to a RestFormation or resume it's normal Orders.</p>
+<ol>
+<li>Place a creature in the map and enter a unique AlarmTag that will be used to associate this creature with it's AlarmPoint.</li>
+<li>Place an AlarmPoint in a spot that will represent a destination for the task the creature is to perform once "alarmed". This could be a spot near other creatures to help in combat, it could be an actual alarm trigger (a switch the creature activates to set off an audible alarm sound), or it could be a better tactical position to attack from. While the specific tasks the creature is to perform can vary, the main idea is that it will travel to this AlarmPoint once "alarmed".</li>
+<li>You may add additional AlarmPoints as long as they all have a unique Tag. Place as many additional AlarmPoints as you like. These will make the creature travel from the first AlarmPoint to the next in a series until the last AlarmPoint is reached.</li>
+<li>Enter the Tag of the next AlarmPoint in the NextAlarm property of this AlarmPoint. Move on to the next AlarmPoint in the series and continue to enter the NextAlarm property until all are properly associated.</li>
+<li>Decide if the creature should perform a specific animation sequence when this AlarmPoint is reached. If so, enter the name of the animation sequence in the AlarmAnim property of the AlarmPoint. A list of animation sequece names can be found in the <a href="Legacy_Mesh_Browser.html" title="Legacy:Mesh Browser">Mesh Browser</a>. Note that animation sequences are specific to the creature used.</li>
+<li>Decide if the creature should play a specific sound while at this AlarmPoint. Enter the sound in the AlarmSound property of the AlarmPoint.</li>
+<li>If no AlarmAnim is used, decide if the creature should pause and play default waiting animations when this AlarmPoint is reached. Enter the time to pause (in seconds) in the PauseTime property on the AlarmPoint.</li>
+<li>The creature can be made to shoot at any actor when this AlarmPoint is reached. Enter the Tag of the actor in the ShootTarget property on this AlarmPoint.</li>
+</ol>
+<p>Note: The AlarmPoint actor has many other properties with which to adjust the creature's behavior. In conjunction with other AlarmPoints, Triggers, etc., the creature can be made to perform complex behavior once a player enemy is detected. See also <a href="Legacy_AlarmPoint.html" title="Legacy:AlarmPoint">AlarmPoint</a>. <i>(See also Steve Polge's guide linked to at the bottom of this page. Some properties on the AlarmPoint page here on the wiki are suspect.)</i></p>
+<h3><span class="mw-headline" id="Waiting">Waiting</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial?section=8" title="Edit section: Waiting">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This is the default Order. The creature will wait near its location, sometimes randomly wandering, until a player enemy is seen to attack. After combat, the creature will return to a waiting state.</p>
+<ol>
+<li>Place a creature in the map and enter "Waiting" in the Orders property, if it isn't already set.</li>
+<li>That's it. You may want to rotate the creature to face a particular direction at match start, but after a short while, it will wander and change it's location and rotation on its own.</li>
+</ol>
+<h3><span class="mw-headline" id="Ambushing">Ambushing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial?section=9" title="Edit section: Ambushing">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The creature will find a place to wait in ambush for a player to attack. Once combat is over, the creature will find another spot to ambush from and again wait for a player to attack.</p>
+<ol>
+<li>Place a creature in the map and enter "Ambushing" in the Orders property.</li>
+<li>Enter a unique OrderTag that will be used to associate this creature with it's AmbushPoints.</li>
+<li>Place AmbushPoints in the map at places where the creature can reach, can watch out for players, and hopefully can attack from with some element of suprise. A ledge, a side passage or a hole are likely places to Ambush from. Place as many as you like.</li>
+<li>Enter the Tag of these AmbushPoints to match your creature's OrderTag. This will associate the creature to these AmbushPoints.</li>
+<li>Decide whether to set bFixedStart to true on the creature or not. If true, the creature will always start the match at the placed position and travel to a random AmbushPoint to ambush players. If false, the creature will be teleported to a random AmbushPoint at match start.</li>
+<li>Decide whether to set bSniping to true on the various AmbushPoints. If true, the creature will likely snipe from that position when it sees a player to attack.</li>
+<li>Adjust the SightRadius on the various AmbushPoints, if necessary. This is the radius (in UU) that will be used by the creature when it is waiting to ambush at this point.</li>
+</ol>
+<h3><span class="mw-headline" id="Patroling">Patroling</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial?section=10" title="Edit section: Patroling">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The creature will move from spot to spot in a patrol route until a player enemy is seen to attack. After combat, the creature will return to the patrol route and continue to patrol.</p>
+<ol>
+<li>Place a creature in your map and enter "Patroling" in the Orders property.</li>
+<li>Enter a unique OrderTag that will be used to match this creature with a starting PatrolPoint. <i>(suggested name, "Patrol1")</i></li>
+<li>Place a series of PatrolPoints in the map to define the patroling route for this creature. The creature will follow the normal path network to get from PatrolPoint to PatrolPoint, so you do not need to define each corner. Instead, find places that might be good to have this creature pause while patroling. A room, a lookout, a switchback or dead end are likely places to place PatrolPoints. Place as many as you like.</li>
+<li>Enter the Tag of the first PatrolPoint to match the creature's OrderTag. This will associate the creature with this patrol route and further associate this PatrolPoint as the creature's start.</li>
+<li>Enter the NextPatrol property of this PatrolPoint to match the Tag of the next PatrolPoint in the series along this patrol route. Enter the Tag of the next PatrolPoint to match.</li>
+<li>Repeat 4-5 until the patrol route is defined. Match the NextPatrol property of the last PatrolPoint with the Tag of the first PatrolPoint in the route to complete the loop.</li>
+<li>Decide whether to set bFixedStart to true on the creature. If true, the creature will always start the match at the placed position and travel to the starting PatrolPoint. If false, the creature will be teleported to the starting PatrolPoint at match start.</li>
+<li>Decide whether to set bDelayedPatrol to true on the creature. If true, the creature will wait at the placed location until it is triggered before it will travel to the first PatrolPoint and begin the patrol.</li>
+<li>Decide whether the creature should perform a specific animation sequence while at this PatrolPoint. The creature can be made to play an animation, pause using standard waiting animations or neither and simply move on to the next PatrolPoint. If a specific animation sequence is desired, enter the name of the sequence in the PatrolAnim property of the PatrolPoint. A list of animation sequences can be found in the <a href="Legacy_Mesh_Browser.html" title="Legacy:Mesh Browser">Mesh Browser</a>. Note that animation sequences are specific to the creature used.</li>
+<li>If an animation sequence is used, the creature can be made to loop the animation sequence a number of times. Enter the desired number of sequence loops in the NumAnims property of the PatrolPoint.</li>
+<li>Decide whether the creature should play a specific sound while performing an animation sequence at this PatrolPoint. Enter the sound in the PatrolSound property of the PatrolPoint.</li>
+<li>If no PatrolAnim is defined but a pause is desired, enter the number of seconds to pause in the PauseTime properties of the PatrolPoint.</li>
+</ol>
+<h3><span class="mw-headline" id="Guarding">Guarding</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial?section=11" title="Edit section: Guarding">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The creature will guard an item. It will stay at its placed location until an enemy player is seen, when it will challenge the player to combat. After combat, the creature will return to the placed location and continue to guard the item. If the item is touched, the creature will consider the "toucher" an enemy.</p>
+<ol>
+<li>Place a creature in the map and set its Order property to "Guarding". It's a good idea to place the creature near the item to be guarded, or at least within a line of sight to that item or the area surrounding the item.</li>
+<li>Enter a unique Tag on the item that will associate it with the creature guarding it. Match the creature's OrderTag to the Tag of the item.</li>
+</ol>
+<h3><span class="mw-headline" id="PawnSpecific_Orders">PawnSpecific Orders</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial?section=12" title="Edit section: PawnSpecific Orders">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Some individual creatures have unique Orders or functions. See also the <a href="Legacy_ScriptedPawn.html" title="Legacy:ScriptedPawn">ScriptedPawn</a> subclasses for the various creatures.</p>
+<h3><span class="mw-headline" id="CreatureFactory_and_SpawnPoints">CreatureFactory and SpawnPoints</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial?section=13" title="Edit section: CreatureFactory and SpawnPoints">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>CreatureFactory is a subclass of <a href="Legacy_ThingFactory.html" title="Legacy:ThingFactory">ThingFactory</a>. SpawnPoints are associated to factories to provide a suitable place to spawn an actor. CreatureFactories are specifically designed to spawn creatures in-game and give appropriate settings to various properties.</p>
+<ol>
+<li>Place a CreatureFactory in the map. Thing and CreatureFactories can either be triggered externally or activated via Touch, just like a Trigger. For this tutorial, place the CreatureFactory in a spot where a player is likely to walk by. We will set this CreatureFactory to spawn the creature when touched.</li>
+<li>Place a SpawnPoint somewhere in the map that will allow access to the bot path network and give enough space for the creature to be spawned. Also rotate the SpawnPoint to a good orientation for the creature to be spawned.</li>
+<li>Enter a unique Tag on the SpawnPoint that will associate it with the CreatureFactory. Match the CreatureFactory's Tag to the SpawnPoint Tag.</li>
+<li>Place as many additional SpawnPoints as you like, up to a total of 16. Make sure their Tags all match the Tag of the CreatureFactory. Spawned creatures will appear randomly at one of these SpawnPoints.</li>
+<li>Set the ThingFactory-&gt;Prototype property on the CreatureFactory to the desired creature to spawn.</li>
+<li>Set the ThingFactory-&gt;MaxItems property on the CreatureFactory to the maximum number of creatures this factory will allow in game at one time.</li>
+<li>Set the ThingFactory-&gt;Capacity property on the CreatureFactory to the maximum number of total creatures to spawn. After this number is reached, the factory will shut down. A value of -1 here indicates the factory should never shut down.</li>
+<li>Set the ThingFactory-&gt;Interval property to the (average) number of seconds to wait before this factory is ready to spawn the next creature. Note that spawning several creature with an interval of zero will likely cause a "hiccup", where the engine stalls momentarily while spawning. Set the interval to something small instead, like 0.1</li>
+<li>Set the ThingFactory-&gt;bOnlyPlayerTouched property on the CreatureFactory to true. For this tutorial, we want the player to trigger the factory when it touches it, but we don't want other creatures to trigger it. If true, only player pawns are able to activate this factory.</li>
+<li>Decide if the ThingFactory-&gt;bCovert property on the CreatureFactory should be set to false. It is set to true by default. If true, the creature will only be spawned if a player is unable to see it spawned, otherwise the factory will wait. If your SpawnPoint is in plain sight but you'd like creatures to spawn at it even if a player sees the creature appear from (seemingly) nowhere, this could be set to false.</li>
+<li>Decide if the ThingFactory-&gt;bStoppable property on the CreatureFactory should be set to true. If true, the factory will spawn creatures if Touched (or triggered) and will stop spawning creatures when it is unTouched.</li>
+<li>Set the CreatureFactory-&gt;Orders, OrderTag and AlarmTag properties on the CreatureFactory to those desired property settings for the spawned creatures.</li>
+<li>If the game is set to CoOp mode, decide if extra creatures should be spawned from this factory. Enter the number of extra creatures to spawn in the AddedCoopCapacity property on the CreatureFactory.</li>
+</ol>
+<p>NOTE: Creatures spawned from a given SpawnPoint will have their Event set to match the Tag of the CreatureFactory (and the SpawnPoint). That way, once the creature is killed, it will automatically trigger a new creature to be spawned.</p>
+<h2><span class="mw-headline" id="External_Links">External Links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial?section=14" title="Edit section: External Links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Steve_Polge.27s_Docs">Steve Polge's Docs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial?section=15" title="Edit section: Steve Polge's Docs">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://unreal.epicgames.com/AI.htm">Unreal Creature Care and Feeding Guide</a> – The definitive reference.</li>
+</ul>
+<h3><span class="mw-headline" id="Matthias_Worch.27s_Tutorials">Matthias Worch's Tutorials</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial?section=16" title="Edit section: Matthias Worch's Tutorials">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Matthias Worch, who worked on the Unreal 2 team, has written a couple of tutorials that are highly useful. He's even provided a small demo level.</p>
+<p><b>Set up dialog and AI scripting for a level</b> and <b>Create a basic AI script</b> are the articles of interest here.</p>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://www.langsuyar.com/articles/u2_tutorialsmain.html">Worch's Unreal 2 Tutorials</a></li>
+</ul>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial?section=17" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_Artificial_Intelligence.html" title="Legacy:Artificial Intelligence">Artificial Intelligence</a>
+<ul>
+<li><a href="Legacy_Bot_Support.html" title="Legacy:Bot Support">Bot Support</a>
+<ul>
+<li><a href="Legacy_Bot_Support_(UT).html" title="Legacy:Bot Support (UT)">Bot Support (UT)</a></li>
+</ul>
+</li>
+<li><a href="Legacy_Monster_Support.html" title="Legacy:Monster Support">Monster Support</a></li>
+<li><a href="Legacy_NPC_Support.html" title="Legacy:NPC Support">NPC Support</a></li>
+</ul>
+</li>
+<li><a href="Legacy_Pawn_(UT)/AI_Functions.html" title="Legacy:Pawn (UT)/AI Functions">Pawn (UT)/AI Functions</a></li>
+<li><a href="Legacy_AIScript.html" title="Legacy:AIScript">AIScript</a></li>
+<li><a href="Legacy_AI_Scripting_Reference.html" title="Legacy:AI Scripting Reference">AI Scripting Reference</a></li>
+<li><a href="Legacy_Ucs_File.html" title="Legacy:Ucs File">Ucs File</a> (U2 only) <i>?</i></li>
+</ul>
+<h2><span class="mw-headline" id="Discussion">Discussion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial?section=18" title="Edit section: Discussion">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>SuperApe:</b> This tutorial needs to be written. The external links above might be used to help write an original tutorial. This tutorial should at least cover Patroling and Ambushing.</p>
+<p><b>SuperApe:</b> I've been working with the original ScriptedPawn code from UT. I believe I know how all this works, but I don't have UT. If no one writes this soon, I will probably take a crack at it, based on what I'm seeing in the code.</p>
+<p><b>SuperApe:</b> Although I do not have UT, I am now familiar with the code that these AI systems ran on, having looked at the code for ScriptedPawn. I am writing this tutorial with the stipulation that it may not be complete or completely accurrate. However, it should be close at the very least.</p>
+<p><b>SuperApe:</b> Finished the tutorial. Let me know if there are any problems.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.047 seconds
+Real time usage: 0.049 seconds
+Preprocessor visited node count: 73/1000000
+Preprocessor generated node count: 92/1000000
+Post‐expand include size: 54/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:662-0!*!0!!en!*!* and timestamp 20161216053226 and revision id 1950
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Basic_ScriptedPawn_Tutorial?oldid=1950">https://wiki.beyondunreal.com/Legacy:Basic_ScriptedPawn_Tutorial?oldid=1950</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Legacy_Mapping.html" title="Category:Legacy Mapping">Legacy Mapping</a></li><li><a href="Category_Legacy_Tutorial.html" title="Category:Legacy Tutorial">Legacy Tutorial</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_Basic_ScriptedPawn_Tutorial.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Basic_ScriptedPawn_Tutorial?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Basic_ScriptedPawn_Tutorial" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Basic_ScriptedPawn_Tutorial" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ABasic+ScriptedPawn+Tutorial&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ABasic+ScriptedPawn+Tutorial" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Basic_ScriptedPawn_Tutorial" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Basic_ScriptedPawn_Tutorial" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Basic_ScriptedPawn_Tutorial?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Basic_ScriptedPawn_Tutorial?oldid=1950" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Basic_ScriptedPawn_Tutorial" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 11:31, 23 December 2006.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":110});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Basic_ScriptedPawn_Tutorial by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:32 GMT -->
+</html>

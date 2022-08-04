@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Creating_And_Using_ScriptedActions by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Creating And Using ScriptedActions - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_Creating_And_Using_ScriptedActions.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Creating_And_Using_ScriptedActions","wgTitle":"Creating And Using ScriptedActions","wgCurRevisionId":33949,"wgRevisionId":33949,"wgArticleId":788,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Tutorial"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Creating_And_Using_ScriptedActions","wgRelevantArticleId":788,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Creating_And_Using_ScriptedActions skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I don't need to test my programs. I have an error-correcting modem.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Creating And Using ScriptedActions</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><a href="Legacy_ScriptedAction.html" title="Legacy:ScriptedAction">ScriptedActions</a>, and their related <a href="Legacy_ScriptedSequence.html" title="Legacy:ScriptedSequence">ScriptedSequences</a>, are the premier method for getting <a href="Legacy_UT2003.html" title="Legacy:UT2003" class="mw-redirect">UT2003</a> AI to "do stuff". Back in <a href="Legacy_UT.html" title="Legacy:UT" class="mw-redirect">UT</a>, when coders wanted to introduce new behavior into bots or <a href="Legacy_ScriptedPawn.html" title="Legacy:ScriptedPawn">ScriptedPawns</a>, they would subclass whatever AI they were deriving from, and add code there.</p>
+<p>In <a href="Legacy_UT2003.html" title="Legacy:UT2003" class="mw-redirect">UT2003</a>, a similar action would be to subclass <a href="Legacy_Controller.html" title="Legacy:Controller">Controller</a>. However, with the addition of <a href="Legacy_ScriptedSequence.html" title="Legacy:ScriptedSequence">ScriptedSequences</a>, there is no longer the need to do this. Developers can just make a new <a href="Legacy_ScriptedAction.html" title="Legacy:ScriptedAction">ScriptedAction</a>, and tell pawns to perform this action.</p>
+<p>There are two reasons for this article. First is a very simple discussion about how to create subclasses of <a href="Legacy_ScriptedAction.html" title="Legacy:ScriptedAction">ScriptedAction</a>. The second is on how to actually use <a href="Legacy_ScriptedAction.html" title="Legacy:ScriptedAction">ScriptedActions</a>, from the perspective of the coder.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#How_Actions_Work"><span class="tocnumber">1</span> <span class="toctext">How Actions Work</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Creating_ScriptedActions"><span class="tocnumber">2</span> <span class="toctext">Creating ScriptedActions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Anatomy_of_a_ScriptedAction"><span class="tocnumber">2.1</span> <span class="toctext">Anatomy of a ScriptedAction</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Basic_Functions"><span class="tocnumber">2.2</span> <span class="toctext">Basic Functions</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Flow_Control"><span class="tocnumber">2.3</span> <span class="toctext">Flow Control</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Latent_Functions"><span class="tocnumber">2.4</span> <span class="toctext">Latent Functions</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Misc_Functions"><span class="tocnumber">2.5</span> <span class="toctext">Misc Functions</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Default_Properties"><span class="tocnumber">2.6</span> <span class="toctext">Default Properties</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Summary"><span class="tocnumber">2.7</span> <span class="toctext">Summary</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Using_ScriptedActions_and_ScriptedSequences"><span class="tocnumber">3</span> <span class="toctext">Using ScriptedActions and ScriptedSequences</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#Writing_Scripted_Sequences"><span class="tocnumber">3.1</span> <span class="toctext">Writing Scripted Sequences</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Using_Scripted_Sequences"><span class="tocnumber">3.2</span> <span class="toctext">Using Scripted Sequences</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="#Broken.3F"><span class="tocnumber">3.2.1</span> <span class="toctext">Broken?</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#One_last_thing_to_think_about"><span class="tocnumber">3.2.2</span> <span class="toctext">One last thing to think about</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="#ScriptedTrigger"><span class="tocnumber">3.3</span> <span class="toctext">ScriptedTrigger</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Conclusion"><span class="tocnumber">4</span> <span class="toctext">Conclusion</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Related_Topics"><span class="tocnumber">5</span> <span class="toctext">Related Topics</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Discussion"><span class="tocnumber">6</span> <span class="toctext">Discussion</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="How_Actions_Work">How Actions Work</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions?section=1" title="Edit section: How Actions Work">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Within classes derived from <a href="Legacy_ScriptedController.html" title="Legacy:ScriptedController">ScriptedController</a> (This includes <a href="Legacy_Bot.html" title="Legacy:Bot">Bots</a>) there is a mechanism to perform actions. Basically, it's a <a href="Legacy_State.html" title="Legacy:State">state</a>: <code>state Scripting</code></p>
+<p>What happens is that it's given a <a href="Legacy_ScriptedSequence.html" title="Legacy:ScriptedSequence">ScriptedSequence</a>, in its variable <b>SequenceScript</b>. This ScriptedSequence contains an array of <a href="Legacy_ScriptedAction.html" title="Legacy:ScriptedAction">ScriptedActions</a>. Then, the controller runs through the actions one by one down the line until the last action. After that, if this Controller was artificially created, it destroys itself!</p>
+<p>What this means is that: you can give "unpossessed" Pawns (with no controller) orders. They will temporarily don the <a href="Legacy_ScriptedController.html" title="Legacy:ScriptedController">ScriptedController</a> hat and do the actions. Afterwards, it reverts to the original controller or no controller.</p>
+<p>Since the <code>state Scripting</code> code is pretty self-explanatory, I won't run through that. Suffice to know, it's there and does your dirty work.</p>
+<h2><span class="mw-headline" id="Creating_ScriptedActions">Creating ScriptedActions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions?section=2" title="Edit section: Creating ScriptedActions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Anatomy_of_a_ScriptedAction">Anatomy of a ScriptedAction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions?section=3" title="Edit section: Anatomy of a ScriptedAction">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">class</span> ACTION_ChangeName <span class="kw1">extends</span> <span class="kw8">ScriptedAction</span>;
+ 
+<span class="kw1">var</span><span class="br0">(</span>Action<span class="br0">)</span> <span class="kw5">string</span> NewName;
+<span class="kw1">var</span> <span class="kw5">int</span> Count;
+</pre></div>
+</div>
+<p>All published variables (<i>var()</i>) will be editable by the level designer at design time - in that nifty object properties box.</p>
+<h3><span class="mw-headline" id="Basic_Functions">Basic Functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions?section=4" title="Edit section: Basic Functions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> <span class="kw5">bool</span> InitActionFor<span class="br0">(</span><span class="kw9">ScriptedController</span> C<span class="br0">)</span>
+<span class="br0">{</span>
+	C.<span class="me0">PlayerReplicationInfo</span>.<span class="me0">PlayerName</span> <span class="sy0">=</span> NewName;
+ 
+	<span class="kw2">return</span> <span class="kw6">true</span>;	
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>InitActionFor is the <b>meat</b> of the Action. This is where the action will usually happen. The passed variable <b>C</b> is, of course, the Controller of the Pawn that you are about to manipulate. From this, you can access its C.Pawn variable if you're interested.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> <span class="kw5">string</span> GetActionString<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw2">return</span> ActionString;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>GetActionString is, I believe, for logging purposes. It tells the log or whoever wants to know, what this Pawn is doing.</p>
+<h3><span class="mw-headline" id="Flow_Control">Flow Control</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions?section=5" title="Edit section: Flow Control">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> ProceedToNextAction<span class="br0">(</span><span class="kw9">ScriptedController</span> C<span class="br0">)</span>
+<span class="br0">{</span>
+	C.<span class="me0">ActionNum</span> <span class="sy0">=</span> <span class="kw3">Max</span><span class="br0">(</span><span class="nu0">0</span>,ActionNumber<span class="br0">)</span>;
+<span class="br0">}</span>
+ 
+<span class="kw1">function</span> ProceedToSectionEnd<span class="br0">(</span><span class="kw9">ScriptedController</span> C<span class="br0">)</span>;
+</pre></div>
+</div>
+<p>ProceedToNextAction is called after your action has been executed. Therefore, if you want to (evilly) disrupt the flow, you can change this one here. A Controller's <b>ActionNum</b> property tells you which # in the ActionSequence it is currently performing</p>
+<p>ProceedToSectionEnd is pre-coded. Call it, and you will be moved to the end of the section.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> <span class="kw5">bool</span> StartsSection<span class="br0">(</span><span class="br0">)</span>;
+ 
+<span class="kw1">function</span> <span class="kw5">bool</span> EndsSection<span class="br0">(</span><span class="br0">)</span>;
+</pre></div>
+</div>
+<p>StartsSection signifies if the following Action is actually a section start. "Section" Actions are such like <a href="https://wiki.beyondunreal.com/edit/Legacy:ACTION_IFCONDITION?redlink=1" class="new" title="Legacy:ACTION IFCONDITION (page does not exist)">ACTION_IFCONDITION</a> - they mark off a block of other sections.</p>
+<p>EndsSection signifies if the Action is a section end.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> <span class="kw9">ScriptedSequence</span> GetScript<span class="br0">(</span><span class="kw9">ScriptedSequence</span> S<span class="br0">)</span>
+<span class="br0">{</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>GetScript - This is used if a different <a href="Legacy_ScriptedSequence.html" title="Legacy:ScriptedSequence">ScriptedSequence</a> is desired. The passed variable S is the current ScriptedSequence, and you return a new one if you want the Controller to perform a different ScriptedSequence. If you return NONE, then the Controller stops scripting.</p>
+<h3><span class="mw-headline" id="Latent_Functions">Latent Functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions?section=6" title="Edit section: Latent Functions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A <a href="Legacy_Latent_Function.html" title="Legacy:Latent Function">latent function</a> is one that doesn't happen right away. It has <i>latency</i>. In other words, when you give the action, it doesn't (shazzam) happen right away. For example, if I tell my dog to be in the bathroom, it won't be there right away. If I tell it to jump, it will jump right away. That's the long and short of it.</p>
+<p>Latent actions will subclass <a href="https://wiki.beyondunreal.com/edit/Legacy:LatentScriptedAction?redlink=1" class="new" title="Legacy:LatentScriptedAction (page does not exist)">LatentScriptedAction</a>. If you are writing latent actions, you must subclass this too!</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> <span class="kw5">bool</span> MoveToGoal<span class="br0">(</span><span class="br0">)</span>;
+ 
+<span class="kw1">function</span> <span class="kw9">Actor</span> GetMoveTargetFor<span class="br0">(</span><span class="kw9">ScriptedController</span> C<span class="br0">)</span>;
+ 
+<span class="kw1">function</span> <span class="kw5">bool</span> TurnToGoal<span class="br0">(</span><span class="br0">)</span>;
+ 
+<span class="kw1">function</span> <span class="kw5">float</span> GetDistance<span class="br0">(</span><span class="br0">)</span>;
+ 
+<span class="kw1">function</span> <span class="kw5">bool</span> CompleteOnAnim<span class="br0">(</span><span class="kw5">int</span> Num<span class="br0">)</span>;
+ 
+<span class="kw1">function</span> <span class="kw5">bool</span> CompleteWhenTriggered<span class="br0">(</span><span class="br0">)</span>;
+ 
+<span class="kw1">function</span> <span class="kw5">bool</span> CompleteWhenTimer<span class="br0">(</span><span class="br0">)</span>;
+ 
+<span class="kw1">function</span> <span class="kw5">bool</span> WaitForPlayer<span class="br0">(</span><span class="br0">)</span>;
+ 
+<span class="kw1">function</span> <span class="kw5">bool</span> TickedAction<span class="br0">(</span><span class="br0">)</span>;
+ 
+<span class="kw1">function</span> <span class="kw5">bool</span> StillTicking<span class="br0">(</span><span class="kw9">ScriptedController</span> C, <span class="kw5">float</span> DeltaTime<span class="br0">)</span>;
+</pre></div>
+</div>
+<p><b>Latent Actions</b></p>
+<p>GetMoveTargetFor is where you can pass the MoveTarget, or "goal" as it is referred to. The actor you return is the target.</p>
+<p>MoveToGoal tells the pawn to move to the goal specified (above). Return of true means that it will move to the goal.</p>
+<p>TurnToGoal tells the pawn to turn towards the goal if you return true. If the Pawn is moving toward the goal, it will automatically turn.</p>
+<p><b>Latent Pauses</b></p>
+<p>GetDistance tells the pawn to wait until a Player gets within this value (you return this value) of the Controller's Pawn</p>
+<p>CompleteOnAnim - if you return TRUE, then the sequence will complete when the animation finishes (the Num is the animation channel). CompleteOnAnim is called in the Pawn's "AnimEnd" function within its State Scripting.</p>
+<p>CompleteWhenTriggered - TRUE means that the sequence will complete when the <b>controller</b> is triggered</p>
+<p>CompleteWhenTimer - TRUE means that the sequence will complete when a player's <i>Timer()</i> is called (that is, you use the <b>SetTimer</b> command</p>
+<p>TickedAction tells the Controller whether to process the StillTicking function.</p>
+<p>StillTicking acts like the Tick(float DeltaTime) for us. If you return TRUE, then this function (StillTicking) will continue to be called every Tick. A return of FALSE signifies this action is done. It stopps recieving ticks and the action sequence moves on to the next action.</p>
+<h3><span class="mw-headline" id="Misc_Functions">Misc Functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions?section=7" title="Edit section: Misc Functions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> SetCurrentAnimationFor<span class="br0">(</span><span class="kw9">ScriptedController</span> C<span class="br0">)</span>;
+ 
+<span class="kw1">function</span> <span class="kw5">bool</span> PawnPlayBaseAnim<span class="br0">(</span><span class="kw9">ScriptedController</span> C, <span class="kw5">bool</span> bFirstPlay<span class="br0">)</span>;
+</pre></div>
+</div>
+<p>These two are hard-coded into ScriptedController - they are special functions. They allow you to modify whatever animation the Pawn is playing</p>
+<h3><span class="mw-headline" id="Default_Properties">Default Properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions?section=8" title="Edit section: Default Properties">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">var</span> <span class="kw1">localized</span> <span class="kw5">string</span> ActionString;
+<span class="kw1">var</span> <span class="kw5">bool</span> bValidForTrigger;
+</pre></div>
+</div>
+<p>ActionString, as talked about above, is a very short description of what the action does</p>
+<p>bValidForTrigger signals whether this action is appropriate for use with a <a href="Legacy_ScriptedTrigger.html" title="Legacy:ScriptedTrigger">ScriptedTrigger</a> (discussed briefly below)</p>
+<h3><span class="mw-headline" id="Summary">Summary</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions?section=9" title="Edit section: Summary">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Hopefully, with these explanations you are well on your way to writing new Actions and extending the capabilities of the AI.</p>
+<h2><span class="mw-headline" id="Using_ScriptedActions_and_ScriptedSequences">Using ScriptedActions and ScriptedSequences</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions?section=10" title="Edit section: Using ScriptedActions and ScriptedSequences">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Writing_Scripted_Sequences">Writing Scripted Sequences</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions?section=11" title="Edit section: Writing Scripted Sequences">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Typically, ScriptedActions aren't used by themselves, but used in a chain of actions called a ScriptedSequence. Since it's just an array, I won't go into the details of this. It'll suffice to give you an example.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">class</span> OPNavPoint <span class="kw1">extends</span> UnrealScriptedSequence
+	<span class="kw1">placeable</span>;
+ 
+<span class="kw1">function</span> FreeScript<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw4">Destroy</span><span class="br0">(</span><span class="br0">)</span>;				<span class="co1">// When this sequence is completed, destroy it.</span>
+<span class="br0">}</span>
+ 
+<span class="kw1">defaultproperties</span>
+<span class="br0">{</span>
+	EnemyAcquisitionScriptProbability<span class="sy0">=+</span><span class="nu0">1.0</span>
+	bRoamingScript <span class="sy0">=</span> <span class="kw6">false</span>
+	Priority <span class="sy0">=</span> <span class="nu0">200</span>
+	bCollideWhenPlacing<span class="sy0">=</span><span class="kw6">false</span>
+	bStatic<span class="sy0">=</span><span class="kw6">false</span>
+	bNoDelete<span class="sy0">=</span><span class="kw6">false</span>
+	bFreeLance <span class="sy0">=</span> <span class="kw6">false</span>
+ 
+	<span class="kw2">Begin</span> <span class="kw8">Object</span> <span class="kw1">Class</span><span class="sy0">=</span>Action_MOVETOPOINT <span class="kw5">Name</span><span class="sy0">=</span>OPACTIONMoveToLocation
+    End <span class="kw8">Object</span>
+	<span class="kw2">Begin</span> <span class="kw8">Object</span> <span class="kw1">Class</span><span class="sy0">=</span>Action_CROUCH <span class="kw5">Name</span><span class="sy0">=</span>OPACTIONCrouch
+    End <span class="kw8">Object</span>
+	<span class="kw2">Begin</span> <span class="kw8">Object</span> <span class="kw1">Class</span><span class="sy0">=</span>Action_WAITFORTIMER <span class="kw5">Name</span><span class="sy0">=</span>OPACTIONWaitShort
+		PauseTime <span class="sy0">=</span> <span class="nu0">3.0</span>
+    End <span class="kw8">Object</span>
+	<span class="kw2">Begin</span> <span class="kw8">Object</span> <span class="kw1">Class</span><span class="sy0">=</span>Action_MOVETOPLAYER <span class="kw5">Name</span><span class="sy0">=</span>OPACTIONMoveToPlayer
+    End <span class="kw8">Object</span>
+	<span class="kw2">Begin</span> <span class="kw8">Object</span> <span class="kw1">Class</span><span class="sy0">=</span>Action_SETALERTNESS <span class="kw5">Name</span><span class="sy0">=</span>OPACTIONMakeAlert
+		Alertness <span class="sy0">=</span> ALERTNESS_LeaveScriptForCombat
+    End <span class="kw8">Object</span>
+	<span class="kw2">Begin</span> <span class="kw8">Object</span> <span class="kw1">Class</span><span class="sy0">=</span>Action_RUN <span class="kw5">Name</span><span class="sy0">=</span>OPACTIONRun
+    End <span class="kw8">Object</span>
+ 
+	Actions<span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="sy0">=</span><span class="kw8">ScriptedAction</span><span class="st0">'OPACTIONRun'</span>
+	Actions<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">=</span><span class="kw8">ScriptedAction</span><span class="st0">'OPACTIONMoveToLocation'</span>
+	Actions<span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span><span class="sy0">=</span><span class="kw8">ScriptedAction</span><span class="st0">'OPACTIONCrouch'</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>First, you see, you have to create the Action objects. You can set their variables if you wish. Then, you simply add new ScriptedActions to the array. This is much like adding buttons to a menu, if you're familiar with that. I've defined more objects than actions, for future references in classes that are subclasses of OPNavPoint. This way, I don't have to re-define everything.</p>
+<p><br />
+What this OPNavPoint does is this. It makes the pawn start running to where the OPNavPoint is located, and then makes it crouch. Simple, and fun!</p>
+<h3><span class="mw-headline" id="Using_Scripted_Sequences">Using Scripted Sequences</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions?section=12" title="Edit section: Using Scripted Sequences">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>To use the above script, I would have to put it in the position I want my pawn to go. Here is an example function, called within a subclass of <a href="Legacy_PlayerController.html" title="Legacy:PlayerController">PlayerController</a>, that creats this order, and tells the pawn to execute it.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> DoMoveOut<span class="br0">(</span><span class="kw9">Bot</span> b, <span class="kw5">Vector</span> MyLocation<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw1">local</span> OPNavPoint opnp;
+ 
+	MyLocation <span class="sy0">=</span> Somewhere; <span class="co1">// something like this</span>
+ 
+	opnp <span class="sy0">=</span> <span class="kw4">Spawn</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'OPNavPoint'</span>,<span class="kw6">self</span>,,MyLocation<span class="br0">)</span>; <span class="co1">// self is the commanding officer, in this case</span>
+	OPBot<span class="br0">(</span>b<span class="br0">)</span>.<span class="me0">ReceiveDestination</span><span class="br0">(</span><span class="kw6">self</span>,opnp<span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>What's ReceiveDestination? It's a small function within OPBot, my subclass of <a href="Legacy_Bot.html" title="Legacy:Bot">Bot</a> that tells pawns what to do.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> RecieveDestination<span class="br0">(</span><span class="kw9">Controller</span> c, UnrealScriptedSequence s<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw2">if</span><span class="br0">(</span>s <span class="sy0">==</span> <span class="kw5">none</span><span class="br0">)</span>				<span class="co1">// no script, no action</span>
+		<span class="kw2">return</span>;
+	s.<span class="me0">CurrentUser</span> <span class="sy0">=</span> <span class="kw6">self</span>;		<span class="co1">// Me, I'm the current user of the script.</span>
+	StopCurrentScript<span class="br0">(</span><span class="br0">)</span>;		<span class="co1">// Stop doing whatever i'm doing.</span>
+	GoalScript <span class="sy0">=</span> s;				<span class="co1">// Assing the Script to the "GoalScript" property</span>
+	SetNewScript<span class="br0">(</span>s<span class="br0">)</span>;			<span class="co1">// Tell myself that I have new orders</span>
+	SendMessage<span class="br0">(</span>c.<span class="me0">PlayerReplicationInfo</span>, <span class="st0">'ACK'</span>, <span class="nu0">0</span>, <span class="nu0">5</span>, <span class="st0">'TEAM'</span><span class="br0">)</span>;	<span class="co1">// Tell the person who sent me the order that I heard them</span>
+	<span class="kw7">Level</span>.<span class="kw7">Game</span>.<span class="me0">Broadcast</span><span class="br0">(</span><span class="kw6">self</span>, <span class="st0">"Order Recieved."</span>, <span class="st0">'TeamSay'</span><span class="br0">)</span>;	<span class="co1">// Same</span>
+	<span class="kw2">if</span><span class="br0">(</span>c.<span class="kw3">IsA</span><span class="br0">(</span><span class="st0">'PlayerController'</span><span class="br0">)</span><span class="br0">)</span>
+		MyPlayerController <span class="sy0">=</span> <span class="kw9">PlayerController</span><span class="br0">(</span>c<span class="br0">)</span>;		<span class="co1">// The person who sent me the order is MyPlayerController (for certain Action's, and debugging)</span>
+	<span class="kw3">GoToState</span><span class="br0">(</span><span class="st0">'Scripting'</span><span class="br0">)</span>;		<span class="co1">// Now, go script!</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>There's a bit of extra code up there, but you can get the general picture. As you can see, it's not to hard to give the bot orders!</p>
+<h4><span class="mw-headline" id="Broken.3F">Broken?</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions?section=13" title="Edit section: Broken?">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Finally, there's one more thing I must mention. Occasionally, scripts "break". There could be many reasons for this, but basically, it stops working. This is quite annoying for after a script is broken, Pawn behavior is very erratic and strange. The game might crash. I leave this fragment to you:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="co1">// Broken scripted sequence - for debugging</span>
+<span class="kw1">State</span> Broken
+<span class="br0">{</span>
+<span class="kw2">Begin</span>:
+	MyPlayerController.<span class="kw9">Pawn</span>.<span class="kw4">ClientMessage</span><span class="br0">(</span><span class="kw9">Pawn</span><span class="sy0">$</span><span class="st0">" Scripted Sequence BROKEN "</span><span class="sy0">$</span>SequenceScript<span class="sy0">$</span><span class="st0">" ACTION "</span><span class="sy0">$</span>CurrentAction<span class="br0">)</span>;
+	WanderOrCamp<span class="br0">(</span><span class="kw6">true</span><span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>This will tell you if your pawn's script broke, and make sure that the pawn doesn't actually go haywire. It tells the pawn to wander around. Thus, you know which action is causing the break-age, and without a VERY annoying crash.</p>
+<h4><span class="mw-headline" id="One_last_thing_to_think_about">One last thing to think about</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions?section=14" title="Edit section: One last thing to think about">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Finally, some things will compete with you when giving orders to pawns. That would be <a href="Legacy_TeamAI.html" title="Legacy:TeamAI">TeamAI</a> and <a href="Legacy_SquadAI.html" title="Legacy:SquadAI">SquadAI</a>. For example, if I told a pawn to move past a ball in a regular bombing run game, it would go for the ball, ignore all subsequent orders of mine, and score on the opposing team.</p>
+<p>The easy way to solve this problem would be to subclass these two AI classes and modify their code. It's just a consideration for you.</p>
+<h3><span class="mw-headline" id="ScriptedTrigger">ScriptedTrigger</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions?section=15" title="Edit section: ScriptedTrigger">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><a href="Legacy_ScriptedTrigger.html" title="Legacy:ScriptedTrigger">ScriptedTrigger</a> and <a href="Legacy_ScriptedTriggerController.html" title="Legacy:ScriptedTriggerController">ScriptedTriggerController</a> are two more classes that help you out. ScriptedTriggerController is able to perform scripted events without a Pawn. In other words, if you have certain actions like <a href="https://wiki.beyondunreal.com/edit/Legacy:ACTION_SpawnActor?redlink=1" class="new" title="Legacy:ACTION SpawnActor (page does not exist)">ACTION_SpawnActor</a> that do not need a pawn to perform, you would use a ScriptedTrigger (which incidentally subclasses ScriptedSequence) to perform these. You'll notice, if you examine UT's source code that <b>actions that require a <a href="Legacy_Pawn.html" title="Legacy:Pawn">Pawn</a> to perform</b> are generally bValidForTrigger=false and cannot be used with ScriptedTriggers.</p>
+<p>And, if you look at ScriptedTrigger, it spawns a ScriptedTriggerController, which needs and has no Pawn attached. The funny thing is, I think Scripted<b>Trigger</b> is a misnomer, as this class has nothing to do with Triggers. You can of course add an action like the <a href="https://wiki.beyondunreal.com/edit/Legacy:Action_WaitForEvent?redlink=1" class="new" title="Legacy:Action WaitForEvent (page does not exist)">Action_WaitForEvent</a> that causes your ScriptedTrigger to activate upon being triggered. However, it doesn't seem to be directly linked to triggers.</p>
+<h2><span class="mw-headline" id="Conclusion">Conclusion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions?section=16" title="Edit section: Conclusion">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Okay! Hopefully, with this, we are on the way to cool new things. Some possibilities for using this code:</p>
+<ul>
+<li>New AI abilities (like finding cover)</li>
+<li>A method for ordering bots around (You! Go Here!)</li>
+<li>Movies - dynamic ingame movies dictated by code and not pre-made by level designers</li>
+</ul>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions?section=17" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_Trigger_Systems.html" title="Legacy:Trigger Systems">Trigger Systems</a></li>
+<li><a href="Legacy_Artificial_Intelligence.html" title="Legacy:Artificial Intelligence">Artificial Intelligence</a>
+<ul>
+<li><a href="Legacy_Bot_Support.html" title="Legacy:Bot Support">Bot Support</a></li>
+<li><a href="Legacy_Monster_Support.html" title="Legacy:Monster Support">Monster Support</a></li>
+<li><a href="Legacy_NPC_Support.html" title="Legacy:NPC Support">NPC Support</a></li>
+</ul>
+</li>
+</ul>
+<h2><span class="mw-headline" id="Discussion">Discussion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions?section=18" title="Edit section: Discussion">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>Soldat:</b> todo: talk about the default properties. I forgot to do that. also, I have example code if anyone's interested, I coded bot orders and such.</p>
+<p><b>Soldat:</b> okay, done all that. added scripted trigger stuff too, which i did not notice earlier.</p>
+<p><b>Tarquin:</b> Nice article! I actually feel I understand this whole scripted stuff!</p>
+<p><b>Hawkeye:</b> I strongly disagree. This is almost completely unreadable and unintelligible for people without some programming experience.</p>
+<p>A ScriptedSequence is a script that does stuff. The stuff it does are a bunch of ScriptedActions. So if you want a new type of action in your ScriptedSequence (say, for instance, move to a number of pathnodes in a certain order) that isn't already in the game, you can write a new class for it under Object-&gt;ScriptedAction (Untick both options in your classes browser to find it). The new ScriptedAction will become available to be placed in new ScriptedSequences.</p>
+<p>That's what it <i>should</i> say, but it doesn't. It's WAY too technical. Also, many things are considered to be known to the reader by the writer, and he doesn't elaborate most of the examples he gives. This article was clearly written by a programmer.</p>
+<p><b>Oboyrex:</b> Hawkeyes point is well taken, my rule of thumb is to make it useful to my grandmother, but let me just say that the content on this page is some of the most useful to me on the whole site, so keep in someplace.</p>
+<p><b>Solid Snake:</b> Ahh, I think all programming articles are meant for programmers in general. We aren't writing to the general public, we are writing for other fellow coders who haven't learnt a part of UScript yet. It's like teaching anything to anyone, you assume basic knowledge and while every tutorial can go over everything with a fine tooth comb, it's completely unneccessary. Does Soldat really need to define what a variable, object, instance and so on mean?</p>
+<p><b>SuperApe:</b> This is a tutorial, isn't it?</p>
+<p><b>Bob_The_Beheader:</b> How exactly are the sequences activated? Do bots have to come within a certain radius of them, like triggers? or are they something that is activated when triggered?</p>
+<p><b>SuperApe:</b> Technically, either. A ScriptedSequence set with the latent action ACTION_WaitForPlayer can "grab" a bot. But, this is meant to be either set via AI -&gt; AIScriptTag to control a Pawn from match start or via Trigger actor (something that will pass the trigger Instigator to the ScriptedSequence). The script has to be associated with a Pawn. Also, some GameObjects or GameInfo actors assign bots to ScriptedSequences, as in CTF DefenseScripts.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.168 seconds
+Real time usage: 0.172 seconds
+Preprocessor visited node count: 189/1000000
+Preprocessor generated node count: 344/1000000
+Post‐expand include size: 34/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:788-0!*!0!!en!*!* and timestamp 20161215142824 and revision id 33949
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Creating_And_Using_ScriptedActions?oldid=33949">https://wiki.beyondunreal.com/Legacy:Creating_And_Using_ScriptedActions?oldid=33949</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Legacy_Tutorial.html" title="Category:Legacy Tutorial">Legacy Tutorial</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_Creating_And_Using_ScriptedActions.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Creating_And_Using_ScriptedActions?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Creating_And_Using_ScriptedActions" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Creating_And_Using_ScriptedActions" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ACreating+And+Using+ScriptedActions&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ACreating+And+Using+ScriptedActions" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Creating_And_Using_ScriptedActions" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Creating_And_Using_ScriptedActions" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Creating_And_Using_ScriptedActions?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Creating_And_Using_ScriptedActions?oldid=33949" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Creating_And_Using_ScriptedActions" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 04:28, 19 January 2009.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":94});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Creating_And_Using_ScriptedActions by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:32 GMT -->
+</html>

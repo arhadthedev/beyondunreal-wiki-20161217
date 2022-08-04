@@ -1,0 +1,208 @@
+<HTML>
+<HEAD>
+<TITLE>REAL2UNREAL</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function real2unreal1 (form) 
+{ 
+  percent1 = 52.493438320209973753280839895013*form.PERCENT1.value/100;
+  round1 = form.ROUND1.value;
+  convert1 = form.M1.value*percent1; 
+  divide1 = convert1/round1; 
+  roundit1 = Math.round(divide1); 
+  form.UT1.value = roundit1*round1;
+}
+function unreal2real2 (form) 
+{
+  percent1 = 52.493438320209973753280839895013*form.PERCENT1.value/100;
+  convert2 = form.UT2.value/percent1; 
+  roundit2 = Math.round(convert2); 
+  form.M2.value = roundit2;
+}
+function real2unreal3 (form) 
+{
+  form.UT3.value = form.M3.value*52.493438320209973753280839895013;
+}
+function unreal2real4 (form) 
+{
+  form.M4.value = form.UT4.value/52.493438320209973753280839895013;
+}
+function real2unreal5 (form) 
+{ 
+  percent2 = 16*form.PERCENT2.value/100;
+  round2 = form.ROUND2.value;
+  convert3 = form.M5.value*percent2; 
+  divide3 = convert3/round2; 
+  roundit3 = Math.round(divide3); 
+  form.UT5.value = roundit3*round2;
+}
+function unreal2real6 (form) 
+{
+  percent2 = 16*form.PERCENT2.value/100;
+  convert4 = form.UT6.value/percent2; 
+  roundit4 = Math.round(convert4); 
+  form.M6.value = roundit4;
+}
+function real2unreal7 (form) 
+{
+  form.UT7.value = form.M7.value*16;
+}
+function unreal2real8 (form) 
+{
+  form.M8.value = form.UT8.value/16;
+}
+function real2unreal9 (form) 
+{ 
+  rotation = 182.04444444444444444444444444444;
+  round3 = form.ROUND3.value;
+  convert5 = form.M8.value*rotation; 
+  divide5 = convert5/round3; 
+  roundit5 = Math.round(divide5); 
+  form.UT9.value = roundit5*round3;
+}
+function unreal2real10 (form) 
+{
+  rotation = 182.04444444444444444444444444444;
+  convert6 = form.UT10.value/rotation; 
+  roundit6 = Math.round(convert6); 
+  form.M9.value = roundit6;
+}
+function real2unreal11 (form) 
+{
+  form.UT11.value = form.M10.value*182.04444444444444444444444444444;
+}
+function unreal2real12 (form) 
+{
+  form.M11.value = form.UT12.value/182.04444444444444444444444444444;
+}
+// -->
+</SCRIPT>
+</HEAD>
+<BODY>
+<PRE>
+.-==ooo(       ,                        `o.
+        Nd' .oC" .-     .- ,  __.. --.._   `b./
+      `"NN   NG "N.do  "N"") "N""Yb   "b` `"NN"'
+      `"NNb .NM  N  Yb  N  '  N,-"' "N'Yb `"NN"'       ,
+        "YNF"NM ,N   N ,N    ,N._.- .N. Nb. YNo.__..oo"
+              "`    /'         "      "'   "'  dF"''
+
+REAL2UNREAL CONVERTER v.0.3b
+
+REAL2UNREAL est un convertisseur de valeurs du monde Réel en valeurs 
+du monde Irréel avec agrandissements et arrondis paramètrables. 
+Il supporte les conversions en mètres, pieds et angles. Il est décliné 
+en version ADVANCED ainsi qu’en version BASIC, correspondant aux 
+valeurs orginales sans agrandissements ni arrondis par défaut. 
+Il peut facilement être intégré sur une page ou un site web.
+
+REAL2UNREAL is a Real World to Unreal World converter values with 
+customized enlarging and round-offs. He supports translations of meters, 
+feet, and angles. 
+He was built under ADVANCED and BASIC mode, corresponding to originals 
+values without enlargments and round-offs. He was easily embedded on a 
+page or a website.<HR>
+SUPPORTED TYPE :
+Unreal UnrealTournament Unreal II DeusEX UT2003 UT2004 UE2R<HR>
+ | HOWTO :
+ | 
+ | % RATIO : Agrandir/Enlarge or Réduire/Reduce
+ |           Modify Scale Translation
+ |           Default value : 140%
+ |               (Real conversion to Unreal was ~40% smaller)
+ |           ex. initial size = 100%
+ |                double size = 200%
+ |
+ | ~ ROUND : Arrondi/Rounded
+ |           Align to grid without BSP error
+ |           Default value : 8
+ |               (Default Grid Align)
+ |           ex. use only 2 4 8 16 32 ...
+ |               corresponding to your UnrealEd grid view
+ | 
+ |  If NaN : N’est-pAs-un-Numéro/Not-a-Number
+ |           Ne pas utiliser la virgule / Dont use comma
+ |           ex. 3.14 non/not 3,14
+ | 
+ | BASE :
+ |
+ |   M = Mètre = Meter
+ |   F = Pied = Foot
+ |   ° = Degré = Degree
+ |  UU = Unité Unreal = Unreal Unit
+ | RUU = Rotation Unité Unreal = Unreal Rotation Unit
+ |
+ | 
+ | LENGHT BASE : 
+ |
+ | 256UU = 4.8768M = 16F 
+ |    1M = 52.493438320209973753280839895013UU
+ |    1F = 16UU
+ |
+ | 
+ | ANGLE BASE :
+ |
+ |  360° = 65536RUU
+ |    1° = 182.04444444444444444444444444444RUU
+ |
+ | 
+ | (Source from <a href="http://wiki.beyondunreal.com/wiki/General_Scale_And_Dimensions">Unreal Wiki</a> General Scale And Dimensions)
+ <HR>
+ M --> UU | UU --> M
+ [ADVANCED] (1M = 52.493438320209973753280839895013UU + % ~ ROUNDED)
+ <FORM>
+ <INPUT TYPE ="text" name="PERCENT1" size="3" onClick="real2unreal1(this.form)" value="140"> % RATIO ~ <INPUT TYPE ="text" name="ROUND1" size="3" onClick="real2unreal1(this.form)" value="8"> ROUNDED
+
+ <INPUT TYPE ="text" name="M1" size="15"> M  <INPUT TYPE ="button" value="M --> UU" onClick="real2unreal1(this.form)"> <INPUT TYPE ="text" name="UT1" size="15" > UU
+
+ <INPUT TYPE ="text" name="UT2" size="15"> UU <INPUT TYPE ="button" value="UU --> M" onClick="unreal2real2(this.form)"> <INPUT TYPE ="text" name="M2" size="15" > M
+ </FORM>
+ M --> UU | UU --> M 
+ [BASIC] (1M = 52.493438320209973753280839895013UU)
+ <FORM>
+ <INPUT TYPE ="text" name="M3" size="15"> M  <INPUT TYPE ="button" value="M --> UU" onClick="real2unreal3(this.form)"> <INPUT TYPE ="text" name="UT3" size="15" > UU
+
+ <INPUT TYPE ="text" name="UT4" size="15"> UU <INPUT TYPE ="button" value="UU --> M" onClick="unreal2real4(this.form)"> <INPUT TYPE ="text" name="M4" size="15" > M
+ </FORM><HR>
+ F --> UU | UU --> F 
+ [ADVANCED] (1F = 16UU + % ~ ROUNDED)
+ <FORM>
+ <INPUT TYPE ="text" name="PERCENT2" size="3" onClick="real2unreal5(this.form)" value="140"> % RATIO ~ <INPUT TYPE ="text" name="ROUND2" size="3" onClick="real2unreal3(this.form)" value="8"> ROUNDED
+
+ <INPUT TYPE ="text" name="M5" size="15"> F  <INPUT TYPE ="button" value="F --> UU" onClick="real2unreal5(this.form)"> <INPUT TYPE ="text" name="UT5" size="15" > UU
+
+ <INPUT TYPE ="text" name="UT6" size="15"> UU <INPUT TYPE ="button" value="UU --> F" onClick="unreal2real6(this.form)"> <INPUT TYPE ="text" name="M6" size="15" > F
+ </FORM>
+ F --> UU | UU --> F
+ [BASIC] (1F = 16UU)
+ <FORM>
+ <INPUT TYPE ="text" name="M7" size="15"> F  <INPUT TYPE ="button" value="F --> UU" onClick="real2unreal7(this.form)"> <INPUT TYPE ="text" name="UT7" size="15" > UU
+
+ <INPUT TYPE ="text" name="UT8" size="15"> UU <INPUT TYPE ="button" value="UU --> F" onClick="unreal2real8(this.form)"> <INPUT TYPE ="text" name="M8" size="15" > F
+ </FORM><HR>
+ ° --> RUU | RUU --> °
+ [ADVANCED] (1° = 182.04444444444444444444444444444 ~ ROUNDED)
+ <FORM>
+ <INPUT TYPE ="text" name="ROUND3" size="3" onClick="real2unreal4(this.form)" value="8"> ROUNDED
+
+ <INPUT TYPE ="text" name="M8" size="14"> °   <INPUT TYPE ="button" value="° --> RUU" onClick="real2unreal9(this.form)"> <INPUT TYPE ="text" name="UT9" size="14" > RUU
+
+ <INPUT TYPE ="text" name="UT10" size="14"> RUU <INPUT TYPE ="button" value="RUU --> °" onClick="unreal2real10(this.form)"> <INPUT TYPE ="text" name="M9" size="14" > °
+ </FORM>
+ ° --> RUU | RUU --> °
+ [BASIC] (1° = 182.04444444444444444444444444444)
+ <FORM>
+ <INPUT TYPE ="text" name="M10" size="14"> °   <INPUT TYPE ="button" value="° --> RUU" onClick="real2unreal11(this.form)"> <INPUT TYPE ="text" name="UT11" size="14" > RUU
+
+ <INPUT TYPE ="text" name="UT12" size="14"> RUU <INPUT TYPE ="button" value="RUU --> °" onClick="unreal2real12(this.form)"> <INPUT TYPE ="text" name="M11" size="14" > °
+ </FORM><HR>
+Enjoy !!!<HR>
+ ___  _                           _           _    
+/ __|| |_  _ _  ___  __ _  _ __  | |    __ _ | |__ 
+\__ \|  _|| '_|/ -_)/ _` || '  \ | |__ / _` || '_ \
+|___/ \__||_|  \___|\__,_||_|_|_||____|\__,_||_.__/
+
+<a href="http://www.streamlab.info">HTTP://WWW.STREAMLAB.INFO</a> - 23/05/2004 - 01:26 AM 
+</PRE>
+</BODY>
+</HTML>

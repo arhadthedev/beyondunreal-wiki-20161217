@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:DeferredPartToSpawn_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:30:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:FracturedStaticMeshActor (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_FracturedStaticMeshActor_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="canonical" href="UE3_FracturedStaticMeshActor_(UDK).html" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:FracturedStaticMeshActor_(UDK)","wgTitle":"FracturedStaticMeshActor (UDK)","wgCurRevisionId":40891,"wgRevisionId":40891,"wgArticleId":25797,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UDK-specific classes","Classes in UDK package Engine","Subclasses of Actor (UDK)","Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:FracturedStaticMeshActor_(UDK)","wgRelevantArticleId":25797,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"UE3:DeferredPartToSpawn_(UDK)","wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgInternalRedirectTargetUrl":"/UE3:FracturedStaticMeshActor_(UDK)#DeferredPartToSpawn"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.redirect","mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_FracturedStaticMeshActor_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Once I get that upgrade to 36-hour days, I will tackle that. &#8211; Mychaeel
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:FracturedStaticMeshActor (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"><span class="mw-redirectedfrom">(Redirected from <a href="UE3_DeferredPartToSpawn_(UDK)c25d.html?redirect=no" title="UE3:DeferredPartToSpawn (UDK)">UE3:DeferredPartToSpawn (UDK)</a>)</span></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a> &gt;&gt;&#160;<b>FracturedStaticMeshActor</b></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Properties"><span class="tocnumber">1</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Property_group_.27FracturedStaticMeshActor.27"><span class="tocnumber">1.1</span> <span class="toctext">Property group 'FracturedStaticMeshActor'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#bBreakChunksOnActorTouch"><span class="tocnumber">1.1.1</span> <span class="toctext">bBreakChunksOnActorTouch</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#ChunkHealthScale"><span class="tocnumber">1.1.2</span> <span class="toctext">ChunkHealthScale</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#FractureCullMaxDistance"><span class="tocnumber">1.1.3</span> <span class="toctext">FractureCullMaxDistance</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#FractureCullMinDistance"><span class="tocnumber">1.1.4</span> <span class="toctext">FractureCullMinDistance</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#FracturedByDamageType"><span class="tocnumber">1.1.5</span> <span class="toctext">FracturedByDamageType</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#FracturedStaticMeshComponent"><span class="tocnumber">1.1.6</span> <span class="toctext">FracturedStaticMeshComponent</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#MaxPartsToSpawnAtOnce"><span class="tocnumber">1.1.7</span> <span class="toctext">MaxPartsToSpawnAtOnce</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#OverrideFragmentDestroyEffects"><span class="tocnumber">1.1.8</span> <span class="toctext">OverrideFragmentDestroyEffects</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-11"><a href="#Internal_variables"><span class="tocnumber">1.2</span> <span class="toctext">Internal variables</span></a>
+<ul>
+<li class="toclevel-3 tocsection-12"><a href="#bHasShownMissingSoundWarning"><span class="tocnumber">1.2.1</span> <span class="toctext">bHasShownMissingSoundWarning</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#ChunkHealth"><span class="tocnumber">1.2.2</span> <span class="toctext">ChunkHealth</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#DeferredPartsToSpawn"><span class="tocnumber">1.2.3</span> <span class="toctext">DeferredPartsToSpawn</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#ExplosionFractureSound"><span class="tocnumber">1.2.4</span> <span class="toctext">ExplosionFractureSound</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#MI_LoseChunkPreviousMaterial"><span class="tocnumber">1.2.5</span> <span class="toctext">MI_LoseChunkPreviousMaterial</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#PartImpactEffect"><span class="tocnumber">1.2.6</span> <span class="toctext">PartImpactEffect</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#SingleChunkFractureSound"><span class="tocnumber">1.2.7</span> <span class="toctext">SingleChunkFractureSound</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#SkinnedComponent"><span class="tocnumber">1.2.8</span> <span class="toctext">SkinnedComponent</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-20"><a href="#Default_values"><span class="tocnumber">1.3</span> <span class="toctext">Default values</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Subobjects"><span class="tocnumber">1.4</span> <span class="toctext">Subobjects</span></a>
+<ul>
+<li class="toclevel-3 tocsection-22"><a href="#FracturedSkinnedComponent0"><span class="tocnumber">1.4.1</span> <span class="toctext">FracturedSkinnedComponent0</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#FracturedStaticMeshComponent0"><span class="tocnumber">1.4.2</span> <span class="toctext">FracturedStaticMeshComponent0</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="#LightEnvironment0"><span class="tocnumber">1.4.3</span> <span class="toctext">LightEnvironment0</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-25"><a href="#Structs"><span class="tocnumber">2</span> <span class="toctext">Structs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-26"><a href="#DeferredPartToSpawn"><span class="tocnumber">2.1</span> <span class="toctext">DeferredPartToSpawn</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-27"><a href="#Functions"><span class="tocnumber">3</span> <span class="toctext">Functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-28"><a href="#Native_functions"><span class="tocnumber">3.1</span> <span class="toctext">Native functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-29"><a href="#BreakOffIsolatedIslands"><span class="tocnumber">3.1.1</span> <span class="toctext">BreakOffIsolatedIslands</span></a></li>
+<li class="toclevel-3 tocsection-30"><a href="#BreakOffPartsInRadius"><span class="tocnumber">3.1.2</span> <span class="toctext">BreakOffPartsInRadius</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="#ResetVisibility"><span class="tocnumber">3.1.3</span> <span class="toctext">ResetVisibility</span></a></li>
+<li class="toclevel-3 tocsection-32"><a href="#SpawnDeferredParts"><span class="tocnumber">3.1.4</span> <span class="toctext">SpawnDeferredParts</span></a></li>
+<li class="toclevel-3 tocsection-33"><a href="#RemoveDecals"><span class="tocnumber">3.1.5</span> <span class="toctext">RemoveDecals</span></a></li>
+<li class="toclevel-3 tocsection-34"><a href="#ResetHealth"><span class="tocnumber">3.1.6</span> <span class="toctext">ResetHealth</span></a></li>
+<li class="toclevel-3 tocsection-35"><a href="#SpawnPart"><span class="tocnumber">3.1.7</span> <span class="toctext">SpawnPart</span></a></li>
+<li class="toclevel-3 tocsection-36"><a href="#SpawnPartMulti"><span class="tocnumber">3.1.8</span> <span class="toctext">SpawnPartMulti</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-37"><a href="#Events"><span class="tocnumber">3.2</span> <span class="toctext">Events</span></a>
+<ul>
+<li class="toclevel-3 tocsection-38"><a href="#Explode"><span class="tocnumber">3.2.1</span> <span class="toctext">Explode</span></a></li>
+<li class="toclevel-3 tocsection-39"><a href="#HideFragmentsToMaximizeMemoryUsage"><span class="tocnumber">3.2.2</span> <span class="toctext">HideFragmentsToMaximizeMemoryUsage</span></a></li>
+<li class="toclevel-3 tocsection-40"><a href="#HideOneFragment"><span class="tocnumber">3.2.3</span> <span class="toctext">HideOneFragment</span></a></li>
+<li class="toclevel-3 tocsection-41"><a href="#PostBeginPlay"><span class="tocnumber">3.2.4</span> <span class="toctext">PostBeginPlay</span></a></li>
+<li class="toclevel-3 tocsection-42"><a href="#TakeDamage"><span class="tocnumber">3.2.5</span> <span class="toctext">TakeDamage</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-43"><a href="#Other_instance_functions"><span class="tocnumber">3.3</span> <span class="toctext">Other instance functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-44"><a href="#FractureEffectIsRelevant"><span class="tocnumber">3.3.1</span> <span class="toctext">FractureEffectIsRelevant</span></a></li>
+<li class="toclevel-3 tocsection-45"><a href="#IsFracturedByDamageType"><span class="tocnumber">3.3.2</span> <span class="toctext">IsFracturedByDamageType</span></a></li>
+<li class="toclevel-3 tocsection-46"><a href="#SetLoseChunkReplacementMaterial"><span class="tocnumber">3.3.3</span> <span class="toctext">SetLoseChunkReplacementMaterial</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Package:&#160;</dt>
+<dd><a href="Category_Classes_in_UDK_package_Engine.html" title="Category:Classes in UDK package Engine">Engine</a></dd>
+<dt>Direct subclasses:</dt>
+<dd><a href="UE3_FracturedSMActorSpawnable_(UDK).html" title="UE3:FracturedSMActorSpawnable (UDK)">FracturedSMActorSpawnable</a>, <a href="UE3_FracturedStaticMeshPart_(UDK).html" title="UE3:FracturedStaticMeshPart (UDK)">FracturedStaticMeshPart</a>, <a href="UE3_PhysXDestructibleActor_(UDK).html" title="UE3:PhysXDestructibleActor (UDK)">PhysXDestructibleActor</a></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<p><br /></p>
+<h2><span class="mw-headline" id="Properties">Properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=1" title="Edit section: Properties">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Property_group_.27FracturedStaticMeshActor.27">Property group 'FracturedStaticMeshActor'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=2" title="Edit section: Property group 'FracturedStaticMeshActor'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="bBreakChunksOnActorTouch">bBreakChunksOnActorTouch</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=3" title="Edit section: bBreakChunksOnActorTouch">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If true, detach parts when an Actor with bCanCauseFractureOnTouch contacts them. Actor must not be blocked by this FSMA.</p>
+<h4><span class="mw-headline" id="ChunkHealthScale">ChunkHealthScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=4" title="Edit section: ChunkHealthScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Allows controlling how much 'health' chunks have on a per-instance basis</p>
+<p><b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="FractureCullMaxDistance">FractureCullMaxDistance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=5" title="Edit section: FractureCullMaxDistance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Maximum distance from player where actor will be allowed to fracture (scaled by global settings.)</p>
+<p><b>Default value:</b> 4096.0</p>
+<h4><span class="mw-headline" id="FractureCullMinDistance">FractureCullMinDistance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=6" title="Edit section: FractureCullMinDistance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Minimum distance from player where actor will ALWAYS fracture, even when outside the view frustum (scaled by global settings.)</p>
+<p><b>Default value:</b> 512.0</p>
+<h4><span class="mw-headline" id="FracturedByDamageType">FracturedByDamageType</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=7" title="Edit section: FracturedByDamageType">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_DamageType_(UDK).html" title="UE3:DamageType (UDK)">DamageType</a>&gt; &gt;</p>
+<p>Set of damage types that can cause pieces to break off this FSAM. If empty, all damage types can do this.</p>
+<h4><span class="mw-headline" id="FracturedStaticMeshComponent">FracturedStaticMeshComponent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=8" title="Edit section: FracturedStaticMeshComponent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_FracturedStaticMeshComponent_(UDK).html" title="UE3:FracturedStaticMeshComponent (UDK)">FracturedStaticMeshComponent</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, editconst</p>
+<p><br />
+<b>Default value:</b> <a href="UE3_FracturedStaticMeshComponent_(UDK).html" title="UE3:FracturedStaticMeshComponent (UDK)">FracturedStaticMeshComponent</a>'<a href="#FracturedStaticMeshComponent0">FracturedStaticMeshComponent0</a>'</p>
+<h4><span class="mw-headline" id="MaxPartsToSpawnAtOnce">MaxPartsToSpawnAtOnce</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=9" title="Edit section: MaxPartsToSpawnAtOnce">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Maximum number of rigid body parts to spawn off per actor, per frame</p>
+<p><b>Default value:</b> 6</p>
+<h4><span class="mw-headline" id="OverrideFragmentDestroyEffects">OverrideFragmentDestroyEffects</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=10" title="Edit section: OverrideFragmentDestroyEffects">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_ParticleSystem_(UDK).html" title="UE3:ParticleSystem (UDK)">ParticleSystem</a>&gt;</p>
+<p>Allows you to override particle effects to play when chunk is hidden for just this actor.</p>
+<h3><span class="mw-headline" id="Internal_variables">Internal variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=11" title="Edit section: Internal variables">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="bHasShownMissingSoundWarning">bHasShownMissingSoundWarning</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=12" title="Edit section: bHasShownMissingSoundWarning">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Used so we only display the 'missing sound' warning once</p>
+<h4><span class="mw-headline" id="ChunkHealth">ChunkHealth</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=13" title="Edit section: ChunkHealth">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Int.html" title="Int" class="mw-redirect">int</a>&gt;</p>
+<p>Current health of each chunk</p>
+<h4><span class="mw-headline" id="DeferredPartsToSpawn">DeferredPartsToSpawn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=14" title="Edit section: DeferredPartsToSpawn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="#DeferredPartToSpawn">DeferredPartToSpawn</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Array of parts that are waiting to be spawned in an upcoming tick</p>
+<h4><span class="mw-headline" id="ExplosionFractureSound">ExplosionFractureSound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=15" title="Edit section: ExplosionFractureSound">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SoundCue_(UDK).html" title="UE3:SoundCue (UDK)">SoundCue</a></p>
+<p>Cached sound for large fractures.</p>
+<h4><span class="mw-headline" id="MI_LoseChunkPreviousMaterial">MI_LoseChunkPreviousMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=16" title="Edit section: MI LoseChunkPreviousMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_MaterialInterface_(UDK).html" title="UE3:MaterialInterface (UDK)">MaterialInterface</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>This is the material that was set on this FracuredStaticMeshActor before we overrode it with LoseChunkOutsideMaterial *</p>
+<h4><span class="mw-headline" id="PartImpactEffect">PartImpactEffect</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=17" title="Edit section: PartImpactEffect">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Actor_structs_(UDK).html#PhysEffectInfo" title="UE3:Actor structs (UDK)">Actor.PhysEffectInfo</a></p>
+<p>Cached info for part impacts</p>
+<h4><span class="mw-headline" id="SingleChunkFractureSound">SingleChunkFractureSound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=18" title="Edit section: SingleChunkFractureSound">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SoundCue_(UDK).html" title="UE3:SoundCue (UDK)">SoundCue</a></p>
+<p>Cached sound for single chunk fractures.</p>
+<h4><span class="mw-headline" id="SkinnedComponent">SkinnedComponent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=19" title="Edit section: SkinnedComponent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_FracturedSkinnedMeshComponent_(UDK).html" title="UE3:FracturedSkinnedMeshComponent (UDK)">FracturedSkinnedMeshComponent</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient, const</p>
+<p>Skinned component which will handle rendering for FracturedStaticMeshComponent</p>
+<h3><span class="mw-headline" id="Default_values">Default values</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=20" title="Edit section: Default values">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td><a href="UE3_Actor_internal_variables_(UDK).html#bBlockActors" title="UE3:Actor internal variables (UDK)">bBlockActors</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE3_Actor_internal_variables_(UDK).html#bCollideActors" title="UE3:Actor internal variables (UDK)">bCollideActors</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE3_Actor_(UDK).html#bEdShouldSnap" title="UE3:Actor (UDK)">bEdShouldSnap</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE3_Actor_internal_variables_(UDK).html#bGameRelevant" title="UE3:Actor internal variables (UDK)">bGameRelevant</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE3_Actor_internal_variables_(UDK).html#bMovable" title="UE3:Actor internal variables (UDK)">bMovable</a></td>
+<td>False</td>
+</tr>
+<tr>
+<td><a href="UE3_Actor_internal_variables_(UDK).html#bNoDelete" title="UE3:Actor internal variables (UDK)">bNoDelete</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE3_Actor_(UDK).html#bPathColliding" title="UE3:Actor (UDK)">bPathColliding</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE3_Actor_internal_variables_(UDK).html#bProjTarget" title="UE3:Actor internal variables (UDK)">bProjTarget</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE3_Actor_internal_variables_(UDK).html#bRouteBeginPlayEvenIfStatic" title="UE3:Actor internal variables (UDK)">bRouteBeginPlayEvenIfStatic</a></td>
+<td>False</td>
+</tr>
+<tr>
+<td><a href="UE3_Actor_internal_variables_(UDK).html#bWorldGeometry" title="UE3:Actor internal variables (UDK)">bWorldGeometry</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE3_Actor_(UDK).html#CollisionComponent" title="UE3:Actor (UDK)">CollisionComponent</a></td>
+<td><a href="UE3_FracturedStaticMeshComponent_(UDK).html" title="UE3:FracturedStaticMeshComponent (UDK)">FracturedStaticMeshComponent</a>'<a href="#FracturedStaticMeshComponent0">FracturedStaticMeshComponent0</a>'</td>
+</tr>
+<tr>
+<td><a href="UE3_Actor_(UDK).html#CollisionType" title="UE3:Actor (UDK)">CollisionType</a></td>
+<td><a href="UE3_Actor_enums_(UDK).html#ECollisionType" title="UE3:Actor enums (UDK)">COLLIDE_CustomDefault</a></td>
+</tr>
+<tr>
+<td><a href="UE3_Actor_internal_variables_(UDK).html#Components" title="UE3:Actor internal variables (UDK)">Components</a>[0]</td>
+<td><a href="UE3_DynamicLightEnvironmentComponent_(UDK).html" title="UE3:DynamicLightEnvironmentComponent (UDK)">DynamicLightEnvironmentComponent</a>'<a href="#LightEnvironment0">LightEnvironment0</a>'</td>
+</tr>
+<tr>
+<td><a href="UE3_Actor_internal_variables_(UDK).html#Components" title="UE3:Actor internal variables (UDK)">Components</a>[1]</td>
+<td><a href="UE3_FracturedSkinnedMeshComponent_(UDK).html" title="UE3:FracturedSkinnedMeshComponent (UDK)">FracturedSkinnedMeshComponent</a>'<a href="#FracturedSkinnedComponent0">FracturedSkinnedComponent0</a>'</td>
+</tr>
+<tr>
+<td><a href="UE3_Actor_internal_variables_(UDK).html#Components" title="UE3:Actor internal variables (UDK)">Components</a>[2]</td>
+<td><a href="UE3_FracturedStaticMeshComponent_(UDK).html" title="UE3:FracturedStaticMeshComponent (UDK)">FracturedStaticMeshComponent</a>'<a href="#FracturedStaticMeshComponent0">FracturedStaticMeshComponent0</a>'</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Subobjects">Subobjects</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=21" title="Edit section: Subobjects">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="FracturedSkinnedComponent0">FracturedSkinnedComponent0</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=22" title="Edit section: FracturedSkinnedComponent0">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Class:</b> <a href="UE3_FracturedSkinnedMeshComponent_(UDK).html" title="UE3:FracturedSkinnedMeshComponent (UDK)">Engine.FracturedSkinnedMeshComponent</a></p>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td><a href="UE3_PrimitiveComponent_properties_(UDK).html#bDisableAllRigidBody" title="UE3:PrimitiveComponent properties (UDK)">bDisableAllRigidBody</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE3_PrimitiveComponent_properties_(UDK).html#LightEnvironment" title="UE3:PrimitiveComponent properties (UDK)">LightEnvironment</a></td>
+<td><a href="UE3_DynamicLightEnvironmentComponent_(UDK).html" title="UE3:DynamicLightEnvironmentComponent (UDK)">DynamicLightEnvironmentComponent</a>'Engine.Default__FracturedStaticMeshActor:LightEnvironment0'</td>
+</tr>
+<tr>
+<td><a href="UE3_PrimitiveComponent_properties_(UDK).html#ReplacementPrimitive" title="UE3:PrimitiveComponent properties (UDK)">ReplacementPrimitive</a></td>
+<td>None</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="FracturedStaticMeshComponent0">FracturedStaticMeshComponent0</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=23" title="Edit section: FracturedStaticMeshComponent0">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Class:</b> <a href="UE3_FracturedStaticMeshComponent_(UDK).html" title="UE3:FracturedStaticMeshComponent (UDK)">Engine.FracturedStaticMeshComponent</a></p>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td><a href="UE3_PrimitiveComponent_properties_(UDK).html#bAllowApproximateOcclusion" title="UE3:PrimitiveComponent properties (UDK)">bAllowApproximateOcclusion</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE3_PrimitiveComponent_properties_(UDK).html#bForceDirectLightMap" title="UE3:PrimitiveComponent properties (UDK)">bForceDirectLightMap</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE3_FracturedBaseComponent_(UDK).html#bUseDynamicIBWithHiddenFragments" title="UE3:FracturedBaseComponent (UDK)">bUseDynamicIBWithHiddenFragments</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE3_PrimitiveComponent_properties_(UDK).html#ReplacementPrimitive" title="UE3:PrimitiveComponent properties (UDK)">ReplacementPrimitive</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="UE3_StaticMeshComponent_(UDK).html#WireframeColor" title="UE3:StaticMeshComponent (UDK)">WireframeColor</a></td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>255</td>
+</tr>
+<tr>
+<td>B</td>
+<td>255</td>
+</tr>
+<tr>
+<td>G</td>
+<td>128</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="LightEnvironment0">LightEnvironment0</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=24" title="Edit section: LightEnvironment0">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Class:</b> <a href="UE3_DynamicLightEnvironmentComponent_(UDK).html" title="UE3:DynamicLightEnvironmentComponent (UDK)">Engine.DynamicLightEnvironmentComponent</a></p>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td>bDynamic</td>
+<td>False</td>
+</tr>
+<tr>
+<td><a href="UE3_LightEnvironmentComponent_(UDK).html#bEnabled" title="UE3:LightEnvironmentComponent (UDK)">bEnabled</a></td>
+<td>False</td>
+</tr>
+<tr>
+<td><a href="UE3_LightEnvironmentComponent_(UDK).html#bForceNonCompositeDynamicLights" title="UE3:LightEnvironmentComponent (UDK)">bForceNonCompositeDynamicLights</a></td>
+<td>True</td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Structs">Structs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=25" title="Edit section: Structs">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="DeferredPartToSpawn">DeferredPartToSpawn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=26" title="Edit section: DeferredPartToSpawn">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<p>Info about a fracture part that should be spawned in an upcoming Tick</p>
+<dl>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> ChunkIndex&#160;</dt>
+<dd>Index of the chunk to spawn</dd>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> InitialVel&#160;</dt>
+<dd>Exit velocity for this chunk</dd>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> InitialAngVel&#160;</dt>
+<dd>Exit angular velocity for this chunk</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> RelativeScale&#160;</dt>
+<dd>Relative scale</dd>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> bExplosion&#160;</dt>
+<dd>TRUE if this part was spawned because of an explosion</dd>
+</dl>
+<h2><span class="mw-headline" id="Functions">Functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=27" title="Edit section: Functions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Native_functions">Native functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=28" title="Edit section: Native functions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="BreakOffIsolatedIslands">BreakOffIsolatedIslands</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=29" title="Edit section: BreakOffIsolatedIslands">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native simulated event <b>BreakOffIsolatedIslands</b> (out&#160;<a href="Array.html" title="Array">array</a>&lt;<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&gt;&#160;<b>FragmentVis</b>, <a href="Array.html" title="Array">array</a>&lt;<a href="Int.html" title="Int" class="mw-redirect">int</a>&gt;&#160;<b>IgnoreFrags</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>ChunkDir</b>, <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_FracturedStaticMeshPart_(UDK).html" title="UE3:FracturedStaticMeshPart (UDK)">FracturedStaticMeshPart</a>&gt;&#160;<b>DisableCollWithPart</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bWantPhysChunks</b>)</div>
+<p>Find all groups of chunks which are not connected to 'root' parts, and spawn them as new physics objects. Updates FragmentVis with new chunks that get hidden by the process.</p>
+<h4><span class="mw-headline" id="BreakOffPartsInRadius">BreakOffPartsInRadius</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=30" title="Edit section: BreakOffPartsInRadius">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated native event <b>BreakOffPartsInRadius</b> (<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>Origin</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>Radius</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>RBStrength</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bWantPhysChunksAndParticles</b>)</div>
+<p>Util to break off all parts within radius of the explosion</p>
+<h4><span class="mw-headline" id="ResetVisibility">ResetVisibility</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=31" title="Edit section: ResetVisibility">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated native event <b>ResetVisibility</b> ()</div>
+<p>Unhides all fragments</p>
+<h4><span class="mw-headline" id="SpawnDeferredParts">SpawnDeferredParts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=32" title="Edit section: SpawnDeferredParts">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native simulated event <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>SpawnDeferredParts</b> ()</div>
+<p>Gives the actor a chance to spawn chunks that may have been deferred</p>
+<p><b>Returns:</b></p>
+<dl>
+<dd>Returns true if there are still any deferred parts left to spawn</dd>
+</dl>
+<h4><span class="mw-headline" id="RemoveDecals">RemoveDecals</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=33" title="Edit section: RemoveDecals">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated native final protected function <b>RemoveDecals</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>IndexToRemoveDecalsFrom</b>)</div>
+<p>This function will remove all of the currently attached decals from the object. Basically, we want to have decals attach to these objects and then on state change (due to damage usually), we will just detach them all with the big particle effect that occurs it should not be noticeable.</p>
+<h4><span class="mw-headline" id="ResetHealth">ResetHealth</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=34" title="Edit section: ResetHealth">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated native final function <b>ResetHealth</b> ()</div>
+<p>Used to init/reset health array.</p>
+<h4><span class="mw-headline" id="SpawnPart">SpawnPart</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=35" title="Edit section: SpawnPart">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated native final function <a href="UE3_FracturedStaticMeshPart_(UDK).html" title="UE3:FracturedStaticMeshPart (UDK)">FracturedStaticMeshPart</a>&#160;<b>SpawnPart</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ChunkIndex</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>InitialVel</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>InitialAngVel</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>RelativeScale</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bExplosion</b>)</div>
+<p>Spawn one chunk of this mesh as its own Actor, with the supplied velocities and scale relative to this Actor.</p>
+<h4><span class="mw-headline" id="SpawnPartMulti">SpawnPartMulti</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=36" title="Edit section: SpawnPartMulti">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated native final function <a href="UE3_FracturedStaticMeshPart_(UDK).html" title="UE3:FracturedStaticMeshPart (UDK)">FracturedStaticMeshPart</a>&#160;<b>SpawnPartMulti</b> (<a href="Array.html" title="Array">array</a>&lt;<a href="Int.html" title="Int" class="mw-redirect">int</a>&gt;&#160;<b>ChunkIndices</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>InitialVel</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>InitialAngVel</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>RelativeScale</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bExplosion</b>)</div>
+<p>Does the same as SpawnPart, but takes an array of chunks to make part of the new part.</p>
+<h3><span class="mw-headline" id="Events">Events</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=37" title="Edit section: Events">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="Explode">Explode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=38" title="Edit section: Explode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>Explode</b> ()</div>
+<p>Break off all pieces in one go.</p>
+<h4><span class="mw-headline" id="HideFragmentsToMaximizeMemoryUsage">HideFragmentsToMaximizeMemoryUsage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=39" title="Edit section: HideFragmentsToMaximizeMemoryUsage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>HideFragmentsToMaximizeMemoryUsage</b> ()</div>
+<p>Hide some percentage of the fragments from this mesh to maximize memory usage - does not spawn physics pieces etc</p>
+<h4><span class="mw-headline" id="HideOneFragment">HideOneFragment</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=40" title="Edit section: HideOneFragment">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>HideOneFragment</b> ()</div>
+<p>Hide one fragment from this mesh - does not spawn physics pieces etc</p>
+<h4><span class="mw-headline" id="PostBeginPlay">PostBeginPlay</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=41" title="Edit section: PostBeginPlay">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>PostBeginPlay</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_Actor_events_(UDK).html#PostBeginPlay" title="UE3:Actor events (UDK)">Actor.PostBeginPlay</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TakeDamage">TakeDamage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=42" title="Edit section: TakeDamage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>TakeDamage</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>Damage</b>, <a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>EventInstigator</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>HitLocation</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>Momentum</b>, <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_DamageType_(UDK).html" title="UE3:DamageType (UDK)">DamageType</a>&gt;&#160;<b>DamageType</b>, optional&#160;<a href="UE3_Actor_structs_(UDK).html#TraceHitInfo" title="UE3:Actor structs (UDK)">Actor.TraceHitInfo</a>&#160;<b>HitInfo</b>, optional&#160;<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>DamageCauser</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_Actor_events_(UDK).html#TakeDamage" title="UE3:Actor events (UDK)">Actor.TakeDamage</a></p>
+<p>TakeDamage will hide/spawn chunks when they get shot.</p>
+<h3><span class="mw-headline" id="Other_instance_functions">Other instance functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=43" title="Edit section: Other instance functions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="FractureEffectIsRelevant">FractureEffectIsRelevant</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=44" title="Edit section: FractureEffectIsRelevant">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>FractureEffectIsRelevant</b> (<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bForceDedicated</b>, <a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>EffectInstigator</b>, out&#160;<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>bWantPhysChunksAndParticles</b>)</div>
+<p>Specialized to handle explicit effect instigators. Also, handles None instigators -- these are special weapons (eg dummyfire) and are always relevant. Also, for fractured static meshes we only spawn effects if the mesh itself has been rendered recently.</p>
+<h4><span class="mw-headline" id="IsFracturedByDamageType">IsFracturedByDamageType</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=45" title="Edit section: IsFracturedByDamageType">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsFracturedByDamageType</b> (<a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_DamageType_(UDK).html" title="UE3:DamageType (UDK)">DamageType</a>&gt;&#160;<b>DmgType</b>)</div>
+<p>Util for checking if this damage type will cause fracture.</p>
+<h4><span class="mw-headline" id="SetLoseChunkReplacementMaterial">SetLoseChunkReplacementMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)?section=46" title="Edit section: SetLoseChunkReplacementMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated function <b>SetLoseChunkReplacementMaterial</b> ()</div>
+<p>This will possibly set the material on the FracturedMesh after we have lost a chunk. *</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.464 seconds
+Real time usage: 0.477 seconds
+Preprocessor visited node count: 3853/1000000
+Preprocessor generated node count: 7300/1000000
+Post‐expand include size: 28623/2097152 bytes
+Template argument size: 8882/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  357.424      1 - -total
+ 42.11%  150.504     47 - Template:Tl
+ 39.92%  142.697     65 - Template:Samegame
+ 29.14%  104.158      1 - Template:Infobox_class
+ 27.69%   98.973      1 - Template:Infobox_class/core
+ 18.87%   67.435     24 - Template:Cl
+ 17.37%   62.089     16 - Template:Code
+  4.52%   16.143      2 - Template:Ch
+  1.81%    6.477      1 - Template:Autogenerated
+  1.45%    5.170      1 - Template:Classname
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:25797-0!*!*!*!*!*!* and timestamp 20161215181640 and revision id 40891
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:FracturedStaticMeshActor_(UDK)?oldid=40891#DeferredPartToSpawn">https://wiki.beyondunreal.com/UE3:FracturedStaticMeshActor_(UDK)?oldid=40891#DeferredPartToSpawn</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_UDK-specific_classes.html" title="Category:UDK-specific classes">UDK-specific classes</a></li><li><a href="Category_Classes_in_UDK_package_Engine.html" title="Category:Classes in UDK package Engine">Classes in UDK package Engine</a></li><li><a href="Category_Subclasses_of_Actor_(UDK).html" title="Category:Subclasses of Actor (UDK)">Subclasses of Actor (UDK)</a></li><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_FracturedStaticMeshActor_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:FracturedStaticMeshActor_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:FracturedStaticMeshActor_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:FracturedStaticMeshActor_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AFracturedStaticMeshActor+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AFracturedStaticMeshActor+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:FracturedStaticMeshActor_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:FracturedStaticMeshActor_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:FracturedStaticMeshActor_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:FracturedStaticMeshActor_(UDK)?oldid=40891" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:FracturedStaticMeshActor_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 07:39, 17 January 2010.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":105});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:DeferredPartToSpawn_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:30:29 GMT -->
+</html>

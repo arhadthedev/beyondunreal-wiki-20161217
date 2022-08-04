@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:WebDownload by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:WebDownload - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:WebDownload" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:WebDownload" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_WebDownload.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:WebDownload","wgTitle":"WebDownload","wgCurRevisionId":9493,"wgRevisionId":9493,"wgArticleId":3739,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:WebDownload","wgRelevantArticleId":3739,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_WebDownload skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I'm a doctor, not a mechanic
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:WebDownload</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Sometimes you want to have your mod download something from a website to be used in game or something like that. Unreal gives you the ability to do that using a [TCPLink] class.</p>
+<p>This document will describe how you can implement a basic HTTP client.</p>
+<p><b>Note:</b> You might want to take a look at <a href="Legacy_LibHTTP.html" title="Legacy:LibHTTP">LibHTTP</a>, it's a general purpose library which contains a better HTTP client.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#HTTP"><span class="tocnumber">1</span> <span class="toctext">HTTP</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#HTTP_Requests"><span class="tocnumber">1.1</span> <span class="toctext">HTTP Requests</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#HTTP_replies"><span class="tocnumber">1.2</span> <span class="toctext">HTTP replies</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Note_about_new_lines"><span class="tocnumber">1.3</span> <span class="toctext">Note about new lines</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#The_Code"><span class="tocnumber">2</span> <span class="toctext">The Code</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Documents"><span class="tocnumber">3</span> <span class="toctext">Documents</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="HTTP">HTTP</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:WebDownload?section=1" title="Edit section: HTTP">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>This document is focused on using <a rel="nofollow" class="external text" href="../www.rfc-editor.org/rfc/rfc1945.txt">HTTP/1.0</a> to retreive information, ofcourse it's possible to use any other protocol like <a rel="nofollow" class="external text" href="../www.rfc-editor.org/rfc/rfc959.txt">FTP</a>, <a rel="nofollow" class="external text" href="../www.rfc-editor.org/rfc/rfc865.txt">QOTD (TCP)</a>, etc. But you have to find out how to do that yourself, FTP requires a lot more work than HTTP does.</p>
+<h3><span class="mw-headline" id="HTTP_Requests">HTTP Requests</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:WebDownload?section=2" title="Edit section: HTTP Requests">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>First some information about a HTTP requests works.</p>
+<p>To get a file from a webserver you have send a query like this (without the line numbers ofcourse):</p>
+<pre>
+001  GET /wiki/Recent_Changed HTTP/1.0
+002  Host: wiki.beyondunreal.com
+003  Connection: close
+004  User-agent: UT2003-webdownload (version 100; UT2003 version 2136; <a rel="nofollow" class="external free" href="WebDownload.html">http://wiki.beyondunreal.com/WebDownload</a>)
+005
+</pre>
+<p>First of the most important part of the query is line 001, this will request the document from the server. The location has to be the absolute path to the file, it may not contain spaces, to use spaces you have to URL escape them (%20 is a space), read the <a rel="nofollow" class="external text" href="../www.rfc-editor.org/rfc/rfc1945.txt">RFC</a> for more details.</p>
+<p>I use a HTTP/1.0 request because HTTP/1.1 will introduce some extra difficulties.</p>
+<p>Another very important part of the request is line 002, this will define the host you want to connect to. You will connect on IP to the server, but you have to identify the server name you want to retreive files from. This is important because a lot of servers perform Virtual Hosting allowing diffirent servers on the same IP address.</p>
+<p>Line 003 isn't realy that important since the default action of HTTP/1.0 is to close the connection, but better safe then sorry.</p>
+<p>Line 004 is just usefull to identify the client, this string has to have the format of "client-name (extra info; extra info; ...)"</p>
+<h3><span class="mw-headline" id="HTTP_replies">HTTP replies</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:WebDownload?section=3" title="Edit section: HTTP replies">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>After the HTTP request the server will reply with a HTTP reply and the requested document.</p>
+<p>Here's an example HTTP reply (ignore the line numbers):</p>
+<pre>
+001  HTTP/1.1 200 OK
+002  Date: Thu, 21 Nov 2002 20:57:34 GMT
+003  Server: Apache/1.3.27 (Unix) AuthMySQL/2.20 mod_gzip/1.3.19.1a PHP/4.2.3
+004  Connection: close
+005
+006  ... document data ...
+007  ... document data ...
+...
+</pre>
+<p>From the above example only line 001 is intresting. Note that the server replies with a HTTP/1.1 reply, this doesn't matter much at this point, HTTP/1.1 and HTTP/1.0 are only important in the request. The code after HTTP/1.1 tells us what the server thought of our request. If the code is 200 everything is ok and the requested document is attachted in the reply. If the code is 404 it means that the page could not be found, check the RFC for the other codes.</p>
+<p>A empty line (line 005 is the example) is the devider between the HTTP header and the document data.</p>
+<h3><span class="mw-headline" id="Note_about_new_lines">Note about new lines</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:WebDownload?section=4" title="Edit section: Note about new lines">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>UNIX systems only use a newline character ('\n' or hex 0x0a) to identify a new line. Windows will use the combo carriage return + newline ('\r\n' , '\r' has hex value 0x0d). It's best to split lines on the newline and ignore the carriage return if it's there.</p>
+<h2><span class="mw-headline" id="The_Code">The Code</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:WebDownload?section=5" title="Edit section: The Code">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">class</span> WebDownload <span class="kw1">extends</span> TCPLink <span class="kw1">config</span>;
+ 
+<span class="kw1">var</span> <span class="kw1">config</span> <span class="kw5">string</span> sHostname;
+<span class="kw1">var</span> <span class="kw1">config</span> <span class="kw5">int</span> iPort;
+<span class="kw1">var</span> <span class="kw1">config</span> <span class="kw5">string</span> sRequest;
+ 
+<span class="kw1">var</span> <span class="kw1">private</span> <span class="kw5">string</span> buffer;
+</pre></div>
+</div>
+<p>Well this is pretty much the default stuff, you have to decide for yourself how to use this class, the way I used it was from another class that provided the config options.</p>
+<p><i>sHostname</i> should contain the hostname and only the hostname, for example: sHostname = "wiki.beyondunreal.com";</p>
+<p><i>iPort</i> needs to be the port the webserver runs on, usualy 80</p>
+<p><i>sRequest</i> needs to be the absolute url of the document on that server, for example: sRequest = "/wiki/Recent_Changes";</p>
+<p><i>buffer</i> is the private variable that will contain the data retreived from the server.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> StartDownload <span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  Resolve<span class="br0">(</span>sHostname<span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>This is where we start, we first have to resolve the hostname, when the hostname resolves we will get a event. <i>StartDownload</i> has to be called from somewhere...</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">event</span> ResolveFailed<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw3">log</span><span class="br0">(</span><span class="st0">"Error, resolve failed"</span><span class="br0">)</span>;
+<span class="br0">}</span>
+ 
+<span class="kw1">event</span> Resolved<span class="br0">(</span> IpAddr Addr <span class="br0">)</span>
+<span class="br0">{</span>
+  Addr.<span class="me0">Port</span> <span class="sy0">=</span> iPort;
+  BindPort<span class="br0">(</span><span class="br0">)</span>;
+  ReceiveMode <span class="sy0">=</span> RMODE_Event;
+  LinkMode <span class="sy0">=</span> MODE_Line;
+  Open<span class="br0">(</span>Addr<span class="br0">)</span>;  
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>When the resolve fails we will receive a <i>ResolveFailed</i> event, you may want to do some stuff there</p>
+<p>When the resolve is successfull we will get the event <i>Resolved</i>, from this point we will open the connection to the server.</p>
+<p><i>Addr</i> will contain the IP that has been resolved, we fill in the Port that we want to connect to, for HTTP is is 80 by default. Now we have to bind a local port, usualy you only bind a port when you want to listen to connections, but in the Unreal engine this is used to create a socket. Unreal can receive data via two ways, the first is by trying to read from the port, the other is by waiting for an event when there is data to be received. Ofcourse we want to receive events, thus we set the <i>ReceiveMode' to</i> RMODE_Event<i>. After that we set the</i> LinkMode <i>to</i> MODE_Line <i>this will mean we will receive</i> ReceivedLine <i>events.</i></p>
+<p>Now we will Open the connection to the remote server. When the open succeeds we will get <i>Opened</i> event.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">event</span> Opened<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  buffer <span class="sy0">=</span> <span class="st0">""</span>;
+  SendText<span class="br0">(</span><span class="st0">"GET "</span><span class="sy0">$</span>sRequest<span class="sy0">$</span><span class="st0">" HTTP/1.0"</span><span class="br0">)</span>;
+  SendText<span class="br0">(</span><span class="st0">"Host: "</span><span class="sy0">$</span>sHostname<span class="br0">)</span>;
+  SendText<span class="br0">(</span><span class="st0">"Connection: close"</span><span class="br0">)</span>;
+  SendText<span class="br0">(</span><span class="st0">"User-agent: UT2003-webdownload (version 100; UT2003 version "</span><span class="sy0">$</span>Level.<span class="me0">EngineVersion</span><span class="sy0">$</span><span class="st0">"; http://wiki.beyondunreal.com/WebDownload)"</span><span class="br0">)</span>;
+  SendText<span class="br0">(</span><span class="st0">""</span><span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>When the connection is open we will send the HTTP request, be sure to finish with a empty line. <i>SendText</i> will automatically add the trailing newlines.</p>
+<p>Now we have sent the request we will get receive data from the Server.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">event</span> ReceivedLine<span class="br0">(</span> <span class="kw5">string</span> Line <span class="br0">)</span>
+<span class="br0">{</span>
+  buffer <span class="sy0">=</span> buffer<span class="sy0">$</span>Line;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Just add the receiving data to the buffer, we don't want to process it yet, after the connection has closed we will do that.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">event</span> Closed<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw1">local</span> array<span class="sy0">&lt;</span>string<span class="sy0">&gt;</span> lines;
+  <span class="kw1">local</span> <span class="kw5">string</span> header;
+  <span class="kw1">local</span> <span class="kw5">int</span> i;
+ 
+  <span class="co1">// split buff into header and doc</span>
+  <span class="kw2">if</span> <span class="br0">(</span><span class="kw3">divide</span><span class="br0">(</span>buffer, <span class="kw3">Chr</span><span class="br0">(</span><span class="nu0">13</span><span class="br0">)</span><span class="sy0">$</span>Chr<span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span><span class="sy0">$</span>Chr<span class="br0">(</span><span class="nu0">13</span><span class="br0">)</span><span class="sy0">$</span>Chr<span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span>, header, buffer<span class="br0">)</span> <span class="sy0">==</span> <span class="kw6">false</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">// error no valid data</span>
+    <span class="kw2">return</span>;
+  <span class="br0">}</span>;
+ 
+  <span class="co1">// do some header parsing</span>
+  <span class="kw1">class</span><span class="st0">'wString'</span>.<span class="kw1">static</span>.<span class="me0">split2</span><span class="br0">(</span>header, <span class="kw3">chr</span><span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span>, lines<span class="br0">)</span>;  <span class="co1">// split on newlines (may still contain carriage returns)</span>
+  <span class="kw2">if</span> <span class="br0">(</span><span class="sy0">!</span><span class="kw1">class</span><span class="st0">'wString'</span>.<span class="kw1">static</span>.<span class="me0">MaskedCompare</span><span class="br0">(</span>lines<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span>, <span class="st0">"HTTP/1.? 200*"</span>, <span class="kw6">false</span><span class="br0">)</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    <span class="co1">// error no valid data</span>
+    <span class="kw2">return</span>;
+  <span class="br0">}</span>
+  <span class="kw2">for</span> <span class="br0">(</span>i <span class="sy0">=</span> <span class="nu0">0</span>; i <span class="sy0">&lt;</span> lines.<span class="me0">length</span>; i<span class="sy0">++</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    <span class="kw2">if</span> <span class="br0">(</span><span class="kw1">class</span><span class="st0">'wString'</span>.<span class="kw1">static</span>.<span class="me0">MaskedCompare</span><span class="br0">(</span>lines<span class="br0">[</span>i<span class="br0">]</span>, <span class="st0">"Content-Type: *"</span>, <span class="kw6">false</span><span class="br0">)</span><span class="br0">)</span>
+    <span class="br0">{</span>
+      <span class="kw2">if</span> <span class="br0">(</span><span class="sy0">!</span><span class="kw1">class</span><span class="st0">'wString'</span>.<span class="kw1">static</span>.<span class="me0">MaskedCompare</span><span class="br0">(</span>lines<span class="br0">[</span>i<span class="br0">]</span>, <span class="st0">"content-type: text/plain*"</span>, <span class="kw6">false</span><span class="br0">)</span><span class="br0">)</span>
+      <span class="br0">{</span>
+        <span class="co1">// only text/plain supported</span>
+        <span class="kw2">return</span>;
+      <span class="br0">}</span>
+    <span class="br0">}</span>
+  <span class="br0">}</span>
+ 
+  <span class="co1">// data should be correct</span>
+  <span class="kw1">class</span><span class="st0">'wString'</span>.<span class="kw1">static</span>.<span class="br0">(</span>buffer, <span class="kw3">chr</span><span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span>, lines<span class="br0">)</span>;
+  <span class="kw2">for</span> <span class="br0">(</span>i <span class="sy0">=</span> <span class="nu0">0</span>; i <span class="sy0">&lt;</span> lines.<span class="me0">length</span>; i<span class="sy0">++</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    <span class="co1">// cut off CR</span>
+    <span class="kw2">if</span> <span class="br0">(</span><span class="kw3">InStr</span><span class="br0">(</span>lines<span class="br0">[</span>i<span class="br0">]</span>, <span class="kw3">Chr</span><span class="br0">(</span><span class="nu0">13</span><span class="br0">)</span><span class="br0">)</span> <span class="sy0">&gt;</span> <span class="sy0">-</span><span class="nu0">1</span><span class="br0">)</span>
+    <span class="br0">{</span>
+      lines<span class="br0">[</span>i<span class="br0">]</span> <span class="sy0">=</span> <span class="kw3">Left</span><span class="br0">(</span>lines<span class="br0">[</span>i<span class="br0">]</span>, <span class="kw3">InStr</span><span class="br0">(</span>lines<span class="br0">[</span>i<span class="br0">]</span>, <span class="kw3">Chr</span><span class="br0">(</span><span class="nu0">13</span><span class="br0">)</span><span class="br0">)</span><span class="br0">)</span>;
+    <span class="br0">}</span>
+    <span class="kw2">if</span> <span class="br0">(</span>lines<span class="br0">[</span>i<span class="br0">]</span> <span class="sy0">!=</span> <span class="st0">""</span><span class="br0">)</span>
+    <span class="br0">{</span>
+      <span class="co1">// add the line to something</span>
+    <span class="br0">}</span>
+  <span class="br0">}</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>The event <i>closed</i> will be called when the connection gets close, since we specified <i>Connection: close</i> in the HTTP request the server will do it for us.</p>
+<p>The buffer will contain the HTTP reply and the data, you may want to check the HTTP reply for status codes, and possibly for a new Location.</p>
+<p>I've included an example on how to parse the data. It will first header the headers if the server returned a code 200, then it will check if the content type is text/plain. When these check out it will start to read data, since we split our data on a newline we have to check if there's a orphan carriage return, if so cut it off. If the resulting line is not empty we will use it.</p>
+<p>Notice that I've used the MaskedCompare from <a href="Legacy_El_Muerte_TDS/WUtils.html" title="Legacy:El Muerte TDS/WUtils" class="mw-redirect">wUtils</a>.</p>
+<p>Well this is all, for more information about HTTP request check the docs.</p>
+<h2><span class="mw-headline" id="Documents">Documents</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:WebDownload?section=6" title="Edit section: Documents">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="../www.rfc-editor.org/rfc/rfc1945.txt">HTTP/1.0 RFC</a></li>
+<li><a rel="nofollow" class="external text" href="../www.rfc-editor.org/rfc/rfc2616.txt">HTTP/1.1 RFC</a></li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.101 seconds
+Real time usage: 0.103 seconds
+Preprocessor visited node count: 77/1000000
+Preprocessor generated node count: 148/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:3739-0!*!0!!en!*!* and timestamp 20161215143214 and revision id 9493
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:WebDownload?oldid=9493">https://wiki.beyondunreal.com/Legacy:WebDownload?oldid=9493</a>"</div>
+					<div id='catlinks' class='catlinks catlinks-allhidden'></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_WebDownload.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:WebDownload?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:WebDownload" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:WebDownload" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AWebDownload&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AWebDownload" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:WebDownload" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:WebDownload" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:WebDownload?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:WebDownload?oldid=9493" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:WebDownload" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 05:26, 30 July 2005.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":97});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:WebDownload by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:53 GMT -->
+</html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:Actor_events_(UT3) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:53:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:Actor events (UT3) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_Actor_events_(UT3).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:Actor_events_(UT3)","wgTitle":"Actor events (UT3)","wgCurRevisionId":33463,"wgRevisionId":33463,"wgArticleId":17521,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles to be expanded"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:Actor_events_(UT3)","wgRelevantArticleId":17521,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_Actor_events_UT3 skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I love the smell of UnrealEd crashing in the morning. &#8211; tarquin
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:Actor events (UT3)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Tournament_3.html" title="Unreal Tournament 3"><img alt="UT3" src="w/images/Icon-UT3.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UT3).html" title="UE3:Object (UT3)">Object</a> &gt;&gt;&#160;<a href="UE3_Actor_(UT3).html" title="UE3:Actor (UT3)">Actor</a> <i>(events)</i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Events"><span class="tocnumber">1</span> <span class="toctext">Events</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Attach"><span class="tocnumber">1.1</span> <span class="toctext">Attach</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#BaseChange"><span class="tocnumber">1.2</span> <span class="toctext">BaseChange</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#BecomeViewTarget"><span class="tocnumber">1.3</span> <span class="toctext">BecomeViewTarget</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#BeginAnimControl"><span class="tocnumber">1.4</span> <span class="toctext">BeginAnimControl</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#BroadcastLocalizedMessage"><span class="tocnumber">1.5</span> <span class="toctext">BroadcastLocalizedMessage</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#BroadcastLocalizedTeamMessage"><span class="tocnumber">1.6</span> <span class="toctext">BroadcastLocalizedTeamMessage</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Bump"><span class="tocnumber">1.7</span> <span class="toctext">Bump</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#CollisionChanged"><span class="tocnumber">1.8</span> <span class="toctext">CollisionChanged</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#ConstraintBrokenNotify"><span class="tocnumber">1.9</span> <span class="toctext">ConstraintBrokenNotify</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Destroyed"><span class="tocnumber">1.10</span> <span class="toctext">Destroyed</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Detach"><span class="tocnumber">1.11</span> <span class="toctext">Detach</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#EncroachedBy"><span class="tocnumber">1.12</span> <span class="toctext">EncroachedBy</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#EncroachingOn"><span class="tocnumber">1.13</span> <span class="toctext">EncroachingOn</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#EndViewTarget"><span class="tocnumber">1.14</span> <span class="toctext">EndViewTarget</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Falling"><span class="tocnumber">1.15</span> <span class="toctext">Falling</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#FellOutOfWorld"><span class="tocnumber">1.16</span> <span class="toctext">FellOutOfWorld</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#FinishAnimControl"><span class="tocnumber">1.17</span> <span class="toctext">FinishAnimControl</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#GainedChild"><span class="tocnumber">1.18</span> <span class="toctext">GainedChild</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#GetActorEyesViewPoint"><span class="tocnumber">1.19</span> <span class="toctext">GetActorEyesViewPoint</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#GetActorFaceFXAsset"><span class="tocnumber">1.20</span> <span class="toctext">GetActorFaceFXAsset</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#GetFaceFXAudioComponent"><span class="tocnumber">1.21</span> <span class="toctext">GetFaceFXAudioComponent</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#HitWall"><span class="tocnumber">1.22</span> <span class="toctext">HitWall</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#InterpolationChanged"><span class="tocnumber">1.23</span> <span class="toctext">InterpolationChanged</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#InterpolationFinished"><span class="tocnumber">1.24</span> <span class="toctext">InterpolationFinished</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#InterpolationStarted"><span class="tocnumber">1.25</span> <span class="toctext">InterpolationStarted</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#Landed"><span class="tocnumber">1.26</span> <span class="toctext">Landed</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#LostChild"><span class="tocnumber">1.27</span> <span class="toctext">LostChild</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#ModifyHearSoundComponent"><span class="tocnumber">1.28</span> <span class="toctext">ModifyHearSoundComponent</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#NotifySkelControlBeyondLimit"><span class="tocnumber">1.29</span> <span class="toctext">NotifySkelControlBeyondLimit</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#OnAnimEnd"><span class="tocnumber">1.30</span> <span class="toctext">OnAnimEnd</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#OnAnimPlay"><span class="tocnumber">1.31</span> <span class="toctext">OnAnimPlay</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#OnRanOver"><span class="tocnumber">1.32</span> <span class="toctext">OnRanOver</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#OutsideWorldBounds"><span class="tocnumber">1.33</span> <span class="toctext">OutsideWorldBounds</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#OverRotated"><span class="tocnumber">1.34</span> <span class="toctext">OverRotated</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#PhysicsVolumeChange"><span class="tocnumber">1.35</span> <span class="toctext">PhysicsVolumeChange</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#PlayActorFaceFXAnim"><span class="tocnumber">1.36</span> <span class="toctext">PlayActorFaceFXAnim</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#PostBeginPlay"><span class="tocnumber">1.37</span> <span class="toctext">PostBeginPlay</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#PostInitAnimTree"><span class="tocnumber">1.38</span> <span class="toctext">PostInitAnimTree</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#PostRenderFor"><span class="tocnumber">1.39</span> <span class="toctext">PostRenderFor</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#PostTouch"><span class="tocnumber">1.40</span> <span class="toctext">PostTouch</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#PreBeginPlay"><span class="tocnumber">1.41</span> <span class="toctext">PreBeginPlay</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#RanInto"><span class="tocnumber">1.42</span> <span class="toctext">RanInto</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="#ReplicatedEvent"><span class="tocnumber">1.43</span> <span class="toctext">ReplicatedEvent</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="#Reset"><span class="tocnumber">1.44</span> <span class="toctext">Reset</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href="#RigidBodyCollision"><span class="tocnumber">1.45</span> <span class="toctext">RigidBodyCollision</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#RootMotionExtracted"><span class="tocnumber">1.46</span> <span class="toctext">RootMotionExtracted</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="#RootMotionModeChanged"><span class="tocnumber">1.47</span> <span class="toctext">RootMotionModeChanged</span></a></li>
+<li class="toclevel-2 tocsection-49"><a href="#ScriptGetTeamNum"><span class="tocnumber">1.48</span> <span class="toctext">ScriptGetTeamNum</span></a></li>
+<li class="toclevel-2 tocsection-50"><a href="#SetAnimPosition"><span class="tocnumber">1.49</span> <span class="toctext">SetAnimPosition</span></a></li>
+<li class="toclevel-2 tocsection-51"><a href="#SetAnimWeights"><span class="tocnumber">1.50</span> <span class="toctext">SetAnimWeights</span></a></li>
+<li class="toclevel-2 tocsection-52"><a href="#SetInitialState"><span class="tocnumber">1.51</span> <span class="toctext">SetInitialState</span></a></li>
+<li class="toclevel-2 tocsection-53"><a href="#SetMorphWeight"><span class="tocnumber">1.52</span> <span class="toctext">SetMorphWeight</span></a></li>
+<li class="toclevel-2 tocsection-54"><a href="#SetSkelControlScale"><span class="tocnumber">1.53</span> <span class="toctext">SetSkelControlScale</span></a></li>
+<li class="toclevel-2 tocsection-55"><a href="#ShutDown"><span class="tocnumber">1.54</span> <span class="toctext">ShutDown</span></a></li>
+<li class="toclevel-2 tocsection-56"><a href="#SpawnedByKismet"><span class="tocnumber">1.55</span> <span class="toctext">SpawnedByKismet</span></a></li>
+<li class="toclevel-2 tocsection-57"><a href="#SpecialHandling"><span class="tocnumber">1.56</span> <span class="toctext">SpecialHandling</span></a></li>
+<li class="toclevel-2 tocsection-58"><a href="#StopActorFaceFXAnim"><span class="tocnumber">1.57</span> <span class="toctext">StopActorFaceFXAnim</span></a></li>
+<li class="toclevel-2 tocsection-59"><a href="#TakeDamage"><span class="tocnumber">1.58</span> <span class="toctext">TakeDamage</span></a></li>
+<li class="toclevel-2 tocsection-60"><a href="#Tick"><span class="tocnumber">1.59</span> <span class="toctext">Tick</span></a></li>
+<li class="toclevel-2 tocsection-61"><a href="#Timer"><span class="tocnumber">1.60</span> <span class="toctext">Timer</span></a></li>
+<li class="toclevel-2 tocsection-62"><a href="#TornOff"><span class="tocnumber">1.61</span> <span class="toctext">TornOff</span></a></li>
+<li class="toclevel-2 tocsection-63"><a href="#Touch"><span class="tocnumber">1.62</span> <span class="toctext">Touch</span></a></li>
+<li class="toclevel-2 tocsection-64"><a href="#UnTouch"><span class="tocnumber">1.63</span> <span class="toctext">UnTouch</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Actor events in other games:</dt>
+<dd><span><a href="UE1_Actor_events_(RTNP).html" title="UE1:Actor events (RTNP)">RTNP</a></span>, <span><a href="UE1_Actor_events_(U1).html" title="UE1:Actor events (U1)">U1</a></span>, <span><a href="UE1_Actor_events_(UT).html" title="UE1:Actor events (UT)">UT</a></span>, <span><a href="UE2_Actor_events_(U2).html" title="UE2:Actor events (U2)">U2</a></span>, <span><a href="UE2_Actor_events_(U2XMP).html" title="UE2:Actor events (U2XMP)">U2XMP</a></span>, <span><a href="UE2_Actor_events_(UE2Runtime).html" title="UE2:Actor events (UE2Runtime)">UE2Runtime</a></span>, <span><a href="UE2_Actor_events_(UT2003).html" title="UE2:Actor events (UT2003)">UT2003</a></span>, <span><a href="UE2_Actor_events_(UT2004).html" title="UE2:Actor events (UT2004)">UT2004</a></span>, <span><a href="UE3_Actor_events_(UDK).html" title="UE3:Actor events (UDK)">UDK</a></span></dd>
+<dt>Other member categories for this class:</dt>
+<dd><span><a href="UE3_Actor_instance_functions_(UT3).html" title="UE3:Actor instance functions (UT3)">instance functions</a></span>, <span><a href="UE3_Actor_internal_variables_(UT3).html" title="UE3:Actor internal variables (UT3)">internal variables</a></span>, <span><a href="UE3_Actor_native_functions_(UT3).html" title="UE3:Actor native functions (UT3)">native functions</a></span>, <span><a href="UE3_Actor_structs_(UT3).html" title="UE3:Actor structs (UT3)">structs</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-content">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text">Please help <a rel="nofollow" class="external text" href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)">improve this article or section</a> by expanding it.</td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Events">Events</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=1" title="Edit section: Events">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="Attach">Attach</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=2" title="Edit section: Attach">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>Attach</b> (<a href="UE3_Actor_(UT3).html" title="UE3:Actor (UT3)">Actor</a>&#160;<b>Other</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="BaseChange">BaseChange</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=3" title="Edit section: BaseChange">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>BaseChange</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="BecomeViewTarget">BecomeViewTarget</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=4" title="Edit section: BecomeViewTarget">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>BecomeViewTarget</b> (<a href="UE3_PlayerController_(UT3).html" title="UE3:PlayerController (UT3)">PlayerController</a>&#160;<b>PC</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="BeginAnimControl">BeginAnimControl</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=5" title="Edit section: BeginAnimControl">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>BeginAnimControl</b> (<a href="Array.html" title="Array">array</a>&lt;<a href="UE3_AnimSet_(UT3).html" title="UE3:AnimSet (UT3)">AnimSet</a>&gt;&#160;<b>InAnimSets</b>)</div>
+<p>Called when we start an AnimControl track operating on this Actor. Supplied is the set of AnimSets we are going to want to play from.</p>
+<h4><span class="mw-headline" id="BroadcastLocalizedMessage">BroadcastLocalizedMessage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=6" title="Edit section: BroadcastLocalizedMessage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>BroadcastLocalizedMessage</b> (<a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_LocalMessage_(UT3).html" title="UE3:LocalMessage (UT3)">LocalMessage</a>&gt;&#160;<b>InMessageClass</b>, optional&#160;<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>Switch</b>, optional&#160;<a href="UE3_PlayerReplicationInfo_(UT3).html" title="UE3:PlayerReplicationInfo (UT3)">PlayerReplicationInfo</a>&#160;<b>RelatedPRI_1</b>, optional&#160;<a href="UE3_PlayerReplicationInfo_(UT3).html" title="UE3:PlayerReplicationInfo (UT3)">PlayerReplicationInfo</a>&#160;<b>RelatedPRI_2</b>, optional&#160;<a href="UE3_Object_(UT3).html" title="UE3:Object (UT3)">Object</a>&#160;<b>OptionalObject</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="BroadcastLocalizedTeamMessage">BroadcastLocalizedTeamMessage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=7" title="Edit section: BroadcastLocalizedTeamMessage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>BroadcastLocalizedTeamMessage</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>TeamIndex</b>, <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_LocalMessage_(UT3).html" title="UE3:LocalMessage (UT3)">LocalMessage</a>&gt;&#160;<b>InMessageClass</b>, optional&#160;<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>Switch</b>, optional&#160;<a href="UE3_PlayerReplicationInfo_(UT3).html" title="UE3:PlayerReplicationInfo (UT3)">PlayerReplicationInfo</a>&#160;<b>RelatedPRI_1</b>, optional&#160;<a href="UE3_PlayerReplicationInfo_(UT3).html" title="UE3:PlayerReplicationInfo (UT3)">PlayerReplicationInfo</a>&#160;<b>RelatedPRI_2</b>, optional&#160;<a href="UE3_Object_(UT3).html" title="UE3:Object (UT3)">Object</a>&#160;<b>OptionalObject</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Bump">Bump</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=8" title="Edit section: Bump">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>Bump</b> (<a href="UE3_Actor_(UT3).html" title="UE3:Actor (UT3)">Actor</a>&#160;<b>Other</b>, <a href="UE3_PrimitiveComponent_(UT3).html" title="UE3:PrimitiveComponent (UT3)">PrimitiveComponent</a>&#160;<b>OtherComp</b>, <a href="UE3_Object_structs_(UT3).html#Vector" title="UE3:Object structs (UT3)">Object.Vector</a>&#160;<b>HitNormal</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="CollisionChanged">CollisionChanged</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=9" title="Edit section: CollisionChanged">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>CollisionChanged</b> ()</div>
+<p>Called when collision values change for this actor (via SetCollision/SetCollisionSize).</p>
+<h4><span class="mw-headline" id="ConstraintBrokenNotify">ConstraintBrokenNotify</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=10" title="Edit section: ConstraintBrokenNotify">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>ConstraintBrokenNotify</b> (<a href="UE3_Actor_(UT3).html" title="UE3:Actor (UT3)">Actor</a>&#160;<b>ConOwner</b>, <a href="UE3_RB_ConstraintSetup_(UT3).html" title="UE3:RB ConstraintSetup (UT3)">RB_ConstraintSetup</a>&#160;<b>ConSetup</b>, <a href="UE3_RB_ConstraintInstance_(UT3).html" title="UE3:RB ConstraintInstance (UT3)">RB_ConstraintInstance</a>&#160;<b>ConInstance</b>)</div>
+<p>When a constraint is broken we will get this event from c++ land.</p>
+<h4><span class="mw-headline" id="Destroyed">Destroyed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=11" title="Edit section: Destroyed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>Destroyed</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Detach">Detach</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=12" title="Edit section: Detach">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>Detach</b> (<a href="UE3_Actor_(UT3).html" title="UE3:Actor (UT3)">Actor</a>&#160;<b>Other</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="EncroachedBy">EncroachedBy</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=13" title="Edit section: EncroachedBy">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>EncroachedBy</b> (<a href="UE3_Actor_(UT3).html" title="UE3:Actor (UT3)">Actor</a>&#160;<b>Other</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="EncroachingOn">EncroachingOn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=14" title="Edit section: EncroachingOn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>EncroachingOn</b> (<a href="UE3_Actor_(UT3).html" title="UE3:Actor (UT3)">Actor</a>&#160;<b>Other</b>)</div>
+<p>called when this Actor is encroaching on Other and we couldn't find an appropriate place to push Other to</p>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true to abort the move, false to allow it</dd>
+</dl>
+<p><b>Warning:</b> do not abort moves of PHYS_RigidBody actors as that will cause the Unreal location and physics engine location to mismatch</p>
+<h4><span class="mw-headline" id="EndViewTarget">EndViewTarget</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=15" title="Edit section: EndViewTarget">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>EndViewTarget</b> (<a href="UE3_PlayerController_(UT3).html" title="UE3:PlayerController (UT3)">PlayerController</a>&#160;<b>PC</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Falling">Falling</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=16" title="Edit section: Falling">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>Falling</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="FellOutOfWorld">FellOutOfWorld</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=17" title="Edit section: FellOutOfWorld">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>FellOutOfWorld</b> (<a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_DamageType_(UT3).html" title="UE3:DamageType (UT3)">DamageType</a>&gt;&#160;<b>dmgType</b>)</div>
+<p>called when the actor falls out of the world 'safely' (below KillZ and such)</p>
+<h4><span class="mw-headline" id="FinishAnimControl">FinishAnimControl</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=18" title="Edit section: FinishAnimControl">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>FinishAnimControl</b> ()</div>
+<p>Called when we are done with the AnimControl track.</p>
+<h4><span class="mw-headline" id="GainedChild">GainedChild</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=19" title="Edit section: GainedChild">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>GainedChild</b> (<a href="UE3_Actor_(UT3).html" title="UE3:Actor (UT3)">Actor</a>&#160;<b>Other</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetActorEyesViewPoint">GetActorEyesViewPoint</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=20" title="Edit section: GetActorEyesViewPoint">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>GetActorEyesViewPoint</b> (out&#160;<a href="UE3_Object_structs_(UT3).html#Vector" title="UE3:Object structs (UT3)">Object.Vector</a>&#160;<b>out_Location</b>, out&#160;<a href="UE3_Object_structs_(UT3).html#Rotator" title="UE3:Object structs (UT3)">Object.Rotator</a>&#160;<b>out_Rotation</b>)</div>
+<p>returns the point of view of the actor. note that this doesn't mean the camera, but the 'eyes' of the actor. For example, for a Pawn, this would define the eye height location, and view rotation (which is different from the pawn rotation which has a zeroed pitch component). A camera first person view will typically use this view point. Most traces (weapon, AI) will be done from this view point.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>out_Location</i> - location of view point</li>
+<li><i>out_Rotation</i> - view rotation of actor.</li>
+</ul>
+<h4><span class="mw-headline" id="GetActorFaceFXAsset">GetActorFaceFXAsset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=21" title="Edit section: GetActorFaceFXAsset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <a href="UE3_FaceFXAsset_(UT3).html" title="UE3:FaceFXAsset (UT3)">FaceFXAsset</a>&#160;<b>GetActorFaceFXAsset</b> ()</div>
+<p>Used by Matinee in-game to mount FaceFXAnimSets before playing animations.</p>
+<h4><span class="mw-headline" id="GetFaceFXAudioComponent">GetFaceFXAudioComponent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=22" title="Edit section: GetFaceFXAudioComponent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <a href="UE3_AudioComponent_(UT3).html" title="UE3:AudioComponent (UT3)">AudioComponent</a>&#160;<b>GetFaceFXAudioComponent</b> ()</div>
+<p>Function for allowing you to tell FaceFX which AudioComponent it should use for playing audio for corresponding facial animation.</p>
+<h4><span class="mw-headline" id="HitWall">HitWall</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=23" title="Edit section: HitWall">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>HitWall</b> (<a href="UE3_Object_structs_(UT3).html#Vector" title="UE3:Object structs (UT3)">Object.Vector</a>&#160;<b>HitNormal</b>, <a href="UE3_Actor_(UT3).html" title="UE3:Actor (UT3)">Actor</a>&#160;<b>Wall</b>, <a href="UE3_PrimitiveComponent_(UT3).html" title="UE3:PrimitiveComponent (UT3)">PrimitiveComponent</a>&#160;<b>WallComp</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="InterpolationChanged">InterpolationChanged</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=24" title="Edit section: InterpolationChanged">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>InterpolationChanged</b> (<a href="UE3_SeqAct_Interp_(UT3).html" title="UE3:SeqAct Interp (UT3)">SeqAct_Interp</a>&#160;<b>InterpAction</b>)</div>
+<p>called when a SeqAct_Interp action affecting this Actor received an event that changed its properties (paused, reversed direction, etc)</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>InterpAction</i> - the SeqAct_Interp that is affecting the Actor</li>
+</ul>
+<p><b>Note:</b> this function is called on clients for actors that are interpolated clientside via MatineeActor</p>
+<h4><span class="mw-headline" id="InterpolationFinished">InterpolationFinished</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=25" title="Edit section: InterpolationFinished">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>InterpolationFinished</b> (<a href="UE3_SeqAct_Interp_(UT3).html" title="UE3:SeqAct Interp (UT3)">SeqAct_Interp</a>&#160;<b>InterpAction</b>)</div>
+<p>called when a SeqAct_Interp action finished interpolating this Actor</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>InterpAction</i> - the SeqAct_Interp that was affecting the Actor</li>
+</ul>
+<p><b>Note:</b> this function is called on clients for actors that are interpolated clientside via MatineeActor</p>
+<h4><span class="mw-headline" id="InterpolationStarted">InterpolationStarted</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=26" title="Edit section: InterpolationStarted">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>InterpolationStarted</b> (<a href="UE3_SeqAct_Interp_(UT3).html" title="UE3:SeqAct Interp (UT3)">SeqAct_Interp</a>&#160;<b>InterpAction</b>)</div>
+<p>called when a SeqAct_Interp action starts interpolating this Actor via matinee</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>InterpAction</i> - the SeqAct_Interp that is affecting the Actor</li>
+</ul>
+<p><b>Note:</b> this function is called on clients for actors that are interpolated clientside via MatineeActor</p>
+<h4><span class="mw-headline" id="Landed">Landed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=27" title="Edit section: Landed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>Landed</b> (<a href="UE3_Object_structs_(UT3).html#Vector" title="UE3:Object structs (UT3)">Object.Vector</a>&#160;<b>HitNormal</b>, <a href="UE3_Actor_(UT3).html" title="UE3:Actor (UT3)">Actor</a>&#160;<b>FloorActor</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="LostChild">LostChild</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=28" title="Edit section: LostChild">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>LostChild</b> (<a href="UE3_Actor_(UT3).html" title="UE3:Actor (UT3)">Actor</a>&#160;<b>Other</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ModifyHearSoundComponent">ModifyHearSoundComponent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=29" title="Edit section: ModifyHearSoundComponent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>ModifyHearSoundComponent</b> (<a href="UE3_AudioComponent_(UT3).html" title="UE3:AudioComponent (UT3)">AudioComponent</a>&#160;<b>AC</b>)</div>
+<p>called when a sound is going to be played on this Actor via PlayerController::ClientHearSound() gives it a chance to modify the component that will be used (add parameter values, etc)</p>
+<h4><span class="mw-headline" id="NotifySkelControlBeyondLimit">NotifySkelControlBeyondLimit</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=30" title="Edit section: NotifySkelControlBeyondLimit">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>NotifySkelControlBeyondLimit</b> (<a href="UE3_SkelControlLookAt_(UT3).html" title="UE3:SkelControlLookAt (UT3)">SkelControlLookAt</a>&#160;<b>LookAt</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="OnAnimEnd">OnAnimEnd</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=31" title="Edit section: OnAnimEnd">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>OnAnimEnd</b> (<a href="UE3_AnimNodeSequence_(UT3).html" title="UE3:AnimNodeSequence (UT3)">AnimNodeSequence</a>&#160;<b>SeqNode</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>PlayedTime</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>ExcessTime</b>)</div>
+<p>Event called when an AnimNodeSequence (in the animation tree of one of this Actor's SkeletalMeshComponents) reaches the end and stops. Will not get called if bLooping is 'true' on the AnimNodeSequence. bCauseActorAnimEnd must be set 'true' on the AnimNodeSequence for this event to get generated.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>SeqNode</i> - Node that finished playing. You can get to the SkeletalMeshComponent by looking at SeqNode-&gt;SkelComponent</li>
+<li><i>PlayedTime</i> - Time played on this animation. (play rate independant).</li>
+<li><i>ExcessTime</i> - how much time overlapped beyond end of animation. (play rate independant).</li>
+</ul>
+<h4><span class="mw-headline" id="OnAnimPlay">OnAnimPlay</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=32" title="Edit section: OnAnimPlay">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>OnAnimPlay</b> (<a href="UE3_AnimNodeSequence_(UT3).html" title="UE3:AnimNodeSequence (UT3)">AnimNodeSequence</a>&#160;<b>SeqNode</b>)</div>
+<p>Event called when a PlayAnim is called AnimNodeSequence in the animation tree of one of this Actor's SkeletalMeshComponents. bCauseActorAnimPlay must be set 'true' on the AnimNodeSequence for this event to get generated.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>SeqNode</i> - Node had PlayAnim called. You can get to the SkeletalMeshComponent by looking at SeqNode-&gt;SkelComponent</li>
+</ul>
+<h4><span class="mw-headline" id="OnRanOver">OnRanOver</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=33" title="Edit section: OnRanOver">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>OnRanOver</b> (<a href="UE3_SVehicle_(UT3).html" title="UE3:SVehicle (UT3)">SVehicle</a>&#160;<b>Vehicle</b>, <a href="UE3_PrimitiveComponent_(UT3).html" title="UE3:PrimitiveComponent (UT3)">PrimitiveComponent</a>&#160;<b>RunOverComponent</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>WheelIndex</b>)</div>
+<p>Called each frame (for each wheel) when an SVehicle has a wheel in contact with this Actor. Not called on Actors that have bWorldGeometry or bStatic set to TRUE.</p>
+<h4><span class="mw-headline" id="OutsideWorldBounds">OutsideWorldBounds</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=34" title="Edit section: OutsideWorldBounds">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>OutsideWorldBounds</b> ()</div>
+<p>called when the Actor is outside the hard limit on world bounds</p>
+<p><b>Note:</b> physics and collision are automatically turned off after calling this function</p>
+<h4><span class="mw-headline" id="OverRotated">OverRotated</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=35" title="Edit section: OverRotated">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>OverRotated</b> (out&#160;<a href="UE3_Object_structs_(UT3).html#Rotator" title="UE3:Object structs (UT3)">Object.Rotator</a>&#160;<b>out_Desired</b>, out&#160;<a href="UE3_Object_structs_(UT3).html#Rotator" title="UE3:Object structs (UT3)">Object.Rotator</a>&#160;<b>out_Actual</b>)</div>
+<p>Called by ClampRotation if the rotator was outside of the limits</p>
+<h4><span class="mw-headline" id="PhysicsVolumeChange">PhysicsVolumeChange</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=36" title="Edit section: PhysicsVolumeChange">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>PhysicsVolumeChange</b> (<a href="UE3_PhysicsVolume_(UT3).html" title="UE3:PhysicsVolume (UT3)">PhysicsVolume</a>&#160;<b>NewVolume</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PlayActorFaceFXAnim">PlayActorFaceFXAnim</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=37" title="Edit section: PlayActorFaceFXAnim">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>PlayActorFaceFXAnim</b> (<a href="UE3_FaceFXAnimSet_(UT3).html" title="UE3:FaceFXAnimSet (UT3)">FaceFXAnimSet</a>&#160;<b>AnimSet</b>, <a href="String.html" title="String">string</a>&#160;<b>GroupName</b>, <a href="String.html" title="String">string</a>&#160;<b>SeqName</b>)</div>
+<p>Play FaceFX animations on this Actor. Returns TRUE if succeeded, if failed, a log warning will be issued.</p>
+<h4><span class="mw-headline" id="PostBeginPlay">PostBeginPlay</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=38" title="Edit section: PostBeginPlay">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>PostBeginPlay</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PostInitAnimTree">PostInitAnimTree</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=39" title="Edit section: PostInitAnimTree">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>PostInitAnimTree</b> (<a href="UE3_SkeletalMeshComponent_(UT3).html" title="UE3:SkeletalMeshComponent (UT3)">SkeletalMeshComponent</a>&#160;<b>SkelComp</b>)</div>
+<p>called after initializing the AnimTree for the given SkeletalMeshComponent that has this Actor as its Owner this is a good place to cache references to skeletal controllers, etc that the Actor modifies</p>
+<h4><span class="mw-headline" id="PostRenderFor">PostRenderFor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=40" title="Edit section: PostRenderFor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>PostRenderFor</b> (<a href="UE3_PlayerController_(UT3).html" title="UE3:PlayerController (UT3)">PlayerController</a>&#160;<b>PC</b>, <a href="UE3_Canvas_(UT3).html" title="UE3:Canvas (UT3)">Canvas</a>&#160;<b>Canvas</b>, <a href="UE3_Object_structs_(UT3).html#Vector" title="UE3:Object structs (UT3)">Object.Vector</a>&#160;<b>CameraPosition</b>, <a href="UE3_Object_structs_(UT3).html#Vector" title="UE3:Object structs (UT3)">Object.Vector</a>&#160;<b>CameraDir</b>)</div>
+<p>Script function called by NativePostRenderFor().</p>
+<h4><span class="mw-headline" id="PostTouch">PostTouch</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=41" title="Edit section: PostTouch">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>PostTouch</b> (<a href="UE3_Actor_(UT3).html" title="UE3:Actor (UT3)">Actor</a>&#160;<b>Other</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="PreBeginPlay">PreBeginPlay</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=42" title="Edit section: PreBeginPlay">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>PreBeginPlay</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="RanInto">RanInto</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=43" title="Edit section: RanInto">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>RanInto</b> (<a href="UE3_Actor_(UT3).html" title="UE3:Actor (UT3)">Actor</a>&#160;<b>Other</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ReplicatedEvent">ReplicatedEvent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=44" title="Edit section: ReplicatedEvent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>ReplicatedEvent</b> (<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>VarName</b>)</div>
+<p>Called when a replicated variable declared with the <a href="Repnotify-2.html" title="Repnotify" class="mw-redirect">repnotify</a> modifier is received on the client. During initial replication, this event may get called a few times before <a href="#PostBeginPlay">PostBeginPlay</a>() is called.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>VarName</i> - the name of the received variable.</li>
+</ul>
+<h4><span class="mw-headline" id="Reset">Reset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=45" title="Edit section: Reset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>Reset</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="RigidBodyCollision">RigidBodyCollision</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=46" title="Edit section: RigidBodyCollision">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>RigidBodyCollision</b> (<a href="UE3_PrimitiveComponent_(UT3).html" title="UE3:PrimitiveComponent (UT3)">PrimitiveComponent</a>&#160;<b>HitComponent</b>, <a href="UE3_PrimitiveComponent_(UT3).html" title="UE3:PrimitiveComponent (UT3)">PrimitiveComponent</a>&#160;<b>OtherComponent</b>, const&#160;out&#160;<a href="UE3_Actor_structs_(UT3).html#CollisionImpactData" title="UE3:Actor structs (UT3)">CollisionImpactData</a>&#160;<b>RigidCollisionData</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ContactIndex</b>)</div>
+<p>Called when a <a href="UE3_PrimitiveComponent_(UT3).html" title="UE3:PrimitiveComponent (UT3)">PrimitiveComponent</a> this Actor owns has <a href="UE3_PrimitiveComponent_properties_(UT3).html#bNotifyRigidBodyCollision" title="UE3:PrimitiveComponent properties (UT3)">bNotifyRigidBodyCollision</a> set to <i>True</i> and <a href="UE3_PrimitiveComponent_properties_(UT3).html#ScriptRigidBodyCollisionThreshold" title="UE3:PrimitiveComponent properties (UT3)">ScriptRigidBodyCollisionThreshold</a> &gt; 0 and is involved in a physics collision where the relative velocity exceeds ScriptRigidBodyCollisionThreshold.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>HitComponent</i> - the component of this Actor that collided</li>
+<li><i>OtherComponent</i> - the other component that collided</li>
+<li><i>RigidCollisionData</i> - information on the collision itself, including contact points</li>
+<li><i>ContactIndex</i> - the element in each RigidCollisionData.ContactInfo's <a href="UE3_Actor_structs_(UT3).html#RigidBodyContactInfo" title="UE3:Actor structs (UT3)">ContactVelocity and PhysMaterial arrays</a> that corresponds to this Actor/HitComponent</li>
+</ul>
+<h4><span class="mw-headline" id="RootMotionExtracted">RootMotionExtracted</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=47" title="Edit section: RootMotionExtracted">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>RootMotionExtracted</b> (<a href="UE3_SkeletalMeshComponent_(UT3).html" title="UE3:SkeletalMeshComponent (UT3)">SkeletalMeshComponent</a>&#160;<b>SkelComp</b>, out&#160;<a href="UE3_AnimNode_(UT3).html#BoneAtom" title="UE3:AnimNode (UT3)">AnimNode.BoneAtom</a>&#160;<b>ExtractedRootMotionDelta</b>)</div>
+<p>Notification called after root motion has been extracted, and before it's been used. This notification can be used to alter extracted root motion before it is forwarded to physics. It is only called when bRootMotionExtractedNotify is TRUE on the SkeletalMeshComponent.</p>
+<p><b>Note:</b> It is fairly slow in Script, so enable only when really needed.</p>
+<h4><span class="mw-headline" id="RootMotionModeChanged">RootMotionModeChanged</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=48" title="Edit section: RootMotionModeChanged">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>RootMotionModeChanged</b> (<a href="UE3_SkeletalMeshComponent_(UT3).html" title="UE3:SkeletalMeshComponent (UT3)">SkeletalMeshComponent</a>&#160;<b>SkelComp</b>)</div>
+<p>Notification that root motion mode changed. Called only from SkelMeshComponents that have bRootMotionModeChangeNotify set. This is useful for synchronizing movements. For intance, when using RMM_Translate, and the event is called, we know that root motion will kick in on next frame. It is possible to kill in-game physics, and then use root motion seemlessly.</p>
+<h4><span class="mw-headline" id="ScriptGetTeamNum">ScriptGetTeamNum</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=49" title="Edit section: ScriptGetTeamNum">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>ScriptGetTeamNum</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SetAnimPosition">SetAnimPosition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=50" title="Edit section: SetAnimPosition">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>SetAnimPosition</b> (<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>SlotName</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ChannelIndex</b>, <a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>InAnimSeqName</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>InPosition</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bFireNotifies</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bLooping</b>)</div>
+<p>Called each from while the Matinee action is running, with the desired sequence name and position we want to be at.</p>
+<h4><span class="mw-headline" id="SetAnimWeights">SetAnimWeights</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=51" title="Edit section: SetAnimWeights">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>SetAnimWeights</b> (<a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Actor_structs_(UT3).html#AnimSlotInfo" title="UE3:Actor structs (UT3)">AnimSlotInfo</a>&gt;&#160;<b>SlotInfos</b>)</div>
+<p>Called each from while the Matinee action is running, to set the animation weights for the actor.</p>
+<h4><span class="mw-headline" id="SetInitialState">SetInitialState</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=52" title="Edit section: SetInitialState">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>SetInitialState</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SetMorphWeight">SetMorphWeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=53" title="Edit section: SetMorphWeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>SetMorphWeight</b> (<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>MorphNodeName</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>MorphWeight</b>)</div>
+<p>Called each frame by Matinee to update the weight of a particular MorphNodeWeight.</p>
+<h4><span class="mw-headline" id="SetSkelControlScale">SetSkelControlScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=54" title="Edit section: SetSkelControlScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>SetSkelControlScale</b> (<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>SkelControlName</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>Scale</b>)</div>
+<p>Called each frame by Matinee to update the scaling on a SkelControl.</p>
+<h4><span class="mw-headline" id="ShutDown">ShutDown</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=55" title="Edit section: ShutDown">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>ShutDown</b> ()</div>
+<p>ShutDown an actor.</p>
+<h4><span class="mw-headline" id="SpawnedByKismet">SpawnedByKismet</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=56" title="Edit section: SpawnedByKismet">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>SpawnedByKismet</b> ()</div>
+<p>called when this Actor was spawned by a Kismet actor factory (SeqAct_ActorFactory) after all other spawn events (PostBeginPlay(), etc) have been called</p>
+<h4><span class="mw-headline" id="SpecialHandling">SpecialHandling</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=57" title="Edit section: SpecialHandling">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <a href="UE3_Actor_(UT3).html" title="UE3:Actor (UT3)">Actor</a>&#160;<b>SpecialHandling</b> (<a href="UE3_Pawn_(UT3).html" title="UE3:Pawn (UT3)">Pawn</a>&#160;<b>Other</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="StopActorFaceFXAnim">StopActorFaceFXAnim</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=58" title="Edit section: StopActorFaceFXAnim">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>StopActorFaceFXAnim</b> ()</div>
+<p>Stop any matinee FaceFX animations on this Actor.</p>
+<h4><span class="mw-headline" id="TakeDamage">TakeDamage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=59" title="Edit section: TakeDamage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>TakeDamage</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>DamageAmount</b>, <a href="UE3_Controller_(UT3).html" title="UE3:Controller (UT3)">Controller</a>&#160;<b>EventInstigator</b>, <a href="UE3_Object_structs_(UT3).html#Vector" title="UE3:Object structs (UT3)">Object.Vector</a>&#160;<b>HitLocation</b>, <a href="UE3_Object_structs_(UT3).html#Vector" title="UE3:Object structs (UT3)">Object.Vector</a>&#160;<b>Momentum</b>, <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_DamageType_(UT3).html" title="UE3:DamageType (UT3)">DamageType</a>&gt;&#160;<b>DamageType</b>, optional&#160;<a href="UE3_Actor_structs_(UT3).html#TraceHitInfo" title="UE3:Actor structs (UT3)">TraceHitInfo</a>&#160;<b>HitInfo</b>, optional&#160;<a href="UE3_Actor_(UT3).html" title="UE3:Actor (UT3)">Actor</a>&#160;<b>DamageCauser</b>)</div>
+<p>apply some amount of damage to this actor</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>Damage</i> - the base damage to apply</li>
+<li><i>EventInstigator</i> - the Controller responsible for the damage</li>
+<li><i>HitLocation</i> - world location where the hit occurred</li>
+<li><i>Momentum</i> - force caused by this hit</li>
+<li><i>DamageType</i> - class describing the damage that was done</li>
+<li><i>HitInfo</i> - additional info about where the hit occurred</li>
+<li><i>DamageCauser</i> - the Actor that directly caused the damage (i.e. the Projectile that exploded, the Weapon that fired, etc)</li>
+</ul>
+<h4><span class="mw-headline" id="Tick">Tick</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=60" title="Edit section: Tick">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>Tick</b> (<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>DeltaTime</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Timer">Timer</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=61" title="Edit section: Timer">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>Timer</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="TornOff">TornOff</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=62" title="Edit section: TornOff">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>TornOff</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="Touch">Touch</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=63" title="Edit section: Touch">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>Touch</b> (<a href="UE3_Actor_(UT3).html" title="UE3:Actor (UT3)">Actor</a>&#160;<b>Other</b>, <a href="UE3_PrimitiveComponent_(UT3).html" title="UE3:PrimitiveComponent (UT3)">PrimitiveComponent</a>&#160;<b>OtherComp</b>, <a href="UE3_Object_structs_(UT3).html#Vector" title="UE3:Object structs (UT3)">Object.Vector</a>&#160;<b>HitLocation</b>, <a href="UE3_Object_structs_(UT3).html#Vector" title="UE3:Object structs (UT3)">Object.Vector</a>&#160;<b>HitNormal</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="UnTouch">UnTouch</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)?section=64" title="Edit section: UnTouch">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>UnTouch</b> (<a href="UE3_Actor_(UT3).html" title="UE3:Actor (UT3)">Actor</a>&#160;<b>Other</b>)</div>
+<p><br /></p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.618 seconds
+Real time usage: 0.778 seconds
+Preprocessor visited node count: 3983/1000000
+Preprocessor generated node count: 6088/1000000
+Post‐expand include size: 31982/2097152 bytes
+Template argument size: 11609/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 1/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  617.922      1 - -total
+ 70.08%  433.036     63 - Template:Code
+ 48.80%  301.540     77 - Template:Samegame
+ 43.75%  270.344     57 - Template:Cl
+ 21.31%  131.668     21 - Template:Tl
+ 18.01%  111.288      1 - Template:Infobox_class_part
+ 17.26%  106.669      1 - Template:Infobox_class_part/core
+  1.99%   12.311      1 - Template:Ch
+  1.09%    6.706      1 - Template:Expand
+  0.76%    4.688      1 - Template:Ambox
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:17521-0!*!*!*!*!*!* and timestamp 20161216052744 and revision id 33463
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:Actor_events_(UT3)?oldid=33463">https://wiki.beyondunreal.com/UE3:Actor_events_(UT3)?oldid=33463</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Articles_to_be_expanded.html" title="Category:Articles to be expanded">Articles to be expanded</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_Actor_events_(UT3).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:Actor_events_(UT3)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:Actor_events_(UT3)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:Actor_events_(UT3)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AActor+events+%28UT3%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AActor+events+%28UT3%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:Actor_events_(UT3)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:Actor_events_(UT3)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:Actor_events_(UT3)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:Actor_events_(UT3)?oldid=33463" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:Actor_events_(UT3)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 10:31, 29 November 2008.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":116});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:Actor_events_(UT3) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:53:29 GMT -->
+</html>

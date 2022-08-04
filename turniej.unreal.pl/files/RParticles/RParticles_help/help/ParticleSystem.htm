@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head lang="en">
+<link rel="stylesheet" href="default.css" type="text/css">
+	<title>UnrealWiki: RParticles/ParticleSystem</title>
+<style type="text/css">#dhtml-menu    { background: #eee; padding: 5px 0px; margin-right: -20px; border: 1px solid #888; border-left: 1px solid #ccc; border-top: 1px solid #ccc;  border-right: 1px solid #888; border-bottom: 1px solid #888 }
+#dhtml-menu td { color: #000; font-family: Arial,Helvetica,sans-serif; font-size: 9pt; line-height: 13pt; padding: 1px 10px; cursor: default }
+#dhtml-menu a  { color: #000; font-family: Arial,Helvetica,sans-serif; font-size: 9pt; line-height: 13pt; text-decoration: none }
+#dhtml-menu tt { font-family: monospace; font-size: 9pt }
+#dhtml-menu-separator { height: 1px; background: red }
+#dhtml-menu-anchor { cursor: default }
+</style>
+</head>
+<body class="default">
+
+<div id="content"><!-- contains the title and article -->
+	<h1 class='pagetitle'><a href="/wiki/RParticles">RParticles</a>/<a href="/wiki?back=RParticles/ParticleSystem">ParticleSystem</a></h1>
+	<div class="wiki"><div class="classpath"><img src="/wiki-ext//gameicons/icon-ut.png"> <a href="/wiki/UT">UT</a> :: <a href="/wiki/Actor_(UT)">Actor (UT)</a> &gt;&gt; ParticleSystem<br></div>
+<p><em class="em3">This class is part of <a href="/wiki/Raven/RParticles">RParticles</a> by <a href="/wiki/Raven">Raven</a></em></p>
+<p>This is base class for ParticleSystem. It holds everything together and contain basic enums and structures.</p>
+<h3><a name="0.0.1"></a>ENUMS</h3>
+<h2><a name="0.1"></a>EAccelType</h2>
+<dl><dt>ACC_Addictive</dt><dd>acceleration will be added to velocity.</dd><dt>ACC_Multiply</dt><dd>velocity will be multiplied by acceleration.</dd></dl>
+<h2><a name="0.2"></a>ESizeType</h2>
+<dl><dt>ST_Normal</dt><dd>particle will not change size</dd><dt>ST_Grow</dt><dd>particle will grow (ParticleGrowth)</dd><dt>ST_Shrink</dt><dd>particle will shrink (ParticleShrink)</dd><dt>ST_Cycle</dt><dd>particle will cyclically shrinks and grow</dd></dl>
+<h2><a name="0.3"></a>ESizing</h2>
+<dl><dt>SIZING_Infinity</dt><dd>particle will grow/shrink till lifespan ends</dd><dt>SIZING_UserDecided</dt><dd>particle will grow/shrink till DrawScale reach specified size</dd></dl>
+<h2><a name="0.4"></a>ETAnim</h2>
+<dl><dt>AN_PlayOnce</dt><dd>should animation be played only once</dd><dt>AN_Loop</dt><dd>or should it be looped</dd></dl>
+<h2><a name="0.5"></a>EFType</h2>
+<dl><dt>FACE_None</dt><dd>rotation is not changed</dd><dt>FACE_Velocity</dt><dd>mesh always faces velocity</dd><dt>FACE_Actor</dt><dd>mesh always faces chosen actor</dd></dl>
+<h2><a name="0.6"></a>EDest</h2>
+<dl><dt>DEST_None</dt><dd>no destination <img alt=":)" src="/wiki-ext/emoticons/smile.gif" align="middle"></dd><dt>DEST_Once</dt><dd>will pick target's destination only once</dd><dt>DEST_Seek</dt><dd>will constantly try to found a way to destination actor</dd></dl>
+<h3><a name="0.6.1"></a>Structures</h3>
+<h2><a name="0.7"></a>SAdvanced</h2>
+<dl><dt>bool bUseParticleClass</dt><dd>can we use custom class</dd><dt>class&lt;BasicParticle&gt; ParticleClass</dt><dd>custom class</dd></dl>
+<h2><a name="0.8"></a>SAnimation</h2>
+<dl><dt>texture AnimTextures[60]</dt><dd>animation textures</dd><dt>int NumOfTextures</dt><dd>number of textures</dd><dt>bool DefineAnimationStorage</dt><dd>should animated textures be taken from 'AnimationStorage' class (for coders)</dd><dt>class&lt;ParticleAnimationStorage&gt; ParticleAnimationStorage</dt><dd>stores animations (for coders)</dd></dl>
+<h2><a name="0.9"></a>SBounce</h2>
+<dl><dt>bool CanBounce</dt><dd>can we use bounce</dd><dt>float BounceRatio</dt><dd>bounce ratio</dd><dt>float BounceModifier</dt><dd>bounce height (when landed)</dd><dt>bool EndlessBounce</dt><dd>will bounce till it die if true</dd><dt>int BounceNum</dt><dd>if EndlessBounce is false this is number of bounces</dd></dl>
+<h2><a name="0.10"></a>SBuoyance</h2>
+<dl><dt>bool CanBuoyance</dt><dd>can buoyancy in water</dd><dt>bool SplashWhenHitWater</dt><dd>splash when hit water</dd><dt>bool SoundWhenHitWater</dt><dd>plays sound when hit water</dd><dt>float ParticleBuoyancy</dt><dd>particle buoyancy</dd><dt>float ParticleMass</dt><dd>particle mass</dd></dl>
+<h2><a name="0.11"></a>SCollision</h2>
+<dl><dt>bool ParticlesUseCollision</dt><dd>particle should collide with world and actors?</dd><dt>float ParticleCollisonRadius</dt><dd>collision radius</dd><dt>float ParticleCollisonHeight</dt><dd>collision height</dd><dt>bool CollideWithActors</dt><dd>will collide with actors if true</dd><dt>bool BlockPlayers</dt><dd>will block players if true</dd><dt>bool BlockActors</dt><dd>will block actors if true</dd><dt>bool ParticleCollideWorld</dt><dd>will Collide world</dd><dt>bool DestroyWhenTouch</dt><dd>will destroy particle when touching an actor</dd><dt>bool DestroyWhenColideWorld</dt><dd>will destroy particle when touching world geometry (eg walls)</dd><dt>bool DestroyWhenLand</dt><dd>will destroy particle when land</dd><dt>bool DestroyWhenTouchWater</dt><dd>will destroy particle when touches water</dd><dt>bool StopWhenTouchWall</dt><dd>will stop when touches world geometry</dd><dt>bool StopWhenTouchPawn</dt><dd>will stop when touches pawn</dd><dt>bool StickToWall</dt><dd>will stick to wall</dd><dt>bool StickToPawn</dt><dd>will stick to pawn</dd><dt>bool bSpawnLandEffect</dt><dd>spawn effect when landed</dd><dt>class&lt;actor&gt; LandEffect</dt><dd>land effect</dd><dt>bool bOverrideWaterEntrySound</dt><dd>override default water entry sound (if particles_use_collision is false)</dd><dt>sound WaterEntrySound</dt><dd>water entry sound</dd><dt>bool bOverrideWaterEntryEffect</dt><dd>override default water entry actor (if particles_use_collision is false)</dd><dt>class&lt;actor&gt; WaterEntryActor</dt><dd>water entry actor</dd><dt>bool bSpawnEffectOnDestroy</dt><dd>spawn effect when destroy</dd><dt>class&lt;actor&gt; DestroyEffect</dt><dd>destroy effect</dd></dl>
+<h2><a name="0.12"></a>SDamage</h2>
+<dl><dt>bool ParticleGivesDamage</dt><dd>particle will give damage when touching actor</dd><dt>name ParticleDamageType</dt><dd>damage type</dd><dt>int ParticleDamage</dt><dd>damage</dd><dt>bool PlayerTakeDamage</dt><dd>player pawn can be damaged</dd><dt>bool ScriptedPawnTakeDamage</dt><dd>scripted pawns can be damaged</dd><dt>bool FlockPawnTakeDamage</dt><dd>flock pawns can be damaged</dd><dt>bool OtherActorTakeDamage</dt><dd>all other actors such as eg. wooden boxes can be damaged</dd><dt>int MomentumTransfer</dt><dd>momentum transfer</dd></dl>
+<h2><a name="0.13"></a>SDecal</h2>
+<dl><dt>texture ParticleDecalTexture</dt><dd>texture used for decal</dd><dt>bool ParticleSpawnDecal</dt><dd>particle will spawn decal (true) when they hit wall</dd><dt>class&lt;decal&gt; ParticleDecal</dt><dd>decal class</dd><dt>float ParticleDecalSize</dt><dd>decal size</dd><dt>bool bLimitDecals</dt><dd>if true, decals will be limited</dd></dl>
+<h2><a name="0.14"></a>SSize</h2>
+<dl><dt>ESizeType SizeType</dt><dd>size type<ul><li>ST_Normal : particle will not change size</li>
+<li>ST_Grow : particle will grow (ParticleGrowth)</li>
+<li>ST_Shrink : particle will shrink (ParticleShrink)</li>
+<li>ST_Cycle : particle will cyclically shrinks and grow</li>
+</ul>
+</dd><dt>ESizing Sizing</dt><dd>describes end size of particle (not used if SizeType is ST_Cycle)<ul><li>SIZING_Infinity: particle will grow/shrink till lifespan ends</li>
+<li>SIZING_UserDecided : particle will grow/shrink till DrawScale reach specified size</li>
+</ul>
+</dd><dt>float ParticleDrawScale</dt><dd>particle default size</dd><dt>float ParticleDrawScaleVariance</dt><dd>particle default size variance</dd><dt>float ParticleGrowth</dt><dd>particle grow rate (absolute number)</dd><dt>float float ParticleShrink</dt><dd>particle shrink rate (absolute number)</dd><dt>float MinSize</dt><dd>the smallest of particle (only if SizeType is ST_Cycle)</dd><dt>float float MaxSize</dt><dd>the biggest size of particle (only if SizeType is ST_Cycle)</dd></dl>
+<h2><a name="0.15"></a>SDisplay</h2>
+<dl><dt>ERenderStyle ParticleStyle</dt><dd>particle render style</dd><dt>bool bUnlitParticle</dt><dd>is particle unlit</dd><dt>bool bParticleCastShadow</dt><dd>particle cast shadow</dd><dt>bool bParticleMeshEnviroMap</dt><dd>only when particle is a mesh</dd><dt>bool bUseMesh</dt><dd>particle will use mesh instead of sprite</dd><dt>mesh PraticleMesh</dt><dd>mesh (if use_mesh is true)</dd><dt>bool bUseRandomTexture</dt><dd>uses random texture from anim_textures</dd><dt>texture ParticleTexture</dt><dd>particle texture (if doesn't use particle animation</dd><dt>bool bUseSpriteAnimation</dt><dd>particle will use sprite animation</dd></dl>
+<h2><a name="0.16"></a>SFading</h2>
+<dl><dt>bool CanFadeOut</dt><dd>can fade out</dd><dt>bool CanFadeIn</dt><dd>can fade in</dd><dt>float InitailScaleGlow</dt><dd>initial glow</dd><dt>float FadeOutTime</dt><dd>fade out time</dd><dt>float FadeOutScaleFactor</dt><dd>fade out scale factor</dd><dt>float FadeInTime</dt><dd>fade in time</dd><dt>float FadeInScaleFactor</dt><dd>fade scale factor</dd></dl>
+<h2><a name="0.17"></a>SLight</h2>
+<dl><dt>bool CastLight;</dt><dd>particle will cast light!!</dd></dl>
+<h2><a name="0.18"></a>SLightColor</h2>
+<dl><dt>byte ParticleLightBrightness</dt><dd>light brightness</dd><dt>byte ParticleLightHue</dt><dd>light hue</dd><dt>byte ParticleLightSaturation</dt><dd>light satruation</dd></dl>
+<h2><a name="0.19"></a>SLighting</h2>
+<dl><dt>ELightType  ParticleLightType</dt><dd>light type (can lag <img alt=":)" src="/wiki-ext/emoticons/smile.gif" align="middle">)</dd><dt>ELightEffect ParticleLightEffect</dt><dd>light effect (can lag <img alt=":)" src="/wiki-ext/emoticons/smile.gif" align="middle">)</dd><dt>byte ParticleLightRadius</dt><dd>light radius</dd><dt>byte ParticleLightPeriod</dt><dd>light period</dd><dt>byte ParticleLightPhase</dt><dd>light phase</dd><dt>byte ParticleLightCone</dt><dd>light cone</dd><dt>byte ParticleVolumeBrightness</dt><dd>volume brightness</dd><dt>byte ParticleVolumeRadius</dt><dd>volume radius</dd><dt>byte ParticleVolumeFog</dt><dd>volume fog</dd></dl>
+<h2><a name="0.20"></a>SGlobal</h2>
+<dl><dt>float ParticleLifeTime</dt><dd>lifespan (in seconds)</dd><dt>float ParticleLifeTimeVariance</dt><dd>lifespan variance (in seconds)</dd><dt>bool bDefineSpeedAsVector</dt><dd>defines speed as a vector</dd><dt>vector BaseSpeed</dt><dd>base particle speed (if bDefineSpeedAsVector is true)</dd><dt>float SpeedVariance</dt><dd>speed variance</dd><dt>float ParticleSpeed</dt><dd>speed when particle system is rotated as generator</dd><dt>float SprayFactor</dt><dd>spray</dd><dt>float SprayFactorVariance</dt><dd>spray vairance</dd></dl>
+<h2><a name="0.21"></a>SMain</h2>
+<dl><dt>bool bForceGlobalSettings</dt><dd>will force settings from SGlobal</dd><dt>rotator ParticleRotation</dt><dd>custom particle rotation (useful when we have mesh instead of sprite)</dd><dt>bool bUseParticleRotation</dt><dd>should we use custom particle rotation</dd><dt>float ParticleLifeTime</dt><dd>lifespan (in seconds)</dd><dt>float ParticleLifeTimeVariance</dt><dd>lifespan variance (in seconds)</dd><dt>float ParticleSlowingDownFactor</dt><dd>particle slow down factor (can not be 0 (!!) 1.0 : no slow down, higher then 1.0 : faster, lower then 1.0 : lower)</dd><dt>bool bMoveSmooth</dt><dd>particle will move smooth</dd><dt>bool bDefineSpeedAsVector</dt><dd>defines speed as a vector</dd><dt>vector BaseSpeed</dt><dd>base particle speed (if bDefineSpeedAsVector is true)</dd><dt>float SpeedVariance</dt><dd>speed variance</dd><dt>float ParticleSpeed</dt><dd>speed when particle system is rotated as generator</dd><dt>float SprayFactor</dt><dd>spray</dd><dt>float SprayFactorVariance</dt><dd>spray vairance</dd></dl>
+<h2><a name="0.22"></a>SPPhysics</h2>
+<dl><dt>EPhysics ParticlePhysics</dt><dd>custom physic</dd><dt>bool bCanAccelerate</dt><dd>particle can accelerate</dd><dt>vector AccelerateFactor</dt><dd>accelerate factor</dd><dt>vector TerminalVelocity</dt><dd>max accelerate</dd><dt>EAccelType AccelerationType</dt><dd>acceleration type<ul><li>ACC_Addictive : acceleration will be added to velocity.</li>
+<li>ACC_Multiply : velocity will be multiplied by acceleration.</li>
+</ul>
+</dd></dl>
+<h2><a name="0.23"></a>SSound</h2>
+<dl><dt>sound BornSound</dt><dd>when particle starts it's life</dd><dt>sound FlyingSound</dt><dd>particle flying sound</dd><dt>sound DyingSound</dt><dd>particle dying sound</dd><dt>sound LandingSound</dt><dd>particle landing sound</dd><dt>sound HittingSound</dt><dd>when particle hit's wall</dd><dt>sound TouchingSound</dt><dd>when particle hits an actor</dd><dt>ESoundSlot ParticleSoundSlot</dt><dd>sound slot</dd><dt>float ParticleSoundVolume</dt><dd>sound volume</dd><dt>bool ParticleSoundbNoOverride</dt><dd>sound no override</dd><dt>float ParticleSoundRadius</dt><dd>sound radius</dd><dt>float ParticleSoundPitch</dt><dd>sound pitch</dd></dl>
+<h2><a name="0.24"></a>SVelocity</h2>
+<dl><dt>bool bUseInvertVelocity</dt><dd>whenever particle velocity should be changed</dd><dt>bool InvertX</dt><dd>X-Axis velocity will be inverted (Velocity.X*=-1)</dd><dt>bool InvertY</dt><dd>Y-Axis velocity will be inverted (Velocity.Y*=-1)</dd><dt>bool InvertZ</dt><dd>Z-Axis velocity will be inverted (Velocity.Z*=-1)</dd><dt>float InvertDelay</dt><dd>change time</dd></dl>
+<h2><a name="0.25"></a>SSpawnPlace</h2>
+<dl><dt>vector OwnEffectArea</dt><dd>each template can override effect area</dd><dt>bool bUseOwnEffectArea</dt><dd>overrided effect area</dd></dl>
+<h2><a name="0.26"></a>SDest</h2>
+<dl><dt>actor Destination</dt><dd>particle destination</dd><dt>EDest DestinationType</dt><dd>type of destination</dd><dt>bool bForceFollow</dt><dd>will ignore anything just to reach destination</dd></dl>
+<h2><a name="0.27"></a>SMesh</h2>
+<dl><dt>bool bAnimatedMesh</dt><dd>if mesh have to be animated</dd><dt>name AnimationName</dt><dd>name of animation which should be played</dd><dt>float AnimationRate</dt><dd>animation rate</dd><dt>float TweenRate</dt><dd>tween rate</dd><dt>ETAnim AnimationType</dt><dd>animation type</dd><dt>EFType FaceObject</dt><dd>object particle should face</dd><dt>actor LookTarget</dt><dd>Used if DynamicRotation == FACE_Actor</dd><dt>rotator MeshRotationRate</dt><dd>rotation rate (only if DynamicRotation == FACE_None)</dd></dl>
+<h2><a name="0.28"></a>SRot</h2>
+<dl><dt>bool bRandomizeRotation</dt><dd>uses random rotation</dd><dt>bool bRandPitch</dt><dd>random pitch</dd><dt>bool bRandYaw</dt><dd>random yaw</dd><dt>bool bRandRoll</dt><dd>randomed roll</dd><dt>rotator MinRotation</dt><dd>min rotation</dd><dt>rotator MaxRotation</dt><dd>max rotation</dd><dt>bool bForceRndRot</dt><dd>forces RotRand() function</dd></dl>
+<hr class="thin"><p><a href="/wiki/Category_Class_(UT)">Category Class (UT)</a></p>
+<p><a href="/wiki/Category_Mapping">Category Mapping</a><br><a href="/wiki/Category_Custom_Class">Category Custom Class</a><br></p>
+</script></div>
+</div>
+
+
+</body></html>

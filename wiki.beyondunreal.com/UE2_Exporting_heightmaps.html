@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE2:Exporting_heightmaps by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:52:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE2:Exporting heightmaps - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE2:Exporting_heightmaps" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE2:Exporting_heightmaps" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE2_Exporting_heightmaps.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE2","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":104,"wgPageName":"UE2:Exporting_heightmaps","wgTitle":"Exporting heightmaps","wgCurRevisionId":34593,"wgRevisionId":34593,"wgArticleId":24097,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles with stub sections","Mapping tutorials"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE2:Exporting_heightmaps","wgRelevantArticleId":24097,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-104 ns-subject page-UE2_Exporting_heightmaps skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I'm a doctor, not a mechanic
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE2:Exporting heightmaps</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><a href="https://wiki.beyondunreal.com/edit/Unreal_Engine_2?redlink=1" class="new" title="Unreal Engine 2 (page does not exist)">Unreal Engine 2</a> games store <a href="https://wiki.beyondunreal.com/edit/Terrain?redlink=1" class="new" title="Terrain (page does not exist)">terrain</a> height maps as grayscale images with 16 bits per pixel. To port terrain to a different game or to edit the height map in an external application, you need to export the terrain height map first. The result will be a 16 bit <a href="http://en.wikipedia.org/wiki/Windows_Bitmap" class="extiw" title="wp:Windows Bitmap">Windows Bitmap</a> file that needs to be edited in special applications, such as <a href="https://wiki.beyondunreal.com/edit/G16ed?redlink=1" class="new" title="G16ed (page does not exist)">G16ed</a>. Almost no regular image manipulation tool supports 16 bit grayscale images, some interpret it as 16 bit color image, some reduce the color range to 8 bit.</p>
+<h2><span class="mw-headline" id="Export_via_UnrealEd">Export via UnrealEd</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Exporting_heightmaps?section=1" title="Edit section: Export via UnrealEd">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table style="font-size: 90%" class="metadata plainlinks ambox ambox-content">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text">This <a href="Unreal_Wiki_Cleanup.html#Articles_lacking_information" title="Unreal Wiki:Cleanup">short section</a> needs to be <a rel="nofollow" class="external text" href="https://wiki.beyondunreal.com/edit/UE2:Exporting_heightmaps">expanded</a>.</td>
+</tr>
+</table>
+<p>If the game supports it, you can use the <a href="UnrealEd_3.html" title="UnrealEd 3" class="mw-redirect">UnrealEd 3</a> or <a href="https://wiki.beyondunreal.com/edit/BatchExportCommandlet?redlink=1" class="new" title="BatchExportCommandlet (page does not exist)">BatchExportCommandlet</a> that comes with the game to export the height map texture as BMP.</p>
+<h2><span class="mw-headline" id="Export_via_UTPT_and_G16ed">Export via UTPT and G16ed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Exporting_heightmaps?section=2" title="Edit section: Export via UTPT and G16ed">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="thumb tright">
+<div class="thumbinner" style="width:302px;"><a href="File_UTPT-ExportTree-ContextMenu.html" class="image"><img alt="" src="w/images/thumb/UTPT-ExportTree-ContextMenu.png/300px-UTPT-ExportTree-ContextMenu.png" width="300" height="130" class="thumbimage" srcset="/w/images/UTPT-ExportTree-ContextMenu.png 1.5x, /w/images/UTPT-ExportTree-ContextMenu.png 2x" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="File_UTPT-ExportTree-ContextMenu.html" class="internal" title="Enlarge"></a></div>
+Pop-up menu of the Texture object with the "Analize Raw Object" entry.</div>
+</div>
+</div>
+<p>If the game doesn't support texture export, you can try using <a href="UTPT.html" title="UTPT">UTPT</a> and <a href="https://wiki.beyondunreal.com/edit/G16ed?redlink=1" class="new" title="G16ed (page does not exist)">G16ed</a> to extract the raw texture data of the height map. Unfortunately UTPT does not support G16 texture export, but it will help finding the parameters for G16ed's RAW import:</p>
+<ol>
+<li>Open the package containing the height map (usually the map file itself) in UTPT.</li>
+<li>Browse the Export Tree or Export Table to find the height map texture.</li>
+<li>Right-click on its entry in the list and select "Analize Raw Object". [sic] A hexeditor-like view should open.</li>
+<li>In that view's menu select Format -&gt; Auto format. UTPT now auto-formats the raw texture data by interpreting the data and adding background colors to th various fields. You don't need to worry what most of the field actually mean.</li>
+<li>
+<div class="thumb tright">
+<div class="thumbinner" style="width:165px;"><a href="File_UTPT-Raw-Property.html" class="image"><img alt="" src="w/images/UTPT-Raw-Property.png" width="163" height="77" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="File_UTPT-Raw-Property.html" class="internal" title="Enlarge"></a></div>
+The "Format" property with a byte value of 10<sub>dec</sub>.</div>
+</div>
+</div>
+Hover your mouse over the various fields marked with gray background to find the property <b>Format</b> and check its value. It should be '10', which stands for <a href="UE2_BitmapMaterial_(UT2004).html#ETextureFormat" title="UE2:BitmapMaterial (UT2004)">ETextureFormat.TEXF_G16</a>, meaning 16 bit grayscale. If it's a different value, you can skip the remaining steps and just export the height map directly with UTPT.</li>
+<li>Next find the fields <b>USize</b> and <b>VSize</b> (not UBits and VBits) and note their values as the height map's X and Y dimension respectively.</li>
+<li>Select the first byte of the large yellow data block labeled <b>MipMapData</b>.</li>
+<li>At the bottom of the raw analysis view there should be a label reading "Offset in Package: 0x...", the value after "0x" is the height map data's start offset in the package file in <a href="http://en.wikipedia.org/wiki/hexadecimal" class="extiw" title="wp:hexadecimal">hexadecimal</a> notation.</li>
+</ol>
+<p>Now you're ready to extract the height map with G16ed:</p>
+<ol>
+<li>Select File -&gt; Import -&gt; RAW data... from G16ed's menu.</li>
+<li>Enter path and file name (with extension) of the package file in the <b>File</b> field or select it through the "..." button.<br />
+Note that the open file dialog assumes the file extension "raw" by default. Just enter "*.*" in the file name field there and press enter to see all files.</li>
+<li>Leave <b>Bits per pixel</b> at 16 and <b>Byte ordering</b> at "Little-endian (Intel)"</li>
+<li>Enter the height map dimensions you found with UTPT as the <b>Width</b> (USize) and <b>Height</b> (VSize)</li>
+<li>Enter the <b>Data start offset</b> in <a href="http://en.wikipedia.org/wiki/decimal" class="extiw" title="wp:decimal">decimal</a> notation. You can use e.g. the Windows Calculator to convert the value:
+<ol>
+<li>Switch to scientific mode (menu View -&gt; Scientific)</li>
+<li>Switch to hexadecimal mode (press F5 or click on <i>Hex</i>)</li>
+<li>Enter the hexadecimal value</li>
+<li>Switch to decimal mode (press F6 or click on <i>Dec</i>)</li>
+<li>Copy/paste or manually enter the displayed decimal value in G16ed</li>
+</ol>
+</li>
+</ol>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.036 seconds
+Real time usage: 0.042 seconds
+Preprocessor visited node count: 37/1000000
+Preprocessor generated node count: 194/1000000
+Post‐expand include size: 778/2097152 bytes
+Template argument size: 172/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    5.901      1 - -total
+100.00%    5.901      1 - Template:Sectstub
+ 64.28%    3.793      1 - Template:Ambox
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:24097-0!*!0!!*!5!* and timestamp 20161215141635 and revision id 34593
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE2:Exporting_heightmaps?oldid=34593">https://wiki.beyondunreal.com/UE2:Exporting_heightmaps?oldid=34593</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Articles_with_stub_sections.html" title="Category:Articles with stub sections">Articles with stub sections</a></li><li><a href="Category_Mapping_tutorials.html" title="Category:Mapping tutorials">Mapping tutorials</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue2" class="selected"><a href="UE2_Exporting_heightmaps.html">UE2</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE2_talk:Exporting_heightmaps?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE2:Exporting_heightmaps" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE2:Exporting_heightmaps" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE2%3AExporting+heightmaps&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE2%3AExporting+heightmaps" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE2:Exporting_heightmaps" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE2:Exporting_heightmaps" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE2:Exporting_heightmaps?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE2:Exporting_heightmaps?oldid=34593" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE2:Exporting_heightmaps" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 05:23, 28 July 2009.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":179});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE2:Exporting_heightmaps by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:52:45 GMT -->
+</html>

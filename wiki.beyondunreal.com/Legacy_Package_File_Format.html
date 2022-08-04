@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Package_File_Format by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:07:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Package File Format - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Package_File_Format" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Package_File_Format" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_Package_File_Format.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Package_File_Format","wgTitle":"Package File Format","wgCurRevisionId":46338,"wgRevisionId":46338,"wgArticleId":2432,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["File formats"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Package_File_Format","wgRelevantArticleId":2432,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Package_File_Format skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Gah - a solution with more questions. &#8211; EntropicLqd
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Package File Format</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>The <a href="Legacy_Unreal_Engine.html" title="Legacy:Unreal Engine">Unreal Engine</a> uses a single <a href="Legacy_File_Format.html" title="Legacy:File Format">file format</a> to store all its game-content. You may have seen many different filetypes, like .utx (textures), .unr (maps), .umx (sound) and .u (code), but from a technical standpoint there is no difference between those files; the different file endings are only used to help organize the packages in the directory structure. The following article will describe the basic structure of his fileformat. It omits many details (such as tons of constants, for example), but there’s a good reference available on the net by Antonio Cordero Balcazar (see links).</p>
+<blockquote class="legacyquote">
+<p><b>Assumptions</b>:</p>
+<p>This is a rather technical article. It requires you to have a basic understanding of object oriented programming as well as the will to use an hex-editor, if needed. This is NOT intended to be a full documention of the fileformat, but only a brief introduction.</p>
+</blockquote>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#The_Structure_of_the_File"><span class="tocnumber">1</span> <span class="toctext">The Structure of the File</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Overview"><span class="tocnumber">1.1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Header"><span class="tocnumber">1.2</span> <span class="toctext">Header</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Index_Tables"><span class="tocnumber">1.3</span> <span class="toctext">Index Tables</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#Name-Table"><span class="tocnumber">1.3.1</span> <span class="toctext">Name-Table</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Export-Table"><span class="tocnumber">1.3.2</span> <span class="toctext">Export-Table</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Import-Table"><span class="tocnumber">1.3.3</span> <span class="toctext">Import-Table</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Body.2FObject"><span class="tocnumber">1.4</span> <span class="toctext">Body/Object</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="#Object_Properties"><span class="tocnumber">1.4.1</span> <span class="toctext">Object Properties</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Sample_Objects_.28Texture_Class.29"><span class="tocnumber">1.4.2</span> <span class="toctext">Sample Objects (Texture Class)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Appendix"><span class="tocnumber">2</span> <span class="toctext">Appendix</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#A._Links"><span class="tocnumber">2.1</span> <span class="toctext">A. Links</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#B._Notes"><span class="tocnumber">2.2</span> <span class="toctext">B. Notes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Comments.2FDiscussion"><span class="tocnumber">3</span> <span class="toctext">Comments/Discussion</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="The_Structure_of_the_File">The Structure of the File</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Package_File_Format?section=1" title="Edit section: The Structure of the File">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Overview">Overview</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Package_File_Format?section=2" title="Edit section: Overview">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Every <a href="Legacy_Package.html" title="Legacy:Package">package</a> file can be roughly split into three logical parts. The header, the three index tables (name-table, import-table and export-table) and the data itself. But only the header has a fixed position (at offset 0), all other parts can be found anywhere within the file without irritating the engine.</p>
+<p>Most of the time, although, the layout looks like the following:</p>
+<ul>
+<li>Header</li>
+<li>Name-Table</li>
+<li>Import-Table</li>
+<li>Data</li>
+<li>Export-Table</li>
+</ul>
+<p>It may be useful to read a bit about the concept of serialization, which allows you to (rather) easily store the state of objects within a file. A brief introduction can be found on the Wiki: <a href="https://wiki.beyondunreal.com/edit/Legacy:Package_File_Format/Serialization?redlink=1" class="new" title="Legacy:Package File Format/Serialization (page does not exist)">Package File Format/Serialization</a></p>
+<h3><span class="mw-headline" id="Header">Header</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Package_File_Format?section=3" title="Edit section: Header">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This global header can be found at the beginning of the file (offset 0). It is the starting point for every operation.</p>
+<table class="wikitable">
+<tr>
+<td style="text-align: center"><b>offset</b></td>
+<td style="text-align: center"><b>Type</b></td>
+<td style="text-align: center"><b>Property</b></td>
+<td style="text-align: center"><b>Description</b></td>
+</tr>
+<tr>
+<td style="text-align: left">0</td>
+<td style="text-align: left">DWORD</td>
+<td style="text-align: left">Signature</td>
+<td style="text-align: left">Always: “0x9E2A83C1”; use this to verify that you indeed try to read an Unreal-Package</td>
+</tr>
+<tr>
+<td style="text-align: left">4</td>
+<td style="text-align: left">WORD</td>
+<td style="text-align: left">PackageVersion</td>
+<td style="text-align: left">Version of the file-format; Unreal1 uses mostly 61-63, UT 67-69; However note that quite a few packages are in use with UT that have Unreal1 versions. see the appendix for more details</td>
+</tr>
+<tr>
+<td style="text-align: left">6</td>
+<td style="text-align: left">WORD</td>
+<td style="text-align: left">LicenseMode</td>
+<td style="text-align: left">This is the license number. Different for each game.</td>
+</tr>
+<tr>
+<td style="text-align: left">8</td>
+<td style="text-align: left">DWORD</td>
+<td style="text-align: left">Package Flags</td>
+<td style="text-align: left">Global package flags, i.e. if a package may be downloaded from a game server etc; described in the appendix</td>
+</tr>
+<tr>
+<td style="text-align: left">12</td>
+<td style="text-align: left">DWORD</td>
+<td style="text-align: left">Name Count</td>
+<td style="text-align: left">No. Of entries in name-table</td>
+</tr>
+<tr>
+<td style="text-align: left">16</td>
+<td style="text-align: left">DWORD</td>
+<td style="text-align: left">Name Offset</td>
+<td style="text-align: left">Offset of name-table within the file</td>
+</tr>
+<tr>
+<td style="text-align: left">20</td>
+<td style="text-align: left">DWORD</td>
+<td style="text-align: left">Export Count</td>
+<td style="text-align: left">No. Of entries in export-table</td>
+</tr>
+<tr>
+<td style="text-align: left">24</td>
+<td style="text-align: left">DWORD</td>
+<td style="text-align: left">Export Offset</td>
+<td style="text-align: left">Offset of export-table within the file</td>
+</tr>
+<tr>
+<td style="text-align: left">28</td>
+<td style="text-align: left">DWORD</td>
+<td style="text-align: left">Import Count</td>
+<td style="text-align: left">No. Of entries in import-table</td>
+</tr>
+<tr>
+<td style="text-align: left">32</td>
+<td style="text-align: left">DWORD</td>
+<td style="text-align: left">Import Offset</td>
+<td style="text-align: left">Offset of import-table within the file</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left">After the ImportOffset, the header differs between the versions. The only interesting fact, though, is that for fileformat versions =&gt; 68, a GUID has been introduced. It can be found right after the ImportOffset:</td>
+</tr>
+<tr>
+<td style="text-align: left">36</td>
+<td style="text-align: left">16 BYTE</td>
+<td style="text-align: left">GUID</td>
+<td style="text-align: left">Unique identifier; used for package downloading from servers</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: left">older package versions have a list of GUIDs (pointed to by the same form of count/offset pair as above) in a seperate section rather than just space for one, tests reveal that ut uses the last one in the list when there is more than one but such packages do not seem to be seen in the wild.</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Index_Tables">Index Tables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Package_File_Format?section=4" title="Edit section: Index Tables">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The Unreal-Engine introduces two new variable-types. The first one is a rather simple string type, called NAME from now on. The second one is a bit more tricky, these CompactIndices, or INDEX later on, compresses ordinary DWORDs downto one to five BYTEs. Both types, as well as the ObjectReference, are described in the following paper: <a href="Legacy_Package_File_Format/Data_Details.html" title="Legacy:Package File Format/Data Details">Package File Format/Data Details</a></p>
+<h4><span class="mw-headline" id="Name-Table">Name-Table</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Package_File_Format?section=5" title="Edit section: Name-Table">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>The first and most simple one of the three tables is the name-table. The name-table can be considered an index of all unique names used for objects and references within the file. Later on, you’ll often find indexes into this table instead of a string containing the object-name.</p>
+<table class="wikitable">
+<tr>
+<td style="text-align: center"><b>Type</b></td>
+<td style="text-align: center"><b>Property</b></td>
+<td style="text-align: center"><b>Description</b></td>
+</tr>
+<tr>
+<td style="text-align: left">NAME</td>
+<td style="text-align: left">Object Name</td>
+<td style="text-align: left"></td>
+</tr>
+<tr>
+<td style="text-align: left">DWORD</td>
+<td style="text-align: left">Object Flags</td>
+<td style="text-align: left">Flags for the object; described in the appendix</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="Export-Table">Export-Table</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Package_File_Format?section=6" title="Edit section: Export-Table">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>The export-table is an index for all objects within the package. Every object in the body of the file has a corresponding entry in this table, with information like offset within the file etc.</p>
+<table class="wikitable">
+<tr>
+<td style="text-align: center"><b>Type</b></td>
+<td style="text-align: center"><b>Property</b></td>
+<td style="text-align: center"><b>Description</b></td>
+</tr>
+<tr>
+<td style="text-align: left">INDEX</td>
+<td style="text-align: left">Class</td>
+<td style="text-align: left">Class of the object, i.e. ‘Texture’ or ‘Palette’ etc; stored as a ObjectReference</td>
+</tr>
+<tr>
+<td style="text-align: left">INDEX</td>
+<td style="text-align: left">Super</td>
+<td style="text-align: left">Object Parent; again a ObjectReference</td>
+</tr>
+<tr>
+<td style="text-align: left">DWORD</td>
+<td style="text-align: left">Group</td>
+<td style="text-align: left">Internal package/group of the object, i.e. ‘Floor’ for floor-textures; ObjectReference</td>
+</tr>
+<tr>
+<td style="text-align: left">INDEX</td>
+<td style="text-align: left">Object Name</td>
+<td style="text-align: left">The name of the object; an index into the name-table</td>
+</tr>
+<tr>
+<td style="text-align: left">DWORD</td>
+<td style="text-align: left">Object Flags</td>
+<td style="text-align: left">Flags for the object; described in the appendix</td>
+</tr>
+<tr>
+<td style="text-align: left">INDEX</td>
+<td style="text-align: left">Serial Size</td>
+<td style="text-align: left">Total size of the object</td>
+</tr>
+<tr>
+<td style="text-align: left">INDEX</td>
+<td style="text-align: left">Serial Offset</td>
+<td style="text-align: left">Offset of the object; this field only exists if the SerialSize is larger 0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="Import-Table">Import-Table</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Package_File_Format?section=7" title="Edit section: Import-Table">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>The third table holds references to objects in external packages. For example, a texture might have a DetailTexture (which makes for the nice structure if have a very close look at a texture). Now, these DetailTextures are all stored in a single package (as they are used by many different textures in different package files). The property of the texture object only needs to store an index into the import-table then as the entry in the import-table already points to the DetailTexture in the other package.</p>
+<table class="wikitable">
+<tr>
+<td style="text-align: center"><b>Type</b></td>
+<td style="text-align: center"><b>Property</b></td>
+<td style="text-align: center"><b>Description</b></td>
+</tr>
+<tr>
+<td style="text-align: left">INDEX</td>
+<td style="text-align: left">Class Package</td>
+<td style="text-align: left">Package file in which the class of the object is defined; an index into the name-table</td>
+</tr>
+<tr>
+<td style="text-align: left">INDEX</td>
+<td style="text-align: left">Class Name</td>
+<td style="text-align: left">Class of the object, i.e. ‘Texture’, ‘Palette’, ‘Package’, etc; an index into the name-table</td>
+</tr>
+<tr>
+<td style="text-align: left">DWORD</td>
+<td style="text-align: left">Package</td>
+<td style="text-align: left">Reference where the object resides; ObjectReference</td>
+</tr>
+<tr>
+<td style="text-align: left">INDEX</td>
+<td style="text-align: left">Object Name</td>
+<td style="text-align: left">The name of the object; an index into the name-table</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Body.2FObject">Body/Object</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Package_File_Format?section=8" title="Edit section: Body/Object">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Each object consists of a list of properties at the beginning and the actual object itself.</p>
+<h4><span class="mw-headline" id="Object_Properties">Object Properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Package_File_Format?section=9" title="Edit section: Object Properties">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>When jumping to the offset of an object, you'll first be confronted with the object properties before the actual object starts. The format is rather straightforward. The first byte is an INDEX-type reference into the Name-Table, giving you the property's name. The second byte does the magic of telling you what kind of data follows; for example 0x02 flags a DWORD sized integer type. Then comes the actual property-data. The procedure repeats itself until the reference into the Name-Table returns 'None' (case insensitive) as the name.</p>
+<p>That said, there are some bit-tricks to deal with arrays, booleans and such. For more info on these, as well as a full list of info-bytes, read Antonio's package docs.</p>
+<h4><span class="mw-headline" id="Sample_Objects_.28Texture_Class.29">Sample Objects (Texture Class)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Package_File_Format?section=10" title="Edit section: Sample Objects (Texture Class)">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>After the properties are finished the object starts. It basically consists of a predefined set of properties. As an example, the texture class (for good old UT) will be explained below. The texture class is a native one, which means that it doesn't have a generic header in addition to its own data. The layout looks like this:</p>
+<table class="wikitable">
+<tr>
+<td style="text-align: center"><b>Type</b></td>
+<td style="text-align: center"><b>Property</b></td>
+<td style="text-align: center"><b>Description</b></td>
+</tr>
+<tr>
+<td style="text-align: left">BYTE</td>
+<td style="text-align: left">MipMapCount</td>
+<td style="text-align: left">Count of MipMaps in object</td>
+</tr>
+</table>
+<p>The next set of variables repeats itself for each MipMap.</p>
+<table class="wikitable">
+<tr>
+<td style="text-align: center"><b>Type</b></td>
+<td style="text-align: center"><b>Property</b></td>
+<td style="text-align: center"><b>Description</b></td>
+</tr>
+<tr>
+<td style="text-align: left">DWORD</td>
+<td style="text-align: left">WidthOffset</td>
+<td style="text-align: left">Offset in file; should be the same as SerialOffset in the Export-Table. Only if PkgVer &gt;= 63</td>
+</tr>
+<tr>
+<td style="text-align: left">INDEX</td>
+<td style="text-align: left">MipMapSize</td>
+<td style="text-align: left">Size of the image data (in bytes)</td>
+</tr>
+<tr>
+<td style="text-align: left">n BYTEs</td>
+<td style="text-align: left">MipMapData</td>
+<td style="text-align: left">Image data; one byte per pixel; n = MipMapSize</td>
+</tr>
+<tr>
+<td style="text-align: left">DWORD</td>
+<td style="text-align: left">Width</td>
+<td style="text-align: left">Texture-width</td>
+</tr>
+<tr>
+<td style="text-align: left">DWORD</td>
+<td style="text-align: left">Height</td>
+<td style="text-align: left">Texture-height</td>
+</tr>
+<tr>
+<td style="text-align: left">BYTE</td>
+<td style="text-align: left">BitsWidth</td>
+<td style="text-align: left">Number of bits of Width (e.g. 10 for 1024 pixels)</td>
+</tr>
+<tr>
+<td style="text-align: left">BYTE</td>
+<td style="text-align: left">BitsHeight</td>
+<td style="text-align: left">Number of bits of Height (e.g. 10 for 1024 pixels)</td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Appendix">Appendix</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Package_File_Format?section=11" title="Edit section: Appendix">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="A._Links">A. Links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Package_File_Format?section=12" title="Edit section: A. Links">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<ul>
+<li><b><a rel="nofollow" class="external free" href="http://www.acordero.org/">http://www.acordero.org/</a>:</b> _The_ ressource regarding package files. A very detailed reference of the package format, the UT-Package-Tool and a Delphi-unit can be found there.</li>
+<li><b><a rel="nofollow" class="external free" href="http://ut-files.com/index.php?dir=Utilities/&amp;file=utcms_source.zip">http://ut-files.com/index.php?dir=Utilities/&amp;file=utcms_source.zip</a>:</b> A C++ class for reading packages. Totally free for use. <b>[Link updated with new location]</b></li>
+</ul>
+<h3><span class="mw-headline" id="B._Notes">B. Notes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Package_File_Format?section=13" title="Edit section: B. Notes">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The last part about the object properties and the texture class was written in a hurry. I'm sorry it took so long for me to finish that piece.</p>
+<p>The fileformat itself, btw, has not changed between the versions of UT (except the odd new property and such). Many of the objects however have changed a lot or were replaced by enhanced types (such as my beloved texture class...).</p>
+<h2><span class="mw-headline" id="Comments.2FDiscussion">Comments/Discussion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Package_File_Format?section=14" title="Edit section: Comments/Discussion">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>Jesco:</b> I will continue after here tomorrow. Now it's time for some sleep&#160;:)</p>
+<p><b>Mychaeel:</b> Good start. &#160;:-) Have a look at <a href="Legacy_UMOD/File_Format.html" title="Legacy:UMOD/File Format">UMOD/File Format</a> too if you haven't already. A common thing like the compact index format could move to a shared page, for instance.</p>
+<p><b>Jesco:</b> Ah, I haven't noticed that, yet. Saves me the hassle to explain the compact index&#160;;) Where should the page for the compact index be put to? I suggest making it either a subpage of <a href="Legacy_UMOD/File_Format.html" title="Legacy:UMOD/File Format">UMOD/File Format</a> or <strong class="selflink">Package File Format</strong>.</p>
+<p><b>Mychaeel:</b> Putting it on a subpage of <strong class="selflink">Package File Format</strong> sounds more obvious to me.</p>
+<p><b>Tarquin:</b> Other pages to grab material from / link to / etc:</p>
+<ul>
+<li><a href="Legacy_Package.html" title="Legacy:Package">Package</a></li>
+<li><a href="Legacy_Package.html" title="Legacy:Package">Package</a> redirects to the above.</li>
+<li><a href="Legacy_UT_Package_Tool.html" title="Legacy:UT Package Tool" class="mw-redirect">UT Package Tool</a> (just a link to a site)</li>
+</ul>
+<p><b>Jesco:</b> Ok, I'll work on it later today when I come back from university. Maybe I should also mail Antonio and ask im if I could post a copy of his reference docs for all those thousands of different objects that I don't have a clue of&#160;;)</p>
+<p><b>Jesco:</b> I haven't forgot about this article, it just went down my priority list, unfortunately.</p>
+<p><b>Diki:</b> Hey Jesco, I dont suppose you seriously havent forgotten about this article. Im trying to find more info about this topic!</p>
+<p><b>RmzVoid:</b> Where I can get codes of Object Properties types?</p>
+<p><b>Diablo:</b> @ anyone who wants to dig deeper inside unreal file format structures: take a look at this project:</p>
+<p><a rel="nofollow" class="external free" href="http://sourceforge.net/projects/ushock/">http://sourceforge.net/projects/ushock/</a></p>
+<p><b>@3DBuzz:</b> Can someone Please upload the "UTCMS_source.zip file" to another server? The current link is dead yet interest in reading the packages is still there.</p>
+<p><b>Tarquin:</b> Alternatively, someone could paste the code into a subpage here.</p>
+<p><b>Plugwash:</b> I wan't to make a tool that makes some changes to some of the tables without changing the bulk of the file. Is there any reason not to put the tables at the end of the file after everything else (yes i realise leaving the old tables in means a bit of bloat but it shouldn't be too significant)?</p>
+<p><b>Xian:</b> Well as far as I can remember, the order is: 1. Headers, 2. Linkers, 3. NameTable (+index where it begins to be used), 4. Compiled Code, 5. Decompiled Code (aka Core.TextBuffer). Although a completely rewritten file parser would be able to read it with the NT at the end, I don't see the point. The code uses pointers to each NT element. It is way more logical to say "Name &lt;Pawn&gt; has pointer 4F6G" and later make a reference to it in the Compiled Code, rather than for the code to memorize all used pointers and then parse the end of the file. I'd say the logic here is the same as compiling from end to beginning (if we'd compile from beginning to end, stuff like x = x + 2 or x += 2 wouldn't work, without pre-parsing, I guess). You might be able to add new elements to the table on the condition you change the index they get used at, you include serialization (to not get a serialization error) and modify the NT size and namespace used by linkers (also used by serialization I think). Excuse my raw descriptions, but it should be pretty accurate&#160;:)</p>
+<p><b>Wormbo:</b> The locations of the name, import and export tables are specified in the file header, and the locations of other objects in the file are are specified in the export table. <i>Where</i> those tables or objects actually are in the file or in what order they appear is irrelevant, as long as everything is in the location mentioned by the header or export table.</p>
+<p><b>Xian:</b> True. The linker descriptions specify each linker size and its offset (i.e. names, exports and imports), setting classes within the package as exports and used classes of other packages as imports. I do like the way the current order of file contents is done, since it's pretty logical (unlike a random placement), and I guess you could shift them back and forth, but it would be readable only by your tool, so I don't see much of a point.</p>
+<p>Side note: thinking of inserting names, I am curious how the Engine would react to finding a name that is never used (although in theory it should be ignored). There is one way to convert a string to a name, but the rule is that the name should exist in the nametable.</p>
+<p>Anyway, back on topic, what changes did you have in mind, Plugwash&#160;?</p>
+<p><b>Plugwash</b> If i understand the formats intentions correctly i don't belive it will matter where the table is in the file, but obviously opinion is split here so trial and error is going to be the only way to find out&#160;;). I wan't a string replacer mainly for use in dealing with conflicting packages (two packages with the same name but different contents), to some extent its possible to change strings in place by hand (i've done it before see the workaround i posted for the credits version mismatch issue on the UT troubleshooting page) but this limits you to replacing them with another string of the same length. On the other hand i really really don't wan't to go to the trouble of writing a full package deserialiser and reserialiser.</p>
+<p><b>Plugwash</b> Yep UT doesn't seem to care if the names section is at the end, i'm just trying to clarify the situation with regards guids now&#160;;).</p>
+<p><b>BigBadaBoom:</b> Can anyone direct me to a documentation of the ArrayProperty? I've figured out most stuff I need myself but arrays are still a total puzzle to me.&#160;:(</p>
+<p><b>Dimension4:</b> Export table structure is invalid.</p>
+<p><b>Dimension4:</b> Making a Reserializer is quite hard cuz you have to change many offsets:</p>
+<p>ImportTable offset</p>
+<p>ExportTable offset</p>
+<p>All offsets in ExportTable</p>
+<p>You got the picture&#160;:eek:</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.080 seconds
+Real time usage: 0.084 seconds
+Preprocessor visited node count: 66/1000000
+Preprocessor generated node count: 113/1000000
+Post‐expand include size: 666/2097152 bytes
+Template argument size: 285/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.273      1 - -total
+100.00%    4.273      1 - Template:Innerbox
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:2432-0!*!0!!en!*!* and timestamp 20161215135124 and revision id 46338
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Package_File_Format?oldid=46338">https://wiki.beyondunreal.com/Legacy:Package_File_Format?oldid=46338</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_File_formats.html" title="Category:File formats">File formats</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_Package_File_Format.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Package_File_Format?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Package_File_Format" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Package_File_Format" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3APackage+File+Format&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3APackage+File+Format" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Package_File_Format" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Package_File_Format" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Package_File_Format?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Package_File_Format?oldid=46338" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Package_File_Format" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 20:33, 11 June 2016.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":90});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Package_File_Format by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:07:54 GMT -->
+</html>

@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:OnlinePlayerInterface_functions_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 11:24:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:OnlinePlayerInterface functions (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_OnlinePlayerInterface_functions_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:OnlinePlayerInterface_functions_(UDK)","wgTitle":"OnlinePlayerInterface functions (UDK)","wgCurRevisionId":37948,"wgRevisionId":37948,"wgArticleId":26411,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:OnlinePlayerInterface_functions_(UDK)","wgRelevantArticleId":26411,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_OnlinePlayerInterface_functions_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>The three virtues of a programmer: Laziness, Impatience, and Hubris. &#8211; Larry Wall
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:OnlinePlayerInterface functions (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_OnlinePlayerInterface_(UDK).html" title="UE3:OnlinePlayerInterface (UDK)">OnlinePlayerInterface</a> <i>(functions)</i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Functions"><span class="tocnumber">1</span> <span class="toctext">Functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Instance_functions"><span class="tocnumber">1.1</span> <span class="toctext">Instance functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#AcceptFriendInvite"><span class="tocnumber">1.1.1</span> <span class="toctext">AcceptFriendInvite</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#AddAddFriendByNameCompleteDelegate"><span class="tocnumber">1.1.2</span> <span class="toctext">AddAddFriendByNameCompleteDelegate</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#AddFriend"><span class="tocnumber">1.1.3</span> <span class="toctext">AddFriend</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#AddFriendByName"><span class="tocnumber">1.1.4</span> <span class="toctext">AddFriendByName</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#AddFriendInviteReceivedDelegate"><span class="tocnumber">1.1.5</span> <span class="toctext">AddFriendInviteReceivedDelegate</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#AddFriendMessageReceivedDelegate"><span class="tocnumber">1.1.6</span> <span class="toctext">AddFriendMessageReceivedDelegate</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#AddFriendsChangeDelegate"><span class="tocnumber">1.1.7</span> <span class="toctext">AddFriendsChangeDelegate</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#AddJoinFriendGameCompleteDelegate"><span class="tocnumber">1.1.8</span> <span class="toctext">AddJoinFriendGameCompleteDelegate</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#AddKeyboardInputDoneDelegate"><span class="tocnumber">1.1.9</span> <span class="toctext">AddKeyboardInputDoneDelegate</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#AddLoginCancelledDelegate"><span class="tocnumber">1.1.10</span> <span class="toctext">AddLoginCancelledDelegate</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#AddLoginChangeDelegate"><span class="tocnumber">1.1.11</span> <span class="toctext">AddLoginChangeDelegate</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#AddLoginFailedDelegate"><span class="tocnumber">1.1.12</span> <span class="toctext">AddLoginFailedDelegate</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#AddLoginStatusChangeDelegate"><span class="tocnumber">1.1.13</span> <span class="toctext">AddLoginStatusChangeDelegate</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#AddLogoutCompletedDelegate"><span class="tocnumber">1.1.14</span> <span class="toctext">AddLogoutCompletedDelegate</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#AddMutingChangeDelegate"><span class="tocnumber">1.1.15</span> <span class="toctext">AddMutingChangeDelegate</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#AddReadFriendsCompleteDelegate"><span class="tocnumber">1.1.16</span> <span class="toctext">AddReadFriendsCompleteDelegate</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#AddReadPlayerStorageCompleteDelegate"><span class="tocnumber">1.1.17</span> <span class="toctext">AddReadPlayerStorageCompleteDelegate</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#AddReadPlayerStorageForNetIdCompleteDelegate"><span class="tocnumber">1.1.18</span> <span class="toctext">AddReadPlayerStorageForNetIdCompleteDelegate</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="#AddReadProfileSettingsCompleteDelegate"><span class="tocnumber">1.1.19</span> <span class="toctext">AddReadProfileSettingsCompleteDelegate</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="#AddReceivedGameInviteDelegate"><span class="tocnumber">1.1.20</span> <span class="toctext">AddReceivedGameInviteDelegate</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#AddWritePlayerStorageCompleteDelegate"><span class="tocnumber">1.1.21</span> <span class="toctext">AddWritePlayerStorageCompleteDelegate</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="#AddWriteProfileSettingsCompleteDelegate"><span class="tocnumber">1.1.22</span> <span class="toctext">AddWriteProfileSettingsCompleteDelegate</span></a></li>
+<li class="toclevel-3 tocsection-25"><a href="#AreAnyFriends"><span class="tocnumber">1.1.23</span> <span class="toctext">AreAnyFriends</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#AutoLogin"><span class="tocnumber">1.1.24</span> <span class="toctext">AutoLogin</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="#CanCommunicate"><span class="tocnumber">1.1.25</span> <span class="toctext">CanCommunicate</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="#CanDownloadUserContent"><span class="tocnumber">1.1.26</span> <span class="toctext">CanDownloadUserContent</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="#CanPlayOnline"><span class="tocnumber">1.1.27</span> <span class="toctext">CanPlayOnline</span></a></li>
+<li class="toclevel-3 tocsection-30"><a href="#CanPurchaseContent"><span class="tocnumber">1.1.28</span> <span class="toctext">CanPurchaseContent</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="#CanShowPresenceInformation"><span class="tocnumber">1.1.29</span> <span class="toctext">CanShowPresenceInformation</span></a></li>
+<li class="toclevel-3 tocsection-32"><a href="#CanViewPlayerProfiles"><span class="tocnumber">1.1.30</span> <span class="toctext">CanViewPlayerProfiles</span></a></li>
+<li class="toclevel-3 tocsection-33"><a href="#ClearAddFriendByNameCompleteDelegate"><span class="tocnumber">1.1.31</span> <span class="toctext">ClearAddFriendByNameCompleteDelegate</span></a></li>
+<li class="toclevel-3 tocsection-34"><a href="#ClearFriendInviteReceivedDelegate"><span class="tocnumber">1.1.32</span> <span class="toctext">ClearFriendInviteReceivedDelegate</span></a></li>
+<li class="toclevel-3 tocsection-35"><a href="#ClearFriendMessageReceivedDelegate"><span class="tocnumber">1.1.33</span> <span class="toctext">ClearFriendMessageReceivedDelegate</span></a></li>
+<li class="toclevel-3 tocsection-36"><a href="#ClearFriendsChangeDelegate"><span class="tocnumber">1.1.34</span> <span class="toctext">ClearFriendsChangeDelegate</span></a></li>
+<li class="toclevel-3 tocsection-37"><a href="#ClearJoinFriendGameCompleteDelegate"><span class="tocnumber">1.1.35</span> <span class="toctext">ClearJoinFriendGameCompleteDelegate</span></a></li>
+<li class="toclevel-3 tocsection-38"><a href="#ClearKeyboardInputDoneDelegate"><span class="tocnumber">1.1.36</span> <span class="toctext">ClearKeyboardInputDoneDelegate</span></a></li>
+<li class="toclevel-3 tocsection-39"><a href="#ClearLoginCancelledDelegate"><span class="tocnumber">1.1.37</span> <span class="toctext">ClearLoginCancelledDelegate</span></a></li>
+<li class="toclevel-3 tocsection-40"><a href="#ClearLoginChangeDelegate"><span class="tocnumber">1.1.38</span> <span class="toctext">ClearLoginChangeDelegate</span></a></li>
+<li class="toclevel-3 tocsection-41"><a href="#ClearLoginFailedDelegate"><span class="tocnumber">1.1.39</span> <span class="toctext">ClearLoginFailedDelegate</span></a></li>
+<li class="toclevel-3 tocsection-42"><a href="#ClearLoginStatusChangeDelegate"><span class="tocnumber">1.1.40</span> <span class="toctext">ClearLoginStatusChangeDelegate</span></a></li>
+<li class="toclevel-3 tocsection-43"><a href="#ClearLogoutCompletedDelegate"><span class="tocnumber">1.1.41</span> <span class="toctext">ClearLogoutCompletedDelegate</span></a></li>
+<li class="toclevel-3 tocsection-44"><a href="#ClearMutingChangeDelegate"><span class="tocnumber">1.1.42</span> <span class="toctext">ClearMutingChangeDelegate</span></a></li>
+<li class="toclevel-3 tocsection-45"><a href="#ClearReadFriendsCompleteDelegate"><span class="tocnumber">1.1.43</span> <span class="toctext">ClearReadFriendsCompleteDelegate</span></a></li>
+<li class="toclevel-3 tocsection-46"><a href="#ClearReadPlayerStorageCompleteDelegate"><span class="tocnumber">1.1.44</span> <span class="toctext">ClearReadPlayerStorageCompleteDelegate</span></a></li>
+<li class="toclevel-3 tocsection-47"><a href="#ClearReadPlayerStorageForNetIdCompleteDelegate"><span class="tocnumber">1.1.45</span> <span class="toctext">ClearReadPlayerStorageForNetIdCompleteDelegate</span></a></li>
+<li class="toclevel-3 tocsection-48"><a href="#ClearReadProfileSettingsCompleteDelegate"><span class="tocnumber">1.1.46</span> <span class="toctext">ClearReadProfileSettingsCompleteDelegate</span></a></li>
+<li class="toclevel-3 tocsection-49"><a href="#ClearReceivedGameInviteDelegate"><span class="tocnumber">1.1.47</span> <span class="toctext">ClearReceivedGameInviteDelegate</span></a></li>
+<li class="toclevel-3 tocsection-50"><a href="#ClearWritePlayerStorageCompleteDelegate"><span class="tocnumber">1.1.48</span> <span class="toctext">ClearWritePlayerStorageCompleteDelegate</span></a></li>
+<li class="toclevel-3 tocsection-51"><a href="#ClearWriteProfileSettingsCompleteDelegate"><span class="tocnumber">1.1.49</span> <span class="toctext">ClearWriteProfileSettingsCompleteDelegate</span></a></li>
+<li class="toclevel-3 tocsection-52"><a href="#DeleteMessage"><span class="tocnumber">1.1.50</span> <span class="toctext">DeleteMessage</span></a></li>
+<li class="toclevel-3 tocsection-53"><a href="#DenyFriendInvite"><span class="tocnumber">1.1.51</span> <span class="toctext">DenyFriendInvite</span></a></li>
+<li class="toclevel-3 tocsection-54"><a href="#GetFriendMessages"><span class="tocnumber">1.1.52</span> <span class="toctext">GetFriendMessages</span></a></li>
+<li class="toclevel-3 tocsection-55"><a href="#GetFriendsList"><span class="tocnumber">1.1.53</span> <span class="toctext">GetFriendsList</span></a></li>
+<li class="toclevel-3 tocsection-56"><a href="#GetKeyboardInputResults"><span class="tocnumber">1.1.54</span> <span class="toctext">GetKeyboardInputResults</span></a></li>
+<li class="toclevel-3 tocsection-57"><a href="#GetLoginStatus"><span class="tocnumber">1.1.55</span> <span class="toctext">GetLoginStatus</span></a></li>
+<li class="toclevel-3 tocsection-58"><a href="#GetPlayerNickname"><span class="tocnumber">1.1.56</span> <span class="toctext">GetPlayerNickname</span></a></li>
+<li class="toclevel-3 tocsection-59"><a href="#GetPlayerStorage"><span class="tocnumber">1.1.57</span> <span class="toctext">GetPlayerStorage</span></a></li>
+<li class="toclevel-3 tocsection-60"><a href="#GetProfileSettings"><span class="tocnumber">1.1.58</span> <span class="toctext">GetProfileSettings</span></a></li>
+<li class="toclevel-3 tocsection-61"><a href="#GetUniquePlayerId"><span class="tocnumber">1.1.59</span> <span class="toctext">GetUniquePlayerId</span></a></li>
+<li class="toclevel-3 tocsection-62"><a href="#IsFriend"><span class="tocnumber">1.1.60</span> <span class="toctext">IsFriend</span></a></li>
+<li class="toclevel-3 tocsection-63"><a href="#IsGuestLogin"><span class="tocnumber">1.1.61</span> <span class="toctext">IsGuestLogin</span></a></li>
+<li class="toclevel-3 tocsection-64"><a href="#IsLocalLogin"><span class="tocnumber">1.1.62</span> <span class="toctext">IsLocalLogin</span></a></li>
+<li class="toclevel-3 tocsection-65"><a href="#IsMuted"><span class="tocnumber">1.1.63</span> <span class="toctext">IsMuted</span></a></li>
+<li class="toclevel-3 tocsection-66"><a href="#JoinFriendGame"><span class="tocnumber">1.1.64</span> <span class="toctext">JoinFriendGame</span></a></li>
+<li class="toclevel-3 tocsection-67"><a href="#Login"><span class="tocnumber">1.1.65</span> <span class="toctext">Login</span></a></li>
+<li class="toclevel-3 tocsection-68"><a href="#Logout"><span class="tocnumber">1.1.66</span> <span class="toctext">Logout</span></a></li>
+<li class="toclevel-3 tocsection-69"><a href="#ReadFriendsList"><span class="tocnumber">1.1.67</span> <span class="toctext">ReadFriendsList</span></a></li>
+<li class="toclevel-3 tocsection-70"><a href="#ReadPlayerStorage"><span class="tocnumber">1.1.68</span> <span class="toctext">ReadPlayerStorage</span></a></li>
+<li class="toclevel-3 tocsection-71"><a href="#ReadPlayerStorageForNetId"><span class="tocnumber">1.1.69</span> <span class="toctext">ReadPlayerStorageForNetId</span></a></li>
+<li class="toclevel-3 tocsection-72"><a href="#ReadProfileSettings"><span class="tocnumber">1.1.70</span> <span class="toctext">ReadProfileSettings</span></a></li>
+<li class="toclevel-3 tocsection-73"><a href="#RemoveFriend"><span class="tocnumber">1.1.71</span> <span class="toctext">RemoveFriend</span></a></li>
+<li class="toclevel-3 tocsection-74"><a href="#SendGameInviteToFriend"><span class="tocnumber">1.1.72</span> <span class="toctext">SendGameInviteToFriend</span></a></li>
+<li class="toclevel-3 tocsection-75"><a href="#SendGameInviteToFriends"><span class="tocnumber">1.1.73</span> <span class="toctext">SendGameInviteToFriends</span></a></li>
+<li class="toclevel-3 tocsection-76"><a href="#SendMessageToFriend"><span class="tocnumber">1.1.74</span> <span class="toctext">SendMessageToFriend</span></a></li>
+<li class="toclevel-3 tocsection-77"><a href="#SetOnlineStatus"><span class="tocnumber">1.1.75</span> <span class="toctext">SetOnlineStatus</span></a></li>
+<li class="toclevel-3 tocsection-78"><a href="#ShowFriendsUI"><span class="tocnumber">1.1.76</span> <span class="toctext">ShowFriendsUI</span></a></li>
+<li class="toclevel-3 tocsection-79"><a href="#ShowKeyboardUI"><span class="tocnumber">1.1.77</span> <span class="toctext">ShowKeyboardUI</span></a></li>
+<li class="toclevel-3 tocsection-80"><a href="#ShowLoginUI"><span class="tocnumber">1.1.78</span> <span class="toctext">ShowLoginUI</span></a></li>
+<li class="toclevel-3 tocsection-81"><a href="#WritePlayerStorage"><span class="tocnumber">1.1.79</span> <span class="toctext">WritePlayerStorage</span></a></li>
+<li class="toclevel-3 tocsection-82"><a href="#WriteProfileSettings"><span class="tocnumber">1.1.80</span> <span class="toctext">WriteProfileSettings</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>OnlinePlayerInterface functions in other games:</dt>
+<dd><span><a href="UE3_OnlinePlayerInterface_functions_(UT3).html" title="UE3:OnlinePlayerInterface functions (UT3)">UT3</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Functions">Functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=1" title="Edit section: Functions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Instance_functions">Instance functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=2" title="Edit section: Instance functions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="AcceptFriendInvite">AcceptFriendInvite</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=3" title="Edit section: AcceptFriendInvite">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>AcceptFriendInvite</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="UE3_OnlineSubsystem_structs_(UDK).html#UniqueNetId" title="UE3:OnlineSubsystem structs (UDK)">OnlineSubsystem.UniqueNetId</a>&#160;<b>RequestingPlayer</b>)</div>
+<p>Used to accept a friend invite sent to this player</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user the invite is for</li>
+<li><i>RequestingPlayer</i> - the player the invite is from</li>
+<li><i>true</i> - if successful, false otherwise</li>
+</ul>
+<h4><span class="mw-headline" id="AddAddFriendByNameCompleteDelegate">AddAddFriendByNameCompleteDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=4" title="Edit section: AddAddFriendByNameCompleteDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddAddFriendByNameCompleteDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnAddFriendByNameComplete">OnAddFriendByNameComplete</a>&gt;&#160;<b>FriendDelegate</b>)</div>
+<p>Adds the delegate used to notify the gameplay code that the user has received a friend invite</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user associated with the notification</li>
+<li><i>FriendDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="AddFriend">AddFriend</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=5" title="Edit section: AddFriend">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>AddFriend</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="UE3_OnlineSubsystem_structs_(UDK).html#UniqueNetId" title="UE3:OnlineSubsystem structs (UDK)">OnlineSubsystem.UniqueNetId</a>&#160;<b>NewFriend</b>, optional&#160;<a href="String.html" title="String">string</a>&#160;<b>Message</b>)</div>
+<p>Sends a friend invite to the specified player</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user that is sending the invite</li>
+<li><i>NewFriend</i> - the player to send the friend request to</li>
+<li><i>Message</i> - the message to display to the recipient</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if successful, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="AddFriendByName">AddFriendByName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=6" title="Edit section: AddFriendByName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>AddFriendByName</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="String.html" title="String">string</a>&#160;<b>FriendName</b>, optional&#160;<a href="String.html" title="String">string</a>&#160;<b>Message</b>)</div>
+<p>Sends a friend invite to the specified player nick</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user that is sending the invite</li>
+<li><i>FriendName</i> - the name of the player to send the invite to</li>
+<li><i>Message</i> - the message to display to the recipient</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if successful, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="AddFriendInviteReceivedDelegate">AddFriendInviteReceivedDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=7" title="Edit section: AddFriendInviteReceivedDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddFriendInviteReceivedDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnFriendInviteReceived">OnFriendInviteReceived</a>&gt;&#160;<b>InviteDelegate</b>)</div>
+<p>Adds the delegate used to notify the gameplay code that the user has received a friend invite</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user associated with the notification</li>
+<li><i>InviteDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="AddFriendMessageReceivedDelegate">AddFriendMessageReceivedDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=8" title="Edit section: AddFriendMessageReceivedDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddFriendMessageReceivedDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnFriendMessageReceived">OnFriendMessageReceived</a>&gt;&#160;<b>MessageDelegate</b>)</div>
+<p>Adds the delegate used to notify the gameplay code that the user has received a friend invite</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user associated with the notification</li>
+<li><i>MessageDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="AddFriendsChangeDelegate">AddFriendsChangeDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=9" title="Edit section: AddFriendsChangeDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddFriendsChangeDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnFriendsChange">OnFriendsChange</a>&gt;&#160;<b>FriendsDelegate</b>)</div>
+<p>Sets the delegate used to notify the gameplay code that a friends list changed</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user to read the friends list of</li>
+<li><i>FriendsDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="AddJoinFriendGameCompleteDelegate">AddJoinFriendGameCompleteDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=10" title="Edit section: AddJoinFriendGameCompleteDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddJoinFriendGameCompleteDelegate</b> (<a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnJoinFriendGameComplete">OnJoinFriendGameComplete</a>&gt;&#160;<b>JoinFriendGameCompleteDelegate</b>)</div>
+<p>Sets the delegate used to notify when the join friend is complete</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>JoinFriendGameCompleteDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="AddKeyboardInputDoneDelegate">AddKeyboardInputDoneDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=11" title="Edit section: AddKeyboardInputDoneDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddKeyboardInputDoneDelegate</b> (<a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnKeyboardInputComplete">OnKeyboardInputComplete</a>&gt;&#160;<b>InputDelegate</b>)</div>
+<p>Adds the delegate used to notify the gameplay code that the user has completed their keyboard input</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>InputDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="AddLoginCancelledDelegate">AddLoginCancelledDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=12" title="Edit section: AddLoginCancelledDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddLoginCancelledDelegate</b> (<a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnLoginCancelled">OnLoginCancelled</a>&gt;&#160;<b>CancelledDelegate</b>)</div>
+<p>Adds a delegate to the list of delegates that are fired when a login is cancelled</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>CancelledDelegate</i> - the delegate to add to the list</li>
+</ul>
+<h4><span class="mw-headline" id="AddLoginChangeDelegate">AddLoginChangeDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=13" title="Edit section: AddLoginChangeDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddLoginChangeDelegate</b> (<a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnLoginChange">OnLoginChange</a>&gt;&#160;<b>LoginDelegate</b>)</div>
+<p>Sets the delegate used to notify the gameplay code that a login changed</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LoginDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="AddLoginFailedDelegate">AddLoginFailedDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=14" title="Edit section: AddLoginFailedDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddLoginFailedDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnLoginFailed">OnLoginFailed</a>&gt;&#160;<b>LoginDelegate</b>)</div>
+<p>Sets the delegate used to notify the gameplay code that a login failed</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+<li><i>LoginDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="AddLoginStatusChangeDelegate">AddLoginStatusChangeDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=15" title="Edit section: AddLoginStatusChangeDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddLoginStatusChangeDelegate</b> (<a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnLoginStatusChange">OnLoginStatusChange</a>&gt;&#160;<b>LoginStatusDelegate</b>, <a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>)</div>
+<p>Sets the delegate used to notify the gameplay code that a login status has changed</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LoginDelegate</i> - the delegate to use for notifications</li>
+<li><i>LocalUserNum</i> - the player to watch login status changes for</li>
+</ul>
+<h4><span class="mw-headline" id="AddLogoutCompletedDelegate">AddLogoutCompletedDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=16" title="Edit section: AddLogoutCompletedDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddLogoutCompletedDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnLogoutCompleted">OnLogoutCompleted</a>&gt;&#160;<b>LogoutDelegate</b>)</div>
+<p>Sets the delegate used to notify the gameplay code that a logout completed</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+<li><i>LogoutDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="AddMutingChangeDelegate">AddMutingChangeDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=17" title="Edit section: AddMutingChangeDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddMutingChangeDelegate</b> (<a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnMutingChange">OnMutingChange</a>&gt;&#160;<b>MutingDelegate</b>)</div>
+<p>Sets the delegate used to notify the gameplay code that a muting list changed</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>MutingDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="AddReadFriendsCompleteDelegate">AddReadFriendsCompleteDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=18" title="Edit section: AddReadFriendsCompleteDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddReadFriendsCompleteDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnReadFriendsComplete">OnReadFriendsComplete</a>&gt;&#160;<b>ReadFriendsCompleteDelegate</b>)</div>
+<p>Sets the delegate used to notify the gameplay code that the friends read request has completed</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user to read the friends list of</li>
+<li><i>ReadFriendsCompleteDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="AddReadPlayerStorageCompleteDelegate">AddReadPlayerStorageCompleteDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=19" title="Edit section: AddReadPlayerStorageCompleteDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddReadPlayerStorageCompleteDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnReadPlayerStorageComplete">OnReadPlayerStorageComplete</a>&gt;&#160;<b>ReadPlayerStorageCompleteDelegate</b>)</div>
+<p>Sets the delegate used to notify the gameplay code that the last read request has completed</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - which user to watch for read complete notifications</li>
+<li><i>ReadPlayerStorageCompleteDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="AddReadPlayerStorageForNetIdCompleteDelegate">AddReadPlayerStorageForNetIdCompleteDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=20" title="Edit section: AddReadPlayerStorageForNetIdCompleteDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddReadPlayerStorageForNetIdCompleteDelegate</b> (<a href="UE3_OnlineSubsystem_structs_(UDK).html#UniqueNetId" title="UE3:OnlineSubsystem structs (UDK)">OnlineSubsystem.UniqueNetId</a>&#160;<b>NetId</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnReadPlayerStorageForNetIdComplete">OnReadPlayerStorageForNetIdComplete</a>&gt;&#160;<b>ReadPlayerStorageForNetIdCompleteDelegate</b>)</div>
+<p>Sets the delegate used to notify the gameplay code that the last read request has completed</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>NetId</i> - the net id for the user to watch for read complete notifications</li>
+<li><i>ReadPlayerStorageForNetIdCompleteDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="AddReadProfileSettingsCompleteDelegate">AddReadProfileSettingsCompleteDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=21" title="Edit section: AddReadProfileSettingsCompleteDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddReadProfileSettingsCompleteDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnReadProfileSettingsComplete">OnReadProfileSettingsComplete</a>&gt;&#160;<b>ReadProfileSettingsCompleteDelegate</b>)</div>
+<p>Sets the delegate used to notify the gameplay code that the last read request has completed</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - which user to watch for read complete notifications</li>
+<li><i>ReadProfileSettingsCompleteDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="AddReceivedGameInviteDelegate">AddReceivedGameInviteDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=22" title="Edit section: AddReceivedGameInviteDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddReceivedGameInviteDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnReceivedGameInvite">OnReceivedGameInvite</a>&gt;&#160;<b>ReceivedGameInviteDelegate</b>)</div>
+<p>Adds the delegate used to notify the gameplay code that the user has received a game invite</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user associated with the notification</li>
+<li><i>ReceivedGameInviteDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="AddWritePlayerStorageCompleteDelegate">AddWritePlayerStorageCompleteDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=23" title="Edit section: AddWritePlayerStorageCompleteDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddWritePlayerStorageCompleteDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnWritePlayerStorageComplete">OnWritePlayerStorageComplete</a>&gt;&#160;<b>WritePlayerStorageCompleteDelegate</b>)</div>
+<p>Sets the delegate used to notify the gameplay code that the last write request has completed</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - which user to watch for write complete notifications</li>
+<li><i>WritePlayerStorageCompleteDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="AddWriteProfileSettingsCompleteDelegate">AddWriteProfileSettingsCompleteDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=24" title="Edit section: AddWriteProfileSettingsCompleteDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AddWriteProfileSettingsCompleteDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnWriteProfileSettingsComplete">OnWriteProfileSettingsComplete</a>&gt;&#160;<b>WriteProfileSettingsCompleteDelegate</b>)</div>
+<p>Sets the delegate used to notify the gameplay code that the last write request has completed</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - which user to watch for write complete notifications</li>
+<li><i>WriteProfileSettingsCompleteDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="AreAnyFriends">AreAnyFriends</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=25" title="Edit section: AreAnyFriends">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>AreAnyFriends</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, out&#160;<a href="Array.html" title="Array">array</a>&lt;<a href="UE3_OnlineSubsystem_structs_(UDK).html#FriendsQuery" title="UE3:OnlineSubsystem structs (UDK)">OnlineSubsystem.FriendsQuery</a>&gt;&#160;<b>Query</b>)</div>
+<p>Checks that whether a group of player ids are among the specified player's friends</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+<li><i>Query</i> - an array of players to check for being included on the friends list</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE if the call succeeded, FALSE otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="AutoLogin">AutoLogin</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=26" title="Edit section: AutoLogin">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>AutoLogin</b> ()</div>
+<p>Logs the player into the online service using parameters passed on the command line. Expects -Login=&lt;UserName&gt; -Password=&lt;password&gt;. If either are missing, the function returns false and doesn't start the login process</p>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the async call started ok, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="CanCommunicate">CanCommunicate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=27" title="Edit section: CanCommunicate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_OnlineSubsystem_enums_(UDK).html#EFeaturePrivilegeLevel" title="UE3:OnlineSubsystem enums (UDK)">OnlineSubsystem.EFeaturePrivilegeLevel</a>&#160;<b>CanCommunicate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>)</div>
+<p>Determines whether the player is allowed to use voice or text chat online</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the Privilege level that is enabled</dd>
+</dl>
+<h4><span class="mw-headline" id="CanDownloadUserContent">CanDownloadUserContent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=28" title="Edit section: CanDownloadUserContent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_OnlineSubsystem_enums_(UDK).html#EFeaturePrivilegeLevel" title="UE3:OnlineSubsystem enums (UDK)">OnlineSubsystem.EFeaturePrivilegeLevel</a>&#160;<b>CanDownloadUserContent</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>)</div>
+<p>Determines whether the player is allowed to download user created content</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the Privilege level that is enabled</dd>
+</dl>
+<h4><span class="mw-headline" id="CanPlayOnline">CanPlayOnline</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=29" title="Edit section: CanPlayOnline">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_OnlineSubsystem_enums_(UDK).html#EFeaturePrivilegeLevel" title="UE3:OnlineSubsystem enums (UDK)">OnlineSubsystem.EFeaturePrivilegeLevel</a>&#160;<b>CanPlayOnline</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>)</div>
+<p>Determines whether the player is allowed to play online</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the Privilege level that is enabled</dd>
+</dl>
+<h4><span class="mw-headline" id="CanPurchaseContent">CanPurchaseContent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=30" title="Edit section: CanPurchaseContent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_OnlineSubsystem_enums_(UDK).html#EFeaturePrivilegeLevel" title="UE3:OnlineSubsystem enums (UDK)">OnlineSubsystem.EFeaturePrivilegeLevel</a>&#160;<b>CanPurchaseContent</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>)</div>
+<p>Determines whether the player is allowed to buy content online</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the Privilege level that is enabled</dd>
+</dl>
+<h4><span class="mw-headline" id="CanShowPresenceInformation">CanShowPresenceInformation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=31" title="Edit section: CanShowPresenceInformation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_OnlineSubsystem_enums_(UDK).html#EFeaturePrivilegeLevel" title="UE3:OnlineSubsystem enums (UDK)">OnlineSubsystem.EFeaturePrivilegeLevel</a>&#160;<b>CanShowPresenceInformation</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>)</div>
+<p>Determines whether the player is allowed to have their online presence information shown to remote clients</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the Privilege level that is enabled</dd>
+</dl>
+<h4><span class="mw-headline" id="CanViewPlayerProfiles">CanViewPlayerProfiles</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=32" title="Edit section: CanViewPlayerProfiles">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_OnlineSubsystem_enums_(UDK).html#EFeaturePrivilegeLevel" title="UE3:OnlineSubsystem enums (UDK)">OnlineSubsystem.EFeaturePrivilegeLevel</a>&#160;<b>CanViewPlayerProfiles</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>)</div>
+<p>Determines whether the player is allowed to view other people's player profile</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the Privilege level that is enabled</dd>
+</dl>
+<h4><span class="mw-headline" id="ClearAddFriendByNameCompleteDelegate">ClearAddFriendByNameCompleteDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=33" title="Edit section: ClearAddFriendByNameCompleteDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearAddFriendByNameCompleteDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnAddFriendByNameComplete">OnAddFriendByNameComplete</a>&gt;&#160;<b>FriendDelegate</b>)</div>
+<p>Removes the delegate specified from the list</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user associated with the notification</li>
+<li><i>FriendDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="ClearFriendInviteReceivedDelegate">ClearFriendInviteReceivedDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=34" title="Edit section: ClearFriendInviteReceivedDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearFriendInviteReceivedDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnFriendInviteReceived">OnFriendInviteReceived</a>&gt;&#160;<b>InviteDelegate</b>)</div>
+<p>Removes the delegate specified from the list</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user associated with the notification</li>
+<li><i>InviteDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="ClearFriendMessageReceivedDelegate">ClearFriendMessageReceivedDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=35" title="Edit section: ClearFriendMessageReceivedDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearFriendMessageReceivedDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnFriendMessageReceived">OnFriendMessageReceived</a>&gt;&#160;<b>MessageDelegate</b>)</div>
+<p>Removes the delegate specified from the list</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user associated with the notification</li>
+<li><i>MessageDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="ClearFriendsChangeDelegate">ClearFriendsChangeDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=36" title="Edit section: ClearFriendsChangeDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearFriendsChangeDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnFriendsChange">OnFriendsChange</a>&gt;&#160;<b>FriendsDelegate</b>)</div>
+<p>Sets the delegate used to notify the gameplay code that a friends list changed</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user to read the friends list of</li>
+<li><i>FriendsDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="ClearJoinFriendGameCompleteDelegate">ClearJoinFriendGameCompleteDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=37" title="Edit section: ClearJoinFriendGameCompleteDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearJoinFriendGameCompleteDelegate</b> (<a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnJoinFriendGameComplete">OnJoinFriendGameComplete</a>&gt;&#160;<b>JoinFriendGameCompleteDelegate</b>)</div>
+<p>Removes the delegate from the list of notifications</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>JoinFriendGameCompleteDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="ClearKeyboardInputDoneDelegate">ClearKeyboardInputDoneDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=38" title="Edit section: ClearKeyboardInputDoneDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearKeyboardInputDoneDelegate</b> (<a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnKeyboardInputComplete">OnKeyboardInputComplete</a>&gt;&#160;<b>InputDelegate</b>)</div>
+<p>Clears the delegate used to notify the gameplay code that the user has completed their keyboard input</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>InputDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="ClearLoginCancelledDelegate">ClearLoginCancelledDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=39" title="Edit section: ClearLoginCancelledDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearLoginCancelledDelegate</b> (<a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnLoginCancelled">OnLoginCancelled</a>&gt;&#160;<b>CancelledDelegate</b>)</div>
+<p>Removes the specified delegate from the notification list</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>CancelledDelegate</i> - the delegate to remove fromt he list</li>
+</ul>
+<h4><span class="mw-headline" id="ClearLoginChangeDelegate">ClearLoginChangeDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=40" title="Edit section: ClearLoginChangeDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearLoginChangeDelegate</b> (<a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnLoginChange">OnLoginChange</a>&gt;&#160;<b>LoginDelegate</b>)</div>
+<p>Removes the specified delegate from the notification list</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LoginDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="ClearLoginFailedDelegate">ClearLoginFailedDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=41" title="Edit section: ClearLoginFailedDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearLoginFailedDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnLoginFailed">OnLoginFailed</a>&gt;&#160;<b>LoginDelegate</b>)</div>
+<p>Removes the specified delegate from the notification list</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+<li><i>LoginDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="ClearLoginStatusChangeDelegate">ClearLoginStatusChangeDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=42" title="Edit section: ClearLoginStatusChangeDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearLoginStatusChangeDelegate</b> (<a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnLoginStatusChange">OnLoginStatusChange</a>&gt;&#160;<b>LoginStatusDelegate</b>, <a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>)</div>
+<p>Removes the specified delegate from the notification list</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LoginDelegate</i> - the delegate to use for notifications</li>
+<li><i>LocalUserNum</i> - the player to watch login status changes for</li>
+</ul>
+<h4><span class="mw-headline" id="ClearLogoutCompletedDelegate">ClearLogoutCompletedDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=43" title="Edit section: ClearLogoutCompletedDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearLogoutCompletedDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnLogoutCompleted">OnLogoutCompleted</a>&gt;&#160;<b>LogoutDelegate</b>)</div>
+<p>Removes the specified delegate from the notification list</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+<li><i>LogoutDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="ClearMutingChangeDelegate">ClearMutingChangeDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=44" title="Edit section: ClearMutingChangeDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearMutingChangeDelegate</b> (<a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnMutingChange">OnMutingChange</a>&gt;&#160;<b>MutingDelegate</b>)</div>
+<p>Clears the delegate used to notify the gameplay code that a muting list changed</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>MutingDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="ClearReadFriendsCompleteDelegate">ClearReadFriendsCompleteDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=45" title="Edit section: ClearReadFriendsCompleteDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearReadFriendsCompleteDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnReadFriendsComplete">OnReadFriendsComplete</a>&gt;&#160;<b>ReadFriendsCompleteDelegate</b>)</div>
+<p>Clears the delegate used to notify the gameplay code that the friends read request has completed</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user to read the friends list of</li>
+<li><i>ReadFriendsCompleteDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="ClearReadPlayerStorageCompleteDelegate">ClearReadPlayerStorageCompleteDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=46" title="Edit section: ClearReadPlayerStorageCompleteDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearReadPlayerStorageCompleteDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnReadPlayerStorageComplete">OnReadPlayerStorageComplete</a>&gt;&#160;<b>ReadPlayerStorageCompleteDelegate</b>)</div>
+<p>Searches the existing set of delegates for the one specified and removes it from the list</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - which user to watch for read complete notifications</li>
+<li><i>ReadPlayerStorageCompleteDelegate</i> - the delegate to find and clear</li>
+</ul>
+<h4><span class="mw-headline" id="ClearReadPlayerStorageForNetIdCompleteDelegate">ClearReadPlayerStorageForNetIdCompleteDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=47" title="Edit section: ClearReadPlayerStorageForNetIdCompleteDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearReadPlayerStorageForNetIdCompleteDelegate</b> (<a href="UE3_OnlineSubsystem_structs_(UDK).html#UniqueNetId" title="UE3:OnlineSubsystem structs (UDK)">OnlineSubsystem.UniqueNetId</a>&#160;<b>NetId</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnReadPlayerStorageForNetIdComplete">OnReadPlayerStorageForNetIdComplete</a>&gt;&#160;<b>ReadPlayerStorageForNetIdCompleteDelegate</b>)</div>
+<p>Searches the existing set of delegates for the one specified and removes it from the list</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>NetId</i> - the net id for the user to watch for read complete notifications</li>
+<li><i>ReadPlayerStorageForNetIdCompleteDelegate</i> - the delegate to find and clear</li>
+</ul>
+<h4><span class="mw-headline" id="ClearReadProfileSettingsCompleteDelegate">ClearReadProfileSettingsCompleteDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=48" title="Edit section: ClearReadProfileSettingsCompleteDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearReadProfileSettingsCompleteDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnReadProfileSettingsComplete">OnReadProfileSettingsComplete</a>&gt;&#160;<b>ReadProfileSettingsCompleteDelegate</b>)</div>
+<p>Searches the existing set of delegates for the one specified and removes it from the list</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - which user to watch for read complete notifications</li>
+<li><i>ReadProfileSettingsCompleteDelegate</i> - the delegate to find and clear</li>
+</ul>
+<h4><span class="mw-headline" id="ClearReceivedGameInviteDelegate">ClearReceivedGameInviteDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=49" title="Edit section: ClearReceivedGameInviteDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearReceivedGameInviteDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnReceivedGameInvite">OnReceivedGameInvite</a>&gt;&#160;<b>ReceivedGameInviteDelegate</b>)</div>
+<p>Removes the delegate specified from the list</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user associated with the notification</li>
+<li><i>ReceivedGameInviteDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="ClearWritePlayerStorageCompleteDelegate">ClearWritePlayerStorageCompleteDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=50" title="Edit section: ClearWritePlayerStorageCompleteDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearWritePlayerStorageCompleteDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnWritePlayerStorageComplete">OnWritePlayerStorageComplete</a>&gt;&#160;<b>WritePlayerStorageCompleteDelegate</b>)</div>
+<p>Clears the delegate used to notify the gameplay code that the last write request has completed</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - which user to watch for write complete notifications</li>
+<li><i>WritePlayerStorageCompleteDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="ClearWriteProfileSettingsCompleteDelegate">ClearWriteProfileSettingsCompleteDelegate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=51" title="Edit section: ClearWriteProfileSettingsCompleteDelegate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearWriteProfileSettingsCompleteDelegate</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Delegate.html" title="Delegate" class="mw-redirect">delegate</a>&lt;<a href="#OnWriteProfileSettingsComplete">OnWriteProfileSettingsComplete</a>&gt;&#160;<b>WriteProfileSettingsCompleteDelegate</b>)</div>
+<p>Clears the delegate used to notify the gameplay code that the last write request has completed</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - which user to watch for write complete notifications</li>
+<li><i>WriteProfileSettingsCompleteDelegate</i> - the delegate to use for notifications</li>
+</ul>
+<h4><span class="mw-headline" id="DeleteMessage">DeleteMessage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=52" title="Edit section: DeleteMessage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>DeleteMessage</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>MessageIndex</b>)</div>
+<p>Deletes a message from the list of messages</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user that is deleting the message</li>
+<li><i>MessageIndex</i> - the index of the message to delete</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the message was deleted, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="DenyFriendInvite">DenyFriendInvite</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=53" title="Edit section: DenyFriendInvite">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>DenyFriendInvite</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="UE3_OnlineSubsystem_structs_(UDK).html#UniqueNetId" title="UE3:OnlineSubsystem structs (UDK)">OnlineSubsystem.UniqueNetId</a>&#160;<b>RequestingPlayer</b>)</div>
+<p>Used to deny a friend request sent to this player</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user the invite is for</li>
+<li><i>RequestingPlayer</i> - the player the invite is from</li>
+<li><i>true</i> - if successful, false otherwise</li>
+</ul>
+<h4><span class="mw-headline" id="GetFriendMessages">GetFriendMessages</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=54" title="Edit section: GetFriendMessages">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>GetFriendMessages</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, out&#160;<a href="Array.html" title="Array">array</a>&lt;<a href="UE3_OnlineSubsystem_structs_(UDK).html#OnlineFriendMessage" title="UE3:OnlineSubsystem structs (UDK)">OnlineSubsystem.OnlineFriendMessage</a>&gt;&#160;<b>FriendMessages</b>)</div>
+<p>Returns the list of messages for the specified player</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the local player wanting to join</li>
+<li><i>FriendMessages</i> - the set of messages cached locally for the player</li>
+</ul>
+<h4><span class="mw-headline" id="GetFriendsList">GetFriendsList</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=55" title="Edit section: GetFriendsList">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_OnlineSubsystem_enums_(UDK).html#EOnlineEnumerationReadState" title="UE3:OnlineSubsystem enums (UDK)">OnlineSubsystem.EOnlineEnumerationReadState</a>&#160;<b>GetFriendsList</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, out&#160;<a href="Array.html" title="Array">array</a>&lt;<a href="UE3_OnlineSubsystem_structs_(UDK).html#OnlineFriend" title="UE3:OnlineSubsystem structs (UDK)">OnlineSubsystem.OnlineFriend</a>&gt;&#160;<b>Friends</b>, optional&#160;<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>Count</b>, optional&#160;<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>StartingAt</b>)</div>
+<p>Copies the list of friends for the player previously retrieved from the online service. The list can be retrieved in whole or in part.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user to read the friends list of</li>
+<li><i>Friends</i> - the out array that receives the copied data</li>
+<li><i>Count</i> - the number of friends to read or zero for all</li>
+<li><i>StartingAt</i> - the index of the friends list to start at (for pulling partial lists)</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>OERS_Done if the read has completed, otherwise one of the other states</dd>
+</dl>
+<h4><span class="mw-headline" id="GetKeyboardInputResults">GetKeyboardInputResults</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=56" title="Edit section: GetKeyboardInputResults">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="String.html" title="String">string</a>&#160;<b>GetKeyboardInputResults</b> (out&#160;<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>bWasCanceled</b>)</div>
+<p>Fetches the results of the input</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>bWasCanceled</i> - whether the user cancelled the input or not</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the string entered by the user. Note the string will be empty if it fails validation</dd>
+</dl>
+<h4><span class="mw-headline" id="GetLoginStatus">GetLoginStatus</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=57" title="Edit section: GetLoginStatus">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_OnlineSubsystem_enums_(UDK).html#ELoginStatus" title="UE3:OnlineSubsystem enums (UDK)">OnlineSubsystem.ELoginStatus</a>&#160;<b>GetLoginStatus</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>)</div>
+<p>Fetches the login status for a given player</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the enum value of their status</dd>
+</dl>
+<h4><span class="mw-headline" id="GetPlayerNickname">GetPlayerNickname</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=58" title="Edit section: GetPlayerNickname">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="String.html" title="String">string</a>&#160;<b>GetPlayerNickname</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>)</div>
+<p>Reads the player's nick name from the online service</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>a string containing the players nick name</dd>
+</dl>
+<h4><span class="mw-headline" id="GetPlayerStorage">GetPlayerStorage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=59" title="Edit section: GetPlayerStorage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_OnlinePlayerStorage_(UDK).html" title="UE3:OnlinePlayerStorage (UDK)">OnlinePlayerStorage</a>&#160;<b>GetPlayerStorage</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>)</div>
+<p>Returns the online player storage for a given local user</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user that we are reading the data for</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the player storage object</dd>
+</dl>
+<h4><span class="mw-headline" id="GetProfileSettings">GetProfileSettings</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=60" title="Edit section: GetProfileSettings">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_OnlineProfileSettings_(UDK).html" title="UE3:OnlineProfileSettings (UDK)">OnlineProfileSettings</a>&#160;<b>GetProfileSettings</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>)</div>
+<p>Returns the online profile settings for a given user</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user that we are reading the data for</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the profile settings object</dd>
+</dl>
+<h4><span class="mw-headline" id="GetUniquePlayerId">GetUniquePlayerId</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=61" title="Edit section: GetUniquePlayerId">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>GetUniquePlayerId</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, out&#160;<a href="UE3_OnlineSubsystem_structs_(UDK).html#UniqueNetId" title="UE3:OnlineSubsystem structs (UDK)">OnlineSubsystem.UniqueNetId</a>&#160;<b>PlayerId</b>)</div>
+<p>Gets the platform specific unique id for the specified player</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+<li><i>PlayerId</i> - the byte array that will receive the id</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE if the call succeeded, FALSE otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="IsFriend">IsFriend</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=62" title="Edit section: IsFriend">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsFriend</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="UE3_OnlineSubsystem_structs_(UDK).html#UniqueNetId" title="UE3:OnlineSubsystem structs (UDK)">OnlineSubsystem.UniqueNetId</a>&#160;<b>PlayerId</b>)</div>
+<p>Checks that a unique player id is part of the specified user's friends list</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+<li><i>PlayerId</i> - the id of the player being checked</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE if a member of their friends list, FALSE otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="IsGuestLogin">IsGuestLogin</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=63" title="Edit section: IsGuestLogin">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsGuestLogin</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>)</div>
+<p>Determines whether the specified user is a guest login or not</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if a guest, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="IsLocalLogin">IsLocalLogin</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=64" title="Edit section: IsLocalLogin">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsLocalLogin</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>)</div>
+<p>Determines whether the specified user is a local (non-online) login or not</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if a local profile, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="IsMuted">IsMuted</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=65" title="Edit section: IsMuted">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsMuted</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="UE3_OnlineSubsystem_structs_(UDK).html#UniqueNetId" title="UE3:OnlineSubsystem structs (UDK)">OnlineSubsystem.UniqueNetId</a>&#160;<b>PlayerId</b>)</div>
+<p>Checks that a unique player id is on the specified user's mute list</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+<li><i>PlayerId</i> - the id of the player being checked</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE if the player should be muted, FALSE otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="JoinFriendGame">JoinFriendGame</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=66" title="Edit section: JoinFriendGame">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>JoinFriendGame</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="UE3_OnlineSubsystem_structs_(UDK).html#UniqueNetId" title="UE3:OnlineSubsystem structs (UDK)">OnlineSubsystem.UniqueNetId</a>&#160;<b>Friend</b>)</div>
+<p>Allows the local player to follow a friend into a game</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the local player wanting to join</li>
+<li><i>Friend</i> - the player that is being followed</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the async call worked, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="Login">Login</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=67" title="Edit section: Login">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>Login</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="String.html" title="String">string</a>&#160;<b>LoginName</b>, <a href="String.html" title="String">string</a>&#160;<b>Password</b>, optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bWantsLocalOnly</b>)</div>
+<p>Logs the player into the online service. If this fails, it generates a OnLoginFailed notification</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+<li><i>LoginName</i> - the unique identifier for the player</li>
+<li><i>Password</i> - the password for this account</li>
+<li><i>bWantsLocalOnly</i> - whether the player wants to sign in locally only or not</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the async call started ok, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="Logout">Logout</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=68" title="Edit section: Logout">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>Logout</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>)</div>
+<p>Signs the player out of the online service</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE if the call succeeded, FALSE otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="ReadFriendsList">ReadFriendsList</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=69" title="Edit section: ReadFriendsList">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ReadFriendsList</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, optional&#160;<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>Count</b>, optional&#160;<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>StartingAt</b>)</div>
+<p>Starts an async task that retrieves the list of friends for the player from the online service. The list can be retrieved in whole or in part.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user to read the friends list of</li>
+<li><i>Count</i> - the number of friends to read or zero for all</li>
+<li><i>StartingAt</i> - the index of the friends list to start at (for pulling partial lists)</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the read request was issued successfully, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="ReadPlayerStorage">ReadPlayerStorage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=70" title="Edit section: ReadPlayerStorage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ReadPlayerStorage</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="UE3_OnlinePlayerStorage_(UDK).html" title="UE3:OnlinePlayerStorage (UDK)">OnlinePlayerStorage</a>&#160;<b>PlayerStorage</b>)</div>
+<p>Reads the online player storage data for a given local user</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user that we are reading the data for</li>
+<li><i>PlayerStorage</i> - the object to copy the results to and contains the list of items to read</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the call succeeds, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="ReadPlayerStorageForNetId">ReadPlayerStorageForNetId</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=71" title="Edit section: ReadPlayerStorageForNetId">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ReadPlayerStorageForNetId</b> (<a href="UE3_OnlineSubsystem_structs_(UDK).html#UniqueNetId" title="UE3:OnlineSubsystem structs (UDK)">OnlineSubsystem.UniqueNetId</a>&#160;<b>NetId</b>, <a href="UE3_OnlinePlayerStorage_(UDK).html" title="UE3:OnlinePlayerStorage (UDK)">OnlinePlayerStorage</a>&#160;<b>PlayerStorage</b>)</div>
+<p>Reads the online player storage data for a given net user</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>NetId</i> - the net user that we are reading the data for</li>
+<li><i>PlayerStorage</i> - the object to copy the results to and contains the list of items to read</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the call succeeds, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="ReadProfileSettings">ReadProfileSettings</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=72" title="Edit section: ReadProfileSettings">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ReadProfileSettings</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="UE3_OnlineProfileSettings_(UDK).html" title="UE3:OnlineProfileSettings (UDK)">OnlineProfileSettings</a>&#160;<b>ProfileSettings</b>)</div>
+<p>Reads the online profile settings for a given user</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user that we are reading the data for</li>
+<li><i>ProfileSettings</i> - the object to copy the results to and contains the list of items to read</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the call succeeds, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="RemoveFriend">RemoveFriend</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=73" title="Edit section: RemoveFriend">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>RemoveFriend</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="UE3_OnlineSubsystem_structs_(UDK).html#UniqueNetId" title="UE3:OnlineSubsystem structs (UDK)">OnlineSubsystem.UniqueNetId</a>&#160;<b>FormerFriend</b>)</div>
+<p>Removes a friend from the player's friend list</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user that is removing the friend</li>
+<li><i>FormerFriend</i> - the player to remove from the friend list</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if successful, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="SendGameInviteToFriend">SendGameInviteToFriend</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=74" title="Edit section: SendGameInviteToFriend">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>SendGameInviteToFriend</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="UE3_OnlineSubsystem_structs_(UDK).html#UniqueNetId" title="UE3:OnlineSubsystem structs (UDK)">OnlineSubsystem.UniqueNetId</a>&#160;<b>Friend</b>, optional&#160;<a href="String.html" title="String">string</a>&#160;<b>Text</b>)</div>
+<p>Sends an invitation to play in the player's current session</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user that is sending the invite</li>
+<li><i>Friend</i> - the player to send the invite to</li>
+<li><i>Text</i> - the text of the message for the invite</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if successful, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="SendGameInviteToFriends">SendGameInviteToFriends</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=75" title="Edit section: SendGameInviteToFriends">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>SendGameInviteToFriends</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_OnlineSubsystem_structs_(UDK).html#UniqueNetId" title="UE3:OnlineSubsystem structs (UDK)">OnlineSubsystem.UniqueNetId</a>&gt;&#160;<b>Friends</b>, optional&#160;<a href="String.html" title="String">string</a>&#160;<b>Text</b>)</div>
+<p>Sends invitations to play in the player's current session</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user that is sending the invite</li>
+<li><i>Friends</i> - the player to send the invite to</li>
+<li><i>Text</i> - the text of the message for the invite</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if successful, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="SendMessageToFriend">SendMessageToFriend</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=76" title="Edit section: SendMessageToFriend">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>SendMessageToFriend</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="UE3_OnlineSubsystem_structs_(UDK).html#UniqueNetId" title="UE3:OnlineSubsystem structs (UDK)">OnlineSubsystem.UniqueNetId</a>&#160;<b>Friend</b>, <a href="String.html" title="String">string</a>&#160;<b>Message</b>)</div>
+<p>Sends a message to a friend</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user that is sending the message</li>
+<li><i>Friend</i> - the player to send the message to</li>
+<li><i>Message</i> - the message to display to the recipient</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if successful, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="SetOnlineStatus">SetOnlineStatus</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=77" title="Edit section: SetOnlineStatus">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>SetOnlineStatus</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>StatusId</b>, const&#160;out&#160;<a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Settings_(UDK).html#LocalizedStringSetting" title="UE3:Settings (UDK)">Settings.LocalizedStringSetting</a>&gt;&#160;<b>LocalizedStringSettings</b>, const&#160;out&#160;<a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Settings_(UDK).html#SettingsProperty" title="UE3:Settings (UDK)">Settings.SettingsProperty</a>&gt;&#160;<b>Properties</b>)</div>
+<p>Sets the online status information to use for the specified player. Used to tell other players what the player is doing (playing, menus, away, etc.)</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+<li><i>StatusId</i> - the status id to use (maps to strings where possible)</li>
+<li><i>LocalizedStringSettings</i> - the list of localized string settings to set</li>
+<li><i>Properties</i> - the list of properties to set</li>
+</ul>
+<h4><span class="mw-headline" id="ShowFriendsUI">ShowFriendsUI</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=78" title="Edit section: ShowFriendsUI">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ShowFriendsUI</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>)</div>
+<p>Displays the UI that shows a user's list of friends</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE if it was able to show the UI, FALSE if it failed</dd>
+</dl>
+<h4><span class="mw-headline" id="ShowKeyboardUI">ShowKeyboardUI</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=79" title="Edit section: ShowKeyboardUI">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ShowKeyboardUI</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="String.html" title="String">string</a>&#160;<b>TitleText</b>, <a href="String.html" title="String">string</a>&#160;<b>DescriptionText</b>, optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bIsPassword</b>, optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bShouldValidate</b>, optional&#160;<a href="String.html" title="String">string</a>&#160;<b>DefaultText</b>, optional&#160;<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>MaxResultLength</b>)</div>
+<p>Displays the UI that shows the keyboard for inputing text</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the controller number of the associated user</li>
+<li><i>TitleText</i> - the title to display to the user</li>
+<li><i>DescriptionText</i> - the text telling the user what to input</li>
+<li><i>bIsPassword</i> - whether the item being entered is a password or not</li>
+<li><i>bShouldValidate</i> - whether to apply the string validation API after input or not</li>
+<li><i>DefaultText</i> - the default string to display</li>
+<li><i>MaxResultLength</i> - the maximum length string expected to be filled in</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE if it was able to show the UI, FALSE if it failed</dd>
+</dl>
+<h4><span class="mw-headline" id="ShowLoginUI">ShowLoginUI</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=80" title="Edit section: ShowLoginUI">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ShowLoginUI</b> (optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bShowOnlineOnly</b>)</div>
+<p>Displays the UI that prompts the user for their login credentials. Each platform handles the authentication of the user's data.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>bShowOnlineOnly</i> - whether to only display online enabled profiles or not</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE if it was able to show the UI, FALSE if it failed</dd>
+</dl>
+<h4><span class="mw-headline" id="WritePlayerStorage">WritePlayerStorage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=81" title="Edit section: WritePlayerStorage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>WritePlayerStorage</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="UE3_OnlinePlayerStorage_(UDK).html" title="UE3:OnlinePlayerStorage (UDK)">OnlinePlayerStorage</a>&#160;<b>PlayerStorage</b>)</div>
+<p>Writes the online player storage data for a given local user to the online data store</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user that we are writing the data for</li>
+<li><i>PlayerStorage</i> - the object that contains the list of items to write</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the call succeeds, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="WriteProfileSettings">WriteProfileSettings</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)?section=82" title="Edit section: WriteProfileSettings">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>WriteProfileSettings</b> (<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>LocalUserNum</b>, <a href="UE3_OnlineProfileSettings_(UDK).html" title="UE3:OnlineProfileSettings (UDK)">OnlineProfileSettings</a>&#160;<b>ProfileSettings</b>)</div>
+<p>Writes the online profile settings for a given user to the online data store</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>LocalUserNum</i> - the user that we are writing the data for</li>
+<li><i>ProfileSettings</i> - the list of settings to write out</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the call succeeds, false otherwise</dd>
+</dl>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.561 seconds
+Real time usage: 0.573 seconds
+Preprocessor visited node count: 3238/1000000
+Preprocessor generated node count: 6353/1000000
+Post‐expand include size: 39901/2097152 bytes
+Template argument size: 20276/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  339.589      1 - -total
+ 66.98%  227.463     80 - Template:Code
+ 47.15%  160.124     65 - Template:Tl
+ 27.52%   93.460     34 - Template:Samegame
+ 22.38%   75.992      1 - Template:Infobox_class_part
+ 20.64%   70.105      1 - Template:Infobox_class_part/core
+  8.09%   27.483      7 - Template:Cl
+  4.55%   15.456      1 - Template:Ch
+  1.70%    5.789      1 - Template:Autogenerated
+  1.16%    3.925      1 - Template:Ambox
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:26411-0!*!*!*!*!*!* and timestamp 20161215200020 and revision id 37948
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:OnlinePlayerInterface_functions_(UDK)?oldid=37948">https://wiki.beyondunreal.com/UE3:OnlinePlayerInterface_functions_(UDK)?oldid=37948</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_OnlinePlayerInterface_functions_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:OnlinePlayerInterface_functions_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerInterface_functions_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:OnlinePlayerInterface_functions_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AOnlinePlayerInterface+functions+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AOnlinePlayerInterface+functions+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:OnlinePlayerInterface_functions_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:OnlinePlayerInterface_functions_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:OnlinePlayerInterface_functions_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:OnlinePlayerInterface_functions_(UDK)?oldid=37948" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:OnlinePlayerInterface_functions_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 13:47, 6 November 2009.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":112});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:OnlinePlayerInterface_functions_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 11:24:06 GMT -->
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Bilinear_Filtering by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:55:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Bilinear Filtering - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Bilinear_Filtering" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Bilinear_Filtering" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_Bilinear_Filtering.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Bilinear_Filtering","wgTitle":"Bilinear Filtering","wgCurRevisionId":1935,"wgRevisionId":1935,"wgArticleId":656,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Bilinear_Filtering","wgRelevantArticleId":656,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Bilinear_Filtering skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Worst-case scenario: the UEd Goblin wipes the map and burns down your house.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Bilinear Filtering</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><h2><span class="mw-headline" id="What_is_.22filtering.22_anyway.3F">What is "filtering" anyway?</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bilinear_Filtering?section=1" title="Edit section: What is &quot;filtering&quot; anyway?">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>When an image is transformed (scaled, rotated, etc.) you often face the problem that there is simply not enough data to assign values to all pixels. If an image's height and width are doubled, you are increasing the number of pixels by a factor of four. You can assign data to a quarter of those pixels 100% reliably, but you need to guess, or <b>interpolate</b> values for all the pixels in between. The simplest way is just to use the value of the nearest known pixel. This is known as <i>point</i> or <i>nearest neighbour</i> interpolation, and can result in a blocky, unappealing image to look at and - in the case of a size reduction - can even cause large, noticable gaps in lines.</p>
+<p>Bilinear interpolation is a way of guessing pixel values in order to create a smoother image.</p>
+<table>
+<tr>
+<td></td>
+<td>
+<div class="center">
+<div class="floatnone"><a href="File_Legacy_texture_filter_example_small.html" class="image" title="No filter"><img alt="No filter" src="w/images/Legacy_texture_filter_example_small.png" width="96" height="96" /></a></div>
+</div>
+</td>
+<td>
+<div class="center">
+<div class="floatnone"><a href="File_Legacy_texture_filter_example_point.html" class="image" title="3x Scale Point filter"><img alt="3x Scale Point filter" src="w/images/Legacy_texture_filter_example_point.png" width="288" height="288" /></a></div>
+</div>
+</td>
+<td>
+<div class="center">
+<div class="floatnone"><a href="File_Legacy_texture_filter_example_bilinear.html" class="image" title="3x Scale Bilinear filter"><img alt="3x Scale Bilinear filter" src="w/images/Legacy_texture_filter_example_bilinear.png" width="288" height="288" /></a></div>
+</div>
+</td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="So_what_uses_bilinear_filtering.3F">So what uses bilinear filtering?</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bilinear_Filtering?section=2" title="Edit section: So what uses bilinear filtering?">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>In games, bilinear filtering is primarily used to apply a texture to a surface. As you look around the world, the 2D shape of the surface is altered (vertices further away from the viewpoint appear closer together), and the texture must be transformed to fit the new shape. If you've played older shooters (i.e. Doom) you can see how aliased and pixelated the texture looks when using point filtering for this process.</p>
+<p>Bilinear filtering will make these textures look smoother and more convincing. However, on a surface that extends into the distance, the texture can get less and less clear as it gets further from the viewpoint. This is where the mipmapping technique comes in to play - by creating several smaller, clear versions of the same texture, you can apply the larger versions close to the viewpoint and the smaller versions further away to result in an overall sharper texture application.</p>
+<p>However even this has its drawbacks: Now that we're applying multiple textures to one surface and filtering them separately, there is often noticable lines where there is a change in mip level. These lines look VERY unrealistic when you move, as they maintain a constant distance from the viewpoint (thus you have lines which appear to move as you move). This is where <a href="Legacy_Trilinear_Filtering.html" title="Legacy:Trilinear Filtering">Trilinear Filtering</a> comes into play, by adding a third linear filter between the mipmap levels, these lines are eliminated.</p>
+<p>There is another type of filtering, called <a href="https://wiki.beyondunreal.com/edit/Legacy:Anisotropic_Filtering?redlink=1" class="new" title="Legacy:Anisotropic Filtering (page does not exist)">Anisotropic Filtering</a>, which works WITH bilinear/trilinear filtering to make far away textures appear *very* clear.</p>
+<h2><span class="mw-headline" id="The_math_behind_bilinear_interpolation">The math behind bilinear interpolation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Bilinear_Filtering?section=3" title="Edit section: The math behind bilinear interpolation">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The general idea when interpolating bilinearly is that the colour of an unknown pixel should be spaced proportionally between the colour values of the pixels around it. Therefore if an unknown pixel is halfway between two known pixels, its colour value should be halfway between their values. If the unknown pixel is closer to one of the known pixels, it should be closer to that pixel's colour.</p>
+<p>More specifically, if the known pixels have values V1 and V2, and the distances from the unknown pixels are D1 and D2, the unknown pixel should have the value:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+V <span class="sy0">=</span> <span class="br0">(</span>V1 <span class="sy0">*</span> D2 <span class="sy0">+</span> V2 <span class="sy0">*</span> D1<span class="br0">)</span> <span class="sy0">/</span> <span class="br0">(</span>D1 <span class="sy0">+</span> D2<span class="br0">)</span>
+</pre></div>
+</div>
+<p>This equation will work for interpolating along a line, and is called <i>linear interpolation</i> However, it is a bit more complicated for images, as they are comprised of horizontal <b>and</b> vertical lines. We must use a combination of 2 linear filters - horizontal and vertical - to create the desired effect. This results in a <i>bilinear interpolation</i>.</p>
+<p>When interpolating bilinearly, four reference pixels are required. The pixel we are trying to determine the value of will lie somewhere in the square defined by those reference pixels. Say we are trying to find the value of pixel at (X0, Y0), with our 4 reference pixels being at (x1, y1), (x2, y1), (x1, y2), (x2, y2). If those pixels have values of V11, V12, V21, and V22, we will start by interpolating horizontally between the 2 horizontal pairs of pixels.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+V1 <span class="sy0">=</span> <span class="br0">(</span>V11 <span class="sy0">*</span> dx2 <span class="sy0">+</span> V21 <span class="sy0">*</span> dx1<span class="br0">)</span> <span class="sy0">/</span> <span class="br0">(</span>dx1 <span class="sy0">+</span> dx2<span class="br0">)</span>
+V2 <span class="sy0">=</span> <span class="br0">(</span>V12 <span class="sy0">*</span> dx2 <span class="sy0">+</span> V22 <span class="sy0">*</span> dx1<span class="br0">)</span> <span class="sy0">/</span> <span class="br0">(</span>dx1 <span class="sy0">+</span> dx2<span class="br0">)</span>
+</pre></div>
+</div>
+<p>We will then interpolate these new values vertically to get our known value.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+V <span class="sy0">=</span> <span class="br0">[</span><span class="br0">(</span>V11 <span class="sy0">*</span> dx2 <span class="sy0">+</span> V21 <span class="sy0">*</span> dx1<span class="br0">)</span> <span class="sy0">/</span> <span class="br0">(</span>dx1 <span class="sy0">+</span> dx2<span class="br0">)</span> <span class="sy0">*</span> dy2 <span class="sy0">+</span> <span class="br0">(</span>V12 <span class="sy0">*</span> dx2 <span class="sy0">+</span> V22 <span class="sy0">*</span> dx1<span class="br0">)</span> <span class="sy0">/</span> <span class="br0">(</span>dx1 <span class="sy0">+</span> dx2<span class="br0">)</span> <span class="sy0">*</span> dy1<span class="br0">)</span><span class="br0">]</span> <span class="sy0">/</span> <span class="br0">(</span>dy1 <span class="sy0">+</span> dy2<span class="br0">)</span>
+ 
+  <span class="sy0">=</span> <span class="br0">(</span>V11 <span class="sy0">*</span> dx2 <span class="sy0">*</span> dy2 <span class="sy0">+</span> V21 <span class="sy0">*</span> dx1 <span class="sy0">*</span> dy2 <span class="sy0">+</span> V12 <span class="sy0">*</span> dx2 <span class="sy0">*</span> dy1 <span class="sy0">+</span> V22 <span class="sy0">*</span> dx1 <span class="sy0">*</span> dy1<span class="br0">)</span> <span class="sy0">/</span> <span class="br0">(</span>dx1 <span class="sy0">+</span> dx2<span class="br0">)</span> <span class="sy0">/</span> <span class="br0">(</span>dy1 <span class="sy0">+</span> dy2<span class="br0">)</span>
+</pre></div>
+</div>
+<p>Now since all our reference pixels are adjacent to each other, dx1 + dx2 = 1, and dy1 + dy2 = 1. Substitute:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+V <span class="sy0">=</span> V11 <span class="sy0">*</span> dx2 <span class="sy0">*</span> dy2 <span class="sy0">+</span> V21 <span class="sy0">*</span> dx1 <span class="sy0">*</span> dy2 <span class="sy0">+</span> V12 <span class="sy0">*</span> dx2 <span class="sy0">*</span> dy1 <span class="sy0">+</span> V22 <span class="sy0">*</span> dx1 <span class="sy0">*</span> dy1
+</pre></div>
+</div>
+<hr />
+<p><b>Draconx:</b> I'm not very good at explaining myself when it comes to equations. I also don't think I formatted this particularly well. Perhaps someone could clean this up a bit?&#160;:P</p>
+<p><b>Foxpaw:</b> Err, isn't the title of this page extremely misleading? Bilinear filtering is one method by which different mipmaps are interpolated between when a frame is rendered, not the method by which the mipmaps are generated.</p>
+<p>Bilinear interpolation would be a much more accurate name for this page.</p>
+<p><b>Draconx:</b> I added a thing about bilinear filtering's application in games. A bilinear filter is simply a transformation that uses bilinear interpolation, but it is not technically a requirement for mipmapping, nor is mipmapping a requirement for bilinear filtering of textures onto a surface. And interpolating BETWEEN the mipmaps is a function of <a href="Legacy_Trilinear_Filtering.html" title="Legacy:Trilinear Filtering">Trilinear Filtering</a> - which mipmaps are required for. Trilinear filtering is simply bilinearly filtered mipmaps with linear interpolation between them.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.071 seconds
+Real time usage: 0.077 seconds
+Preprocessor visited node count: 22/1000000
+Preprocessor generated node count: 96/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:656-0!*!0!!*!5!* and timestamp 20161215142636 and revision id 1935
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Bilinear_Filtering?oldid=1935">https://wiki.beyondunreal.com/Legacy:Bilinear_Filtering?oldid=1935</a>"</div>
+					<div id='catlinks' class='catlinks catlinks-allhidden'></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_Bilinear_Filtering.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Bilinear_Filtering?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Bilinear_Filtering" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Bilinear_Filtering" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ABilinear+Filtering&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ABilinear+Filtering" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Bilinear_Filtering" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Bilinear_Filtering" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Bilinear_Filtering?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Bilinear_Filtering?oldid=1935" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Bilinear_Filtering" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 18:18, 3 March 2005.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":69});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Bilinear_Filtering by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:55:23 GMT -->
+</html>

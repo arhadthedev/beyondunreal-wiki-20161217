@@ -1,0 +1,720 @@
+OpenUT Frequently Asked Questions List
+
+Andy Piper, andyp@unrealtournament.org
+Version 3.0.4, Nov 08, 2000
+
+
+This document aims to answer some of the more frequently asked questions about
+Unreal Tournament for Linux, and specifically the open source project ('OpenUT')
+to develop improved Linux binaries and drivers for the game.
+
+
+1. Information
+
+1.1 What is this FAQ about?
+1.2 Who maintains this document?
+1.3 Where can I obtain the latest version?
+1.4 Version
+1.5 Revision history
+
+
+2. Background
+
+2.1 What is Unreal Tournament?
+2.2 What is OpenUT?
+2.3 How did OpenUT come about?
+2.4 What is the history of OpenUT?
+2.5 What sources have been released?
+2.6 Who is maintaining OpenUT?
+2.7 How can I get involved?
+2.8 What is SDL?
+2.9 What is utah-glx?
+2.10 Where can I find out more / get more help?
+
+
+3. Compiling / Troubleshooting
+
+3.1 Are precompiled binaries of OpenUT available?
+3.2 Does it matter which version of the Linux kernel I am running?
+3.3 Will UT / OpenUT work with a multiprocessor (SMP) system?
+3.4 Why do I get errors related to GL include files that cannot be found?
+3.5 Why isn't software rendering available for UT under Linux?
+3.6 How can I get a full log of what is going on when I run the game?
+3.7 Why do I get the message "video memory unprotecting" when starting the game?
+3.8 Does OpenUT work with DRI in X?
+3.9 Which renderer and viewport manager should I use with my GeForce / Voodoo / G400 / TNT card?
+3.10 Why does everything run so slowly with utah-glx and my TNT graphics card?
+3.11 Does UT work with XFree86 4.0 and the new nVidia GLX drivers?
+3.12 Why are there ugly black boxes where there should be text in the menus?
+3.13 Why does the game crash out with a segfault when running with XFree86 4.0.1 and a Voodoo Banshee card?
+
+
+4. Linux Unreal Tournament
+
+4.1 Can I use MODs with the Linux version of UT?
+4.2 How do I use the UT Bonus Pack on Linux?
+4.3 Can I use the Rocket Arena mod with the Linux version of UT?
+4.4 Does OpenUT work with Unreal, as well as with Unreal Tournament?
+4.5 Why do I get a message about Uwebadmin failing to bind to a port when trying to run ucc?
+4.6 Can I use ngStats / ngWorldStats with Unreal Tournament for Linux?
+4.7 When will the latest patch be available for Linux?
+4.8 Why don't you guys fix <bug-of-your-choice> in the Linux UT server?
+4.9 Why does the UT server fail to restart after a crash with an error about System/Core containing bad data?
+4.10 Is it possible to get sound working when using an Aureal MX300 sound card?
+4.11 Is it normal to see two ucc-bin processes when running a UT server on Linux?
+4.12 Is it true that UT for Linux requires libesd in order to run?
+
+
+5. Questions awaiting answers
+
+5.1 When will UT be ported to BeOS / OS/2 / other platforms?
+5.2 What do I need to compile OpenUT?
+5.3 Can you suggest a known, working setup for compiling OpenUT?
+5.4 What version of UT do I need to run OpenUT?
+5.5 What licence are the OpenUT sources released under?
+
+
+6. Obsolete questions
+
+6.1 Can I get the 402B patch for my Windows version of Unreal Tournament?
+6.2 Why will UT not start under Enlightenment?
+6.3 Why do I see the intro through a narrow "band" in the middle of the screen when starting the game?
+6.4 Why does the game terminate straight after the splash screen?
+6.5 Why does UT fail with a SIGIOT error after applying the latest patch?
+6.6 How come there is no music?
+6.7 Why doesn't the SDL stuff work?
+6.8 Why does the mouse pointer get stuck in one of the corners of the screen when running with GLX and SDL?
+6.9 Why doesn't network play work with the 413 patch?
+6.10 Why do I get "Failed to load Class IpDrv.HTTPDownload" errors when using download redirection?
+6.11 Why does the Linux client fail with a SIGSEGV / EACCES error?
+6.12 Why doesn't my joystick work in Unreal Tournament for Linux?
+
+
+===============================================================================
+
+
+1. Information
+
+
+1.1 What is this FAQ about?
+
+
+This document aims to answer some of the more frequently asked questions about
+Unreal Tournament for Linux, and specifically the open source project ('OpenUT')
+to develop improved Linux binaries and drivers for the game.
+
+-------------------------------------------------------------------------------
+
+1.2 Who maintains this document?
+
+
+The current maintainer is Andy Piper (andyp@unrealtournament.org), with various
+contributions from the open source community and OpenUT developers.
+
+New additions are welcomed, and can be e-mailed to the maintainer for 
+inclusion in future revisions of this document.
+
+-------------------------------------------------------------------------------
+
+1.3 Where can I obtain the latest version?
+
+
+The OpenUT FAQ is hosted at http://openut.sourceforge.net - the latest
+version is always available from that site.
+
+-------------------------------------------------------------------------------
+
+1.4 Version
+
+
+The current revision is 3.0.4 (08-Nov-2000)
+
+Note that version 3.x.x marks a complete overhaul - many questions from 
+previous versions have been removed entirely, and the whole FAQ has 
+been reorganised.
+
+This release is still in a state of flux. 
+Various questions are no longer valid for the 425 release.
+
+-------------------------------------------------------------------------------
+
+1.5 Revision History
+
+
+0.0.1     (09-Apr-2000)     Initial release (lots of gaps!)
+0.0.2     (13-Apr-2000)     Additions from Daniel Vogel, more answers
+0.0.3     (15-Apr-2000)     Updated improvements list, added credits
+1.0.0     (16-Apr-2000)     Reordered and tidied for initial public release
+1.1.0     (17-Apr-2000)     Added 'obsolete' section and expanded some answers     
+1.1.1     (19-Apr-2000)     Minor updates to 413 information
+2.0.0     (21-Apr-2000)     Full HTML release with many new additions
+2.0.1     (22-Apr-2000)     Minor update to ngStats question
+2.1.0     (01-May-2000)     Several new questions added
+2.2.0     (04-May-2000)     New entries, expanded upon some previous answers
+3.0.0-a   (08-Aug-2000)     Major revision for the 425 release (Loki version)
+3.0.1-a   (21-Aug-2000)     Minor corrections and two new additions
+3.0.2-a   (27-Aug-2000)     Details of Aureal sound drivers added
+3.0.3     (06-Oct-2000)     Added several new entries and tidied old answers
+3.0.4     (08-Nov-2000)     Updated for 436 release
+
+===============================================================================
+
+
+2. Background
+
+
+2.1 What is Unreal Tournament?
+
+
+Unreal Tournament (aka UT) is a multiplayer, three-dimensional first-person
+shooter-type game in the style of the classic Quake games. The game is written
+and developed by Epic Games and published and marketed by GT Interactive. The
+Linux version is developed and maintained by Loki.
+
+-------------------------------------------------------------------------------
+
+2.2 What is OpenUT?
+
+
+The OpenUT Project was formed to develop libraries, executables, and tools 
+relevant to the Unreal Tournament engine. The project focuses on improving 
+the quality of the UT Linux port through open source development.
+
+-------------------------------------------------------------------------------
+
+2.3 How did OpenUT come about?
+
+
+Epic Games were developing a Linux version of the game for some time before
+it was commecially released, and had hoped to provide the binaries on the same
+retail CD as the Windows version. The binaries were not quite ready in time,
+but they were released on the Internet afterwards.
+
+In December 1999 Brandon Reinhart (aka 'GreenMarine'), a developer at Epic,
+announced their intention to open source certain parts of the Linux game
+engine in order to let the development community help to improve the code. 
+Quote from his .plan around the time of the release:
+
+"The bottom line is this: I like to play kick ass games. The Linux port 
+of UT is not kick ass. I don't have the time to make it better, so instead 
+of having it languish on my harddrive I'll give it out to anyone who wants 
+it. You don't have to do anything with it. You could take it and write cool 
+stuff and if you want you could contribute it to me. Its all voluntary."
+
+The project was established at SourceForge in early January 2000.
+
+-------------------------------------------------------------------------------
+
+2.4 What is the history of OpenUT?
+
+
+Shortly after the project was established, Daniel Vogel was made joint project
+admin with Brandon Reinhart.
+
+Almost all of the improvements made to the version 402 sources as released by 
+Epic were incorporated into the 413 release for Linux.
+
+After the release of the 413 patch, there was no further source release: OpenUT
+development stopped. The project mailing list and forums became general
+discussion and support groups for the Linux version of UT.
+
+Brandon left Epic; Daniel went to work for Loki.
+
+On August 1st 2000, Loki and Epic announced that a deal had been signed for Loki
+to maintain and support Unreal Tournament for Linux. Daniel Vogel confirmed
+that source releases should continue, although public write access to CVS would
+be removed.
+
+-------------------------------------------------------------------------------
+
+2.5 What sources have been released?
+
+
+At present, only the Linux sound and graphics rendering code.
+
+Daniel Vogel summarised the source release as follows:
+
+- most headers to Core / Engine
+- source to
+  - UTLaunch aka UnrealTournament executable
+  - UCC (only a stub as it dlopens the Engine stuff)
+  - Renderers
+    - D3DDrv
+    - GlideDrv
+    - OpenGLDrv
+    - XMesaGLDrv
+  - Viewport Managers
+    - XDrv
+  - Sound (Linux part)
+
+The OpenUT project does NOT have access to the generic renderer, the
+game core, engine, server, editor, or software renderer.	    
+
+-------------------------------------------------------------------------------
+
+2.6 Who is maintaining OpenUT?
+
+
+At the present time (Nov 2000), the SourceForge project admins are Brandon 
+Reinhart, Daniel Vogel and Andy Piper
+
+There were a total of 14 developers who had direct access to update the OpenUT 
+CVS repository, but this access has been removed now that Loki maintain the
+core code for Epic. Daniel will accept patches from the open source community
+against the publically-released sources, and is the principal developer and
+coordinator of the project.
+
+Below is a list of people that have contributed to the OpenUT project in
+some form or another:
+(NB this list applies to release versions <=413 and was included in the
+README file supplied with the 413 patch)
+
+OpenUT programming (alphabetically ordered)
+
+	John Fulmer
+	Joshua R. Garvin
+	Chris Gilbert
+	Jeroen Janssen
+	Jeremy Muhlich
+	Marcus Sundberg
+	Nicholas Vinen
+	Daniel Vogel
+
+OpenUT tools / website / misc (alphabetically ordered)
+
+	Doug Dahl
+	Andreas Ehliar
+	Albert K T Hui
+	Jeffrey H. Ingber
+	John "Matt" Matthews
+	Andy Piper
+	Dustin Reyes
+	Andy Ward
+	Jeremy Weatherford
+
+Everyone is welcome to help with the project!
+
+-------------------------------------------------------------------------------
+
+2.7 How can I get involved?
+
+
+Lots of ways - thanks for asking! ;-)
+
+The website and the project root at SourceForge are the best starting points.
+The official website is at http://openut.sourceforge.net and more information
+can be found there.
+
+Here are some things you can do to help us out.
+
+* Join the development mailing list at http://sourceforge.net/mail/?group_id=975
+* Submit a patch to improve the source
+* Do some benchmarking and send us the results
+* Offer time and expertise to help with the website
+
+Remember that you can also help us just by enjoying OpenUT, and telling us
+about it!
+
+-------------------------------------------------------------------------------
+
+2.8 What is SDL?
+
+
+(from http://www.libsdl.org/)
+
+Simple DirectMedia Layer is a cross-platform multimedia library designed to 
+provide fast access to the graphics framebuffer and  audio device. It is 
+used by MPEG playback software, emulators,  and many popular games, 
+including the award winning Linux port of "Civilization: Call To Power." 
+Simple DirectMedia Layer supports  Linux, Win32, BeOS, along with ports in 
+progress to MacOS, IRIX, Solaris, and FreeBSD.
+
+--------------------------------------------------------------------------------
+
+2.9 What is utah-glx?
+
+
+(from http://utah-glx.sourceforge.net)
+
+Simply put, GLX is the X extension used by OpenGL programs, it is the
+glue between OpenGL (which is platform independent) and X.
+
+The utah-glx project is building a hardware accelerated glx module for 
+free Unix operating systems. Currently, we have support for 3D acceleration 
+on the Matrox MGA-G200 and MGA-G400, nvidia's RIVA series, S3 ViRGE, ATI's 
+Rage Pro (not Rage 128), and Intel's i810 for XFree86 3.3.x 
+
+-------------------------------------------------------------------------------
+
+2.10 Where can I find out more, ask questions about the project, and generally
+get more help?
+
+* OpenUT
+
+We have mailing lists and forums hosted at SourceForge.
+
+The mailing list archives are accessible via Geocrawler or Pipermail:
+
+Geocrawler: http://www.geocrawler.com/lists/3/SourceForge/959/
+Pipermail: http://lists.sourceforge.net/pipermail/openut-development/
+
+There are forums for Help and Announcements accessible via the project root 
+at SourceForge: http://sourceforge.net/forum/?group_id=975
+
+* UT for Linux
+
+Loki have a website at http://www.lokigames.com/products/ut - including their
+own very good FAQ on the Linux version of the game.
+
+There is also a newsgroup dedicated to the Linux port on Loki's news server, 
+news.lokigames.com - loki.games.ut
+
+* UT Servers
+
+The best place to look for information about running a UT server on Linux is
+http://www.theadminpage.com, where you will find articles, tools, and a mailing
+list and help forum.
+
+===============================================================================
+
+
+3. Compiling / Troubleshooting
+
+
+3.1 Are precompiled binaries of OpenUT available?
+
+
+Not at the present time.
+
+-------------------------------------------------------------------------------
+
+3.2 Does it matter which version of the Linux kernel I am running?
+
+
+It should NOT matter. UT is known to work with both the stable 2.2.x kernels
+(the FAQ maintainer runs it under 2.2.16, for example), and also with the newer 
+2.3.x development series.
+
+-------------------------------------------------------------------------------
+
+3.3 Will UT / OpenUT work with a multiprocessor (SMP) system?
+
+
+There are plenty of reports of people running OpenUT on SMP machines (dual
+Celerons seem to be favourites!).
+
+There are no known issues with multiple processors and OpenUT.
+However, please note that while there are no known problems, multiple
+processors also do not give OpenUT much of a performance boost, either.
+
+(thanks to John Fulmer)
+
+-------------------------------------------------------------------------------
+
+3.4 Why do I get errors related to GL include files that cannot be found?
+
+
+Make sure you specify --prefix=/usr/ when you compile GLX. If this still 
+fails, create a symbolic link from /usr/local/include/GL
+(or /usr/include/GL, depending on your distribution) pointing to 
+/usr/src/Mesa/include/GL, then rebuild UT.
+
+Example: ln -s /usr/src/Mesa/include/GL /usr/local/include/GL
+
+-------------------------------------------------------------------------------
+
+3.5 Why isn't software rendering available for UT on Linux? It is available 
+for Windows!
+
+
+It *IS* available!!!
+
+Software rendering was added to the Linux port as part of the 428 patch from
+Loki. To enable it, edit either (INSTALL_PATH)/System/UnrealTournament.ini or
+(HOME)/.loki/ut/System/UnrealTournament.ini so that these lines appear:
+
+[Engine.Engine]
+GameRenderDevice=SDLSoftDrv.SDLSoftwareRenderDevice
+WindowedRenderDevice=SDLSoftDrv.SDLSoftwareRenderDevice
+RenderDevice=SDLSoftDrv.SDLSoftwareRenderDevice
+
+-------------------------------------------------------------------------------
+
+3.6 How can I get a full log of what is going on when I run the game?
+
+
+When launching UT, run the binary with -log > filename.log to create a 
+logfile which is not cached. This will ensure that you get the full information
+out of the logging routines.
+
+-------------------------------------------------------------------------------
+
+3.7 Why do I get the message "video memory unprotecting" when starting 
+the game? I have a Voodoo graphics card.
+
+
+This error is actually not Voodoo-specific, although it sometimes appears
+when using the Dev3dfx kernel module. The message is a status report from
+the X server, and it is usually safe to ignore it.
+
+-------------------------------------------------------------------------------
+
+3.8 Does UT work with DRI in X?
+
+
+Yes, it should work just fine with DRI.
+
+-------------------------------------------------------------------------------
+
+3.9 Which renderer and viewport manager should I use with my GeForce / 
+Voodoo / G400 / TNT card?
+
+
+As a general rule of thumb:
+
+3dfx (Voodoo)          =    GlideDrv
+all others (GLX-based) =    SDLGLDrv
+non-accelerated        =    SDLSoftDrv (i.e. the software renderer)
+
+-------------------------------------------------------------------------------
+
+3.10 Why does everything run so slowly with utah-glx and my TNT graphics card?
+
+
+At the present time utah-glx does not fully support nVidia cards, so
+features such as DMA are not used, and the performance is limited. You 
+should be using nVidia's own binary XFree86 4.0 driver instead.
+
+-------------------------------------------------------------------------------
+
+3.11 Does UT work with XFree86 4.0 and the new nVidia GLX drivers?
+
+
+Yes and yes. There should be an impressive performance increase.
+
+-------------------------------------------------------------------------------
+
+3.12 Why are there ugly black boxes where there should be text in the menus?
+
+
+This is a bug caused by the use of paletted textures. If it is an issue for 
+you, then you should disable them (but only if you have this problem)
+
+Edit UnrealTournament.ini as follows:
+
+[SDLGLDrv.SDLGLRenderDevice]
+UsePalette=0
+
+-------------------------------------------------------------------------------
+
+3.13 Why does the game crash out with a segfault when running with 
+XFree86 4.0.1 and a Voodoo Banshee card?
+
+
+If this happens (when using DRI and XF86 4.0.x), try unsetting multitexturing.
+
+Edit UnrealTournament.ini as follows:
+
+[SDLGLDrv.SDLGLRenderDevice]
+UseMultiTexture=0
+
+(thanks to Stuart McNicholas)
+
+
+===============================================================================
+
+
+4. Linux Unreal Tournament
+
+
+4.3 Can I use MODs with the Linux version of UT?
+
+
+Usually ;)
+You can use umodpack (http://umodpack.sourceforge.net/) to install them. Most 
+MODs are compatible. Check the page on the OpenUT website for the latest 
+information.
+
+-------------------------------------------------------------------------------
+
+4.2 How do I use the UT Bonus Pack on Linux?
+
+
+First, you need to download the Bonus Pack.
+
+To install it, use umodpack: http://umodpack.sourceforge.net/
+
+Note that the relics will cause problems with all Linux releases of UT up to
+and including 425. This is due to a known issue with the sound samples. You
+should ensure that you are using 428a or better in order to avoid this problem.
+
+-------------------------------------------------------------------------------
+
+4.4 Does OpenUT work with Unreal, as well as with Unreal Tournament?
+
+
+It depends what you mean, really. Unreal and UT are different games. The
+engine for UT is enhanced over the one originally used for Unreal. UT is
+fundamentally a multiplayer game, while Unreal has a single-player storyline.
+
+It is possible to use the maps from the original Unreal CD as maps for
+Unreal Tournament games - there is a shell script to help you to do this
+available from the OpenUT website at http://openut.sourceforge.net 
+(thanks to Matt Matthews). 
+
+There is also a script which will allow you to run Unreal under Unreal 
+Tournament, with some problems (save games don't work, and the maps Dug, 
+NaliC, Ruins, Dark, and TheSunSpire are broken). However, since the 428 patch,
+attempting to use this seems to have introduced a lot of problems.
+
+The other way to run Unreal in Linux is under emulation, using WINE - see
+http://www.linuxgames.com/unreal for details.
+
+-------------------------------------------------------------------------------
+
+4.5 Why do I get a message about Uwebadmin failing to bind to a port when 
+trying to run ucc?
+
+
+The web administration server tries to bind to a port number below 1024 by
+default. In Linux, ports below 1024 are 'privileged' and can only be used by
+the root user.
+
+Two solutions:
+
+* run ucc as root (the "easy" solution, not recommended)
+* modify the UnrealTournament.ini file to add the setting ListenPort=8000 
+  which should solve the problem. If something else is using port 8000, edit 
+  the value for ListenPort to another number >1024
+
+-------------------------------------------------------------------------------
+
+4.6 Can I use ngStats / ngWorldStats with Unreal Tournament for Linux?
+
+
+Yes, you can. ngStats relies on a Java Virtual Machine (JVM) being installed, 
+so make sure you have Java support before attempting to use these features.
+Grab Java from Blackdown - http://www.blackdown.org.
+
+There is a debate about why ngWorldStats does not appear to work properly in
+patches after 413. There are a lot of opinions as to exactly what is wrong,
+however it may help to edit the the INSTALL_DIR line in the file
+/usr/local/games/ut/NetGamesUSA.com/ngWorldStats/bin/ngWorldStats so that it
+points to the actual location of your UT installation
+
+e.g. INSTALL_DIR='/usr/local/games/ut'
+
+-------------------------------------------------------------------------------
+
+4.7 When will the latest patch be available for Linux?
+
+
+Unfortunately the patches for Linux sometimes lag a few days behind the Windows
+versions. In the case of the 405 patch, there was no release made for Linux at
+all. This problem should be reduced now that Loki are actively maintaining the
+port.
+
+-------------------------------------------------------------------------------
+
+4.8 Why don't you guys fix <bug-of-your-choice> in the Linux UT server?
+
+
+The OpenUT project is not in a position to do so.
+
+Feature requests, bug reports, etc. should now be directed to Loki.
+
+-------------------------------------------------------------------------------
+
+4.9 Why does the UT server fail to restart after a crash with an error 
+about System/Core containing bad data?
+
+
+When the server crashed, it left a 'core' file in the System directory. When it
+restarted, it tried to read this instead of the Core.u file, and found it was
+full of rubbish.
+
+Go the the System directory and type 'rm -f core', then restart the server.
+
+-------------------------------------------------------------------------------
+
+4.10 Is it possible to get sound working when using an Aureal MX300 sound card?
+
+
+Yes it is: you simply need to get the Aureal drivers release from 
+http://sourceforge.net/projects/aureal/
+
+(thanks to Unleaded)
+
+-------------------------------------------------------------------------------
+
+4.11 Is it normal to see two ucc-bin processes when running a UT server on 
+Linux?
+
+
+Yes. The server spawns another thread to manage the uplink, so if you have 
+set DoUpLink=True in UnrealTournament.ini, you will see two processes.
+
+-------------------------------------------------------------------------------
+
+4.12 Is it true that UT for Linux requires libesd in order to run?
+
+
+Not exactly.... UT uses the SDL library. The copy of libSDL.so supplied with 
+UT is compiled against libesd.so (the Enlightened Sound Daemon). ESD allows 
+the audio device to be shared amongst different programs.
+
+It is possible to get the source for SDL and compile it without ESD support - 
+that should enable UT to run without libesd being present. However, if 
+possible, it would be much better to install libesd.so on your system so 
+that UT can use it!
+
+
+===============================================================================
+
+
+5. Questions awaiting answers
+
+
+5.1 When will UT be ported to BeOS / OS/2 / other platforms?
+
+-------------------------------------------------------------------------------
+
+5.2 What do I need to compile OpenUT?
+
+------------------------------------------------------------------------------
+
+5.3 Can you suggest a known, working setup for compiling OpenUT?
+
+-------------------------------------------------------------------------------
+
+5.4 What version of UT do I need to run OpenUT?
+
+-------------------------------------------------------------------------------
+
+5.5 What licence are the OpenUT sources released under?
+
+
+===============================================================================
+
+
+6. Obsolete questions
+
+The questions in this section are included for historical reasons and should
+no longer apply for releases beyond the current version. If you still need 
+to know the answers, hunt out an earlier version of the FAQ.
+
+6.1 Can I get the 402B patch for my Windows version of Unreal Tournament?
+6.2 Why will UT not start under Enlightenment?
+6.3 Why do I see the intro through a narrow "band" in the middle of the screen when starting the game?
+6.4 Why does the game terminate straight after the splash screen?
+6.5 Why does UT fail with a SIGIOT error after applying the latest patch?
+6.6 How come there is no music?
+6.7 Why doesn't the SDL stuff work?
+6.8 Why does the mouse pointer get stuck in one of the corners of the screen when running with GLX and SDL?
+6.9 Why doesn't network play work with the 413 patch?
+6.10 Why do I get "Failed to load Class IpDrv.HTTPDownload" errors when using download redirection?
+6.11 Why does the Linux client fail with a SIGSEGV / EACCES error?
+6.12 Why doesn't my joystick work in Unreal Tournament for Linux?
+
+
+===============================================================================

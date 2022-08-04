@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:ECellAutoSizeMode_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:19:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:UIList (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_UIList_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="canonical" href="UE3_UIList_(UDK).html" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:UIList_(UDK)","wgTitle":"UIList (UDK)","wgCurRevisionId":41908,"wgRevisionId":41908,"wgArticleId":27418,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UDK-specific classes","Classes in UDK package Engine","Classes implementing UIDataStorePublisher (UDK)","Subclasses of UIObject (UDK)","Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:UIList_(UDK)","wgRelevantArticleId":27418,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"UE3:ECellAutoSizeMode_(UDK)","wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgInternalRedirectTargetUrl":"/UE3:UIList_(UDK)#ECellAutoSizeMode"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.redirect","mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_UIList_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Cogito, ergo sum
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:UIList (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"><span class="mw-redirectedfrom">(Redirected from <a href="UE3_ECellAutoSizeMode_(UDK)c25d.html?redirect=no" title="UE3:ECellAutoSizeMode (UDK)">UE3:ECellAutoSizeMode (UDK)</a>)</span></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<a href="UE3_UIRoot_(UDK).html" title="UE3:UIRoot (UDK)">UIRoot</a> &gt;&gt;&#160;<a href="UE3_UIScreenObject_(UDK).html" title="UE3:UIScreenObject (UDK)">UIScreenObject</a> &gt;&gt;&#160;<a href="UE3_UIObject_(UDK).html" title="UE3:UIObject (UDK)">UIObject</a> &gt;&gt;&#160;<b>UIList</b></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Constants"><span class="tocnumber">1</span> <span class="toctext">Constants</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#ResizeBufferPixels"><span class="tocnumber">1.1</span> <span class="toctext">ResizeBufferPixels</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Properties"><span class="tocnumber">2</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Property_group_.27Appearance.27"><span class="tocnumber">2.1</span> <span class="toctext">Property group 'Appearance'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#bEnableMultiSelect"><span class="tocnumber">2.1.1</span> <span class="toctext">bEnableMultiSelect</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#bForceFullPageDisplay"><span class="tocnumber">2.1.2</span> <span class="toctext">bForceFullPageDisplay</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#bHoverStateOverridesSelected"><span class="tocnumber">2.1.3</span> <span class="toctext">bHoverStateOverridesSelected</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#bUpdateItemUnderCursor"><span class="tocnumber">2.1.4</span> <span class="toctext">bUpdateItemUnderCursor</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#CellLinkType"><span class="tocnumber">2.1.5</span> <span class="toctext">CellLinkType</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#CellPadding"><span class="tocnumber">2.1.6</span> <span class="toctext">CellPadding</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#CellSpacing"><span class="tocnumber">2.1.7</span> <span class="toctext">CellSpacing</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#ColumnAutoSizeMode"><span class="tocnumber">2.1.8</span> <span class="toctext">ColumnAutoSizeMode</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#ColumnCount"><span class="tocnumber">2.1.9</span> <span class="toctext">ColumnCount</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#ColumnWidth"><span class="tocnumber">2.1.10</span> <span class="toctext">ColumnWidth</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#HeaderCellPadding"><span class="tocnumber">2.1.11</span> <span class="toctext">HeaderCellPadding</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#HeaderElementSpacing"><span class="tocnumber">2.1.12</span> <span class="toctext">HeaderElementSpacing</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#MaxVisibleItems"><span class="tocnumber">2.1.13</span> <span class="toctext">MaxVisibleItems</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#MinColumnSize"><span class="tocnumber">2.1.14</span> <span class="toctext">MinColumnSize</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#RowAutoSizeMode"><span class="tocnumber">2.1.15</span> <span class="toctext">RowAutoSizeMode</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#RowCount"><span class="tocnumber">2.1.16</span> <span class="toctext">RowCount</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="#RowHeight"><span class="tocnumber">2.1.17</span> <span class="toctext">RowHeight</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="#WrapType"><span class="tocnumber">2.1.18</span> <span class="toctext">WrapType</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-23"><a href="#Property_group_.27Components.27"><span class="tocnumber">2.2</span> <span class="toctext">Property group 'Components'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-24"><a href="#BackgroundImageComponent"><span class="tocnumber">2.2.1</span> <span class="toctext">BackgroundImageComponent</span></a></li>
+<li class="toclevel-3 tocsection-25"><a href="#CellDataComponent"><span class="tocnumber">2.2.2</span> <span class="toctext">CellDataComponent</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#SortComponent"><span class="tocnumber">2.2.3</span> <span class="toctext">SortComponent</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-27"><a href="#Property_group_.27Controls.27"><span class="tocnumber">2.3</span> <span class="toctext">Property group 'Controls'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-28"><a href="#bEnableVerticalScrollbar"><span class="tocnumber">2.3.1</span> <span class="toctext">bEnableVerticalScrollbar</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-29"><a href="#Property_group_.27Data.27"><span class="tocnumber">2.4</span> <span class="toctext">Property group 'Data'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-30"><a href="#DataSource"><span class="tocnumber">2.4.1</span> <span class="toctext">DataSource</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-31"><a href="#Property_group_.27Interaction.27"><span class="tocnumber">2.5</span> <span class="toctext">Property group 'Interaction'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-32"><a href="#bAllowColumnResizing"><span class="tocnumber">2.5.1</span> <span class="toctext">bAllowColumnResizing</span></a></li>
+<li class="toclevel-3 tocsection-33"><a href="#bAllowDisabledItemSelection"><span class="tocnumber">2.5.2</span> <span class="toctext">bAllowDisabledItemSelection</span></a></li>
+<li class="toclevel-3 tocsection-34"><a href="#bSingleClickSubmission"><span class="tocnumber">2.5.3</span> <span class="toctext">bSingleClickSubmission</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-35"><a href="#Property_group_.27Sound.27"><span class="tocnumber">2.6</span> <span class="toctext">Property group 'Sound'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-36"><a href="#DecrementIndexCue"><span class="tocnumber">2.6.1</span> <span class="toctext">DecrementIndexCue</span></a></li>
+<li class="toclevel-3 tocsection-37"><a href="#IncrementIndexCue"><span class="tocnumber">2.6.2</span> <span class="toctext">IncrementIndexCue</span></a></li>
+<li class="toclevel-3 tocsection-38"><a href="#SortAscendingCue"><span class="tocnumber">2.6.3</span> <span class="toctext">SortAscendingCue</span></a></li>
+<li class="toclevel-3 tocsection-39"><a href="#SortDescendingCue"><span class="tocnumber">2.6.4</span> <span class="toctext">SortDescendingCue</span></a></li>
+<li class="toclevel-3 tocsection-40"><a href="#SubmitDataFailedCue"><span class="tocnumber">2.6.5</span> <span class="toctext">SubmitDataFailedCue</span></a></li>
+<li class="toclevel-3 tocsection-41"><a href="#SubmitDataSuccessCue"><span class="tocnumber">2.6.6</span> <span class="toctext">SubmitDataSuccessCue</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-42"><a href="#Property_group_.27ZDebug.27"><span class="tocnumber">2.7</span> <span class="toctext">Property group 'ZDebug'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-43"><a href="#bDisplayDataBindings"><span class="tocnumber">2.7.1</span> <span class="toctext">bDisplayDataBindings</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-44"><a href="#Internal_variables"><span class="tocnumber">2.8</span> <span class="toctext">Internal variables</span></a>
+<ul>
+<li class="toclevel-3 tocsection-45"><a href="#bInitializeScrollbars"><span class="tocnumber">2.8.1</span> <span class="toctext">bInitializeScrollbars</span></a></li>
+<li class="toclevel-3 tocsection-46"><a href="#bSortingList"><span class="tocnumber">2.8.2</span> <span class="toctext">bSortingList</span></a></li>
+<li class="toclevel-3 tocsection-47"><a href="#ColumnHeaderBackgroundStyle"><span class="tocnumber">2.8.3</span> <span class="toctext">ColumnHeaderBackgroundStyle</span></a></li>
+<li class="toclevel-3 tocsection-48"><a href="#ColumnHeaderStyle"><span class="tocnumber">2.8.4</span> <span class="toctext">ColumnHeaderStyle</span></a></li>
+<li class="toclevel-3 tocsection-49"><a href="#DataProvider"><span class="tocnumber">2.8.5</span> <span class="toctext">DataProvider</span></a></li>
+<li class="toclevel-3 tocsection-50"><a href="#GlobalCellStyle"><span class="tocnumber">2.8.6</span> <span class="toctext">GlobalCellStyle</span></a></li>
+<li class="toclevel-3 tocsection-51"><a href="#Index"><span class="tocnumber">2.8.7</span> <span class="toctext">Index</span></a></li>
+<li class="toclevel-3 tocsection-52"><a href="#ItemOverlayStyle"><span class="tocnumber">2.8.8</span> <span class="toctext">ItemOverlayStyle</span></a></li>
+<li class="toclevel-3 tocsection-53"><a href="#Items"><span class="tocnumber">2.8.9</span> <span class="toctext">Items</span></a></li>
+<li class="toclevel-3 tocsection-54"><a href="#ResizeColumn"><span class="tocnumber">2.8.10</span> <span class="toctext">ResizeColumn</span></a></li>
+<li class="toclevel-3 tocsection-55"><a href="#SelectedItems"><span class="tocnumber">2.8.11</span> <span class="toctext">SelectedItems</span></a></li>
+<li class="toclevel-3 tocsection-56"><a href="#SetIndexMutex"><span class="tocnumber">2.8.12</span> <span class="toctext">SetIndexMutex</span></a></li>
+<li class="toclevel-3 tocsection-57"><a href="#TopIndex"><span class="tocnumber">2.8.13</span> <span class="toctext">TopIndex</span></a></li>
+<li class="toclevel-3 tocsection-58"><a href="#ValueChangeNotificationMutex"><span class="tocnumber">2.8.14</span> <span class="toctext">ValueChangeNotificationMutex</span></a></li>
+<li class="toclevel-3 tocsection-59"><a href="#VerticalScrollbar"><span class="tocnumber">2.8.15</span> <span class="toctext">VerticalScrollbar</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-60"><a href="#Default_values"><span class="tocnumber">2.9</span> <span class="toctext">Default values</span></a></li>
+<li class="toclevel-2 tocsection-61"><a href="#Subobjects"><span class="tocnumber">2.10</span> <span class="toctext">Subobjects</span></a>
+<ul>
+<li class="toclevel-3 tocsection-62"><a href="#ListPresentationComponent"><span class="tocnumber">2.10.1</span> <span class="toctext">ListPresentationComponent</span></a></li>
+<li class="toclevel-3 tocsection-63"><a href="#WidgetEventComponent"><span class="tocnumber">2.10.2</span> <span class="toctext">WidgetEventComponent</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-64"><a href="#Enums"><span class="tocnumber">3</span> <span class="toctext">Enums</span></a>
+<ul>
+<li class="toclevel-2 tocsection-65"><a href="#ECellAutoSizeMode"><span class="tocnumber">3.1</span> <span class="toctext">ECellAutoSizeMode</span></a></li>
+<li class="toclevel-2 tocsection-66"><a href="#ECellLinkType"><span class="tocnumber">3.2</span> <span class="toctext">ECellLinkType</span></a></li>
+<li class="toclevel-2 tocsection-67"><a href="#EListWrapBehavior"><span class="tocnumber">3.3</span> <span class="toctext">EListWrapBehavior</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-68"><a href="#Structs"><span class="tocnumber">4</span> <span class="toctext">Structs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-69"><a href="#CellHitDetectionInfo"><span class="tocnumber">4.1</span> <span class="toctext">CellHitDetectionInfo</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-70"><a href="#Delegates"><span class="tocnumber">5</span> <span class="toctext">Delegates</span></a>
+<ul>
+<li class="toclevel-2 tocsection-71"><a href="#OnListElementsSorted"><span class="tocnumber">5.1</span> <span class="toctext">OnListElementsSorted</span></a></li>
+<li class="toclevel-2 tocsection-72"><a href="#OnOverrideListElementState"><span class="tocnumber">5.2</span> <span class="toctext">OnOverrideListElementState</span></a></li>
+<li class="toclevel-2 tocsection-73"><a href="#OnSubmitSelection"><span class="tocnumber">5.3</span> <span class="toctext">OnSubmitSelection</span></a></li>
+<li class="toclevel-2 tocsection-74"><a href="#ShouldDisableElement"><span class="tocnumber">5.4</span> <span class="toctext">ShouldDisableElement</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-75"><a href="#Functions"><span class="tocnumber">6</span> <span class="toctext">Functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-76"><a href="#Native_functions"><span class="tocnumber">6.1</span> <span class="toctext">Native functions</span></a></li>
+<li class="toclevel-2 tocsection-77"><a href="#Events"><span class="tocnumber">6.2</span> <span class="toctext">Events</span></a>
+<ul>
+<li class="toclevel-3 tocsection-78"><a href="#AllMutexesDisabled"><span class="tocnumber">6.2.1</span> <span class="toctext">AllMutexesDisabled</span></a></li>
+<li class="toclevel-3 tocsection-79"><a href="#DecrementAllMutexes"><span class="tocnumber">6.2.2</span> <span class="toctext">DecrementAllMutexes</span></a></li>
+<li class="toclevel-3 tocsection-80"><a href="#DisableSetIndex"><span class="tocnumber">6.2.3</span> <span class="toctext">DisableSetIndex</span></a></li>
+<li class="toclevel-3 tocsection-81"><a href="#DisableValueChangeNotification"><span class="tocnumber">6.2.4</span> <span class="toctext">DisableValueChangeNotification</span></a></li>
+<li class="toclevel-3 tocsection-82"><a href="#EnableSetIndex"><span class="tocnumber">6.2.5</span> <span class="toctext">EnableSetIndex</span></a></li>
+<li class="toclevel-3 tocsection-83"><a href="#EnableValueChangeNotification"><span class="tocnumber">6.2.6</span> <span class="toctext">EnableValueChangeNotification</span></a></li>
+<li class="toclevel-3 tocsection-84"><a href="#IncrementAllMutexes"><span class="tocnumber">6.2.7</span> <span class="toctext">IncrementAllMutexes</span></a></li>
+<li class="toclevel-3 tocsection-85"><a href="#Initialized"><span class="tocnumber">6.2.8</span> <span class="toctext">Initialized</span></a></li>
+<li class="toclevel-3 tocsection-86"><a href="#IsSetIndexEnabled"><span class="tocnumber">6.2.9</span> <span class="toctext">IsSetIndexEnabled</span></a></li>
+<li class="toclevel-3 tocsection-87"><a href="#IsValueChangeNotificationEnabled"><span class="tocnumber">6.2.10</span> <span class="toctext">IsValueChangeNotificationEnabled</span></a></li>
+<li class="toclevel-3 tocsection-88"><a href="#PostInitialize"><span class="tocnumber">6.2.11</span> <span class="toctext">PostInitialize</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-89"><a href="#Other_instance_functions"><span class="tocnumber">6.3</span> <span class="toctext">Other instance functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-90"><a href="#ClickedScrollZone"><span class="tocnumber">6.3.1</span> <span class="toctext">ClickedScrollZone</span></a></li>
+<li class="toclevel-3 tocsection-91"><a href="#EnableColumnHeaderRendering"><span class="tocnumber">6.3.2</span> <span class="toctext">EnableColumnHeaderRendering</span></a></li>
+<li class="toclevel-3 tocsection-92"><a href="#OnStateChanged"><span class="tocnumber">6.3.3</span> <span class="toctext">OnStateChanged</span></a></li>
+<li class="toclevel-3 tocsection-93"><a href="#ShouldRenderColumnHeaders"><span class="tocnumber">6.3.4</span> <span class="toctext">ShouldRenderColumnHeaders</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Package:&#160;</dt>
+<dd><a href="Category_Classes_in_UDK_package_Engine.html" title="Category:Classes in UDK package Engine">Engine</a></dd>
+<dt><a href="Implements.html" title="Implements" class="mw-redirect">Implemented interfaces</a>:&#160;</dt>
+<dd><a href="UE3_UIDataStorePublisher_(UDK).html" title="UE3:UIDataStorePublisher (UDK)">UIDataStorePublisher</a></dd>
+<dt>Known classes <a href="Within.html" title="Within" class="mw-redirect">within</a> UIList:</dt>
+<dd><a href="UE3_UIComp_ListComponentBase_(UDK).html" title="UE3:UIComp ListComponentBase (UDK)">UIComp_ListComponentBase</a>, <a href="UE3_UIComp_ListElementSorter_(UDK).html" title="UE3:UIComp ListElementSorter (UDK)">UIComp_ListElementSorter</a>, <a href="UE3_UIComp_ListPresenter_(UDK).html" title="UE3:UIComp ListPresenter (UDK)">UIComp_ListPresenter</a>, <a href="UE3_UIComp_ListPresenterBase_(UDK).html" title="UE3:UIComp ListPresenterBase (UDK)">UIComp_ListPresenterBase</a>, <a href="UE3_UIComp_ListPresenterCascade_(UDK).html" title="UE3:UIComp ListPresenterCascade (UDK)">UIComp_ListPresenterCascade</a>, <a href="UE3_UIComp_ListPresenterTree_(UDK).html" title="UE3:UIComp ListPresenterTree (UDK)">UIComp_ListPresenterTree</a>, <a href="UE3_UIComp_UTUIMenuListPresenter_(UDK).html" title="UE3:UIComp UTUIMenuListPresenter (UDK)">UIComp_UTUIMenuListPresenter</a>, <a href="UE3_UIListString_(UDK).html" title="UE3:UIListString (UDK)">UIListString</a></dd>
+<dt>Direct subclasses:</dt>
+<dd><a href="UE3_UIContextMenu_(UDK).html" title="UE3:UIContextMenu (UDK)">UIContextMenu</a>, <a href="UE3_UINavigationList_(UDK).html" title="UE3:UINavigationList (UDK)">UINavigationList</a>, <a href="UE3_UIObjectList_(UDK).html" title="UE3:UIObjectList (UDK)">UIObjectList</a>, <a href="UE3_UTUIList_(UDK).html" title="UE3:UTUIList (UDK)">UTUIList</a></dd>
+<dt>This class in other games:</dt>
+<dd><span><a href="UE3_UIList_(UT3).html" title="UE3:UIList (UT3)">UT3</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<p>The "container" component of the UI system's list functionality, which is composed fo three components: data source, container widget, and formatter.</p>
+<p>The UIList acts as the conduit for list data to the UI. UIList knows nothing about the type of data it contains. It is responsible for tracking the number of elements it has, the size of each cell, handling input (including tracking which elements are selected, changing the selected element, etc.), adding and removing elements from the list, and passing data back and forth between the data source and the presenter components.</p>
+<h2><span class="mw-headline" id="Constants">Constants</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=1" title="Edit section: Constants">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="ResizeBufferPixels">ResizeBufferPixels</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=2" title="Edit section: ResizeBufferPixels">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Value:</b> 5</p>
+<p>how many pixels wide the region is that is used for resizing a column/row</p>
+<h2><span class="mw-headline" id="Properties">Properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=3" title="Edit section: Properties">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Property_group_.27Appearance.27">Property group 'Appearance'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=4" title="Edit section: Property group 'Appearance'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="bEnableMultiSelect">bEnableMultiSelect</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=5" title="Edit section: bEnableMultiSelect">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Determines whether more than one item can be selected at the same time.</p>
+<p><b>Todo:</b> not yet implemented</p>
+<h4><span class="mw-headline" id="bForceFullPageDisplay">bForceFullPageDisplay</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=6" title="Edit section: bForceFullPageDisplay">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private</p>
+<p>Controls what happens when the end of the list is reached and the number of remaining items is less than the number of visible items. Set to FALSE to prevent the list's TopIndex from being adjusted to display a full page.</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bHoverStateOverridesSelected">bHoverStateOverridesSelected</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=7" title="Edit section: bHoverStateOverridesSelected">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private</p>
+<p>For lists with bUpdateItemUnderCursor=TRUE, controls whether the selected item enters the hover state when mouse over.</p>
+<h4><span class="mw-headline" id="bUpdateItemUnderCursor">bUpdateItemUnderCursor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=8" title="Edit section: bUpdateItemUnderCursor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private</p>
+<p>Controls whether the item currently under the cursor should be drawn using a different style.</p>
+<h4><span class="mw-headline" id="CellLinkType">CellLinkType</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=9" title="Edit section: CellLinkType">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="#ECellLinkType">ECellLinkType</a></p>
+<p>Controls how the cells are mapped to elements. If CellLinkType is not LINKED_None, the data provider for this list must be capable of supplying multiple data fields for a single item.</p>
+<p><b>Todo:</b> once this functionality is exposed through the UI, this variable should no longer be editable</p>
+<p><b>Default value:</b> <a href="#ECellLinkType">LINKED_Columns</a></p>
+<h4><span class="mw-headline" id="CellPadding">CellPadding</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=10" title="Edit section: CellPadding">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#UIScreenValue_Extent" title="UE3:UIRoot structs (UDK)">UIRoot.UIScreenValue_Extent</a></p>
+<p>Amount of spacing to use inside each cell.</p>
+<h4><span class="mw-headline" id="CellSpacing">CellSpacing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=11" title="Edit section: CellSpacing">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#UIScreenValue_Extent" title="UE3:UIRoot structs (UDK)">UIRoot.UIScreenValue_Extent</a></p>
+<p>Amount of spacing to use between each element in the list.</p>
+<h4><span class="mw-headline" id="ColumnAutoSizeMode">ColumnAutoSizeMode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=12" title="Edit section: ColumnAutoSizeMode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="#ECellAutoSizeMode">ECellAutoSizeMode</a></p>
+<p>Controls how columns are auto-sized.</p>
+<p><b>Default value:</b> <a href="#ECellAutoSizeMode">CELLAUTOSIZE_Uniform</a></p>
+<h4><span class="mw-headline" id="ColumnCount">ColumnCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=13" title="Edit section: ColumnCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected</p>
+<p>Number of columns to display in the list. How this is set is dependent on the value of CellLinkType.</p>
+<p>LINKED_None: Whatever value designer specifies is used. Either the width of the list or the column widths must be dynamic. LINKED_Rows: always the same value as MaxVisibleItems. LINKED_Columns: determined by the number of cells which are bound to data providers.</p>
+<p><b>Default value:</b> 1</p>
+<h4><span class="mw-headline" id="ColumnWidth">ColumnWidth</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=14" title="Edit section: ColumnWidth">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#UIScreenValue_Extent" title="UE3:UIRoot structs (UDK)">UIRoot.UIScreenValue_Extent</a></p>
+<p>Default width for cells in the list. A value of 0 indicates that the cell widths are dynamic. Dynamic behavior is as follows: Linked columns: columns are expanded to fill the width of the list Non-linked columns: columns widths will be adjusted to fit the largest string in the list</p>
+<p>If columns are linked, this value is only applied to cells that have a value of 0 for CellSize.</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIScreenValue_Extent" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>Value</td>
+<td>100.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="HeaderCellPadding">HeaderCellPadding</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=15" title="Edit section: HeaderCellPadding">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#UIScreenValue_Extent" title="UE3:UIRoot structs (UDK)">UIRoot.UIScreenValue_Extent</a></p>
+<p>Amount of spacing to use inside the cells of the column headers.</p>
+<h4><span class="mw-headline" id="HeaderElementSpacing">HeaderElementSpacing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=16" title="Edit section: HeaderElementSpacing">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#UIScreenValue_Extent" title="UE3:UIRoot structs (UDK)">UIRoot.UIScreenValue_Extent</a></p>
+<p>Amount of spacing to place between the column header and the first element.</p>
+<h4><span class="mw-headline" id="MaxVisibleItems">MaxVisibleItems</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=17" title="Edit section: MaxVisibleItems">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> editconst, transient, duplicatetransient</p>
+<p>Maximum number of items that can be visible at one time in the list. Calculated using the current size of the list and the list's cells.</p>
+<h4><span class="mw-headline" id="MinColumnSize">MinColumnSize</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=18" title="Edit section: MinColumnSize">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#UIScreenValue_Extent" title="UE3:UIRoot structs (UDK)">UIRoot.UIScreenValue_Extent</a></p>
+<p>Minimum size a column is allowed to be resized to.</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIScreenValue_Extent" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>Value</td>
+<td>0.5</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="RowAutoSizeMode">RowAutoSizeMode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=19" title="Edit section: RowAutoSizeMode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="#ECellAutoSizeMode">ECellAutoSizeMode</a></p>
+<p>Controls how rows are auto-sized</p>
+<p><b>Default value:</b> <a href="#ECellAutoSizeMode">CELLAUTOSIZE_Constrain</a></p>
+<h4><span class="mw-headline" id="RowCount">RowCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=20" title="Edit section: RowCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected</p>
+<p>Number of rows to display in the list. How this is set is dependent on the value of CellLinkType.</p>
+<p>LINKED_None: Whatever value designer specifies is used. Either the height of the list or the column heights must be dynamic. LINKED_Rows: determined by the number of cells which are bound to data providers. LINKED_Columns: always the same value as MaxVisibleItems.</p>
+<p><b>Default value:</b> 4</p>
+<h4><span class="mw-headline" id="RowHeight">RowHeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=21" title="Edit section: RowHeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#UIScreenValue_Extent" title="UE3:UIRoot structs (UDK)">UIRoot.UIScreenValue_Extent</a></p>
+<p>Default height for cells in the list. A value of 0 indicates that the cell heights are dynamic.</p>
+<p>If rows are linked, this value is only applied to cells that have a value of 0 for CellSize.</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIScreenValue_Extent" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>Value</td>
+<td>16.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="WrapType">WrapType</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=22" title="Edit section: WrapType">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="#EListWrapBehavior">EListWrapBehavior</a></p>
+<p>Controls the wrapping behavior of the list, or what happens when the use attempts to scroll past the last element</p>
+<h3><span class="mw-headline" id="Property_group_.27Components.27">Property group 'Components'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=23" title="Edit section: Property group 'Components'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="BackgroundImageComponent">BackgroundImageComponent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=24" title="Edit section: BackgroundImageComponent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIComp_DrawImage_(UDK).html" title="UE3:UIComp DrawImage (UDK)">UIComp_DrawImage</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> editinline</p>
+<p>Component for rendering an optional list background</p>
+<h4><span class="mw-headline" id="CellDataComponent">CellDataComponent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=25" title="Edit section: CellDataComponent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIComp_ListPresenterBase_(UDK).html" title="UE3:UIComp ListPresenterBase (UDK)">UIComp_ListPresenterBase</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> editinline</p>
+<p>Handles the interaction between the list and the list's elements. Encapsulates any special behavior associated with a particular type of list data and controls how the list formats its data.</p>
+<p><b>Default value:</b> <a href="UE3_UIComp_ListPresenter_(UDK).html" title="UE3:UIComp ListPresenter (UDK)">UIComp_ListPresenter</a>'<a href="#ListPresentationComponent">ListPresentationComponent</a>'</p>
+<h4><span class="mw-headline" id="SortComponent">SortComponent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=26" title="Edit section: SortComponent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIComp_ListElementSorter_(UDK).html" title="UE3:UIComp ListElementSorter (UDK)">UIComp_ListElementSorter</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> editinline</p>
+<p>Determines how to sort the list's elements.</p>
+<h3><span class="mw-headline" id="Property_group_.27Controls.27">Property group 'Controls'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=27" title="Edit section: Property group 'Controls'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="bEnableVerticalScrollbar">bEnableVerticalScrollbar</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=28" title="Edit section: bEnableVerticalScrollbar">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Determines if this list will display scrollbars</p>
+<p><b>Default value:</b> True</p>
+<h3><span class="mw-headline" id="Property_group_.27Data.27">Property group 'Data'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=29" title="Edit section: Property group 'Data'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="DataSource">DataSource</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=30" title="Edit section: DataSource">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#UIDataStoreBinding" title="UE3:UIRoot structs (UDK)">UIRoot.UIDataStoreBinding</a></p>
+<p>The data store that this list is bound to</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIDataStoreBinding" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>RequiredFieldType</td>
+<td><a href="UE3_UIRoot_enums_(UDK).html#EUIDataProviderFieldType" title="UE3:UIRoot enums (UDK)">DATATYPE_Collection</a></td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Property_group_.27Interaction.27">Property group 'Interaction'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=31" title="Edit section: Property group 'Interaction'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="bAllowColumnResizing">bAllowColumnResizing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=32" title="Edit section: bAllowColumnResizing">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Controls whether the user is allowed to resize the columns in this list.</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bAllowDisabledItemSelection">bAllowDisabledItemSelection</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=33" title="Edit section: bAllowDisabledItemSelection">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Controls whether items which are "disabled" can be selected.</p>
+<h4><span class="mw-headline" id="bSingleClickSubmission">bSingleClickSubmission</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=34" title="Edit section: bSingleClickSubmission">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Controls how many clicks are required in order to submit the list selected item (triggers the kismet Submit List Selection event). FALSE to require a double-click on an item; FALSE to require only a single click;</p>
+<h3><span class="mw-headline" id="Property_group_.27Sound.27">Property group 'Sound'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=35" title="Edit section: Property group 'Sound'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="DecrementIndexCue">DecrementIndexCue</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=36" title="Edit section: DecrementIndexCue">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p>this sound is played when the user decreases the list's index</p>
+<p><b>Default value:</b> 'ListUp'</p>
+<h4><span class="mw-headline" id="IncrementIndexCue">IncrementIndexCue</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=37" title="Edit section: IncrementIndexCue">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p>this sound is played when the user increases the list's index</p>
+<p><b>Default value:</b> 'ListDown'</p>
+<h4><span class="mw-headline" id="SortAscendingCue">SortAscendingCue</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=38" title="Edit section: SortAscendingCue">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p>this sound is played when the user sorts the list in ascending order</p>
+<p><b>Default value:</b> 'SortAscending'</p>
+<h4><span class="mw-headline" id="SortDescendingCue">SortDescendingCue</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=39" title="Edit section: SortDescendingCue">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p>this sound is played when the user sorts the list in descending order</p>
+<p><b>Default value:</b> 'SortDescending'</p>
+<h4><span class="mw-headline" id="SubmitDataFailedCue">SubmitDataFailedCue</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=40" title="Edit section: SubmitDataFailedCue">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p>this sound is played when the user clicks or presses A on an item that is disabled</p>
+<p><b>Default value:</b> 'GenericError'</p>
+<h4><span class="mw-headline" id="SubmitDataSuccessCue">SubmitDataSuccessCue</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=41" title="Edit section: SubmitDataSuccessCue">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p>this sound is played when the user clicks or presses A on an item that is enabled</p>
+<p><b>Default value:</b> 'ListSubmit'</p>
+<h3><span class="mw-headline" id="Property_group_.27ZDebug.27">Property group 'ZDebug'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=42" title="Edit section: Property group 'ZDebug'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="bDisplayDataBindings">bDisplayDataBindings</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=43" title="Edit section: bDisplayDataBindings">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>if TRUE, the schema fields assigned to each column/row will be rendered, rather than the actual data. Used primarily by the UI edtitor.</p>
+<h3><span class="mw-headline" id="Internal_variables">Internal variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=44" title="Edit section: Internal variables">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="bInitializeScrollbars">bInitializeScrollbars</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=45" title="Edit section: bInitializeScrollbars">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>set to indicate that the scrollbars need to be initialized after in the ResolveFacePosition call</p>
+<h4><span class="mw-headline" id="bSortingList">bSortingList</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=46" title="Edit section: bSortingList">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p>TRUE if the user clicks on a column header - prevents the OnClick delegate from being fired</p>
+<h4><span class="mw-headline" id="ColumnHeaderBackgroundStyle">ColumnHeaderBackgroundStyle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=47" title="Edit section: ColumnHeaderBackgroundStyle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">UIRoot.UIStyleReference</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 3 (<code><a href="UE3_UIRoot_enums_(UDK).html#EColumnHeaderState" title="UE3:UIRoot enums (UDK)">EColumnHeaderState</a>.COLUMNHEADER_MAX</code>)</p>
+<p>The style to use for column header background images, if this list uses them. The CellDataComponent also needs valid values for its ColumnHeaderBackground variable.</p>
+<p><b>Default value, index 0:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>RequiredStyleClass</td>
+<td><a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UIStyle_Image_(UDK).html" title="UE3:UIStyle Image (UDK)">Engine.UIStyle_Image</a>'</td>
+</tr>
+</table>
+<p><b>Default value, index 1:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>RequiredStyleClass</td>
+<td><a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UIStyle_Image_(UDK).html" title="UE3:UIStyle Image (UDK)">Engine.UIStyle_Image</a>'</td>
+</tr>
+</table>
+<p><b>Default value, index 2:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>RequiredStyleClass</td>
+<td><a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UIStyle_Image_(UDK).html" title="UE3:UIStyle Image (UDK)">Engine.UIStyle_Image</a>'</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="ColumnHeaderStyle">ColumnHeaderStyle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=48" title="Edit section: ColumnHeaderStyle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">UIRoot.UIStyleReference</a></p>
+<p>The style to use for the list's column header text. The string portion of the style is applied to text; the image portion of the style is applied to images embedded in the column header text (NOT the column header's background). If not valid, the GlobalCellStyle for the normal cell state will be used instead</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>DefaultStyleTag</td>
+<td>'DefaultColumnHeaderStyle'</td>
+</tr>
+<tr>
+<td>RequiredStyleClass</td>
+<td><a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UIStyle_Combo_(UDK).html" title="UE3:UIStyle Combo (UDK)">Engine.UIStyle_Combo</a>'</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="DataProvider">DataProvider</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=49" title="Edit section: DataProvider">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIListElementProvider_(UDK).html" title="UE3:UIListElementProvider (UDK)">UIListElementProvider</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p>the list element provider referenced by DataSource</p>
+<h4><span class="mw-headline" id="GlobalCellStyle">GlobalCellStyle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=50" title="Edit section: GlobalCellStyle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">UIRoot.UIStyleReference</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 4 (<code><a href="UE3_UIRoot_enums_(UDK).html#EUIListElementState" title="UE3:UIRoot enums (UDK)">EUIListElementState</a>.ELEMENT_MAX</code>)</p>
+<p>The cell styles that are applied to any cells which do not have a custom cell style configured.</p>
+<p><b>Default value, index 0:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>DefaultStyleTag</td>
+<td>'DefaultCellStyleNormal'</td>
+</tr>
+<tr>
+<td>RequiredStyleClass</td>
+<td><a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UIStyle_Combo_(UDK).html" title="UE3:UIStyle Combo (UDK)">Engine.UIStyle_Combo</a>'</td>
+</tr>
+</table>
+<p><b>Default value, index 1:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>DefaultStyleTag</td>
+<td>'DefaultCellStyleActive'</td>
+</tr>
+<tr>
+<td>RequiredStyleClass</td>
+<td><a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UIStyle_Combo_(UDK).html" title="UE3:UIStyle Combo (UDK)">Engine.UIStyle_Combo</a>'</td>
+</tr>
+</table>
+<p><b>Default value, index 2:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>DefaultStyleTag</td>
+<td>'DefaultCellStyleSelected'</td>
+</tr>
+<tr>
+<td>RequiredStyleClass</td>
+<td><a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UIStyle_Combo_(UDK).html" title="UE3:UIStyle Combo (UDK)">Engine.UIStyle_Combo</a>'</td>
+</tr>
+</table>
+<p><b>Default value, index 3:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>DefaultStyleTag</td>
+<td>'DefaultCellStyleHover'</td>
+</tr>
+<tr>
+<td>RequiredStyleClass</td>
+<td><a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UIStyle_Combo_(UDK).html" title="UE3:UIStyle Combo (UDK)">Engine.UIStyle_Combo</a>'</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="Index">Index</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=51" title="Edit section: Index">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Index into the Items array for currently active item. In most cases, the active item will be the same as the selected item. Active item does not imply selected, however. A good example of this is a multi-select list that has no selected items, but which has focus - corresponds to the item that would be selected if the user pressed 'space' or 'enter'.</p>
+<h4><span class="mw-headline" id="ItemOverlayStyle">ItemOverlayStyle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=52" title="Edit section: ItemOverlayStyle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">UIRoot.UIStyleReference</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 4 (<code><a href="UE3_UIRoot_enums_(UDK).html#EUIListElementState" title="UE3:UIRoot enums (UDK)">EUIListElementState</a>.ELEMENT_MAX</code>)</p>
+<p>The style to apply to the overlay textures for each cell state.</p>
+<p><b>Default value, index 0:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>DefaultStyleTag</td>
+<td>'ListItemBackgroundNormalStyle'</td>
+</tr>
+<tr>
+<td>RequiredStyleClass</td>
+<td><a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UIStyle_Image_(UDK).html" title="UE3:UIStyle Image (UDK)">Engine.UIStyle_Image</a>'</td>
+</tr>
+</table>
+<p><b>Default value, index 1:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>DefaultStyleTag</td>
+<td>'ListItemBackgroundActiveStyle'</td>
+</tr>
+<tr>
+<td>RequiredStyleClass</td>
+<td><a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UIStyle_Image_(UDK).html" title="UE3:UIStyle Image (UDK)">Engine.UIStyle_Image</a>'</td>
+</tr>
+</table>
+<p><b>Default value, index 2:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>DefaultStyleTag</td>
+<td>'ListItemBackgroundSelectedStyle'</td>
+</tr>
+<tr>
+<td>RequiredStyleClass</td>
+<td><a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UIStyle_Image_(UDK).html" title="UE3:UIStyle Image (UDK)">Engine.UIStyle_Image</a>'</td>
+</tr>
+</table>
+<p><b>Default value, index 3:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>DefaultStyleTag</td>
+<td>'ListItemBackgroundHoverStyle'</td>
+</tr>
+<tr>
+<td>RequiredStyleClass</td>
+<td><a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UIStyle_Image_(UDK).html" title="UE3:UIStyle Image (UDK)">Engine.UIStyle_Image</a>'</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="Items">Items</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=53" title="Edit section: Items">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Int.html" title="Int" class="mw-redirect">int</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p>The elements of the list. Corresponds to the array indexes of the whichever array this list's data comes from.</p>
+<h4><span class="mw-headline" id="ResizeColumn">ResizeColumn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=54" title="Edit section: ResizeColumn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p>The column currently being resized, or INDEX_NONE if no columns are being resized.</p>
+<h4><span class="mw-headline" id="SelectedItems">SelectedItems</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=55" title="Edit section: SelectedItems">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Int.html" title="Int" class="mw-redirect">int</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient, public</p>
+<p>The items which are currently selected. The int values are the array indexes of the whichever array this list's data comes from.</p>
+<p><b>Todo:</b> not yet implemented</p>
+<h4><span class="mw-headline" id="SetIndexMutex">SetIndexMutex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=56" title="Edit section: SetIndexMutex">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private, transient</p>
+<p>If this value is greater than 0, SetIndex() will not do anything.</p>
+<h4><span class="mw-headline" id="TopIndex">TopIndex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=57" title="Edit section: TopIndex">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>The index of the element which is located at the beginning of the visible region.</p>
+<h4><span class="mw-headline" id="ValueChangeNotificationMutex">ValueChangeNotificationMutex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=58" title="Edit section: ValueChangeNotificationMutex">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private, transient</p>
+<p>If this value is more than 0, the OnValueChanged delegate will not be called.</p>
+<h4><span class="mw-headline" id="VerticalScrollbar">VerticalScrollbar</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=59" title="Edit section: VerticalScrollbar">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIScrollbar_(UDK).html" title="UE3:UIScrollbar (UDK)">UIScrollbar</a></p>
+<p>The UIScrollbar object which is allows the UIList to be scrolled up/down</p>
+<p><b>Default value:</b> <a href="UE3_UIScrollbar_(UDK).html" title="UE3:UIScrollbar (UDK)">UIScrollbar</a>'Engine.Default__UIList:VertScrollbarTemplate'</p>
+<h3><span class="mw-headline" id="Default_values">Default values</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=60" title="Edit section: Default values">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td><a href="UE3_UIScreenObject_(UDK).html#bSupportsFocusHint" title="UE3:UIScreenObject (UDK)">bSupportsFocusHint</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE3_UIObject_(UDK).html#bSupportsPrimaryStyle" title="UE3:UIObject (UDK)">bSupportsPrimaryStyle</a></td>
+<td>False</td>
+</tr>
+<tr>
+<td><a href="UE3_UIScreenObject_(UDK).html#Children" title="UE3:UIScreenObject (UDK)">Children</a>[0]</td>
+<td><a href="UE3_UIScrollbar_(UDK).html" title="UE3:UIScrollbar (UDK)">UIScrollbar</a>'Engine.Default__UIList:VertScrollbarTemplate'</td>
+</tr>
+<tr>
+<td><a href="UE3_UIObject_(UDK).html#DebugBoundsColor" title="UE3:UIObject (UDK)">DebugBoundsColor</a></td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>255</td>
+</tr>
+<tr>
+<td>B</td>
+<td>255</td>
+</tr>
+<tr>
+<td>G</td>
+<td>255</td>
+</tr>
+<tr>
+<td>R</td>
+<td>255</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><a href="UE3_UIScreenObject_(UDK).html#DefaultStates" title="UE3:UIScreenObject (UDK)">DefaultStates</a>[2]</td>
+<td><a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UIState_Focused_(UDK).html" title="UE3:UIState Focused (UDK)">Engine.UIState_Focused</a>'</td>
+</tr>
+<tr>
+<td><a href="UE3_UIScreenObject_(UDK).html#DefaultStates" title="UE3:UIScreenObject (UDK)">DefaultStates</a>[3]</td>
+<td><a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UIState_Active_(UDK).html" title="UE3:UIState Active (UDK)">Engine.UIState_Active</a>'</td>
+</tr>
+<tr>
+<td><a href="UE3_UIScreenObject_(UDK).html#DefaultStates" title="UE3:UIScreenObject (UDK)">DefaultStates</a>[4]</td>
+<td><a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UIState_Pressed_(UDK).html" title="UE3:UIState Pressed (UDK)">Engine.UIState_Pressed</a>'</td>
+</tr>
+<tr>
+<td><a href="UE3_UIObject_(UDK).html#PrimaryStyle" title="UE3:UIObject (UDK)">PrimaryStyle</a></td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>DefaultStyleTag</td>
+<td>'DefaultListStyle'</td>
+</tr>
+<tr>
+<td>RequiredStyleClass</td>
+<td><a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UIStyle_Combo_(UDK).html" title="UE3:UIStyle Combo (UDK)">Engine.UIStyle_Combo</a>'</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><a href="UE3_UIObject_(UDK).html#PrivateFlags" title="UE3:UIObject (UDK)">PrivateFlags</a></td>
+<td>1024</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Subobjects">Subobjects</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=61" title="Edit section: Subobjects">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="ListPresentationComponent">ListPresentationComponent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=62" title="Edit section: ListPresentationComponent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Class:</b> <a href="UE3_UIComp_ListPresenter_(UDK).html" title="UE3:UIComp ListPresenter (UDK)">Engine.UIComp_ListPresenter</a></p>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td>ListItemOverlay[0]</td>
+<td><a href="UE3_UITexture_(UDK).html" title="UE3:UITexture (UDK)">UITexture</a>'Engine.Default__UIList:ListPresentationComponent.NormalOverlayTemplate'</td>
+</tr>
+<tr>
+<td>ListItemOverlay[1]</td>
+<td><a href="UE3_UITexture_(UDK).html" title="UE3:UITexture (UDK)">UITexture</a>'Engine.Default__UIList:ListPresentationComponent.ActiveOverlayTemplate'</td>
+</tr>
+<tr>
+<td>ListItemOverlay[2]</td>
+<td><a href="UE3_UITexture_(UDK).html" title="UE3:UITexture (UDK)">UITexture</a>'Engine.Default__UIList:ListPresentationComponent.SelectionOverlayTemplate'</td>
+</tr>
+<tr>
+<td>ListItemOverlay[3]</td>
+<td><a href="UE3_UITexture_(UDK).html" title="UE3:UITexture (UDK)">UITexture</a>'Engine.Default__UIList:ListPresentationComponent.HoverOverlayTemplate'</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="WidgetEventComponent">WidgetEventComponent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=63" title="Edit section: WidgetEventComponent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Class:</b> <a href="UE3_UIComp_Event_(UDK).html" title="UE3:UIComp Event (UDK)">Engine.UIComp_Event</a></p>
+<p><b>Inherits from:</b> <a href="UE3_UIObject_(UDK).html#WidgetEventComponent" title="UE3:UIObject (UDK)">UIObject.WidgetEventComponent</a></p>
+<p><i>No new values.</i></p>
+<h2><span class="mw-headline" id="Enums">Enums</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=64" title="Edit section: Enums">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="ECellAutoSizeMode">ECellAutoSizeMode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=65" title="Edit section: ECellAutoSizeMode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Different ways to auto-size list cells</p>
+<dl>
+<dt>CELLAUTOSIZE_None&#160;</dt>
+<dd><i>(<b>None</b> in UnrealEd)</i> Auto-sizing not enabled</dd>
+<dt>CELLAUTOSIZE_Uniform&#160;</dt>
+<dd><i>(<b>Uniform Fill</b> in UnrealEd)</i> Cells will be uniformly sized so that all cells can be displayed within the bounds of the list. The configured</dd>
+</dl>
+<p>cell size is ignored, and the bounds of the list are not adjusted.</p>
+<dl>
+<dt>CELLAUTOSIZE_Constrain&#160;</dt>
+<dd><i>(<b>Best Fit</b> in UnrealEd)</i> Cells will be sized to fit their contents. The configured cell size is ignored, and the bounds of the list are</dd>
+</dl>
+<p>not adjusted.</p>
+<dl>
+<dt>CELLAUTOSIZE_AdjustList&#160;</dt>
+<dd><i>(<b>Adjust List Bounds</b> in UnrealEd)</i> Cells will be sized to fit their contents. The configured cell size is ignored, and the bounds of the list are</dd>
+</dl>
+<p>adjusted to display all cells</p>
+<h4><span class="mw-headline" id="ECellLinkType">ECellLinkType</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=66" title="Edit section: ECellLinkType">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Determines how the cells in this list are linked.</p>
+<dl>
+<dt>LINKED_None&#160;</dt>
+<dd><i>(<b>Disabled</b> in UnrealEd)</i> no linking - one to one mapping between cells and elements</dd>
+<dt>LINKED_Rows&#160;</dt>
+<dd><i>(<b>Span Rows</b> in UnrealEd)</i> rows are linked; each column in the list will represent a single element; not yet implemented</dd>
+<dt>LINKED_Columns&#160;</dt>
+<dd><i>(<b>Span Columns</b> in UnrealEd)</i> columns are linked; each row in the list represents a single element</dd>
+</dl>
+<h4><span class="mw-headline" id="EListWrapBehavior">EListWrapBehavior</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=67" title="Edit section: EListWrapBehavior">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Determines how list elements are wrapped</p>
+<dl>
+<dt>LISTWRAP_None&#160;</dt>
+<dd>no wrapping (default); when the end of the list is reached, the user will not be able to scroll further</dd>
+<dt>LISTWRAP_Smooth&#160;</dt>
+<dd>Smooth wrapping; if space is available after rendering the last element, starts over at the first element and</dd>
+</dl>
+<p>continues rendering elements until no more space is available.</p>
+<p><b>Todo:</b> not yet implemented</p>
+<dl>
+<dt>LISTWRAP_Jump&#160;</dt>
+<dd>Jump wrapping; list stops rendering at the last element, but if the user attempts to scroll past the end of the</dd>
+</dl>
+<p>list, the index jumps back to the opposite side of the list.</p>
+<h2><span class="mw-headline" id="Structs">Structs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=68" title="Edit section: Structs">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="CellHitDetectionInfo">CellHitDetectionInfo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=69" title="Edit section: CellHitDetectionInfo">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native, transient</p>
+<p>Provides information about which cells the mouse is currently hovering over.</p>
+<dl>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> HitColumn&#160;</dt>
+<dd>the column that was hit; INDEX_NONE if the location did not correspond to a valid column</dd>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> HitRow&#160;</dt>
+<dd>the row that was hit; INDEX_NONE if the location did not correspond to a valid row</dd>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> ResizeColumn&#160;</dt>
+<dd>if the hit location was within the region used for resizing a column, indicates the column that will be resized;</dd>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> ResizeRow&#160;</dt>
+<dd>if the hit location was within the region used for resizing a column, indicates the column that will be resized;</dd>
+</dl>
+<h2><span class="mw-headline" id="Delegates">Delegates</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=70" title="Edit section: Delegates">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="OnListElementsSorted">OnListElementsSorted</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=71" title="Edit section: OnListElementsSorted">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">delegate <b>OnListElementsSorted</b> (<strong class="selflink">UIList</strong>&#160;<b>Sender</b>)</div>
+<p>Called anytime this list's elements are sorted.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>Sender</i> - the list that just sorted its elements.</li>
+</ul>
+<h4><span class="mw-headline" id="OnOverrideListElementState">OnOverrideListElementState</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=72" title="Edit section: OnOverrideListElementState">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">delegate <a href="UE3_UIRoot_enums_(UDK).html#EUIListElementState" title="UE3:UIRoot enums (UDK)">UIRoot.EUIListElementState</a>&#160;<b>OnOverrideListElementState</b> (<strong class="selflink">UIList</strong>&#160;<b>Sender</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ElementIndex</b>, <a href="UE3_UIRoot_enums_(UDK).html#EUIListElementState" title="UE3:UIRoot enums (UDK)">UIRoot.EUIListElementState</a>&#160;<b>CurrentState</b>, <a href="UE3_UIRoot_enums_(UDK).html#EUIListElementState" title="UE3:UIRoot enums (UDK)">UIRoot.EUIListElementState</a>&#160;<b>NewElementState</b>)</div>
+<p>Provides a way for users to override the cell state being assigned to a list element.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>Sender</i> - the list calling the delegate</li>
+<li><i>ElementIndex</i> - the index [into the list's Items array] for the element being set; Items[ElementIndex] would be the index into the source data provider's collection.</li>
+<li><i>CurrentState</i> - the element's current cell state.</li>
+<li><i>NewElementState</i> - the cell state that is being set on the element.</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the cell state that should be set on the element.</dd>
+</dl>
+<h4><span class="mw-headline" id="OnSubmitSelection">OnSubmitSelection</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=73" title="Edit section: OnSubmitSelection">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">delegate <b>OnSubmitSelection</b> (<strong class="selflink">UIList</strong>&#160;<b>Sender</b>, optional&#160;<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>PlayerIndex</b>)</div>
+<p>Called when the user presses Enter (or any other action bound to UIKey_SubmitListSelection) while this list has focus.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>Sender</i> - the list that is submitting the selection</li>
+</ul>
+<h4><span class="mw-headline" id="ShouldDisableElement">ShouldDisableElement</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=74" title="Edit section: ShouldDisableElement">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">delegate <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ShouldDisableElement</b> (<strong class="selflink">UIList</strong>&#160;<b>Sender</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ElementIndex</b>)</div>
+<p>Allows the widget to force specific elements to be disabled. If not implemented, or if the return value is false, the list's data provider will then be given an opportunity to disable the item.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>Sender</i> - the list calling the delegate</li>
+<li><i>ElementIndex</i> - the index [into the data store's list of items] for the item to query</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE if the specified element should be disabled.</dd>
+</dl>
+<h2><span class="mw-headline" id="Functions">Functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=75" title="Edit section: Functions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Native_functions">Native functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=76" title="Edit section: Native functions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>See <a href="UE3_UIList_native_functions_(UDK).html" title="UE3:UIList native functions (UDK)">UIList native functions</a>.</p>
+<h3><span class="mw-headline" id="Events">Events</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=77" title="Edit section: Events">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="AllMutexesDisabled">AllMutexesDisabled</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=78" title="Edit section: AllMutexesDisabled">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final event <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>AllMutexesDisabled</b> ()</div>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE if all mutexes are disabled.</dd>
+</dl>
+<h4><span class="mw-headline" id="DecrementAllMutexes">DecrementAllMutexes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=79" title="Edit section: DecrementAllMutexes">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final event <b>DecrementAllMutexes</b> (optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bDispatchUpdates</b>)</div>
+<p>Decrements all mutexes</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>bDispatchUpdates</i> - specify TRUE to refresh the list's index, formatting, and states.</li>
+</ul>
+<h4><span class="mw-headline" id="DisableSetIndex">DisableSetIndex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=80" title="Edit section: DisableSetIndex">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final event <b>DisableSetIndex</b> ()</div>
+<p>Disable calls to SetIndex(); useful when adding lots of items to avoid flicker.</p>
+<h4><span class="mw-headline" id="DisableValueChangeNotification">DisableValueChangeNotification</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=81" title="Edit section: DisableValueChangeNotification">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final event <b>DisableValueChangeNotification</b> ()</div>
+<p>Disable calls to NotifyValueChanged(); useful when adding lots of items to avoid flicker.</p>
+<h4><span class="mw-headline" id="EnableSetIndex">EnableSetIndex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=82" title="Edit section: EnableSetIndex">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final event <b>EnableSetIndex</b> ()</div>
+<p>Enable calls to SetIndex(); useful when adding lots of items to avoid flicker.</p>
+<h4><span class="mw-headline" id="EnableValueChangeNotification">EnableValueChangeNotification</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=83" title="Edit section: EnableValueChangeNotification">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final event <b>EnableValueChangeNotification</b> ()</div>
+<p>Enable calls to NotifyValueChanged(); useful when adding lots of items to avoid flicker.</p>
+<h4><span class="mw-headline" id="IncrementAllMutexes">IncrementAllMutexes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=84" title="Edit section: IncrementAllMutexes">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final event <b>IncrementAllMutexes</b> ()</div>
+<p>Increments all mutexes</p>
+<h4><span class="mw-headline" id="Initialized">Initialized</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=85" title="Edit section: Initialized">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>Initialized</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_UIScreenObject_(UDK).html#Initialized" title="UE3:UIScreenObject (UDK)">UIScreenObject.Initialized</a></p>
+<p>Sets up the scroll activity delegates in the scrollbars</p>
+<p><b>Todo:</b> this is a fix for the issue where delegates don't seem to be getting set properly in defaultproperties blocks.</p>
+<h4><span class="mw-headline" id="IsSetIndexEnabled">IsSetIndexEnabled</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=86" title="Edit section: IsSetIndexEnabled">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final event <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsSetIndexEnabled</b> ()</div>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE if calls to SetIndex() will be executed.</dd>
+</dl>
+<h4><span class="mw-headline" id="IsValueChangeNotificationEnabled">IsValueChangeNotificationEnabled</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=87" title="Edit section: IsValueChangeNotificationEnabled">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final event <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsValueChangeNotificationEnabled</b> ()</div>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE if calls to NotifyValueChanged() will be executed.</dd>
+</dl>
+<h4><span class="mw-headline" id="PostInitialize">PostInitialize</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=88" title="Edit section: PostInitialize">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>PostInitialize</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_UIScreenObject_(UDK).html#PostInitialize" title="UE3:UIScreenObject (UDK)">UIScreenObject.PostInitialize</a></p>
+<p>Propagate the enabled state of this widget.</p>
+<h3><span class="mw-headline" id="Other_instance_functions">Other instance functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=89" title="Edit section: Other instance functions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="ClickedScrollZone">ClickedScrollZone</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=90" title="Edit section: ClickedScrollZone">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClickedScrollZone</b> (<a href="UE3_UIScrollbar_(UDK).html" title="UE3:UIScrollbar (UDK)">UIScrollbar</a>&#160;<b>Sender</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>PositionPerc</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>PlayerIndex</b>)</div>
+<p>Handler for the vertical scrollbar's OnClickedScrollZone delegate. Scrolls the list by a full page (MaxVisibleItems).</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>Sender</i> - the scrollbar that was clicked.</li>
+<li><i>PositionPerc</i> - a value from 0.0 - 1.0, representing the location of the click within the region between the increment and decrement buttons. Values closer to 0.0 means that the user clicked near the decrement button; values closer to 1.0 are nearer the increment button.</li>
+<li><i>PlayerIndex</i> - Player that performed the action that issued the event.</li>
+</ul>
+<h4><span class="mw-headline" id="EnableColumnHeaderRendering">EnableColumnHeaderRendering</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=91" title="Edit section: EnableColumnHeaderRendering">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final function <b>EnableColumnHeaderRendering</b> (<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bShouldRenderColHeaders</b>)</div>
+<p>Changes whether this list renders colum headers or not. Only applicable if the owning list's CellLinkType is LINKED_Columns</p>
+<h4><span class="mw-headline" id="OnStateChanged">OnStateChanged</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=92" title="Edit section: OnStateChanged">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final function <b>OnStateChanged</b> (<a href="UE3_UIScreenObject_(UDK).html" title="UE3:UIScreenObject (UDK)">UIScreenObject</a>&#160;<b>Sender</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>PlayerIndex</b>, <a href="UE3_UIState_(UDK).html" title="UE3:UIState (UDK)">UIState</a>&#160;<b>NewlyActiveState</b>, optional&#160;<a href="UE3_UIState_(UDK).html" title="UE3:UIState (UDK)">UIState</a>&#160;<b>PreviouslyActiveState</b>)</div>
+<p>Called when a new UIState becomes the widget's currently active state, after all activation logic has occurred.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>Sender</i> - the widget that changed states.</li>
+<li><i>PlayerIndex</i> - the index [into the GamePlayers array] for the player that activated this state.</li>
+<li><i>NewlyActiveState</i> - the state that is now active</li>
+<li><i>PreviouslyActiveState</i> - the state that used the be the widget's currently active state.</li>
+</ul>
+<h4><span class="mw-headline" id="ShouldRenderColumnHeaders">ShouldRenderColumnHeaders</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)?section=93" title="Edit section: ShouldRenderColumnHeaders">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ShouldRenderColumnHeaders</b> ()</div>
+<p>Returns whether this list should render column headers</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.669 seconds
+Real time usage: 0.695 seconds
+Preprocessor visited node count: 5255/1000000
+Preprocessor generated node count: 9441/1000000
+Post‐expand include size: 27276/2097152 bytes
+Template argument size: 8797/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  487.519      1 - -total
+ 39.89%  194.490     88 - Template:Samegame
+ 37.14%  181.044     57 - Template:Tl
+ 30.70%  149.690      1 - Template:Infobox_class
+ 29.67%  144.665      1 - Template:Infobox_class/core
+ 22.39%  109.164     39 - Template:Cl
+  8.49%   41.368     19 - Template:Code
+  3.55%   17.311      2 - Template:Ch
+  2.69%   13.133      2 - Template:Links
+  1.36%    6.607      1 - Template:Classname
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:27418-0!*!*!*!*!*!* and timestamp 20161215180033 and revision id 41908
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:UIList_(UDK)?oldid=41908#ECellAutoSizeMode">https://wiki.beyondunreal.com/UE3:UIList_(UDK)?oldid=41908#ECellAutoSizeMode</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_UDK-specific_classes.html" title="Category:UDK-specific classes">UDK-specific classes</a></li><li><a href="Category_Classes_in_UDK_package_Engine.html" title="Category:Classes in UDK package Engine">Classes in UDK package Engine</a></li><li><a href="Category_Classes_implementing_UIDataStorePublisher_(UDK).html" title="Category:Classes implementing UIDataStorePublisher (UDK)">Classes implementing UIDataStorePublisher (UDK)</a></li><li><a href="Category_Subclasses_of_UIObject_(UDK).html" title="Category:Subclasses of UIObject (UDK)">Subclasses of UIObject (UDK)</a></li><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_UIList_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:UIList_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:UIList_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:UIList_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AUIList+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AUIList+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:UIList_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:UIList_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:UIList_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:UIList_(UDK)?oldid=41908" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:UIList_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 07:50, 17 January 2010.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":130});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:ECellAutoSizeMode_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:19:15 GMT -->
+</html>

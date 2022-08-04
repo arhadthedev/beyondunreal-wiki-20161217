@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+
+<!-- Mirrored from en.wikipedia.org/wiki/Double_precision_floating-point_format by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 15 Dec 2016 04:06:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8"/>
+<title>Double-precision floating-point format - Wikipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Double-precision_floating-point_format","wgTitle":"Double-precision floating-point format","wgCurRevisionId":753570206,"wgRevisionId":753570206,"wgArticleId":53734,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Binary arithmetic","Computer arithmetic","Floating point types"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Double-precision_floating-point_format","wgRelevantArticleId":53734,"wgRequestId":"WFID6wpAIDcAADLhzb0AAABS","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"Double_precision_floating-point_format","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":true},"wgPreferredVariant":"en","wgMFDisplayWikibaseDescriptions":{"search":true,"nearby":true,"watchlist":true,"tagline":false},"wgRelatedArticles":null,"wgRelatedArticlesUseCirrusSearch":true,"wgRelatedArticlesOnlyUseCirrusSearch":false,"wgULSCurrentAutonym":"English","wgNoticeProject":"wikipedia","wgCentralNoticeCookiesToDelete":[],"wgCentralNoticeCategoriesUsingLegacy":["Fundraising","fundraising"],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgInternalRedirectTargetUrl":"/wiki/Double-precision_floating-point_format","wgWikibaseItemId":"Q1243369","wgCentralAuthMobileDomain":false,"wgVisualEditorToolbarScrollOffset":0,"wgEditSubmitButtonLabelPublish":false});mw.loader.state({"ext.globalCssJs.user.styles":"ready","ext.globalCssJs.site.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.math.styles":"ready","wikibase.client.init":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready","ext.globalCssJs.user":"ready","ext.globalCssJs.site":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@1dqfd7l",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.action.view.redirect","ext.cite.a11y","ext.math.scripts","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.legacy.wikibits","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.watchlist-notice","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.extra-toolbar-buttons","ext.gadget.switcher","ext.gadget.featured-articles-links","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.navigationTiming","ext.uls.eventlogger","ext.uls.init","ext.uls.interface","ext.quicksurveys.init","ext.centralNotice.geoIP","ext.centralNotice.startUp","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="../w/load5fec.css?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.math.styles%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediaBadges%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector"/>
+<script async="" src="../w/load2c8d.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="../w/load18b6.css?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.29.0-wmf.5"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<link rel="alternate" href="Android-app_/org.wikipedia/http/en.m.wikipedia.org/wiki/Double-precision_floating-point_format.html"/>
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="../w/index9ae4.html?title=Double-precision_floating-point_format&amp;action=edit"/>
+<link rel="edit" title="Edit this page" href="../w/index9ae4.html?title=Double-precision_floating-point_format&amp;action=edit"/>
+<link rel="apple-touch-icon" href="../static/apple-touch/wikipedia.png"/>
+<link rel="shortcut icon" href="../static/favicon/wikipedia.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../w/opensearch_desc.php" title="Wikipedia (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="../w/api251f.php?action=rsd"/>
+<link rel="copyright" href="../../creativecommons.org/licenses/by-sa/3.0/index.html"/>
+<link rel="canonical" href="Double-precision_floating-point_format.html"/>
+<link rel="dns-prefetch" href="../../login.wikimedia.org/index.html"/>
+<link rel="dns-prefetch" href="../../meta.wikimedia.org/index.html" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Double-precision_floating-point_format rootpage-Double-precision_floating-point_format skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Double-precision floating-point format</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"><span class="mw-redirectedfrom">  (Redirected from <a href="../w/index5a22.html?title=Double_precision_floating-point_format&amp;redirect=no" class="mw-redirect" title="Double precision floating-point format">Double precision floating-point format</a>)</span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><p><b>Double-precision floating-point format</b> is a <a href="Computer_number_format.html" title="Computer number format">computer number format</a> that occupies 8 bytes (64 bits) in computer memory and represents a wide, dynamic range of values by using a <a href="Floating_point.html" title="Floating point">floating point</a>.</p>
+<p>Double-precision floating-point format usually refers to <b>binary64</b>, as specified by the <a href="IEEE_floating_point.html" title="IEEE floating point">IEEE 754</a> <a href="Standardization.html" title="Standardization">standard</a>, not to the <a href="Decimal64_floating-point_format.html" title="Decimal64 floating-point format">64-bit decimal format</a> <b>decimal64</b>. In older computers, different floating-point formats of 8 bytes were used, e.g., <a href="GW-BASIC.html" title="GW-BASIC">GW-BASIC</a>'s double-precision data type was the <a href="64-bit_MBF.html" class="mw-redirect" title="64-bit MBF">64-bit MBF</a> floating-point format.</p>
+<table class="vertical-navbox nowraplinks plainlist" style="float:right;clear:right;width:22.0em;margin:0 0 1.0em 1.0em;background:#f9f9f9;border:1px solid #aaa;padding:0.2em;border-spacing:0.4em 0;text-align:center;line-height:1.4em;font-size:88%">
+<tr>
+<th style="padding:0.2em 0.4em 0.2em;font-size:145%;line-height:1.2em"><a href="Floating_point.html" title="Floating point">Floating point</a> <a href="Precision_(computer_science).html" title="Precision (computer science)">precisions</a></th>
+</tr>
+<tr>
+<th style="padding:0.1em"><a href="IEEE_floating_point.html" title="IEEE floating point">IEEE 754</a></th>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<ul>
+<li><a href="16-bit.html" title="16-bit">16-bit</a>: <a href="Half-precision_floating-point_format.html" title="Half-precision floating-point format">Half</a> (binary16)</li>
+<li><a href="32-bit.html" title="32-bit">32-bit</a>: <a href="Single-precision_floating-point_format.html" title="Single-precision floating-point format">Single</a> (binary32), <a href="Decimal32_floating-point_format.html" title="Decimal32 floating-point format">decimal32</a></li>
+<li><a href="64-bit_computing.html" title="64-bit computing">64-bit</a>: <strong class="selflink">Double</strong> (binary64), <a href="Decimal64_floating-point_format.html" title="Decimal64 floating-point format">decimal64</a></li>
+<li><a href="128-bit.html" title="128-bit">128-bit</a>: <a href="Quadruple-precision_floating-point_format.html" title="Quadruple-precision floating-point format">Quadruple</a> (binary128), <a href="Decimal128_floating-point_format.html" title="Decimal128 floating-point format">decimal128</a></li>
+<li><a href="256-bit.html" title="256-bit">256-bit</a>: <a href="Octuple-precision_floating-point_format.html" title="Octuple-precision floating-point format">Octuple</a> (binary256)</li>
+<li><a href="Extended_precision.html" title="Extended precision">Extended precision formats</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<th style="padding:0.1em">Other</th>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<ul>
+<li><a href="Minifloat.html" title="Minifloat">Minifloat</a></li>
+<li><a href="Microsoft_Binary_Format.html" title="Microsoft Binary Format">Microsoft Binary Format</a></li>
+<li><a href="IBM_Floating_Point_Architecture.html" title="IBM Floating Point Architecture">IBM Floating Point Architecture</a></li>
+<li><a href="Arbitrary-precision_arithmetic.html" title="Arbitrary-precision arithmetic">Arbitrary precision</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;font-size:115%">
+<div class="plainlinks hlist navbar mini">
+<ul>
+<li class="nv-view"><a href="Template_Floating-point.html" title="Template:Floating-point"><abbr title="View this template">v</abbr></a></li>
+<li class="nv-talk"><a href="Template_talk_Floating-point.html" title="Template talk:Floating-point"><abbr title="Discuss this template">t</abbr></a></li>
+<li class="nv-edit"><a class="external text" href="../w/index3130.html?title=Template:Floating-point&amp;action=edit"><abbr title="Edit this template">e</abbr></a></li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#IEEE_754_double-precision_binary_floating-point_format:_binary64"><span class="tocnumber">1</span> <span class="toctext">IEEE 754 double-precision binary floating-point format: binary64</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Exponent_encoding"><span class="tocnumber">1.1</span> <span class="toctext">Exponent encoding</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Endianness"><span class="tocnumber">1.2</span> <span class="toctext">Endianness</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Double-precision_examples"><span class="tocnumber">1.3</span> <span class="toctext">Double-precision examples</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Execution_speed_with_double-precision_arithmetic"><span class="tocnumber">1.4</span> <span class="toctext">Execution speed with double-precision arithmetic</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Implementations"><span class="tocnumber">2</span> <span class="toctext">Implementations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Lua"><span class="tocnumber">2.1</span> <span class="toctext">Lua</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#JavaScript"><span class="tocnumber">2.2</span> <span class="toctext">JavaScript</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#C_and_C.2B.2B"><span class="tocnumber">2.3</span> <span class="toctext">C and C++</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#See_also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Notes_and_references"><span class="tocnumber">4</span> <span class="toctext">Notes and references</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="IEEE_754_double-precision_binary_floating-point_format:_binary64">IEEE 754 double-precision binary floating-point format: binary64</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="../w/indexa0c5.html?title=Double-precision_floating-point_format&amp;action=edit&amp;section=1" title="Edit section: IEEE 754 double-precision binary floating-point format: binary64">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Double-precision binary floating-point is a commonly used format on PCs, due to its wider range over single-precision floating point, in spite of its performance and bandwidth cost. As with single-precision floating-point format, it lacks precision on integer numbers when compared with an integer format of the same size. It is commonly known simply as <i>double</i>. The IEEE 754 standard specifies a <b>binary64</b> as having:</p>
+<ul>
+<li><a href="Sign_bit.html" title="Sign bit">Sign bit</a>: 1 bit</li>
+<li><a href="Exponent.html" class="mw-redirect" title="Exponent">Exponent</a>: 11 bits</li>
+<li><a href="Significand.html" title="Significand">Significand</a> <a href="Precision_(arithmetic).html" class="mw-redirect" title="Precision (arithmetic)">precision</a>: 53 bits (52 explicitly stored)</li>
+</ul>
+<p>This gives 15–17 <a href="Significant_figures.html" title="Significant figures">significant decimal digits</a> precision. If a decimal string with at most 15 significant digits is converted to IEEE 754 double precision representation and then converted back to a string with the same number of significant digits, then the final string should match the original. If an IEEE 754 double precision is converted to a decimal string with at least 17 significant digits and then converted back to double, then the final number must match the original.<sup id="cite_ref-whyieee_1-0" class="reference"><a href="#cite_note-whyieee-1">[1]</a></sup></p>
+<p>The format is written with the <a href="Significand.html" title="Significand">significand</a> having an implicit integer bit of value 1 (except for special data, see the exponent encoding below). With the 52 bits of the fraction significand appearing in the memory format, the total precision is therefore 53 bits (approximately 16 decimal digits, 53 log<sub>10</sub>(2) ≈ 15.955). The bits are laid out as follows:</p>
+<p><a href="File_IEEE_754_Double_Floating_Point_Format.html" class="image"><img alt="IEEE 754 Double Floating Point Format.svg" src="../../upload.wikimedia.org/wikipedia/commons/thumb/a/a9/IEEE_754_Double_Floating_Point_Format.svg/618px-IEEE_754_Double_Floating_Point_Format.svg.png" width="618" height="125" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/a/a9/IEEE_754_Double_Floating_Point_Format.svg/927px-IEEE_754_Double_Floating_Point_Format.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/a/a9/IEEE_754_Double_Floating_Point_Format.svg/1236px-IEEE_754_Double_Floating_Point_Format.svg.png 2x" data-file-width="618" data-file-height="125" /></a></p>
+<p>The real value assumed by a given 64-bit double-precision datum with a given biased exponent <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" >
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>e</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle e}</annotation>
+  </semantics>
+</math></span><img src="../../wikimedia.org/api/rest_v1/media/math/render/svg/cd253103f0876afc68ebead27a5aa9867d927467.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.094ex; height:1.676ex;" alt="e" /></span> and a 52-bit fraction is</p>
+<dl>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" >
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo stretchy="false">(</mo>
+        <mo>&#x2212;<!-- − --></mo>
+        <mn>1</mn>
+        <msup>
+          <mo stretchy="false">)</mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mtext>sign</mtext>
+          </mrow>
+        </msup>
+        <mo stretchy="false">(</mo>
+        <mn>1.</mn>
+        <msub>
+          <mi>b</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>51</mn>
+          </mrow>
+        </msub>
+        <msub>
+          <mi>b</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>50</mn>
+          </mrow>
+        </msub>
+        <mo>.</mo>
+        <mo>.</mo>
+        <mo>.</mo>
+        <msub>
+          <mi>b</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>0</mn>
+          </mrow>
+        </msub>
+        <msub>
+          <mo stretchy="false">)</mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>2</mn>
+          </mrow>
+        </msub>
+        <mo>&#x00D7;<!-- × --></mo>
+        <msup>
+          <mn>2</mn>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>e</mi>
+            <mo>&#x2212;<!-- − --></mo>
+            <mn>1023</mn>
+          </mrow>
+        </msup>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle (-1)^{\text{sign}}(1.b_{51}b_{50}...b_{0})_{2}\times 2^{e-1023}}</annotation>
+  </semantics>
+</math></span><img src="../../wikimedia.org/api/rest_v1/media/math/render/svg/61345d47f069d645947b9c0ab676c75551f1b188.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:33.281ex; height:3.176ex;" alt="(-1)^{\text{sign}}(1.b_{51}b_{50}...b_{0})_{2}\times 2^{e-1023}" /></span></dd>
+</dl>
+<p>or</p>
+<dl>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" >
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo stretchy="false">(</mo>
+        <mo>&#x2212;<!-- − --></mo>
+        <mn>1</mn>
+        <msup>
+          <mo stretchy="false">)</mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mtext>sign</mtext>
+          </mrow>
+        </msup>
+        <mrow>
+          <mo>(</mo>
+          <mn>1</mn>
+          <mo>+</mo>
+          <munderover>
+            <mo>&#x2211;<!-- ∑ --></mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi>i</mi>
+              <mo>=</mo>
+              <mn>1</mn>
+            </mrow>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mn>52</mn>
+            </mrow>
+          </munderover>
+          <msub>
+            <mi>b</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mn>52</mn>
+              <mo>&#x2212;<!-- − --></mo>
+              <mi>i</mi>
+            </mrow>
+          </msub>
+          <msup>
+            <mn>2</mn>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mo>&#x2212;<!-- − --></mo>
+              <mi>i</mi>
+            </mrow>
+          </msup>
+          <mo>)</mo>
+        </mrow>
+        <mo>&#x00D7;<!-- × --></mo>
+        <msup>
+          <mn>2</mn>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>e</mi>
+            <mo>&#x2212;<!-- − --></mo>
+            <mn>1023</mn>
+          </mrow>
+        </msup>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle (-1)^{\text{sign}}\left(1+\sum _{i=1}^{52}b_{52-i}2^{-i}\right)\times 2^{e-1023}}</annotation>
+  </semantics>
+</math></span><img src="../../wikimedia.org/api/rest_v1/media/math/render/svg/5f677b27f52fcd521355049a560d53b5c01800e1.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.171ex; width:37.449ex; height:7.509ex;" alt="(-1)^{\text{sign}}\left(1+\sum _{i=1}^{52}b_{52-i}2^{-i}\right)\times 2^{e-1023}" /></span></dd>
+</dl>
+<p>Between 2<sup>52</sup>=4,503,599,627,370,496 and 2<sup>53</sup>=9,007,199,254,740,992 the representable numbers are exactly the integers. For the next range, from 2<sup>53</sup> to 2<sup>54</sup>, everything is multiplied by 2, so the representable numbers are the even ones, etc. Conversely, for the previous range from 2<sup>51</sup> to 2<sup>52</sup>, the spacing is 0.5, etc.</p>
+<p>The spacing as a fraction of the numbers in the range from 2<sup><i>n</i></sup> to 2<sup><i>n</i>+1</sup> is 2<sup>n−52</sup>. The maximum relative rounding error when rounding a number to the nearest representable one (the <a href="Machine_epsilon.html" title="Machine epsilon">machine epsilon</a>) is therefore 2<sup>−53</sup>.</p>
+<p>The 11 bit width of the exponent allows the representation of numbers between 10<sup>−308</sup> and 10<sup>308</sup>, with full 15–17 decimal digits precision. By compromising precision, the subnormal representation allows even smaller values up to about 5&#160;×&#160;10<sup>−324</sup>.</p>
+<h3><span class="mw-headline" id="Exponent_encoding">Exponent encoding</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="../w/index87c4.html?title=Double-precision_floating-point_format&amp;action=edit&amp;section=2" title="Edit section: Exponent encoding">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The double-precision binary floating-point exponent is encoded using an <a href="Offset-binary.html" class="mw-redirect" title="Offset-binary">offset-binary</a> representation, with the zero offset being 1023; also known as exponent bias in the IEEE 754 standard. Examples of such representations would be:</p>
+<ul>
+<li>E<sub>min</sub> (1) = −1022</li>
+<li>E (50) = −973</li>
+<li>E<sub>max</sub> (2046) = 1023</li>
+</ul>
+<p>Thus, as defined by the offset-binary representation, in order to get the true exponent, the exponent bias of 1023 has to be subtracted from the written exponent.</p>
+<p>The exponents <code>000<sub>16</sub></code> and <code>7ff<sub>16</sub></code> have a special meaning:</p>
+<ul>
+<li><code>000<sub>16</sub></code> is used to represent a <a href="Signed_zero.html" title="Signed zero">signed zero</a> (if F=0) and <a href="Denormal_number.html" title="Denormal number">subnormals</a> (if F≠0); and</li>
+<li><code>7ff<sub>16</sub></code> is used to represent <a href="Infinity.html" title="Infinity">∞</a> (if F=0) and <a href="NaN.html" title="NaN">NaNs</a> (if F≠0),</li>
+</ul>
+<p>where F is the fractional part of the <a href="Significand.html" title="Significand">significand</a>. All bit patterns are valid encoding.</p>
+<p>Except for the above exceptions, the entire double-precision number is described by:</p>
+<p><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" >
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo stretchy="false">(</mo>
+        <mo>&#x2212;<!-- − --></mo>
+        <mn>1</mn>
+        <msup>
+          <mo stretchy="false">)</mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mtext>sign</mtext>
+          </mrow>
+        </msup>
+        <mo>&#x00D7;<!-- × --></mo>
+        <msup>
+          <mn>2</mn>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mrow class="MJX-TeXAtom-ORD">
+              <mtext>exponent</mtext>
+            </mrow>
+            <mo>&#x2212;<!-- − --></mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mtext>exponent bias</mtext>
+            </mrow>
+          </mrow>
+        </msup>
+        <mo>&#x00D7;<!-- × --></mo>
+        <mn>1.</mn>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mtext>fraction</mtext>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle (-1)^{\text{sign}}\times 2^{{\text{exponent}}-{\text{exponent bias}}}\times 1.{\text{fraction}}}</annotation>
+  </semantics>
+</math></span><img src="../../wikimedia.org/api/rest_v1/media/math/render/svg/4ae50fd092903dae6dcd559a56bedf9c79530e66.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:42.689ex; height:3.176ex;" alt="{\displaystyle (-1)^{\text{sign}}\times 2^{{\text{exponent}}-{\text{exponent bias}}}\times 1.{\text{fraction}}}" /></span></p>
+<p>In the case of <a href="Denormal_number.html" title="Denormal number">subnormals</a> (E=0) the double-precision number is described by:</p>
+<p><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" >
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo stretchy="false">(</mo>
+        <mo>&#x2212;<!-- − --></mo>
+        <mn>1</mn>
+        <msup>
+          <mo stretchy="false">)</mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mtext>sign</mtext>
+          </mrow>
+        </msup>
+        <mo>&#x00D7;<!-- × --></mo>
+        <msup>
+          <mn>2</mn>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>1</mn>
+            <mo>&#x2212;<!-- − --></mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mtext>exponent bias</mtext>
+            </mrow>
+          </mrow>
+        </msup>
+        <mo>&#x00D7;<!-- × --></mo>
+        <mn>0.</mn>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mtext>fraction</mtext>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle (-1)^{\text{sign}}\times 2^{1-{\text{exponent bias}}}\times 0.{\text{fraction}}}</annotation>
+  </semantics>
+</math></span><img src="../../wikimedia.org/api/rest_v1/media/math/render/svg/7317b0c2e21af5bd3b4d526b201c2122d29de581.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:36.928ex; height:3.176ex;" alt="{\displaystyle (-1)^{\text{sign}}\times 2^{1-{\text{exponent bias}}}\times 0.{\text{fraction}}}" /></span></p>
+<h3><span class="mw-headline" id="Endianness"><a href="Endianness.html" title="Endianness">Endianness</a></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="../w/index9dd2.html?title=Double-precision_floating-point_format&amp;action=edit&amp;section=3" title="Edit section: Endianness">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div role="note" class="hatnote relarticle mainarticle selfreference noprint">This section is <a href="Transclusion.html" title="Transclusion">transcluded</a> from <a href="Endianness.html" title="Endianness">Endianness</a>. <span class="plainlinks" style="font-style: normal"><small>(<a class="external text" href="../w/index5e71.html?title=Endianness&amp;action=edit">edit</a> | <a class="external text" href="../w/index21ba.html?title=Endianness&amp;action=history">history</a>)</small></span></div>
+<p>Although the ubiquitous x86 processors of today use little-endian storage for all types of data (integer, floating point, <a href="Binary_coded_decimal.html" class="mw-redirect" title="Binary coded decimal">BCD</a>), there are a few historical machines where <a href="Floating_point.html" title="Floating point">floating point</a> numbers are represented in big-endian form while integers are represented in little-endian form.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">[2]</a></sup> There are old <a href="ARM_architecture.html" title="ARM architecture">ARM</a> processors that have half little-endian, half big-endian floating point representation for double-precision numbers: both 32-bit words are stored in little-endian like integer registers, but the most significant one first. Because there have been many floating point formats with no "<a href="Computer_network.html" title="Computer network">network</a>" standard representation for them, the <a href="External_Data_Representation.html" title="External Data Representation">XDR</a> standard uses big-endian IEEE 754 as its representation. It may therefore appear strange that the widespread <a href="IEEE_754.html" class="mw-redirect" title="IEEE 754">IEEE 754</a> floating point standard does not specify endianness.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">[3]</a></sup> Theoretically, this means that even standard IEEE floating point data written by one machine might not be readable by another. However, on modern standard computers (i.e., implementing IEEE 754), one may in practice safely assume that the endianness is the same for floating point numbers as for integers, making the conversion straightforward regardless of data type. (Small <a href="Embedded_system.html" title="Embedded system">embedded systems</a> using special floating point formats may be another matter however.)</p>
+<h3><span class="mw-headline" id="Double-precision_examples">Double-precision examples</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="../w/index2f92.html?title=Double-precision_floating-point_format&amp;action=edit&amp;section=4" title="Edit section: Double-precision examples">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<pre>
+3ff0 0000 0000 0000<sub>16</sub>   = 1
+3ff0 0000 0000 0001<sub>16</sub>   ≈ 1.0000000000000002, the smallest number &gt; 1
+3ff0 0000 0000 0002<sub>16</sub>   ≈ 1.0000000000000004
+4000 0000 0000 0000<sub>16</sub>   = 2
+c000 0000 0000 0000<sub>16</sub>   = –2
+</pre>
+<pre>
+4008 0000 0000 0000<sub>16</sub>   = 3 = (1+2<sup>−1</sup>) × 2<sup>1024−1023</sup>
+4010 0000 0000 0000<sub>16</sub>   = 4 = 1 × 2<sup>1025−1023</sup>
+4014 0000 0000 0000<sub>16</sub>   = 5 = (1+2<sup>−2</sup>) × 2<sup>1025−1023</sup>
+4018 0000 0000 0000<sub>16</sub>   = 6 = (1+2<sup>−1</sup>) × 2<sup>1025−1023</sup>
+401c 0000 0000 0000<sub>16</sub>   = 7 = (1+2<sup>−1</sup>+2<sup>−2</sup>) × 2<sup>1025−1023</sup>
+</pre>
+<pre>
+0000 0000 0000 0001<sub>16</sub>   = 2<sup>−1022−52</sup> = 2<sup>−1074</sup>
+                        ≈ 5 × 10<sup>−324</sup> (Min subnormal positive double)
+000f ffff ffff ffff<sub>16</sub>   = 2<sup>−1022</sup> − 2<sup>−1022−52</sup> 
+                        ≈ 2.2250738585072009 × 10<sup>−308</sup> (Max subnormal double)
+0010 0000 0000 0000<sub>16</sub>   = 2<sup>−1022</sup> 
+                        ≈ 2.2250738585072014 × 10<sup>−308</sup> (Min normal positive double)
+7fef ffff ffff ffff<sub>16</sub>   = (1 + (1 − 2<sup>−52</sup>)) × 2<sup>1023</sup> 
+                        ≈ 1.7976931348623157 × 10<sup>308</sup> (Max Double)
+</pre>
+<pre>
+0000 0000 0000 0000<sub>16</sub>   = 0
+8000 0000 0000 0000<sub>16</sub>   = –0
+</pre>
+<pre>
+7ff0 0000 0000 0000<sub>16</sub>   = Infinity
+fff0 0000 0000 0000<sub>16</sub>   = −Infinity
+7fff ffff ffff ffff<sub>16</sub>   = NaN
+</pre>
+<pre>
+3fd5 5555 5555 5555<sub>16</sub>   ≈ 1/3
+</pre>
+<p>By default, 1/3 rounds down, instead of up like <a href="Single_precision.html" class="mw-redirect" title="Single precision">single precision</a>, because of the odd number of bits in the significand.</p>
+<p>In more detail:</p>
+<pre>
+Given the hexadecimal representation 3FD5 5555 5555 5555<sub>16</sub>,
+  Sign = 0
+  Exponent = 3FD<sub>16</sub> = 1021
+  Exponent Bias = 1023 (constant value; see above)
+  Fraction = 5 5555 5555 5555<sub>16</sub>
+  Value = 2<sup>(Exponent − Exponent Bias)</sup> × 1.Fraction – Note that Fraction must not be converted to decimal here
+        = 2<sup>−2</sup> × (15 5555 5555 5555<sub>16</sub> × 2<sup>−52</sup>)
+        = 2<sup>−54</sup> × 15 5555 5555 5555<sub>16</sub>
+        = 0.333333333333333314829616256247390992939472198486328125
+        ≈ 1/3
+</pre>
+<h3><span class="mw-headline" id="Execution_speed_with_double-precision_arithmetic">Execution speed with double-precision arithmetic</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="../w/index1fc4.html?title=Double-precision_floating-point_format&amp;action=edit&amp;section=5" title="Edit section: Execution speed with double-precision arithmetic">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Using double precision floating-point variables and mathematical functions (e.g., sin, cos, atan2, log, exp and sqrt) are slower than working with their single precision counterparts. One area of computing where this is a particular issue is for parallel code running on GPUs. For example, when using <a href="Nvidia.html" title="Nvidia">NVIDIA</a>'s <a href="CUDA.html" title="CUDA">CUDA</a> platform, on video cards designed for gaming, calculations with double precision take 3 to 24 times longer to complete than calculations using <a href="Single-precision_floating-point_format.html" title="Single-precision floating-point format">single precision</a>.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4">[4]</a></sup></p>
+<h2><span class="mw-headline" id="Implementations">Implementations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="../w/index9e0a.html?title=Double-precision_floating-point_format&amp;action=edit&amp;section=6" title="Edit section: Implementations">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Doubles are implemented in many programming languages in different ways such as the following. On processors with only dynamic precision, such as <a href="X86.html" title="X86">x86</a> without <a href="SSE2.html" title="SSE2">SSE2</a> (or when SSE2 is not used, for compatibility purpose) and with extended precision used by default, software may have difficulties to fulfill some requirements.</p>
+<h3><span class="mw-headline" id="Lua">Lua</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="../w/indexb617.html?title=Double-precision_floating-point_format&amp;action=edit&amp;section=7" title="Edit section: Lua">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>In <a href="Lua_(programming_language).html" title="Lua (programming language)">Lua</a> version 5.2<sup id="cite_ref-5" class="reference"><a href="#cite_note-5">[5]</a></sup> and earlier, all arithmetic is done using double-precision floating-point arithmetic. Also, automatic type conversions between doubles and strings are provided.</p>
+<h3><span class="mw-headline" id="JavaScript">JavaScript</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="../w/index4374.html?title=Double-precision_floating-point_format&amp;action=edit&amp;section=8" title="Edit section: JavaScript">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>As specified by the <a href="ECMAScript.html" title="ECMAScript">ECMAScript</a> standard, all arithmetic in <a href="JavaScript_(programming_language).html" class="mw-redirect" title="JavaScript (programming language)">JavaScript</a> shall be done using double-precision floating-point arithmetic.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6">[6]</a></sup></p>
+<h3><span class="mw-headline" id="C_and_C.2B.2B">C and C++</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="../w/index671c.html?title=Double-precision_floating-point_format&amp;action=edit&amp;section=9" title="Edit section: C and C++">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>C and C++ offer a wide variety of <a href="C_data_types.html#Basic_types" title="C data types">arithmetic types</a>. Double precision is not required by the standards (except by the optional annex F of <a href="C99.html" title="C99">C99</a>, covering IEEE 754 arithmetic), but on most systems, the <code>double</code> type corresponds to double precision. However, on 32-bit x86 with extended precision by default, some compilers may not conform to the C standard and/or the arithmetic may suffer from double-rounding issues.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7">[7]</a></sup></p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="../w/indexc023.html?title=Double-precision_floating-point_format&amp;action=edit&amp;section=10" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="IEEE_floating_point.html" title="IEEE floating point">IEEE floating point</a>, IEEE standard for floating-point arithmetic (IEEE 754)</li>
+</ul>
+<h2><span class="mw-headline" id="Notes_and_references">Notes and references</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="../w/indexc5c9.html?title=Double-precision_floating-point_format&amp;action=edit&amp;section=11" title="Edit section: Notes and references">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-whyieee-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-whyieee_1-0">^</a></b></span> <span class="reference-text"><cite class="citation web">William Kahan (1 October 1997). <a rel="nofollow" class="external text" href="../../people.eecs.berkeley.edu/_wkahan/ieee754status/IEEE754.pdf">"Lecture Notes on the Status of IEEE Standard 754 for Binary Floating-Point Arithmetic"</a> <span style="font-size:85%;">(PDF)</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ADouble-precision+floating-point+format&amp;rft.au=William+Kahan&amp;rft.btitle=Lecture+Notes+on+the+Status+of+IEEE+Standard+754+for+Binary+Floating-Point+Arithmetic&amp;rft.date=1997-10-01&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fwww.cs.berkeley.edu%2F~wkahan%2Fieee754status%2FIEEE754.PDF&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="../../www.quadibloc.com/comp/cp0201.html">"Floating point formats"</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ADouble-precision+floating-point+format&amp;rft.btitle=Floating+point+formats&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fwww.quadibloc.com%2Fcomp%2Fcp0201.htm&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="../../perldoc.perl.org/functions/pack.html">"pack – convert a list into a binary representation"</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ADouble-precision+floating-point+format&amp;rft.btitle=pack+%93+convert+a+list+into+a+binary+representation&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fwww.perl.com%2Fdoc%2Fmanual%2Fhtml%2Fpod%2Fperlfunc%2Fpack.html&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external free" href="../../www.tomshardware.com/reviews/geforce-gtx-titan-gk110-review%2c3438-3.html">http://www.tomshardware.com/reviews/geforce-gtx-titan-gk110-review,3438-3.html</a></span></li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-5">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external free" href="../../www.lua.org/manual/5.2/manual.html">http://www.lua.org/manual/5.2/manual.html</a></span></li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-6">^</a></b></span> <span class="reference-text"><cite class="citation book"><a rel="nofollow" class="external text" href="../../www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262%205th%20edition%20December%202009.pdf"><i>ECMA-262 ECMAScript Language Specification</i></a> <span style="font-size:85%;">(PDF)</span> (5th ed.). Ecma International. p. 29, §8.5 <i>The Number Type</i>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ADouble-precision+floating-point+format&amp;rft.btitle=ECMA-262+ECMAScript+Language+Specification&amp;rft.edition=5th&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.ecma-international.org%2Fpublications%2Ffiles%2FECMA-ST-ARCH%2FECMA-262%25205th%2520edition%2520December%25202009.pdf&amp;rft.pages=p.+29%2C+%A78.5+%27%27The+Number+Type%27%27&amp;rft.pub=Ecma+International&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-7">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="../../gcc.gnu.org/bugzilla/show_bug1d56.html?id=323">GCC Bug 323 - optimized code gives strange floating point results</a></span></li>
+</ol>
+</div>
+<div role="navigation" class="navbox" aria-labelledby="Data_types" style="padding:3px">
+<table class="nowraplinks hlist collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit">
+<tr>
+<th scope="col" class="navbox-title" colspan="2">
+<div class="plainlinks hlist navbar mini">
+<ul>
+<li class="nv-view"><a href="Template_Data_types.html" title="Template:Data types"><abbr title="View this template" style=";;background:none transparent;border:none;">v</abbr></a></li>
+<li class="nv-talk"><a href="Template_talk_Data_types.html" title="Template talk:Data types"><abbr title="Discuss this template" style=";;background:none transparent;border:none;">t</abbr></a></li>
+<li class="nv-edit"><a class="external text" href="../w/index19fd.html?title=Template:Data_types&amp;action=edit"><abbr title="Edit this template" style=";;background:none transparent;border:none;">e</abbr></a></li>
+</ul>
+</div>
+<div id="Data_types" style="font-size:114%"><a href="Data_type.html" title="Data type">Data types</a></div>
+</th>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="Units_of_information.html" title="Units of information">Uninterpreted</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="Bit.html" title="Bit">Bit</a></li>
+<li><a href="Byte.html" title="Byte">Byte</a></li>
+<li><a href="Ternary_numeral_system.html" title="Ternary numeral system">Trit</a></li>
+<li><a href="Ternary_numeral_system.html#Tryte" title="Ternary numeral system">Tryte</a></li>
+<li><a href="Word_(computer_architecture).html" title="Word (computer architecture)">Word</a></li>
+<li><a href="Bit_array.html" title="Bit array">Bit array</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Numeric</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="Arbitrary-precision_arithmetic.html" title="Arbitrary-precision arithmetic">Arbitrary-precision or bignum</a></li>
+<li><a href="Complex_data_type.html" title="Complex data type">Complex</a></li>
+<li><a href="Decimal_data_type.html" title="Decimal data type">Decimal</a></li>
+<li><a href="Fixed-point_arithmetic.html" title="Fixed-point arithmetic">Fixed point</a></li>
+<li><a href="Floating_point.html" title="Floating point">Floating point</a>
+<ul>
+<li><strong class="selflink">Double precision</strong></li>
+<li><a href="Extended_precision.html" title="Extended precision">Extended precision</a></li>
+<li><a href="Half-precision_floating-point_format.html" title="Half-precision floating-point format">Half precision</a></li>
+<li><a href="Long_double.html" title="Long double">Long double</a></li>
+<li><a href="Minifloat.html" title="Minifloat">Minifloat</a></li>
+<li><a href="Octuple-precision_floating-point_format.html" title="Octuple-precision floating-point format">Octuple precision</a></li>
+<li><a href="Quadruple-precision_floating-point_format.html" title="Quadruple-precision floating-point format">Quadruple precision</a></li>
+<li><a href="Single-precision_floating-point_format.html" title="Single-precision floating-point format">Single precision</a></li>
+</ul>
+</li>
+<li><a href="Integer_(computer_science).html" title="Integer (computer science)">Integer</a>
+<ul>
+<li><a href="Signedness.html" title="Signedness">signedness</a></li>
+</ul>
+</li>
+<li><a href="Interval_arithmetic.html#Implementations" title="Interval arithmetic">Interval</a></li>
+<li><a href="Rational_data_type.html" title="Rational data type">Rational</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="Plain_text.html" title="Plain text">Text</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="Character_(computing).html" title="Character (computing)">Character</a></li>
+<li><a href="String_(computer_science).html" title="String (computer science)">String</a>
+<ul>
+<li><a href="Null-terminated_string.html" title="Null-terminated string">null-terminated</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="Pointer_(computer_programming).html" title="Pointer (computer programming)">Pointer</a></th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="Memory_address.html" title="Memory address">Address</a>
+<ul>
+<li><a href="Physical_address.html" title="Physical address">physical</a></li>
+<li><a href="Virtual_address_space.html" title="Virtual address space">virtual</a></li>
+</ul>
+</li>
+<li><a href="Reference_(computer_science).html" title="Reference (computer science)">Reference</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="Composite_data_type.html" title="Composite data type">Composite</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="Algebraic_data_type.html" title="Algebraic data type">Algebraic data type</a>
+<ul>
+<li><a href="Generalized_algebraic_data_type.html" title="Generalized algebraic data type">generalized</a></li>
+</ul>
+</li>
+<li><a href="Array_data_type.html" title="Array data type">Array</a></li>
+<li><a href="Associative_array" title="Associative array">Associative array</a></li>
+<li><a href="Class_(computer_programming).html" title="Class (computer programming)">Class</a></li>
+<li><a href="Dependent_type.html" title="Dependent type">Dependent</a></li>
+<li><a href="Intuitionistic_type_theory.html#Equality_type" title="Intuitionistic type theory">Equality</a></li>
+<li><a href="Inductive_type.html" title="Inductive type">Inductive</a></li>
+<li><a href="List_(abstract_data_type).html" title="List (abstract data type)">List</a></li>
+<li><a href="Object_(computer_science).html" title="Object (computer science)">Object</a>
+<ul>
+<li><a href="Metaobject.html" title="Metaobject">metaobject</a></li>
+</ul>
+</li>
+<li><a href="Option_type.html" title="Option type">Option type</a></li>
+<li><a href="Product_type.html" title="Product type">Product</a></li>
+<li><a href="Record_(computer_science).html" title="Record (computer science)">Record</a></li>
+<li><a href="Set_(abstract_data_type).html" title="Set (abstract data type)">Set</a></li>
+<li><a href="Union_type.html" title="Union type">Union</a>
+<ul>
+<li><a href="Tagged_union.html" title="Tagged union">tagged</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Other</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="Boolean_data_type.html" title="Boolean data type">Boolean</a></li>
+<li><a href="Bottom_type.html" title="Bottom type">Bottom type</a></li>
+<li><a href="Container_(abstract_data_type).html" title="Container (abstract data type)">Collection</a></li>
+<li><a href="Enumerated_type.html" title="Enumerated type">Enumerated type</a></li>
+<li><a href="Exception_handling.html" title="Exception handling">Exception</a></li>
+<li><a href="Function_type.html" title="Function type">Function type</a></li>
+<li><a href="Opaque_data_type.html" title="Opaque data type">Opaque data type</a></li>
+<li><a href="Recursive_data_type.html" title="Recursive data type">Recursive data type</a></li>
+<li><a href="Semaphore_(programming).html" title="Semaphore (programming)">Semaphore</a></li>
+<li><a href="Stream_(computing).html" title="Stream (computing)">Stream</a></li>
+<li><a href="Top_type.html" title="Top type">Top type</a></li>
+<li><a href="Type_class.html" title="Type class">Type class</a></li>
+<li><a href="Unit_type.html" title="Unit type">Unit type</a></li>
+<li><a href="Void_type.html" title="Void type">Void</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Related<br />
+topics</th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="Abstract_data_type.html" title="Abstract data type">Abstract data type</a></li>
+<li><a href="Data_structure.html" title="Data structure">Data structure</a></li>
+<li><a href="Generic_programming.html" title="Generic programming">Generic</a></li>
+<li><a href="Kind_(type_theory).html" title="Kind (type theory)">Kind</a>
+<ul>
+<li><a href="Metaclass.html" title="Metaclass">metaclass</a></li>
+</ul>
+</li>
+<li><a href="Parametric_polymorphism.html" title="Parametric polymorphism">Parametric polymorphism</a></li>
+<li><a href="Primitive_data_type.html" title="Primitive data type">Primitive data type</a></li>
+<li><a href="Protocol_(object-oriented_programming).html" title="Protocol (object-oriented programming)">Protocol</a>
+<ul>
+<li><a href="Interface_(computing).html#Software_interfaces_in_object-oriented_languages" title="Interface (computing)">interface</a></li>
+</ul>
+</li>
+<li><a href="Subtyping.html" title="Subtyping">Subtyping</a></li>
+<li><a href="Type_constructor.html" title="Type constructor">Type constructor</a></li>
+<li><a href="Type_conversion.html" title="Type conversion">Type conversion</a></li>
+<li><a href="Type_system.html" title="Type system">Type system</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<td class="navbox-abovebelow" colspan="2">
+<div>See also <a href="Template_Information_units.html" title="Template:Information units">platform-dependent and independent units of information</a></div>
+</td>
+</tr>
+</table>
+</div>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1212
+Cached time: 20161213002458
+Cache expiry: 2592000
+Dynamic content: false
+CPU time usage: 0.140 seconds
+Real time usage: 0.212 seconds
+Preprocessor visited node count: 583/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 30175/2097152 bytes
+Template argument size: 357/2097152 bytes
+Highest expansion depth: 14/40
+Expensive parser function count: 0/500
+Lua time usage: 0.041/10.000 seconds
+Lua memory usage: 2.25 MB/50 MB
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  121.175      1 - -total
+ 44.92%   54.437      1 - Template:Reflist
+ 33.11%   40.124      3 - Template:Cite_web
+ 21.86%   26.491      1 - Template:Floating-point
+ 20.38%   24.693      1 - Template:Sidebar
+ 11.95%   14.476      1 - Template:Transcluded_section
+ 10.62%   12.872      1 - Template:Hatnote
+  8.50%   10.302      1 - Template:Data_types
+  6.83%    8.273      1 - Template:Navbox
+  5.69%    6.890      1 - Template:Ifeq
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:53734-0!*!0!!en!4!*!math=5 and timestamp 20161213002458 and revision id 753570206
+ -->
+<noscript><img src="http://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Double-precision_floating-point_format&amp;oldid=753570206">https://en.wikipedia.org/w/index.php?title=Double-precision_floating-point_format&amp;oldid=753570206</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Help_Category.html" title="Help:Category">Categories</a>: <ul><li><a href="Category_Binary_arithmetic.html" title="Category:Binary arithmetic">Binary arithmetic</a></li><li><a href="Category_Computer_arithmetic.html" title="Category:Computer arithmetic">Computer arithmetic</a></li><li><a href="Category_Floating_point_types.html" title="Category:Floating point types">Floating point types</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-anonuserpage">Not logged in</li><li id="pt-anontalk"><a href="https://en.wikipedia.org/wiki/Special:MyTalk" title="Discussion about edits from this IP address [n]" accesskey="n">Talk</a></li><li id="pt-anoncontribs"><a href="https://en.wikipedia.org/wiki/Special:MyContributions" title="A list of edits made from this IP address [y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="../w/index034c.html?title=Special:CreateAccount&amp;returnto=Double-precision+floating-point+format" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="../w/index0347.html?title=Special:UserLogin&amp;returnto=Double-precision+floating-point+format" title="You're encouraged to log in; however, it's not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Double-precision_floating-point_format.html"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="Talk_Double-precision_floating-point_format.html"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Double-precision_floating-point_format.html" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="../w/index9ae4.html?title=Double-precision_floating-point_format&amp;action=edit"  title="Edit this page [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="../w/indexc136.html?title=Double-precision_floating-point_format&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://en.wikipedia.org/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search Wikipedia" title="Search Wikipedia [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-contents"><a href="Portal_Contents.html" title="Guides to browsing Wikipedia">Contents</a></li><li id="n-featuredcontent"><a href="Portal_Featured_content.html" title="Featured content – the best of Wikipedia">Featured content</a></li><li id="n-currentevents"><a href="Portal_Current_events.html" title="Find background information on current events">Current events</a></li><li id="n-randompage"><a href="https://en.wikipedia.org/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li><li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li><li id="n-shoplink"><a href="../../shop.wikimedia.org/index.html" title="Visit the Wikipedia store">Wikipedia store</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-help"><a href="Help_Contents.html" title="Guidance on how to use and edit Wikipedia">Help</a></li><li id="n-aboutsite"><a href="Wikipedia_About.html" title="Find out about Wikipedia">About Wikipedia</a></li><li id="n-portal"><a href="Wikipedia_Community_portal.html" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="https://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-contactpage"><a href="Wikipedia_Contact_us.html" title="How to contact Wikipedia">Contact page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://en.wikipedia.org/wiki/Special:WhatLinksHere/Double-precision_floating-point_format" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.wikipedia.org/wiki/Special:RecentChangesLinked/Double-precision_floating-point_format" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="Wikipedia_File_Upload_Wizard.html" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="https://en.wikipedia.org/w/index.php?title=Double-precision_floating-point_format&amp;oldid=753570206" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="../w/index35f5.html?title=Double-precision_floating-point_format&amp;action=info" title="More information about this page">Page information</a></li><li id="t-wikibase"><a href="../../www.wikidata.org/wiki/Q1243369.html" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li><li id="t-cite"><a href="../w/indexcf93.html?title=Special:CiteThisPage&amp;page=Double-precision_floating-point_format&amp;id=753570206" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+						<li id="coll-create_a_book"><a href="../w/index3371.html?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Double-precision+floating-point+format">Create a book</a></li><li id="coll-download-as-rdf2latex"><a href="https://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Double-precision+floating-point+format&amp;returnto=Double-precision+floating-point+format&amp;oldid=753570206&amp;writer=rdf2latex">Download as PDF</a></li><li id="t-print"><a href="https://en.wikipedia.org/w/index.php?title=Double-precision_floating-point_format&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+						<li class="interlanguage-link interwiki-ca"><a href="../../ca.wikipedia.org/wiki/Precisi%c3%b3_doble.html" title="Precisió doble – Catalan" lang="ca" hreflang="ca" class="interlanguage-link-target">Català</a></li><li class="interlanguage-link interwiki-de"><a href="../../de.wikipedia.org/wiki/Doppelte_Genauigkeit.html" title="Doppelte Genauigkeit – German" lang="de" hreflang="de" class="interlanguage-link-target">Deutsch</a></li><li class="interlanguage-link interwiki-ja"><a href="../../ja.wikipedia.org/wiki/%e5%80%8d%e7%b2%be%e5%ba%a6%e6%b5%ae%e5%8b%95%e5%b0%8f%e6%95%b0%e7%82%b9%e6%95%b0.html" title="倍精度浮動小数点数 – Japanese" lang="ja" hreflang="ja" class="interlanguage-link-target">日本語</a></li><li class="interlanguage-link interwiki-pt"><a href="../../pt.wikipedia.org/wiki/Dupla_precis%c3%a3o_no_formato_de_ponto_flutuante.html" title="Dupla precisão no formato de ponto flutuante – Portuguese" lang="pt" hreflang="pt" class="interlanguage-link-target">Português</a></li><li class="interlanguage-link interwiki-ru"><a href="../../ru.wikipedia.org/wiki/%d0%a7%d0%b8%d1%81%d0%bb%d0%be_%d0%b4%d0%b2%d0%be%d0%b9%d0%bd%d0%be%d0%b9_%d1%82%d0%be%d1%87%d0%bd%d0%be%d1%81%d1%82%d0%b8.html" title="Число двойной точности – Russian" lang="ru" hreflang="ru" class="interlanguage-link-target">Русский</a></li><li class="interlanguage-link interwiki-sq"><a href="../../sq.wikipedia.org/wiki/Double.html" title="Double – Albanian" lang="sq" hreflang="sq" class="interlanguage-link-target">Shqip</a></li><li class="interlanguage-link interwiki-sr"><a href="../../sr.wikipedia.org/wiki/%d0%94%d0%b2%d0%be%d1%81%d1%82%d1%80%d1%83%d0%ba%d0%b0_%d1%82%d0%b0%d1%87%d0%bd%d0%be%d1%81%d1%82.html" title="Двострука тачност – Serbian" lang="sr" hreflang="sr" class="interlanguage-link-target">Српски / srpski</a></li><li class="interlanguage-link interwiki-zh"><a href="../../zh.wikipedia.org/wiki/%e9%9b%99%e7%b2%be%e5%ba%a6%e6%b5%ae%e9%bb%9e%e6%95%b8.html" title="雙精度浮點數 – Chinese" lang="zh" hreflang="zh" class="interlanguage-link-target">中文</a></li><li class="uls-p-lang-dummy"><a href="#"></a></li>					</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a href="../../www.wikidata.org/wiki/Q1243369.html#sitelinks-wikipedia" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 7 December 2016, at 23:27.</li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="Wikipedia_Text_of_Creative_Commons_Attribution-ShareAlike_3.html">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="../../creativecommons.org/licenses/by-sa/3.0/index.html" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="../../wikimediafoundation.org/wiki/Terms_of_Use.html">Terms of Use</a> and <a href="../../wikimediafoundation.org/wiki/Privacy_policy.html">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="../../www.wikimediafoundation.org/index.html">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="../../wikimediafoundation.org/wiki/Privacy_policy.html" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="Wikipedia_About.html" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="Wikipedia_General_disclaimer.html" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="Wikipedia_Contact_us.html">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-cookiestatement"><a href="../../wikimediafoundation.org/wiki/Cookie_statement.html">Cookie statement</a></li>
+											<li id="footer-places-mobileview"><a href="../../en.m.wikipedia.org/wiki/Double-precision_floating-point_format.html?title=Double-precision_floating-point_format&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="../../www.wikimediafoundation.org/index.html"><img src="../static/images/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="../../www.mediawiki.org/index.html"><img src="../static/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":65,"wgHostname":"mw1185"});});</script>
+	</body>
+
+<!-- Mirrored from en.wikipedia.org/wiki/Double_precision_floating-point_format by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 15 Dec 2016 04:07:26 GMT -->
+</html>

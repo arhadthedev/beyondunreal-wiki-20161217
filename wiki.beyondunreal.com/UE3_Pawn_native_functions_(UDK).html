@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:Pawn_native_functions_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:37:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:Pawn native functions (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_Pawn_native_functions_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:Pawn_native_functions_(UDK)","wgTitle":"Pawn native functions (UDK)","wgCurRevisionId":41303,"wgRevisionId":41303,"wgArticleId":26592,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:Pawn_native_functions_(UDK)","wgRelevantArticleId":26592,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_Pawn_native_functions_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Worst-case scenario: the UEd Goblin wipes the map and burns down your house.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:Pawn native functions (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a> &gt;&gt;&#160;<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a> <i>(native functions)</i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Native_functions"><span class="tocnumber">1</span> <span class="toctext">Native functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#GetPawnViewLocation"><span class="tocnumber">1.1</span> <span class="toctext">GetPawnViewLocation</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#GetViewRotation"><span class="tocnumber">1.2</span> <span class="toctext">GetViewRotation</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#AddAnimSets"><span class="tocnumber">1.3</span> <span class="toctext">AddAnimSets</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#AddGoalEvaluator"><span class="tocnumber">1.4</span> <span class="toctext">AddGoalEvaluator</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#AddPathConstraint"><span class="tocnumber">1.5</span> <span class="toctext">AddPathConstraint</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#AdjustDestination"><span class="tocnumber">1.6</span> <span class="toctext">AdjustDestination</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#CheckDesiredRotation"><span class="tocnumber">1.7</span> <span class="toctext">CheckDesiredRotation</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#ClearConstraints"><span class="tocnumber">1.8</span> <span class="toctext">ClearConstraints</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#ClearPathStep"><span class="tocnumber">1.9</span> <span class="toctext">ClearPathStep</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#DrawPathStep"><span class="tocnumber">1.10</span> <span class="toctext">DrawPathStep</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#ForceCrouch"><span class="tocnumber">1.11</span> <span class="toctext">ForceCrouch</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#GetBestAnchor"><span class="tocnumber">1.12</span> <span class="toctext">GetBestAnchor</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#GetBoundingCylinder"><span class="tocnumber">1.13</span> <span class="toctext">GetBoundingCylinder</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#GetFallDuration"><span class="tocnumber">1.14</span> <span class="toctext">GetFallDuration</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#GetTeamNum"><span class="tocnumber">1.15</span> <span class="toctext">GetTeamNum</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#GetVehicleBase"><span class="tocnumber">1.16</span> <span class="toctext">GetVehicleBase</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#IncrementPathChild"><span class="tocnumber">1.17</span> <span class="toctext">IncrementPathChild</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#IncrementPathStep"><span class="tocnumber">1.18</span> <span class="toctext">IncrementPathStep</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#InitRagdoll"><span class="tocnumber">1.19</span> <span class="toctext">InitRagdoll</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#IsAliveAndWell"><span class="tocnumber">1.20</span> <span class="toctext">IsAliveAndWell</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#IsDesiredRotationInUse"><span class="tocnumber">1.21</span> <span class="toctext">IsDesiredRotationInUse</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#IsDesiredRotationLocked"><span class="tocnumber">1.22</span> <span class="toctext">IsDesiredRotationLocked</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#IsHumanControlled"><span class="tocnumber">1.23</span> <span class="toctext">IsHumanControlled</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#IsInvisible"><span class="tocnumber">1.24</span> <span class="toctext">IsInvisible</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#IsLocallyControlled"><span class="tocnumber">1.25</span> <span class="toctext">IsLocallyControlled</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#IsPlayerPawn"><span class="tocnumber">1.26</span> <span class="toctext">IsPlayerPawn</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#IsValidEnemyTargetFor"><span class="tocnumber">1.27</span> <span class="toctext">IsValidEnemyTargetFor</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#IsValidTargetFor"><span class="tocnumber">1.28</span> <span class="toctext">IsValidTargetFor</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#LockDesiredRotation"><span class="tocnumber">1.29</span> <span class="toctext">LockDesiredRotation</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#MAT_BeginAnimControl"><span class="tocnumber">1.30</span> <span class="toctext">MAT_BeginAnimControl</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#MAT_FinishAnimControl"><span class="tocnumber">1.31</span> <span class="toctext">MAT_FinishAnimControl</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#MAT_SetAnimPosition"><span class="tocnumber">1.32</span> <span class="toctext">MAT_SetAnimPosition</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#MAT_SetAnimWeights"><span class="tocnumber">1.33</span> <span class="toctext">MAT_SetAnimWeights</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#MAT_SetMorphWeight"><span class="tocnumber">1.34</span> <span class="toctext">MAT_SetMorphWeight</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#MAT_SetSkelControlScale"><span class="tocnumber">1.35</span> <span class="toctext">MAT_SetSkelControlScale</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#ReachedDesiredRotation"><span class="tocnumber">1.36</span> <span class="toctext">ReachedDesiredRotation</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#ReachedDestination"><span class="tocnumber">1.37</span> <span class="toctext">ReachedDestination</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#ReachedPoint"><span class="tocnumber">1.38</span> <span class="toctext">ReachedPoint</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#ResetDesiredRotation"><span class="tocnumber">1.39</span> <span class="toctext">ResetDesiredRotation</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#SetAnchor"><span class="tocnumber">1.40</span> <span class="toctext">SetAnchor</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#SetDesiredRotation"><span class="tocnumber">1.41</span> <span class="toctext">SetDesiredRotation</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#SetPushesRigidBodies"><span class="tocnumber">1.42</span> <span class="toctext">SetPushesRigidBodies</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="#SetRemoteViewPitch"><span class="tocnumber">1.43</span> <span class="toctext">SetRemoteViewPitch</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="#SuggestJumpVelocity"><span class="tocnumber">1.44</span> <span class="toctext">SuggestJumpVelocity</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href="#TermRagdoll"><span class="tocnumber">1.45</span> <span class="toctext">TermRagdoll</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#UpdateAnimSetList"><span class="tocnumber">1.46</span> <span class="toctext">UpdateAnimSetList</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="#ValidAnchor"><span class="tocnumber">1.47</span> <span class="toctext">ValidAnchor</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>;Other member categories for this class::<span><a href="UE3_Pawn_events_(UDK).html" title="UE3:Pawn events (UDK)">events</a></span>, <span><a href="UE3_Pawn_instance_functions_(UDK).html" title="UE3:Pawn instance functions (UDK)">instance functions</a></span>, <span><a href="UE3_Pawn_internal_variables_(UDK).html" title="UE3:Pawn internal variables (UDK)">internal variables</a></span></p>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Native_functions">Native functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=1" title="Edit section: Native functions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="GetPawnViewLocation">GetPawnViewLocation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=2" title="Edit section: GetPawnViewLocation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated native event <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>GetPawnViewLocation</b> ()</div>
+<p>returns the Eye location of the Pawn.</p>
+<p><b>Returns:</b></p>
+<dl>
+<dd>Pawn's eye location</dd>
+</dl>
+<h4><span class="mw-headline" id="GetViewRotation">GetViewRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=3" title="Edit section: GetViewRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated native event <a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a>&#160;<b>GetViewRotation</b> ()</div>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the rotation the Pawn is looking</dd>
+</dl>
+<h4><span class="mw-headline" id="AddAnimSets">AddAnimSets</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=4" title="Edit section: AddAnimSets">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated native final function <b>AddAnimSets</b> (const&#160;out&#160;<a href="Array.html" title="Array">array</a>&lt;<a href="UE3_AnimSet_(UDK).html" title="UE3:AnimSet (UDK)">AnimSet</a>&gt;&#160;<b>CustomAnimSets</b>)</div>
+<p>Add a given list of anim sets on the top of the list (so they override the other ones !! Only use within BuildScriptAnimSetList()&#160;!!</p>
+<h4><span class="mw-headline" id="AddGoalEvaluator">AddGoalEvaluator</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=5" title="Edit section: AddGoalEvaluator">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>AddGoalEvaluator</b> (<a href="UE3_PathGoalEvaluator_(UDK).html" title="UE3:PathGoalEvaluator (UDK)">PathGoalEvaluator</a>&#160;<b>Evaluator</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="AddPathConstraint">AddPathConstraint</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=6" title="Edit section: AddPathConstraint">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>AddPathConstraint</b> (<a href="UE3_PathConstraint_(UDK).html" title="UE3:PathConstraint (UDK)">PathConstraint</a>&#160;<b>Constraint</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="AdjustDestination">AdjustDestination</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=7" title="Edit section: AdjustDestination">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final native virtual function <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>AdjustDestination</b> (<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>GoalActor</b>, optional&#160;<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>Dest</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="CheckDesiredRotation">CheckDesiredRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=8" title="Edit section: CheckDesiredRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <b>CheckDesiredRotation</b> ()</div>
+<p>CheckDesiredRotation function Check to see if DesiredRotation is met, and it need to be clear or not This is called by physicsRotation to make sure it needs to be cleared</p>
+<h4><span class="mw-headline" id="ClearConstraints">ClearConstraints</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=9" title="Edit section: ClearConstraints">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>ClearConstraints</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ClearPathStep">ClearPathStep</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=10" title="Edit section: ClearPathStep">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>ClearPathStep</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="DrawPathStep">DrawPathStep</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=11" title="Edit section: DrawPathStep">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>DrawPathStep</b> (<a href="UE3_Canvas_(UDK).html" title="UE3:Canvas (UDK)">Canvas</a>&#160;<b>C</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ForceCrouch">ForceCrouch</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=12" title="Edit section: ForceCrouch">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>ForceCrouch</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetBestAnchor">GetBestAnchor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=13" title="Edit section: GetBestAnchor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="UE3_NavigationPoint_(UDK).html" title="UE3:NavigationPoint (UDK)">NavigationPoint</a>&#160;<b>GetBestAnchor</b> (<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>TestActor</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>TestLocation</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bStartPoint</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bOnlyCheckVisible</b>, out&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>out_Dist</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetBoundingCylinder">GetBoundingCylinder</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=14" title="Edit section: GetBoundingCylinder">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>GetBoundingCylinder</b> (out&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>CollisionRadius</b>, out&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>CollisionHeight</b>) const</div>
+<p><b>Overrides:</b> <a href="UE3_Actor_native_functions_(UDK).html#GetBoundingCylinder" title="UE3:Actor native functions (UDK)">Actor.GetBoundingCylinder</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetFallDuration">GetFallDuration</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=15" title="Edit section: GetFallDuration">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>GetFallDuration</b> ()</div>
+<p>GetFallDuration returns time before impact if pawn falls from current position with current velocity</p>
+<h4><span class="mw-headline" id="GetTeamNum">GetTeamNum</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=16" title="Edit section: GetTeamNum">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated native function <a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>GetTeamNum</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_Actor_native_functions_(UDK).html#GetTeamNum" title="UE3:Actor native functions (UDK)">Actor.GetTeamNum</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="GetVehicleBase">GetVehicleBase</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=17" title="Edit section: GetVehicleBase">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="UE3_Vehicle_(UDK).html" title="UE3:Vehicle (UDK)">Vehicle</a>&#160;<b>GetVehicleBase</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="IncrementPathChild">IncrementPathChild</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=18" title="Edit section: IncrementPathChild">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>IncrementPathChild</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>Cnt</b>, <a href="UE3_Canvas_(UDK).html" title="UE3:Canvas (UDK)">Canvas</a>&#160;<b>C</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="IncrementPathStep">IncrementPathStep</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=19" title="Edit section: IncrementPathStep">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>IncrementPathStep</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>Cnt</b>, <a href="UE3_Canvas_(UDK).html" title="UE3:Canvas (UDK)">Canvas</a>&#160;<b>C</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="InitRagdoll">InitRagdoll</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=20" title="Edit section: InitRagdoll">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>InitRagdoll</b> ()</div>
+<p>Does the following: - Assign the SkeletalMeshComponent 'Mesh' to the CollisionComponent - Call InitArticulated on the SkeletalMeshComponent. - Change the physics mode to PHYS_RigidBody</p>
+<h4><span class="mw-headline" id="IsAliveAndWell">IsAliveAndWell</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=21" title="Edit section: IsAliveAndWell">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final virtual simulated native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsAliveAndWell</b> () const</div>
+<p>Returns TRUE if Pawn is alive and doing well</p>
+<h4><span class="mw-headline" id="IsDesiredRotationInUse">IsDesiredRotationInUse</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=22" title="Edit section: IsDesiredRotationInUse">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsDesiredRotationInUse</b> ()</div>
+<p>IsDesiredRotationInUse() See if DesiredRotation is used by somebody</p>
+<h4><span class="mw-headline" id="IsDesiredRotationLocked">IsDesiredRotationLocked</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=23" title="Edit section: IsDesiredRotationLocked">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsDesiredRotationLocked</b> ()</div>
+<p>IsDesiredRotationLocked() See if DesiredRotation is locked by somebody</p>
+<h4><span class="mw-headline" id="IsHumanControlled">IsHumanControlled</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=24" title="Edit section: IsHumanControlled">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated final native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsHumanControlled</b> (optional&#160;<a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>PawnController</b>)</div>
+<p>IsHumanControlled()</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>PawnController</i> - optional parameter so you can pass a controller that is associated with this pawn but is not attached to it</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if controlled by a real live human on the local machine. On client, only local player's pawn returns true</dd>
+</dl>
+<h4><span class="mw-headline" id="IsInvisible">IsInvisible</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=25" title="Edit section: IsInvisible">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsInvisible</b> ()</div>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if pawn is invisible to AI</dd>
+</dl>
+<h4><span class="mw-headline" id="IsLocallyControlled">IsLocallyControlled</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=26" title="Edit section: IsLocallyControlled">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsLocallyControlled</b> (optional&#160;<a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>PawnController</b>)</div>
+<p>IsLocallyControlled()</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>PawnController</i> - optional parameter so you can pass a controller that is associated with this pawn but is not attached to it</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if controlled by local (not network) player</dd>
+</dl>
+<h4><span class="mw-headline" id="IsPlayerPawn">IsPlayerPawn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=27" title="Edit section: IsPlayerPawn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsPlayerPawn</b> () const</div>
+<p>IsPlayerPawn() return true if controlled by a Player (AI or human) on local machine (any controller on server, localclient's pawn on client)</p>
+<h4><span class="mw-headline" id="IsValidEnemyTargetFor">IsValidEnemyTargetFor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=28" title="Edit section: IsValidEnemyTargetFor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsValidEnemyTargetFor</b> (const&#160;<a href="UE3_PlayerReplicationInfo_(UDK).html" title="UE3:PlayerReplicationInfo (UDK)">PlayerReplicationInfo</a>&#160;<b>PRI</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bNoPRIisEnemy</b>)</div>
+<p>returns if we are a valid enemy for PRI checks things like whether we're alive, teammates, etc works on clients and servers</p>
+<h4><span class="mw-headline" id="IsValidTargetFor">IsValidTargetFor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=29" title="Edit section: IsValidTargetFor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsValidTargetFor</b> (const&#160;<a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>C</b>)</div>
+<p>returns if we are a valid enemy for C checks things like whether we're alive, teammates, etc server only; always returns false on clients obsolete - use IsValidEnemyTargetFor() instead!</p>
+<h4><span class="mw-headline" id="LockDesiredRotation">LockDesiredRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=30" title="Edit section: LockDesiredRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <b>LockDesiredRotation</b> (<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>Lock</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>InUnlockWhenReached</b>)</div>
+<p>LockDesiredRotation function</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>Lock</i> - Lock or Unlock CurrentDesiredRotation</li>
+<li><i>InUnlockWhenReached</i> - Unlock when reached desired rotation. This is only valid when Lock = true</li>
+</ul>
+<h4><span class="mw-headline" id="MAT_BeginAnimControl">MAT_BeginAnimControl</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=31" title="Edit section: MAT BeginAnimControl">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>MAT_BeginAnimControl</b> (<a href="UE3_InterpGroup_(UDK).html" title="UE3:InterpGroup (UDK)">InterpGroup</a>&#160;<b>InInterpGroup</b>)</div>
+<p>Start AnimControl. Add required AnimSets.</p>
+<h4><span class="mw-headline" id="MAT_FinishAnimControl">MAT_FinishAnimControl</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=32" title="Edit section: MAT FinishAnimControl">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>MAT_FinishAnimControl</b> (<a href="UE3_InterpGroup_(UDK).html" title="UE3:InterpGroup (UDK)">InterpGroup</a>&#160;<b>InInterpGroup</b>)</div>
+<p>End AnimControl. Release required AnimSets</p>
+<h4><span class="mw-headline" id="MAT_SetAnimPosition">MAT_SetAnimPosition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=33" title="Edit section: MAT SetAnimPosition">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>MAT_SetAnimPosition</b> (<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>SlotName</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ChannelIndex</b>, <a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>InAnimSeqName</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>InPosition</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bFireNotifies</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bLooping</b>)</div>
+<p>Update AnimTree from track info</p>
+<h4><span class="mw-headline" id="MAT_SetAnimWeights">MAT_SetAnimWeights</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=34" title="Edit section: MAT SetAnimWeights">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>MAT_SetAnimWeights</b> (<a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Actor_structs_(UDK).html#AnimSlotInfo" title="UE3:Actor structs (UDK)">Actor.AnimSlotInfo</a>&gt;&#160;<b>SlotInfos</b>)</div>
+<p>Update AnimTree from track weights</p>
+<h4><span class="mw-headline" id="MAT_SetMorphWeight">MAT_SetMorphWeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=35" title="Edit section: MAT SetMorphWeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>MAT_SetMorphWeight</b> (<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>MorphNodeName</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>MorphWeight</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="MAT_SetSkelControlScale">MAT_SetSkelControlScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=36" title="Edit section: MAT SetSkelControlScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>MAT_SetSkelControlScale</b> (<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>SkelControlName</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>Scale</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ReachedDesiredRotation">ReachedDesiredRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=37" title="Edit section: ReachedDesiredRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final virtual function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ReachedDesiredRotation</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ReachedDestination">ReachedDestination</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=38" title="Edit section: ReachedDestination">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ReachedDestination</b> (<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>Goal</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ReachedPoint">ReachedPoint</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=39" title="Edit section: ReachedPoint">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ReachedPoint</b> (<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>Point</b>, <a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>NewAnchor</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ResetDesiredRotation">ResetDesiredRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=40" title="Edit section: ResetDesiredRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <b>ResetDesiredRotation</b> ()</div>
+<p>ResetDesiredRotation function Clear RotationRate/Flag to go back to default behavior Unless it's locked.</p>
+<h4><span class="mw-headline" id="SetAnchor">SetAnchor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=41" title="Edit section: SetAnchor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>SetAnchor</b> (<a href="UE3_NavigationPoint_(UDK).html" title="UE3:NavigationPoint (UDK)">NavigationPoint</a>&#160;<b>NewAnchor</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SetDesiredRotation">SetDesiredRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=42" title="Edit section: SetDesiredRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>SetDesiredRotation</b> (<a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a>&#160;<b>TargetDesiredRotation</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>InLockDesiredRotation</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>InUnlockWhenReached</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>InterpolationTime</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SetPushesRigidBodies">SetPushesRigidBodies</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=43" title="Edit section: SetPushesRigidBodies">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>SetPushesRigidBodies</b> (<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>NewPush</b>)</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="SetRemoteViewPitch">SetRemoteViewPitch</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=44" title="Edit section: SetRemoteViewPitch">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <b>SetRemoteViewPitch</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>NewRemoteViewPitch</b>)</div>
+<p>Set Pawn ViewPitch, so we can see where remote clients are looking.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>NewRemoteViewPitch</i> - Pitch component to replicate to remote (non owned) clients.</li>
+</ul>
+<h4><span class="mw-headline" id="SuggestJumpVelocity">SuggestJumpVelocity</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=45" title="Edit section: SuggestJumpVelocity">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>SuggestJumpVelocity</b> (out&#160;<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>JumpVelocity</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>Destination</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>Start</b>)</div>
+<p>SuggestJumpVelocity() returns true if succesful jump from start to destination is possible returns a suggested initial falling velocity in JumpVelocity Uses GroundSpeed and JumpZ as limits</p>
+<h4><span class="mw-headline" id="TermRagdoll">TermRagdoll</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=46" title="Edit section: TermRagdoll">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>TermRagdoll</b> ()</div>
+<p>the opposite of InitRagdoll(); resets CollisionComponent to the default, sets physics to PHYS_Falling, and calls TermArticulated() on the SkeletalMeshComponent</p>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true on success, false if there is no Mesh, the Mesh is not in ragdoll, or we're otherwise not able to terminate the physics</dd>
+</dl>
+<h4><span class="mw-headline" id="UpdateAnimSetList">UpdateAnimSetList</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=47" title="Edit section: UpdateAnimSetList">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated native final function <b>UpdateAnimSetList</b> ()</div>
+<p>Update list of AnimSets for this Pawn</p>
+<h4><span class="mw-headline" id="ValidAnchor">ValidAnchor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)?section=48" title="Edit section: ValidAnchor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>ValidAnchor</b> ()</div>
+<p>Is the current anchor valid?</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.321 seconds
+Real time usage: 0.339 seconds
+Preprocessor visited node count: 2162/1000000
+Preprocessor generated node count: 4685/1000000
+Post‐expand include size: 20267/2097152 bytes
+Template argument size: 7308/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  227.232      1 - -total
+ 53.27%  121.047     47 - Template:Code
+ 33.17%   75.363     32 - Template:Samegame
+ 30.89%   70.183      1 - Template:Infobox_class_part
+ 29.14%   66.209      1 - Template:Infobox_class_part/core
+ 26.65%   60.551     13 - Template:Tl
+ 23.67%   53.794     19 - Template:Cl
+  6.33%   14.382      1 - Template:Ch
+  2.87%    6.518      1 - Template:Autogenerated
+  1.83%    4.154      1 - Template:Ambox
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:26592-0!*!*!*!*!*!* and timestamp 20161215182413 and revision id 41303
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:Pawn_native_functions_(UDK)?oldid=41303">https://wiki.beyondunreal.com/UE3:Pawn_native_functions_(UDK)?oldid=41303</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_Pawn_native_functions_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:Pawn_native_functions_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:Pawn_native_functions_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:Pawn_native_functions_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3APawn+native+functions+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3APawn+native+functions+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:Pawn_native_functions_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:Pawn_native_functions_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:Pawn_native_functions_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:Pawn_native_functions_(UDK)?oldid=41303" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:Pawn_native_functions_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 07:42, 17 January 2010.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":148});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:Pawn_native_functions_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:37:39 GMT -->
+</html>

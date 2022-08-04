@@ -1,0 +1,25 @@
+﻿/**
+ * This class allows the designer to play a sound cue using a UISoundCue alias name.
+ *
+ * Copyright 1998-2007 Epic Games, Inc. All Rights Reserved
+ */
+class UIAction_PlayUISoundCue extends UIAction
+	native(inherit);
+
+
+
+var()		string			SoundCueName;
+
+DefaultProperties
+{
+	ObjName="Play UI Sound Cue"
+	ObjCategory="Sound"
+
+	bAutoActivateOutputLinks=false
+	bAutoTargetOwner=true
+
+	VariableLinks.Add((ExpectedType=class'SeqVar_String',LinkDesc="Cue Name",PropertyName=SoundCueName))
+
+	OutputLinks(0)=(LinkDesc="Success")
+	OutputLinks(1)=(LinkDesc="Failure")
+}

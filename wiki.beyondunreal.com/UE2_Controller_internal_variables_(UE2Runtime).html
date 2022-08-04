@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE2:Controller_internal_variables_(UE2Runtime) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:43:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE2:Controller internal variables (UE2Runtime) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE2_Controller_internal_variables_(UE2Runtime).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE2","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":104,"wgPageName":"UE2:Controller_internal_variables_(UE2Runtime)","wgTitle":"Controller internal variables (UE2Runtime)","wgCurRevisionId":17886,"wgRevisionId":17886,"wgArticleId":10160,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE2:Controller_internal_variables_(UE2Runtime)","wgRelevantArticleId":10160,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-104 ns-subject page-UE2_Controller_internal_variables_UE2Runtime skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Cogito, ergo sum
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE2:Controller internal variables (UE2Runtime)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Engine_2_Runtime.html" title="Unreal Engine 2 Runtime"><img alt="UE2Runtime" src="w/images/Icon-UE2Runtime.png" width="16" height="16" /></a></td>
+<td><a href="UE2_Object_(UE2Runtime).html" title="UE2:Object (UE2Runtime)">Object</a> &gt;&gt;&#160;<a href="UE2_Actor_(UE2Runtime).html" title="UE2:Actor (UE2Runtime)">Actor</a> &gt;&gt;&#160;<a href="UE2_Controller_(UE2Runtime).html" title="UE2:Controller (UE2Runtime)">Controller</a> <i>(internal variables)</i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Internal_variables"><span class="tocnumber">1</span> <span class="toctext">Internal variables</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#AcquisitionYawRate"><span class="tocnumber">1.1</span> <span class="toctext">AcquisitionYawRate</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#AdjustLoc"><span class="tocnumber">1.2</span> <span class="toctext">AdjustLoc</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#bAdjusting"><span class="tocnumber">1.3</span> <span class="toctext">bAdjusting</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#bAdvancedTactics"><span class="tocnumber">1.4</span> <span class="toctext">bAdvancedTactics</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#bAllowedToImpactJump"><span class="tocnumber">1.5</span> <span class="toctext">bAllowedToImpactJump</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#bAllowedToTranslocate"><span class="tocnumber">1.6</span> <span class="toctext">bAllowedToTranslocate</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#bAltFire"><span class="tocnumber">1.7</span> <span class="toctext">bAltFire</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#bCanDoSpecial"><span class="tocnumber">1.8</span> <span class="toctext">bCanDoSpecial</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#bCanOpenDoors"><span class="tocnumber">1.9</span> <span class="toctext">bCanOpenDoors</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#bControlAnimations"><span class="tocnumber">1.10</span> <span class="toctext">bControlAnimations</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#bDuck"><span class="tocnumber">1.11</span> <span class="toctext">bDuck</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#bEnemyAcquired"><span class="tocnumber">1.12</span> <span class="toctext">bEnemyAcquired</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#bEnemyInfoValid"><span class="tocnumber">1.13</span> <span class="toctext">bEnemyInfoValid</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#bFire"><span class="tocnumber">1.14</span> <span class="toctext">bFire</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#bGodMode"><span class="tocnumber">1.15</span> <span class="toctext">bGodMode</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#bHuntPlayer"><span class="tocnumber">1.16</span> <span class="toctext">bHuntPlayer</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#bIsPlayer"><span class="tocnumber">1.17</span> <span class="toctext">bIsPlayer</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#bJumpOverWall"><span class="tocnumber">1.18</span> <span class="toctext">bJumpOverWall</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#bLOSflag"><span class="tocnumber">1.19</span> <span class="toctext">bLOSflag</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#bNotifyApex"><span class="tocnumber">1.20</span> <span class="toctext">bNotifyApex</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#bPreparingMove"><span class="tocnumber">1.21</span> <span class="toctext">bPreparingMove</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#bRun"><span class="tocnumber">1.22</span> <span class="toctext">bRun</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#bSoaking"><span class="tocnumber">1.23</span> <span class="toctext">bSoaking</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#bUsePlayerHearing"><span class="tocnumber">1.24</span> <span class="toctext">bUsePlayerHearing</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#CurrentPath"><span class="tocnumber">1.25</span> <span class="toctext">CurrentPath</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#CurrentPathDir"><span class="tocnumber">1.26</span> <span class="toctext">CurrentPathDir</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#Destination"><span class="tocnumber">1.27</span> <span class="toctext">Destination</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#Enemy"><span class="tocnumber">1.28</span> <span class="toctext">Enemy</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#FailedReachLocation"><span class="tocnumber">1.29</span> <span class="toctext">FailedReachLocation</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#FailedReachTime"><span class="tocnumber">1.30</span> <span class="toctext">FailedReachTime</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#FearSpots"><span class="tocnumber">1.31</span> <span class="toctext">FearSpots</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#FocalPoint"><span class="tocnumber">1.32</span> <span class="toctext">FocalPoint</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#Focus"><span class="tocnumber">1.33</span> <span class="toctext">Focus</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#FovAngle"><span class="tocnumber">1.34</span> <span class="toctext">FovAngle</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#GoalList"><span class="tocnumber">1.35</span> <span class="toctext">GoalList</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#GroundPitchTime"><span class="tocnumber">1.36</span> <span class="toctext">GroundPitchTime</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#Handedness"><span class="tocnumber">1.37</span> <span class="toctext">Handedness</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#home"><span class="tocnumber">1.38</span> <span class="toctext">home</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#LastFailedReach"><span class="tocnumber">1.39</span> <span class="toctext">LastFailedReach</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#LastPawnWeapon"><span class="tocnumber">1.40</span> <span class="toctext">LastPawnWeapon</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#LastRouteFind"><span class="tocnumber">1.41</span> <span class="toctext">LastRouteFind</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#LastSeeingPos"><span class="tocnumber">1.42</span> <span class="toctext">LastSeeingPos</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="#LastSeenPos"><span class="tocnumber">1.43</span> <span class="toctext">LastSeenPos</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="#LastSeenTime"><span class="tocnumber">1.44</span> <span class="toctext">LastSeenTime</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href="#MinHitWall"><span class="tocnumber">1.45</span> <span class="toctext">MinHitWall</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#MonitoredPawn"><span class="tocnumber">1.46</span> <span class="toctext">MonitoredPawn</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="#MonitorMaxDistSq"><span class="tocnumber">1.47</span> <span class="toctext">MonitorMaxDistSq</span></a></li>
+<li class="toclevel-2 tocsection-49"><a href="#MonitorStartLoc"><span class="tocnumber">1.48</span> <span class="toctext">MonitorStartLoc</span></a></li>
+<li class="toclevel-2 tocsection-50"><a href="#MoveTarget"><span class="tocnumber">1.49</span> <span class="toctext">MoveTarget</span></a></li>
+<li class="toclevel-2 tocsection-51"><a href="#MoveTimer"><span class="tocnumber">1.50</span> <span class="toctext">MoveTimer</span></a></li>
+<li class="toclevel-2 tocsection-52"><a href="#nextController"><span class="tocnumber">1.51</span> <span class="toctext">nextController</span></a></li>
+<li class="toclevel-2 tocsection-53"><a href="#OldMessageTime"><span class="tocnumber">1.52</span> <span class="toctext">OldMessageTime</span></a></li>
+<li class="toclevel-2 tocsection-54"><a href="#Pawn"><span class="tocnumber">1.53</span> <span class="toctext">Pawn</span></a></li>
+<li class="toclevel-2 tocsection-55"><a href="#PawnClass"><span class="tocnumber">1.54</span> <span class="toctext">PawnClass</span></a></li>
+<li class="toclevel-2 tocsection-56"><a href="#PendingMover"><span class="tocnumber">1.55</span> <span class="toctext">PendingMover</span></a></li>
+<li class="toclevel-2 tocsection-57"><a href="#PlayerNum"><span class="tocnumber">1.56</span> <span class="toctext">PlayerNum</span></a></li>
+<li class="toclevel-2 tocsection-58"><a href="#PlayerReplicationInfo"><span class="tocnumber">1.57</span> <span class="toctext">PlayerReplicationInfo</span></a></li>
+<li class="toclevel-2 tocsection-59"><a href="#PreviousPawnClass"><span class="tocnumber">1.58</span> <span class="toctext">PreviousPawnClass</span></a></li>
+<li class="toclevel-2 tocsection-60"><a href="#RespawnPredictionTime"><span class="tocnumber">1.59</span> <span class="toctext">RespawnPredictionTime</span></a></li>
+<li class="toclevel-2 tocsection-61"><a href="#RouteCache"><span class="tocnumber">1.60</span> <span class="toctext">RouteCache</span></a></li>
+<li class="toclevel-2 tocsection-62"><a href="#RouteDist"><span class="tocnumber">1.61</span> <span class="toctext">RouteDist</span></a></li>
+<li class="toclevel-2 tocsection-63"><a href="#RouteGoal"><span class="tocnumber">1.62</span> <span class="toctext">RouteGoal</span></a></li>
+<li class="toclevel-2 tocsection-64"><a href="#SightCounter"><span class="tocnumber">1.63</span> <span class="toctext">SightCounter</span></a></li>
+<li class="toclevel-2 tocsection-65"><a href="#StartSpot"><span class="tocnumber">1.64</span> <span class="toctext">StartSpot</span></a></li>
+<li class="toclevel-2 tocsection-66"><a href="#Stimulus"><span class="tocnumber">1.65</span> <span class="toctext">Stimulus</span></a></li>
+<li class="toclevel-2 tocsection-67"><a href="#Target"><span class="tocnumber">1.66</span> <span class="toctext">Target</span></a></li>
+<li class="toclevel-2 tocsection-68"><a href="#ViewX"><span class="tocnumber">1.67</span> <span class="toctext">ViewX</span></a></li>
+<li class="toclevel-2 tocsection-69"><a href="#ViewY"><span class="tocnumber">1.68</span> <span class="toctext">ViewY</span></a></li>
+<li class="toclevel-2 tocsection-70"><a href="#ViewZ"><span class="tocnumber">1.69</span> <span class="toctext">ViewZ</span></a></li>
+<li class="toclevel-2 tocsection-71"><a href="#VoiceType"><span class="tocnumber">1.70</span> <span class="toctext">VoiceType</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Controller internal variables in other games:</dt>
+<dd><span><a href="UE2_Controller_internal_variables_(U2).html" title="UE2:Controller internal variables (U2)">U2</a></span>, <span><a href="UE2_Controller_internal_variables_(U2XMP).html" title="UE2:Controller internal variables (U2XMP)">U2XMP</a></span>, <span><a href="UE2_Controller_internal_variables_(UT2003).html" title="UE2:Controller internal variables (UT2003)">UT2003</a></span>, <span><a href="UE2_Controller_internal_variables_(UT2004).html" title="UE2:Controller internal variables (UT2004)">UT2004</a></span></dd>
+<dt>Other member categories for this class:</dt>
+<dd><span><a href="UE2_Controller_instance_functions_(UE2Runtime).html" title="UE2:Controller instance functions (UE2Runtime)">instance functions</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Internal_variables">Internal variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=1" title="Edit section: Internal variables">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="AcquisitionYawRate">AcquisitionYawRate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=2" title="Edit section: AcquisitionYawRate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br />
+<b>Default value:</b> 20000</p>
+<h4><span class="mw-headline" id="AdjustLoc">AdjustLoc</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=3" title="Edit section: AdjustLoc">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UE2Runtime).html#Vector" title="UE2:Object structs (UE2Runtime)">Object.Vector</a></p>
+<p>location to move to while adjusting around obstacle</p>
+<h4><span class="mw-headline" id="bAdjusting">bAdjusting</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=4" title="Edit section: bAdjusting">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>adjusting around obstacle</p>
+<h4><span class="mw-headline" id="bAdvancedTactics">bAdvancedTactics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=5" title="Edit section: bAdvancedTactics">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>serpentine movement between pathnodes</p>
+<h4><span class="mw-headline" id="bAllowedToImpactJump">bAllowedToImpactJump</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=6" title="Edit section: bAllowedToImpactJump">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bAllowedToTranslocate">bAllowedToTranslocate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=7" title="Edit section: bAllowedToTranslocate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bAltFire">bAltFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=8" title="Edit section: bAltFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bCanDoSpecial">bCanDoSpecial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=9" title="Edit section: bCanDoSpecial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bCanOpenDoors">bCanOpenDoors</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=10" title="Edit section: bCanOpenDoors">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bControlAnimations">bControlAnimations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=11" title="Edit section: bControlAnimations">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>take control of animations from pawn (don't let pawn play animations based on notifications)</p>
+<h4><span class="mw-headline" id="bDuck">bDuck</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=12" title="Edit section: bDuck">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bEnemyAcquired">bEnemyAcquired</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=13" title="Edit section: bEnemyAcquired">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bEnemyInfoValid">bEnemyInfoValid</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=14" title="Edit section: bEnemyInfoValid">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>false when change enemy, true when LastSeenPos etc updated</p>
+<h4><span class="mw-headline" id="bFire">bFire</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=15" title="Edit section: bFire">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bGodMode">bGodMode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=16" title="Edit section: bGodMode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bHuntPlayer">bHuntPlayer</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=17" title="Edit section: bHuntPlayer">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>hunting player</p>
+<h4><span class="mw-headline" id="bIsPlayer">bIsPlayer</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=18" title="Edit section: bIsPlayer">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Pawn is a player or a player-bot.</p>
+<h4><span class="mw-headline" id="bJumpOverWall">bJumpOverWall</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=19" title="Edit section: bJumpOverWall">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>true when jumping to clear obstacle</p>
+<h4><span class="mw-headline" id="bLOSflag">bLOSflag</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=20" title="Edit section: bLOSflag">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>used for alternating LineOfSight traces</p>
+<h4><span class="mw-headline" id="bNotifyApex">bNotifyApex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=21" title="Edit section: bNotifyApex">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>event NotifyJumpApex() when at apex of jump</p>
+<h4><span class="mw-headline" id="bPreparingMove">bPreparingMove</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=22" title="Edit section: bPreparingMove">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>set true while pawn sets up for a latent move</p>
+<h4><span class="mw-headline" id="bRun">bRun</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=23" title="Edit section: bRun">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bSoaking">bSoaking</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=24" title="Edit section: bSoaking">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>pause and focus on this bot if it encounters a problem</p>
+<h4><span class="mw-headline" id="bUsePlayerHearing">bUsePlayerHearing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=25" title="Edit section: bUsePlayerHearing">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="CurrentPath">CurrentPath</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=26" title="Edit section: CurrentPath">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_ReachSpec_(UE2Runtime).html" title="UE2:ReachSpec (UE2Runtime)">ReachSpec</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="CurrentPathDir">CurrentPathDir</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=27" title="Edit section: CurrentPathDir">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UE2Runtime).html#Vector" title="UE2:Object structs (UE2Runtime)">Object.Vector</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Destination">Destination</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=28" title="Edit section: Destination">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UE2Runtime).html#Vector" title="UE2:Object structs (UE2Runtime)">Object.Vector</a></p>
+<p>location being moved toward</p>
+<h4><span class="mw-headline" id="Enemy">Enemy</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=29" title="Edit section: Enemy">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Pawn_(UE2Runtime).html" title="UE2:Pawn (UE2Runtime)">Pawn</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="FailedReachLocation">FailedReachLocation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=30" title="Edit section: FailedReachLocation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UE2Runtime).html#Vector" title="UE2:Object structs (UE2Runtime)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="FailedReachTime">FailedReachTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=31" title="Edit section: FailedReachTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="FearSpots">FearSpots</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=32" title="Edit section: FearSpots">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_AvoidMarker_(UE2Runtime).html" title="UE2:AvoidMarker (UE2Runtime)">AvoidMarker</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 2</p>
+<p>avoid these spots when moving</p>
+<h4><span class="mw-headline" id="FocalPoint">FocalPoint</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=33" title="Edit section: FocalPoint">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UE2Runtime).html#Vector" title="UE2:Object structs (UE2Runtime)">Object.Vector</a></p>
+<p>location being looked at</p>
+<h4><span class="mw-headline" id="Focus">Focus</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=34" title="Edit section: Focus">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Actor_(UE2Runtime).html" title="UE2:Actor (UE2Runtime)">Actor</a></p>
+<p>actor being looked at</p>
+<h4><span class="mw-headline" id="FovAngle">FovAngle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=35" title="Edit section: FovAngle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>X field of view angle in degrees, usually 90.</p>
+<p><b>Default value:</b> 90.0</p>
+<h4><span class="mw-headline" id="GoalList">GoalList</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=36" title="Edit section: GoalList">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Actor_(UE2Runtime).html" title="UE2:Actor (UE2Runtime)">Actor</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 4</p>
+<p>used by navigation AI - list of intermediate goals</p>
+<h4><span class="mw-headline" id="GroundPitchTime">GroundPitchTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=37" title="Edit section: GroundPitchTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Handedness">Handedness</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=38" title="Edit section: Handedness">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="home">home</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=39" title="Edit section: home">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_NavigationPoint_(UE2Runtime).html" title="UE2:NavigationPoint (UE2Runtime)">NavigationPoint</a></p>
+<p>set when begin play, used for retreating and attitude checks</p>
+<h4><span class="mw-headline" id="LastFailedReach">LastFailedReach</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=40" title="Edit section: LastFailedReach">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Actor_(UE2Runtime).html" title="UE2:Actor (UE2Runtime)">Actor</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>cache to avoid trying failed actorreachable more than once per frame</p>
+<h4><span class="mw-headline" id="LastPawnWeapon">LastPawnWeapon</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=41" title="Edit section: LastPawnWeapon">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE2_Weapon_(UE2Runtime).html" title="UE2:Weapon (UE2Runtime)">Weapon</a>&gt;</p>
+<p>used by game stats</p>
+<h4><span class="mw-headline" id="LastRouteFind">LastRouteFind</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=42" title="Edit section: LastRouteFind">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastSeeingPos">LastSeeingPos</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=43" title="Edit section: LastSeeingPos">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UE2Runtime).html#Vector" title="UE2:Object structs (UE2Runtime)">Object.Vector</a></p>
+<p>position where I last saw enemy (auto updated if EnemyNotVisible enabled)</p>
+<h4><span class="mw-headline" id="LastSeenPos">LastSeenPos</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=44" title="Edit section: LastSeenPos">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UE2Runtime).html#Vector" title="UE2:Object structs (UE2Runtime)">Object.Vector</a></p>
+<p>enemy position when I last saw enemy (auto updated if EnemyNotVisible() enabled)</p>
+<h4><span class="mw-headline" id="LastSeenTime">LastSeenTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=45" title="Edit section: LastSeenTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="MinHitWall">MinHitWall</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=46" title="Edit section: MinHitWall">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Minimum HitNormal dot Velocity.Normal to get a HitWall event from the physics</p>
+<p><b>Default value:</b> -1.0</p>
+<h4><span class="mw-headline" id="MonitoredPawn">MonitoredPawn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=47" title="Edit section: MonitoredPawn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Pawn_(UE2Runtime).html" title="UE2:Pawn (UE2Runtime)">Pawn</a></p>
+<p>used by latent function MonitorPawn()</p>
+<h4><span class="mw-headline" id="MonitorMaxDistSq">MonitorMaxDistSq</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=48" title="Edit section: MonitorMaxDistSq">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="MonitorStartLoc">MonitorStartLoc</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=49" title="Edit section: MonitorStartLoc">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UE2Runtime).html#Vector" title="UE2:Object structs (UE2Runtime)">Object.Vector</a></p>
+<p>used by latent function MonitorPawn()</p>
+<h4><span class="mw-headline" id="MoveTarget">MoveTarget</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=50" title="Edit section: MoveTarget">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Actor_(UE2Runtime).html" title="UE2:Actor (UE2Runtime)">Actor</a></p>
+<p>actor being moved toward</p>
+<h4><span class="mw-headline" id="MoveTimer">MoveTimer</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=51" title="Edit section: MoveTimer">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="nextController">nextController</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=52" title="Edit section: nextController">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Controller_(UE2Runtime).html" title="UE2:Controller (UE2Runtime)">Controller</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>chained Controller list</p>
+<h4><span class="mw-headline" id="OldMessageTime">OldMessageTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=53" title="Edit section: OldMessageTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Pawn">Pawn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=54" title="Edit section: Pawn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Pawn_(UE2Runtime).html" title="UE2:Pawn (UE2Runtime)">Pawn</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="PawnClass">PawnClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=55" title="Edit section: PawnClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE2_Pawn_(UE2Runtime).html" title="UE2:Pawn (UE2Runtime)">Pawn</a>&gt;</p>
+<p>class of pawn to spawn (for players)</p>
+<h4><span class="mw-headline" id="PendingMover">PendingMover</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=56" title="Edit section: PendingMover">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Mover_(UE2Runtime).html" title="UE2:Mover (UE2Runtime)">Mover</a></p>
+<p>mover pawn is waiting for to complete its move</p>
+<h4><span class="mw-headline" id="PlayerNum">PlayerNum</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=57" title="Edit section: PlayerNum">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>The player number - per-match player number.</p>
+<h4><span class="mw-headline" id="PlayerReplicationInfo">PlayerReplicationInfo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=58" title="Edit section: PlayerReplicationInfo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_PlayerReplicationInfo_(UE2Runtime).html" title="UE2:PlayerReplicationInfo (UE2Runtime)">PlayerReplicationInfo</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="PreviousPawnClass">PreviousPawnClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=59" title="Edit section: PreviousPawnClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE2_Pawn_(UE2Runtime).html" title="UE2:Pawn (UE2Runtime)">Pawn</a>&gt;</p>
+<p>Holds the player's previous class</p>
+<h4><span class="mw-headline" id="RespawnPredictionTime">RespawnPredictionTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=60" title="Edit section: RespawnPredictionTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>how far ahead to predict respawns when looking for inventory</p>
+<h4><span class="mw-headline" id="RouteCache">RouteCache</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=61" title="Edit section: RouteCache">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Actor_(UE2Runtime).html" title="UE2:Actor (UE2Runtime)">Actor</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 16</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="RouteDist">RouteDist</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=62" title="Edit section: RouteDist">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>total distance for current route</p>
+<h4><span class="mw-headline" id="RouteGoal">RouteGoal</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=63" title="Edit section: RouteGoal">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Actor_(UE2Runtime).html" title="UE2:Actor (UE2Runtime)">Actor</a></p>
+<p>final destination for current route</p>
+<h4><span class="mw-headline" id="SightCounter">SightCounter</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=64" title="Edit section: SightCounter">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Used to keep track of when to check player visibility</p>
+<h4><span class="mw-headline" id="StartSpot">StartSpot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=65" title="Edit section: StartSpot">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_NavigationPoint_(UE2Runtime).html" title="UE2:NavigationPoint (UE2Runtime)">NavigationPoint</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Stimulus">Stimulus</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=66" title="Edit section: Stimulus">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Target">Target</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=67" title="Edit section: Target">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Actor_(UE2Runtime).html" title="UE2:Actor (UE2Runtime)">Actor</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ViewX">ViewX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=68" title="Edit section: ViewX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UE2Runtime).html#Vector" title="UE2:Object structs (UE2Runtime)">Object.Vector</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ViewY">ViewY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=69" title="Edit section: ViewY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UE2Runtime).html#Vector" title="UE2:Object structs (UE2Runtime)">Object.Vector</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ViewZ">ViewZ</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=70" title="Edit section: ViewZ">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE2_Object_structs_(UE2Runtime).html#Vector" title="UE2:Object structs (UE2Runtime)">Object.Vector</a></p>
+<p>Viewrotation encoding for PHYS_Spider</p>
+<h4><span class="mw-headline" id="VoiceType">VoiceType</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)?section=71" title="Edit section: VoiceType">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p>for speech</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.344 seconds
+Real time usage: 0.359 seconds
+Preprocessor visited node count: 1941/1000000
+Preprocessor generated node count: 3815/1000000
+Post‐expand include size: 14015/2097152 bytes
+Template argument size: 1976/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  240.438      1 - -total
+ 40.66%   97.764      1 - Template:Infobox_class_part
+ 38.83%   93.370      1 - Template:Infobox_class_part/core
+ 33.51%   80.561     31 - Template:Samegame
+ 27.84%   66.934     20 - Template:Cl
+ 21.10%   50.723     11 - Template:Tl
+  9.95%   23.920      1 - Template:Ch
+  3.06%    7.349      1 - Template:Autogenerated
+  2.07%    4.977      1 - Template:Ambox
+  1.63%    3.908      3 - Template:Gamename
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:10160-0!*!*!*!*!*!* and timestamp 20161215183936 and revision id 17886
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE2:Controller_internal_variables_(UE2Runtime)?oldid=17886">https://wiki.beyondunreal.com/UE2:Controller_internal_variables_(UE2Runtime)?oldid=17886</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue2" class="selected"><a href="UE2_Controller_internal_variables_(UE2Runtime).html">UE2</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE2_talk:Controller_internal_variables_(UE2Runtime)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE2:Controller_internal_variables_(UE2Runtime)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE2:Controller_internal_variables_(UE2Runtime)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE2%3AController+internal+variables+%28UE2Runtime%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE2%3AController+internal+variables+%28UE2Runtime%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE2:Controller_internal_variables_(UE2Runtime)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE2:Controller_internal_variables_(UE2Runtime)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE2:Controller_internal_variables_(UE2Runtime)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE2:Controller_internal_variables_(UE2Runtime)?oldid=17886" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE2:Controller_internal_variables_(UE2Runtime)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 11:10, 17 May 2008.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":103});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE2:Controller_internal_variables_(UE2Runtime) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:43:00 GMT -->
+</html>

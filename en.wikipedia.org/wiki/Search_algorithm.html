@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+
+<!-- Mirrored from en.wikipedia.org/wiki/Search_algorithm by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 15 Dec 2016 13:19:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8"/>
+<title>Search algorithm - Wikipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Search_algorithm","wgTitle":"Search algorithm","wgCurRevisionId":751284017,"wgRevisionId":751284017,"wgArticleId":28249,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles needing expert attention from December 2014","All articles needing expert attention","Computer science articles needing expert attention","Wikipedia articles needing context from December 2014","All Wikipedia articles needing context","Wikipedia introduction cleanup from December 2014","All pages needing cleanup","Articles needing additional references from April 2016","All articles needing additional references","Search algorithms"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Search_algorithm","wgRelevantArticleId":28249,"wgRequestId":"WFIIvwpAAD4AAcVp2lEAAAAU","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":true},"wgPreferredVariant":"en","wgMFDisplayWikibaseDescriptions":{"search":true,"nearby":true,"watchlist":true,"tagline":false},"wgRelatedArticles":null,"wgRelatedArticlesUseCirrusSearch":true,"wgRelatedArticlesOnlyUseCirrusSearch":false,"wgULSCurrentAutonym":"English","wgNoticeProject":"wikipedia","wgCentralNoticeCookiesToDelete":[],"wgCentralNoticeCategoriesUsingLegacy":["Fundraising","fundraising"],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgWikibaseItemId":"Q755673","wgCentralAuthMobileDomain":false,"wgVisualEditorToolbarScrollOffset":0,"wgEditSubmitButtonLabelPublish":false});mw.loader.state({"ext.globalCssJs.user.styles":"ready","ext.globalCssJs.site.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","wikibase.client.init":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready","ext.globalCssJs.user":"ready","ext.globalCssJs.site":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@1dqfd7l",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["ext.cite.a11y","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.legacy.wikibits","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.watchlist-notice","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.extra-toolbar-buttons","ext.gadget.switcher","ext.gadget.featured-articles-links","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.navigationTiming","ext.uls.eventlogger","ext.uls.init","ext.uls.interface","ext.quicksurveys.init","ext.centralNotice.geoIP","ext.centralNotice.startUp","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="../w/loadfb72.css?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediaBadges%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector"/>
+<script async="" src="../w/load2c8d.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="../w/load18b6.css?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.29.0-wmf.5"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<link rel="alternate" href="android-app_/org.wikipedia/http/en.m.wikipedia.org/wiki/Search_algorithm.html"/>
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="../w/index6e09.html?title=Search_algorithm&amp;action=edit"/>
+<link rel="edit" title="Edit this page" href="../w/index6e09.html?title=Search_algorithm&amp;action=edit"/>
+<link rel="apple-touch-icon" href="../static/apple-touch/wikipedia.png"/>
+<link rel="shortcut icon" href="../static/favicon/wikipedia.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../w/opensearch_desc.php" title="Wikipedia (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="../w/api251f.php?action=rsd"/>
+<link rel="copyright" href="../../creativecommons.org/licenses/by-sa/3.0/index.html"/>
+<link rel="canonical" href="Search_algorithm.html"/>
+<link rel="dns-prefetch" href="../../login.wikimedia.org/index.html"/>
+<link rel="dns-prefetch" href="../../meta.wikimedia.org/index.html" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Search_algorithm rootpage-Search_algorithm skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Search algorithm</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><table class="plainlinks metadata ambox ambox-content ambox-multiple_issues compact-ambox" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px"><img alt="" src="../../upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png" width="40" height="40" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/60px-Ambox_important.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/80px-Ambox_important.svg.png 2x" data-file-width="40" data-file-height="40" /></div>
+</td>
+<td class="mbox-text">
+<div class="mw-collapsible" style="width:95%; margin: 0.2em 0;"><span class="mbox-text-span"><b>This article has multiple issues.</b> Please help <b><a class="external text" href="../w/index6e09.html?title=Search_algorithm&amp;action=edit">improve it</a></b> or discuss these issues on the <b><a href="https://en.wikipedia.org/wiki/Talk:Search_algorithm" title="Talk:Search algorithm">talk page</a></b>. <small><i>(<a href="Help_Maintenance_template_removal.html" title="Help:Maintenance template removal">Learn how and when to remove these template messages</a>)</i></small></span>
+<div class="mw-collapsible-content" style="margin-top: 0.3em;">
+<table class="plainlinks metadata ambox ambox-content" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px"><img alt="" src="../../upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/40px-Ambox_important.svg.png" width="40" height="40" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/60px-Ambox_important.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ambox_important.svg/80px-Ambox_important.svg.png 2x" data-file-width="40" data-file-height="40" /></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This article <b>needs attention from an expert in Computer science</b>. The specific problem is: <b>longstanding subpar state of article structure and content, which is currently list based, dated, and non-encyclopedic, and without external sourcing.</b> <span class="hide-when-compact">See the <a href="https://en.wikipedia.org/wiki/Talk:Search_algorithm#Calling_for_expert_attention" title="Talk:Search algorithm">talk page</a> for details. <a href="https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Computer_science" title="Wikipedia:WikiProject Computer science">WikiProject Computer science</a> (or its <a href="https://en.wikipedia.org/wiki/Portal:Computer_science" title="Portal:Computer science">Portal</a>) may be able to help recruit an expert.</span> <small><i>(December 2014)</i></small></span></td>
+</tr>
+</table>
+<table class="plainlinks metadata ambox ambox-style ambox-Context" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px"><img alt="" src="../../upload.wikimedia.org/wikipedia/en/thumb/f/f2/Edit-clear.svg/40px-Edit-clear.svg.png" width="40" height="40" srcset="//upload.wikimedia.org/wikipedia/en/thumb/f/f2/Edit-clear.svg/60px-Edit-clear.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/f/f2/Edit-clear.svg/80px-Edit-clear.svg.png 2x" data-file-width="48" data-file-height="48" /></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This article <b>provides insufficient context for those unfamiliar with the subject</b>. <span class="hide-when-compact">Please help <a class="external text" href="../w/index6e09.html?title=Search_algorithm&amp;action=edit">improve the article</a> with a <a href="Wikipedia_Writing_better_articles.html#Lead_section" title="Wikipedia:Writing better articles">good introductory style</a>.</span> <small><i>(December 2014)</i></small> <small class="hide-when-compact"><i>(<a href="Help_Maintenance_template_removal.html" title="Help:Maintenance template removal">Learn how and when to remove this template message</a>)</i></small></span></td>
+</tr>
+</table>
+<table class="plainlinks metadata ambox ambox-style" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px"><img alt="" src="../../upload.wikimedia.org/wikipedia/en/thumb/f/f2/Edit-clear.svg/40px-Edit-clear.svg.png" width="40" height="40" srcset="//upload.wikimedia.org/wikipedia/en/thumb/f/f2/Edit-clear.svg/60px-Edit-clear.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/f/f2/Edit-clear.svg/80px-Edit-clear.svg.png 2x" data-file-width="48" data-file-height="48" /></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This article <b>focuses too much on specific examples</b> without clearly discussing its abstract general subject. <span class="hide-when-compact">Please help by consulting <a href="https://en.wikipedia.org/wiki/Secondary_source" title="Secondary source">secondary sources</a> for <b>general statements</b> made about the subject and <a class="external text" href="../w/index6e09.html?title=Search_algorithm&amp;action=edit">improving this article</a> by adding more <b>general information</b>.</span> <small><i>(December 2014)</i></small></span></td>
+</tr>
+</table>
+<table class="plainlinks metadata ambox ambox-content ambox-Refimprove" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px"><a href="File_Question_book-new.html" class="image"><img alt="" src="../../upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/50px-Question_book-new.svg.png" width="50" height="39" srcset="//upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/75px-Question_book-new.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/100px-Question_book-new.svg.png 2x" data-file-width="512" data-file-height="399" /></a></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This article <b>needs additional citations for <a href="Wikipedia_Verifiability.html" title="Wikipedia:Verifiability">verification</a></b>. <span class="hide-when-compact">Please help <a class="external text" href="../w/index6e09.html?title=Search_algorithm&amp;action=edit">improve this article</a> by <a href="Help_Introduction_to_referencing_with_Wiki_Markup/1.html" title="Help:Introduction to referencing with Wiki Markup/1">adding citations to reliable sources</a>. Unsourced material may be challenged and removed.</span> <small><i>(April 2016)</i></small> <small class="hide-when-compact"><i>(<a href="Help_Maintenance_template_removal.html" title="Help:Maintenance template removal">Learn how and when to remove this template message</a>)</i></small></span></td>
+</tr>
+</table>
+</div>
+</div>
+<small class="hide-when-compact"><i>(<a href="Help_Maintenance_template_removal.html" title="Help:Maintenance template removal">Learn how and when to remove this template message</a>)</i></small></td>
+</tr>
+</table>
+<div class="thumb tright">
+<div class="thumbinner" style="width:262px;"><a href="https://en.wikipedia.org/wiki/File:Hash_table_3_1_1_0_1_0_0_SP.svg" class="image"><img alt="" src="../../upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/260px-Hash_table_3_1_1_0_1_0_0_SP.svg.html" width="260" height="190" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/390px-Hash_table_3_1_1_0_1_0_0_SP.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/520px-Hash_table_3_1_1_0_1_0_0_SP.svg.png 2x" data-file-width="315" data-file-height="230" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="https://en.wikipedia.org/wiki/File:Hash_table_3_1_1_0_1_0_0_SP.svg" class="internal" title="Enlarge"></a></div>
+Visual representation of a <a href="https://en.wikipedia.org/wiki/Hash_table" title="Hash table">hash table</a>, a <a href="Data_structure.html" title="Data structure">data structure</a> that allows for fast retrieval of information.</div>
+</div>
+</div>
+<p>In <a href="Computer_science.html" title="Computer science">computer science</a>, a <b>search algorithm</b> is an <a href="Algorithm.html" title="Algorithm">algorithm</a> that retrieves information stored within some data structure. Data structures can include linked lists, arrays, search trees, hash tables, or various other storage methods. The appropriate search algorithm often depends on the data structure being searched. Searching also encompasses algorithms that query the data structure, such as the SQL SELECT command.<sup id="cite_ref-FOOTNOTEBeameFich200139_1-0" class="reference"><a href="#cite_note-FOOTNOTEBeameFich200139-1">[1]</a></sup><sup id="cite_ref-FOOTNOTEKnuth1998.C2.A76.5_.28.22Retrieval_on_Secondary_Keys.22.29_2-0" class="reference"><a href="#cite_note-FOOTNOTEKnuth1998.C2.A76.5_.28.22Retrieval_on_Secondary_Keys.22.29-2">[2]</a></sup></p>
+<p>Search algorithms can be classified based on their mechanism of searching. <a href="https://en.wikipedia.org/wiki/Linear_search" title="Linear search">Linear search</a> algorithms check every record for the one associated with a target key in a linear fashion.<a href="https://en.wikipedia.org/wiki/Binary_search_algorithm" title="Binary search algorithm"><sup id="cite_ref-FOOTNOTEKnuth1998.C2.A76.1_.28.22Sequential_Searching.22.29_3-0" class="reference"></sup></a><a href="#cite_note-FOOTNOTEKnuth1998.C2.A76.1_.28.22Sequential_Searching.22.29-3">[3]</a><a href="#cite_note-FOOTNOTEKnuth1998.C2.A76.1_.28.22Sequential_Searching.22.29-4"><span class="mw-reflink-text">[4]</span></a> Binary, or half interval searches, repeatedly target the center of the search structure and divide the search space in half. Comparison search algorithms improve on linear searching by successively eliminating records based on comparisons of the keys until the target record is found, and can be applied on data structures with a defined order.<sup id="cite_ref-FOOTNOTEKnuth1998.C2.A76.2_.28.22Searching_by_Comparison_of_Keys.22.29_4-0" class="reference"><a href="#cite_note-FOOTNOTEKnuth1998.C2.A76.2_.28.22Searching_by_Comparison_of_Keys.22.29-4">[4]</a></sup> Digital search algorithms work based on the properties of digits in data structures that use numerical keys.<sup id="cite_ref-FOOTNOTEKnuth1998.C2.A76.3_.28Digital_Searching.29_5-0" class="reference"><a href="#cite_note-FOOTNOTEKnuth1998.C2.A76.3_.28Digital_Searching.29-5">[5]</a></sup> Finally, <a href="https://en.wikipedia.org/wiki/Hash_table" title="Hash table">hashing</a> directly maps keys to records based on a <a href="https://en.wikipedia.org/wiki/Hash_function" title="Hash function">hash function</a>.<sup id="cite_ref-FOOTNOTEKnuth1998.C2.A76.4.2C_.28Hashing.29_6-0" class="reference"><a href="#cite_note-FOOTNOTEKnuth1998.C2.A76.4.2C_.28Hashing.29-6">[6]</a></sup> Searches outside of a linear search require that the data be sorted in some way.</p>
+<p>Search functions are also evaluated on the basis of their complexity, or maximum theoretical run time. Binary search functions, for example, have a maximum complexity of O(log(n)), or logarithmic time. This means that the maximum number of operations needed to find the search target is a logarithmic function of the size of the search space.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Classes"><span class="tocnumber">1</span> <span class="toctext">Classes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#For_virtual_search_spaces"><span class="tocnumber">1.1</span> <span class="toctext">For virtual search spaces</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#For_sub-structures_of_a_given_structure"><span class="tocnumber">1.2</span> <span class="toctext">For sub-structures of a given structure</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Search_for_the_maximum_of_a_function"><span class="tocnumber">1.3</span> <span class="toctext">Search for the maximum of a function</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#For_quantum_computers"><span class="tocnumber">1.4</span> <span class="toctext">For quantum computers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#See_also"><span class="tocnumber">2</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#References"><span class="tocnumber">3</span> <span class="toctext">References</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Citations"><span class="tocnumber">3.1</span> <span class="toctext">Citations</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Bibliography"><span class="tocnumber">3.2</span> <span class="toctext">Bibliography</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="#Books"><span class="tocnumber">3.2.1</span> <span class="toctext">Books</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Articles"><span class="tocnumber">3.2.2</span> <span class="toctext">Articles</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#External_links"><span class="tocnumber">4</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Classes">Classes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Search_algorithm&amp;action=edit&amp;section=1" title="Edit section: Classes">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="For_virtual_search_spaces">For virtual search spaces</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Search_algorithm&amp;action=edit&amp;section=2" title="Edit section: For virtual search spaces">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Algorithms for searching virtual spaces are used in <a href="https://en.wikipedia.org/wiki/Constraint_satisfaction_problem" title="Constraint satisfaction problem">constraint satisfaction problem</a>, where the goal is to find a set of value assignments to certain variables that will satisfy specific mathematical <a href="https://en.wikipedia.org/wiki/Equation" title="Equation">equations</a> and <a href="https://en.wikipedia.org/wiki/Inequation" title="Inequation">inequations</a> / inequalities. They are also used when the goal is to find a variable assignment that will <a href="https://en.wikipedia.org/wiki/Discrete_optimization" title="Discrete optimization">maximize or minimize</a> a certain function of those variables. Algorithms for these problems include the basic <a href="https://en.wikipedia.org/wiki/Brute-force_search" title="Brute-force search">brute-force search</a> (also called "naïve" or "uninformed" search), and a variety of <a href="https://en.wikipedia.org/wiki/Heuristic_function" class="mw-redirect" title="Heuristic function">heuristics</a> that try to exploit partial knowledge about structure of the space, such as linear relaxation, constraint generation, and <a href="https://en.wikipedia.org/wiki/Local_consistency" title="Local consistency">constraint propagation</a>.</p>
+<p>An important subclass are the <a href="https://en.wikipedia.org/wiki/Local_search_(optimization)" title="Local search (optimization)">local search</a> methods, that view the elements of the search space as the <a href="https://en.wikipedia.org/wiki/Vertex_(graph_theory)" title="Vertex (graph theory)">vertices</a> of a graph, with edges defined by a set of heuristics applicable to the case; and scan the space by moving from item to item along the edges, for example according to the <a href="https://en.wikipedia.org/wiki/Gradient_descent" title="Gradient descent">steepest descent</a> or <a href="https://en.wikipedia.org/wiki/Best-first_search" title="Best-first search">best-first</a> criterion, or in a <a href="https://en.wikipedia.org/wiki/Stochastic_optimization" title="Stochastic optimization">stochastic search</a>. This category includes a great variety of general <a href="https://en.wikipedia.org/wiki/Metaheuristic" title="Metaheuristic">metaheuristic</a> methods, such as <a href="https://en.wikipedia.org/wiki/Simulated_annealing" title="Simulated annealing">simulated annealing</a>, <a href="https://en.wikipedia.org/wiki/Tabu_search" title="Tabu search">tabu search</a>, A-teams, and <a href="https://en.wikipedia.org/wiki/Genetic_programming" title="Genetic programming">genetic programming</a>, that combine arbitrary heuristics in specific ways.</p>
+<p>This class also includes various <a href="https://en.wikipedia.org/wiki/Tree_traversal" title="Tree traversal">tree search algorithms</a>, that view the elements as vertices of a <a href="https://en.wikipedia.org/wiki/Tree_(graph_theory)" title="Tree (graph theory)">tree</a>, and traverse that tree in some special order. Examples of the latter include the exhaustive methods such as <a href="https://en.wikipedia.org/wiki/Depth-first_search" title="Depth-first search">depth-first search</a> and <a href="https://en.wikipedia.org/wiki/Breadth-first_search" title="Breadth-first search">breadth-first search</a>, as well as various heuristic-based <a href="https://en.wikipedia.org/wiki/Pruning_(decision_trees)" title="Pruning (decision trees)">search tree pruning</a> methods such as <a href="https://en.wikipedia.org/wiki/Backtracking" title="Backtracking">backtracking</a> and <a href="https://en.wikipedia.org/wiki/Branch_and_bound" title="Branch and bound">branch and bound</a>. Unlike general metaheuristics, which at best work only in a probabilistic sense, many of these tree-search methods are guaranteed to find the exact or optimal solution, if given enough time. This is called "<a href="https://en.wikipedia.org/wiki/Completeness_(logic)" title="Completeness (logic)">completeness</a>".</p>
+<p>Another important sub-class consists of algorithms for exploring the <a href="https://en.wikipedia.org/wiki/Game_tree" title="Game tree">game tree</a> of multiple-player games, such as <a href="https://en.wikipedia.org/wiki/Chess" title="Chess">chess</a> or <a href="https://en.wikipedia.org/wiki/Backgammon" title="Backgammon">backgammon</a>, whose nodes consist of all possible game situations that could result from the current situation. The goal in these problems is to find the move that provides the best chance of a win, taking into account all possible moves of the opponent(s). Similar problems occur when humans or machines have to make successive decisions whose outcomes are not entirely under one's control, such as in <a href="Robot.html" title="Robot">robot</a> guidance or in <a href="Marketing.html" title="Marketing">marketing</a>, <a href="https://en.wikipedia.org/wiki/Finance" title="Finance">financial</a>, or <a href="https://en.wikipedia.org/wiki/Military" title="Military">military</a> strategy planning. This kind of problem — <a href="https://en.wikipedia.org/wiki/Combinatorial_search" title="Combinatorial search">combinatorial search</a> — has been extensively studied in the context of <a href="https://en.wikipedia.org/wiki/Artificial_intelligence" title="Artificial intelligence">artificial intelligence</a>. Examples of algorithms for this class are the <a href="https://en.wikipedia.org/wiki/Minimax" title="Minimax">minimax algorithm</a>, <a href="https://en.wikipedia.org/wiki/Alpha–beta_pruning" title="Alpha–beta pruning">alpha–beta pruning</a>, * Informational search <sup id="cite_ref-7" class="reference"><a href="#cite_note-7">[7]</a></sup> and the <a href="https://en.wikipedia.org/wiki/A*_search_algorithm" title="A* search algorithm">A* algorithm</a>.</p>
+<h3><span class="mw-headline" id="For_sub-structures_of_a_given_structure">For sub-structures of a given structure</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Search_algorithm&amp;action=edit&amp;section=3" title="Edit section: For sub-structures of a given structure">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The name combinatorial search is generally used for algorithms that look for a specific sub-structure of a given <a href="https://en.wikipedia.org/wiki/Discrete_mathematics" title="Discrete mathematics">discrete structure</a>, such as a graph, a <a href="String_(computer_science).html" title="String (computer science)">string</a>, a finite <a href="https://en.wikipedia.org/wiki/Group_(mathematics)" title="Group (mathematics)">group</a>, and so on. The term <a href="https://en.wikipedia.org/wiki/Combinatorial_optimization" title="Combinatorial optimization">combinatorial optimization</a> is typically used when the goal is to find a sub-structure with a maximum (or minimum) value of some parameter. (Since the sub-structure is usually represented in the computer by a set of integer variables with constraints, these problems can be viewed as special cases of constraint satisfaction or discrete optimization; but they are usually formulated and solved in a more abstract setting where the internal representation is not explicitly mentioned.)</p>
+<p>An important and extensively studied subclass are the <a href="https://en.wikipedia.org/wiki/List_of_algorithms#Graph_algorithms" title="List of algorithms">graph algorithms</a>, in particular <a href="https://en.wikipedia.org/wiki/Graph_traversal" title="Graph traversal">graph traversal</a> algorithms, for finding specific sub-structures in a given graph — such as <a href="https://en.wikipedia.org/wiki/Glossary_of_graph_theory#Subgraphs" class="mw-redirect" title="Glossary of graph theory">subgraphs</a>, <a href="https://en.wikipedia.org/wiki/Path_(graph_theory)" title="Path (graph theory)">paths</a>, circuits, and so on. Examples include <a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm" title="Dijkstra's algorithm">Dijkstra's algorithm</a>, <a href="https://en.wikipedia.org/wiki/Kruskal%27s_algorithm" title="Kruskal's algorithm">Kruskal's algorithm</a>, the <a href="https://en.wikipedia.org/wiki/Nearest_neighbour_algorithm" title="Nearest neighbour algorithm">nearest neighbour algorithm</a>, and <a href="https://en.wikipedia.org/wiki/Prim%27s_algorithm" title="Prim's algorithm">Prim's algorithm</a>.</p>
+<p>Another important subclass of this category are the <a href="https://en.wikipedia.org/wiki/String_searching_algorithm" title="String searching algorithm">string searching algorithms</a>, that search for patterns within strings. Two famous examples are the <a href="https://en.wikipedia.org/wiki/Boyer–Moore_string_search_algorithm" title="Boyer–Moore string search algorithm">Boyer–Moore</a> and <a href="https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm" title="Knuth–Morris–Pratt algorithm">Knuth–Morris–Pratt algorithms</a>, and several algorithms based on the <a href="https://en.wikipedia.org/wiki/Suffix_tree" title="Suffix tree">suffix tree</a> data structure.</p>
+<h3><span class="mw-headline" id="Search_for_the_maximum_of_a_function">Search for the maximum of a function</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Search_algorithm&amp;action=edit&amp;section=4" title="Edit section: Search for the maximum of a function">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>In 1953, American <a href="https://en.wikipedia.org/wiki/Statistics" title="Statistics">statistician</a> <a href="https://en.wikipedia.org/wiki/Jack_Kiefer_(statistician)" title="Jack Kiefer (statistician)">Jack Kiefer</a> devised <a href="https://en.wikipedia.org/wiki/Fibonacci_search_technique" title="Fibonacci search technique">Fibonacci search</a> which can be used to find the maximum of a unimodal function and has many other applications in computer science.</p>
+<h3><span class="mw-headline" id="For_quantum_computers">For quantum computers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Search_algorithm&amp;action=edit&amp;section=5" title="Edit section: For quantum computers">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>There are also search methods designed for <a href="https://en.wikipedia.org/wiki/Quantum_computing" title="Quantum computing">quantum computers</a>, like <a href="https://en.wikipedia.org/wiki/Grover%27s_algorithm" title="Grover's algorithm">Grover's algorithm</a>, that are theoretically faster than linear or brute-force search even without the help of data structures or heuristics.</p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Search_algorithm&amp;action=edit&amp;section=6" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="div-col columns column-width" style="-moz-column-width: 30em; -webkit-column-width: 30em; column-width: 30em;">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Category:Search_algorithms" title="Category:Search algorithms">Category:Search algorithms</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Backward_induction" title="Backward induction">Backward induction</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Content-addressable_memory" title="Content-addressable memory">Content-addressable memory</a> hardware</li>
+<li><a href="https://en.wikipedia.org/wiki/Dual-phase_evolution" title="Dual-phase evolution">Dual-phase evolution</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Linear_search_problem" title="Linear search problem">Linear search problem</a></li>
+<li><a href="https://en.wikipedia.org/wiki/No_free_lunch_in_search_and_optimization" title="No free lunch in search and optimization">No free lunch in search and optimization</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Recommender_system" title="Recommender system">Recommender systems</a> also use statistical methods to rank results in very large data sets</li>
+<li><a href="https://en.wikipedia.org/wiki/Search_engine_(computing)" title="Search engine (computing)">Search engine (computing)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Search_game" title="Search game">Search game</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Selection_algorithm" title="Selection algorithm">Selection algorithm</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Solver" title="Solver">Solver</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Sorting_algorithm" title="Sorting algorithm">Sorting algorithms</a> necessary for executing certain search algorithms</li>
+<li>Web Searching e.g., Google's <a href="PageRank.html" title="PageRank">PageRank</a></li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Search_algorithm&amp;action=edit&amp;section=7" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Citations">Citations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Search_algorithm&amp;action=edit&amp;section=8" title="Edit section: Citations">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div class="reflist columns references-column-count references-column-count-2" style="-moz-column-count: 2; -webkit-column-count: 2; column-count: 2; list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-FOOTNOTEBeameFich200139-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTEBeameFich200139_1-0">^</a></b></span> <span class="reference-text"><a href="#CITEREFBeameFich2001">Beame &amp; Fich 2001</a>, p.&#160;39.</span></li>
+<li id="cite_note-FOOTNOTEKnuth1998.C2.A76.5_.28.22Retrieval_on_Secondary_Keys.22.29-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTEKnuth1998.C2.A76.5_.28.22Retrieval_on_Secondary_Keys.22.29_2-0">^</a></b></span> <span class="reference-text"><a href="#CITEREFKnuth1998">Knuth 1998</a>, §6.5 ("Retrieval on Secondary Keys").</span></li>
+<li id="cite_note-FOOTNOTEKnuth1998.C2.A76.1_.28.22Sequential_Searching.22.29-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTEKnuth1998.C2.A76.1_.28.22Sequential_Searching.22.29_3-0">^</a></b></span> <span class="reference-text"><a href="#CITEREFKnuth1998">Knuth 1998</a>, §6.1 ("Sequential Searching").</span></li>
+<li id="cite_note-FOOTNOTEKnuth1998.C2.A76.2_.28.22Searching_by_Comparison_of_Keys.22.29-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTEKnuth1998.C2.A76.2_.28.22Searching_by_Comparison_of_Keys.22.29_4-0">^</a></b></span> <span class="reference-text"><a href="#CITEREFKnuth1998">Knuth 1998</a>, §6.2 ("Searching by Comparison of Keys").</span></li>
+<li id="cite_note-FOOTNOTEKnuth1998.C2.A76.3_.28Digital_Searching.29-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTEKnuth1998.C2.A76.3_.28Digital_Searching.29_5-0">^</a></b></span> <span class="reference-text"><a href="#CITEREFKnuth1998">Knuth 1998</a>, §6.3 (Digital Searching).</span></li>
+<li id="cite_note-FOOTNOTEKnuth1998.C2.A76.4.2C_.28Hashing.29-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTEKnuth1998.C2.A76.4.2C_.28Hashing.29_6-0">^</a></b></span> <span class="reference-text"><a href="#CITEREFKnuth1998">Knuth 1998</a>, §6.4, (Hashing).</span></li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-7">^</a></b></span> <span class="reference-text"><cite class="citation journal">Kagan E. and Ben-Gal I. (2014). <a rel="nofollow" class="external text" href="http://www.eng.tau.ac.il/~bengal/GTA.pdf">"A Group-Testing Algorithm with Online Informational Learning"</a> <span style="font-size:85%;">(PDF)</span>. IIE Transactions, 46:2, 164-184,.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASearch+algorithm&amp;rft.atitle=A+Group-Testing+Algorithm+with+Online+Informational+Learning&amp;rft.au=Kagan+E.+and+Ben-Gal+I.&amp;rft.date=2014&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww.eng.tau.ac.il%2F~bengal%2FGTA.pdf&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+</ol>
+</div>
+<h3><span class="mw-headline" id="Bibliography">Bibliography</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Search_algorithm&amp;action=edit&amp;section=9" title="Edit section: Bibliography">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="Books">Books</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Search_algorithm&amp;action=edit&amp;section=10" title="Edit section: Books">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<ul>
+<li><cite id="CITEREFKnuth1998" class="citation book"><a href="Donald_Knuth.html" title="Donald Knuth">Knuth, Donald</a> (1998). <i>Sorting and Searching</i>. <a href="https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming" title="The Art of Computer Programming">The Art of Computer Programming</a>. <b>3</b> (2nd ed.). Reading, MA: Addison-Wesley Professional.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASearch+algorithm&amp;rft.aufirst=Donald&amp;rft.aulast=Knuth&amp;rft.btitle=Sorting+and+Searching&amp;rft.date=1998&amp;rft.edition=2nd&amp;rft.genre=book&amp;rft.place=Reading%2C+MA&amp;rft.pub=Addison-Wesley+Professional&amp;rft.series=The+Art+of+Computer+Programming&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+</ul>
+<h4><span class="mw-headline" id="Articles">Articles</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Search_algorithm&amp;action=edit&amp;section=11" title="Edit section: Articles">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<ul>
+<li><cite id="CITEREFBeameFich2001" class="citation journal">Beame, Paul; <a href="https://en.wikipedia.org/wiki/Faith_Ellen" title="Faith Ellen">Fich, Faith E.</a> (2001). <a rel="nofollow" class="external text" href="http://www.sciencedirect.com/science/article/pii/S0022000002918222">"Optimal Bounds for the Predecessor Problem and Related Problems"</a>. <i>Journal of Computer and System Sciences</i>. <b>65</b> (1): 38–72. <a href="Digital_object_identifier.html" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1006%2Fjcss.2002.1822">10.1006/jcss.2002.1822</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASearch+algorithm&amp;rft.atitle=Optimal+Bounds+for+the+Predecessor+Problem+and+Related+Problems&amp;rft.au=Fich%2C+Faith+E.&amp;rft.aufirst=Paul&amp;rft.aulast=Beame&amp;rft.date=2001&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0022000002918222&amp;rft_id=info%3Adoi%2F10.1006%2Fjcss.2002.1822&amp;rft.issue=1&amp;rft.jtitle=Journal+of+Computer+and+System+Sciences&amp;rft.pages=38-72&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=65" class="Z3988"><span style="display:none;">&#160;</span></span> <span style="position:relative; top: -2px;"><a href="Open_access.html" title="open access publication - free to read"><img alt="open access publication - free to read" src="../../upload.wikimedia.org/wikipedia/commons/thumb/7/77/Open_Access_logo_PLoS_transparent.svg/9px-Open_Access_logo_PLoS_transparent.svg.png" width="9" height="14" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Open_Access_logo_PLoS_transparent.svg/14px-Open_Access_logo_PLoS_transparent.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/7/77/Open_Access_logo_PLoS_transparent.svg/18px-Open_Access_logo_PLoS_transparent.svg.png 2x" data-file-width="640" data-file-height="1000" /></a></span></li>
+</ul>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Search_algorithm&amp;action=edit&amp;section=12" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="refbegin" style="">
+<ul>
+<li><a href="https://en.wikiversity.org/wiki/Uninformed_Search_Project" class="extiw" title="wikiversity:Uninformed Search Project">Uninformed Search Project</a> at the <a href="Wikiversity.html" title="Wikiversity">Wikiversity</a>.</li>
+<li><a rel="nofollow" class="external text" href="http://sites.google.com/site/hantarto/quantum-computing/unsorted">Unsorted Data Searching Using Modulated Database</a>.</li>
+</ul>
+</div>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1176
+Cached time: 20161211140704
+Cache expiry: 2592000
+Dynamic content: false
+CPU time usage: 0.140 seconds
+Real time usage: 0.190 seconds
+Preprocessor visited node count: 900/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 43920/2097152 bytes
+Template argument size: 11728/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 6/500
+Lua time usage: 0.060/10.000 seconds
+Lua memory usage: 2.19 MB/50 MB
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  151.939      1 - -total
+ 64.40%   97.850      5 - Template:Ambox
+ 51.38%   78.062      1 - Template:Multiple_issues
+ 24.03%   36.515      1 - Template:Reflist
+ 18.65%   28.330      1 - Template:Cite_paper
+ 17.40%   26.431      1 - Template:Expert-subject
+  9.03%   13.716      6 - Template:Sfn
+  6.26%    9.504      1 - Template:TAOCP
+  4.31%    6.551      1 - Template:Refimprove
+  3.84%    5.831      1 - Template:Context
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:28249-0!*!0!!en!4!* and timestamp 20161211140704 and revision id 751284017
+ -->
+<noscript><img src="http://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Search_algorithm&amp;oldid=751284017">https://en.wikipedia.org/w/index.php?title=Search_algorithm&amp;oldid=751284017</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="Help_Category.html" title="Help:Category">Categories</a>: <ul><li><a href="https://en.wikipedia.org/wiki/Category:Search_algorithms" title="Category:Search algorithms">Search algorithms</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="https://en.wikipedia.org/wiki/Category:Articles_needing_expert_attention_from_December_2014" title="Category:Articles needing expert attention from December 2014">Articles needing expert attention from December 2014</a></li><li><a href="Category_All_articles_needing_expert_attention.html" title="Category:All articles needing expert attention">All articles needing expert attention</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Computer_science_articles_needing_expert_attention" title="Category:Computer science articles needing expert attention">Computer science articles needing expert attention</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Wikipedia_articles_needing_context_from_December_2014" title="Category:Wikipedia articles needing context from December 2014">Wikipedia articles needing context from December 2014</a></li><li><a href="https://en.wikipedia.org/wiki/Category:All_Wikipedia_articles_needing_context" title="Category:All Wikipedia articles needing context">All Wikipedia articles needing context</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Wikipedia_introduction_cleanup_from_December_2014" title="Category:Wikipedia introduction cleanup from December 2014">Wikipedia introduction cleanup from December 2014</a></li><li><a href="https://en.wikipedia.org/wiki/Category:All_pages_needing_cleanup" title="Category:All pages needing cleanup">All pages needing cleanup</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Articles_needing_additional_references_from_April_2016" title="Category:Articles needing additional references from April 2016">Articles needing additional references from April 2016</a></li><li><a href="Category_All_articles_needing_additional_references.html" title="Category:All articles needing additional references">All articles needing additional references</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-anonuserpage">Not logged in</li><li id="pt-anontalk"><a href="https://en.wikipedia.org/wiki/Special:MyTalk" title="Discussion about edits from this IP address [n]" accesskey="n">Talk</a></li><li id="pt-anoncontribs"><a href="https://en.wikipedia.org/wiki/Special:MyContributions" title="A list of edits made from this IP address [y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&amp;returnto=Search+algorithm" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Search+algorithm" title="You're encouraged to log in; however, it's not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Search_algorithm.html"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="https://en.wikipedia.org/wiki/Talk:Search_algorithm"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Search_algorithm.html" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="../w/index6e09.html?title=Search_algorithm&amp;action=edit"  title="Edit this page [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://en.wikipedia.org/w/index.php?title=Search_algorithm&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://en.wikipedia.org/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search Wikipedia" title="Search Wikipedia [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-contents"><a href="Portal_Contents.html" title="Guides to browsing Wikipedia">Contents</a></li><li id="n-featuredcontent"><a href="Portal_Featured_content.html" title="Featured content – the best of Wikipedia">Featured content</a></li><li id="n-currentevents"><a href="Portal_Current_events.html" title="Find background information on current events">Current events</a></li><li id="n-randompage"><a href="https://en.wikipedia.org/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li><li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li><li id="n-shoplink"><a href="../../shop.wikimedia.org/index.html" title="Visit the Wikipedia store">Wikipedia store</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-help"><a href="Help_Contents.html" title="Guidance on how to use and edit Wikipedia">Help</a></li><li id="n-aboutsite"><a href="Wikipedia_About.html" title="Find out about Wikipedia">About Wikipedia</a></li><li id="n-portal"><a href="Wikipedia_Community_portal.html" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="https://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-contactpage"><a href="Wikipedia_Contact_us.html" title="How to contact Wikipedia">Contact page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://en.wikipedia.org/wiki/Special:WhatLinksHere/Search_algorithm" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.wikipedia.org/wiki/Special:RecentChangesLinked/Search_algorithm" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="Wikipedia_File_Upload_Wizard.html" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="https://en.wikipedia.org/w/index.php?title=Search_algorithm&amp;oldid=751284017" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.wikipedia.org/w/index.php?title=Search_algorithm&amp;action=info" title="More information about this page">Page information</a></li><li id="t-wikibase"><a href="https://www.wikidata.org/wiki/Q755673" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li><li id="t-cite"><a href="https://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&amp;page=Search_algorithm&amp;id=751284017" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+						<li id="coll-create_a_book"><a href="https://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Search+algorithm">Create a book</a></li><li id="coll-download-as-rdf2latex"><a href="https://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Search+algorithm&amp;returnto=Search+algorithm&amp;oldid=751284017&amp;writer=rdf2latex">Download as PDF</a></li><li id="t-print"><a href="https://en.wikipedia.org/w/index.php?title=Search_algorithm&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-wikibase-otherprojects' aria-labelledby='p-wikibase-otherprojects-label'>
+			<h3 id='p-wikibase-otherprojects-label'>In other projects</h3>
+
+			<div class="body">
+									<ul>
+						<li class="wb-otherproject-link wb-otherproject-commons"><a href="https://commons.wikimedia.org/wiki/Category:Search_algorithms" hreflang="en">Wikimedia Commons</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+						<li class="interlanguage-link interwiki-ar"><a href="https://ar.wikipedia.org/wiki/خوارزمية_بحث" title="خوارزمية بحث – Arabic" lang="ar" hreflang="ar" class="interlanguage-link-target">العربية</a></li><li class="interlanguage-link interwiki-az"><a href="https://az.wikipedia.org/wiki/Axtarış_alqoritmləri" title="Axtarış alqoritmləri – Azerbaijani" lang="az" hreflang="az" class="interlanguage-link-target">Azərbaycanca</a></li><li class="interlanguage-link interwiki-bn"><a href="https://bn.wikipedia.org/wiki/অনুসন্ধান_অ্যালগোরিদম" title="অনুসন্ধান অ্যালগোরিদম – Bangla" lang="bn" hreflang="bn" class="interlanguage-link-target">বাংলা</a></li><li class="interlanguage-link interwiki-bg"><a href="https://bg.wikipedia.org/wiki/Алгоритъм_за_търсене" title="Алгоритъм за търсене – Bulgarian" lang="bg" hreflang="bg" class="interlanguage-link-target">Български</a></li><li class="interlanguage-link interwiki-da"><a href="https://da.wikipedia.org/wiki/Søgealgoritme" title="Søgealgoritme – Danish" lang="da" hreflang="da" class="interlanguage-link-target">Dansk</a></li><li class="interlanguage-link interwiki-de"><a href="https://de.wikipedia.org/wiki/Suchverfahren" title="Suchverfahren – German" lang="de" hreflang="de" class="interlanguage-link-target">Deutsch</a></li><li class="interlanguage-link interwiki-el"><a href="https://el.wikipedia.org/wiki/Αλγόριθμος_αναζήτησης" title="Αλγόριθμος αναζήτησης – Greek" lang="el" hreflang="el" class="interlanguage-link-target">Ελληνικά</a></li><li class="interlanguage-link interwiki-es"><a href="https://es.wikipedia.org/wiki/Algoritmo_de_búsqueda" title="Algoritmo de búsqueda – Spanish" lang="es" hreflang="es" class="interlanguage-link-target">Español</a></li><li class="interlanguage-link interwiki-fa"><a href="https://fa.wikipedia.org/wiki/الگوریتم_جستجو" title="الگوریتم جستجو – Persian" lang="fa" hreflang="fa" class="interlanguage-link-target">فارسی</a></li><li class="interlanguage-link interwiki-fr"><a href="https://fr.wikipedia.org/wiki/Algorithme_de_recherche" title="Algorithme de recherche – French" lang="fr" hreflang="fr" class="interlanguage-link-target">Français</a></li><li class="interlanguage-link interwiki-id"><a href="https://id.wikipedia.org/wiki/Algoritma_pencarian" title="Algoritma pencarian – Indonesian" lang="id" hreflang="id" class="interlanguage-link-target">Bahasa Indonesia</a></li><li class="interlanguage-link interwiki-ia"><a href="https://ia.wikipedia.org/wiki/Algorithmo_de_recerca" title="Algorithmo de recerca – Interlingua" lang="ia" hreflang="ia" class="interlanguage-link-target">Interlingua</a></li><li class="interlanguage-link interwiki-it"><a href="https://it.wikipedia.org/wiki/Algoritmo_di_ricerca" title="Algoritmo di ricerca – Italian" lang="it" hreflang="it" class="interlanguage-link-target">Italiano</a></li><li class="interlanguage-link interwiki-he"><a href="https://he.wikipedia.org/wiki/חיפוש_(אלגוריתם)" title="חיפוש (אלגוריתם) – Hebrew" lang="he" hreflang="he" class="interlanguage-link-target">עברית</a></li><li class="interlanguage-link interwiki-hu"><a href="https://hu.wikipedia.org/wiki/Keresőalgoritmus" title="Keresőalgoritmus – Hungarian" lang="hu" hreflang="hu" class="interlanguage-link-target">Magyar</a></li><li class="interlanguage-link interwiki-nl"><a href="https://nl.wikipedia.org/wiki/Zoekalgoritme" title="Zoekalgoritme – Dutch" lang="nl" hreflang="nl" class="interlanguage-link-target">Nederlands</a></li><li class="interlanguage-link interwiki-ja"><a href="https://ja.wikipedia.org/wiki/探索" title="探索 – Japanese" lang="ja" hreflang="ja" class="interlanguage-link-target">日本語</a></li><li class="interlanguage-link interwiki-pt"><a href="https://pt.wikipedia.org/wiki/Algoritmo_de_busca" title="Algoritmo de busca – Portuguese" lang="pt" hreflang="pt" class="interlanguage-link-target">Português</a></li><li class="interlanguage-link interwiki-sr"><a href="https://sr.wikipedia.org/wiki/Алгоритми_претраживања" title="Алгоритми претраживања – Serbian" lang="sr" hreflang="sr" class="interlanguage-link-target">Српски / srpski</a></li><li class="interlanguage-link interwiki-fi"><a href="https://fi.wikipedia.org/wiki/Hakualgoritmi" title="Hakualgoritmi – Finnish" lang="fi" hreflang="fi" class="interlanguage-link-target">Suomi</a></li><li class="interlanguage-link interwiki-th"><a href="https://th.wikipedia.org/wiki/ขั้นตอนวิธีการค้นหา" title="ขั้นตอนวิธีการค้นหา – Thai" lang="th" hreflang="th" class="interlanguage-link-target">ไทย</a></li><li class="interlanguage-link interwiki-tr"><a href="https://tr.wikipedia.org/wiki/Arama_algoritması" title="Arama algoritması – Turkish" lang="tr" hreflang="tr" class="interlanguage-link-target">Türkçe</a></li><li class="interlanguage-link interwiki-vi"><a href="https://vi.wikipedia.org/wiki/Giải_thuật_tìm_kiếm" title="Giải thuật tìm kiếm – Vietnamese" lang="vi" hreflang="vi" class="interlanguage-link-target">Tiếng Việt</a></li><li class="uls-p-lang-dummy"><a href="#"></a></li>					</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Q755673#sitelinks-wikipedia" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 24 November 2016, at 16:10.</li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="Wikipedia_Text_of_Creative_Commons_Attribution-ShareAlike_3.html">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="../../creativecommons.org/licenses/by-sa/3.0/index.html" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="../../wikimediafoundation.org/wiki/Terms_of_Use.html">Terms of Use</a> and <a href="../../wikimediafoundation.org/wiki/Privacy_policy.html">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="../../www.wikimediafoundation.org/index.html">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="../../wikimediafoundation.org/wiki/Privacy_policy.html" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="Wikipedia_About.html" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="Wikipedia_General_disclaimer.html" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="Wikipedia_Contact_us.html">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-cookiestatement"><a href="../../wikimediafoundation.org/wiki/Cookie_statement.html">Cookie statement</a></li>
+											<li id="footer-places-mobileview"><a href="http://en.m.wikipedia.org/w/index.php?title=Search_algorithm&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="../../www.wikimediafoundation.org/index.html"><img src="../static/images/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="../../www.mediawiki.org/index.html"><img src="../static/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":76,"wgHostname":"mw1267"});});</script>
+	</body>
+
+<!-- Mirrored from en.wikipedia.org/wiki/Search_algorithm by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 15 Dec 2016 13:19:01 GMT -->
+</html>

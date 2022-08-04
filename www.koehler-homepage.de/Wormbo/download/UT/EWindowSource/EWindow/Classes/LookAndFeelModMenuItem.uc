@@ -1,0 +1,1 @@
+class LookAndFeelModMenuItem extends UMenuModMenuItem;

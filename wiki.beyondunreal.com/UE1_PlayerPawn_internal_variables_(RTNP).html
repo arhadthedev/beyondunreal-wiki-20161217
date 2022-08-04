@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE1:PlayerPawn_internal_variables_(RTNP) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:56:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE1:PlayerPawn internal variables (RTNP) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE1_PlayerPawn_internal_variables_(RTNP).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE1","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":102,"wgPageName":"UE1:PlayerPawn_internal_variables_(RTNP)","wgTitle":"PlayerPawn internal variables (RTNP)","wgCurRevisionId":14656,"wgRevisionId":14656,"wgArticleId":6931,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE1:PlayerPawn_internal_variables_(RTNP)","wgRelevantArticleId":6931,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-102 ns-subject page-UE1_PlayerPawn_internal_variables_RTNP skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I'm a doctor, not a mechanic
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE1:PlayerPawn internal variables (RTNP)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_-_Return_to_NaPali.html" title="Unreal - Return to NaPali"><img alt="RTNP" src="w/images/Icon-RTNP.png" width="17" height="17" /></a></td>
+<td><a href="UE1_Object_(RTNP).html" title="UE1:Object (RTNP)">Object</a> &gt;&gt;&#160;<a href="UE1_Actor_(RTNP).html" title="UE1:Actor (RTNP)">Actor</a> &gt;&gt;&#160;<a href="UE1_Pawn_(RTNP).html" title="UE1:Pawn (RTNP)">Pawn</a> &gt;&gt;&#160;<a href="UE1_PlayerPawn_(RTNP).html" title="UE1:PlayerPawn (RTNP)">PlayerPawn</a> <i>(internal variables)</i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Internal_variables"><span class="tocnumber">1</span> <span class="toctext">Internal variables</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#aBaseX"><span class="tocnumber">1.1</span> <span class="toctext">aBaseX</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#aBaseY"><span class="tocnumber">1.2</span> <span class="toctext">aBaseY</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#aBaseZ"><span class="tocnumber">1.3</span> <span class="toctext">aBaseZ</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#aExtra0"><span class="tocnumber">1.4</span> <span class="toctext">aExtra0</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#aExtra1"><span class="tocnumber">1.5</span> <span class="toctext">aExtra1</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#aExtra2"><span class="tocnumber">1.6</span> <span class="toctext">aExtra2</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#aExtra3"><span class="tocnumber">1.7</span> <span class="toctext">aExtra3</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#aExtra4"><span class="tocnumber">1.8</span> <span class="toctext">aExtra4</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#aForward"><span class="tocnumber">1.9</span> <span class="toctext">aForward</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#aLookUp"><span class="tocnumber">1.10</span> <span class="toctext">aLookUp</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#aMouseX"><span class="tocnumber">1.11</span> <span class="toctext">aMouseX</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#aMouseY"><span class="tocnumber">1.12</span> <span class="toctext">aMouseY</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#aStrafe"><span class="tocnumber">1.13</span> <span class="toctext">aStrafe</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#aTurn"><span class="tocnumber">1.14</span> <span class="toctext">aTurn</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#aUp"><span class="tocnumber">1.15</span> <span class="toctext">aUp</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#bAdmin"><span class="tocnumber">1.16</span> <span class="toctext">bAdmin</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#bAnimTransition"><span class="tocnumber">1.17</span> <span class="toctext">bAnimTransition</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#bCenterView"><span class="tocnumber">1.18</span> <span class="toctext">bCenterView</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#bDelayedCommand"><span class="tocnumber">1.19</span> <span class="toctext">bDelayedCommand</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#bEdgeBack"><span class="tocnumber">1.20</span> <span class="toctext">bEdgeBack</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#bEdgeForward"><span class="tocnumber">1.21</span> <span class="toctext">bEdgeForward</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#bEdgeLeft"><span class="tocnumber">1.22</span> <span class="toctext">bEdgeLeft</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#bEdgeRight"><span class="tocnumber">1.23</span> <span class="toctext">bEdgeRight</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#bFixedCamera"><span class="tocnumber">1.24</span> <span class="toctext">bFixedCamera</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#bFrozen"><span class="tocnumber">1.25</span> <span class="toctext">bFrozen</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#bInvertMouse"><span class="tocnumber">1.26</span> <span class="toctext">bInvertMouse</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#bIsCrouching"><span class="tocnumber">1.27</span> <span class="toctext">bIsCrouching</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#bIsTurning"><span class="tocnumber">1.28</span> <span class="toctext">bIsTurning</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#bIsTyping"><span class="tocnumber">1.29</span> <span class="toctext">bIsTyping</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#bJustAltFired"><span class="tocnumber">1.30</span> <span class="toctext">bJustAltFired</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#bJustFired"><span class="tocnumber">1.31</span> <span class="toctext">bJustFired</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#bKeyboardLook"><span class="tocnumber">1.32</span> <span class="toctext">bKeyboardLook</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#bMessageBeep"><span class="tocnumber">1.33</span> <span class="toctext">bMessageBeep</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#bMouseZeroed"><span class="tocnumber">1.34</span> <span class="toctext">bMouseZeroed</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#bNoFlash"><span class="tocnumber">1.35</span> <span class="toctext">bNoFlash</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#bNoVoices"><span class="tocnumber">1.36</span> <span class="toctext">bNoVoices</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#bobtime"><span class="tocnumber">1.37</span> <span class="toctext">bobtime</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#bPressedJump"><span class="tocnumber">1.38</span> <span class="toctext">bPressedJump</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#bReadyToPlay"><span class="tocnumber">1.39</span> <span class="toctext">bReadyToPlay</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#bReducedVis"><span class="tocnumber">1.40</span> <span class="toctext">bReducedVis</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#bRising"><span class="tocnumber">1.41</span> <span class="toctext">bRising</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#bShakeDir"><span class="tocnumber">1.42</span> <span class="toctext">bShakeDir</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="#bShowMenu"><span class="tocnumber">1.43</span> <span class="toctext">bShowMenu</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="#bShowScores"><span class="tocnumber">1.44</span> <span class="toctext">bShowScores</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href="#bSpecialMenu"><span class="tocnumber">1.45</span> <span class="toctext">bSpecialMenu</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#bUpdatePosition"><span class="tocnumber">1.46</span> <span class="toctext">bUpdatePosition</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="#bWasBack"><span class="tocnumber">1.47</span> <span class="toctext">bWasBack</span></a></li>
+<li class="toclevel-2 tocsection-49"><a href="#bWasForward"><span class="tocnumber">1.48</span> <span class="toctext">bWasForward</span></a></li>
+<li class="toclevel-2 tocsection-50"><a href="#bWasLeft"><span class="tocnumber">1.49</span> <span class="toctext">bWasLeft</span></a></li>
+<li class="toclevel-2 tocsection-51"><a href="#bWasRight"><span class="tocnumber">1.50</span> <span class="toctext">bWasRight</span></a></li>
+<li class="toclevel-2 tocsection-52"><a href="#bWokeUp"><span class="tocnumber">1.51</span> <span class="toctext">bWokeUp</span></a></li>
+<li class="toclevel-2 tocsection-53"><a href="#bZooming"><span class="tocnumber">1.52</span> <span class="toctext">bZooming</span></a></li>
+<li class="toclevel-2 tocsection-54"><a href="#CantChangeNameMsg"><span class="tocnumber">1.53</span> <span class="toctext">CantChangeNameMsg</span></a></li>
+<li class="toclevel-2 tocsection-55"><a href="#CdTrack"><span class="tocnumber">1.54</span> <span class="toctext">CdTrack</span></a></li>
+<li class="toclevel-2 tocsection-56"><a href="#ConstantGlowFog"><span class="tocnumber">1.55</span> <span class="toctext">ConstantGlowFog</span></a></li>
+<li class="toclevel-2 tocsection-57"><a href="#ConstantGlowScale"><span class="tocnumber">1.56</span> <span class="toctext">ConstantGlowScale</span></a></li>
+<li class="toclevel-2 tocsection-58"><a href="#CurrentTimeStamp"><span class="tocnumber">1.57</span> <span class="toctext">CurrentTimeStamp</span></a></li>
+<li class="toclevel-2 tocsection-59"><a href="#DefaultFOV"><span class="tocnumber">1.58</span> <span class="toctext">DefaultFOV</span></a></li>
+<li class="toclevel-2 tocsection-60"><a href="#DelayedCommand"><span class="tocnumber">1.59</span> <span class="toctext">DelayedCommand</span></a></li>
+<li class="toclevel-2 tocsection-61"><a href="#DesiredFlashFog"><span class="tocnumber">1.60</span> <span class="toctext">DesiredFlashFog</span></a></li>
+<li class="toclevel-2 tocsection-62"><a href="#DesiredFlashScale"><span class="tocnumber">1.61</span> <span class="toctext">DesiredFlashScale</span></a></li>
+<li class="toclevel-2 tocsection-63"><a href="#DesiredFOV"><span class="tocnumber">1.62</span> <span class="toctext">DesiredFOV</span></a></li>
+<li class="toclevel-2 tocsection-64"><a href="#DodgeClickTimer"><span class="tocnumber">1.63</span> <span class="toctext">DodgeClickTimer</span></a></li>
+<li class="toclevel-2 tocsection-65"><a href="#FailedView"><span class="tocnumber">1.64</span> <span class="toctext">FailedView</span></a></li>
+<li class="toclevel-2 tocsection-66"><a href="#FlashFog"><span class="tocnumber">1.65</span> <span class="toctext">FlashFog</span></a></li>
+<li class="toclevel-2 tocsection-67"><a href="#FlashScale"><span class="tocnumber">1.66</span> <span class="toctext">FlashScale</span></a></li>
+<li class="toclevel-2 tocsection-68"><a href="#FreeMoves"><span class="tocnumber">1.67</span> <span class="toctext">FreeMoves</span></a></li>
+<li class="toclevel-2 tocsection-69"><a href="#GameReplicationInfo"><span class="tocnumber">1.68</span> <span class="toctext">GameReplicationInfo</span></a></li>
+<li class="toclevel-2 tocsection-70"><a href="#Handedness"><span class="tocnumber">1.69</span> <span class="toctext">Handedness</span></a></li>
+<li class="toclevel-2 tocsection-71"><a href="#HUDType"><span class="tocnumber">1.70</span> <span class="toctext">HUDType</span></a></li>
+<li class="toclevel-2 tocsection-72"><a href="#InstantFlash"><span class="tocnumber">1.71</span> <span class="toctext">InstantFlash</span></a></li>
+<li class="toclevel-2 tocsection-73"><a href="#InstantFog"><span class="tocnumber">1.72</span> <span class="toctext">InstantFog</span></a></li>
+<li class="toclevel-2 tocsection-74"><a href="#KbdAccel"><span class="tocnumber">1.73</span> <span class="toctext">KbdAccel</span></a></li>
+<li class="toclevel-2 tocsection-75"><a href="#LanSpeed"><span class="tocnumber">1.74</span> <span class="toctext">LanSpeed</span></a></li>
+<li class="toclevel-2 tocsection-76"><a href="#LastUpdateTime"><span class="tocnumber">1.75</span> <span class="toctext">LastUpdateTime</span></a></li>
+<li class="toclevel-2 tocsection-77"><a href="#maxshake"><span class="tocnumber">1.76</span> <span class="toctext">maxshake</span></a></li>
+<li class="toclevel-2 tocsection-78"><a href="#MaxTimeMargin"><span class="tocnumber">1.77</span> <span class="toctext">MaxTimeMargin</span></a></li>
+<li class="toclevel-2 tocsection-79"><a href="#Misc1"><span class="tocnumber">1.78</span> <span class="toctext">Misc1</span></a></li>
+<li class="toclevel-2 tocsection-80"><a href="#Misc2"><span class="tocnumber">1.79</span> <span class="toctext">Misc2</span></a></li>
+<li class="toclevel-2 tocsection-81"><a href="#MouseSensitivity"><span class="tocnumber">1.80</span> <span class="toctext">MouseSensitivity</span></a></li>
+<li class="toclevel-2 tocsection-82"><a href="#MyAutoAim"><span class="tocnumber">1.81</span> <span class="toctext">MyAutoAim</span></a></li>
+<li class="toclevel-2 tocsection-83"><a href="#myHUD"><span class="tocnumber">1.82</span> <span class="toctext">myHUD</span></a></li>
+<li class="toclevel-2 tocsection-84"><a href="#NetSpeed"><span class="tocnumber">1.83</span> <span class="toctext">NetSpeed</span></a></li>
+<li class="toclevel-2 tocsection-85"><a href="#NoPauseMessage"><span class="tocnumber">1.84</span> <span class="toctext">NoPauseMessage</span></a></li>
+<li class="toclevel-2 tocsection-86"><a href="#OwnCamera"><span class="tocnumber">1.85</span> <span class="toctext">OwnCamera</span></a></li>
+<li class="toclevel-2 tocsection-87"><a href="#Password"><span class="tocnumber">1.86</span> <span class="toctext">Password</span></a></li>
+<li class="toclevel-2 tocsection-88"><a href="#Player"><span class="tocnumber">1.87</span> <span class="toctext">Player</span></a></li>
+<li class="toclevel-2 tocsection-89"><a href="#ProgressColor"><span class="tocnumber">1.88</span> <span class="toctext">ProgressColor</span></a></li>
+<li class="toclevel-2 tocsection-90"><a href="#ProgressMessage"><span class="tocnumber">1.89</span> <span class="toctext">ProgressMessage</span></a></li>
+<li class="toclevel-2 tocsection-91"><a href="#ProgressTimeOut"><span class="tocnumber">1.90</span> <span class="toctext">ProgressTimeOut</span></a></li>
+<li class="toclevel-2 tocsection-92"><a href="#QuickSaveString"><span class="tocnumber">1.91</span> <span class="toctext">QuickSaveString</span></a></li>
+<li class="toclevel-2 tocsection-93"><a href="#RendMap"><span class="tocnumber">1.92</span> <span class="toctext">RendMap</span></a></li>
+<li class="toclevel-2 tocsection-94"><a href="#SavedMoves"><span class="tocnumber">1.93</span> <span class="toctext">SavedMoves</span></a></li>
+<li class="toclevel-2 tocsection-95"><a href="#Scoring"><span class="tocnumber">1.94</span> <span class="toctext">Scoring</span></a></li>
+<li class="toclevel-2 tocsection-96"><a href="#ScoringType"><span class="tocnumber">1.95</span> <span class="toctext">ScoringType</span></a></li>
+<li class="toclevel-2 tocsection-97"><a href="#ServerTimeStamp"><span class="tocnumber">1.96</span> <span class="toctext">ServerTimeStamp</span></a></li>
+<li class="toclevel-2 tocsection-98"><a href="#shakemag"><span class="tocnumber">1.97</span> <span class="toctext">shakemag</span></a></li>
+<li class="toclevel-2 tocsection-99"><a href="#shaketimer"><span class="tocnumber">1.98</span> <span class="toctext">shaketimer</span></a></li>
+<li class="toclevel-2 tocsection-100"><a href="#shakevert"><span class="tocnumber">1.99</span> <span class="toctext">shakevert</span></a></li>
+<li class="toclevel-2 tocsection-101"><a href="#ShowFlags"><span class="tocnumber">1.100</span> <span class="toctext">ShowFlags</span></a></li>
+<li class="toclevel-2 tocsection-102"><a href="#SmoothMouseX"><span class="tocnumber">1.101</span> <span class="toctext">SmoothMouseX</span></a></li>
+<li class="toclevel-2 tocsection-103"><a href="#SmoothMouseY"><span class="tocnumber">1.102</span> <span class="toctext">SmoothMouseY</span></a></li>
+<li class="toclevel-2 tocsection-104"><a href="#Song"><span class="tocnumber">1.103</span> <span class="toctext">Song</span></a></li>
+<li class="toclevel-2 tocsection-105"><a href="#SongSection"><span class="tocnumber">1.104</span> <span class="toctext">SongSection</span></a></li>
+<li class="toclevel-2 tocsection-106"><a href="#SpecialMenu"><span class="tocnumber">1.105</span> <span class="toctext">SpecialMenu</span></a></li>
+<li class="toclevel-2 tocsection-107"><a href="#TargetEyeHeight"><span class="tocnumber">1.106</span> <span class="toctext">TargetEyeHeight</span></a></li>
+<li class="toclevel-2 tocsection-108"><a href="#TargetViewRotation"><span class="tocnumber">1.107</span> <span class="toctext">TargetViewRotation</span></a></li>
+<li class="toclevel-2 tocsection-109"><a href="#TargetWeaponViewOffset"><span class="tocnumber">1.108</span> <span class="toctext">TargetWeaponViewOffset</span></a></li>
+<li class="toclevel-2 tocsection-110"><a href="#TimeMargin"><span class="tocnumber">1.109</span> <span class="toctext">TimeMargin</span></a></li>
+<li class="toclevel-2 tocsection-111"><a href="#Transition"><span class="tocnumber">1.110</span> <span class="toctext">Transition</span></a></li>
+<li class="toclevel-2 tocsection-112"><a href="#verttimer"><span class="tocnumber">1.111</span> <span class="toctext">verttimer</span></a></li>
+<li class="toclevel-2 tocsection-113"><a href="#ViewingFrom"><span class="tocnumber">1.112</span> <span class="toctext">ViewingFrom</span></a></li>
+<li class="toclevel-2 tocsection-114"><a href="#ViewTarget"><span class="tocnumber">1.113</span> <span class="toctext">ViewTarget</span></a></li>
+<li class="toclevel-2 tocsection-115"><a href="#WeaponPriority"><span class="tocnumber">1.114</span> <span class="toctext">WeaponPriority</span></a></li>
+<li class="toclevel-2 tocsection-116"><a href="#ZoomLevel"><span class="tocnumber">1.115</span> <span class="toctext">ZoomLevel</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>PlayerPawn internal variables in other games:</dt>
+<dd><span><a href="UE1_PlayerPawn_internal_variables_(U1).html" title="UE1:PlayerPawn internal variables (U1)">U1</a></span>, <span><a href="UE1_PlayerPawn_internal_variables_(UT).html" title="UE1:PlayerPawn internal variables (UT)">UT</a></span></dd>
+<dt>Other member categories for this class:</dt>
+<dd><span><a href="UE1_PlayerPawn_exec_functions_(RTNP).html" title="UE1:PlayerPawn exec functions (RTNP)">exec functions</a></span>, <span><a href="UE1_PlayerPawn_instance_functions_(RTNP).html" title="UE1:PlayerPawn instance functions (RTNP)">instance functions</a></span>, <span><a href="UE1_PlayerPawn_states_(RTNP).html" title="UE1:PlayerPawn states (RTNP)">states</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Internal_variables">Internal variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=1" title="Edit section: Internal variables">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="aBaseX">aBaseX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=2" title="Edit section: aBaseX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aBaseY">aBaseY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=3" title="Edit section: aBaseY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aBaseZ">aBaseZ</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=4" title="Edit section: aBaseZ">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aExtra0">aExtra0</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=5" title="Edit section: aExtra0">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aExtra1">aExtra1</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=6" title="Edit section: aExtra1">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aExtra2">aExtra2</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=7" title="Edit section: aExtra2">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aExtra3">aExtra3</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=8" title="Edit section: aExtra3">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aExtra4">aExtra4</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=9" title="Edit section: aExtra4">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aForward">aForward</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=10" title="Edit section: aForward">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aLookUp">aLookUp</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=11" title="Edit section: aLookUp">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aMouseX">aMouseX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=12" title="Edit section: aMouseX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aMouseY">aMouseY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=13" title="Edit section: aMouseY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aStrafe">aStrafe</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=14" title="Edit section: aStrafe">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aTurn">aTurn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=15" title="Edit section: aTurn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="aUp">aUp</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=16" title="Edit section: aUp">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bAdmin">bAdmin</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=17" title="Edit section: bAdmin">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bAnimTransition">bAnimTransition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=18" title="Edit section: bAnimTransition">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bCenterView">bCenterView</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=19" title="Edit section: bCenterView">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bDelayedCommand">bDelayedCommand</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=20" title="Edit section: bDelayedCommand">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bEdgeBack">bEdgeBack</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=21" title="Edit section: bEdgeBack">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bEdgeForward">bEdgeForward</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=22" title="Edit section: bEdgeForward">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bEdgeLeft">bEdgeLeft</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=23" title="Edit section: bEdgeLeft">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bEdgeRight">bEdgeRight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=24" title="Edit section: bEdgeRight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bFixedCamera">bFixedCamera</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=25" title="Edit section: bFixedCamera">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bFrozen">bFrozen</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=26" title="Edit section: bFrozen">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bInvertMouse">bInvertMouse</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=27" title="Edit section: bInvertMouse">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bIsCrouching">bIsCrouching</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=28" title="Edit section: bIsCrouching">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bIsTurning">bIsTurning</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=29" title="Edit section: bIsTurning">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bIsTyping">bIsTyping</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=30" title="Edit section: bIsTyping">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bJustAltFired">bJustAltFired</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=31" title="Edit section: bJustAltFired">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bJustFired">bJustFired</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=32" title="Edit section: bJustFired">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bKeyboardLook">bKeyboardLook</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=33" title="Edit section: bKeyboardLook">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>no snapping when true</p>
+<h4><span class="mw-headline" id="bMessageBeep">bMessageBeep</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=34" title="Edit section: bMessageBeep">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bMouseZeroed">bMouseZeroed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=35" title="Edit section: bMouseZeroed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bNoFlash">bNoFlash</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=36" title="Edit section: bNoFlash">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bNoVoices">bNoVoices</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=37" title="Edit section: bNoVoices">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bobtime">bobtime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=38" title="Edit section: bobtime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bPressedJump">bPressedJump</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=39" title="Edit section: bPressedJump">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bReadyToPlay">bReadyToPlay</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=40" title="Edit section: bReadyToPlay">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bReducedVis">bReducedVis</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=41" title="Edit section: bReducedVis">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bRising">bRising</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=42" title="Edit section: bRising">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bShakeDir">bShakeDir</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=43" title="Edit section: bShakeDir">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bShowMenu">bShowMenu</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=44" title="Edit section: bShowMenu">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bShowScores">bShowScores</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=45" title="Edit section: bShowScores">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bSpecialMenu">bSpecialMenu</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=46" title="Edit section: bSpecialMenu">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bUpdatePosition">bUpdatePosition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=47" title="Edit section: bUpdatePosition">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bWasBack">bWasBack</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=48" title="Edit section: bWasBack">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bWasForward">bWasForward</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=49" title="Edit section: bWasForward">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>used for dodge move</p>
+<h4><span class="mw-headline" id="bWasLeft">bWasLeft</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=50" title="Edit section: bWasLeft">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bWasRight">bWasRight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=51" title="Edit section: bWasRight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bWokeUp">bWokeUp</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=52" title="Edit section: bWokeUp">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bZooming">bZooming</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=53" title="Edit section: bZooming">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="CantChangeNameMsg">CantChangeNameMsg</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=54" title="Edit section: CantChangeNameMsg">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> localized</p>
+<p><br />
+<b>Default value:</b> "You can't change your name during a global logged game."</p>
+<h4><span class="mw-headline" id="CdTrack">CdTrack</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=55" title="Edit section: CdTrack">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p><br />
+<b>Default value:</b> 255</p>
+<h4><span class="mw-headline" id="ConstantGlowFog">ConstantGlowFog</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=56" title="Edit section: ConstantGlowFog">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE1_Object_structs_(RTNP).html#Vector" title="UE1:Object structs (RTNP)">Object.Vector</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ConstantGlowScale">ConstantGlowScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=57" title="Edit section: ConstantGlowScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="CurrentTimeStamp">CurrentTimeStamp</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=58" title="Edit section: CurrentTimeStamp">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="DefaultFOV">DefaultFOV</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=59" title="Edit section: DefaultFOV">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 90.0</p>
+<h4><span class="mw-headline" id="DelayedCommand">DelayedCommand</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=60" title="Edit section: DelayedCommand">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="DesiredFlashFog">DesiredFlashFog</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=61" title="Edit section: DesiredFlashFog">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE1_Object_structs_(RTNP).html#Vector" title="UE1:Object structs (RTNP)">Object.Vector</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="DesiredFlashScale">DesiredFlashScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=62" title="Edit section: DesiredFlashScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="DesiredFOV">DesiredFOV</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=63" title="Edit section: DesiredFOV">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 90.0</p>
+<h4><span class="mw-headline" id="DodgeClickTimer">DodgeClickTimer</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=64" title="Edit section: DodgeClickTimer">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> travel</p>
+<p>max double click interval for dodge move</p>
+<h4><span class="mw-headline" id="FailedView">FailedView</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=65" title="Edit section: FailedView">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> localized</p>
+<p><br />
+<b>Default value:</b> "Failed to change view."</p>
+<h4><span class="mw-headline" id="FlashFog">FlashFog</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=66" title="Edit section: FlashFog">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE1_Object_structs_(RTNP).html#Vector" title="UE1:Object structs (RTNP)">Object.Vector</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="FlashScale">FlashScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=67" title="Edit section: FlashScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE1_Object_structs_(RTNP).html#Vector" title="UE1:Object structs (RTNP)">Object.Vector</a></p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE1_Object_structs_(RTNP).html#Vector" title="UE1:Object structs (RTNP)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>X</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>1.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="FreeMoves">FreeMoves</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=68" title="Edit section: FreeMoves">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE1_SavedMove_(RTNP).html" title="UE1:SavedMove (RTNP)">SavedMove</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="GameReplicationInfo">GameReplicationInfo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=69" title="Edit section: GameReplicationInfo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE1_GameReplicationInfo_(RTNP).html" title="UE1:GameReplicationInfo (RTNP)">GameReplicationInfo</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Handedness">Handedness</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=70" title="Edit section: Handedness">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> travel, globalconfig</p>
+<p><br />
+<b>Default value:</b> -1.0</p>
+<h4><span class="mw-headline" id="HUDType">HUDType</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=71" title="Edit section: HUDType">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE1_HUD_(RTNP).html" title="UE1:HUD (RTNP)">HUD</a>&gt;</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="InstantFlash">InstantFlash</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=72" title="Edit section: InstantFlash">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="InstantFog">InstantFog</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=73" title="Edit section: InstantFog">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE1_Object_structs_(RTNP).html#Vector" title="UE1:Object structs (RTNP)">Object.Vector</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="KbdAccel">KbdAccel</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=74" title="Edit section: KbdAccel">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LanSpeed">LanSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=75" title="Edit section: LanSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> 20000</p>
+<h4><span class="mw-headline" id="LastUpdateTime">LastUpdateTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=76" title="Edit section: LastUpdateTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="maxshake">maxshake</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=77" title="Edit section: maxshake">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="MaxTimeMargin">MaxTimeMargin</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=78" title="Edit section: MaxTimeMargin">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="Misc1">Misc1</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=79" title="Edit section: Misc1">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Misc2">Misc2</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=80" title="Edit section: Misc2">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="MouseSensitivity">MouseSensitivity</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=81" title="Edit section: MouseSensitivity">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> 5.0</p>
+<h4><span class="mw-headline" id="MyAutoAim">MyAutoAim</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=82" title="Edit section: MyAutoAim">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> travel, globalconfig</p>
+<p><br />
+<b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="myHUD">myHUD</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=83" title="Edit section: myHUD">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE1_HUD_(RTNP).html" title="UE1:HUD (RTNP)">HUD</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="NetSpeed">NetSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=84" title="Edit section: NetSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> 2600</p>
+<h4><span class="mw-headline" id="NoPauseMessage">NoPauseMessage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=85" title="Edit section: NoPauseMessage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> localized</p>
+<p><br />
+<b>Default value:</b> "Game is not pauseable"</p>
+<h4><span class="mw-headline" id="OwnCamera">OwnCamera</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=86" title="Edit section: OwnCamera">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> localized</p>
+<p><br />
+<b>Default value:</b> "own camera"</p>
+<h4><span class="mw-headline" id="Password">Password</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=87" title="Edit section: Password">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>for restarting coop savegames</p>
+<h4><span class="mw-headline" id="Player">Player</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=88" title="Edit section: Player">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE1_Player_(RTNP).html" title="UE1:Player (RTNP)">Player</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ProgressColor">ProgressColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=89" title="Edit section: ProgressColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE1_Object_structs_(RTNP).html#Color" title="UE1:Object structs (RTNP)">Object.Color</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 5</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ProgressMessage">ProgressMessage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=90" title="Edit section: ProgressMessage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 5</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ProgressTimeOut">ProgressTimeOut</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=91" title="Edit section: ProgressTimeOut">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="QuickSaveString">QuickSaveString</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=92" title="Edit section: QuickSaveString">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> localized</p>
+<p><br />
+<b>Default value:</b> "Quick Saving"</p>
+<h4><span class="mw-headline" id="RendMap">RendMap</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=93" title="Edit section: RendMap">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="SavedMoves">SavedMoves</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=94" title="Edit section: SavedMoves">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE1_SavedMove_(RTNP).html" title="UE1:SavedMove (RTNP)">SavedMove</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Scoring">Scoring</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=95" title="Edit section: Scoring">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE1_ScoreBoard_(RTNP).html" title="UE1:ScoreBoard (RTNP)">ScoreBoard</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ScoringType">ScoringType</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=96" title="Edit section: ScoringType">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE1_ScoreBoard_(RTNP).html" title="UE1:ScoreBoard (RTNP)">ScoreBoard</a>&gt;</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ServerTimeStamp">ServerTimeStamp</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=97" title="Edit section: ServerTimeStamp">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="shakemag">shakemag</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=98" title="Edit section: shakemag">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>max magnitude in degrees of shaking</p>
+<h4><span class="mw-headline" id="shaketimer">shaketimer</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=99" title="Edit section: shaketimer">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>player uses this for shaking view</p>
+<h4><span class="mw-headline" id="shakevert">shakevert</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=100" title="Edit section: shakevert">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>max vertical shake magnitude</p>
+<h4><span class="mw-headline" id="ShowFlags">ShowFlags</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=101" title="Edit section: ShowFlags">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="SmoothMouseX">SmoothMouseX</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=102" title="Edit section: SmoothMouseX">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="SmoothMouseY">SmoothMouseY</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=103" title="Edit section: SmoothMouseY">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Song">Song</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=104" title="Edit section: Song">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE1_Music_(RTNP).html" title="UE1:Music (RTNP)">Music</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="SongSection">SongSection</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=105" title="Edit section: SongSection">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="SpecialMenu">SpecialMenu</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=106" title="Edit section: SpecialMenu">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE1_Menu_(RTNP).html" title="UE1:Menu (RTNP)">Menu</a>&gt;</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TargetEyeHeight">TargetEyeHeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=107" title="Edit section: TargetEyeHeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TargetViewRotation">TargetViewRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=108" title="Edit section: TargetViewRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE1_Object_structs_(RTNP).html#Rotator" title="UE1:Object structs (RTNP)">Object.Rotator</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TargetWeaponViewOffset">TargetWeaponViewOffset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=109" title="Edit section: TargetWeaponViewOffset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE1_Object_structs_(RTNP).html#Vector" title="UE1:Object structs (RTNP)">Object.Vector</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TimeMargin">TimeMargin</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=110" title="Edit section: TimeMargin">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Transition">Transition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=111" title="Edit section: Transition">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE1_Actor_enums_(RTNP).html#EMusicTransition" title="UE1:Actor enums (RTNP)">Actor.EMusicTransition</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="verttimer">verttimer</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=112" title="Edit section: verttimer">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ViewingFrom">ViewingFrom</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=113" title="Edit section: ViewingFrom">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> localized</p>
+<p><br />
+<b>Default value:</b> "Now viewing from "</p>
+<h4><span class="mw-headline" id="ViewTarget">ViewTarget</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=114" title="Edit section: ViewTarget">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE1_Actor_(RTNP).html" title="UE1:Actor (RTNP)">Actor</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="WeaponPriority">WeaponPriority</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=115" title="Edit section: WeaponPriority">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Name.html" title="Name" class="mw-redirect">name</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 20</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>weapon class priorities (9 is highest)</p>
+<p><b>Default value, index 0:</b> 'DispersionPistol'</p>
+<p><b>Default value, index 1:</b> 'AutoMag'</p>
+<p><b>Default value, index 10:</b> 'RocketLauncher'</p>
+<p><b>Default value, index 11:</b> 'Rifle'</p>
+<p><b>Default value, index 12:</b> 'CARifle'</p>
+<p><b>Default value, index 13:</b> 'GESBioRifle'</p>
+<p><b>Default value, index 14:</b> 'Stinger'</p>
+<p><b>Default value, index 15:</b> 'Razorjack'</p>
+<p><b>Default value, index 16:</b> 'ASMD'</p>
+<p><b>Default value, index 17:</b> 'Minigun'</p>
+<p><b>Default value, index 18:</b> 'Eightball'</p>
+<p><b>Default value, index 19:</b> 'GrenadeLauncher'</p>
+<p><b>Default value, index 20:</b> 'FlakCannon'</p>
+<h4><span class="mw-headline" id="ZoomLevel">ZoomLevel</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)?section=116" title="Edit section: ZoomLevel">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.301 seconds
+Real time usage: 0.310 seconds
+Preprocessor visited node count: 1904/1000000
+Preprocessor generated node count: 4117/1000000
+Post‐expand include size: 9524/2097152 bytes
+Template argument size: 1668/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  170.739      1 - -total
+ 44.71%   76.344      1 - Template:Infobox_class_part
+ 42.38%   72.355      1 - Template:Infobox_class_part/core
+ 27.62%   47.155     21 - Template:Samegame
+ 23.64%   40.363     10 - Template:Tl
+ 18.11%   30.923     11 - Template:Cl
+  8.63%   14.741      1 - Template:Ch
+  3.71%    6.336      1 - Template:Autogenerated
+  2.45%    4.179      1 - Template:Ambox
+  2.08%    3.554      3 - Template:Gamename
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:6931-0!*!*!*!*!*!* and timestamp 20161215191729 and revision id 14656
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE1:PlayerPawn_internal_variables_(RTNP)?oldid=14656">https://wiki.beyondunreal.com/UE1:PlayerPawn_internal_variables_(RTNP)?oldid=14656</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue1" class="selected"><a href="UE1_PlayerPawn_internal_variables_(RTNP).html">UE1</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE1_talk:PlayerPawn_internal_variables_(RTNP)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE1:PlayerPawn_internal_variables_(RTNP)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE1:PlayerPawn_internal_variables_(RTNP)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE1%3APlayerPawn+internal+variables+%28RTNP%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE1%3APlayerPawn+internal+variables+%28RTNP%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE1:PlayerPawn_internal_variables_(RTNP)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE1:PlayerPawn_internal_variables_(RTNP)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE1:PlayerPawn_internal_variables_(RTNP)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE1:PlayerPawn_internal_variables_(RTNP)?oldid=14656" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE1:PlayerPawn_internal_variables_(RTNP)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 11:10, 17 May 2008.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":157});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE1:PlayerPawn_internal_variables_(RTNP) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:56:24 GMT -->
+</html>

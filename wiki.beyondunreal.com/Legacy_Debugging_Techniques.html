@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Debugging_Techniques by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Debugging Techniques - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Debugging_Techniques" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Debugging_Techniques" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_Debugging_Techniques.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Debugging_Techniques","wgTitle":"Debugging Techniques","wgCurRevisionId":2682,"wgRevisionId":2682,"wgArticleId":995,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Debugging_Techniques","wgRelevantArticleId":995,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Debugging_Techniques skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>My program doesn't have bugs. It just develops random features.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Debugging Techniques</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Put all your <b>Hints for Debugging</b> here.</p>
+<p>As a programmer, I can only think on UnrealScript stuff, but you should add anything that would help someone to get extra info about the environment, actor behaviour and errors on the fly.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#UnrealScript_Techniques"><span class="tocnumber">1</span> <span class="toctext">UnrealScript Techniques</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Use_the_Log.21"><span class="tocnumber">1.1</span> <span class="toctext">Use the Log!</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Using_DisplayDebug_.28UT2003.29"><span class="tocnumber">1.2</span> <span class="toctext">Using DisplayDebug (UT2003)</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Using_the_Graph_.28UT2003.29"><span class="tocnumber">1.3</span> <span class="toctext">Using the Graph (UT2003)</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#The_Debug_Line_.28UT2003.29"><span class="tocnumber">1.4</span> <span class="toctext">The Debug Line (UT2003)</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Staying_Debug_Line"><span class="tocnumber">1.4.1</span> <span class="toctext">Staying Debug Line</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#Using_TextToSpeech_.28UT2004.2FUT2003.3F.29"><span class="tocnumber">1.5</span> <span class="toctext">Using TextToSpeech (UT2004/UT2003?)</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Slowing_things_down"><span class="tocnumber">1.6</span> <span class="toctext">Slowing things down</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Network_Debugging"><span class="tocnumber">2</span> <span class="toctext">Network Debugging</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Testing_in_a_Client.2FServer_Environment"><span class="tocnumber">2.1</span> <span class="toctext">Testing in a Client/Server Environment</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#ServerPackages"><span class="tocnumber">2.2</span> <span class="toctext">ServerPackages</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Simulating_Lag_and_Packet_Loss"><span class="tocnumber">2.3</span> <span class="toctext">Simulating Lag and Packet Loss</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Console_Commands"><span class="tocnumber">3</span> <span class="toctext">Console Commands</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#A_Note_about_Debugging"><span class="tocnumber">4</span> <span class="toctext">A Note about Debugging</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Optimizing"><span class="tocnumber">5</span> <span class="toctext">Optimizing</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Related_Topics"><span class="tocnumber">6</span> <span class="toctext">Related Topics</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Discussion"><span class="tocnumber">7</span> <span class="toctext">Discussion</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="UnrealScript_Techniques">UnrealScript Techniques</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Debugging_Techniques?section=1" title="Edit section: UnrealScript Techniques">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Use_the_Log.21">Use the Log!</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Debugging_Techniques?section=2" title="Edit section: Use the Log!">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The log is generally the first thing to try when debugging.</p>
+<p>It lets you append text to the game's log file. The stuff it writes can be viewed while the game is running, type "showlog" in console to open the log window. To start the game with log window already displayed and in windowed mode start UT2004.exe with " -WINDOWED -LOG" parameters.</p>
+<p>It is a native function declared in <a href="Legacy_Object.html" title="Legacy:Object">Object</a>, so it is, in effect, a global function. Its declaration is as follows:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">native</span><span class="br0">(</span><span class="nu0">231</span><span class="br0">)</span> <span class="kw1">final</span> <span class="kw1">static</span> <span class="kw1">function</span> <span class="kw3">Log</span><span class="br0">(</span> <span class="kw1">coerce</span> <span class="kw5">string</span> S, <span class="kw1">optional</span> <span class="kw5">name</span> <span class="kw7">Tag</span> <span class="br0">)</span>;
+<span class="co1">//'S' is your message that you want to appear in the log.</span>
+</pre></div>
+</div>
+<p>The 'Tag' parameter gives the beginning of your message a more meaningful name (useful for mod developers to differentiate their warning messages).</p>
+<p>Log output gives you something like this: "Tag: S", where of course 'Tag' and 'S' are replaced. If 'Tag' is not supplied, "ScriptLog" is used.</p>
+<p>Log is saved by default to "/GameName/System/GameName.log" file, ie "UT2004/System/UT2004.log". Attempting to view the log file with external application while the game is still running is not recommended, as sometimes information is not actually saved into the log at the moment that it happens – the order and variables are still preserved, but I believe that the Unreal Engine maintains an internal log in memory and only writes it to disk periodically.</p>
+<p>The warn function is essentially the same as log, but there is no "tag" argument. The "tag" of the warn function is always "Warning."</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">native</span><span class="br0">(</span><span class="nu0">232</span><span class="br0">)</span> <span class="kw1">final</span> <span class="kw1">static</span> <span class="kw1">function</span> <span class="kw3">Warn</span><span class="br0">(</span> <span class="kw1">coerce</span> <span class="kw5">string</span> S <span class="br0">)</span>;
+<span class="co1">//'S' is your message that you want to appear in the log.</span>
+</pre></div>
+</div>
+<p>The warn function's output is similar to UT's and UT2003's <a href="Legacy_Log_Warnings.html" title="Legacy:Log Warnings">log warnings</a>.</p>
+<p>You can also use the "say" functionality to make your actor "talk" within the level and read the output. This allows for a realtime "log" that you can view in-game, though things written using this will not actually be written to the log file:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw7">Level</span>.<span class="kw7">Game</span>.<span class="me0">Broadcast</span><span class="br0">(</span><span class="kw6">self</span>, <span class="st0">"blah blah blah"</span>, <span class="st0">'Say'</span><span class="br0">)</span>;
+</pre></div>
+</div>
+<p><b>OverloadUT:</b> Unfortunately, this method has limited reliability, because the messages broadcasted will be spam filtered just like normal chat. Meaning that if you send too many messages too fast, some of them simply won't be displayed. The limit is quite low too... So be sure you're only sending one message at a time, and only at key times. I like to instead use the <i><b>ClientMessage()</b></i> function inside <i><b>PlayerController</b></i> - but unfortunately it's a more annoying because you need a specific PlayerController to send it to.</p>
+<p><b>Kirk:</b> Also note that if you suddenly see messages coming up you didn't instigate... it's probably form the bots doing the same thing as you.</p>
+<h3><span class="mw-headline" id="Using_DisplayDebug_.28UT2003.29">Using DisplayDebug (UT2003)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Debugging_Techniques?section=3" title="Edit section: Using DisplayDebug (UT2003)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The DisplayDebug function in class <a href="Legacy_Actor.html" title="Legacy:Actor">Actor</a> shows a lot of info about the player/zone/weapon. It is shown when you use the <tt>ShowDebug</tt> console command and it can be used to draw pertinent information on the HUD in realtime. If you want to make it compatible with other DisplayDebug functions from other actors, you must insert a carriage return at the end of whatever you are writing, to prevent other actors from appending text directly to whatever you have written.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">simulated</span> <span class="kw1">function</span> DisplayDebug<span class="br0">(</span><span class="kw8">Canvas</span> <span class="kw8">Canvas</span>, <span class="kw1">out</span> <span class="kw5">float</span> YL, <span class="kw1">out</span> <span class="kw5">float</span> YPos<span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw1">local</span> <span class="kw5">string</span> T;
+ 
+  <span class="kw6">super</span>.<span class="me0">DisplayDebug</span><span class="br0">(</span><span class="kw8">Canvas</span>, YL, YPos<span class="br0">)</span>;
+ 
+  T <span class="sy0">=</span> <span class="st0">"DOT: "</span><span class="sy0">$</span>vect<span class="br0">(</span><span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">)</span> Dot <span class="kw3">Normal</span><span class="br0">(</span><span class="kw5">vector</span><span class="br0">(</span><span class="kw7">rotation</span><span class="br0">)</span><span class="br0">)</span>;
+  <span class="kw8">Canvas</span>.<span class="me0">DrawText</span><span class="br0">(</span>T,<span class="kw6">false</span><span class="br0">)</span>;
+  YPos <span class="sy0">+=</span> YL;
+  <span class="kw8">Canvas</span>.<span class="me0">SetPos</span><span class="br0">(</span><span class="nu0">4</span>,YPos<span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>You can also use DisplayDebug to draw anything you normally could to the Canvas. Here is an example of drawing the position of a vector onto the screen visually. The example draws a cross at the on-screen location where the vector would be percieved to be - note that this assumes that the vector is a "location" vector, as it will be drawn relative to the world origin:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">simulated</span> <span class="kw1">function</span> DisplayDebug<span class="br0">(</span><span class="kw8">Canvas</span> <span class="kw8">Canvas</span>, <span class="kw1">out</span> <span class="kw5">float</span> YL, <span class="kw1">out</span> <span class="kw5">float</span> YPos<span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw6">Super</span>.<span class="me0">DisplayDebug</span><span class="br0">(</span><span class="kw8">Canvas</span>, YL, YPos<span class="br0">)</span>;
+ 
+  <span class="kw8">Canvas</span>.<span class="me0">SetDrawColor</span><span class="br0">(</span><span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span><span class="br0">)</span>;
+  <span class="kw8">Canvas</span>.<span class="me0">SetPos</span><span class="br0">(</span><span class="kw8">Canvas</span>.<span class="me0">WorldToScreen</span><span class="br0">(</span>YOURVECTORHERE<span class="br0">)</span>.<span class="me0">X</span>,<span class="kw8">Canvas</span>.<span class="me0">WorldToScreen</span><span class="br0">(</span>YOURVECTORHERE<span class="br0">)</span>.<span class="me0">Y</span><span class="br0">)</span>;
+  DrawCross<span class="br0">(</span><span class="kw8">Canvas</span><span class="br0">)</span>;
+  <span class="kw8">Canvas</span>.<span class="me0">DrawText</span><span class="br0">(</span><span class="st0">"A SHORT DESCRIPTION WHICH WILL GET DRAWN NEXT TO THE CROSS GOES HERE"</span>,<span class="kw6">false</span><span class="br0">)</span>;
+  <span class="kw8">Canvas</span>.<span class="me0">SetPos</span><span class="br0">(</span><span class="nu0">4</span>,YPos<span class="br0">)</span>;
+<span class="br0">}</span>
+ 
+<span class="kw1">function</span> DrawCross<span class="br0">(</span><span class="kw8">canvas</span> c<span class="br0">)</span>
+<span class="br0">{</span>
+  c.<span class="me0">DrawLine</span><span class="br0">(</span><span class="nu0">0</span>, <span class="nu0">18</span><span class="br0">)</span>;
+  c.<span class="me0">DrawLine</span><span class="br0">(</span><span class="nu0">1</span>, <span class="nu0">18</span><span class="br0">)</span>;
+  c.<span class="me0">DrawLine</span><span class="br0">(</span><span class="nu0">2</span>, <span class="nu0">18</span><span class="br0">)</span>;
+  c.<span class="me0">DrawLine</span><span class="br0">(</span><span class="nu0">3</span>, <span class="nu0">18</span><span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="Using_the_Graph_.28UT2003.29">Using the Graph (UT2003)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Debugging_Techniques?section=4" title="Edit section: Using the Graph (UT2003)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The graph is a debugging method only availible from KVehicle and its subclasses. It is defined in KVehicle. It can be displayed with the <code>Graph Show</code> console command. To plot a value on the graph, call the GraphData function, as follows:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+GraphData<span class="br0">(</span><span class="st0">"description"</span>, <span class="kw1">var</span><span class="br0">)</span>;
+</pre></div>
+</div>
+<p>Where <i>var</i> (float or int) is your variable and <i>description</i> is any string. The graph automatically adjusts the vertical scale to fit all of the values that have been fed into it. The graph will update whenever a new point is plotted, regardless of what actor plots it. The graph is color coded, and points are joined together based on their <i>descriptions</i>. There is a legend with the graph that will indicate which color is associated with which <i>description</i> and the maximum value that has been plotted for that <i>description.</i></p>
+<h3><span class="mw-headline" id="The_Debug_Line_.28UT2003.29">The Debug Line (UT2003)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Debugging_Techniques?section=5" title="Edit section: The Debug Line (UT2003)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+  DrawDebugLine<span class="br0">(</span> Location1, Location2, R, G, B<span class="br0">)</span>;
+</pre></div>
+</div>
+<p>This is a great way of showing vectors. It draws a line between the two vectors specified in Location1 and Location2. Technically one is the start and the other is the end, but it doesn't make any visual difference. R, G, and B, are the elements of the color of the line, red, green and blue, respectively. They must each be between 0 and 255. This is superior to just drawing something on the canvas, as it will go "through" objects instead of being drawn on top of them. This makes it much easier to see the actual vector that is being expressed. It is, however, relatively slow. It is not slow in the sense that it will drag down your framerate while you debug, but it is too slow to be reasonably used for in-game effects like a laser. This function can be called at any time and will be "stored up" by the engine until the next frame is drawn. You can draw as many debug lines as you like and they will all be "saved up" in this manner. This can be very useful for, for instance, making a line drawing of the path a bot intends to follow, etcetera.</p>
+<h4><span class="mw-headline" id="Staying_Debug_Line">Staying Debug Line</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Debugging_Techniques?section=6" title="Edit section: Staying Debug Line">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Another debug line command similar to the one above creates a permanent line, which can be used for easily creating non-dynamic lines in 3D space. This can be handy for displaying the path that a wandering or searching character has taken over time. -ymalaika</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+  DrawStayingDebugLine<span class="br0">(</span> Location1, Location2, R, G, B<span class="br0">)</span>;
+  ClearStayingDebugLines<span class="br0">(</span><span class="br0">)</span>
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="Using_TextToSpeech_.28UT2004.2FUT2003.3F.29">Using TextToSpeech (UT2004/UT2003?)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Debugging_Techniques?section=7" title="Edit section: Using TextToSpeech (UT2004/UT2003?)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">native</span> <span class="kw1">function</span> <span class="kw4">TextToSpeech</span><span class="br0">(</span> <span class="kw5">string</span> Text, <span class="kw5">float</span> <span class="kw9">Volume</span> <span class="br0">)</span>;
+<span class="co1">//Text: Text you want to be turned into speech</span>
+</pre></div>
+</div>
+<p>This function is declared in Actor so any actor can use it. An example of how to use it would be to find out if a function was fired or not. It's very useful for those who don't want to go into the log all the time and would like voice confirmation.</p>
+<p><b>Seabreeze:</b> what does the 'Volume' variable represent?</p>
+<p><b>Wormbo:</b> The same thing it represents in any audio function – how loud you want the output to be.</p>
+<p><b>Seabreeze:</b> ahhh.. newbie here! for some reason I was only thinking of volume of objects and not volume of sound, thanks!</p>
+<h3><span class="mw-headline" id="Slowing_things_down">Slowing things down</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Debugging_Techniques?section=8" title="Edit section: Slowing things down">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>If you need time to set a particular situation up, use one of these <a href="https://wiki.beyondunreal.com/edit/Legacy:Console_Command?redlink=1" class="new" title="Legacy:Console Command (page does not exist)">console commands</a>:</p>
+<ul>
+<li>playersonly&#160;: freezes all movement except you</li>
+<li>slomo #, or set engine.gameinfo gamespeed &lt;value here&gt;</li>
+</ul>
+<h2><span class="mw-headline" id="Network_Debugging">Network Debugging</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Debugging_Techniques?section=9" title="Edit section: Network Debugging">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Testing_in_a_Client.2FServer_Environment">Testing in a Client/Server Environment</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Debugging_Techniques?section=10" title="Edit section: Testing in a Client/Server Environment">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>It is crucial that you test your code under client/server conditions. Just running a "listen server" (a network server started from within the game) won't help there; for concerns like <a href="Legacy_Replication.html" title="Legacy:Replication">replication</a> the listen server behaves just like a standalone game as far as the local player is concerned.</p>
+<p>You don't need a LAN or an Internet connection to test your code under networking conditions though: you can <a href="Legacy_Launch_A_Local_Netgame.html" title="Legacy:Launch A Local Netgame">Launch A Local Netgame</a>.</p>
+<h3><span class="mw-headline" id="ServerPackages">ServerPackages</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Debugging_Techniques?section=11" title="Edit section: ServerPackages">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>None of your client-side actors will show up or execute client-side code <b>unless your package is loaded client-side</b>; unless that happens to happen anyway (because you're coding a game type, for example), you'll have to add your code package to the server .ini file's <code>ServerPackages</code> list.</p>
+<p>Open the server's .ini file (usually server.ini or, on a local dedicated server, frequently just the <a href="Legacy_Game_Ini_File.html" title="Legacy:Game Ini File">game ini file</a>), look for the <code>[Engine.GameEngine]</code> section and add a line for your package:</p>
+<pre>
+ ServerPackages=MyPackage
+</pre>
+<h3><span class="mw-headline" id="Simulating_Lag_and_Packet_Loss">Simulating Lag and Packet Loss</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Debugging_Techniques?section=12" title="Edit section: Simulating Lag and Packet Loss">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>You can tell the engine to simulate network lag, packet loss, packets out of order and packet duplicating when testing on a local server as described above.</p>
+<p>Add one or several of the following parameters to the server's command line:</p>
+<dl>
+<dt>pktlag=<i>&lt;milliseconds&gt;</i>&#160;</dt>
+<dd>Simulates lag.</dd>
+</dl>
+<dl>
+<dt>pktloss=<i>&lt;percentage&gt;</i>&#160;</dt>
+<dd>Simulates packet loss. The given percentage specifies how many packets are lost; it can be between 0 (no packet loss) and 100 (all packets will be lost).</dd>
+</dl>
+<dl>
+<dt>pktdup=<i>&lt;percentage&gt;</i>&#160;</dt>
+<dd>Simulates packet duplication. The given percentage specifies how many packets are duplicated; it can be between 0 (no packet duplication) and 100 (all packets duplicated).</dd>
+</dl>
+<dl>
+<dt>pktorder=<i>&lt;0 or 1&gt;</i>&#160;</dt>
+<dd>Simulates packets that are received out of order.</dd>
+</dl>
+<p>A server for a test game with 150 milliseconds lag, 10 percent packet loss and packets out of order would look like this:</p>
+<pre>
+ ucc server DM-Gael pktlag=150 pktloss=10 pktorder=1
+</pre>
+<h2><span class="mw-headline" id="Console_Commands">Console Commands</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Debugging_Techniques?section=13" title="Edit section: Console Commands">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>See <a href="Legacy_Console_Commands/Debugging_Console_Commands.html" title="Legacy:Console Commands/Debugging Console Commands">Console Commands/Debugging Console Commands</a></p>
+<h2><span class="mw-headline" id="A_Note_about_Debugging">A Note about Debugging</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Debugging_Techniques?section=14" title="Edit section: A Note about Debugging">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>It's important to remember that not only can software develop bugs, but your debugging tools themselves can have bugs too. Log and other native debugging commands seem quite stable, but things in DisplayDebug and similar functions are prone to error like any other program. If your debugging tools show that your code is acting in an absolutely bizarre fashion, check your debugging code to see if it is in fact the debugger that is faulty.</p>
+<h2><span class="mw-headline" id="Optimizing">Optimizing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Debugging_Techniques?section=15" title="Edit section: Optimizing">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>If your mod runs slowly or causes hitches on some computers, see <a href="Legacy_Code_Optimization.html" title="Legacy:Code Optimization">Code Optimization</a>.</p>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Debugging_Techniques?section=16" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_Log_Warnings.html" title="Legacy:Log Warnings">Log Warnings</a></li>
+<li><a href="Legacy_A_Bug%27S_Life.html" title="Legacy:A Bug'S Life" class="mw-redirect">A Bug's Life</a></li>
+<li><a href="Legacy_Spectate_Bots.html" title="Legacy:Spectate Bots">Spectate Bots</a></li>
+<li><a href="Legacy_Testing_Botplay.html" title="Legacy:Testing Botplay">Testing Botplay</a></li>
+<li><a href="Legacy_UDebugger.html" title="Legacy:UDebugger">UDebugger</a></li>
+<li><a href="Legacy_Running_A_Dedicated_Server_With_UCC.html" title="Legacy:Running A Dedicated Server With UCC">Running A Dedicated Server With UCC</a></li>
+<li><a href="Legacy_Testing_Lab.html" title="Legacy:Testing Lab">Testing Lab</a></li>
+</ul>
+<h2><span class="mw-headline" id="Discussion">Discussion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Debugging_Techniques?section=17" title="Edit section: Discussion">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>Ch3z</b> I actually run a copy of the 436 server only disto from a seperate folder and connect to it with my reg UT installation. That way I know I'm actually connecting via the internet, and with all the hops to get back to my own machine I get plenty of non-simulated lag. I just feel like its a better test. I also make sure none of the files i need to join the server are in my UT dir and it makes me download them all from the server before connecting. Seems more like a valid test to me. I'm wondering if this would be a good idea or not. Not sure if this is where the page should be created from or not but... check out the <a href="Legacy_Testing_Lab.html" title="Legacy:Testing Lab">Testing Lab</a>.</p>
+<p>Shouldn't this page, Debugging Techniques be Category Tutorial?</p>
+<p><b>Tarquin:</b> Not really.</p>
+<p><b>Vitaloverdose</b> is none of this relevant to 2004?</p>
+<p><b>Wormbo:</b> There's a section about <i>additional</i> techniques in UT2004, and of course they apply to UT2004 as well.</p>
+<p><b>OlympusMons:</b> Found the clear debug staying lines thing on the udn just thought I would add it here, not sure if its in the right spot.</p>
+<p><b>Shambler:</b> A class I made to spew debug logs onto the HUD instead of into the log file: <a href="Legacy_Log_Interaction.html" title="Legacy:Log Interaction">Log Interaction</a></p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.120 seconds
+Real time usage: 0.122 seconds
+Preprocessor visited node count: 148/1000000
+Preprocessor generated node count: 252/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:995-0!*!0!!en!*!* and timestamp 20161215143112 and revision id 2682
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Debugging_Techniques?oldid=2682">https://wiki.beyondunreal.com/Legacy:Debugging_Techniques?oldid=2682</a>"</div>
+					<div id='catlinks' class='catlinks catlinks-allhidden'></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_Debugging_Techniques.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Debugging_Techniques?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Debugging_Techniques" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Debugging_Techniques" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ADebugging+Techniques&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ADebugging+Techniques" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Debugging_Techniques" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Debugging_Techniques" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Debugging_Techniques?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Debugging_Techniques?oldid=2682" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Debugging_Techniques" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 10:39, 6 November 2006.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":103});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Debugging_Techniques by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:50 GMT -->
+</html>

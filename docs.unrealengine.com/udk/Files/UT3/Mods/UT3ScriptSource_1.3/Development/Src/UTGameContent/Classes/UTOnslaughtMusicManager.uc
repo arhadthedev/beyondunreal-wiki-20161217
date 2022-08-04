@@ -1,0 +1,9 @@
+﻿/**
+ *
+ * Copyright 1998-2007 Epic Games, Inc. All Rights Reserved.
+ */
+class UTOnslaughtMusicManager extends UTMusicManager;
+
+defaultproperties
+{
+}

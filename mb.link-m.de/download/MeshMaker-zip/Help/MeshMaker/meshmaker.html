@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <title>MeshMaker</title>
+    <link rel=stylesheet type="text/css" href="meshmaker.css">
+  </head>
+  
+  <body>
+    <table border=0 cellspacing=0 cellpadding=0 align=center>
+      <tr valign=top>
+        <td width=90><img src="meshmaker-spacer.gif" alt="" width=90 height=1></td>
+        <td width=560><img src="meshmaker-title.jpg" alt="MeshMaker" width=260 height=50></td>
+        <td width=100><img src="meshmaker-spacer.gif" alt="" width=100 height=1></td>
+      </tr>
+    </table>
+
+    <table border=0 cellspacing=0 cellpadding=0 align=center>
+      <tr valign=top>
+        <td width=100><img src="meshmaker-step1-left.jpg" alt="Step 1" width=100 height=400></td>
+        <td width=550>
+          <img src="meshmaker-step1-right.jpg" alt="" width=270 height=400 align=left hspace=0>
+          <h1>Welcome to MeshMaker!</h1>
+          <p>MeshMaker is a Windows-based editing tool for Unreal and Unreal Tournament that makes converting UnrealEd brushes to ready-to-use decoration actors a matter of seconds.</p>
+          <p>This quick walkthrough assumes that you know <a href="http://forums.beyondunreal.com/showthread.php?s=&threadid=6270&highlight=prefab">how to make a prefab</a> from a piece of level geometry.&nbsp; If you don't, follow the link.</p>
+          <p><b>Step 1.</b>&nbsp; Click the <img src="meshmaker-step1-browse.gif" alt="[browse]" width=17 height=17 hspace=2 style="position: relative; top: 3px"> <b>Browse</b> button and select the prefab you want to convert.&nbsp; Alternatively, you can drag-and-drop a prefab file from Explorer onto the MeshMaker window, or you can simply enter the file name.</p>
+          <p><i>After you have selected the prefab file, MeshMaker will search all texture packages for the textures used by the prefab.&nbsp; This step is necessary because MeshMaker needs to know the size and package names of the textures used.</i></p>
+          <p><b>Step 2.</b>&nbsp; MeshMaker lists the names of the textures used by the prefab and the packages that contain them.&nbsp; A green check mark <img src="meshmaker-step1-check.gif" alt="[check mark]" width=11 height=11 hspace=2 style="position: relative; top: 1px"> shows up next to each texture MeshMaker was able to find, and a red cross <img src="meshmaker-step1-cross.gif" alt="[red cross]" width=11 height=11 hspace=2 style="position: relative; top: 1px"> is displayed next to textures that couldn't be found in any of the texture packages.</p>
+
+          <ul>
+            <li>If all lines show a green check mark,<img src="meshmaker-step1-check.gif" alt="[check mark]" width=11 height=11 hspace=2 style="position: relative; top: 1px"> you're fine, and the <b>Next</b> button is enabled.&nbsp; Click it to proceed to the next step.</li>
+            <li>If one of the lines shows a red cross, <img src="meshmaker-step1-cross.gif" alt="[red cross]" width=11 height=11 hspace=2 style="position: relative; top: 1px"> you have to manually find the texture in question; click on the line and select <b>Browse</b> from the popup menu.&nbsp; The <b>Next</b> button won't be enabled until all texture/package mappings are resolved.</li>
+          </ul>
+
+          <p><i>The <b>Status</b> column in the texture listing displays in how many of the searched packages this texture was found.&nbsp; Normally, only a single package contains a given texture, so the <b>Status</b> column just shows "found."&nbsp; If, on the other hand, multiple packages contain a texture with the given name, MeshMaker picks the first one and shows "multiple" in the <b>Status</b> column; click on the texture or package name to preview all matching textures and to select the correct one.</p>
+        </td>
+        <td width=100><img src="meshmaker-spacer.gif" alt="" width=100 height=1></td>
+      </tr>
+      
+      <tr valign=top>
+        <td width=100><img src="meshmaker-spacer.gif" alt="" width=100 height=1></td>
+        <td width=550>
+          <img src="meshmaker-step2-left.jpg" alt="" width=230 height=350 align=right hspace=0>
+          <p><b>Step 3.</b>&nbsp; In the <b>Class</b> field, specify an arbitary name (composed of letters, numbers and underscores; no blanks!) for the decoration actor MeshMaker will create, and enter the name of the package that will contain the new decoration in the <b>Package</b> field.&nbsp; <span class="warning">Warning: If you specify an existing package, it will be silently overwritten.</span> Check <b>Generate collision hull</b> to make the decoration solid.</p>
+          <p><b>Step 4.</b>&nbsp; Select an option:</p>
+          
+          <ul>
+            <li>The default setting of these radio buttons, <b>Create a ready-to-use decoration</b>, is usually fine.&nbsp; If you don't know what the other option means, leave the default setting and go ahead.</li>
+            <li>If you're an advanced user and wish to add code to the decoration subclass MeshMaker is about to create, or if you wish to manually edit the exported mesh, click <b>Export the prefab as a model</b> instead.</li>
+          </ul>
+          
+          <p><i>MeshMaker exports the model anyway, regardless of whether you select one or the other option.&nbsp; The difference between the two just is that MeshMaker automatically compiles the package if you select <b>Create a ready-to-use decoration</b>.</i></p>
+          <p><b>Step 5.</b>&nbsp; Click <b>Next</b> to proceed.&nbsp; If you selected <b>Create a ready-to-use decoration</b>, MeshMaker will display a dialog box showing the progress of the compilation process; it usually takes just a couple of seconds to complete.</p>
+        </td>
+        <td width=100><img src="meshmaker-step2-right.jpg" alt="" width=100 height=350></td>
+      </tr>
+      
+      <tr valign=top>
+        <td width=100><img src="meshmaker-step3-left.jpg" alt="Step 3" width=100 height=150></td>
+        <td width=550>
+          <img src="meshmaker-step3-right.jpg" alt="" width=230 height=150 align=left hspace=0>
+          <h1>Congrats, you're done!</h1>
+          <p>You just created your first decoration with MeshMaker.</p>
+          <p>To use it in UnrealEd, open the Actor browser, and open the new package file that contains the decoration MeshMaker just compiled for you.</p>
+          <p>After loading the package, your new decoration is listed in the "Decoration" subtree.&nbsp; Simply select it, right-click into any of UnrealEd's viewports and use <b>Add MyPrefab</b> (or whatever name you gave it) to add it to the world.</p>
+          <p><a href="index.html">Back to the main page.</a></p>
+        </td>
+        <td width=100><img src="meshmaker-spacer.gif" alt="" width=100 height=1></td>
+      </tr>
+    </table>
+  </body>
+</html>

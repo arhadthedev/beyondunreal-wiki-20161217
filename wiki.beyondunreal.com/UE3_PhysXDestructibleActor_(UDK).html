@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:PhysXDestructibleActor_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:41:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:PhysXDestructibleActor (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_PhysXDestructibleActor_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:PhysXDestructibleActor_(UDK)","wgTitle":"PhysXDestructibleActor (UDK)","wgCurRevisionId":38172,"wgRevisionId":38172,"wgArticleId":26635,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UDK-specific classes","Classes in UDK package Engine","Subclasses of FracturedStaticMeshActor (UDK)","Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:PhysXDestructibleActor_(UDK)","wgRelevantArticleId":26635,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_PhysXDestructibleActor_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Cogito, ergo sum
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:PhysXDestructibleActor (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a> &gt;&gt;&#160;<a href="UE3_FracturedStaticMeshActor_(UDK).html" title="UE3:FracturedStaticMeshActor (UDK)">FracturedStaticMeshActor</a> &gt;&gt;&#160;<b>PhysXDestructibleActor</b></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Properties"><span class="tocnumber">1</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Property_group_.27Destructible.27"><span class="tocnumber">1.1</span> <span class="toctext">Property group 'Destructible'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#bSupportChunksInSupportFragment"><span class="tocnumber">1.1.1</span> <span class="toctext">bSupportChunksInSupportFragment</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#bSupportChunksTouchWorld"><span class="tocnumber">1.1.2</span> <span class="toctext">bSupportChunksTouchWorld</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#DestructibleParameters"><span class="tocnumber">1.1.3</span> <span class="toctext">DestructibleParameters</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#PerFrameProcessBudget"><span class="tocnumber">1.1.4</span> <span class="toctext">PerFrameProcessBudget</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#SupportDepth"><span class="tocnumber">1.1.5</span> <span class="toctext">SupportDepth</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-8"><a href="#Internal_variables"><span class="tocnumber">1.2</span> <span class="toctext">Internal variables</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="#bPlayFractureSound"><span class="tocnumber">1.2.1</span> <span class="toctext">bPlayFractureSound</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#DestructibleComponent"><span class="tocnumber">1.2.2</span> <span class="toctext">DestructibleComponent</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#EffectBases"><span class="tocnumber">1.2.3</span> <span class="toctext">EffectBases</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#LightEnvironment"><span class="tocnumber">1.2.4</span> <span class="toctext">LightEnvironment</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#LinearSize"><span class="tocnumber">1.2.5</span> <span class="toctext">LinearSize</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#Neighbors"><span class="tocnumber">1.2.6</span> <span class="toctext">Neighbors</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#NumPartsRemaining"><span class="tocnumber">1.2.7</span> <span class="toctext">NumPartsRemaining</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#PartFirstChunkIndices"><span class="tocnumber">1.2.8</span> <span class="toctext">PartFirstChunkIndices</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#Parts"><span class="tocnumber">1.2.9</span> <span class="toctext">Parts</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#PhysXDestructible"><span class="tocnumber">1.2.10</span> <span class="toctext">PhysXDestructible</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#Structure"><span class="tocnumber">1.2.11</span> <span class="toctext">Structure</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#VolumeFill"><span class="tocnumber">1.2.12</span> <span class="toctext">VolumeFill</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-21"><a href="#Default_values"><span class="tocnumber">1.3</span> <span class="toctext">Default values</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Subobjects"><span class="tocnumber">1.4</span> <span class="toctext">Subobjects</span></a>
+<ul>
+<li class="toclevel-3 tocsection-23"><a href="#FracturedSkinnedComponent0"><span class="tocnumber">1.4.1</span> <span class="toctext">FracturedSkinnedComponent0</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="#FracturedStaticMeshComponent0"><span class="tocnumber">1.4.2</span> <span class="toctext">FracturedStaticMeshComponent0</span></a></li>
+<li class="toclevel-3 tocsection-25"><a href="#LightEnvironment0"><span class="tocnumber">1.4.3</span> <span class="toctext">LightEnvironment0</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-26"><a href="#Structs"><span class="tocnumber">2</span> <span class="toctext">Structs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-27"><a href="#SpawnBasis"><span class="tocnumber">2.1</span> <span class="toctext">SpawnBasis</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-28"><a href="#Functions"><span class="tocnumber">3</span> <span class="toctext">Functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-29"><a href="#Native_functions"><span class="tocnumber">3.1</span> <span class="toctext">Native functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-30"><a href="#Init"><span class="tocnumber">3.1.1</span> <span class="toctext">Init</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="#NativeSpawnEffects"><span class="tocnumber">3.1.2</span> <span class="toctext">NativeSpawnEffects</span></a></li>
+<li class="toclevel-3 tocsection-32"><a href="#NativeTakeDamage"><span class="tocnumber">3.1.3</span> <span class="toctext">NativeTakeDamage</span></a></li>
+<li class="toclevel-3 tocsection-33"><a href="#TakeRadiusDamage"><span class="tocnumber">3.1.4</span> <span class="toctext">TakeRadiusDamage</span></a></li>
+<li class="toclevel-3 tocsection-34"><a href="#Term"><span class="tocnumber">3.1.5</span> <span class="toctext">Term</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-35"><a href="#Events"><span class="tocnumber">3.2</span> <span class="toctext">Events</span></a>
+<ul>
+<li class="toclevel-3 tocsection-36"><a href="#Destroyed"><span class="tocnumber">3.2.1</span> <span class="toctext">Destroyed</span></a></li>
+<li class="toclevel-3 tocsection-37"><a href="#Explode"><span class="tocnumber">3.2.2</span> <span class="toctext">Explode</span></a></li>
+<li class="toclevel-3 tocsection-38"><a href="#PostBeginPlay"><span class="tocnumber">3.2.3</span> <span class="toctext">PostBeginPlay</span></a></li>
+<li class="toclevel-3 tocsection-39"><a href="#SpawnEffects"><span class="tocnumber">3.2.4</span> <span class="toctext">SpawnEffects</span></a></li>
+<li class="toclevel-3 tocsection-40"><a href="#TakeDamage"><span class="tocnumber">3.2.5</span> <span class="toctext">TakeDamage</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Package:&#160;</dt>
+<dd><a href="Category_Classes_in_UDK_package_Engine.html" title="Category:Classes in UDK package Engine">Engine</a></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<p>null</p>
+<h2><span class="mw-headline" id="Properties">Properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=1" title="Edit section: Properties">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Property_group_.27Destructible.27">Property group 'Destructible'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=2" title="Edit section: Property group 'Destructible'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="bSupportChunksInSupportFragment">bSupportChunksInSupportFragment</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=3" title="Edit section: bSupportChunksInSupportFragment">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>If this is checked, then only chunks that are children of a FracturedStaticMesh support fragment are considered for support.</p>
+<h4><span class="mw-headline" id="bSupportChunksTouchWorld">bSupportChunksTouchWorld</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=4" title="Edit section: bSupportChunksTouchWorld">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>If this is checked, then only chunks that touch the world are considered for support.</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="DestructibleParameters">DestructibleParameters</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=5" title="Edit section: DestructibleParameters">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_PhysXDestructible_(UDK).html#PhysXDestructibleParameters" title="UE3:PhysXDestructible (UDK)">PhysXDestructible.PhysXDestructibleParameters</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> editinline</p>
+<p>Destructible parameters - damage thresholds, crumble particle systems, etc.</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_PhysXDestructible_(UDK).html#PhysXDestructibleParameters" title="UE3:PhysXDestructible (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>bAccumulateDamage</td>
+<td>True</td>
+</tr>
+<tr>
+<td>CrumbleParticleSize</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>DamageThreshold</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>DamageToRadius</td>
+<td>0.1</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="PerFrameProcessBudget">PerFrameProcessBudget</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=6" title="Edit section: PerFrameProcessBudget">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Per frame Chunk graph update processing budget, in leaf chunks's quantity</p>
+<p><b>Default value:</b> 100</p>
+<h4><span class="mw-headline" id="SupportDepth">SupportDepth</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=7" title="Edit section: SupportDepth">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h3><span class="mw-headline" id="Internal_variables">Internal variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=8" title="Edit section: Internal variables">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="bPlayFractureSound">bPlayFractureSound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=9" title="Edit section: bPlayFractureSound">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient, native</p>
+<p>Fracture sound effect flag</p>
+<h4><span class="mw-headline" id="DestructibleComponent">DestructibleComponent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=10" title="Edit section: DestructibleComponent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_PhysXDestructibleComponent_(UDK).html" title="UE3:PhysXDestructibleComponent (UDK)">PhysXDestructibleComponent</a></p>
+<p>Contains aggregate collision info for all of the fragments</p>
+<h4><span class="mw-headline" id="EffectBases">EffectBases</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=11" title="Edit section: EffectBases">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="#SpawnBasis">SpawnBasis</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient, native</p>
+<p>Fracture effect data - one for each fragment</p>
+<h4><span class="mw-headline" id="LightEnvironment">LightEnvironment</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=12" title="Edit section: LightEnvironment">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_LightEnvironmentComponent_(UDK).html" title="UE3:LightEnvironmentComponent (UDK)">LightEnvironmentComponent</a></p>
+<p>In case the destructible becomes dynamic</p>
+<h4><span class="mw-headline" id="LinearSize">LinearSize</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=13" title="Edit section: LinearSize">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient, native</p>
+<p>Stored off linear size</p>
+<h4><span class="mw-headline" id="Neighbors">Neighbors</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=14" title="Edit section: Neighbors">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Int.html" title="Int" class="mw-redirect">int</a>&gt;</p>
+<p>Array of neighbors in the destructible structure</p>
+<h4><span class="mw-headline" id="NumPartsRemaining">NumPartsRemaining</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=15" title="Edit section: NumPartsRemaining">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p>Number of potentially active parts remaining</p>
+<h4><span class="mw-headline" id="PartFirstChunkIndices">PartFirstChunkIndices</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=16" title="Edit section: PartFirstChunkIndices">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Int.html" title="Int" class="mw-redirect">int</a>&gt;</p>
+<p>Where the parts may find their chunks within the Structure. Appended element [#Fragments] = "stop" value</p>
+<h4><span class="mw-headline" id="Parts">Parts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=17" title="Edit section: Parts">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_PhysXDestructiblePart_(UDK).html" title="UE3:PhysXDestructiblePart (UDK)">PhysXDestructiblePart</a>&gt;</p>
+<p>Array of spawned parts (starts off a full array of NULL pointers)</p>
+<h4><span class="mw-headline" id="PhysXDestructible">PhysXDestructible</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=18" title="Edit section: PhysXDestructible">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_PhysXDestructible_(UDK).html" title="UE3:PhysXDestructible (UDK)">PhysXDestructible</a></p>
+<p>The FracturedStaticMesh and SkeletalMeshes which form the hierarchical decomposition</p>
+<h4><span class="mw-headline" id="Structure">Structure</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=19" title="Edit section: Structure">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_PhysXDestructibleStructure_(UDK).html" title="UE3:PhysXDestructibleStructure (UDK)">PhysXDestructibleStructure</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="VolumeFill">VolumeFill</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=20" title="Edit section: VolumeFill">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Pointer.html" title="Pointer" class="mw-redirect">pointer</a><i>{struct FRBVolumeFill}</i></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient, native</p>
+<p>Fluid crumbling data</p>
+<h3><span class="mw-headline" id="Default_values">Default values</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=21" title="Edit section: Default values">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td><a href="UE3_Actor_(UDK).html#bNoEncroachCheck" title="UE3:Actor (UDK)">bNoEncroachCheck</a></td>
+<td>True</td>
+</tr>
+<tr>
+<td><a href="UE3_Actor_internal_variables_(UDK).html#bWorldGeometry" title="UE3:Actor internal variables (UDK)">bWorldGeometry</a></td>
+<td>False</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Subobjects">Subobjects</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=22" title="Edit section: Subobjects">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="FracturedSkinnedComponent0">FracturedSkinnedComponent0</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=23" title="Edit section: FracturedSkinnedComponent0">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Class:</b> <a href="UE3_FracturedSkinnedMeshComponent_(UDK).html" title="UE3:FracturedSkinnedMeshComponent (UDK)">Engine.FracturedSkinnedMeshComponent</a></p>
+<p><b>Inherits from:</b> <a href="UE3_FracturedStaticMeshActor_(UDK).html#FracturedSkinnedComponent0" title="UE3:FracturedStaticMeshActor (UDK)">FracturedStaticMeshActor.FracturedSkinnedComponent0</a></p>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td><a href="UE3_PrimitiveComponent_properties_(UDK).html#ReplacementPrimitive" title="UE3:PrimitiveComponent properties (UDK)">ReplacementPrimitive</a></td>
+<td>None</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="FracturedStaticMeshComponent0">FracturedStaticMeshComponent0</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=24" title="Edit section: FracturedStaticMeshComponent0">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Class:</b> <a href="UE3_FracturedStaticMeshComponent_(UDK).html" title="UE3:FracturedStaticMeshComponent (UDK)">Engine.FracturedStaticMeshComponent</a></p>
+<p><b>Inherits from:</b> <a href="UE3_FracturedStaticMeshActor_(UDK).html#FracturedStaticMeshComponent0" title="UE3:FracturedStaticMeshActor (UDK)">FracturedStaticMeshActor.FracturedStaticMeshComponent0</a></p>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td><a href="UE3_PrimitiveComponent_properties_(UDK).html#bUsePrecomputedShadows" title="UE3:PrimitiveComponent properties (UDK)">bUsePrecomputedShadows</a></td>
+<td>False</td>
+</tr>
+<tr>
+<td><a href="UE3_PrimitiveComponent_properties_(UDK).html#ReplacementPrimitive" title="UE3:PrimitiveComponent properties (UDK)">ReplacementPrimitive</a></td>
+<td>None</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="LightEnvironment0">LightEnvironment0</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=25" title="Edit section: LightEnvironment0">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Class:</b> <a href="UE3_DynamicLightEnvironmentComponent_(UDK).html" title="UE3:DynamicLightEnvironmentComponent (UDK)">Engine.DynamicLightEnvironmentComponent</a></p>
+<p><b>Inherits from:</b> <a href="UE3_FracturedStaticMeshActor_(UDK).html#LightEnvironment0" title="UE3:FracturedStaticMeshActor (UDK)">FracturedStaticMeshActor.LightEnvironment0</a></p>
+<p><i>No new values.</i></p>
+<h2><span class="mw-headline" id="Structs">Structs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=26" title="Edit section: Structs">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="SpawnBasis">SpawnBasis</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=27" title="Edit section: SpawnBasis">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<dl>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> Location&#160;</dt>
+<dt><a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a> Rotation&#160;</dt>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> Scale&#160;</dt>
+</dl>
+<h2><span class="mw-headline" id="Functions">Functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=28" title="Edit section: Functions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Native_functions">Native functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=29" title="Edit section: Native functions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="Init">Init</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=30" title="Edit section: Init">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>Init</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="NativeSpawnEffects">NativeSpawnEffects</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=31" title="Edit section: NativeSpawnEffects">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>NativeSpawnEffects</b> ()</div>
+<p>Native code for SpawnEffects</p>
+<h4><span class="mw-headline" id="NativeTakeDamage">NativeTakeDamage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=32" title="Edit section: NativeTakeDamage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>NativeTakeDamage</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>Damage</b>, <a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>EventInstigator</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>HitLocation</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>Momentum</b>, <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_DamageType_(UDK).html" title="UE3:DamageType (UDK)">DamageType</a>&gt;&#160;<b>DamageType</b>, optional&#160;<a href="UE3_Actor_structs_(UDK).html#TraceHitInfo" title="UE3:Actor structs (UDK)">Actor.TraceHitInfo</a>&#160;<b>HitInfo</b>, optional&#160;<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>DamageCauser</b>)</div>
+<p>Native code for TakeDamage.</p>
+<h4><span class="mw-headline" id="TakeRadiusDamage">TakeRadiusDamage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=33" title="Edit section: TakeRadiusDamage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated native function <b>TakeRadiusDamage</b> (<a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>InstigatedBy</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>BaseDamage</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>DamageRadius</b>, <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_DamageType_(UDK).html" title="UE3:DamageType (UDK)">DamageType</a>&gt;&#160;<b>DamageType</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>Momentum</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>HurtOrigin</b>, <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bFullDamage</b>, <a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>DamageCauser</b>, optional&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>DamageFalloffExponent</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_Actor_instance_functions_(UDK).html#TakeRadiusDamage" title="UE3:Actor instance functions (UDK)">Actor.TakeRadiusDamage</a></p>
+<p><i>(Description copied from <a href="UE3_Actor_instance_functions_(UDK).html#TakeRadiusDamage" title="UE3:Actor instance functions (UDK)">Actor.TakeRadiusDamage</a>)</i><br />
+Take Radius Damage by default scales damage based on distance from HurtOrigin to Actor's location. This can be overridden by the actor receiving the damage for special conditions (see KAsset.uc). This then calls TakeDamage() to go through the same damage pipeline.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>InstigatedBy</i> - instigator of the damage</li>
+<li><i>BaseDamage</i> -</li>
+<li><i>DamageRadius</i> - from Origin)</li>
+<li><i>DamageType</i> - class</li>
+<li><i>Momentum</i> - float)</li>
+<li><i>HurtOrigin</i> - origin of the damage radius.</li>
+<li><i>bFullDamage</i> - if true, damage not scaled based on distance HurtOrigin</li>
+<li><i>DamageCauser</i> - the Actor that directly caused the damage (i.e. the Projectile that exploded, the Weapon that fired, etc)</li>
+<li><i>DamageFalloff</i> - allows for nonlinear damage falloff from the point. Default is linera.</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>Returns amount of damage applied.</dd>
+</dl>
+<h4><span class="mw-headline" id="Term">Term</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=34" title="Edit section: Term">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>Term</b> ()</div>
+<p><br /></p>
+<h3><span class="mw-headline" id="Events">Events</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=35" title="Edit section: Events">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="Destroyed">Destroyed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=36" title="Edit section: Destroyed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>Destroyed</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_Actor_events_(UDK).html#Destroyed" title="UE3:Actor events (UDK)">Actor.Destroyed</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Explode">Explode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=37" title="Edit section: Explode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>Explode</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_FracturedStaticMeshActor_(UDK).html#Explode" title="UE3:FracturedStaticMeshActor (UDK)">FracturedStaticMeshActor.Explode</a></p>
+<p>Break off all pieces in one go.</p>
+<h4><span class="mw-headline" id="PostBeginPlay">PostBeginPlay</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=38" title="Edit section: PostBeginPlay">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>PostBeginPlay</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_FracturedStaticMeshActor_(UDK).html#PostBeginPlay" title="UE3:FracturedStaticMeshActor (UDK)">FracturedStaticMeshActor.PostBeginPlay</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="SpawnEffects">SpawnEffects</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=39" title="Edit section: SpawnEffects">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>SpawnEffects</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="TakeDamage">TakeDamage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)?section=40" title="Edit section: TakeDamage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">simulated event <b>TakeDamage</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>Damage</b>, <a href="UE3_Controller_(UDK).html" title="UE3:Controller (UDK)">Controller</a>&#160;<b>EventInstigator</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>HitLocation</b>, <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>Momentum</b>, <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_DamageType_(UDK).html" title="UE3:DamageType (UDK)">DamageType</a>&gt;&#160;<b>DamageType</b>, optional&#160;<a href="UE3_Actor_structs_(UDK).html#TraceHitInfo" title="UE3:Actor structs (UDK)">Actor.TraceHitInfo</a>&#160;<b>HitInfo</b>, optional&#160;<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>DamageCauser</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_FracturedStaticMeshActor_(UDK).html#TakeDamage" title="UE3:FracturedStaticMeshActor (UDK)">FracturedStaticMeshActor.TakeDamage</a></p>
+<p>TakeDamage will hide/spawn chunks when they get shot.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.339 seconds
+Real time usage: 0.347 seconds
+Preprocessor visited node count: 2707/1000000
+Preprocessor generated node count: 6254/1000000
+Post‐expand include size: 19553/2097152 bytes
+Template argument size: 6370/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  255.292      1 - -total
+ 38.14%   97.374     26 - Template:Tl
+ 38.01%   97.047     42 - Template:Samegame
+ 32.66%   83.386      1 - Template:Infobox_class
+ 30.54%   77.955      1 - Template:Infobox_class/core
+ 22.40%   57.184     10 - Template:Code
+ 18.74%   47.843     17 - Template:Cl
+  6.57%   16.770      2 - Template:Ch
+  2.46%    6.279      1 - Template:Autogenerated
+  2.08%    5.313      1 - Template:Classname
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:26635-0!*!0!!en!5!* and timestamp 20161215211952 and revision id 38172
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:PhysXDestructibleActor_(UDK)?oldid=38172">https://wiki.beyondunreal.com/UE3:PhysXDestructibleActor_(UDK)?oldid=38172</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_UDK-specific_classes.html" title="Category:UDK-specific classes">UDK-specific classes</a></li><li><a href="Category_Classes_in_UDK_package_Engine.html" title="Category:Classes in UDK package Engine">Classes in UDK package Engine</a></li><li><a href="Category_Subclasses_of_FracturedStaticMeshActor_(UDK).html" title="Category:Subclasses of FracturedStaticMeshActor (UDK)">Subclasses of FracturedStaticMeshActor (UDK)</a></li><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_PhysXDestructibleActor_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:PhysXDestructibleActor_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:PhysXDestructibleActor_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:PhysXDestructibleActor_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3APhysXDestructibleActor+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3APhysXDestructibleActor+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:PhysXDestructibleActor_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:PhysXDestructibleActor_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:PhysXDestructibleActor_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:PhysXDestructibleActor_(UDK)?oldid=38172" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:PhysXDestructibleActor_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 13:47, 6 November 2009.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":83});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:PhysXDestructibleActor_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:41:02 GMT -->
+</html>

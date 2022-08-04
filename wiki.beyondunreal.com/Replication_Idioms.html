@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Replication_Idioms by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:52:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Replication Idioms - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Replication_Idioms" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Replication_Idioms" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Replication_Idioms.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Replication_Idioms","wgTitle":"Replication Idioms","wgCurRevisionId":45462,"wgRevisionId":45462,"wgArticleId":29482,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Programming tutorials","Replication","Articles with stub sections"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Replication_Idioms","wgRelevantArticleId":29482,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Replication_Idioms skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I don't need to test my programs. I have an error-correcting modem.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Replication Idioms</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This article provides code examples for various replication concepts and tasks. If any example includes a <a href="Defaultproperties.html" title="Defaultproperties">defaultproperties</a> block, keep in mind that default values are inherited from parent classes. Often you don't need to specify all of the values listed here.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Actor_replication_examples"><span class="tocnumber">1</span> <span class="toctext">Actor replication examples</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#The_ReplicationInfo_.28always_replicate.29"><span class="tocnumber">1.1</span> <span class="toctext">The ReplicationInfo (always replicate)</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Owner-only_replication"><span class="tocnumber">1.2</span> <span class="toctext">Owner-only replication</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#Invisible_actors"><span class="tocnumber">1.2.1</span> <span class="toctext">Invisible actors</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Visible_actors"><span class="tocnumber">1.2.2</span> <span class="toctext">Visible actors</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Regardless_of_visibility"><span class="tocnumber">1.2.3</span> <span class="toctext">Regardless of visibility</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#Replicate_as_if_visible"><span class="tocnumber">1.3</span> <span class="toctext">Replicate as if visible</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Variable_replication"><span class="tocnumber">2</span> <span class="toctext">Variable replication</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Replicating_all_changes"><span class="tocnumber">2.1</span> <span class="toctext">Replicating all changes</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Only_the_initial_value"><span class="tocnumber">2.2</span> <span class="toctext">Only the initial value</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#From_client_to_server"><span class="tocnumber">2.3</span> <span class="toctext">From client to server</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Replicated_function_calls"><span class="tocnumber">3</span> <span class="toctext">Replicated function calls</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Actor_replication_examples">Actor replication examples</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Replication_Idioms?section=1" title="Edit section: Actor replication examples">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The following are a few example class frames for various types of actor replication.</p>
+<h3><span class="mw-headline" id="The_ReplicationInfo_.28always_replicate.29">The ReplicationInfo (always replicate)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Replication_Idioms?section=2" title="Edit section: The ReplicationInfo (always replicate)">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The class ReplicationInfo<sup>(<span><a href="UE1_ReplicationInfo_(RTNP).html" title="UE1:ReplicationInfo (RTNP)">RTNP</a></span>, <span><a href="UE1_ReplicationInfo_(U1).html" title="UE1:ReplicationInfo (U1)">U1</a></span>, <span><a href="UE1_ReplicationInfo_(UT).html" title="UE1:ReplicationInfo (UT)">UT</a></span>, <span><a href="UE2_ReplicationInfo_(U2).html" title="UE2:ReplicationInfo (U2)">U2</a></span>, <span><a href="UE2_ReplicationInfo_(U2XMP).html" title="UE2:ReplicationInfo (U2XMP)">U2XMP</a></span>, <span><a href="UE2_ReplicationInfo_(UE2Runtime).html" title="UE2:ReplicationInfo (UE2Runtime)">UE2Runtime</a></span>, <span><a href="UE2_ReplicationInfo_(UT2003).html" title="UE2:ReplicationInfo (UT2003)">UT2003</a></span>, <span><a href="UE2_ReplicationInfo_(UT2004).html" title="UE2:ReplicationInfo (UT2004)">UT2004</a></span>, <span><a href="UE3_ReplicationInfo_(UDK).html" title="UE3:ReplicationInfo (UDK)">UDK</a></span>, <span><a href="UE3_ReplicationInfo_(UT3).html" title="UE3:ReplicationInfo (UT3)">UT3</a></span>)</sup> already exists in all Unreal Engine games and contains the following relevant default values:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">class</span> ReplicationInfo <span class="kw1">extends</span> <span class="kw9">Info</span> <span class="kw1">abstract</span> <span class="kw1">native</span>;
+ 
+<span class="kw1">defaultproperties</span>
+<span class="br0">{</span>
+  <span class="kw7">RemoteRole</span><span class="sy0">=</span><span class="kw7">ROLE_SimulatedProxy</span>
+  bAlwaysRelevant<span class="sy0">=</span><span class="kw6">True</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p><code>RemoteRole=ROLE_SimulatedProxy</code> ensures that actors of this type participate in replication, while <code>bAlwaysRelevant=True</code> ensures that actors of this type will be replicated to all clients, bypassing any relevance checks. The ReplicationInfo class itself is abstract, because creating instances of it wouldn't make sense - you should subclass it. ReplicationInfo is declared as native class for two reasons. One is that there are native subclasses, which is only allowed if the parent class is native as well.</p>
+<p>The other reason is a special native handling of the <code>bSkipActorPropertyReplication</code> for replication purposes. (That property is set to <code>True</code> in ReplicationInfo's parent class Info.) If you look at the <a href="Replication_block.html" title="Replication block">replication block</a> of class Actor, you will notice that <code>bSkipActorPropertyReplication</code> can be overridden by <code>bNetInitial</code>, causing corresponding properties to be replicated at least once. The ReplicationInfo native code overrides this behavior and turns off even initial replication. Thus only replicated variables declared in subclasses will be replicated, even when sending the initial data. This makes ReplicationInfo more efficient for replication than other classes with the same default values.</p>
+<h3><span class="mw-headline" id="Owner-only_replication">Owner-only replication</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Replication_Idioms?section=3" title="Edit section: Owner-only replication">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Ensuring that an actor is only replicated to its owner can be achieved in multiple ways. An actor is always relevant to its owning client (i.e. the actor's owner must be the client's PlayerController/PlayerPawn, or the owner actor must be owned by the client), but only relevant to other clients under certain circumstances.</p>
+<h4><span class="mw-headline" id="Invisible_actors">Invisible actors</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Replication_Idioms?section=4" title="Edit section: Invisible actors">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>If the actor is not supposed to be visible, owner-only replication can easily be achieved by hiding the actor:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">defaultproperties</span>
+<span class="br0">{</span>
+  <span class="kw7">RemoteRole</span><span class="sy0">=</span><span class="kw7">ROLE_SimulatedProxy</span> <span class="co1">// or ROLE_DumbProxy or ROLE_AutonomousProxy</span>
+  bAlwaysRelevant<span class="sy0">=</span><span class="kw6">False</span> <span class="co1">// inherited from Actor, but keep in mind when inheriting from e.g. ReplicationInfo</span>
+  bHidden<span class="sy0">=</span><span class="kw6">True</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h4><span class="mw-headline" id="Visible_actors">Visible actors</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Replication_Idioms?section=5" title="Edit section: Visible actors">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>If the actor must be visible, but only to its owner, you can use the standard visibility settings for that purpose and at the same time replicate the actor only to its owning client:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">defaultproperties</span>
+<span class="br0">{</span>
+  <span class="kw7">RemoteRole</span><span class="sy0">=</span><span class="kw7">ROLE_SimulatedProxy</span> <span class="co1">// or ROLE_DumbProxy or ROLE_AutonomousProxy</span>
+  bAlwaysRelevant<span class="sy0">=</span><span class="kw6">False</span> <span class="co1">// inherited from Actor, but keep in mind when inheriting from e.g. ReplicationInfo</span>
+  bOnlyOwnerSee<span class="sy0">=</span><span class="kw6">True</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Note that the reverse, <code>bOwnerNoSee</code> won't prevent the actor from being replicated to its owner, because ownership is a stronger relevance criteria.</p>
+<h4><span class="mw-headline" id="Regardless_of_visibility">Regardless of visibility</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Replication_Idioms?section=6" title="Edit section: Regardless of visibility">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Starting with Unreal Engine 2, replication can be limited to the owner without having to change rendering properties:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">defaultproperties</span>
+<span class="br0">{</span>
+  <span class="kw7">RemoteRole</span><span class="sy0">=</span><span class="kw7">ROLE_SimulatedProxy</span> <span class="co1">// or ROLE_DumbProxy or ROLE_AutonomousProxy</span>
+  bAlwaysRelevant<span class="sy0">=</span><span class="kw6">False</span> <span class="co1">// inherited from Actor, but keep in mind when inheriting from e.g. ReplicationInfo</span>
+  bOnlyRelevantToOwner<span class="sy0">=</span><span class="kw6">True</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Since the actor still also exists serversidely, you will probably still use <code>bOwnerNoSee</code> for the actor.</p>
+<h3><span class="mw-headline" id="Replicate_as_if_visible">Replicate as if visible</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Replication_Idioms?section=7" title="Edit section: Replicate as if visible">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>In special cases you might want to replicate an invisible actor as if it was visible, i.e. only to clients that would be able to see the actor if it wasn't invisible. For example you might want to replicate a projectile, but handle its visibility entirely via a separate Emitter actor. In that case you cannot rely on bHidden, because it would prevent replication for all but the owning client:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">defaultproperties</span>
+<span class="br0">{</span>
+  <span class="kw7">RemoteRole</span><span class="sy0">=</span><span class="kw7">ROLE_SimulatedProxy</span> <span class="co1">// or ROLE_DumbProxy or ROLE_AutonomousProxy</span>
+  bAlwaysRelevant<span class="sy0">=</span><span class="kw6">False</span> <span class="co1">// inherited from Actor, but keep in mind when inheriting from e.g. ReplicationInfo</span>
+  <span class="kw7">DrawType</span><span class="sy0">=</span><span class="kw7">DT_None</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="Variable_replication">Variable replication</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Replication_Idioms?section=8" title="Edit section: Variable replication">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>This section describes various ways to replicate variable values.</p>
+<h3><span class="mw-headline" id="Replicating_all_changes">Replicating all changes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Replication_Idioms?section=9" title="Edit section: Replicating all changes">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Unreal Engine 1 and Unreal Engine 2:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">replication</span>
+<span class="br0">{</span>
+  <span class="kw1">unreliable</span> <span class="kw2">if</span> <span class="br0">(</span><span class="kw7">Role</span> <span class="sy0">==</span> <span class="kw7">ROLE_Authority</span><span class="br0">)</span>
+    VariableToReplicate;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Only Unreal Engine 2:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">replication</span>
+<span class="br0">{</span>
+  <span class="kw1">unreliable</span> <span class="kw2">if</span> <span class="br0">(</span><span class="kw6">True</span><span class="br0">)</span>
+    VariableToReplicate;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Unreal Engine 3:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">replication</span>
+<span class="br0">{</span>
+  <span class="kw2">if</span> <span class="br0">(</span><span class="kw6">True</span><span class="br0">)</span>
+    VariableToReplicate;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Why just <code>True</code>? Well, variables can only be replicated in one direction: From the server to the clients. On the server the expression <code>Role == ROLE_Authority</code> always evaluates to <code>True</code>, so there's no need to evaluate it every time.</p>
+<h3><span class="mw-headline" id="Only_the_initial_value">Only the initial value</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Replication_Idioms?section=10" title="Edit section: Only the initial value">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Often all changes of a value can be simulated by the client, as long as it knows the starting value. In that case it would be a waste of bandwidth to replicate additional serverside changes.</p>
+<p>Unreal Engine 1 and Unreal Engine 2:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">replication</span>
+<span class="br0">{</span>
+  <span class="kw1">unreliable</span> <span class="kw2">if</span> <span class="br0">(</span><span class="kw7">Role</span> <span class="sy0">==</span> <span class="kw7">ROLE_Authority</span> <span class="sy0">&amp;&amp;</span> bNetInitial<span class="br0">)</span>
+    VariableToReplicate;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Only Unreal Engine 2:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">replication</span>
+<span class="br0">{</span>
+  <span class="kw1">unreliable</span> <span class="kw2">if</span> <span class="br0">(</span>bNetInitial<span class="br0">)</span>
+    VariableToReplicate;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Unreal Engine 3:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">replication</span>
+<span class="br0">{</span>
+  <span class="kw2">if</span> <span class="br0">(</span>bNetInitial<span class="br0">)</span>
+    VariableToReplicate;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="From_client_to_server">From client to server</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Replication_Idioms?section=11" title="Edit section: From client to server">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>As mentioned above, variable values only replicate from the server to clients. For the other way, you need to use function replication to update the serverside value. But even then, replication is only possible from the owning client to the server. If the actor isn't owned by the sending client, the server will discard the replicated call or value.</p>
+<p>Unreal Engine 1 can actually replicate values from the owning client to the server:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">replication</span>
+<span class="br0">{</span>
+  <span class="kw1">unreliable</span> <span class="kw2">if</span> <span class="br0">(</span><span class="kw7">Role</span> <span class="sy0">!=</span> <span class="kw7">ROLE_Authority</span><span class="br0">)</span> <span class="co1">// only works in Unreal Engine 1 and only for owning client!</span>
+    VariableToReplicate;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="Replicated_function_calls">Replicated function calls</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Replication_Idioms?section=12" title="Edit section: Replicated function calls">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table style="font-size: 90%" class="metadata plainlinks ambox ambox-content">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text">This <a href="Unreal_Wiki_Cleanup.html#Articles_lacking_information" title="Unreal Wiki:Cleanup">short section</a> needs to be <a rel="nofollow" class="external text" href="https://wiki.beyondunreal.com/edit/Replication_Idioms">expanded</a>.</td>
+</tr>
+</table>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.162 seconds
+Real time usage: 0.167 seconds
+Preprocessor visited node count: 216/1000000
+Preprocessor generated node count: 690/1000000
+Post‐expand include size: 1668/2097152 bytes
+Template argument size: 226/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 1/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  138.211      1 - -total
+ 23.56%   32.569      1 - Template:Classgames
+  4.10%    5.660      1 - Template:Sectstub
+  2.59%    3.577      1 - Template:Ambox
+  0.80%    1.105      1 - Template:Extension_DPL
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:29482-0!*!*!*!*!*!* and timestamp 20161215141711 and revision id 45462
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Replication_Idioms?oldid=45462">https://wiki.beyondunreal.com/Replication_Idioms?oldid=45462</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Programming_tutorials.html" title="Category:Programming tutorials">Programming tutorials</a></li><li><a href="Category_Replication.html" title="Category:Replication">Replication</a></li><li><a href="Category_Articles_with_stub_sections.html" title="Category:Articles with stub sections">Articles with stub sections</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="Replication_Idioms.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Talk:Replication_Idioms?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Replication_Idioms" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Replication_Idioms" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Replication+Idioms&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Replication+Idioms" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Replication_Idioms" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Replication_Idioms" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Replication_Idioms?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Replication_Idioms?oldid=45462" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Replication_Idioms" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 14:29, 30 August 2013.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":87});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Replication_Idioms by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:52:49 GMT -->
+</html>

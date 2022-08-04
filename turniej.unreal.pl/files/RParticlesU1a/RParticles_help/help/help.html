@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head lang="en">
+	<title>UnrealWiki: Raven/RParticles</title>
+<link rel="stylesheet" href="default.css" type="text/css">
+<style type="text/css">#dhtml-menu    { background: #eee; padding: 5px 0px; margin-right: -20px; border: 1px solid #888; border-left: 1px solid #ccc; border-top: 1px solid #ccc;  border-right: 1px solid #888; border-bottom: 1px solid #888 }
+#dhtml-menu td { color: #000; font-family: Arial,Helvetica,sans-serif; font-size: 9pt; line-height: 13pt; padding: 1px 10px; cursor: default }
+#dhtml-menu a  { color: #000; font-family: Arial,Helvetica,sans-serif; font-size: 9pt; line-height: 13pt; text-decoration: none }
+#dhtml-menu tt { font-family: monospace; font-size: 9pt }
+#dhtml-menu-separator { height: 1px; background: red }
+#dhtml-menu-anchor { cursor: default }
+</style>
+</head>
+<body class="default">
+
+<div id="content"><!-- contains the title and article -->
+	<h1 class='pagetitle'><a href="/wiki/Raven">Raven</a>/<a href="/wiki?back=Raven/RParticles">RParticles</a></h1>
+	<div class="wiki"><h2><a name="0.1"></a>RParticles v. 1.2</h2>
+<p>RParticles is advanced particle engine for UT'99. It's written only in Unreal Script and therefore it works on Linux, Mac and Windows.</p>
+<ul><li>Up to 16 different templates in one Particle Emitter</li>
+<li>Can fade in/out</li>
+<li>5 different states (TriggerControl/TriggerTurnsOff/TriggerTurnsOn/TriggerToggle/TriggeredBlast) in ExtendedEmitter</li>
+<li>2 different selection methods</li>
+<li>2 different burst methods</li>
+<li>Collision detection</li>
+<li>Performance mode</li>
+<li>Available version for Unreal 1 (tested on 226 and 225f)</li>
+<li>Much more <img alt=":)" src="/wiki-ext/emoticons/smile.gif" align="middle"></li>
+</ul>
+<hr class="thin"><p><em class="em2">Class tree</em>:</p>
+<ul><li>Actor<ul><li><a href="ParticleSystem.htm">ParticleSystem</a> - holds everything together<ul><li><em class="em2">BasicParticle</em> - particle class</li>
+<li><a href="EmitterCombiner.htm">EmitterCombiner</a> - Emitter Combiner is used for merging many emitters into one effect</li>
+<li><a href="Force.htm">Force</a> - affects BasicParticle velocity (not ParticleEmitter)</li>
+<li><a href="ParticlePath.htm">ParticlePath</a> - changes BasicParticle Destination</li>
+<li><a href="ParticleAlter.htm">ParticleAlter</a> - affects ParticleEmitter configurations (particles velocity)</li>
+<li><a href="ParticleAnimationStorage.htm">ParticleAnimationStorage</a> - stores animation info for particles (for coders)<ul><li><em class="em2">UT2k4FireAnimations</em> - animations for UT2k4Fire2</li>
+</ul>
+</li>
+<li><a href="ParticleEmitter.htm">ParticleEmitter</a><ul><li><a href="ExtendedEmitter.htm">ExtendedEmitter</a> - extended version of ParticleEmitter. Contain working states</li>
+<li><a href="WeaponEmitter.htm">WeaponEmitter</a> - emitter for weapon effects. Can be destroyed.</li>
+<li><em class="em2">FireEmitter</em> - holds fire effects together<ul><li><em class="em2">UT2k4Fire</em> - fire preset form UT 2004</li>
+<li><em class="em2">UT2k4Fire2</em> - fire preset from UT 2004 (with ParticleAnimationStorage)</li>
+</ul>
+</li>
+<li><em class="em2">ParticleTest</em> - sample particles<ul><li><em class="em2">Sample1</em></li>
+<li><em class="em2">Sample2</em></li>
+<li><em class="em2">Sample3</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr class="thin"><div class="floatimages"><table border=0 cellspacing=0 cellpadding=0 align=center width=1><tr valign=top><td class="floatimages-block"><div><img alt="[RParticlesTorch]" src="img/RParticlesTorch.jpg"><p>Simple Torch created using RParticles</p>
+</div>
+<div><img alt="[RParticles]" src="img/RParticles.jpg"><p>UT2k4 and UT'99 emitter</p>
+</div>
+<div><img alt="[RParticlesWindow]" src="img/RParticlesWindow.gif"><p>UED shot</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p><em class="em2">UT'99 version download link</em>: <span class="zip"><img src="/wiki-ext//zipunr.icon.small.gif" align=middle width=16 height=16> <b>Zipfile:</b> <a href="http://turniej.unreal.pl/files/RParticles.zip">RParticles.zip</a></span> (tested on 436).</p>
+<p><em class="em2">Unreal 1 download link</em>: <span class="zip"><img src="/wiki-ext//zipunr.icon.small.gif" align=middle width=16 height=16> <b>Zipfile:</b> <a href="http://turniej.unreal.pl/files/RParticlesU1.zip">RParticlesU1.zip</a></span> (tested on 226 and 225f, version 1.0 !! version 1.2 available soon).</p>
+<p><em class="em2">Archive content</em>:</p>
+<ul><li>RParticles.u<ul><li>3 samples and 2 working fire templates included</li>
+</ul>
+</li>
+<li>Help file</li>
+</ul>
+<hr class="thin"><h2><a name="0.2"></a>Version history:</h2>
+<ul><li>v. 1.2<ul><li>ParticleEmitter is now fully ClientSide.</li>
+<li>States TriggerControl/TriggerTurnsOff/TriggerTurnsOn/TriggerToggle/TriggeredBlast was moved to ExtendedEmitter because of replication which was required in order to make this states work</li>
+<li>WeaponEmitter for any effects which have to be spawned/destroyed during game (like Explosions, etc.)</li>
+</ul>
+</li>
+<li>v. 1.1 (unreleased)<ul><li>new <em class="em2">Particle_EffectArea[16]</em> struct to override defult spawn area</li>
+<li>new <em class="em2">Particle_Mesh[16]</em> struct which allows to play animations while <em class="em2">bUseMesh</em> in <em class="em2">Particle_Display[16]</em> is true</li>
+<li>new <em class="em2">Particle_Destination[16]</em> struct which gives ability to decide about optional destination</li>
+<li>new <em class="em2">ParticlePath</em> actor used to give particles specified path (can be used only if <em class="em2">DestinationType</em> != <em class="em2">DEST_None</em>)</li>
+<li>new features in <em class="em2">Force</em> actor</li>
+<li>few optimizations in replication block</li>
+</ul>
+</li>
+<li>v. 1.0<ul><li>few optimizations</li>
+<li>fixed critical error which in some situations can lead to crash !!</li>
+</ul>
+</li>
+<li>v. 0.9.0.8<ul><li>added new, advanced, velocity functions (<em class="em2">Particle_InvertVelocity[16]</em> inside <em class="em2">ParticleEmitter</em>)</li>
+</ul>
+</li>
+<li>v. 0.9.0.7<ul><li>optimized ParticleEmitter.uc</li>
+<li>optimized BasicParticle.uc</li>
+</ul>
+</li>
+<li>v. 0.9.0.6<ul><li>added new EmitterCombiner.uc actor</li>
+</ul>
+</li>
+<li>v. 0.9.0.5<ul><li>added new ESizing enum. It describes whenever particle should shrinks/grows endlesly or stop when it reaches specifed size</li>
+</ul>
+</li>
+<li>v. 0.9.0.4<ul><li>added new srtucture: SSize where all size related variables was moved (ParticleDrawScale/ParticleDrawScaleVariance/ParticleGrowth)</li>
+<li>new option, which allow to cyclically changing particle size (shrinking/and growing), has beed added</li>
+<li>new sample (Sample3.uc) which shows cyclically changing particle size</li>
+<li>few smaller or bigger improvements</li>
+</ul>
+</li>
+<li>v. 0.9.0.3<ul><li>added new global setting which can be forced to use instead of template Particle_Main.</li>
+</ul>
+</li>
+<li>v. 0.9.0.2<ul><li>fixed bug in TriggeredBlast state in ParticleEmitter.uc</li>
+<li>added ParticleAnimationStorage.uc to store animation info (override strange bug with static array in an static array of structures).</li>
+<li>added Force.uc actor to change particle velocity (affect only this particles that touches it)</li>
+<li>new icons</li>
+</ul>
+</li>
+<li>v. 0.9.0.1<ul><li>added new presets (UT2k4Fire/UT2k4Fire2)</li>
+<li>few changes in ParticleEmitter.uc</li>
+</ul>
+</li>
+</ul>
+<hr class="thin"><p><a href="/wiki/Category_Class_(UT)">Category Class (UT)</a></p>
+<p><a href="/wiki/Category_Mapping">Category Mapping</a><br><a href="/wiki/Category_Custom_Class">Category Custom Class</a><br></p>
+</div>
+</div>
+
+</body></html>

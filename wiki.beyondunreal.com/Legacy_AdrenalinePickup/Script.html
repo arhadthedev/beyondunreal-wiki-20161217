@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:AdrenalinePickup/Script by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:54:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:AdrenalinePickup/Script - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:AdrenalinePickup/Script" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:AdrenalinePickup/Script" />
+<link rel="shortcut icon" href="../w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="../w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="../w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Script.html" />
+<link rel="copyright" href="../Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="../w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="../w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:AdrenalinePickup/Script","wgTitle":"AdrenalinePickup/Script","wgCurRevisionId":1486,"wgRevisionId":1486,"wgArticleId":449,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:AdrenalinePickup/Script","wgRelevantArticleId":449,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_AdrenalinePickup_Script skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Cogito, ergo sum
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:AdrenalinePickup/Script</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../Legacy_AdrenalinePickup.html" title="Legacy:AdrenalinePickup">Legacy:AdrenalinePickup</a></span></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><i><b>UT2003, Build 2225</b></i></p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="co1">//=============================================================================</span>
+<span class="co1">// AdrenalinePickup  //Name of the class</span>
+<span class="co1">//=============================================================================</span>
+<span class="kw1">class</span> AdrenalinePickup <span class="kw1">extends</span> <span class="kw9">TournamentPickUp</span>; <span class="co1">//Says this class is a subclass of Tournament Pickups</span>
+ 
+<span class="kw1">var</span><span class="br0">(</span><span class="br0">)</span> <span class="kw5">float</span> AdrenalineAmount; <span class="co1">//The variable that determines adreneline you get from the pickup</span>
+ 
+DetourWeight<span class="br0">(</span><span class="br0">)</span> <span class="co1">//How much the bots will stray off a course to pick up this object</span>
+<span class="kw1">function</span> <span class="kw5">float</span> DetourWeight<span class="br0">(</span><span class="kw9">Pawn</span> Other,<span class="kw5">float</span> PathWeight<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw2">if</span> <span class="br0">(</span> <span class="sy0">!</span>Other.<span class="kw9">Controller</span>.<span class="me0">NeedsAdrenaline</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span>
+		<span class="kw2">return</span> <span class="nu0">0</span>;
+	<span class="kw2">return</span> MaxDesireability;
+<span class="br0">}</span>
+ 
+<span class="kw1">event</span> <span class="kw5">float</span> BotDesireability<span class="br0">(</span><span class="kw9">Pawn</span> <span class="kw9">Bot</span><span class="br0">)</span> <span class="co1">//Determines how much a bot will want to pick this up</span>
+<span class="br0">{</span>
+	<span class="kw2">if</span> <span class="br0">(</span> <span class="kw9">Bot</span>.<span class="kw9">Controller</span>.<span class="me0">bHuntPlayer</span> <span class="br0">)</span>
+		<span class="kw2">return</span> <span class="nu0">0</span>;
+	<span class="kw2">if</span> <span class="br0">(</span> <span class="sy0">!</span><span class="kw9">Bot</span>.<span class="kw9">Controller</span>.<span class="me0">NeedsAdrenaline</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span>
+		<span class="kw2">return</span> <span class="nu0">0</span>;
+	<span class="kw2">return</span> MaxDesireability;
+<span class="br0">}</span>
+ 
+<span class="kw1">auto</span> <span class="kw1">state</span> <span class="kw9">Pickup</span> <span class="co1">//What happens when you pick this up</span>
+<span class="br0">{</span>	
+	<span class="kw1">function</span> <span class="kw4">Touch</span><span class="br0">(</span> <span class="kw9">actor</span> Other <span class="br0">)</span>
+	<span class="br0">{</span>
+        <span class="kw1">local</span> <span class="kw9">Pawn</span> P;
+ 
+		<span class="kw2">if</span> <span class="br0">(</span> ValidTouch<span class="br0">(</span>Other<span class="br0">)</span> <span class="br0">)</span> <span class="co1">//If a player touches an adreneline pill...</span>
+		<span class="br0">{</span>			
+            P <span class="sy0">=</span> <span class="kw9">Pawn</span><span class="br0">(</span>Other<span class="br0">)</span>;	
+    		P.<span class="kw9">Controller</span>.<span class="me0">AwardAdrenaline</span><span class="br0">(</span>AdrenalineAmount<span class="br0">)</span>; <span class="co1">//He will get Adreneline based off of the variable AdrenelineAmount...</span>
+            AnnouncePickup<span class="br0">(</span>P<span class="br0">)</span>; <span class="co1">//The player will recieve a message that he has recieved adreneline...</span>
+            SetRespawn<span class="br0">(</span><span class="br0">)</span>; <span class="co1">//And the Adreneline will be set to respawn in a few seconds		</span>
+		<span class="br0">}</span>
+	<span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw1">defaultproperties</span> <span class="co1">//Definitions for variables used by this class</span>
+<span class="br0">{</span>
+     AdrenalineAmount<span class="sy0">=</span><span class="nu0">3.000000</span> <span class="co1">//How much adreneline you get</span>
+     MaxDesireability<span class="sy0">=</span><span class="nu0">0.300000</span> <span class="co1">//The amount of desireability the bots have for it</span>
+     RespawnTime<span class="sy0">=</span><span class="nu0">30.000000</span> <span class="co1">//How long it takes to respawn (in second)</span>
+     PickupMessage<span class="sy0">=</span><span class="st0">"Adrenaline "</span> <span class="co1">//The message you get when you pick it up</span>
+     PickupSound<span class="sy0">=</span><span class="kw5">Sound</span><span class="st0">'PickupSounds.AdrenelinPickup'</span> <span class="co1">//The pick up sound</span>
+     PickupForce<span class="sy0">=</span><span class="st0">"AdrenelinPickup"</span>
+     <span class="kw7">Physics</span><span class="sy0">=</span><span class="kw7">PHYS_Rotating</span> <span class="co1">//The physics for the adreneline model.  This sets the model to spin in place.</span>
+     <span class="kw7">DrawType</span><span class="sy0">=</span><span class="kw7">DT_StaticMesh</span>
+     <span class="kw5">StaticMesh</span><span class="sy0">=</span><span class="kw5">StaticMesh</span><span class="st0">'XPickups_rc.AdrenalinePack'</span>
+     <span class="kw7">DrawScale</span><span class="sy0">=</span><span class="nu0">0.075000</span>
+     AmbientGlow<span class="sy0">=</span><span class="nu0">255</span> <span class="co1">//The glow the pill gives off</span>
+     ScaleGlow<span class="sy0">=</span><span class="nu0">0.600000</span>
+     <span class="kw7">Style</span><span class="sy0">=</span><span class="kw7">STY_AlphaZ</span>
+     <span class="kw7">CollisionRadius</span><span class="sy0">=</span><span class="nu0">32.000000</span> <span class="co1">//The radius...</span>
+     <span class="kw7">CollisionHeight</span><span class="sy0">=</span><span class="nu0">23.000000</span> <span class="co1">//And height to determine when you collide with the pickup, there adding it to your inventory</span>
+     <span class="kw7">Mass</span><span class="sy0">=</span><span class="nu0">10.000000</span> <span class="co1">//The pill's mass</span>
+     <span class="kw7">RotationRate</span><span class="sy0">=</span><span class="br0">(</span>Yaw<span class="sy0">=</span><span class="nu0">24000</span><span class="br0">)</span> <span class="co1">//How fast the pill rotates</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p><i><b>UT2004</b></i></p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="co1">//=============================================================================</span>
+<span class="co1">// AdrenalinePickup</span>
+<span class="co1">//=============================================================================</span>
+<span class="kw1">class</span> AdrenalinePickup <span class="kw1">extends</span> <span class="kw9">TournamentPickUp</span>;
+ 
+<span class="kw1">var</span> <span class="kw5">float</span> AdrenalineAmount;
+ 
+<span class="coMULTI">/* DetourWeight()
+value of this path to take a quick detour (usually 0, used when on route to distant objective, but want to grab inventory for example)
+*/</span>
+<span class="kw1">function</span> <span class="kw5">float</span> DetourWeight<span class="br0">(</span><span class="kw9">Pawn</span> Other,<span class="kw5">float</span> PathWeight<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw2">if</span> <span class="br0">(</span> <span class="br0">(</span>PathWeight <span class="sy0">&gt;</span> <span class="nu0">500</span><span class="br0">)</span> <span class="sy0">||</span> <span class="sy0">!</span>Other.<span class="kw9">Controller</span>.<span class="me0">NeedsAdrenaline</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span>
+		<span class="kw2">return</span> <span class="nu0">0</span>;
+	<span class="kw2">if</span> <span class="br0">(</span> <span class="br0">(</span>Other.<span class="kw9">Controller</span>.<span class="me0">Enemy</span> <span class="sy0">!=</span> <span class="kw5">None</span><span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="br0">(</span><span class="kw7">Level</span>.<span class="me0">TimeSeconds</span> <span class="sy0">-</span> Other.<span class="kw9">Controller</span>.<span class="me0">LastSeenTime</span> <span class="sy0">&lt;</span> <span class="nu0">1</span><span class="br0">)</span> <span class="br0">)</span>
+		<span class="kw2">return</span> <span class="nu0">0</span>;
+ 
+	<span class="kw2">return</span> <span class="nu0">0.15</span><span class="sy0">/</span>PathWeight;
+<span class="br0">}</span>
+ 
+<span class="kw1">event</span> <span class="kw5">float</span> BotDesireability<span class="br0">(</span><span class="kw9">Pawn</span> <span class="kw9">Bot</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw2">if</span> <span class="br0">(</span> <span class="kw9">Bot</span>.<span class="kw9">Controller</span>.<span class="me0">bHuntPlayer</span> <span class="br0">)</span>
+		<span class="kw2">return</span> <span class="nu0">0</span>;
+	<span class="kw2">if</span> <span class="br0">(</span> <span class="sy0">!</span><span class="kw9">Bot</span>.<span class="kw9">Controller</span>.<span class="me0">NeedsAdrenaline</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span>
+		<span class="kw2">return</span> <span class="nu0">0</span>;
+	<span class="kw2">return</span> MaxDesireability;
+<span class="br0">}</span>
+ 
+<span class="kw1">auto</span> <span class="kw1">state</span> <span class="kw9">Pickup</span>
+<span class="br0">{</span>	
+	<span class="kw1">function</span> <span class="kw4">Touch</span><span class="br0">(</span> <span class="kw9">actor</span> Other <span class="br0">)</span>
+	<span class="br0">{</span>
+        <span class="kw1">local</span> <span class="kw9">Pawn</span> P;
+ 
+		<span class="kw2">if</span> <span class="br0">(</span> ValidTouch<span class="br0">(</span>Other<span class="br0">)</span> <span class="br0">)</span> 
+		<span class="br0">{</span>			
+            P <span class="sy0">=</span> <span class="kw9">Pawn</span><span class="br0">(</span>Other<span class="br0">)</span>;	
+    		P.<span class="kw9">Controller</span>.<span class="me0">AwardAdrenaline</span><span class="br0">(</span>AdrenalineAmount<span class="br0">)</span>;
+            AnnouncePickup<span class="br0">(</span>P<span class="br0">)</span>;
+            SetRespawn<span class="br0">(</span><span class="br0">)</span>;			
+		<span class="br0">}</span>
+	<span class="br0">}</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:AdrenalinePickup/Script?section=1" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="../Legacy_Code_References.html" title="Legacy:Code References">Code References</a></li>
+<li><a href="../Legacy_Adrenaline.html" title="Legacy:Adrenaline">Adrenaline</a></li>
+<li><a href="../Legacy_AdrenalinePickup.html" title="Legacy:AdrenalinePickup">AdrenalinePickup</a></li>
+</ul>
+<h2><span class="mw-headline" id="Discussion">Discussion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:AdrenalinePickup/Script?section=2" title="Edit section: Discussion">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.048 seconds
+Real time usage: 0.049 seconds
+Preprocessor visited node count: 25/1000000
+Preprocessor generated node count: 52/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:449-0!*!0!!*!*!* and timestamp 20161215190516 and revision id 1486
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:AdrenalinePickup/Script?oldid=1486">https://wiki.beyondunreal.com/Legacy:AdrenalinePickup/Script?oldid=1486</a>"</div>
+					<div id='catlinks' class='catlinks catlinks-allhidden'></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Script.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:AdrenalinePickup/Script?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:AdrenalinePickup/Script" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:AdrenalinePickup/Script" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AAdrenalinePickup%2FScript&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AAdrenalinePickup%2FScript" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="../index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="../Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:AdrenalinePickup/Script" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:AdrenalinePickup/Script" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:AdrenalinePickup/Script?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:AdrenalinePickup/Script?oldid=1486" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:AdrenalinePickup/Script" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 19:05, 30 November 2005.</li>
+									<li id="copyright">Licensed as <a href="../Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="../Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="../Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="../Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":110});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:AdrenalinePickup/Script by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:54:55 GMT -->
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Keypress_Interactions by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:40:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Keypress Interactions - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Keypress_Interactions" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Keypress_Interactions" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_Keypress_Interactions.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Keypress_Interactions","wgTitle":"Keypress Interactions","wgCurRevisionId":3935,"wgRevisionId":3935,"wgArticleId":1582,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Keypress_Interactions","wgRelevantArticleId":1582,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Keypress_Interactions skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>My program doesn't have bugs. It just develops random features.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Keypress Interactions</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>KeyPress Interactions are pretty neat in my opinion. You can intercept on what type of press it is (Press, Hold, Release), or even pick up on axis movement.</p>
+<p>First off, you need to make your mutator class that will create your interaction. See <a href="Legacy_Creating_An_Interaction_From_A_Mutator.html" title="Legacy:Creating An Interaction From A Mutator">Creating An Interaction From A Mutator</a> for this.</p>
+<p>Done that? Good...</p>
+<p>So thats the mutator part done. Next is the easy part!&#160;:)</p>
+<p>A simple interaction:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">Class</span> MyInteraction <span class="kw1">extends</span> <span class="kw8">Interaction</span>;
+ 
+<span class="kw1">Function</span> Initialize<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw3">Log</span><span class="br0">(</span><span class="st0">"Interaction Initialized"</span><span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Dont forget to add</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+bActive<span class="sy0">=</span><span class="kw6">True</span>
+</pre></div>
+</div>
+<p>Under defaultproperties (else this interaction wont do anything).</p>
+<p>Now to see what is going on with these keypresses, add the following function under your initialize function.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> <span class="kw5">bool</span> KeyEvent<span class="br0">(</span>EInputKey Key, EInputAction Action, <span class="kw5">FLOAT</span> Delta <span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw2">if</span> <span class="br0">(</span>Action <span class="sy0">==</span> IST_Press<span class="br0">)</span>
+		ViewportOwner.<span class="kw9">Actor</span>.<span class="kw4">ClientMessage</span><span class="br0">(</span><span class="st0">"Key PRESSED:"</span> <span class="sy0">@</span> Key<span class="br0">)</span>;
+	<span class="kw2">if</span> <span class="br0">(</span>Action <span class="sy0">==</span> IST_Release<span class="br0">)</span>
+		ViewportOwner.<span class="kw9">Actor</span>.<span class="kw4">ClientMessage</span><span class="br0">(</span><span class="st0">"Key RELEASED:"</span> <span class="sy0">@</span> Key<span class="br0">)</span>;
+	<span class="kw2">if</span> <span class="br0">(</span>Action <span class="sy0">==</span> IST_Hold<span class="br0">)</span>
+		ViewportOwner.<span class="kw9">Actor</span>.<span class="kw4">ClientMessage</span><span class="br0">(</span><span class="st0">"Key HELD:"</span> <span class="sy0">@</span> Key<span class="br0">)</span>;
+	<span class="kw2">if</span> <span class="br0">(</span>Action <span class="sy0">==</span> IST_Axis<span class="br0">)</span>
+		ViewportOwner.<span class="kw9">Actor</span>.<span class="kw4">ClientMessage</span><span class="br0">(</span><span class="st0">"Key AXIS:"</span> <span class="sy0">@</span> Key<span class="br0">)</span>;
+ 
+	<span class="kw2">return</span> <span class="kw6">false</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>This will make a small white message appear in the chat box in the bottom left of your screen telling you what you did, and which key you pressed. The keys are represented as numbers (try using Chr(Key) to convert them into letters and numbers. Remember keys like "Home" wont display properly like this), though you can use the ones listed in <code>Engine.Interactions</code> to match on a key that has been pressed.</p>
+<p>Note the <code>Return False;</code>. If you return "True" in this function, the <a href="Legacy_InteractionMaster.html" title="Legacy:InteractionMaster">InteractionMaster</a> will cease to iterate through the interactions, it will stop at yours.</p>
+<p>Another function, KeyType, can be used to build up a string from what keys have been pushed, as is demonstrated in <code>Engine.Console</code>. I think that is all there is to it.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> <span class="kw5">bool</span> KeyType<span class="br0">(</span> EInputKey Key, <span class="kw1">optional</span> <span class="kw5">string</span> Unicode <span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw2">if</span> <span class="br0">(</span>bIgnoreKeys<span class="br0">)</span>		
+		<span class="kw2">return</span> <span class="kw6">true</span>;
+ 
+	<span class="kw2">if</span><span class="br0">(</span> Key<span class="sy0">&gt;=</span>0x20 <span class="br0">)</span>
+	<span class="br0">{</span>
+		<span class="kw2">if</span><span class="br0">(</span> Unicode <span class="sy0">!=</span> <span class="st0">""</span> <span class="br0">)</span>
+			TypedStr <span class="sy0">=</span> TypedStr <span class="sy0">$</span> Unicode;
+		<span class="kw2">else</span>
+			TypedStr <span class="sy0">=</span> TypedStr <span class="sy0">$</span> <span class="kw3">Chr</span><span class="br0">(</span>Key<span class="br0">)</span>;
+           <span class="kw2">return</span><span class="br0">(</span> <span class="kw6">true</span> <span class="br0">)</span>;
+	<span class="br0">}</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Now that you can see which does what, lets look at a practical use for it. I will be modifying ICU (which was created in the <a href="Legacy_HUD_Interactions.html" title="Legacy:HUD Interactions">HUD Interactions</a> page) to highlight enemys when you push Page Up, and Friendlys when you push Page Down.</p>
+<p>I added this for the keypress function:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> <span class="kw5">bool</span> KeyEvent<span class="br0">(</span>EInputKey Key, EInputAction Action, <span class="kw5">FLOAT</span> Delta <span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw2">if</span> <span class="br0">(</span><span class="br0">(</span>Action <span class="sy0">==</span> IST_Press<span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="br0">(</span>Key <span class="sy0">==</span> IK_PageUp<span class="br0">)</span><span class="br0">)</span>
+		bDrawEnemy <span class="sy0">=</span> <span class="kw6">True</span>;
+	<span class="kw2">if</span> <span class="br0">(</span><span class="br0">(</span>Action <span class="sy0">==</span> IST_Release<span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="br0">(</span>Key <span class="sy0">==</span> IK_PageUp<span class="br0">)</span><span class="br0">)</span>
+		bDrawEnemy <span class="sy0">=</span> <span class="kw6">False</span>;
+ 
+	<span class="kw2">if</span> <span class="br0">(</span><span class="br0">(</span>Action <span class="sy0">==</span> IST_Press<span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="br0">(</span>Key <span class="sy0">==</span> IK_PageDown<span class="br0">)</span><span class="br0">)</span>
+		bDrawFriendly <span class="sy0">=</span> <span class="kw6">True</span>;
+	<span class="kw2">if</span> <span class="br0">(</span><span class="br0">(</span>Action <span class="sy0">==</span> IST_Release<span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="br0">(</span>Key <span class="sy0">==</span> IK_PageDown<span class="br0">)</span><span class="br0">)</span>
+		bDrawFriendly <span class="sy0">=</span> <span class="kw6">False</span>;
+ 
+	<span class="kw2">return</span> <span class="kw6">false</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>That, quite basically, sets bDrawEnemy to TRUE when PageUp is pressed, and to FALSE when it is released. The same for bDrawFriendly.</p>
+<p>I have added a couple of extra lines to the PostRender function to account for this, and only draw the right people:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">simulated</span> <span class="kw1">function</span> PostRender<span class="br0">(</span> <span class="kw8">canvas</span> <span class="kw8">Canvas</span> <span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw1">local</span> <span class="kw9">Pawn</span> P;
+	<span class="kw1">local</span> <span class="kw5">vector</span> CameraLocation, dir, ScreenLocation;
+	<span class="kw1">local</span> <span class="kw5">rotator</span> CameraRotation;
+	<span class="kw1">local</span> <span class="kw5">float</span> dist, draw_scale;
+ 
+	<span class="kw2">If</span> <span class="br0">(</span><span class="br0">(</span>bDrawEnemy<span class="br0">)</span> <span class="sy0">||</span> <span class="br0">(</span>bDrawFriendly<span class="br0">)</span><span class="br0">)</span> <span class="co1">//if none are true, dont do anything. Saves processing.</span>
+		<span class="br0">{</span>
+		<span class="kw2">foreach</span> ViewportOwner.<span class="kw9">Actor</span>.<span class="kw2">DynamicActors</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'Pawn'</span>, P<span class="br0">)</span>
+			<span class="br0">{</span>
+			<span class="kw2">if</span> <span class="br0">(</span>ViewportOwner.<span class="kw9">Actor</span>.<span class="kw9">Pawn</span> <span class="sy0">==</span> <span class="kw5">None</span> <span class="sy0">||</span> P <span class="sy0">==</span> <span class="kw5">None</span><span class="br0">)</span>
+				<span class="kw2">Return</span>;
+ 
+			<span class="co1">//A trace to tell if you can see this thing</span>
+			<span class="kw2">If</span> <span class="br0">(</span><span class="br0">(</span><span class="kw8">Canvas</span>.<span class="me0">Viewport</span>.<span class="kw9">Actor</span>.<span class="kw4">FastTrace</span><span class="br0">(</span>P.<span class="kw7">Location</span>, ViewportOwner.<span class="kw9">Actor</span>.<span class="kw9">Pawn</span>.<span class="kw7">Location</span><span class="br0">)</span><span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="br0">(</span>P <span class="sy0">!=</span> ViewportOwner.<span class="kw9">Actor</span>.<span class="kw9">Pawn</span><span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="br0">(</span>P.<span class="me0">PlayerReplicationInfo</span> <span class="sy0">!=</span> <span class="kw5">None</span><span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="br0">(</span>P.<span class="me0">Health</span> <span class="sy0">&gt;</span> <span class="nu0">0</span><span class="br0">)</span><span class="br0">)</span>
+				<span class="br0">{</span>
+				<span class="co1">//Convert 3d location to 2d for display on the Canvas</span>
+				ScreenLocation <span class="sy0">=</span> WorldToScreen<span class="br0">(</span>P.<span class="kw7">location</span><span class="br0">)</span>;
+				<span class="kw8">Canvas</span>.<span class="me0">GetCameraLocation</span><span class="br0">(</span>CameraLocation, CameraRotation<span class="br0">)</span>;
+				dir <span class="sy0">=</span> P.<span class="kw7">Location</span> <span class="sy0">-</span> CameraLocation;
+				dist <span class="sy0">=</span> <span class="kw3">VSize</span><span class="br0">(</span>dir<span class="br0">)</span>; <span class="co1">//Distance between me and them			</span>
+ 
+				<span class="kw2">if</span> <span class="br0">(</span>dir dot <span class="kw5">vector</span><span class="br0">(</span>CameraRotation<span class="br0">)</span> <span class="sy0">&gt;</span> <span class="nu0">0</span><span class="br0">)</span>
+					<span class="br0">{</span>
+					draw_scale <span class="sy0">=</span> <span class="nu0">512</span> <span class="sy0">/</span> dist; <span class="co1">//Calculate the drawscale, 512 is the "1:1" distance.</span>
+					<span class="co1">//Set drawing params</span>
+					<span class="kw8">Canvas</span>.<span class="me0">SetPos</span><span class="br0">(</span>ScreenLocation.<span class="me0">X</span> <span class="sy0">-</span> <span class="br0">(</span><span class="nu0">32</span> <span class="sy0">*</span> draw_scale<span class="br0">)</span>, ScreenLocation.<span class="me0">Y</span> <span class="sy0">-</span> <span class="br0">(</span><span class="nu0">32</span> <span class="sy0">*</span> draw_scale<span class="br0">)</span><span class="br0">)</span>;
+					<span class="kw8">Canvas</span>.<span class="kw7">Style</span> <span class="sy0">=</span> <span class="nu0">3</span>;
+					<span class="kw8">Canvas</span>.<span class="me0">SetDrawColor</span><span class="br0">(</span><span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span><span class="br0">)</span>;
+					<span class="kw2">if</span> <span class="br0">(</span>bDrawEnemy<span class="br0">)</span> <span class="co1">//If PageUp is depressed (bDrawEnemy is true), see if the pawn is an enemy, if so, draw him!</span>
+						<span class="kw2">if</span> <span class="br0">(</span><span class="br0">(</span>P.<span class="me0">PlayerReplicationInfo</span>.<span class="me0">Team</span>.<span class="me0">TeamIndex</span> <span class="sy0">!=</span> ViewportOwner.<span class="kw9">Actor</span>.<span class="kw9">Pawn</span>.<span class="me0">PlayerReplicationInfo</span>.<span class="me0">Team</span>.<span class="me0">TeamIndex</span><span class="br0">)</span> <span class="sy0">||</span> <span class="br0">(</span><span class="sy0">!</span>GRI.<span class="me0">bTeamGame</span><span class="br0">)</span><span class="br0">)</span>
+							<span class="kw8">Canvas</span>.<span class="me0">DrawIcon</span><span class="br0">(</span><span class="kw5">texture</span><span class="st0">'red'</span>, draw_scale<span class="br0">)</span>;
+					<span class="kw2">if</span> <span class="br0">(</span>bDrawFriendly<span class="br0">)</span> <span class="co1">//If PageDown is depressed (bDrawFriendly is true), see if the pawn is an friendly, if so, draw him!</span>
+						<span class="kw2">if</span> <span class="br0">(</span>P.<span class="me0">PlayerReplicationInfo</span>.<span class="me0">Team</span>.<span class="me0">TeamIndex</span> <span class="sy0">==</span> ViewportOwner.<span class="kw9">Actor</span>.<span class="kw9">Pawn</span>.<span class="me0">PlayerReplicationInfo</span>.<span class="me0">Team</span>.<span class="me0">TeamIndex</span><span class="br0">)</span>
+							<span class="kw8">Canvas</span>.<span class="me0">DrawIcon</span><span class="br0">(</span><span class="kw5">texture</span><span class="st0">'green'</span>, draw_scale<span class="br0">)</span>;
+					<span class="br0">}</span>
+				<span class="br0">}</span>
+			<span class="br0">}</span>
+		<span class="br0">}</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>I must also make sure</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+bVisible<span class="sy0">=</span><span class="kw6">True</span>
+</pre></div>
+</div>
+<p>Is in defaultproperties, else any render functions will be ignored.</p>
+<p>Now I have a mutator that highlights my enemys in red when I push PageUp, and people on my team in green when I push PageDown. Neat, huh?</p>
+<p>Checkout <a href="Legacy_InputKeyMap.html" title="Legacy:InputKeyMap">Input Key Mapping</a> for a full table of input keys, and their corresponding values.</p>
+<hr />
+<p>With a little work, I figured out how to use these with the GUIUserKeyBinding class, to allow the user to select the keys used by the Interaction.</p>
+<p>This part is in RadarInteraction.uc:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">var</span> <span class="kw5">int</span> LastKey
+<span class="kw1">var</span> <span class="kw5">int</span> Zooming;
+<span class="kw1">var</span> <span class="kw5">float</span> ZoomDelta
+ 
+<span class="co1">// KeyEvent will detect keyup and keydown events for any keys bound to our</span>
+<span class="co1">// zoom feature, and act accordingly</span>
+<span class="kw1">function</span> <span class="kw5">bool</span> KeyEvent<span class="br0">(</span>EInputKey Key, EInputAction Action, <span class="kw5">float</span> Delta<span class="br0">)</span>
+<span class="br0">{</span>
+ 
+	<span class="kw1">local</span> <span class="kw5">string</span> tmp;
+ 
+<span class="co1">// if the zoom key that is currently being held is released, end the zoom</span>
+	<span class="kw2">if</span><span class="br0">(</span>Action <span class="sy0">==</span> IST_Release <span class="sy0">&amp;&amp;</span> Zooming <span class="sy0">!=</span><span class="nu0">0</span> <span class="sy0">&amp;&amp;</span> Key <span class="sy0">==</span> LastKey<span class="br0">)</span>
+	<span class="br0">{</span>
+		LastKey<span class="sy0">=-</span><span class="nu0">1</span>;
+		Zooming<span class="sy0">=</span><span class="nu0">0</span>;
+		<span class="kw2">return</span> <span class="kw6">True</span>;
+<span class="co1">// a key has been pressed</span>
+	<span class="br0">}</span> <span class="kw2">else</span> <span class="kw2">if</span> <span class="br0">(</span>Action <span class="sy0">==</span> IST_Press<span class="br0">)</span> <span class="br0">{</span>
+<span class="co1">// big ugliness here, we use console commands to get the name of the numeric</span>
+<span class="co1">// key, and then the alias bound to that keyname</span>
+		tmp <span class="sy0">=</span> ViewportOwner.<span class="kw9">Actor</span>.<span class="kw4">ConsoleCommand</span><span class="br0">(</span><span class="st0">"KEYNAME"</span><span class="sy0">@</span>Key<span class="br0">)</span>;
+		tmp <span class="sy0">=</span> ViewportOwner.<span class="kw9">Actor</span>.<span class="kw4">ConsoleCommand</span><span class="br0">(</span><span class="st0">"KEYBINDING"</span><span class="sy0">@</span>tmp<span class="br0">)</span>;
+<span class="co1">// if it's one of our two aliases (which don't actually exist), set the zoom</span>
+<span class="co1">// direction, save the key that started the zoom, and eat the event</span>
+		<span class="kw2">if</span> <span class="br0">(</span>tmp <span class="sy0">==</span> <span class="st0">"tdzoomin"</span><span class="br0">)</span>
+		<span class="br0">{</span>
+			LastKey <span class="sy0">=</span> Key;
+			Zooming <span class="sy0">=</span> <span class="sy0">-</span><span class="nu0">1</span>;
+			<span class="kw2">return</span> <span class="kw6">True</span>;
+		<span class="br0">}</span> <span class="kw2">else</span> <span class="kw2">if</span> <span class="br0">(</span>tmp ~<span class="sy0">=</span> <span class="st0">"tdzoomout"</span><span class="br0">)</span> <span class="br0">{</span>
+			LastKey <span class="sy0">=</span> Key;
+			zooming <span class="sy0">=</span> <span class="nu0">1</span>;
+			<span class="kw2">return</span> <span class="kw6">True</span>;
+		<span class="br0">}</span>
+	<span class="br0">}</span>
+<span class="co1">// this event doesn't matter to us, so we pass it on for further processing</span>
+	<span class="kw2">return</span> <span class="kw6">False</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>and this is from TacticalDisplayKeyBinding:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="co1">// Custom Key Bindings</span>
+<span class="kw1">class</span> TacticalDisplayKeyBinding <span class="kw1">extends</span> GUIUserKeyBinding;
+ 
+<span class="kw1">defaultproperties</span>
+<span class="br0">{</span>
+	KeyData<span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="sy0">=</span><span class="br0">(</span>Alias<span class="sy0">=</span><span class="st0">""</span>,KeyLabel<span class="sy0">=</span><span class="st0">"Tactical Display Controls"</span>,bIsSection<span class="sy0">=</span><span class="kw6">True</span><span class="br0">)</span>
+	KeyData<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">=</span><span class="br0">(</span>alias<span class="sy0">=</span><span class="st0">"tdzoomin"</span>,KeyLabel<span class="sy0">=</span><span class="st0">"Zoom In"</span>,bIsSection<span class="sy0">=</span><span class="kw6">False</span><span class="br0">)</span>
+	KeyData<span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span><span class="sy0">=</span><span class="br0">(</span>alias<span class="sy0">=</span><span class="st0">"tdzoomout"</span>,KeyLabel<span class="sy0">=</span><span class="st0">"Zoom Out"</span>,bIsSection<span class="sy0">=</span><span class="kw6">False</span><span class="br0">)</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>The GUIUserKeyBinding allows the user to bind the keys aliases in the "Controls" tab of their settings. When they press a key, the interaction checks to see if it is bound to one of the two aliases, and takes action. This is adapted from the same code that the Controls tab uses to load the user's keybindings.</p>
+<hr />
+<p><b>Will:</b> Any problems understanding this? Anything I could do to make it clearer? If so: tell me, or do it yourself&#160;;)</p>
+<p><b>DJPaul:</b> Not for me - once again, brilliantly written. Cheers.</p>
+<p><b>Claw:</b> Hmm, this is excellently written. And now I finally realize what WorldToScreen() means.&#160;:rolleyes:</p>
+<p><b>CheshireCat:</b> Here's another KeyEvent example, that allows the user to select the keys used. Any questions?</p>
+<p><b>Mysterial:</b> Why would you want to do all that key binding stuff in KeyEvent() (in the last example)? Why not just use an exec function instead?</p>
+<p><b>Mychaeel:</b> Because exec functions only work in certain classes, and you might not want to create those classes. (It's a good idea not to replace game-relevant classes like xPlayer unless you absolutely have to for very good reasons <i>other</i> than doing things that could just as well be done less invasively, like what's described above.)</p>
+<p><b>Mysterial:</b> Ah, I was under the impression that Interactions were such a class. Obviously not&#160;;)</p>
+<p>Is there a list anywhere of classes in which exec functions work?</p>
+<p><b>Mychaeel:</b> Since you can register any amount of <a href="Legacy_Interaction.html" title="Legacy:Interaction">Interaction</a> objects simultaneously (instead of having to replace an existing one by yours), they're safe and neat for modding. (Though Joe Wilcox says that they weren't meant to be used for that.) – I don't think there's a list of places where "exec function"s work. Sounds like an idea for a new page though.</p>
+<p><b>Tarquin:</b> exec function the same as <a href="Legacy_Exec_Directive.html" title="Legacy:Exec Directive">exec directive</a>?</p>
+<p><b>Mychaeel:</b> No. See <a href="Legacy_Function_Syntax.html" title="Legacy:Function Syntax">Function Syntax</a>.</p>
+<p><b>Nuleo:</b> Has anyone figured out a better way to use the GUIUserKeyBindings without using exec commands just to get the key names? In my interaction I was originally using this method</p>
+<pre>
+   if ((Action == IST_Press) &amp;&amp; (Key == IK_PageUp))
+        //Do something
+</pre>
+<p>But when I changed to this method (with a class extending GUIUserKeyBindings)</p>
+<pre>
+   tmp = ViewportOwner.Actor.ConsoleCommand("KEYNAME"@Key);
+   tmp = ViewportOwner.Actor.ConsoleCommand("KEYBINDING"@tmp);
+   // if it's one of our two aliases (which don't actually exist), set the zoom
+   // direction, save the key that started the zoom, and eat the event
+   if (tmp == "tdzoomin")
+        //Do something
+</pre>
+<p>I noticed a reduce in game speed and the sound was chopping up a bit.</p>
+<p><b>Ceej:</b> I've just been experimenting with this. For new game types, one place to install a keypress interaction seems to be in the InitInputSystem() event of your PlayerController subclass. For example:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">event</span> InitInputSystem<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw6">super</span>.<span class="me0">InitInputSystem</span><span class="br0">(</span><span class="br0">)</span>;
+	<span class="kw8">Player</span>.<span class="kw8">interactionMaster</span>.<span class="me0">AddInteraction</span><span class="br0">(</span><span class="st0">"MyPackage.MyKeyInteraction"</span>, <span class="kw8">Player</span><span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p><b>Foxpaw:</b> Is it just me, or do interactions not pick up on joystick axes? Mine picks up my mouse axis movement, and joystick buttons, and joystick axes can be bound to stuff using preferences (so they appear to be being picked up by the game) but my interaction doesn't report any input when I move the joystick.</p>
+<p><b>Newbie:</b> How do I get keypress events for an actor in UT1?</p>
+<p><b>Meowcat:</b> @nuelo, I have not found a better way to locate the key yet, but you can use the initialize event to do a search for the key that you want, then save it for comparison. I have used this for an interaction and it works ok except that you cannot change it midgame</p>
+<p><b>Conzar:</b> You can also add the interaction to a new GameInfo object (ut2004) here.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">event</span> PostLogin<span class="br0">(</span><span class="kw9">PlayerController</span> NewPlayer<span class="br0">)</span><span class="br0">{</span>
+   <span class="kw6">super</span>.<span class="me0">PostLogin</span><span class="br0">(</span>NewPlayer<span class="br0">)</span>;
+   NewPlayer.<span class="kw8">Player</span>.<span class="kw8">interactionMaster</span>.<span class="me0">AddInteraction</span><span class="br0">(</span><span class="st0">"pkg.class"</span>,NewPlayer.<span class="kw8">Player</span><span class="br0">)</span>;
+ 
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p><b>Wormbo:</b> Your idea will only work in single player and on a listen server. Clients in network games won't see the interaction, though.</p>
+<p><b>Kungfu Hampster:</b> Is there a way to use an interaction to change the input of a key? For example, changing the right mouse button to be the use key?</p>
+<p><b>Foxpaw:</b> Yes. Depending on what exactly you're planning, you may be able to get any actor to do that.</p>
+<p>You could have a keypress interaction return true on right mouse button, (to prevent the regular right mouse button event from propogating) and also make it manually activate the "Use" function. (I think that it is in Pawn on Controller or something.)</p>
+<p>There's also a more direct approach which I'm hesitant to recommend, though it shouldn't have any problems unless maybe the game crashes. You can manually change the keybinds from any actor using set and get on the console. EG: (I've substituted Q for rightmouse, but I think "RightMouse" is the correct name for that input.)</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+  <span class="kw1">function</span> ChangeRMB<span class="br0">(</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    <span class="kw2">if</span> <span class="br0">(</span> Backup <span class="sy0">==</span> <span class="st0">""</span> <span class="br0">)</span>
+      Backup <span class="sy0">=</span> <span class="kw4">ConsoleCommand</span><span class="br0">(</span> <span class="st0">"Get Input Q"</span> <span class="br0">)</span>;
+    <span class="kw4">ConsoleCommand</span><span class="br0">(</span> <span class="st0">"Set Input Q Use"</span> <span class="br0">)</span>;
+  <span class="br0">}</span>
+ 
+  <span class="kw1">function</span> ChangeRMBBack<span class="br0">(</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    <span class="kw4">ConsoleCommand</span><span class="br0">(</span> <span class="st0">"Set Input Q "</span><span class="sy0">$</span>Backup <span class="br0">)</span>;
+    Backup <span class="sy0">=</span> <span class="st0">""</span>;
+  <span class="br0">}</span>
+ 
+  <span class="kw1">function</span> <span class="kw4">Destroyed</span><span class="br0">(</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    ChangeRMBBack<span class="br0">(</span><span class="br0">)</span>;  <span class="co1">// Very important to make sure the keybind gets reset if the game is exited!</span>
+ 
+    <span class="kw6">Super</span>.<span class="kw4">Destroyed</span><span class="br0">(</span><span class="br0">)</span>;
+  <span class="br0">}</span>
+</pre></div>
+</div>
+<p><b>MythOpus:</b> I think this would also be useful for things other than Mutators... like on special secret areas in maps where you need a pass to get in... &#160;? Is it possible to intercept keys without using mutators or interactions?</p>
+<p><b>Kungfu Hampster:</b> I don't think so. There might be a way to grab the inputs from the playercontroller class, but using an interaction is really the best way to grab keypresses in my opinion.</p>
+<p><b>Mindcry:</b> I did some quick testing with stopwatch and found that:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+tmp <span class="sy0">=</span> ViewportOwner.<span class="kw9">Actor</span>.<span class="kw4">ConsoleCommand</span><span class="br0">(</span><span class="st0">"KEYBINDING"</span><span class="sy0">@</span>ViewportOwner.<span class="kw9">Actor</span>.<span class="kw4">ConsoleCommand</span><span class="br0">(</span><span class="st0">"KEYNAME"</span><span class="sy0">@</span>Key<span class="br0">)</span><span class="br0">)</span>;
+</pre></div>
+</div>
+<p>is about 3.3x faster than the</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+   tmp <span class="sy0">=</span> ViewportOwner.<span class="kw9">Actor</span>.<span class="kw4">ConsoleCommand</span><span class="br0">(</span><span class="st0">"KEYNAME"</span><span class="sy0">@</span>Key<span class="br0">)</span>;
+   tmp <span class="sy0">=</span> ViewportOwner.<span class="kw9">Actor</span>.<span class="kw4">ConsoleCommand</span><span class="br0">(</span><span class="st0">"KEYBINDING"</span><span class="sy0">@</span>tmp<span class="br0">)</span>;
+</pre></div>
+</div>
+<p>found in base UT2004 code and several examples throughout this wiki.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.172 seconds
+Real time usage: 0.174 seconds
+Preprocessor visited node count: 43/1000000
+Preprocessor generated node count: 284/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:1582-0!*!0!*!*!*!* and timestamp 20161215154720 and revision id 3935
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Keypress_Interactions?oldid=3935">https://wiki.beyondunreal.com/Legacy:Keypress_Interactions?oldid=3935</a>"</div>
+					<div id='catlinks' class='catlinks catlinks-allhidden'></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_Keypress_Interactions.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Keypress_Interactions?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Keypress_Interactions" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Keypress_Interactions" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-anonuserpage"><a href="User_188.162.37.html" class="new" title="The user page for the IP address you are editing as [.]" accesskey=".">188.162.37.3</a></li>
+													<li id="pt-anontalk"><a href="User_talk_188.162.37.html" class="new" title="Discussion about edits from this IP address [n]" accesskey="n">Talk for this IP address</a></li>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AKeypress+Interactions&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AKeypress+Interactions" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Keypress_Interactions" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Keypress_Interactions" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Keypress_Interactions?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Keypress_Interactions?oldid=3935" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Keypress_Interactions" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 13:37, 27 September 2005.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":79});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Keypress_Interactions by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:40:42 GMT -->
+</html>

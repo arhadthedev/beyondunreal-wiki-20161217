@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:UnrealScript_Vector_Maths by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:53:18 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:UnrealScript Vector Maths - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_UnrealScript_Vector_Maths.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:UnrealScript_Vector_Maths","wgTitle":"UnrealScript Vector Maths","wgCurRevisionId":45182,"wgRevisionId":45182,"wgArticleId":3323,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Refactor Me"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:UnrealScript_Vector_Maths","wgRelevantArticleId":3323,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_UnrealScript_Vector_Maths skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Gah - a solution with more questions. &#8211; EntropicLqd
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:UnrealScript Vector Maths</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This is a page of "how to I do foo" sort of things, for values of "foo" involving points, <a href="Legacy_Vector.html" title="Legacy:Vector">vectors</a>, <a href="Legacy_Rotator.html" title="Legacy:Rotator">rotators</a>, <a href="Legacy_Quaternion.html" title="Legacy:Quaternion">quaternions</a>, etc. Add question, post pseudocode / <a href="Legacy_UnrealScript.html" title="Legacy:UnrealScript">UnrealScript</a> code.</p>
+<p>And as we sometimes say... "it's not rocket science!". Except in this case, it is&#160;;).</p>
+<p>In the following:</p>
+<ul>
+<li><b>A</b> and <b>B</b> are points in space. These could be Actors.</li>
+<li><b>a</b> and <b>b</b> are vectors for the positions of these points respectively (e.g. <code>A.Location</code>)</li>
+</ul>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Some_basic_work_with_locations"><span class="tocnumber">1</span> <span class="toctext">Some basic work with locations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#A_vector_that_points_from_A_to_B"><span class="tocnumber">1.1</span> <span class="toctext">A vector that points from <b>A</b> to <b>B</b></span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#A_unit_vector_pointing_from_A_to_B"><span class="tocnumber">1.2</span> <span class="toctext">A unit vector pointing from <b>A</b> to <b>B</b></span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#The_distance_between_A_and_B"><span class="tocnumber">1.3</span> <span class="toctext">The distance between <b>A</b> and <b>B</b></span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Orientations"><span class="tocnumber">2</span> <span class="toctext">Orientations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#A_unit_vector_pointing_in_the_direction_a_player_is_looking"><span class="tocnumber">2.1</span> <span class="toctext">A unit vector pointing in the direction a player is looking</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Rotate_Actor_A_to_face_point_B"><span class="tocnumber">2.2</span> <span class="toctext">Rotate Actor <b>A</b> to face point <b>B</b></span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Rotate_Rotator_A_towards_Rotator_B"><span class="tocnumber">2.3</span> <span class="toctext">Rotate Rotator <b>A</b> towards Rotator <b>B</b></span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#...find_where_B_is_in_relation_to_A"><span class="tocnumber">2.4</span> <span class="toctext">...find where <b>B</b> is in relation to <b>A</b></span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#...find_where_Actor_A_is_in_relation_to_Pawn_B.2C_taking_into_account_B.27s_ViewRotation"><span class="tocnumber">2.5</span> <span class="toctext">...find where Actor A is in relation to Pawn B, taking into account B's ViewRotation</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#...find_a_point_that.27s_at_a_certain_distance_from_a_starting_point_in_a_given_direction"><span class="tocnumber">2.6</span> <span class="toctext">...find a point that's at a certain distance from a starting point in a given direction</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#...find_the_.28smallest.29_angle_between_A_and_B"><span class="tocnumber">2.7</span> <span class="toctext">...find the (smallest) angle between <b>A</b> and <b>B</b></span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#...point_to_my_left_or_right.3F"><span class="tocnumber">2.8</span> <span class="toctext">...point to my left or right?</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#...find_out_vector_B_that_points_x_degrees_to_the_left_or_right_of_vector_A"><span class="tocnumber">2.9</span> <span class="toctext">...find out vector B that points x degrees to the left or right of vector A</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Rotate_a_rotator_by_another_rotator"><span class="tocnumber">2.10</span> <span class="toctext">Rotate a rotator by another rotator</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#...damp_a_velocity_vector_toward_a_surface"><span class="tocnumber">2.11</span> <span class="toctext">...damp a velocity vector toward a surface</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#...find_point_Q_where_a_normal_from_point_P_to_a_line_from_A_to_B_meets_the_line"><span class="tocnumber">2.12</span> <span class="toctext">...find point Q where a normal from point P to a line from A to B meets the line</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#...only_affect_certain_components_of_a_vector"><span class="tocnumber">2.13</span> <span class="toctext">...only affect certain components of a vector</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#What_does_this_do.3F"><span class="tocnumber">3</span> <span class="toctext">What does this do?</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="#Related_Topics"><span class="tocnumber">4</span> <span class="toctext">Related Topics</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Some_basic_work_with_locations">Some basic work with locations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths?section=1" title="Edit section: Some basic work with locations">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>In these diagrams, vectors that represent:</p>
+<ul>
+<li>positions are shown in blue</li>
+<li>orientations are shown in green</li>
+</ul>
+<p>The vector you're after is usually in black.</p>
+<h3><span class="mw-headline" id="A_vector_that_points_from_A_to_B">A vector that points from <b>A</b> to <b>B</b></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths?section=2" title="Edit section: A vector that points from A to B">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw5">vector</span> <span class="sy0">=</span> b <span class="sy0">-</span> a;
+</pre></div>
+</div>
+<div class="center">
+<div class="floatnone"><a href="File_Legacy_vectors-AtoB.html" class="image"><img alt="Legacy vectors-AtoB.png" src="w/images/Legacy_vectors-AtoB.png" width="242" height="242" /></a></div>
+</div>
+<p>The simple way to visualize this is to imagine you want to travel from point A to point B, using the vectors you already have. You travel along a backwards, so -a and then along b. This gives -a + b, which is equal to b - a.</p>
+<h3><span class="mw-headline" id="A_unit_vector_pointing_from_A_to_B">A unit vector pointing from <b>A</b> to <b>B</b></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths?section=3" title="Edit section: A unit vector pointing from A to B">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Take the expression from above and normalize it:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw5">vector</span> <span class="sy0">=</span> <span class="kw3">Normal</span><span class="br0">(</span>b <span class="sy0">-</span> a<span class="br0">)</span>;
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="The_distance_between_A_and_B">The distance between <b>A</b> and <b>B</b></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths?section=4" title="Edit section: The distance between A and B">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Simply find the length of the vector:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+distance <span class="sy0">=</span> <span class="kw3">VSize</span><span class="br0">(</span>a <span class="sy0">-</span> b<span class="br0">)</span>;
+distance <span class="sy0">=</span> <span class="kw3">VSize</span><span class="br0">(</span>b <span class="sy0">-</span> a<span class="br0">)</span>;
+</pre></div>
+</div>
+<p>The order doesn't matter here, since the length of a vector is always positive.</p>
+<p><b>Devi:</b></p>
+<p>Note that the VSize function is relatively slow since it involves a square root (it uses pythagoras theorem: L^2 = X^2 + Y^2 + Z^2). If you just want to compare the distance between two points to another length (i.e. you want to say "Is the distance between A and B less than 100 units?") then you can speed up the operation by using VSizeSq, which returns the squared length of a vector (it does the same as VSize but leaves out the final square root operation) and by squaring the distance you're comparing to as well. So "Is the length less than 100?" becomes "Is the squared length less than 100 squared?" for example:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> DistanceLessThanOneHundred<span class="br0">(</span><span class="kw5">vector</span> a, <span class="kw5">vector</span> b<span class="br0">)</span>
+<span class="br0">{</span>
+   <span class="kw2">if</span> <span class="br0">(</span>VSizeSq<span class="br0">(</span>a<span class="sy0">-</span>b<span class="br0">)</span> <span class="sy0">&lt;</span> <span class="nu0">10000</span><span class="br0">)</span>
+   <span class="br0">{</span>
+      <span class="kw2">return</span> <span class="kw6">true</span>;
+   <span class="br0">}</span>
+   <span class="kw2">else</span>
+   <span class="br0">{</span>
+      <span class="kw2">return</span> <span class="kw6">false</span>;
+   <span class="br0">}</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>or even</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> <span class="kw5">bool</span> IsDistanceLessThan<span class="br0">(</span><span class="kw5">vector</span> a, <span class="kw5">vector</span> b, <span class="kw5">float</span> distance<span class="br0">)</span>
+<span class="br0">{</span>
+   <span class="kw2">return</span> <span class="br0">(</span>VSizeSq<span class="br0">(</span>a<span class="sy0">-</span>b<span class="br0">)</span> <span class="sy0">&lt;</span> distance<span class="sy0">**</span><span class="nu0">2</span> <span class="br0">)</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p><b>Wormbo:</b> This just calls for a little optimization warning. Your "VSizeSq" function does not exist in UT2004 and would have to be written in UnrealScript, like this:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">static</span> <span class="kw1">final</span> <span class="kw1">function</span> <span class="kw5">float</span> VSizeSq<span class="br0">(</span><span class="kw5">vector</span> A<span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw2">return</span> <span class="kw3">Square</span><span class="br0">(</span>A.<span class="me0">X</span><span class="br0">)</span> <span class="sy0">+</span> <span class="kw3">Square</span><span class="br0">(</span>A.<span class="me0">Y</span><span class="br0">)</span> <span class="sy0">+</span> <span class="kw3">Square</span><span class="br0">(</span>A.<span class="me0">Z</span><span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>The problem with this is: it's an UnrealScript function. That means, it's already slower than the corresponding native implementation. When using this function, there's one UnrealScript function call (the function itself) as well as 5 native function calls (three times the Square function and twice the operator +). I dare to say that this eats up the benefits of not performing the square root operation on the result.</p>
+<p><b>Devi:</b> I'm working with the Unreal 2.X engine, maybe VSizeSq only exists in that version, apologies for any confusion...</p>
+<p>Anyhows, if you want to make your own version of VSizeSQ then the fastest way to do it in UScript is to do the following:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> <span class="kw5">float</span> VSizeSq<span class="br0">(</span><span class="kw5">Vector</span> a<span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw2">return</span> a dot a;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Which is only one native operator call, hurrah&#160;:D As you say with functions being slow to call, you may want to just directly insert "myVector dot myVector" into your code rather than putting it into a seperate function...</p>
+<p>(Wormbo, hope you don't mind but I corrected your code sample and comments so that your version of VSizeSq worked with only one vector as it should, rather than working with two)</p>
+<p><b>Wormbo:</b> Oh right, thanks.&#160;:) BTW: I've just tested the execution speed of <tt>x dot x</tt> versus <tt>VSize(x)</tt>:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> <span class="kw5">int</span> Main<span class="br0">(</span><span class="kw5">string</span> Args<span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw1">local</span> <span class="kw5">vector</span> v;
+  <span class="kw1">local</span> <span class="kw5">float</span> f;
+  <span class="kw1">local</span> <span class="kw5">int</span> i, j;
+ 
+  <span class="kw2">for</span> <span class="br0">(</span>j <span class="sy0">=</span> <span class="nu0">0</span>; j <span class="sy0">&lt;</span> <span class="nu0">3</span>; j<span class="sy0">++</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw3">log</span><span class="br0">(</span><span class="st0">"Test "</span> <span class="sy0">$</span> j<span class="br0">)</span>;
+    i <span class="sy0">=</span> <span class="kw5">int</span><span class="br0">(</span>Args<span class="br0">)</span>;
+    <span class="kw3">StopWatch</span><span class="br0">(</span><span class="kw6">false</span><span class="br0">)</span>;
+    <span class="kw2">while</span> <span class="br0">(</span>i<span class="sy0">--</span> <span class="sy0">&gt;</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+      v <span class="sy0">=</span> <span class="nu0">1000</span> <span class="sy0">*</span> <span class="kw3">VRand</span><span class="br0">(</span><span class="br0">)</span>;
+      f <span class="sy0">=</span> <span class="kw3">VSize</span><span class="br0">(</span>v<span class="br0">)</span>;
+    <span class="br0">}</span>
+    <span class="kw3">StopWatch</span><span class="br0">(</span><span class="kw6">true</span><span class="br0">)</span>;
+ 
+    i <span class="sy0">=</span> <span class="kw5">int</span><span class="br0">(</span>Args<span class="br0">)</span>;
+    <span class="kw3">StopWatch</span><span class="br0">(</span><span class="kw6">false</span><span class="br0">)</span>;
+    <span class="kw2">while</span> <span class="br0">(</span>i<span class="sy0">--</span> <span class="sy0">&gt;</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+      v <span class="sy0">=</span> <span class="nu0">1000</span> <span class="sy0">*</span> <span class="kw3">VRand</span><span class="br0">(</span><span class="br0">)</span>;
+      f <span class="sy0">=</span> v Dot v;
+    <span class="br0">}</span>
+    <span class="kw3">StopWatch</span><span class="br0">(</span><span class="kw6">true</span><span class="br0">)</span>;
+  <span class="br0">}</span>
+  <span class="kw2">return</span> <span class="nu0">0</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<table>
+<tr>
+<td>
+<pre>
+D:\UT2004\System&gt;ucc test.test 100000
+Executing Class test.TestCommandlet
+Test 0
+Time=55.081175 ms
+Time=61.303065 ms
+Test 1
+Time=54.837094 ms
+Time=60.095937 ms
+Test 2
+Time=54.314674 ms
+Time=60.696120 ms
+
+D:\UT2004\System&gt;ucc test.test 10000
+Executing Class test.TestCommandlet
+Test 0
+Time=5.410266 ms
+Time=5.997695 ms
+Test 1
+Time=5.466540 ms
+Time=7.278457 ms
+Test 2
+Time=5.332435 ms
+Time=6.241699 ms
+
+D:\UT2004\System&gt;ucc test.test 1000
+Executing Class test.TestCommandlet
+Test 0
+Time=0.573987 ms
+Time=0.569542 ms
+Test 1
+Time=0.529024 ms
+Time=0.590087 ms
+Test 2
+Time=0.557979 ms
+Time=0.596532 ms
+
+D:\UT2004\System&gt;ucc test.test 100
+Executing Class test.TestCommandlet
+Test 0
+Time=0.068894 ms
+Time=0.062653 ms
+Test 1
+Time=0.051611 ms
+Time=0.060420 ms
+Test 2
+Time=0.053945 ms
+Time=0.061406 ms
+
+D:\UT2004\System&gt;ucc test.test 10
+Executing Class test.TestCommandlet
+Test 0
+Time=0.020546 ms
+Time=0.006913 ms
+Test 1
+Time=0.014280 ms
+Time=0.006459 ms
+Test 2
+Time=0.005833 ms
+Time=0.005924 ms
+
+D:\UT2004\System&gt;ucc test.test 1
+Executing Class test.TestCommandlet
+Test 0
+Time=0.015603 ms
+Time=0.001598 ms
+Test 1
+Time=0.001807 ms
+Time=0.001216 ms
+Test 2
+Time=0.001130 ms
+Time=0.001585 ms
+
+D:\UT2004\System&gt;
+</pre></td>
+</tr>
+</table>
+<p>Interestingly, loop execution seems to become faster after the first iteration.</p>
+<p><b>Devi:</b> lol, my old boss would be proud of you, he always said you should *always* do timings on things if you're having arguments about optimisations&#160;:)</p>
+<p>Anyhows, I've only been using UScript for a week or so (I'm a C++ programmer by training) and I can give no explanation at all for the results you get from that test. The fact that when you did the operation once you found that VSize was about 10 times slower than Dot is what I would have expected, but the fact that the more you do it, the faster VSize gets compared to Dot (even overtaking it in speed) implies something very odd must be happening under the hood of the UC virtual machine...</p>
+<p><b>Switch:</b> The fastest square dist method I found was bit slower than VSize. BTW, some category for pages on profiling would be welcome, putting this in comments adds a lot of noise to the document.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> Profile<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw1">local</span> <span class="kw5">int</span> a,b;
+	<span class="kw1">local</span> <span class="kw5">vector</span> va,vb;
+ 
+	va <span class="sy0">=</span> <span class="kw3">vect</span><span class="br0">(</span><span class="nu0">1234.5678</span>,<span class="sy0">-</span><span class="nu0">9012.3456</span>,<span class="nu0">7890.1234</span><span class="br0">)</span>; 
+	vb <span class="sy0">=</span> <span class="kw3">vect</span><span class="br0">(</span><span class="sy0">-</span><span class="nu0">5678.9012</span>,<span class="nu0">3456.7890</span>,<span class="sy0">-</span><span class="nu0">1234.5678</span><span class="br0">)</span>;
+ 
+	<span class="kw2">for</span><span class="br0">(</span>a<span class="sy0">=</span><span class="nu0">0</span>; a<span class="sy0">&lt;</span><span class="nu0">20</span>; <span class="sy0">++</span>a<span class="br0">)</span> <span class="br0">{</span> <span class="kw3">stopwatch</span><span class="br0">(</span><span class="kw6">false</span><span class="br0">)</span>;
+		<span class="co1">//for(b=0; b&lt;10000; ++b) {			</span>
+		<span class="co1">//if( ((va-vb)dot(va-vb)) &lt; 1000000 ){}</span>
+		<span class="co1">//if( VSize(va-vb) &lt; 1000 ){}			</span>
+		<span class="co1">//}										</span>
+	<span class="kw3">stopwatch</span><span class="br0">(</span><span class="kw6">true</span><span class="br0">)</span>; <span class="br0">}</span>	
+<span class="br0">}</span>
+</pre></div>
+</div>
+<pre>
+Build: 3355 commandlet
+Commandline: start /REALTIME /B ucc sandbox.sandbox
+
+LOOP 20x1, ((va-vb)dot(va-vb)) &lt; 1000000
+Time=0.008693 ms
+Time=0.001483 ms
+Time=0.001213 ms ...
+
+LOOP 20x1, VSize(va-vb) &lt; 1000
+Time=0.008144 ms
+Time=0.001159 ms
+Time=0.001023 ms ...
+
+LOOP 20x10000, ((va-vb)dot(va-vb)) &lt; 1000000
+Time=7.056599 ms
+Time=6.996057 ms
+Time=6.992126 ms ...
+
+LOOP 20x10000, VSize(va-vb) &lt; 1000
+Time=4.834834 ms
+Time=4.831398 ms
+Time=4.831604 ms ...
+</pre>
+<p><b>Foxpaw:</b> Loops get faster with a greater number of iterations because of CPU caching and an increased probability of TLB hits. For this reason I always "precache" things when I profile them, IE running the test twice and keeping the second result. (Unless I need "real world numbers" and it's time consuming enough to be measured on a single iteration.) Ideally you could test with a clean cache every time, but manually flushing the cache and TLB can't really be done from within an operating system such as Windows or Linux, (let alone from within UScript) so I run my tests fully cached.</p>
+<h2><span class="mw-headline" id="Orientations">Orientations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths?section=5" title="Edit section: Orientations">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="A_unit_vector_pointing_in_the_direction_a_player_is_looking">A unit vector pointing in the direction a player is looking</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths?section=6" title="Edit section: A unit vector pointing in the direction a player is looking">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw5">vector</span> <span class="sy0">=</span> <span class="kw5">vector</span><span class="br0">(</span>myPlayerController.<span class="me0">GetViewRotation</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>;
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="Rotate_Actor_A_to_face_point_B">Rotate Actor <b>A</b> to face point <b>B</b></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths?section=7" title="Edit section: Rotate Actor A to face point B">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+a <span class="sy0">=</span> A.<span class="kw7">location</span>;
+b <span class="sy0">=</span> B.<span class="kw7">location</span>
+A.<span class="kw4">SetRotation</span><span class="br0">(</span><span class="kw5">rotator</span><span class="br0">(</span>b <span class="sy0">-</span> a<span class="br0">)</span><span class="br0">)</span>;
+</pre></div>
+</div>
+<div class="center">
+<div class="floatnone"><a href="File_Legacy_vectors-AorienttoB.html" class="image"><img alt="Legacy vectors-AorienttoB.png" src="w/images/Legacy_vectors-AorienttoB.png" width="242" height="242" /></a></div>
+</div>
+<p><br /></p>
+<h3><span class="mw-headline" id="Rotate_Rotator_A_towards_Rotator_B">Rotate Rotator <b>A</b> towards Rotator <b>B</b></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths?section=8" title="Edit section: Rotate Rotator A towards Rotator B">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> <span class="kw5">Rotator</span> RotatorSlerp<span class="br0">(</span><span class="kw5">Rotator</span> a, <span class="kw5">Rotator</span> b, <span class="kw5">float</span> f<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw2">return</span> <span class="kw3">QuatToRotator</span><span class="br0">(</span><span class="kw3">QuatSlerp</span><span class="br0">(</span><span class="kw3">QuatFromRotator</span><span class="br0">(</span>a<span class="br0">)</span>, <span class="kw3">QuatFromRotator</span><span class="br0">(</span>b<span class="br0">)</span>, f<span class="br0">)</span><span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Rotates <b>a</b> towards <b>b</b> with <b>f</b> percentage (ranging from 0.0 to 1.0). If f == 1.0 then a becomes b.</p>
+<p><br /></p>
+<hr />
+<p>Things from below here need clarifying....</p>
+<h3><span class="mw-headline" id="...find_where_B_is_in_relation_to_A">...find where <b>B</b> is in relation to <b>A</b></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths?section=9" title="Edit section: ...find where B is in relation to A">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw9">actor</span> A, B;
+<span class="kw5">vector</span> aFacing,aToB;
+ 
+<span class="co1">// What direction is A facing in?</span>
+aFacing<span class="sy0">=</span><span class="kw3">Normal</span><span class="br0">(</span><span class="kw5">Vector</span><span class="br0">(</span>A.<span class="kw7">Rotation</span><span class="br0">)</span><span class="br0">)</span>;
+<span class="co1">// Get the vector from A to B</span>
+aToB<span class="sy0">=</span>B.<span class="me0">Location</span><span class="sy0">-</span>A.<span class="kw7">Location</span>;
+ 
+orientation <span class="sy0">=</span> aFacing dot aToB;
+  <span class="co1">// &gt; 0.0  B is in front of A</span>
+  <span class="co1">// = 0.0  B is exactly to the right/left of A </span>
+  <span class="co1">// &lt; 0.0  B is behind A</span>
+</pre></div>
+</div>
+<p>The code above functions using the mathematic law that states that if you dot product a normalised vector (which I'll call N) with another vector (which I'll V), the result will be the length of V along direction N. We work out a normal vector that points in the same direction as A is facing, then for V we calculate the vector that leads from A to B. Now, if the result is positive then we know that V must be travelling at least a little in the same direction as N (therefore B is in front of A). If the result is 0 then V isn't travelling along N at all (i.e. it must be at right angles to it). Finally if the result is negative then we know that V must be travelling at least a little in the opposite direction of N (meaning B is behind A).</p>
+<h3><span class="mw-headline" id="...find_where_Actor_A_is_in_relation_to_Pawn_B.2C_taking_into_account_B.27s_ViewRotation">...find where Actor A is in relation to Pawn B, taking into account B's ViewRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths?section=10" title="Edit section: ...find where Actor A is in relation to Pawn B, taking into account B's ViewRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><i>(make sure Pawn B has a Controller)</i></p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+orientation <span class="sy0">=</span> <span class="kw5">vector</span><span class="br0">(</span>B.<span class="kw9">Controller</span>.<span class="me0">GetViewRotation</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> dot <span class="kw3">Normal</span><span class="br0">(</span>A.<span class="kw7">Location</span> <span class="sy0">-</span> B.<span class="kw7">Location</span><span class="br0">)</span>;
+  <span class="co1">// &gt; 0.0  A points forwards in relation to B (up to 90° apart)</span>
+  <span class="co1">// = 0.0  A is perpendicular to B (exactly 90° between A and B)</span>
+  <span class="co1">// &lt; 0.0  A points backwards in relation to B (more than 90° apart)</span>
+</pre></div>
+</div>
+<p><b>Question:</b> How do I know if its to the Left or Right?</p>
+<p><b>Devi:</b> This code works exactly the same way as the code in the previous section. Now, if you think about it, the question: Is it to the left or right? Can be solved in the same way as the question: Is it in front of me or behind me? You just need to use a vector that points left/right instead of one that points forwards:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">local</span> <span class="kw5">vector</span> lateral;
+ 
+<span class="co1">// Get facing vector</span>
+lateral<span class="sy0">=</span><span class="kw5">vector</span><span class="br0">(</span>B.<span class="kw9">Controller</span>.<span class="me0">GetViewRotation</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>;
+<span class="co1">// Rotate 90 degrees in XZ, I'm going to assume (probably wrongly) that this lateral vector will point to the left of the facing, but it COULD be facing to the right</span>
+<span class="co1">// in which case the answers below are the wrong way round...</span>
+lateral<span class="sy0">=</span>lateral cross <span class="kw3">vect</span><span class="br0">(</span><span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">)</span>;
+ 
+orientation <span class="sy0">=</span> lateral dot <span class="kw3">Normal</span><span class="br0">(</span>A.<span class="kw7">Location</span> <span class="sy0">-</span> B.<span class="kw7">Location</span><span class="br0">)</span>;
+  <span class="co1">// &gt; 0.0  A sits to the left of B</span>
+  <span class="co1">// = 0.0  A is in front of/behind B (exactly 90° between A and B)</span>
+  <span class="co1">// &lt; 0.0  A sits to the right of B</span>
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="...find_a_point_that.27s_at_a_certain_distance_from_a_starting_point_in_a_given_direction">...find a point that's at a certain distance from a starting point in a given direction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths?section=11" title="Edit section: ...find a point that's at a certain distance from a starting point in a given direction">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+LocationTarget <span class="sy0">=</span> LocationStart <span class="sy0">+</span> <span class="kw5">vector</span><span class="br0">(</span><span class="kw7">Rotation</span><span class="br0">)</span> <span class="sy0">*</span> Distance;
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="...find_the_.28smallest.29_angle_between_A_and_B">...find the (smallest) angle between <b>A</b> and <b>B</b></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths?section=12" title="Edit section: ...find the (smallest) angle between A and B">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b>Note:</b> Acos is a built-in function in <a href="Legacy_UT2003.html" title="Legacy:UT2003" class="mw-redirect">UT2003</a>. It is not present in <a href="Legacy_UT.html" title="Legacy:UT" class="mw-redirect">UT</a>, see <a href="Legacy_Useful_Maths_Functions.html" title="Legacy:Useful Maths Functions">Useful Maths Functions</a>.<br />
+This assumes A and B are normalized (are unit vectors). If either of them is not normalized you need to wrap them in a Normal().<br /></p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+angle_radians <span class="sy0">=</span> <span class="kw3">Acos</span><span class="br0">(</span>A dot B<span class="br0">)</span>;
+angle_degrees <span class="sy0">=</span> <span class="kw3">Acos</span><span class="br0">(</span>A dot B<span class="br0">)</span> <span class="sy0">*</span> <span class="nu0">180</span><span class="sy0">/</span><span class="kw6">pi</span>;
+</pre></div>
+</div>
+<p><b>DemonThing:</b> Just wanted to point out that the vector <b>A</b> dot <b>B</b> is defined as</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+A dot B <span class="sy0">=</span> <span class="kw3">VSize</span><span class="br0">(</span>A<span class="br0">)</span> <span class="sy0">*</span> <span class="kw3">VSize</span><span class="br0">(</span>B<span class="br0">)</span> <span class="sy0">*</span> <span class="kw3">cos</span><span class="br0">(</span>angle<span class="br0">)</span>
+<span class="co1">//or</span>
+A dot B <span class="sy0">=</span> <span class="kw3">vect</span><span class="br0">(</span>A.<span class="me0">x</span> <span class="sy0">*</span> B.<span class="me0">x</span>, A.<span class="me0">y</span> <span class="sy0">*</span> B.<span class="me0">y</span>, A.<span class="me0">z</span> <span class="sy0">*</span> B.<span class="me0">z</span><span class="br0">)</span>
+</pre></div>
+</div>
+<p>if I remember correctly. Don't try this code out – it won't work!!!&#160;:D</p>
+<p><b>Devi:</b> Umm, the result of <b>A</b> dot <b>B</b> is a float, not a vector. It's defined as:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+A dot B <span class="sy0">=</span> <span class="br0">(</span>A.<span class="me0">x</span><span class="sy0">*</span>B.<span class="me0">x</span><span class="br0">)</span> <span class="sy0">+</span> <span class="br0">(</span>A.<span class="me0">y</span><span class="sy0">*</span>B.<span class="me0">y</span><span class="br0">)</span> <span class="sy0">+</span> <span class="br0">(</span>A.<span class="me0">z</span><span class="sy0">*</span>B.<span class="me0">z</span><span class="br0">)</span>
+</pre></div>
+</div>
+<p>See <a href="http://en.wikipedia.org/wiki/Dot_product" class="extiw" title="wikipedia:Dot product">Wikipedia:Dot product</a>.</p>
+<h3><span class="mw-headline" id="...point_to_my_left_or_right.3F">...point to my left or right?</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths?section=13" title="Edit section: ...point to my left or right?">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A vector that points at 90 degrees to the way you're looking can be given by the following. Note that it is horizontal; in the XY plane. (So for a rolling aeroplane, this <i>won't</i> point along the wing which will be slanted)</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+ resultingVector <span class="sy0">=</span> <span class="kw3">Normal</span><span class="br0">(</span><span class="kw5">vector</span> cross <span class="kw3">vect</span><span class="br0">(</span><span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">1</span><span class="br0">)</span><span class="br0">)</span>;
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="...find_out_vector_B_that_points_x_degrees_to_the_left_or_right_of_vector_A">...find out vector B that points x degrees to the left or right of vector A</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths?section=14" title="Edit section: ...find out vector B that points x degrees to the left or right of vector A">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b>Foxpaw:</b> I believe there are multiple vectors that could satisfy this. Can you be more specific?</p>
+<p><b>Tarquin:</b> It depends on what you want – 'left' and 'right' doesn't mean much in 3D, it has to be on a plane. We can assume the horizontal though, as above.</p>
+<p><b>smattbac:</b> Like in the example above this one, but instead of 90 degrees, any angle (or less than 90).</p>
+<p><b>Tarquin:</b> Get a normal of the direction you're pointing in. Call it <b>i</b>. Get the 90 degrees to the left one. Call it <b>j</b>. Do some sine and cosine mojo with them.</p>
+<p><b>Foxpaw:</b> I think it would be something along the lines of:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+  <span class="kw3">Normal</span><span class="br0">(</span><span class="br0">(</span><span class="kw3">Normal</span><span class="br0">(</span><span class="kw5">vector</span><span class="br0">)</span> <span class="sy0">*</span> <span class="br0">(</span><span class="nu0">1</span> <span class="sy0">-</span> <span class="br0">(</span>AngleInDegrees <span class="sy0">/</span> <span class="nu0">90</span><span class="br0">)</span> <span class="br0">)</span> <span class="br0">)</span> <span class="sy0">+</span> <span class="br0">(</span><span class="kw3">Normal</span><span class="br0">(</span><span class="kw5">vector</span> cross <span class="kw3">vect</span><span class="br0">(</span><span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">1</span><span class="br0">)</span><span class="br0">)</span> <span class="sy0">*</span> <span class="br0">(</span>AngleInDegrees <span class="sy0">/</span> <span class="nu0">90</span><span class="br0">)</span><span class="br0">)</span><span class="br0">)</span>;
+</pre></div>
+</div>
+<p>I'm not sure if that would work or not. It seems to work for 0 degrees, 90 degrees, and 45 degrees, but I don't know if it will work for other ones or not.</p>
+<p><b>Tarquin:</b> eek. What you need is this: i*cos(alpha) + j*sin(alpha). Alpha is angle in radians, obviously</p>
+<h3><span class="mw-headline" id="Rotate_a_rotator_by_another_rotator">Rotate a rotator by another rotator</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths?section=15" title="Edit section: Rotate a rotator by another rotator">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b>Dirk Fist:</b> Ok, I have a demo (UT) map that shows arbitrary rotation in object coordinates, Its 10k</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> <span class="kw5">rotator</span> rTurn<span class="br0">(</span><span class="kw5">rotator</span> rHeading,<span class="kw5">rotator</span> rTurnAngle<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="co1">// Generate a turn in object coordinates </span>
+    <span class="co1">//     this should handle any gymbal lock issues</span>
+ 
+    <span class="kw1">local</span> <span class="kw5">vector</span> vForward,vRight,vUpward;
+    <span class="kw1">local</span> <span class="kw5">vector</span> vForward2,vRight2,vUpward2;
+    <span class="kw1">local</span> <span class="kw5">rotator</span> T;
+    <span class="kw1">local</span> <span class="kw5">vector</span>  V;
+ 
+    <span class="kw3">GetAxes</span><span class="br0">(</span>rHeading,vForward,vRight,vUpward<span class="br0">)</span>;
+    <span class="co1">//  rotate in plane that contains vForward&amp;vRight</span>
+    T.<span class="me0">Yaw</span><span class="sy0">=</span>rTurnAngle.<span class="me0">Yaw</span>; V<span class="sy0">=</span><span class="kw5">vector</span><span class="br0">(</span>T<span class="br0">)</span>;
+    vForward2<span class="sy0">=</span>V.<span class="me0">X</span><span class="sy0">*</span>vForward <span class="sy0">+</span> V.<span class="me0">Y</span><span class="sy0">*</span>vRight;
+    vRight2<span class="sy0">=</span>V.<span class="me0">X</span><span class="sy0">*</span>vRight <span class="sy0">-</span> V.<span class="me0">Y</span><span class="sy0">*</span>vForward;
+    vUpward2<span class="sy0">=</span>vUpward;
+ 
+    <span class="co1">// rotate in plane that contains vForward&amp;vUpward</span>
+    T.<span class="me0">Yaw</span><span class="sy0">=</span>rTurnAngle.<span class="me0">Pitch</span>; V<span class="sy0">=</span><span class="kw5">vector</span><span class="br0">(</span>T<span class="br0">)</span>;
+    vForward<span class="sy0">=</span>V.<span class="me0">X</span><span class="sy0">*</span>vForward2 <span class="sy0">+</span> V.<span class="me0">Y</span><span class="sy0">*</span>vUpward2;
+    vRight<span class="sy0">=</span>vRight2;
+    vUpward<span class="sy0">=</span>V.<span class="me0">X</span><span class="sy0">*</span>vUpward2 <span class="sy0">-</span> V.<span class="me0">Y</span><span class="sy0">*</span>vForward2;
+ 
+    <span class="co1">// rotate in plane that contains vUpward&amp;vRight</span>
+    T.<span class="me0">Yaw</span><span class="sy0">=</span>rTurnAngle.<span class="me0">Roll</span>; V<span class="sy0">=</span><span class="kw5">vector</span><span class="br0">(</span>T<span class="br0">)</span>;
+    vForward2<span class="sy0">=</span>vForward;
+    vRight2<span class="sy0">=</span>V.<span class="me0">X</span><span class="sy0">*</span>vRight <span class="sy0">+</span> V.<span class="me0">Y</span><span class="sy0">*</span>vUpward;
+    vUpward2<span class="sy0">=</span>V.<span class="me0">X</span><span class="sy0">*</span>vUpward <span class="sy0">-</span> V.<span class="me0">Y</span><span class="sy0">*</span>vRight;
+ 
+    T<span class="sy0">=</span><span class="kw3">OrthoRotation</span><span class="br0">(</span>vForward2,vRight2,vUpward2<span class="br0">)</span>;
+ 
+   <span class="kw2">return</span><span class="br0">(</span>T<span class="br0">)</span>;    
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="...damp_a_velocity_vector_toward_a_surface">...damp a velocity vector toward a surface</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths?section=16" title="Edit section: ...damp a velocity vector toward a surface">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw7">Velocity</span> <span class="sy0">+=</span> SurfaceNormal <span class="sy0">*</span> <span class="br0">(</span><span class="kw3">Normal</span><span class="br0">(</span><span class="kw7">Velocity</span><span class="br0">)</span> dot SurfaceNormal<span class="br0">)</span> <span class="sy0">*</span> DampFactor;
+</pre></div>
+</div>
+<p>Useful DampFactor is &gt;=-1, where -1 will make Velocity parallel to the surface, 0 will do nothing, and positive values will give a "pop up" effect by making the Velocity vector point further from the plane of the surface.</p>
+<h3><span class="mw-headline" id="...find_point_Q_where_a_normal_from_point_P_to_a_line_from_A_to_B_meets_the_line">...find point Q where a normal from point P to a line from A to B meets the line</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths?section=17" title="Edit section: ...find point Q where a normal from point P to a line from A to B meets the line">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Given a line AB and a point P, we want to find a point Q on that line such that PQ and AB are perpendicular.</p>
+<p><a href="File_Legacy_normal_to_a_line_01.html" class="image" title="Legacy_normal_to_a_line_01.png"><img alt="Legacy_normal_to_a_line_01.png" src="w/images/Legacy_normal_to_a_line_01.png" width="264" height="192" /></a></p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+Q <span class="sy0">=</span> A <span class="sy0">+</span> <span class="kw3">Normal</span><span class="br0">(</span> B <span class="sy0">-</span> A <span class="br0">)</span> <span class="sy0">*</span> <span class="br0">(</span><span class="br0">(</span><span class="br0">(</span> B <span class="sy0">-</span> A <span class="br0">)</span> dot <span class="br0">(</span> P <span class="sy0">-</span> A <span class="br0">)</span><span class="br0">)</span> <span class="sy0">/</span> <span class="kw3">VSize</span><span class="br0">(</span> A <span class="sy0">-</span> B <span class="br0">)</span><span class="br0">)</span>;
+</pre></div>
+</div>
+<p>This is perfect for that railgun with shockwave damage you always wanted:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw2">for</span> <span class="br0">(</span>P <span class="sy0">=</span> <span class="kw7">Level</span>.<span class="me0">PawnList</span>; P <span class="sy0">!=</span> <span class="kw5">None</span>; P <span class="sy0">=</span> P.<span class="me0">NextPawn</span><span class="br0">)</span>
+<span class="br0">{</span>
+    Q <span class="sy0">=</span> StartTrace <span class="sy0">+</span> <span class="kw3">Normal</span><span class="br0">(</span> HitLocation <span class="sy0">-</span> StartTrace <span class="br0">)</span> <span class="sy0">*</span> <span class="br0">(</span><span class="br0">(</span><span class="br0">(</span> HitLocation <span class="sy0">-</span> StartTrace <span class="br0">)</span>
+    dot <span class="br0">(</span> P.<span class="kw7">Location</span> <span class="sy0">-</span> StartTrace <span class="br0">)</span><span class="br0">)</span> <span class="sy0">/</span> <span class="kw3">VSize</span><span class="br0">(</span> StartTrace <span class="sy0">-</span> HitLocation <span class="br0">)</span><span class="br0">)</span>;
+ 
+    <span class="kw2">if</span> <span class="br0">(</span><span class="kw3">VSize</span><span class="br0">(</span> P.<span class="kw7">Location</span> <span class="sy0">-</span> Q <span class="br0">)</span> <span class="sy0">&lt;</span> ShockwaveRadius<span class="br0">)</span>
+    <span class="br0">{</span>
+        <span class="co1">// Pawn is within ShockwaveRadius, do your mojo!</span>
+    <span class="br0">}</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Note: Point Q is not restricted to the length of line AB, so remember to check that the victims are in front of StartTrace and behind HitLocation for that railgun (unless you want it to go through the whole level in either direction, ofcourse...)</p>
+<p><b>DemonThing:</b> Q is relative to the origin, assuming A, B, and P are as well. Observe:</p>
+<p>See my definition of dot product above (the first one). You will see that (B - A) dot (P - A) is equal to VSize(B - A) * VSize(P - A) * cos(angle). Divide that by VSize(A - B) (which is equal to VSize(B - A)) and you get VSize(P - A) * cos(angle). If you know a bit of trigonometry, you will see that this is equal to VSize(Q - A). When you multiply that by Normal(B - A) (which is equal to Normal(Q - A), since A, B, and Q are collinear), you get Q - A. We add A to that and we get Q, which is a location vector.</p>
+<h3><span class="mw-headline" id="...only_affect_certain_components_of_a_vector">...only affect certain components of a vector</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths?section=18" title="Edit section: ...only affect certain components of a vector">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>In UnrealScript there's a component-by-component vector multiplication. You can use it to either only use two components of a vector for an operation and/or ignore certain components of the result.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="co1">// do something with A but don't change the Z component of it</span>
+<span class="kw5">vector</span> <span class="sy0">=</span> <span class="kw3">vect</span><span class="br0">(</span><span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">0</span><span class="br0">)</span> <span class="sy0">*</span> DoSomethingWith<span class="br0">(</span>A<span class="br0">)</span> <span class="sy0">+</span> <span class="kw3">vect</span><span class="br0">(</span><span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">)</span> <span class="sy0">*</span> A;
+ 
+<span class="co1">// do something with the X and Z components of A</span>
+<span class="kw5">vector</span> <span class="sy0">=</span> DoSomethingWith<span class="br0">(</span><span class="kw3">vect</span><span class="br0">(</span><span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">)</span> <span class="sy0">*</span> A<span class="br0">)</span>;
+ 
+<span class="co1">// do something with the Y and Z components of a vector and use its original X component</span>
+<span class="kw5">vector</span> <span class="sy0">=</span> <span class="kw3">vect</span><span class="br0">(</span><span class="nu0">0</span>,<span class="nu0">1</span>,<span class="nu0">1</span><span class="br0">)</span> <span class="sy0">*</span> DoSomethingWith<span class="br0">(</span><span class="kw3">vect</span><span class="br0">(</span><span class="nu0">0</span>,<span class="nu0">1</span>,<span class="nu0">1</span><span class="br0">)</span> <span class="sy0">*</span> A<span class="br0">)</span> <span class="sy0">+</span> <span class="kw3">vect</span><span class="br0">(</span><span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">)</span> <span class="sy0">*</span> A;
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="What_does_this_do.3F">What does this do?</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths?section=19" title="Edit section: What does this do?">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+ resultingVector <span class="sy0">=</span> <span class="kw3">Normal</span><span class="br0">(</span><span class="kw5">vector</span> cross <span class="kw3">vect</span><span class="br0">(</span><span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">1</span><span class="br0">)</span><span class="br0">)</span>;
+</pre></div>
+</div>
+<p>The cross product of two vectors is perpendicular to both. Which means that (vector cross vect(0, 0, 1)) is a vector pependicular to the given vector AND the z-axis. Something perp to z is horizontal – it's confined to the XY plane. So it's a horizontal vector that is also perp to the given vector. It's then normalized. I can't remember <i>which</i> way the cross product points in Unreal. So it's either a unit vector that points to your right or left.</p>
+<p><b>Devi</b> As an aside, if you want to rotate a 3D vector by 90 degrees on the XZ plane you can also do this:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">local</span> <span class="kw5">float</span> t;
+<span class="kw1">local</span> <span class="kw5">vector</span> v;
+ 
+t<span class="sy0">=</span>v.<span class="me0">x</span>;
+v.<span class="me0">x</span><span class="sy0">=</span>v.<span class="me0">y</span>;
+v.<span class="me0">y</span><span class="sy0">=-</span>t;
+</pre></div>
+</div>
+<p>The output vector is identical in length to the ingoing one (i.e. If it was normal when it went in, it'll be normal when it came out) In C this would be far faster that the example beforehand, though whether it's faster in UScript is another matter...</p>
+<p><b>AlphaOne:</b> What about this:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+ <span class="kw5">vector</span> <span class="sy0">=</span> <span class="kw3">vect</span><span class="br0">(</span><span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">1</span><span class="br0">)</span> <span class="sy0">&gt;&gt;</span> <span class="kw7">Rotation</span>;
+</pre></div>
+</div>
+<p>I believe that Rotation is also a vector (not a rotator). Is it?</p>
+<p><b>Tarquin:</b> Be pretty cruddy coding if it were. &gt;&gt; is a rotator / vector operator.</p>
+<p><b>Dade:</b> How would i go about modifying only the "XY" coordinates of a vector? I.E. Changes the vector's</p>
+<p>location, but not its height. Or is this even possible? (haven't studied vectors yet)</p>
+<p><b>VonStrohmen:</b> I'm not quite sure what you're asking, but if you mean can you change the X and Y components of a vector without modifying its Z, then sure.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw5">Vector</span> A,B;
+B <span class="sy0">=</span> <span class="kw3">vect</span><span class="br0">(</span>A.<span class="me0">X</span> <span class="sy0">+</span><span class="nu0">50</span>, A.<span class="me0">Y</span> <span class="sy0">+</span> <span class="nu0">100</span>, A.<span class="me0">Z</span><span class="br0">)</span>;
+</pre></div>
+</div>
+<p><b>Dade:</b> Ah Ha! Thank you. That was exactly what i needed.</p>
+<p><b>Wormbo:</b> Note that vect(x,y,z) and rot(p,y,r) are more like "a string" or 'aName', in other words a constant. Also note that you can "multiply" vectors in UnrealScript, i.e. vect(1,2,3) * vect(2,3,4) = vect(2,6,12). This is neither dot product nor cross product, it just multiplies the corresponding parts of the vector.</p>
+<p><b>Mortal Monkey:</b> Hello good people! I just added the "...find vector Q" part, feel free to improve it.</p>
+<p><b>Foxpaw:</b> What do &lt;&lt; and &gt;&gt; do with regards to vectors? One of them appears to do a coordinate rotation of the vector given that the rotator points along the X Axis of the target coordinate system, but what does the other one do?</p>
+<p><b>inio:</b> I thought they rotated a vector by a rotator, and the reverse a of a rotator ((theVec &lt;&lt; theRot) &gt;&gt; theRot == theVec)</p>
+<p><b>Foxpaw:</b> That may be. I know that one of them does the coordinate rotation, which is basically what you said. It is possible that the other just does it by the reverse of that rotator.</p>
+<p><b>Sir_Brizz:</b> Is it too much to ask that someone PLEASE put some pictures up showing precisely how these all work? Imaginary directions and all are way too confusing to leave to the brain.</p>
+<p><b>Tarquin:</b> Care to nominate some that need a picture particularly badly?</p>
+<p><b>Sir_Brizz:</b> Well, I think there should at least be one explaining several at a time. I'm trying to figure out exactly how "...find where <b>A</b> is in relation to <b>B</b>?" works exactly.</p>
+<p><b>Devi:</b> I just rewrote that section so it actually (at least to me&#160;;) ) makes sense, by, you know, explaining what A and B actually are&#160;:) Hope that helps... (Sorry, I'm a bit pants at making diagrams)</p>
+<p><b>Devi:</b> heheh, just realised that both mine and the other guys example was finding where B was in relation to A, rather than vice-versa&#160;:) Just renamed the subject title...</p>
+<p><b>Unrealed:</b> Cool, it helped me a lot =). It was simple and I didnt know how: SetRotation(rotator(NextEnemy.Location-Location));</p>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths?section=20" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_Vector.html" title="Legacy:Vector">Vector</a></li>
+<li><a href="Legacy_Built-In_Struct.html" title="Legacy:Built-In Struct">Built-In Struct</a></li>
+<li><a href="Legacy_Global_Function.html" title="Legacy:Global Function">Global Function</a></li>
+<li><a href="Legacy_Operators.html" title="Legacy:Operators">Operators</a></li>
+<li><a href="Legacy_Useful_Maths_Functions.html" title="Legacy:Useful Maths Functions">Useful Maths Functions</a></li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.419 seconds
+Real time usage: 4.520 seconds
+Preprocessor visited node count: 370/1000000
+Preprocessor generated node count: 736/1000000
+Post‐expand include size: 25/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:3323-0!*!0!!en!5!* and timestamp 20161216013227 and revision id 45182
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:UnrealScript_Vector_Maths?oldid=45182">https://wiki.beyondunreal.com/Legacy:UnrealScript_Vector_Maths?oldid=45182</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Legacy_Refactor_Me.html" title="Category:Legacy Refactor Me">Legacy Refactor Me</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_UnrealScript_Vector_Maths.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:UnrealScript_Vector_Maths?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:UnrealScript_Vector_Maths" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:UnrealScript_Vector_Maths" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AUnrealScript+Vector+Maths&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AUnrealScript+Vector+Maths" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:UnrealScript_Vector_Maths" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:UnrealScript_Vector_Maths" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:UnrealScript_Vector_Maths?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:UnrealScript_Vector_Maths?oldid=45182" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:UnrealScript_Vector_Maths" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 14:28, 1 August 2012.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":90});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:UnrealScript_Vector_Maths by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:53:18 GMT -->
+</html>

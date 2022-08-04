@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:UIScript_Structure by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:50:56 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:UIScript Structure - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:UIScript_Structure" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:UIScript_Structure" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_UIScript_Structure.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:UIScript_Structure","wgTitle":"UIScript Structure","wgCurRevisionId":8848,"wgRevisionId":8848,"wgArticleId":3438,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:UIScript_Structure","wgRelevantArticleId":3438,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_UIScript_Structure skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Once I get that upgrade to 36-hour days, I will tackle that. &#8211; Mychaeel
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:UIScript Structure</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><a href="Legacy_User_Interface.html" title="Legacy:User Interface">User Interface</a> scripts appear to be quite complicated at first, but they have quite a simple hierarchical structure. It appears to be quite straightforward to define any kind of interface function, but the work is in figuring out what all the commands mean!</p>
+<p>The whole of the <a href="Legacy_Unreal_2.html" title="Legacy:Unreal 2">Unreal 2</a> UI seems to derive from a single root object, defined like this:</p>
+<pre>
+[Root]
+Class=FixedSizeContainer
+Component=SomeComponent
+</pre>
+<p>and so on. At this level, the "Component" is something like the main menu, the objectives screen, or the main HUD.</p>
+<p>I shall pick a relatively simple component to illustrate the main points of the UIScript functionality.</p>
+<hr />
+<p>I've been working on UIScripts for a while, and thought I'd write out how to create your own HUD element in <a href="Legacy_Unreal_2.html" title="Legacy:Unreal 2">Unreal 2</a>. This is my first try at editing a Wiki, so bear with me. With that said, let's get to it.</p>
+<p>First, let me say one thing; The UIScript interface isn't as illogical as it may seem at first...it's nature is just really counter-intuitive. This is because UIScripts, while robust and logical, are a quite separate entity from the UnrealScript hierarchy. Indeed, it appears Legend had some problems with the HUD, and the UIScript is a hacked-out system that happened to stay in for the final version...</p>
+<p>Quoth HUD.uc from U2's source...</p>
+<blockquote class="legacyquote">
+<p>//NEW: disabled because it doesn't compile. Currently using UIConsole, etc to do all drawing so we really don't need this anyway.</p>
+</blockquote>
+<p>Ugh. Okay, anyway, let's make a UI component. We'll create a health bar, so that we don't have to tangle with extra functionality, and focus on the intricacies of UIScripting.</p>
+<p>Our UIScript will define two textures: one to serve as the background for our component, and one to serve as a visual meter of the remaining health. We'll use two different "subcomponents" to accomplish this: one to hold the textures, and one to be the actual health bar.</p>
+<p>Open up Notepad (or WOTgreal, etc.) and create a file in the UIScripts subdirectory called "PVNNinjaHUD.ui" (if you want to follow the nomenclature of my mod, Pirates versus Ninjas):</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="br0">[</span>Root<span class="br0">]</span>
+<span class="kw1">Class</span><span class="sy0">=</span>FixedSizeContainer
+Component<span class="sy0">=</span>NinjaHUDTextures
+Component<span class="sy0">=</span>NinjaHealth
+ 
+<span class="br0">[</span>NinjaHUDTextures<span class="br0">]</span>
+<span class="kw1">Class</span><span class="sy0">=</span>Image
+<span class="kw5">Material</span><span class="sy0">=</span>khakiPVN.<span class="kw9">HUD</span>.<span class="me0">PVNNinjaHUD</span>
+Image2<span class="sy0">=</span>HealthMeter,<span class="nu0">0</span>,<span class="nu0">32</span>,<span class="nu0">134</span>,<span class="nu0">37</span>
+Image2<span class="sy0">=</span>NinjaHealthTex,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">81</span>,<span class="nu0">27</span>
+ 
+<span class="br0">[</span>NinjaHealth<span class="br0">]</span>
+<span class="kw1">Class</span><span class="sy0">=</span>FixedSizeContainer
+Component<span class="sy0">=</span>ImageComponent
+	Image<span class="sy0">=</span>NinjaHealthTex
+Component<span class="sy0">=</span>ImageWipe
+	TopImage<span class="sy0">=</span>HealthMeter
+	Access<span class="sy0">=</span><span class="kw8">Player</span>,GetHealthPct
+	AutoSize<span class="sy0">=</span><span class="kw6">true</span>
+	<span class="kw7">Location</span><span class="sy0">=</span><span class="nu0">30</span>,<span class="nu0">5</span>
+Component<span class="sy0">=</span>LabelShadow
+	Access<span class="sy0">=</span><span class="kw8">Player</span>,GetHealthString
+	Font<span class="sy0">=</span>HUD_Fonts.<span class="me0">Micro12</span>
+	<span class="kw7">Location</span><span class="sy0">=-</span><span class="nu0">5</span>,<span class="nu0">6</span>
+Align<span class="sy0">=</span>HardLeft,HardTop
+<span class="kw7">Location</span><span class="sy0">=</span><span class="nu0">100</span>,<span class="nu0">100</span>
+</pre></div>
+</div>
+<p>UIScripts consist of a bunch of "component" definitions. At the very least, the component must be named (accomplished in the first line), and given a type (accomplished in the second line, "Class="). Following that, what attributes are assigned depends on the component's nature.</p>
+<p>So, let's deconstruct what's going on here, section by section.</p>
+<p>[Root] defines, well, the "root" component, which is actually named after the text file. Thus, [Root] defines the UI component named "PVNNinjaHUD", whose prototype is the filename of the very UIScript we're editing. [Root]'s type is always FixedSizeContainer...it appears to be pointless to use any other types here. Now you provide "prototypes," as it were, for each of your subcomponents, just to let Unreal 2 know what's going to be built. In this file, we declare the two aforementioned components for textures and a health bar.</p>
+<p>Now, you create a subsection that is named after each one of your subcomponents, and define them. NinjaHUDTextures's type is image, to signify that it holds images for your other components. The source of your textures, defined in the "Material=" line, must be a texture that exists in an Unreal package. For mine, the HUD images for this particular HUD are stored in khakiPVN.HUD.PVNNinjaHUD. After that, you simply have to split the image into pieces, using "Image2=" lines to declare individual components. First, you name the subcomponent, then give the Cartesian coordinates of the object's upper-leftmost pixel, then the Cartesian coordinates of the object's lower-rightmost pixel. Simple, eh? Yeah, I thought so too.</p>
+<p>Now we're getting to the most important part; the subcomponent definition of the actual health bar. "Class=FixedSizeContainer" defines the health bar's type. The health bar consists of three different "sub-subcomponents." The "Component=" lines are not names that you invent here, as they were in the [Root] definition–instead, they are predefined types that you instanciate and modify. We'll have three parts: The background, the health meter, and the numeric health value. The background is defined by the "ImageComponent" section. The "ImageWipe" line declares an image whose size changes depending on a value of some sort. First, you define the image that will be used, then how the object will be accessed. "GetHealthPct" is a member function of Player's class (which is U2Controller). Next, AutoSize will do just that; automatically resize itself whenever the GetHealthPct value changes. The "Location=" line establishes Cartesian coordinates relative to the upper-leftmost pixel of the entire object. Finally, LabelShadow is an object that displays text. To get its text, it calls Player's GetHealthString function, and renders using the Micro12 font that is part of a HUD_Fonts package. The Location represents, again, relative Cartesian coordinates.</p>
+<p>After that, you establish absolute screen coordinates for the object, and you're set!</p>
+<p>...But, how do you use it? Well, here's the approach I used. Create a custom gametype...</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">class</span> PVNGameInfo <span class="kw1">extends</span> U2GameInfo;
+ 
+<span class="co2">#exec texture Import File=Textures\khakiPVN.UIMisc.Common.tga Group=UIMisc name=Common</span>
+<span class="co2">#exec texture Import File=Textures\khakiPVN.HUD.PVNNinjaHUD.tga Group=HUD name=PVNNinjaHUD</span>
+<span class="co1">//#exec OBJ LOAD FILE=Textures\khakiPVN.utx</span>
+ 
+<span class="kw1">var</span> ComponentHandle NinjaHealth;
+ 
+<span class="kw1">event</span> NotifyHack<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	NinjaHealth <span class="sy0">=</span> <span class="kw1">class</span><span class="st0">'UIConsole'</span>.<span class="kw1">static</span>.<span class="me0">LoadComponent</span><span class="br0">(</span> <span class="st0">"PVNNinjaHUD"</span> <span class="br0">)</span>;
+	<span class="kw1">class</span><span class="st0">'UIConsole'</span>.<span class="kw1">static</span>.<span class="me0">AddComponent</span><span class="br0">(</span>NinjaHealth<span class="br0">)</span>;
+	<span class="kw6">Super</span>.<span class="me0">NotifyHack</span><span class="br0">(</span><span class="br0">)</span>;
+<span class="br0">}</span>
+ 
+<span class="kw1">defaultproperties</span>
+<span class="br0">{</span>
+    bDisplayHud<span class="sy0">=</span><span class="kw6">true</span>
+    GameName<span class="sy0">=</span><span class="st0">"Pirates Versus Ninjas"</span>
+	AirControl<span class="sy0">=</span><span class="nu0">0.850000</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>The NotifyHack() function is what matters here. You make a ComponentHandle variable, and that variable holds a loaded instance of your UI. To instanciate your UI, use the LoadComponent() function, as shown. The argument is a string that represents the name of your UIScript file (without the ".ui" on the end). If you want, you can use an optional second argument that only loads a subcomponent out of that script. That wouldn't work here, as we have to load both the textures AND the health bar. After that, you pass the newly-loaded NinjaHealth object into the AddComponent() function, and you have yourself a working UI! Just create a map in UnrealEd that specifies your new GameType in its LevelInfo.</p>
+<hr />
+<p><b>scumble:</b> working on it. I'm just trying to put some stuff down and build it up...</p>
+<p>please provide backlinks!</p>
+<p>I don't know what else I can link that's relevant at the moment.</p>
+<p>Well... <a href="Legacy_User_Interface.html" title="Legacy:User Interface">User Interface</a>, the page that comes here.</p>
+<p><b>Khakionion:</b> Decided to contribute what I've learned thus far. What'd be really useful is a listing of all possible class/component types...</p>
+<p><b>Foxpaw:</b> Eek. I made a system like this for my UT2003 mod. And here I thought I was being original.&#160;:P Uhmmm, welll.... Mines better! Fahahahaha!&#160;:P</p>
+<hr />
+<p><a href="Legacy_Category_To_Do.html" title="Legacy:Category To Do" class="mw-redirect">category to do</a></p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.043 seconds
+Real time usage: 0.062 seconds
+Preprocessor visited node count: 16/1000000
+Preprocessor generated node count: 97/1000000
+Post‐expand include size: 362/2097152 bytes
+Template argument size: 133/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.395      1 - -total
+100.00%    4.395      1 - Template:Innerbox
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:3438-0!*!0!*!*!*!* and timestamp 20161215185823 and revision id 8848
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:UIScript_Structure?oldid=8848">https://wiki.beyondunreal.com/Legacy:UIScript_Structure?oldid=8848</a>"</div>
+					<div id='catlinks' class='catlinks catlinks-allhidden'></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_UIScript_Structure.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:UIScript_Structure?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:UIScript_Structure" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:UIScript_Structure" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AUIScript+Structure&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AUIScript+Structure" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:UIScript_Structure" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:UIScript_Structure" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:UIScript_Structure?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:UIScript_Structure?oldid=8848" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:UIScript_Structure" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 00:39, 25 December 2003.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":94});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:UIScript_Structure by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:50:56 GMT -->
+</html>

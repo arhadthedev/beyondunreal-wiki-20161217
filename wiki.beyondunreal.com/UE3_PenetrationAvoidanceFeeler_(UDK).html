@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:PenetrationAvoidanceFeeler_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 11:32:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:GameThirdPersonCamera (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_GameThirdPersonCamera_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="canonical" href="UE3_GameThirdPersonCamera_(UDK).html" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:GameThirdPersonCamera_(UDK)","wgTitle":"GameThirdPersonCamera (UDK)","wgCurRevisionId":40949,"wgRevisionId":40949,"wgArticleId":25879,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UDK-specific classes","Classes in UDK package GameFramework","Subclasses of GameCameraBase (UDK)","Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:GameThirdPersonCamera_(UDK)","wgRelevantArticleId":25879,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"UE3:PenetrationAvoidanceFeeler_(UDK)","wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgInternalRedirectTargetUrl":"/UE3:GameThirdPersonCamera_(UDK)#PenetrationAvoidanceFeeler"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.redirect","mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_GameThirdPersonCamera_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Once I get that upgrade to 36-hour days, I will tackle that. &#8211; Mychaeel
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:GameThirdPersonCamera (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"><span class="mw-redirectedfrom">(Redirected from <a href="UE3_PenetrationAvoidanceFeeler_(UDK)c25d.html?redirect=no" title="UE3:PenetrationAvoidanceFeeler (UDK)">UE3:PenetrationAvoidanceFeeler (UDK)</a>)</span></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<a href="UE3_GameCameraBase_(UDK).html" title="UE3:GameCameraBase (UDK)">GameCameraBase</a> &gt;&gt;&#160;<b>GameThirdPersonCamera</b></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Properties"><span class="tocnumber">1</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Property_group_.27Debug.27"><span class="tocnumber">1.1</span> <span class="toctext">Property group 'Debug'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#bDebugChangedCameraMode"><span class="tocnumber">1.1.1</span> <span class="toctext">bDebugChangedCameraMode</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-4"><a href="#Property_group_.27Focus.27"><span class="tocnumber">1.2</span> <span class="toctext">Property group 'Focus'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#Focus_BackOffStrength"><span class="tocnumber">1.2.1</span> <span class="toctext">Focus_BackOffStrength</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Focus_FastAdjustKickInTime"><span class="tocnumber">1.2.2</span> <span class="toctext">Focus_FastAdjustKickInTime</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Focus_MaxTries"><span class="tocnumber">1.2.3</span> <span class="toctext">Focus_MaxTries</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Focus_StepHeightAdjustment"><span class="tocnumber">1.2.4</span> <span class="toctext">Focus_StepHeightAdjustment</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#FocusPoint"><span class="tocnumber">1.2.5</span> <span class="toctext">FocusPoint</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="#Property_group_.27GameThirdPersonCamera.27"><span class="tocnumber">1.3</span> <span class="toctext">Property group 'GameThirdPersonCamera'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-11"><a href="#bDrawDebug"><span class="tocnumber">1.3.1</span> <span class="toctext">bDrawDebug</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#CurrentCamMode"><span class="tocnumber">1.3.2</span> <span class="toctext">CurrentCamMode</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#DirectLookInterpSpeed"><span class="tocnumber">1.3.3</span> <span class="toctext">DirectLookInterpSpeed</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#OffsetAdjustmentInterpSpeed"><span class="tocnumber">1.3.4</span> <span class="toctext">OffsetAdjustmentInterpSpeed</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#OriginOffsetInterpSpeed"><span class="tocnumber">1.3.5</span> <span class="toctext">OriginOffsetInterpSpeed</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#PenetrationAvoidanceFeelers"><span class="tocnumber">1.3.6</span> <span class="toctext">PenetrationAvoidanceFeelers</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#PenetrationBlendInTime"><span class="tocnumber">1.3.7</span> <span class="toctext">PenetrationBlendInTime</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#PenetrationBlendOutTime"><span class="tocnumber">1.3.8</span> <span class="toctext">PenetrationBlendOutTime</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#PenetrationExtentScale"><span class="tocnumber">1.3.9</span> <span class="toctext">PenetrationExtentScale</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#ThirdPersonCamDefault"><span class="tocnumber">1.3.10</span> <span class="toctext">ThirdPersonCamDefault</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="#ThirdPersonCamDefaultClass"><span class="tocnumber">1.3.11</span> <span class="toctext">ThirdPersonCamDefaultClass</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="#WorstLocInterpSpeed"><span class="tocnumber">1.3.12</span> <span class="toctext">WorstLocInterpSpeed</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#WorstLocPenetrationExtentScale"><span class="tocnumber">1.3.13</span> <span class="toctext">WorstLocPenetrationExtentScale</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-24"><a href="#Internal_variables"><span class="tocnumber">1.4</span> <span class="toctext">Internal variables</span></a>
+<ul>
+<li class="toclevel-3 tocsection-25"><a href="#ActualFocusPointWorldLoc"><span class="tocnumber">1.4.1</span> <span class="toctext">ActualFocusPointWorldLoc</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#bDoingACameraTurn"><span class="tocnumber">1.4.2</span> <span class="toctext">bDoingACameraTurn</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="#bDoingDirectLook"><span class="tocnumber">1.4.3</span> <span class="toctext">bDoingDirectLook</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="#bFocusPointSet"><span class="tocnumber">1.4.4</span> <span class="toctext">bFocusPointSet</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="#bFocusPointSuccessful"><span class="tocnumber">1.4.5</span> <span class="toctext">bFocusPointSuccessful</span></a></li>
+<li class="toclevel-3 tocsection-30"><a href="#bTurnAlignTargetWhenFinished"><span class="tocnumber">1.4.6</span> <span class="toctext">bTurnAlignTargetWhenFinished</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="#DirectLookYaw"><span class="tocnumber">1.4.7</span> <span class="toctext">DirectLookYaw</span></a></li>
+<li class="toclevel-3 tocsection-32"><a href="#LastActualCameraOrigin"><span class="tocnumber">1.4.8</span> <span class="toctext">LastActualCameraOrigin</span></a></li>
+<li class="toclevel-3 tocsection-33"><a href="#LastActualCameraOriginRot"><span class="tocnumber">1.4.9</span> <span class="toctext">LastActualCameraOriginRot</span></a></li>
+<li class="toclevel-3 tocsection-34"><a href="#LastActualOriginOffset"><span class="tocnumber">1.4.10</span> <span class="toctext">LastActualOriginOffset</span></a></li>
+<li class="toclevel-3 tocsection-35"><a href="#LastCamFOV"><span class="tocnumber">1.4.11</span> <span class="toctext">LastCamFOV</span></a></li>
+<li class="toclevel-3 tocsection-36"><a href="#LastFocusChangeTime"><span class="tocnumber">1.4.12</span> <span class="toctext">LastFocusChangeTime</span></a></li>
+<li class="toclevel-3 tocsection-37"><a href="#LastFocusPointLoc"><span class="tocnumber">1.4.13</span> <span class="toctext">LastFocusPointLoc</span></a></li>
+<li class="toclevel-3 tocsection-38"><a href="#LastHeightAdjustment"><span class="tocnumber">1.4.14</span> <span class="toctext">LastHeightAdjustment</span></a></li>
+<li class="toclevel-3 tocsection-39"><a href="#LastOffsetAdjustment"><span class="tocnumber">1.4.15</span> <span class="toctext">LastOffsetAdjustment</span></a></li>
+<li class="toclevel-3 tocsection-40"><a href="#LastPitchAdjustment"><span class="tocnumber">1.4.16</span> <span class="toctext">LastPitchAdjustment</span></a></li>
+<li class="toclevel-3 tocsection-41"><a href="#LastPostCamTurnYaw"><span class="tocnumber">1.4.17</span> <span class="toctext">LastPostCamTurnYaw</span></a></li>
+<li class="toclevel-3 tocsection-42"><a href="#LastPreModifierCameraLoc"><span class="tocnumber">1.4.18</span> <span class="toctext">LastPreModifierCameraLoc</span></a></li>
+<li class="toclevel-3 tocsection-43"><a href="#LastPreModifierCameraRot"><span class="tocnumber">1.4.19</span> <span class="toctext">LastPreModifierCameraRot</span></a></li>
+<li class="toclevel-3 tocsection-44"><a href="#LastViewOffset"><span class="tocnumber">1.4.20</span> <span class="toctext">LastViewOffset</span></a></li>
+<li class="toclevel-3 tocsection-45"><a href="#LastWorstLocationLocal"><span class="tocnumber">1.4.21</span> <span class="toctext">LastWorstLocationLocal</span></a></li>
+<li class="toclevel-3 tocsection-46"><a href="#LastYawAdjustment"><span class="tocnumber">1.4.22</span> <span class="toctext">LastYawAdjustment</span></a></li>
+<li class="toclevel-3 tocsection-47"><a href="#LeftoverPitchAdjustment"><span class="tocnumber">1.4.23</span> <span class="toctext">LeftoverPitchAdjustment</span></a></li>
+<li class="toclevel-3 tocsection-48"><a href="#PenetrationBlockedPct"><span class="tocnumber">1.4.24</span> <span class="toctext">PenetrationBlockedPct</span></a></li>
+<li class="toclevel-3 tocsection-49"><a href="#TurnCurTime"><span class="tocnumber">1.4.25</span> <span class="toctext">TurnCurTime</span></a></li>
+<li class="toclevel-3 tocsection-50"><a href="#TurnDelay"><span class="tocnumber">1.4.26</span> <span class="toctext">TurnDelay</span></a></li>
+<li class="toclevel-3 tocsection-51"><a href="#TurnEndAngle"><span class="tocnumber">1.4.27</span> <span class="toctext">TurnEndAngle</span></a></li>
+<li class="toclevel-3 tocsection-52"><a href="#TurnStartAngle"><span class="tocnumber">1.4.28</span> <span class="toctext">TurnStartAngle</span></a></li>
+<li class="toclevel-3 tocsection-53"><a href="#TurnTotalTime"><span class="tocnumber">1.4.29</span> <span class="toctext">TurnTotalTime</span></a></li>
+<li class="toclevel-3 tocsection-54"><a href="#WorstLocBlockedPct"><span class="tocnumber">1.4.30</span> <span class="toctext">WorstLocBlockedPct</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-55"><a href="#Structs"><span class="tocnumber">2</span> <span class="toctext">Structs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-56"><a href="#CamFocusPointParams"><span class="tocnumber">2.1</span> <span class="toctext">CamFocusPointParams</span></a></li>
+<li class="toclevel-2 tocsection-57"><a href="#PenetrationAvoidanceFeeler"><span class="tocnumber">2.2</span> <span class="toctext">PenetrationAvoidanceFeeler</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-58"><a href="#Functions"><span class="tocnumber">3</span> <span class="toctext">Functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-59"><a href="#Native_functions"><span class="tocnumber">3.1</span> <span class="toctext">Native functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-60"><a href="#EndTurn"><span class="tocnumber">3.1.1</span> <span class="toctext">EndTurn</span></a></li>
+<li class="toclevel-3 tocsection-61"><a href="#PlayerUpdateCamera"><span class="tocnumber">3.1.2</span> <span class="toctext">PlayerUpdateCamera</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-62"><a href="#Events"><span class="tocnumber">3.2</span> <span class="toctext">Events</span></a>
+<ul>
+<li class="toclevel-3 tocsection-63"><a href="#GetDesiredFOV"><span class="tocnumber">3.2.1</span> <span class="toctext">GetDesiredFOV</span></a></li>
+<li class="toclevel-3 tocsection-64"><a href="#ModifyPostProcessSettings"><span class="tocnumber">3.2.2</span> <span class="toctext">ModifyPostProcessSettings</span></a></li>
+<li class="toclevel-3 tocsection-65"><a href="#UpdateFocusPoint"><span class="tocnumber">3.2.3</span> <span class="toctext">UpdateFocusPoint</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-66"><a href="#Other_instance_functions"><span class="tocnumber">3.3</span> <span class="toctext">Other instance functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-67"><a href="#AdjustFocusPointInterpolation"><span class="tocnumber">3.3.1</span> <span class="toctext">AdjustFocusPointInterpolation</span></a></li>
+<li class="toclevel-3 tocsection-68"><a href="#AdjustTurn"><span class="tocnumber">3.3.2</span> <span class="toctext">AdjustTurn</span></a></li>
+<li class="toclevel-3 tocsection-69"><a href="#BeginTurn"><span class="tocnumber">3.3.3</span> <span class="toctext">BeginTurn</span></a></li>
+<li class="toclevel-3 tocsection-70"><a href="#ClearFocusPoint"><span class="tocnumber">3.3.4</span> <span class="toctext">ClearFocusPoint</span></a></li>
+<li class="toclevel-3 tocsection-71"><a href="#CreateCameraMode"><span class="tocnumber">3.3.5</span> <span class="toctext">CreateCameraMode</span></a></li>
+<li class="toclevel-3 tocsection-72"><a href="#FindBestCameraMode"><span class="tocnumber">3.3.6</span> <span class="toctext">FindBestCameraMode</span></a></li>
+<li class="toclevel-3 tocsection-73"><a href="#GetActualFocusLocation"><span class="tocnumber">3.3.7</span> <span class="toctext">GetActualFocusLocation</span></a></li>
+<li class="toclevel-3 tocsection-74"><a href="#GetFocusActor"><span class="tocnumber">3.3.8</span> <span class="toctext">GetFocusActor</span></a></li>
+<li class="toclevel-3 tocsection-75"><a href="#Init"><span class="tocnumber">3.3.9</span> <span class="toctext">Init</span></a></li>
+<li class="toclevel-3 tocsection-76"><a href="#OnBecomeActive"><span class="tocnumber">3.3.10</span> <span class="toctext">OnBecomeActive</span></a></li>
+<li class="toclevel-3 tocsection-77"><a href="#ProcessViewRotation"><span class="tocnumber">3.3.11</span> <span class="toctext">ProcessViewRotation</span></a></li>
+<li class="toclevel-3 tocsection-78"><a href="#Reset"><span class="tocnumber">3.3.12</span> <span class="toctext">Reset</span></a></li>
+<li class="toclevel-3 tocsection-79"><a href="#ResetInterpolation"><span class="tocnumber">3.3.13</span> <span class="toctext">ResetInterpolation</span></a></li>
+<li class="toclevel-3 tocsection-80"><a href="#SetFocusOnActor"><span class="tocnumber">3.3.14</span> <span class="toctext">SetFocusOnActor</span></a></li>
+<li class="toclevel-3 tocsection-81"><a href="#SetFocusOnLoc"><span class="tocnumber">3.3.15</span> <span class="toctext">SetFocusOnLoc</span></a></li>
+<li class="toclevel-3 tocsection-82"><a href="#UpdateCamera"><span class="tocnumber">3.3.16</span> <span class="toctext">UpdateCamera</span></a></li>
+<li class="toclevel-3 tocsection-83"><a href="#UpdateCameraMode"><span class="tocnumber">3.3.17</span> <span class="toctext">UpdateCameraMode</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Package:&#160;</dt>
+<dd><a href="Category_Classes_in_UDK_package_GameFramework.html" title="Category:Classes in UDK package GameFramework">GameFramework</a></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<p><br /></p>
+<h2><span class="mw-headline" id="Properties">Properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=1" title="Edit section: Properties">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Property_group_.27Debug.27">Property group 'Debug'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=2" title="Edit section: Property group 'Debug'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="bDebugChangedCameraMode">bDebugChangedCameraMode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=3" title="Edit section: bDebugChangedCameraMode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Change in camera mode happened this frame - reset on first call to PlayerUpdateCamera</p>
+<h3><span class="mw-headline" id="Property_group_.27Focus.27">Property group 'Focus'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=4" title="Edit section: Property group 'Focus'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="Focus_BackOffStrength">Focus_BackOffStrength</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=5" title="Edit section: Focus BackOffStrength">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>move back pct based on move up</p>
+<p><b>Default value:</b> 0.33</p>
+<h4><span class="mw-headline" id="Focus_FastAdjustKickInTime">Focus_FastAdjustKickInTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=6" title="Edit section: Focus FastAdjustKickInTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>time it takes for fast interpolation speed to kick in</p>
+<p><b>Default value:</b> 0.5</p>
+<h4><span class="mw-headline" id="Focus_MaxTries">Focus_MaxTries</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=7" title="Edit section: Focus MaxTries">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>number of tries to have focus in view</p>
+<p><b>Default value:</b> 4</p>
+<h4><span class="mw-headline" id="Focus_StepHeightAdjustment">Focus_StepHeightAdjustment</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=8" title="Edit section: Focus StepHeightAdjustment">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Z offset step for every try</p>
+<p><b>Default value:</b> 64.0</p>
+<h4><span class="mw-headline" id="FocusPoint">FocusPoint</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=9" title="Edit section: FocusPoint">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="#CamFocusPointParams">CamFocusPointParams</a></p>
+<p>current focus point</p>
+<h3><span class="mw-headline" id="Property_group_.27GameThirdPersonCamera.27">Property group 'GameThirdPersonCamera'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=10" title="Edit section: Property group 'GameThirdPersonCamera'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="bDrawDebug">bDrawDebug</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=11" title="Edit section: bDrawDebug">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected</p>
+<p>toggles debug mode</p>
+<h4><span class="mw-headline" id="CurrentCamMode">CurrentCamMode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=12" title="Edit section: CurrentCamMode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_GameThirdPersonCameraMode_(UDK).html" title="UE3:GameThirdPersonCameraMode (UDK)">GameThirdPersonCameraMode</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> editinline, transient</p>
+<p>Current GearCam Mode</p>
+<h4><span class="mw-headline" id="DirectLookInterpSpeed">DirectLookInterpSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=13" title="Edit section: DirectLookInterpSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 6.0</p>
+<h4><span class="mw-headline" id="OffsetAdjustmentInterpSpeed">OffsetAdjustmentInterpSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=14" title="Edit section: OffsetAdjustmentInterpSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected, const</p>
+<p>We optionally interpolate the results of AdjustViewOffset() to prevent pops when a cameramode changes its adjustment suddenly.</p>
+<p><b>Default value:</b> 12.0</p>
+<h4><span class="mw-headline" id="OriginOffsetInterpSpeed">OriginOffsetInterpSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=15" title="Edit section: OriginOffsetInterpSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>origin offset interpolation speed</p>
+<p><b>Default value:</b> 8.0</p>
+<h4><span class="mw-headline" id="PenetrationAvoidanceFeelers">PenetrationAvoidanceFeelers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=16" title="Edit section: PenetrationAvoidanceFeelers">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="#PenetrationAvoidanceFeeler">PenetrationAvoidanceFeeler</a>&gt;</p>
+<p><br />
+<b>Default value, index 0:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="#PenetrationAvoidanceFeeler">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>Extent</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>X</td>
+<td>14.0</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>14.0</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>14.0</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>PawnWeight</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>WorldWeight</td>
+<td>1.0</td>
+</tr>
+</table>
+<p><b>Default value, index 1:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="#PenetrationAvoidanceFeeler">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>AdjustmentRot</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>Pitch</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Roll</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Yaw</td>
+<td>3072</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>PawnWeight</td>
+<td>0.75</td>
+</tr>
+<tr>
+<td>WorldWeight</td>
+<td>0.75</td>
+</tr>
+</table>
+<p><b>Default value, index 2:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="#PenetrationAvoidanceFeeler">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>AdjustmentRot</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>Pitch</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Roll</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Yaw</td>
+<td>-3072</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>PawnWeight</td>
+<td>0.75</td>
+</tr>
+<tr>
+<td>WorldWeight</td>
+<td>0.75</td>
+</tr>
+</table>
+<p><b>Default value, index 3:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="#PenetrationAvoidanceFeeler">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>AdjustmentRot</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>Pitch</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Roll</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Yaw</td>
+<td>6144</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>PawnWeight</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>WorldWeight</td>
+<td>0.5</td>
+</tr>
+</table>
+<p><b>Default value, index 4:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="#PenetrationAvoidanceFeeler">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>AdjustmentRot</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>Pitch</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Roll</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Yaw</td>
+<td>-6144</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>PawnWeight</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>WorldWeight</td>
+<td>0.5</td>
+</tr>
+</table>
+<p><b>Default value, index 5:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="#PenetrationAvoidanceFeeler">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>AdjustmentRot</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>Pitch</td>
+<td>3640</td>
+</tr>
+<tr>
+<td>Roll</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Yaw</td>
+<td>0</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>PawnWeight</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>WorldWeight</td>
+<td>1.0</td>
+</tr>
+</table>
+<p><b>Default value, index 6:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="#PenetrationAvoidanceFeeler">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>AdjustmentRot</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>Pitch</td>
+<td>-3640</td>
+</tr>
+<tr>
+<td>Roll</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Yaw</td>
+<td>0</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>PawnWeight</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>WorldWeight</td>
+<td>0.5</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="PenetrationBlendInTime">PenetrationBlendInTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=17" title="Edit section: PenetrationBlendInTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Time to transition from ideal location to blocked position, after camera collision with geometry. (used only by predictive feelers)</p>
+<p><b>Default value:</b> 0.1</p>
+<h4><span class="mw-headline" id="PenetrationBlendOutTime">PenetrationBlendOutTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=18" title="Edit section: PenetrationBlendOutTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Time to transition from blocked location to ideal position, after camera collision with geometry.</p>
+<p><b>Default value:</b> 0.15</p>
+<h4><span class="mw-headline" id="PenetrationExtentScale">PenetrationExtentScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=19" title="Edit section: PenetrationExtentScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>camera extent scale to use when calculating penetration for this segment</p>
+<p><b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="ThirdPersonCamDefault">ThirdPersonCamDefault</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=20" title="Edit section: ThirdPersonCamDefault">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_GameThirdPersonCameraMode_(UDK).html" title="UE3:GameThirdPersonCameraMode (UDK)">GameThirdPersonCameraMode</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected, editinline</p>
+<p>Base camera position when walking</p>
+<h4><span class="mw-headline" id="ThirdPersonCamDefaultClass">ThirdPersonCamDefaultClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=21" title="Edit section: ThirdPersonCamDefaultClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_GameThirdPersonCameraMode_(UDK).html" title="UE3:GameThirdPersonCameraMode (UDK)">GameThirdPersonCameraMode</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected</p>
+<p><br />
+<b>Default value:</b> <a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_GameThirdPersonCameraMode_Default_(UDK).html" title="UE3:GameThirdPersonCameraMode Default (UDK)">GameFramework.GameThirdPersonCameraMode_Default</a>'</p>
+<h4><span class="mw-headline" id="WorstLocInterpSpeed">WorstLocInterpSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=22" title="Edit section: WorstLocInterpSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 8.0</p>
+<h4><span class="mw-headline" id="WorstLocPenetrationExtentScale">WorstLocPenetrationExtentScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=23" title="Edit section: WorstLocPenetrationExtentScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>camera extent scale to use when calculating penetration for this segment</p>
+<p><b>Default value:</b> 1.0</p>
+<h3><span class="mw-headline" id="Internal_variables">Internal variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=24" title="Edit section: Internal variables">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="ActualFocusPointWorldLoc">ActualFocusPointWorldLoc</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=25" title="Edit section: ActualFocusPointWorldLoc">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient, protected</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bDoingACameraTurn">bDoingACameraTurn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=26" title="Edit section: bDoingACameraTurn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bDoingDirectLook">bDoingDirectLook</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=27" title="Edit section: bDoingDirectLook">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bFocusPointSet">bFocusPointSet</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=28" title="Edit section: bFocusPointSet">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>do we have a focus point set?</p>
+<h4><span class="mw-headline" id="bFocusPointSuccessful">bFocusPointSuccessful</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=29" title="Edit section: bFocusPointSuccessful">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected, transient</p>
+<p>Internal. TRUE if the focus point was good and the camera looked at it, FALSE otherise (e.g. failed the trace).</p>
+<h4><span class="mw-headline" id="bTurnAlignTargetWhenFinished">bTurnAlignTargetWhenFinished</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=30" title="Edit section: bTurnAlignTargetWhenFinished">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="DirectLookYaw">DirectLookYaw</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=31" title="Edit section: DirectLookYaw">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>direct look vars</p>
+<h4><span class="mw-headline" id="LastActualCameraOrigin">LastActualCameraOrigin</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=32" title="Edit section: LastActualCameraOrigin">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Last actual camera origin position, for lazy cam interpolation. It's only applied to player's origin, not view offsets, for faster/smoother response</p>
+<h4><span class="mw-headline" id="LastActualCameraOriginRot">LastActualCameraOriginRot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=33" title="Edit section: LastActualCameraOriginRot">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastActualOriginOffset">LastActualOriginOffset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=34" title="Edit section: LastActualOriginOffset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Last pawn relative offset, for slow offsets interpolation. This is because this offset is relative to the Pawn's rotation, which can change abruptly (when snapping to cover). Used to adjust the camera origin (evade, lean, pop up, blind fire, reload..)</p>
+<h4><span class="mw-headline" id="LastCamFOV">LastCamFOV</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=35" title="Edit section: LastCamFOV">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>last CamFOV for war cam interpolation</p>
+<h4><span class="mw-headline" id="LastFocusChangeTime">LastFocusChangeTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=36" title="Edit section: LastFocusChangeTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient, protected</p>
+<p>Last time focus point changed (location)</p>
+<h4><span class="mw-headline" id="LastFocusPointLoc">LastFocusPointLoc</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=37" title="Edit section: LastFocusPointLoc">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient, protected</p>
+<p>Last focus point location</p>
+<h4><span class="mw-headline" id="LastHeightAdjustment">LastHeightAdjustment</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=38" title="Edit section: LastHeightAdjustment">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>last offset adjustment, for smooth blend out</p>
+<h4><span class="mw-headline" id="LastOffsetAdjustment">LastOffsetAdjustment</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=39" title="Edit section: LastOffsetAdjustment">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protectedwrite, transient</p>
+<p>Offset adjustment from last tick, used for interpolation.</p>
+<h4><span class="mw-headline" id="LastPitchAdjustment">LastPitchAdjustment</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=40" title="Edit section: LastPitchAdjustment">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>last adjusted pitch, for smooth blend out</p>
+<h4><span class="mw-headline" id="LastPostCamTurnYaw">LastPostCamTurnYaw</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=41" title="Edit section: LastPostCamTurnYaw">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected, transient</p>
+<p>Saved data for camera turn "align when finished" functionality</p>
+<h4><span class="mw-headline" id="LastPreModifierCameraLoc">LastPreModifierCameraLoc</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=42" title="Edit section: LastPreModifierCameraLoc">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Last location and rotation of the camera, cached before camera modifiers are applied.</p>
+<h4><span class="mw-headline" id="LastPreModifierCameraRot">LastPreModifierCameraRot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=43" title="Edit section: LastPreModifierCameraRot">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastViewOffset">LastViewOffset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=44" title="Edit section: LastViewOffset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>View relative offset. This offset is relative to Controller's rotation, mainly used for Pitch positioning.</p>
+<h4><span class="mw-headline" id="LastWorstLocationLocal">LastWorstLocationLocal</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=45" title="Edit section: LastWorstLocationLocal">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastYawAdjustment">LastYawAdjustment</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=46" title="Edit section: LastYawAdjustment">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>last adjusted Yaw, for smooth blend out</p>
+<h4><span class="mw-headline" id="LeftoverPitchAdjustment">LeftoverPitchAdjustment</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=47" title="Edit section: LeftoverPitchAdjustment">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>pitch adjustment when keeping target is done in 2 parts. this is the amount to pitch in part 2 (post view offset application)</p>
+<h4><span class="mw-headline" id="PenetrationBlockedPct">PenetrationBlockedPct</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=48" title="Edit section: PenetrationBlockedPct">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected</p>
+<p>Percentage of distance blocked by collision. From worst location, to desired location.</p>
+<p><b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="TurnCurTime">TurnCurTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=49" title="Edit section: TurnCurTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected</p>
+<p>Vars for code-driven camera turns</p>
+<h4><span class="mw-headline" id="TurnDelay">TurnDelay</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=50" title="Edit section: TurnDelay">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TurnEndAngle">TurnEndAngle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=51" title="Edit section: TurnEndAngle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TurnStartAngle">TurnStartAngle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=52" title="Edit section: TurnStartAngle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TurnTotalTime">TurnTotalTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=53" title="Edit section: TurnTotalTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="WorstLocBlockedPct">WorstLocBlockedPct</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=54" title="Edit section: WorstLocBlockedPct">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>obstruction pct from origin to worstloc origin</p>
+<h2><span class="mw-headline" id="Structs">Structs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=55" title="Edit section: Structs">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="CamFocusPointParams">CamFocusPointParams</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=56" title="Edit section: CamFocusPointParams">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<p>Camera focus point definition</p>
+<dl>
+<dt><a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a> FocusActor&#160;</dt>
+<dd>Actor to focus on.</dd>
+<dt><a href="Name.html" title="Name" class="mw-redirect">name</a> FocusBoneName&#160;</dt>
+<dd>Bone name to focus on. Ignored if FocusActor is None or has no SkeletalMeshComponent</dd>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> FocusWorldLoc&#160;</dt>
+<dd>Focus point location in world space. Ignored if FocusActor is not None.</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> CameraFOV&#160;</dt>
+<dd>If &gt;0, FOV to force upon camera while looking at this point (degrees)</dd>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Object.Vector2D</a> InterpSpeedRange&#160;</dt>
+<dd>Interpolation speed (X=slow/focus loc moving, Y=fast/focus loc steady/blending out)</dd>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Object.Vector2D</a> InFocusFOV&#160;</dt>
+<dd>FOV where target is considered in focus, no correction is made. X is yaw tolerance, Y is pitch tolerance.</dd>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> bAlwaysFocus&#160;</dt>
+<dd>If FALSE, focus only if point roughly in view; if TRUE, focus no matter where player is looking</dd>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> bAdjustCamera&#160;</dt>
+<dd>If TRUE, camera adjusts to keep player in view, if FALSE the camera remains fixed and just rotates in place</dd>
+<dt><a href="Bool.html" title="Bool" class="mw-redirect">bool</a> bIgnoreTrace&#160;</dt>
+<dd>If TRUE, ignore world trace to find a good spot</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> FocusPitchOffsetDeg&#160;</dt>
+<dd>Offsets the pitch. e.g. 20 will look 20 degrees above the target</dd>
+</dl>
+<h3><span class="mw-headline" id="PenetrationAvoidanceFeeler">PenetrationAvoidanceFeeler</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=57" title="Edit section: PenetrationAvoidanceFeeler">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<p>Struct defining a feeler ray used for camera penetration avoidance.</p>
+<dl>
+<dt><a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a> AdjustmentRot&#160;</dt>
+<dd>rotator describing deviance from main ray</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> WorldWeight&#160;</dt>
+<dd>how much this feeler affects the final position if it hits the world</dd>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> PawnWeight&#160;</dt>
+<dd>how much this feeler affects the final position if it hits a Pawn (setting to 0 will not attempt to collide with pawns at all)</dd>
+<dt><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a> Extent&#160;</dt>
+<dd>extent to use for collision when firing this ray</dd>
+</dl>
+<h2><span class="mw-headline" id="Functions">Functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=58" title="Edit section: Functions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Native_functions">Native functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=59" title="Edit section: Native functions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="EndTurn">EndTurn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=60" title="Edit section: EndTurn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>EndTurn</b> ()</div>
+<p>Stops a camera rotation.</p>
+<h4><span class="mw-headline" id="PlayerUpdateCamera">PlayerUpdateCamera</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=61" title="Edit section: PlayerUpdateCamera">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native protected function <b>PlayerUpdateCamera</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>P</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>DeltaTime</b>, out&#160;<a href="UE3_Camera_(UDK).html#TViewTarget" title="UE3:Camera (UDK)">Camera.TViewTarget</a>&#160;<b>OutVT</b>)</div>
+<p>Internal camera updating code</p>
+<h3><span class="mw-headline" id="Events">Events</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=62" title="Edit section: Events">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="GetDesiredFOV">GetDesiredFOV</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=63" title="Edit section: GetDesiredFOV">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>GetDesiredFOV</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>ViewedPawn</b>)</div>
+<p>returns camera mode desired FOV</p>
+<h4><span class="mw-headline" id="ModifyPostProcessSettings">ModifyPostProcessSettings</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=64" title="Edit section: ModifyPostProcessSettings">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>ModifyPostProcessSettings</b> (out&#160;<a href="UE3_PostProcessVolume_structs_(UDK).html#PostProcessSettings" title="UE3:PostProcessVolume structs (UDK)">PostProcessVolume.PostProcessSettings</a>&#160;<b>PP</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_GameCameraBase_(UDK).html#ModifyPostProcessSettings" title="UE3:GameCameraBase (UDK)">GameCameraBase.ModifyPostProcessSettings</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="UpdateFocusPoint">UpdateFocusPoint</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=65" title="Edit section: UpdateFocusPoint">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">protected event <b>UpdateFocusPoint</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>P</b>)</div>
+<p>Per-tick focus point processing, for polling gamestate and adjusting as desired. Override if you want other systems or criteria to set focus points.</p>
+<h3><span class="mw-headline" id="Other_instance_functions">Other instance functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=66" title="Edit section: Other instance functions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="AdjustFocusPointInterpolation">AdjustFocusPointInterpolation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=67" title="Edit section: AdjustFocusPointInterpolation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AdjustFocusPointInterpolation</b> (<a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a>&#160;<b>Delta</b>)</div>
+<p>Use this if you keep the same focus point, but move the camera basis around underneath it</p>
+<pre>
+e.g. you want the camera to hold steady focus, but the camera target is rotating
+</pre>
+<h4><span class="mw-headline" id="AdjustTurn">AdjustTurn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=68" title="Edit section: AdjustTurn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>AdjustTurn</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>AngleOffset</b>)</div>
+<p>Adjusts a camera rotation. Useful for situations where the basis of the rotation changes.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>AngleOffset</i> - Yaw adjustment to apply (in Rotator units)</li>
+</ul>
+<h4><span class="mw-headline" id="BeginTurn">BeginTurn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=69" title="Edit section: BeginTurn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>BeginTurn</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>StartAngle</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>EndAngle</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>TimeSec</b>, optional&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>DelaySec</b>, optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bAlignTargetWhenFinished</b>)</div>
+<p>Initiates a forced camera rotation.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>StartAngle</i> - Starting Yaw offset (in Rotator units)</li>
+<li><i>EndAngle</i> - Finishing Yaw offset (in Rotator units)</li>
+<li><i>TimeSec</i> - How long the rotation should take</li>
+<li><i>DelaySec</i> - How long to wait before starting the rotation</li>
+</ul>
+<h4><span class="mw-headline" id="ClearFocusPoint">ClearFocusPoint</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=70" title="Edit section: ClearFocusPoint">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ClearFocusPoint</b> (optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bLeaveCameraRotation</b>)</div>
+<p>Clear focus point</p>
+<h4><span class="mw-headline" id="CreateCameraMode">CreateCameraMode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=71" title="Edit section: CreateCameraMode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">protected function <a href="UE3_GameThirdPersonCameraMode_(UDK).html" title="UE3:GameThirdPersonCameraMode (UDK)">GameThirdPersonCameraMode</a>&#160;<b>CreateCameraMode</b> (<a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_GameThirdPersonCameraMode_(UDK).html" title="UE3:GameThirdPersonCameraMode (UDK)">GameThirdPersonCameraMode</a>&gt;&#160;<b>ModeClass</b>)</div>
+<p>Internal.</p>
+<h4><span class="mw-headline" id="FindBestCameraMode">FindBestCameraMode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=72" title="Edit section: FindBestCameraMode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_GameThirdPersonCameraMode_(UDK).html" title="UE3:GameThirdPersonCameraMode (UDK)">GameThirdPersonCameraMode</a>&#160;<b>FindBestCameraMode</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>P</b>)</div>
+<p>Evaluates the game state and returns the proper camera mode.</p>
+<p><b>Returns:</b></p>
+<dl>
+<dd>new camera mode to use</dd>
+</dl>
+<h4><span class="mw-headline" id="GetActualFocusLocation">GetActualFocusLocation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=73" title="Edit section: GetActualFocusLocation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">protected function <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>GetActualFocusLocation</b> ()</div>
+<p>Internal. Returns the world space position of the current focus point.</p>
+<h4><span class="mw-headline" id="GetFocusActor">GetFocusActor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=74" title="Edit section: GetFocusActor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>GetFocusActor</b> ()</div>
+<p>Returns ref to the actor currently being used as a focus point, if any.</p>
+<h4><span class="mw-headline" id="Init">Init</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=75" title="Edit section: Init">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>Init</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_GameCameraBase_(UDK).html#Init" title="UE3:GameCameraBase (UDK)">GameCameraBase.Init</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="OnBecomeActive">OnBecomeActive</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=76" title="Edit section: OnBecomeActive">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>OnBecomeActive</b> (<a href="UE3_GameCameraBase_(UDK).html" title="UE3:GameCameraBase (UDK)">GameCameraBase</a>&#160;<b>OldCamera</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_GameCameraBase_(UDK).html#OnBecomeActive" title="UE3:GameCameraBase (UDK)">GameCameraBase.OnBecomeActive</a></p>
+<p>Called when Camera mode becomes active</p>
+<h4><span class="mw-headline" id="ProcessViewRotation">ProcessViewRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=77" title="Edit section: ProcessViewRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ProcessViewRotation</b> (<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>DeltaTime</b>, <a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>ViewTarget</b>, out&#160;<a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a>&#160;<b>out_ViewRotation</b>, out&#160;<a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a>&#160;<b>out_DeltaRot</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_GameCameraBase_(UDK).html#ProcessViewRotation" title="UE3:GameCameraBase (UDK)">GameCameraBase.ProcessViewRotation</a></p>
+<p>Gives cameras a chance to change player view rotation</p>
+<h4><span class="mw-headline" id="Reset">Reset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=78" title="Edit section: Reset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>Reset</b> ()</div>
+<p><br /></p>
+<h4><span class="mw-headline" id="ResetInterpolation">ResetInterpolation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=79" title="Edit section: ResetInterpolation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>ResetInterpolation</b> ()</div>
+<p><b>Overrides:</b> <a href="UE3_GameCameraBase_(UDK).html#ResetInterpolation" title="UE3:GameCameraBase (UDK)">GameCameraBase.ResetInterpolation</a></p>
+<p>Called to indicate that the next update should skip interpolation and snap to desired values.</p>
+<h4><span class="mw-headline" id="SetFocusOnActor">SetFocusOnActor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=80" title="Edit section: SetFocusOnActor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>SetFocusOnActor</b> (<a href="UE3_Actor_(UDK).html" title="UE3:Actor (UDK)">Actor</a>&#160;<b>FocusActor</b>, <a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>FocusBoneName</b>, <a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Object.Vector2D</a>&#160;<b>InterpSpeedRange</b>, <a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Object.Vector2D</a>&#160;<b>InFocusFOV</b>, optional&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>CameraFOV</b>, optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bAlwaysFocus</b>, optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bAdjustCamera</b>, optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bIgnoreTrace</b>, optional&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>FocusPitchOffsetDeg</b>)</div>
+<p>Tells camera to focus on the given actor.</p>
+<h4><span class="mw-headline" id="SetFocusOnLoc">SetFocusOnLoc</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=81" title="Edit section: SetFocusOnLoc">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>SetFocusOnLoc</b> (<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&#160;<b>FocusWorldLoc</b>, <a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Object.Vector2D</a>&#160;<b>InterpSpeedRange</b>, <a href="UE3_Object_structs_(UDK).html#Vector2D" title="UE3:Object structs (UDK)">Object.Vector2D</a>&#160;<b>InFocusFOV</b>, optional&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>CameraFOV</b>, optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bAlwaysFocus</b>, optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bAdjustCamera</b>, optional&#160;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>bIgnoreTrace</b>, optional&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>FocusPitchOffsetDeg</b>)</div>
+<p>Tells camera to focus on the given world position.</p>
+<h4><span class="mw-headline" id="UpdateCamera">UpdateCamera</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=82" title="Edit section: UpdateCamera">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">function <b>UpdateCamera</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>P</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>DeltaTime</b>, out&#160;<a href="UE3_Camera_(UDK).html#TViewTarget" title="UE3:Camera (UDK)">Camera.TViewTarget</a>&#160;<b>OutVT</b>)</div>
+<p><b>Overrides:</b> <a href="UE3_GameCameraBase_(UDK).html#UpdateCamera" title="UE3:GameCameraBase (UDK)">GameCameraBase.UpdateCamera</a></p>
+<p>Player Update Camera code</p>
+<h4><span class="mw-headline" id="UpdateCameraMode">UpdateCameraMode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)?section=83" title="Edit section: UpdateCameraMode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">final protected function <b>UpdateCameraMode</b> (<a href="UE3_Pawn_(UDK).html" title="UE3:Pawn (UDK)">Pawn</a>&#160;<b>P</b>)</div>
+<p>Update current camera modes. Pick Best, handle transitions, etc.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.483 seconds
+Real time usage: 0.496 seconds
+Preprocessor visited node count: 3875/1000000
+Preprocessor generated node count: 7658/1000000
+Post‐expand include size: 25684/2097152 bytes
+Template argument size: 8420/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  329.817      1 - -total
+ 45.95%  151.547     49 - Template:Tl
+ 39.85%  131.430     58 - Template:Samegame
+ 28.09%   92.652     22 - Template:Code
+ 25.00%   82.459      1 - Template:Infobox_class
+ 23.39%   77.156      1 - Template:Infobox_class/core
+ 16.18%   53.362     18 - Template:Cl
+  4.88%   16.087      2 - Template:Ch
+  2.05%    6.777      1 - Template:Autogenerated
+  1.58%    5.200      1 - Template:Classname
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:25879-0!*!0!!en!5!* and timestamp 20161216080809 and revision id 40949
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:GameThirdPersonCamera_(UDK)?oldid=40949#PenetrationAvoidanceFeeler">https://wiki.beyondunreal.com/UE3:GameThirdPersonCamera_(UDK)?oldid=40949#PenetrationAvoidanceFeeler</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_UDK-specific_classes.html" title="Category:UDK-specific classes">UDK-specific classes</a></li><li><a href="Category_Classes_in_UDK_package_GameFramework.html" title="Category:Classes in UDK package GameFramework">Classes in UDK package GameFramework</a></li><li><a href="Category_Subclasses_of_GameCameraBase_(UDK).html" title="Category:Subclasses of GameCameraBase (UDK)">Subclasses of GameCameraBase (UDK)</a></li><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_GameThirdPersonCamera_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:GameThirdPersonCamera_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:GameThirdPersonCamera_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:GameThirdPersonCamera_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AGameThirdPersonCamera+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AGameThirdPersonCamera+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:GameThirdPersonCamera_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:GameThirdPersonCamera_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:GameThirdPersonCamera_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:GameThirdPersonCamera_(UDK)?oldid=40949" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:GameThirdPersonCamera_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 07:39, 17 January 2010.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":142});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:PenetrationAvoidanceFeeler_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 11:32:54 GMT -->
+</html>

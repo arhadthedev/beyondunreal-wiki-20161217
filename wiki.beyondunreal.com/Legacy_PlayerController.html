@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:PlayerController by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:PlayerController - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_PlayerController.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:PlayerController","wgTitle":"PlayerController","wgCurRevisionId":5938,"wgRevisionId":5938,"wgArticleId":2474,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Class (UT2003)","Legacy Class (UT2004)","Legacy To Do"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:PlayerController","wgRelevantArticleId":2474,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_PlayerController skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Mostly Harmless
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:PlayerController</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class infobox-legacy"><a href="Legacy_UT2003.html" title="Legacy:UT2003" class="mw-redirect">UT2003</a>&#160;:: <a href="Legacy_Object.html" title="Legacy:Object">Object</a> &gt;&gt; <a href="Legacy_Actor.html" title="Legacy:Actor">Actor</a> &gt;&gt; <a href="Legacy_Controller.html" title="Legacy:Controller">Controller</a> &gt;&gt; PlayerController (Package: Engine)</div>
+<p>The player controller class determines what the player sees and how Bot players behave, tying in Bot AI functions to control the player Pawn. This class determines what the player sees when in first person view and in third person view and how the "camera" behaves. It handles things like view shaking and the display of fog. There are also handling functions in there for force-feedback events and support for more console commands than you can shake a stick at.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Properties"><span class="tocnumber">1</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Player_Info"><span class="tocnumber">1.1</span> <span class="toctext">Player Info</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Player_Input_Control"><span class="tocnumber">1.2</span> <span class="toctext">Player Input Control</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Player_Control_Flags"><span class="tocnumber">1.3</span> <span class="toctext">Player Control Flags</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#ForceFeedback"><span class="tocnumber">1.4</span> <span class="toctext">ForceFeedback</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#VoiceChat"><span class="tocnumber">1.5</span> <span class="toctext">VoiceChat</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Input_Bytes"><span class="tocnumber">1.6</span> <span class="toctext">Input Bytes</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Input_Floats"><span class="tocnumber">1.7</span> <span class="toctext">Input Floats</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Vehicle_Move_Replication"><span class="tocnumber">1.8</span> <span class="toctext">Vehicle Move Replication</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Vehicle_Check_Radius"><span class="tocnumber">1.9</span> <span class="toctext">Vehicle Check Radius</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Camera"><span class="tocnumber">1.10</span> <span class="toctext">Camera</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Audio"><span class="tocnumber">1.11</span> <span class="toctext">Audio</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Fixed_Visibility"><span class="tocnumber">1.12</span> <span class="toctext">Fixed Visibility</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Screen_Flashes"><span class="tocnumber">1.13</span> <span class="toctext">Screen Flashes</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Distance_Fog_Fading"><span class="tocnumber">1.14</span> <span class="toctext">Distance Fog Fading</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Remote_Pawn_ViewTargets"><span class="tocnumber">1.15</span> <span class="toctext">Remote Pawn ViewTargets</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Music"><span class="tocnumber">1.16</span> <span class="toctext">Music</span></a>
+<ul>
+<li class="toclevel-3 tocsection-18"><a href="#Move_Buffering"><span class="tocnumber">1.16.1</span> <span class="toctext">Move Buffering</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-19"><a href="#Progess_Indicator"><span class="tocnumber">1.17</span> <span class="toctext">Progess Indicator</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Localized_Strings"><span class="tocnumber">1.18</span> <span class="toctext">Localized Strings</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#ReplicationInfo"><span class="tocnumber">1.19</span> <span class="toctext">ReplicationInfo</span></a>
+<ul>
+<li class="toclevel-3 tocsection-22"><a href="#Stats_Logging"><span class="tocnumber">1.19.1</span> <span class="toctext">Stats Logging</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-23"><a href="#View_Shaking"><span class="tocnumber">1.20</span> <span class="toctext">View Shaking</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Components_.28_Inner_Classes_.29"><span class="tocnumber">1.21</span> <span class="toctext">Components ( Inner Classes )</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Camera_Control_for_Debugging.2FTweaking"><span class="tocnumber">1.22</span> <span class="toctext">Camera Control for Debugging/Tweaking</span></a>
+<ul>
+<li class="toclevel-3 tocsection-26"><a href="#BehindView_Camera_Adjustments"><span class="tocnumber">1.22.1</span> <span class="toctext">BehindView Camera Adjustments</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-27"><a href="#TeamBeacon"><span class="tocnumber">1.23</span> <span class="toctext">TeamBeacon</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#Demo_recording_view_rotation"><span class="tocnumber">1.24</span> <span class="toctext">Demo recording view rotation</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#Menu"><span class="tocnumber">1.25</span> <span class="toctext">Menu</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-30"><a href="#Structs"><span class="tocnumber">2</span> <span class="toctext">Structs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-31"><a href="#Voice_Chat"><span class="tocnumber">2.1</span> <span class="toctext">Voice Chat</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#Player_Names"><span class="tocnumber">2.2</span> <span class="toctext">Player Names</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#ClientAdjustPosition"><span class="tocnumber">2.3</span> <span class="toctext">ClientAdjustPosition</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-34"><a href="#Native_Functions"><span class="tocnumber">3</span> <span class="toctext">Native Functions</span></a></li>
+<li class="toclevel-1 tocsection-35"><a href="#Native_Events"><span class="tocnumber">4</span> <span class="toctext">Native Events</span></a></li>
+<li class="toclevel-1 tocsection-36"><a href="#Events"><span class="tocnumber">5</span> <span class="toctext">Events</span></a></li>
+<li class="toclevel-1 tocsection-37"><a href="#Related_Topics"><span class="tocnumber">6</span> <span class="toctext">Related Topics</span></a></li>
+<li class="toclevel-1 tocsection-38"><a href="#Class_Tree"><span class="tocnumber">7</span> <span class="toctext">Class Tree</span></a></li>
+<li class="toclevel-1 tocsection-39"><a href="#Discussion"><span class="tocnumber">8</span> <span class="toctext">Discussion</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Properties">Properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=1" title="Edit section: Properties">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Player_Info">Player Info</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=2" title="Edit section: Player Info">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Legacy_Player.html" title="Legacy:Player">player</a> Player (const)&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Player_Input_Control">Player Input Control</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=3" title="Edit section: Player Input Control">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>bool bLookUpStairs (globalconfig)&#160;</dt>
+<dd>look up/down stairs (player)</dd>
+<dt>bool bSnapToLevel (globalconfig)&#160;</dt>
+<dd>Snap to level eyeheight when not mouselooking</dd>
+<dt>bool bAlwaysMouseLook (globalconfig)&#160;</dt>
+<dt>bool bKeyboardLook (globalconfig)&#160;</dt>
+<dd>no snapping when true</dd>
+<dt>bool bCenterView&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Player_Control_Flags">Player Control Flags</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=4" title="Edit section: Player Control Flags">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>bool bBehindView&#160;</dt>
+<dd>Outside-the-player view.</dd>
+<dt>bool bFrozen&#160;</dt>
+<dd>set when game ends or player dies to temporarily prevent player from restarting (until cleared by timer)</dd>
+<dt>bool bPressedJump&#160;</dt>
+<dt>bool bDoubleJump&#160;</dt>
+<dt>bool bUpdatePosition&#160;</dt>
+<dt>bool bIsTyping&#160;</dt>
+<dt>bool bFixedCamera&#160;</dt>
+<dd>used to fix camera in position (to view animations)</dd>
+<dt>bool bJumpStatus&#160;</dt>
+<dd>used in net games</dd>
+<dt>bool bUpdating&#160;</dt>
+<dt>bool bNeverSwitchOnPickup (globalconfig)&#160;</dt>
+<dd>If true, don't automatically switch to picked up weapon</dd>
+<dt>bool bHideSpectatorBeacons&#160;</dt>
+<dt>bool bZooming&#160;</dt>
+<dt>bool bHideVehicleNoEntryIndicator&#160;</dt>
+<dt>bool bAlwaysLevel (globalconfig)&#160;</dt>
+<dt>bool bSetTurnRot&#160;</dt>
+<dt>bool bCheatFlying&#160;</dt>
+<dd>instantly stop in flying mode</dd>
+<dt>bool bFreeCamera&#160;</dt>
+<dd>free camera when in behindview mode (for checking out player models and animations)</dd>
+<dt>bool bZeroRoll&#160;</dt>
+<dt>bool bCameraPositionLocked&#160;</dt>
+<dt>bool bViewBot&#160;</dt>
+<dt>bool UseFixedVisibility&#160;</dt>
+<dt>bool bFreeCam&#160;</dt>
+<dd>In FreeCam mode to adjust the cam rotator</dd>
+<dt>bool bFreeCamZoom&#160;</dt>
+<dd>In zoom mode</dd>
+<dt>bool bFreeCamSwivel&#160;</dt>
+<dd>In swivel mode</dd>
+<dt>bool bBlockCloseCamera&#160;</dt>
+<dt>bool bValidBehindCamera&#160;</dt>
+<dt>bool bForcePrecache&#160;</dt>
+<dt>bool bClientDemo&#160;</dt>
+<dt>bool bAllActorsRelevant (const)&#160;</dt>
+<dd>used by UTTV. DO NOT SET THIS TRUE - it has a huge impact on network performance&#160;:</dd>
+<dt>bool bShortConnectTimeOut&#160;</dt>
+<dd>when true, reduces connect timeout to 15 seconds</dd>
+<dt>bool bPendingDestroy&#160;</dt>
+<dd>when true, playercontroller is being destroyed</dd>
+<dt>bool bEnableAmbientShake&#160;</dt>
+<dt>bool bNoVoiceMessages (globalconfig)&#160;</dt>
+<dt>bool bNoTextToSpeechVoiceMessages (globalconfig)&#160;</dt>
+<dt>bool bNoVoiceTaunts (globalconfig)&#160;</dt>
+<dt>bool bNoAutoTaunts (globalconfig)&#160;</dt>
+<dt>bool bAutoTaunt (globalconfig)&#160;</dt>
+<dt>bool bNoMatureLanguage (globalconfig)&#160;</dt>
+<dt>bool bDynamicNetSpeed (globalconfig)&#160;</dt>
+<dt>bool bSmallWeapons (globalconfig)&#160;</dt>
+<dt>bool bWeaponViewShake&#160;</dt>
+<dt>bool bLandingShake (globalconfig)&#160;</dt>
+<dt>bool bAimingHelp (globalconfig)&#160;</dt>
+<dt>bool bEnableStatsTracking (globalconfig)&#160;</dt>
+<dt>bool bOnlySpeakTeamText (globalconfig)&#160;</dt>
+<dt>bool bWasSpeedHack&#160;</dt>
+<dt>bool bIsSpaceFighter&#160;</dt>
+<dd>Hack for spacefighter joystick controls</dd>
+<dt>bool bWasSaturated (const)&#160;</dt>
+<dd>Used by servers to identify saturated client connections</dd>
+<dt>float FOVBias&#160;</dt>
+<dt>float DesiredFOV (globalconfig)&#160;</dt>
+<dt>float DefaultFOV (globalconfig)&#160;</dt>
+<dt>float ZoomLevel&#160;</dt>
+<dt>float DesiredZoomLevel&#160;</dt>
+<dt>EDoubleClickDir DoubleClickDir&#160;</dt>
+<dd>Direction of movement key double click (for special moves)</dd>
+<dt>byte AnnouncerLevel (globalconfig)&#160;</dt>
+<dd>0=none, 1=no possession announcements, 2=all</dd>
+<dt>byte AnnouncerVolume (globalconfig)&#160;</dt>
+<dd>1 to 4</dd>
+<dt>float TextToSpeechVoiceVolume (globalconfig)&#160;</dt>
+<dt>float MaxResponseTime&#160;</dt>
+<dd>How long server will wait for client move update before setting position</dd>
+<dt>float WaitDelay&#160;</dt>
+<dd>Delay time until can restart</dd>
+<dt><a href="Legacy_Pawn.html" title="Legacy:Pawn">Pawn</a> AcknowledgedPawn&#160;</dt>
+<dd>Used in net games so client can acknowledge it possessed a pawn</dd>
+<dt>HUD myHUD&#160;</dt>
+<dd>heads up display info</dd>
+<dt>float LastPlaySound&#160;</dt>
+<dt>float LastPlaySpeech&#160;</dt>
+<dt><a href="Legacy_Pawn.html" title="Legacy:Pawn">Pawn</a> TurnTarget&#160;</dt>
+<dt>int EnemyTurnSpeed (config)&#160;</dt>
+<dt>int GroundPitch&#160;</dt>
+<dt>rotator TurnRot180&#160;</dt>
+<dt>vector OldFloor&#160;</dt>
+<dd>Used by PlayerSpider mode - floor for which old rotation was based.</dd>
+<dt>array&lt;PlayerNameInfo&gt; PlayerNameArray (private, const)&#160;</dt>
+<dt><a href="Legacy_Security.html" title="Legacy:Security">Security</a> PlayerSecurity&#160;</dt>
+<dd>Used for Cheat Protection</dd>
+<dt>float LoginDelay&#160;</dt>
+<dt>float NextLoginTime&#160;</dt>
+<dt>float ForcePrecacheTime&#160;</dt>
+<dt>float LastPingUpdate&#160;</dt>
+<dt>float ExactPing&#160;</dt>
+<dt>float OldPing&#160;</dt>
+<dt>float SpectateSpeed&#160;</dt>
+<dt>float DynamicPingThreshold (globalconfig)&#160;</dt>
+<dt>float NextSpeedChange&#160;</dt>
+<dt>float VoiceChangeLimit&#160;</dt>
+<dt>int ClientCap&#160;</dt>
+<dt>AnnouncerQueueManager AnnouncerQueueManager&#160;</dt>
+<dd>Handling Announcer Queueing</dd>
+<dt>AnnouncerVoice StatusAnnouncer&#160;</dt>
+<dt>AnnouncerVoice RewardAnnouncer&#160;</dt>
+<dt>float LastActiveTime&#160;</dt>
+<dd>used to kick idlers</dd>
+<dt>Actor CalcViewActor&#160;</dt>
+<dd>optimize PlayerCalcView</dd>
+<dt>vector CalcViewActorLocation&#160;</dt>
+<dt>vector CalcViewLocation&#160;</dt>
+<dt>rotator CalcViewRotation&#160;</dt>
+<dt>float LastPlayerCalcView&#160;</dt>
+<dt>float LastBroadcastTime&#160;</dt>
+<dt>string LastBroadcastString[4]&#160;</dt>
+<dt>float LastSpeedHackLog&#160;</dt>
+<dt>string PlayerOwnerName&#160;</dt>
+<dd>for savegames</dd>
+<dt>ClientAdjustment PendingAdjustment&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="ForceFeedback">ForceFeedback</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=5" title="Edit section: ForceFeedback">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>bool bEnablePickupForceFeedback (globalconfig)&#160;</dt>
+<dt>bool bEnableWeaponForceFeedback (globalconfig)&#160;</dt>
+<dt>bool bEnableDamageForceFeedback (globalconfig)&#160;</dt>
+<dt>bool bEnableGUIForceFeedback (globalconfig)&#160;</dt>
+<dt>bForceFeedbackSupported&#160;</dt>
+<dd>true if a device is detected</dd>
+</dl>
+<h3><span class="mw-headline" id="VoiceChat">VoiceChat</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=6" title="Edit section: VoiceChat">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>bool bVoiceChatEnabled&#160;</dt>
+<dd>Whether voice chat is enabled on this client</dd>
+<dt>bool bEnableInitialChatRoom (globalconfig)&#160;</dt>
+<dd>Enables speaking on DefaultActiveChannel upon joining server</dd>
+<dt>bool bViewingMatineeCinematic&#160;</dt>
+<dt>bool bCustomListener&#160;</dt>
+<dt>bool bAcuteHearing&#160;</dt>
+<dd>Makes playercontroller hear much better (used to magnify hit sounds caused by player)</dd>
+<dt>bool bMenuBeforeRespawn&#160;</dt>
+<dd>Forces the midgame menu to pop up before player can click to respawn</dd>
+<dt>bool bSkippedLastUpdate&#160;</dt>
+<dt>bool bLastPressedJump&#160;</dt>
+<dt>byte AutoJoinMask (globalconfig)&#160;</dt>
+<dd>Contains a bit-mask of which channels to auto-join ( 1 - Public, 2 - Local, 4 - Team )</dd>
+<dt>class&lt;<a href="https://wiki.beyondunreal.com/edit/Legacy:ChatRoomMessage?redlink=1" class="new" title="Legacy:ChatRoomMessage (page does not exist)">ChatRoomMessage</a>&gt; ChatRoomMessageClass&#160;</dt>
+<dt>array&lt;StoredChatPassword&gt; StoredChatPasswords (globalconfig)&#160;</dt>
+<dt>VoiceChatRoom ActiveRoom&#160;</dt>
+<dd>The chatroom we're currently speaking to</dd>
+<dt>string LastActiveChannel (globalconfig)&#160;</dt>
+<dd>Stores the currently active channel when switching maps</dd>
+<dt>string VoiceChatCodec (globalconfig)&#160;</dt>
+<dd>Which voice chat codec to request in internet games (will only be used if it exists on server)</dd>
+<dt>string VoiceChatLANCodec (globalconfig)&#160;</dt>
+<dd>Which voice chat codec to request in LAN games</dd>
+<dt>string ChatPassword (globalconfig)&#160;</dt>
+<dd>Password for our personal chat room</dd>
+<dt>string DefaultActiveChannel (globalconfig)&#160;</dt>
+<dd>Channel we initially want to make active</dd>
+</dl>
+<h3><span class="mw-headline" id="Input_Bytes">Input Bytes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=7" title="Edit section: Input Bytes">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>byte bStrafe (input)&#160;</dt>
+<dt>byte bSnapLevel (input)&#160;</dt>
+<dt>byte bLook (input)&#160;</dt>
+<dt>byte bFreeLook (input)&#160;</dt>
+<dt>byte bTurn180 (input)&#160;</dt>
+<dt>byte bTurnToNearest (input)&#160;</dt>
+<dt>byte bXAxis (input)&#160;</dt>
+<dt>byte bYAxis (input)&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Input_Floats">Input Floats</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=8" title="Edit section: Input Floats">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>float aBaseX (input)&#160;</dt>
+<dt>float aBaseY (input)&#160;</dt>
+<dt>float aBaseZ (input)&#160;</dt>
+<dt>float aMouseX (input)&#160;</dt>
+<dt>float aMouseY (input)&#160;</dt>
+<dt>float aForward (input)&#160;</dt>
+<dt>float aTurn (input)&#160;</dt>
+<dt>float aStrafe (input)&#160;</dt>
+<dt>float aUp (input)&#160;</dt>
+<dt>float aLookUp (input)&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Vehicle_Move_Replication">Vehicle Move Replication</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=9" title="Edit section: Vehicle Move Replication">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>float aLastForward&#160;</dt>
+<dt>float aLastStrafe&#160;</dt>
+<dt>float aLastUp&#160;</dt>
+<dt>float NumServerDrives&#160;</dt>
+<dt>float NumSkips&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Vehicle_Check_Radius">Vehicle Check Radius</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=10" title="Edit section: Vehicle Check Radius">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>float VehicleCheckRadius&#160;</dt>
+<dd>Radius that is checked for nearby vehicles when pressing use</dd>
+<dt>bool bSuccessfulUse&#160;</dt>
+<dd>Gives PC a hint that UsedBy was successful</dd>
+</dl>
+<h3><span class="mw-headline" id="Camera">Camera</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=11" title="Edit section: Camera">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>int ShowFlags&#160;</dt>
+<dt>int Misc1&#160;</dt>
+<dt>int Misc2&#160;</dt>
+<dt>int RendMap&#160;</dt>
+<dt>float OrthoZoom&#160;</dt>
+<dd>Orthogonal/map view zoom factor.</dd>
+<dt><a href="Legacy_Actor.html" title="Legacy:Actor">Actor</a> ViewTarget (const)&#160;</dt>
+<dt><a href="Legacy_Controller.html" title="Legacy:Controller">Controller</a> RealViewTarget (const)&#160;</dt>
+<dt><strong class="selflink">PlayerController</strong> DemoViewer&#160;</dt>
+<dt>float CameraDist&#160;</dt>
+<dd>Multiplier for behindview camera dist</dd>
+<dt>range CameraDistRange&#160;</dt>
+<dt>vector OldCameraLoc&#160;</dt>
+<dd>Used in behindview calculations</dd>
+<dt>rotator OldCameraRot&#160;</dt>
+<dt>array&lt;<a href="Legacy_CameraEffect.html" title="Legacy:CameraEffect">CameraEffect</a>&gt; CameraEffects (transient)&#160;</dt>
+<dd>A stack of camera effects.</dd>
+</dl>
+<h3><span class="mw-headline" id="Audio">Audio</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=12" title="Edit section: Audio">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>vector ListenerLocation&#160;</dt>
+<dt>rotator ListenerRotation&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Fixed_Visibility">Fixed Visibility</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=13" title="Edit section: Fixed Visibility">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>vector FixedLocation&#160;</dt>
+<dt>rotator FixedRotation&#160;</dt>
+<dt>matrix RenderWorldToCamera&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Screen_Flashes">Screen Flashes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=14" title="Edit section: Screen Flashes">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>vector FlashScale&#160;</dt>
+<dt>vector FlashFog&#160;</dt>
+<dt>float ConstantGlowScale&#160;</dt>
+<dt>vector ConstantGlowFog&#160;</dt>
+<dt>float ScreenFlashScaling (globalconfig)&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Distance_Fog_Fading">Distance Fog Fading</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=15" title="Edit section: Distance Fog Fading">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>color LastDistanceFogColor&#160;</dt>
+<dt>float LastDistanceFogStart&#160;</dt>
+<dt>float LastDistanceFogEnd&#160;</dt>
+<dt>float CurrentDistanceFogEnd&#160;</dt>
+<dt>float TimeSinceLastFogChange&#160;</dt>
+<dt>int LastZone&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Remote_Pawn_ViewTargets">Remote Pawn ViewTargets</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=16" title="Edit section: Remote Pawn ViewTargets">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>rotator TargetViewRotation&#160;</dt>
+<dt>rotator BlendedTargetViewRotation&#160;</dt>
+<dt>float TargetEyeHeight&#160;</dt>
+<dt>vector TargetWeaponViewOffset&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Music">Music</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=17" title="Edit section: Music">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>string Song&#160;</dt>
+<dt>EMusicTransition Transition&#160;</dt>
+</dl>
+<h4><span class="mw-headline" id="Move_Buffering">Move Buffering</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=18" title="Edit section: Move Buffering">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><i>For network games, clients save their un-acknowledged moves in order to replay them when they get position updates from the server.</i></p>
+<dl>
+<dt><a href="Legacy_SavedMove.html" title="Legacy:SavedMove">SavedMove</a> SavedMoves&#160;</dt>
+<dd>buffered moves pending position updates</dd>
+<dt><a href="Legacy_SavedMove.html" title="Legacy:SavedMove">SavedMove</a> FreeMoves&#160;</dt>
+<dd>freed moves, available for buffering</dd>
+<dt><a href="Legacy_SavedMove.html" title="Legacy:SavedMove">SavedMove</a> PendingMove&#160;</dt>
+<dt>float CurrentTimeStamp</dt>
+<dt>float LastUpdateTime&#160;</dt>
+<dt>float ServerTimeStamp&#160;</dt>
+<dt>float TimeMargin&#160;</dt>
+<dt>float ClientUpdateTime&#160;</dt>
+<dt>float MaxTimeMargin&#160;</dt>
+<dt>float TimeMarginSlack (globalconfig)&#160;</dt>
+<dd>OBSOLETE</dd>
+<dt><a href="Legacy_Weapon.html" title="Legacy:Weapon">Weapon</a> OldClientWeapon&#160;</dt>
+<dt>int WeaponUpdate&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Progess_Indicator">Progess Indicator</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=19" title="Edit section: Progess Indicator">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><i>Used by the engine to provide status messages (HUD is responsible for displaying these).</i></p>
+<dl>
+<dt>string ProgressMessage[4]&#160;</dt>
+<dt>color ProgressColor[4]&#160;</dt>
+<dt>float ProgressTimeOut&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Localized_Strings">Localized Strings</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=20" title="Edit section: Localized Strings">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>string QuickSaveString (localized)&#160;</dt>
+<dt>string NoPauseMessage (localized)&#160;</dt>
+<dt>string ViewingFrom (localized)&#160;</dt>
+<dt>string OwnCamera (localized)&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="ReplicationInfo">ReplicationInfo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=21" title="Edit section: ReplicationInfo">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Legacy_GameReplicationInfo.html" title="Legacy:GameReplicationInfo">GameReplicationInfo</a> GameReplicationInfo&#160;</dt>
+<dt><a href="Legacy_VoiceChatReplicationInfo.html" title="Legacy:VoiceChatReplicationInfo">VoiceChatReplicationInfo</a> VoiceReplicationInfo&#160;</dt>
+<dt><a href="Legacy_VotingReplicationInfoBase.html" title="Legacy:VotingReplicationInfoBase">VotingReplicationInfoBase</a> VoteReplicationInfo&#160;</dt>
+</dl>
+<h4><span class="mw-headline" id="Stats_Logging">Stats Logging</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=22" title="Edit section: Stats Logging">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<dl>
+<dt>string StatsUsername (globalconfig)&#160;</dt>
+<dt>string StatsPassword (globalconfig)&#160;</dt>
+<dt>class&lt;<a href="Legacy_LocalMessage.html" title="Legacy:LocalMessage">LocalMessage</a>&gt; LocalMessageClass&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="View_Shaking">View Shaking</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=23" title="Edit section: View Shaking">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><i>Affects roll, and offsets camera position.</i></p>
+<dl>
+<dt>vector ShakeOffsetRate&#160;</dt>
+<dt>vector ShakeOffset&#160;</dt>
+<dd>current magnitude to offset camera from shake</dd>
+<dt>vector ShakeOffsetTime&#160;</dt>
+<dt>vector ShakeOffsetMax&#160;</dt>
+<dt>vector ShakeRotRate&#160;</dt>
+<dt>vector ShakeRotMax&#160;</dt>
+<dt>rotator ShakeRot&#160;</dt>
+<dt>vector ShakeRotTime&#160;</dt>
+<dt>float AmbientShakeFalloffStartTime&#160;</dt>
+<dt>float AmbientShakeFalloffTime&#160;</dt>
+<dd>Time taken for shaking to stop after AmbientShakeFalloffStartTime has passed.</dd>
+<dt>vector AmbientShakeOffsetMag&#160;</dt>
+<dt>float AmbientShakeOffsetFreq&#160;</dt>
+<dt>rotator AmbientShakeRotMag&#160;</dt>
+<dt>float AmbientShakeRotFreq&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Components_.28_Inner_Classes_.29">Components ( Inner Classes )</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=24" title="Edit section: Components ( Inner Classes )">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt><a href="Legacy_CheatManager.html" title="Legacy:CheatManager">CheatManager</a> CheatManager (private, transient)&#160;</dt>
+<dd>Object within playercontroller that manages "cheat" commands</dd>
+<dt>class&lt;<a href="Legacy_CheatManager.html" title="Legacy:CheatManager">CheatManager</a>&gt; CheatClass&#160;</dt>
+<dd>Class of my CheatManager</dd>
+<dt><a href="Legacy_PlayerInput.html" title="Legacy:PlayerInput">PlayerInput</a> PlayerInput (private, transient)&#160;</dt>
+<dd>Object within playercontroller that manages player input.</dd>
+<dt>class&lt;<a href="Legacy_PlayerInput.html" title="Legacy:PlayerInput">PlayerInput</a>&gt; InputClass (config)&#160;</dt>
+<dd>Class of my PlayerInput</dd>
+<dt><a href="Legacy_AdminBase.html" title="Legacy:AdminBase">AdminBase</a> AdminManager (private, transient)&#160;</dt>
+<dt><a href="https://wiki.beyondunreal.com/edit/Legacy:MaplistManagerBase?redlink=1" class="new" title="Legacy:MaplistManagerBase (page does not exist)">MaplistManagerBase</a> MapHandler (transient)&#160;</dt>
+<dd>Used by AdminBase</dd>
+<dt>string PlayerChatType&#160;</dt>
+<dt><a href="Legacy_PlayerChatManager.html" title="Legacy:PlayerChatManager">PlayerChatManager</a> ChatManager&#160;</dt>
+<dd>Manages all chat, speech, and voice messages sent to player</dd>
+<dt>vector FailedPathStart (const)&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Camera_Control_for_Debugging.2FTweaking">Camera Control for Debugging/Tweaking</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=25" title="Edit section: Camera Control for Debugging/Tweaking">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="BehindView_Camera_Adjustments">BehindView Camera Adjustments</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=26" title="Edit section: BehindView Camera Adjustments">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<dl>
+<dt>rotator CameraDeltaRotation&#160;</dt>
+<dd>The rotator delta adjustment</dd>
+<dt>float CameraDeltaRad&#160;</dt>
+<dd>The zoom delta adjustment</dd>
+<dt>rotator CameraSwivel&#160;</dt>
+<dd>The swivel adjustment</dd>
+</dl>
+<h3><span class="mw-headline" id="TeamBeacon">TeamBeacon</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=27" title="Edit section: TeamBeacon">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>float TeamBeaconMaxDist&#160;</dt>
+<dt>float TeamBeaconPlayerInfoMaxDist&#160;</dt>
+<dt>Texture TeamBeaconTexture&#160;</dt>
+<dt>Texture LinkBeaconTexture&#160;</dt>
+<dt>Texture SpeakingBeaconTexture&#160;</dt>
+<dt>Color TeamBeaconTeamColors[2]&#160;</dt>
+<dt>Color TeamBeaconCustomColor&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Demo_recording_view_rotation">Demo recording view rotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=28" title="Edit section: Demo recording view rotation">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>int DemoViewPitch&#160;</dt>
+<dt>int DemoViewYaw&#160;</dt>
+</dl>
+<h3><span class="mw-headline" id="Menu">Menu</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=29" title="Edit section: Menu">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<dl>
+<dt>string MidGameMenuClass (config)&#160;</dt>
+<dd>Menu that is shown when Escape is pressed</dd>
+<dt>string DemoMenuClass (config)&#160;</dt>
+<dd>Menu used for demos</dd>
+<dt>string AdminMenuClass (config)&#160;</dt>
+<dd>Menu that is shown when adminmenu command is used</dd>
+<dt>string ChatPasswordMenuClass (config)&#160;</dt>
+<dd>Menu that appears when attempting to join a chatroom that has a password</dd>
+</dl>
+<h2><span class="mw-headline" id="Structs">Structs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=30" title="Edit section: Structs">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Voice_Chat">Voice Chat</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=31" title="Edit section: Voice Chat">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+;<span class="kw1">struct</span> StoredChatPassword
+ 
+<span class="br0">{</span>
+ 
+	<span class="kw1">var</span> <span class="kw5">string</span> ChatRoomName;
+ 
+	<span class="kw1">var</span> <span class="kw5">string</span> ChatRoomPassword;
+ 
+<span class="br0">}</span>;
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="Player_Names">Player Names</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=32" title="Edit section: Player Names">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+;<span class="kw1">struct</span> PlayerNameInfo
+ 
+<span class="br0">{</span>
+    <span class="kw1">var</span> <span class="kw5">string</span> mInfo;
+    <span class="kw1">var</span> <span class="kw5">color</span>  mColor;
+    <span class="kw1">var</span> <span class="kw5">float</span>  mXPos;
+    <span class="kw1">var</span> <span class="kw5">float</span>  mYPos;
+ 
+<span class="br0">}</span>;
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="ClientAdjustPosition">ClientAdjustPosition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=33" title="Edit section: ClientAdjustPosition">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+;<span class="kw1">struct</span> ClientAdjustment
+ 
+<span class="br0">{</span>
+    <span class="kw1">var</span> <span class="kw5">float</span> TimeStamp;
+    <span class="kw1">var</span> <span class="kw5">name</span> newState;
+    <span class="kw1">var</span> EPhysics newPhysics;
+    <span class="kw1">var</span> <span class="kw5">vector</span> NewLoc;
+    <span class="kw1">var</span> <span class="kw5">vector</span> NewVel;
+    <span class="kw1">var</span> <span class="kw9">actor</span> NewBase;
+    <span class="kw1">var</span> <span class="kw5">vector</span> NewFloor;
+ 
+<span class="br0">}</span>;
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="Native_Functions">Native Functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=34" title="Edit section: Native Functions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">native</span> <span class="kw1">final</span> <span class="kw1">function</span> SetNetSpeed<span class="br0">(</span><span class="kw5">int</span> NewSpeed<span class="br0">)</span>;
+ 
+<span class="kw1">native</span> <span class="kw1">final</span> <span class="kw1">function</span> <span class="kw5">string</span> GetPlayerIDHash<span class="br0">(</span><span class="br0">)</span>;
+ 
+<span class="kw1">native</span> <span class="kw1">final</span> <span class="kw1">function</span> <span class="kw5">string</span> GetPlayerNetworkAddress<span class="br0">(</span><span class="br0">)</span>;
+ 
+<span class="kw1">native</span> <span class="kw1">final</span> <span class="kw1">function</span> <span class="kw5">string</span> GetServerNetworkAddress<span class="br0">(</span><span class="br0">)</span>;
+ 
+<span class="kw1">native</span> <span class="kw1">function</span> <span class="kw5">string</span> <span class="kw4">ConsoleCommand</span><span class="br0">(</span> <span class="kw5">string</span> Command, <span class="kw1">optional</span> <span class="kw5">bool</span> bWriteToLog <span class="br0">)</span>;
+ 
+<span class="kw1">native</span> <span class="kw1">final</span> <span class="kw1">function</span> LevelInfo GetEntryLevel<span class="br0">(</span><span class="br0">)</span>;
+ 
+<span class="kw1">native</span><span class="br0">(</span><span class="nu0">544</span><span class="br0">)</span> <span class="kw1">final</span> <span class="kw1">function</span> ResetKeyboard<span class="br0">(</span><span class="br0">)</span>;
+ 
+<span class="kw1">native</span> <span class="kw1">final</span> <span class="kw1">private</span> <span class="kw1">function</span> ResetInput<span class="br0">(</span><span class="br0">)</span>;
+ 
+<span class="kw1">native</span> <span class="kw1">final</span> <span class="kw1">function</span> SetViewTarget<span class="br0">(</span><span class="kw9">Actor</span> NewViewTarget<span class="br0">)</span>;
+ 
+<span class="kw1">native</span> <span class="kw1">final</span> <span class="kw1">function</span> <span class="kw5">string</span> GetURLProtocol<span class="br0">(</span><span class="br0">)</span>;
+ 
+<span class="kw1">native</span> <span class="kw1">final</span> <span class="kw1">function</span> <span class="kw5">string</span> GetDefaultURL<span class="br0">(</span><span class="kw5">string</span> Option<span class="br0">)</span>;
+ 
+<span class="co1">// Execute a console command in the context of this player, then forward to Actor.ConsoleCommand.</span>
+ 
+<span class="kw1">native</span> <span class="kw1">function</span> CopyToClipboard<span class="br0">(</span> <span class="kw5">string</span> Text <span class="br0">)</span>;
+ 
+<span class="kw1">native</span> <span class="kw1">function</span> <span class="kw5">string</span> PasteFromClipboard<span class="br0">(</span><span class="br0">)</span>;
+ 
+<span class="kw1">native</span> <span class="kw1">final</span> <span class="kw1">function</span> <span class="kw5">bool</span> CheckSpeedHack<span class="br0">(</span><span class="kw5">float</span> DeltaTime<span class="br0">)</span>;
+ 
+<span class="kw1">native</span><span class="br0">(</span><span class="nu0">524</span><span class="br0">)</span> <span class="kw1">final</span> <span class="kw1">function</span> <span class="kw5">int</span> FindStairRotation<span class="br0">(</span><span class="kw5">float</span> DeltaTime<span class="br0">)</span>;
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="Native_Events">Native Events</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=35" title="Edit section: Native Events">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">native</span> <span class="kw1">event</span> ClientTravel<span class="br0">(</span> <span class="kw5">string</span> URL, ETravelType TravelType, <span class="kw5">bool</span> bItems <span class="br0">)</span>;
+ 
+<span class="co1">// Validation.</span>
+ 
+<span class="kw1">private</span> <span class="kw1">native</span> <span class="kw1">event</span> ClientValidate<span class="br0">(</span><span class="kw5">string</span> C<span class="br0">)</span>;
+ 
+<span class="kw1">private</span> <span class="kw1">native</span> <span class="kw1">event</span> ServerValidationResponse<span class="br0">(</span><span class="kw5">string</span> R<span class="br0">)</span>;
+ 
+<span class="kw1">native</span> <span class="kw1">event</span> ClientHearSound <span class="br0">(</span>
+    <span class="kw9">actor</span> <span class="kw9">Actor</span>,
+    <span class="kw5">int</span> Id,
+    <span class="kw5">sound</span> S,
+    <span class="kw5">vector</span> SoundLocation,
+    <span class="kw5">vector</span> Parameters,
+    <span class="kw5">bool</span> Attenuate
+ 
+<span class="br0">)</span>;
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="Events">Events</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=36" title="Edit section: Events">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<dl>
+<dt>ClientSetViewTarget ( Actor A )&#160;</dt>
+<dt>InitInputSystem()&#160;</dt>
+<dt>ReceiveLocalizedMessage( class&lt;<a href="Legacy_LocalMessage.html" title="Legacy:LocalMessage">LocalMessage</a>&gt; Message, optional int Switch, optional <a href="Legacy_PlayerReplicationInfo.html" title="Legacy:PlayerReplicationInfo">PlayerReplicationInfo</a> RelatedPRI_1, optional <a href="Legacy_PlayerReplicationInfo.html" title="Legacy:PlayerReplicationInfo">PlayerReplicationInfo</a> RelatedPRI_2, optional Object OptionalObject ) (simulated)&#160;</dt>
+<dt>ClientMessage( coerce string S, optional name Type )&#160;</dt>
+<dt>TeamMessage( <a href="Legacy_PlayerReplicationInfo.html" title="Legacy:PlayerReplicationInfo">PlayerReplicationInfo</a> PRI, coerce string S, name Type )&#160;</dt>
+<dt>PreClientTravel()&#160;</dt>
+<dt>ProgressCommand( string Cmd, string Msg1, string Msg2 )&#160;</dt>
+<dt>SetProgressMessage( int Index, string S, color C ) (exec)&#160;</dt>
+<dt>SetProgressTime( float T ) (exec)&#160;</dt>
+<dt>TravelPostAccept()&#160;</dt>
+<dt>PlayerTick( float DeltaTime )&#160;</dt>
+<dt>AddCameraEffect( <a href="Legacy_CameraEffect.html" title="Legacy:CameraEffect">CameraEffect</a> NewEffect, optional bool RemoveExisting )&#160;</dt>
+<dt>RemoveCameraEffect( <a href="Legacy_CameraEffect.html" title="Legacy:CameraEffect">CameraEffect</a> ExEffect )&#160;</dt>
+<dt>PlayerCalcView( out <a href="Legacy_Actor.html" title="Legacy:Actor">actor</a> ViewActor, out vector CameraLocation, out rotator CameraRotation )&#160;</dt>
+<dt>ClientOpenMenu( string Menu, optional bool bDisconnect, optional string Msg1, optional string Msg2 )&#160;</dt>
+<dt>ClientReplaceMenu( string Menu, optional bool bDisconnect, optional string Msg1, optional string Msg2 )&#160;</dt>
+<dt>ClientCloseMenu( optional bool bCloseAll, optional bool bCancel )&#160;</dt>
+<dt>StartClientDemoRec() (simulated)&#160;</dt>
+<dd>Called on the client during client-side demo recording.</dd>
+</dl>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=37" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_Controller_Overview.html" title="Legacy:Controller Overview">Controller Overview</a> – An overview of controllers.</li>
+<li><a href="Legacy_Customising_The_Player_View.html" title="Legacy:Customising The Player View">Customising the Player View</a> – How to put the the player view where you want it.</li>
+<li><a href="https://wiki.beyondunreal.com/edit/Legacy:Customising_The_Player_Input?redlink=1" class="new" title="Legacy:Customising The Player Input (page does not exist)">Customising the Player Input</a> – How to get the control behaviour you want.</li>
+<li><a href="Legacy_Creating_An_Interaction_From_A_PlayerController.html" title="Legacy:Creating An Interaction From A PlayerController">Creating An Interaction From A PlayerController</a> – Player input and output (HUD display, keyboard input, etc.)</li>
+</ul>
+<h2><span class="mw-headline" id="Class_Tree">Class Tree</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=38" title="Edit section: Class Tree">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<pre>
+<a href="Legacy_Controller.html" title="Legacy:Controller">Controller</a> – Parent class.
+  +- <a href="Legacy_AIController.html" title="Legacy:AIController">AIController</a> – Artificially intelligent agents.
+  +- PlayerController – This class.
+       +- <a href="Legacy_UnrealPlayer.html" title="Legacy:UnrealPlayer">UnrealPlayer</a> – subclass.
+</pre>
+<h2><span class="mw-headline" id="Discussion">Discussion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController?section=39" title="Edit section: Discussion">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>EntropicLqd:</b> Anyone have any preference on what gets covered in PlayerController? I'll do the third person view and first person view functions. Might spend some time figuring out which events a player controller actually does recieve before the Pawn event. The other thing I've started doing is prefixing the class name with the package it's contained within. I know I find it useful, does anyone else? if not I'll drop it.</p>
+<p><b>Chazums</b> Other than as much as possible / relevant, not really&#160;:D . Putting in the package name is useful i think, makes it easier to see where the stuff being looked at is.</p>
+<p><b>EntropicLqd:</b> Hmm, I'll do what I can but I don't want to make the page too long. Thanks to Wormbo for fixing my markup ealier&#160;:).</p>
+<p><b>EntropicLqd:</b> I wish Tim Sweeny would take a look at this and add a bit of in depth knowledge. So much of it feels like speculation and almost educated guesswork that it makes me uncomfortable. However, the cool thing about it is that this stuff occurs right at the engine level rather than the UT2K3 game level.</p>
+<p><b>Trystan:</b> "Page too long"? Can you give too much knowledge? &#160;:D Perhaps begin with as much knowledge as you can shove in here (because I'm looking forward to it as much as Chazums) and then one of us could refactor it for you? It'd be a good test of our understanding of what you're trying to convey, that's for certain. This is mostly a minor note to let you know that there's another person looking forward to this information.&#160;:) (I expect you to work all of Thanksgiving on this!&#160;:D)</p>
+<p><b>EntropicLqd:</b> It's a good job I'm working on something so dull that it makes my brain want to crawl out of my head and escape screaming then. Thanksgiving? They don't have that where I come from. Too much knowledge is a very dangerous thing. It's wisdom you can never have enough of.</p>
+<p><b>Trystan:</b> Damn global stuff. Sorry, I'm one of those asinine Americans who think that everyone is like them. Chaz is slowly but surely beating that out of me by refusing to be anything American like. I'll learn sooner or later.&#160;:)</p>
+<p><b>Chazums</b> Silly Trystan&#160;:D . nice work EntropicLqd you've certainly busy. In referance to the code at the end, could it be that it's used for when a bot replaces a client? My other thought is that its creating a duplicate so that the right stuff is displayed on the spectators screen.</p>
+<p><b>EntropicLqd:</b> If we were a bot taking over a player pawn we'd be in the AIController class. Still, nice theory.</p>
+<p><b>EntropicLqd:</b> Chazums &amp; Trystan - is there anything on this page (or the <a href="Legacy_Customising_The_Player_View.html" title="Legacy:Customising The Player View">Customising the Player View</a> page) that doesn't make sense or needs further elaboration? I've kind of lost track a bit here.</p>
+<p><b>Pingz:</b> Shouldn't there be a class outline on this page like for all the other classes? You can then move all this content to a page like 'Explaining the PlayerController' or something.</p>
+<p><b>PsychoSk8r:</b> I'm looking to make a new gametype for UT2004 based on direct control of a katana for combat. Naturally, that would be dependant on precise network replication. Would this be possible? I couldn't quite tell from this, and I have often seen where the game will only do rough interpretations of a players action, so I'm not quite sure if it would work.</p>
+<p><b>GRAFIK:</b> You can ask on the <a href="Legacy_Help_Desk.html" title="Legacy:Help Desk">Help Desk</a>.</p>
+<p><b>SuperApe:</b> Yes, there should be a class page here. Controller Overview issues belong at <a href="Legacy_Controller_Overview.html" title="Legacy:Controller Overview">Controller Overview</a>. This page needs Property, Function, Event and State definitions.</p>
+<p><b>OlympusMons:</b> Added properties and structs, might want to check it for typo's&#160;:P, straight from the source. Removed Class tree already have one in the super.class so I figured its not needed.</p>
+<p><b>SuperApe:</b> Thanks.&#160;:) I tidied up a bit. Of the part of the overview that remains here, should it be moved under the class info?</p>
+<p><b>OlympusMons:</b> Maybe we should add a <a href="Legacy_PlayerController_Overview.html" title="Legacy:PlayerController Overview">PlayerController Overview</a> it can be similar to the <a href="Legacy_Controller_Overview.html" title="Legacy:Controller Overview">Controller Overview</a>. This should give us some space to fix this page and bring it up to speed. Ok so I moved the stuff hope you guys dont mind.</p>
+<p><b>SuperApe:</b> The second class path box isn't necessary as they have the same path in UT2003 and UT2004. These event declarations really needed the arguements included. If we add some decs and leave out the args, someone will think it's complete. I'm just afraid no one will think to check it and fix it. I think it took me just about as much time as if I had started from scratch.&#160;;) I couldn't find ServerChangeVoiceChatter() or ServerGetVoiceChatters() in UT200x.</p>
+<p><b>OlympusMons:</b> added part of a class tree for easier navigation and fixed a few typos&#160;:)</p>
+<p><b>Xian:</b> Can someone please tell me the difference between GetPlayerNetworkAddress() and GetServerNetworkAddress() please? UT had only the latter, and it was server-side... Also, what are GetURLProtocol(), CheckSpeedHack(), ClientValidate() and ServerValidationResponse() for?</p>
+<p>I couldn't find any detailed info on them at all&#160;:(</p>
+<hr />
+<p><a href="Category_Legacy_Class_(UT2003).html" title="Category:Legacy Class (UT2003)">Category:Legacy Class (UT2003)</a></p>
+<p><a href="Category_Legacy_Class_(UT2004).html" title="Category:Legacy Class (UT2004)">Category:Legacy Class (UT2004)</a></p>
+<p><a href="Category_Legacy_To_Do.html" title="Category:Legacy To Do">Category:Legacy To Do</a> – Move overview info to <a href="Legacy_Controller_Overview.html" title="Legacy:Controller Overview">Controller Overview</a> or <a href="Legacy_Controller.html" title="Legacy:Controller">Controller</a> and add standard class header and properties/methods descriptions. Update class hierarchy, but for only PlayerController subclasses.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.128 seconds
+Real time usage: 0.130 seconds
+Preprocessor visited node count: 213/1000000
+Preprocessor generated node count: 337/1000000
+Post‐expand include size: 472/2097152 bytes
+Template argument size: 153/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.845      1 - -total
+100.00%    2.845      1 - Template:Classbox
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:2474-0!*!0!!en!*!* and timestamp 20161216053151 and revision id 5938
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:PlayerController?oldid=5938">https://wiki.beyondunreal.com/Legacy:PlayerController?oldid=5938</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Legacy_Class_(UT2003).html" title="Category:Legacy Class (UT2003)">Legacy Class (UT2003)</a></li><li><a href="Category_Legacy_Class_(UT2004).html" title="Category:Legacy Class (UT2004)">Legacy Class (UT2004)</a></li><li><a href="Category_Legacy_To_Do.html" title="Category:Legacy To Do">Legacy To Do</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_PlayerController.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:PlayerController?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:PlayerController" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:PlayerController" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3APlayerController&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3APlayerController" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:PlayerController" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:PlayerController" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:PlayerController?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:PlayerController?oldid=5938" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:PlayerController" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 14:53, 10 June 2006.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":93});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:PlayerController by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:50 GMT -->
+</html>

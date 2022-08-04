@@ -1,0 +1,220 @@
+MultiPickupBase
+===============
+by Wormbo (wormbo@onlinehome.de)
+Homepage: http://www.koehler-homepage.de/wormbo/
+
+
+Short Description
+-----------------
+The MultiPickupBase is a component which can be used in maps and mods to
+create pickup bases that can spawn more than one different pickup.
+The remaining part of this file describes how to use the MultiPickupBase
+in a map or a mod for developers.
+
+-------------------------------------------------------------------------------
+
+Introduction
+------------
+The Multi Pickup Base is an xPickupBase subclass similar to the WildcardBase
+which can spawn different types of pickups. All pickup types are supported and
+you can add as many as you like.
+By default the first pickups is selected randomly, but you can also specify one
+of the pickups in the list.
+A new pickup will always be spawned after the current one has been picked up,
+but you can also enable respawning after a certain time interval. In this case
+every pickup can have its own interval or use the default interval.
+The pickups can either be spawned in sequential or random order. In random
+order every pickup can have different chances to spawn. Pickups with a higher
+rating will spawn more often than those with a lower rating.
+
+
+Class Tree
+----------
+Actor >> xPickupBase >> MultiPickupBase
+
+
+Properties
+----------
+The MultiPickupBase is a subclass of xPickupBase and still displays all of its
+properties in UnrealEd. All these properties are used except for PowerUp.
+For a description of the xPickupBase properties see the xPickupBase page at
+the Unreal Wiki: http://wiki.beyondunreal.com/wiki/XPickUpBase
+
+MultiPickupBase properties:
+
+bAllowReset
+  Advanced. Allows the gametype to reset the MultiPickupBase to its initial
+  state when it resets the map.
+
+bChangeOnlyOnPickup
+  Setting this to True will cause a behavior similar to the WildcardBase:
+  A new pickup will only be spawned after the previous one was picked up.
+  Setting it to False means that the pickup will be replaced after a certain
+  amount of time if it didn't get picked up.
+
+bRandomAfterPickup
+  If set to True this will override the bSequential property if the previous
+  pickup was picked up by a player. The next pickup will be selected randomly
+  then. Using this only makes sense when bChangeOnlyOnPickup is set to False.
+
+bSequential
+  This specifies whether new pickups should be spawned in the order they were
+  listed. This doesn't affect the first pickup spawned.
+
+bTriggerable
+  Allows the mapper to trigger this MultiPickupBase. It will spawn a new pickup
+  when triggered, regardless whether the previous pickup is still there (that
+  pickup will be removed first) or was picked up.
+
+DefaultDuration
+  The default duration for each pickup to stay around before another pickup is
+  spawned. This has no effect if bChangeOnlyOnPickup is set to True.
+
+DefaultSpawnRating
+  The default spawn rating for each pickup. This will affect both the random
+  initial pickup selection and the random selection after pickup or timeout.
+
+PickupType
+  Contains a list of pickups to spawn. You can set the PickupClass, Duration
+  and SpawnRating for each pickup in the list.
+
+   Duration
+     This specifies the duration in seconds the pickup stays available before it
+     is replaced by another pickup if the MultiPickupBase is in "timed pickup
+     change" mode. (bChangeOnlyOnPickup = False) Leave this 0 to use the
+     DefaultDuration.
+
+   PickupClass
+     The Pickup class to spawn.
+
+   SpawnRating
+     A value greater than 0 that specifies, how often the pickup should be
+     selected. A higher value (relative to the SpawnRatings of other pickups)
+     means "spawn more often". Set this to 0 to use the DefaultSpawnRating.
+
+RespawnEffectClass
+  This Actor will be spawned right before a new pickup is spawned. The default
+  is UT2003's default respawn effect for pickups.
+
+RespawnEffectTime
+  After spawning the respawn effect the MultiPickupBase will wait for this
+  amount of time to pass before actually spawning the pickup.
+
+StartingItem
+  Specifies, which pickup from the list is spawned when the map starts. Setting
+  this to a negative value will randomly select a pickup from the list.
+
+
+
+Using MultiPickupBases in a map
+-------------------------------
+First make sure the MultiPickup package is loaded by either adding it to the
+EditPackage list in UT2003.ini or by manualy loading MultiPickup.u from the
+Actor Classes browser.
+To use MultiPickupBase just place it in the map like you would place any other
+pickup base. Unlike the WildcardBase a MultiPickupBase initialy doesn't have
+any pickups in its list, so open its properties window and go to the
+MultiPickupBase group. Select the PickupTypes property and click "Add" to add
+a new pickup to the list. Now select a PickupClass from the drop-down list.
+To add more pickups just click the "Add" button again, or use the "Insert"
+button that appeared behind the currently selected PickupType. "Add" will add
+a new item at the end of the list, while "Insert" inserts an item above the
+currently selected one.
+
+
+
+Using MultiPickupBases in a mutator
+-----------------------------------
+MultiPickupBases have their bStatic property set to true, i.e. they can't be
+spawned from a mutator. The MultiPickup package offers a special notplaceable
+subclass (xMultiPickupBase) with bStatic set to false which can be spawned from
+mutators, but won't work if directly placed in a map.
+You should extract the MultiPickup package's source code and have a look at the
+MPBMutator class. The functions CheckPickupBase and CheckPickup illustrate the
+usage of basic features of the MultiPickupBase class. You can see that the
+MultiPickupBase can also be used for pickups that didn't have a pickup base.
+To test the MPBMutator just create or open the file MultiPickup.int in your
+UT2003\System directory and add the following lines to make the mutator appear
+in the mutator list:
+
+[Public]
+Object=(Class=Class,MetaClass=Engine.Mutator,Name=MultiPickup.MPBMutator)
+
+It will change three things:
+* Add the Redeemer to the pickup base spawning the Ion Painter
+* Minigun ammo and grenade ammo will both spawn at both pickups' locations
+* The Shock Rifle will also spawn at the Link Gun's location (to demonstrate
+  WeaponsStay behavior)
+
+
+Debug Mode:
+~~~~~~~~~~~
+The MultiPickupBase has a built-in debug mode which causes log file output for
+its more important functionality. To enable this mode simply create or open the
+file MultiPickup.int in your UT2003\System directory and put the following two
+lines in it:
+
+[MultiPickupBase]
+bDebugMode=True
+
+
+Important functions of the MultiPickupBase class:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+static final function MultiPickupBase ReplaceWithMPB (Actor Other,
+        optional string MPBClassName)
+  This function spawns a new, empty xMultiPickupBase at the location of the
+  Pickup or xPickupBase actor Other. If a valid MultiPickupBase subclass was
+  specified that class will be spawned instead. The new MultiPickupBase will be
+  hidden.
+  If Other is an xPickupBase, then that base will be disable, but will not be
+  hidden. The MultiPickupBase will use the old base's SpawnHeight and
+  ExtraPathCost as well as the InventorySpot marking the base in the bot path
+  network.
+  If Other is a Pickup, then the MultiPickupBase will use a SpawnHeight of 0.
+
+
+static final function MultiPickupBase ConvertToMPB (Actor Other,
+        optional string MPBClassName)
+
+  This function saves the pickup class(es) used in the replaced pickup base or
+  the class of the replaced pickup, then calls ReplaceWithMPB() and adds the
+  previously saved classes to the newly spawned MultiPickupBase.
+
+
+function bool AddPickup (coerce string NewClassName,
+        optional float NewDuration, optional float NewRating)
+
+  Adds a new pickup class to the MultiPickupBase.
+  The function will return True if the class has been added successfully or
+  already was in this MultiPickupBase's list and False otherwise.
+  Note that an existing pickup class's SpawnRating and Duration will NOT be
+  updated.
+
+
+function bool ItemIsIn (class<Pickup> TestClass)
+
+  Returns whether the specified pickup class is in this MultiPickupBase's list.
+
+
+function SetChangeOnlyOnPickup (bool bNewChangeMode)
+function bool GetChangeOnlyOnPickup ( )
+
+  Accessor methods for bChangeOnlyOnPickup. SetChangeOnlyOnPickup set the
+  bChangeOnlyOnPickup property from code and correctly changes the
+  MultiPickupBase's state.
+
+
+function Trigger (Actor Other, Pawn EventInstigator)
+
+  Inherited from the Actor class. The MultiPickupBase can be triggered to
+  immediately spawn a new pickup.
+
+
+function Reset ( )
+
+  Inherited from the Actor class. Resets the MultiPickupBase to its initial
+  state.
+
+-------------------------------------------------------------------------------
+Now go and make some nice maps or mods with the MultiPickupBase. :-)

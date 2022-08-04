@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:O-GL/Developer_Journal by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:59:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:O-GL/Developer Journal - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:O-GL/Developer_Journal" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:O-GL/Developer_Journal" />
+<link rel="shortcut icon" href="../w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="../w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="../w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Developer_Journal.html" />
+<link rel="copyright" href="../Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="../w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="../w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:O-GL/Developer_Journal","wgTitle":"O-GL/Developer Journal","wgCurRevisionId":5649,"wgRevisionId":5649,"wgArticleId":2346,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Journal"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:O-GL/Developer_Journal","wgRelevantArticleId":2346,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_O-GL_Developer_Journal skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Gah - a solution with more questions. &#8211; EntropicLqd
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:O-GL/Developer Journal</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"><span class="subpages">&lt; <a href="../Legacy_O-GL.html" title="Legacy:O-GL">Legacy:O-GL</a></span></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class infobox-legacy">17th November, 2003</div>
+<p>Today, I started implementing my network flow design more and came to a few conclusions and solidified my design more. I'll write my thoughts about <b>instant shots</b> and clients <b>moving instantly</b> vs clients that have a <b>full ping movement delay</b>.</p>
+<p><b>Instant movement</b> problems: 1. That all clients see all the other client positions behind the server by server-to-client time. 2. The client that made the move is ahead of the server by client-to-server time.</p>
+<p><b>Delayed movement</b> has problem #1 but not #2.</p>
+<p>-</p>
+<p>Ok, if you want to apply <b>instant shot</b> to any of these ways of movement you have to apply certain tricks.</p>
+<p>Required with instant movement:</p>
+<p>1. Server needs to rewind world reality to the time the client was behind the server when the shot occured. This will effectivily fast-forward the clients' shot so that it is running server time (really only makes sense if you think of 'slow' projectiles). So server is rewinding the time it took the reality to get to the client (server-to-client time) + the time it took to get the shot to the server (client-to-server time) = full ping time.</p>
+<p>2. Because the client is moving ahead of the server, and your view of the world is behind the server, you basically took the shot at total pings worth of movement above the server - not good!. That aside, the server will not rewind the client that made the shot's position so that the shot is the same on the server as on the client. So, here again, we see proof that the client will be 1 ping ahead of other clients, or half ahead of the server and half behind the server. This is not good because it allows someone with a high ping to be in a position to get a potentially unfair shot.</p>
+<p>Required with delayed movement:</p>
+<p>1. This is the same as above.</p>
+<p>2. Because the client is moving behind the server, as with your view of other clients, the server will also rewind your position. So, here, we basically have both your movement and the other clients' movements behind the server by server-to-client time. This is ok, but still not so good because your movement is delayed by full ping time.</p>
+<p>The <b>best solution</b> IMO, is the <b>delayed movement and instant shot</b>. This is because it, er, enables you to actually hit stuff. Low Ping Bastard's are still disadvantaged because they have to wait their ping time to move.</p>
+<p>After I get that solution done, a potential solution I can do to fix full lag wait is to decrease it to half wait, and predict halfwait in front of what the server sends you (so you're basically running at same time as server). However, the prediction would just be velocity based I dont know if the errors are worth the extra half ping until I actually implement it (later of course).</p>
+<p>-</p>
+<p>The final thing, which I found out a while ago, and I think have come to my conclusion on is: finding server-to-client time or client-to-server time is impossible! Believe me, I spent at least a few weeks on this&#160;:(. I could only figure out a way to find out how much those values have <i>changed</i>, but not what their actual values were.</p>
+<div class="infobox infobox-class infobox-legacy">31st December, 2003</div>
+<p>OMG, last day of 2003! I better write something to make that 2 updates for the year 2003 *wink wink*. I seriously gotta start writing in here more often lol .... Been doing alot of stuff since my last update like going to camps, lans, and other fun "learning" because after I implemented my network code I realised it sucked and got depressed for a bit figuring out what to do next. I cant believe how unplayable even a 100ms is on delayed movement. I also cant believe this problem was solved by JC in the Quakeworld days so long ago ... hats off to him for listening to the fans who said Quake was "unplayable" online (I read a quote saying QuakeWorld was a "BIG architectural change" and that he barely even thought about high ping playability during Quake).</p>
+<p>Only problem, is i cant do much with karma on the network. I even figured out a way to do instant shots, as well as instant movement. Instant shots are achieved by making the shot come from the position you were at one ping ago. This makes replays possible because the game state is basically the same on all machines after they have rewound time. It uses a special trick where the shot you made is coming from a previous position, but it is also hitting the same thing that you aimed at by finding the correct rotation. You would send this rotation to the server all the time instead of your simulated rotation to maintain smoothness on the server. I dont think zeroPing use this method. Anyway, I'm sure that in the future, instant movement and instant shots will make it so that everyone plays without lag ... but those with high pings get discrepancies and will still be saying bad words to their modems ^^.</p>
+<p>Interesting thing about the repulsor implementation is how simple it is. I mean, its a bit harsh to expect modellers to write code, but I think repulsors are a sorta technical thing rather than an arty thing so they should be left to the programmers. That said, it works by the vehicle spawning (usually) two repulsors at a set position. This is made even easier for you by doing the bulldog wheel placement trick where you just specify and offset.</p>
+<p>The Repulsors themselves are very simple also:</p>
+<p>var() bool bEnableRepulsion;</p>
+<p>var() vector CheckDir; // In owner ref frame</p>
+<p>var() float CheckDist;</p>
+<p>var() float Softness;</p>
+<p>var() float PenScale;</p>
+<p>// Used internally for Karma stuff - DO NOT CHANGE!</p>
+<p>var transient const int KContact;</p>
+<p>I like it alot and it seems to work well but there is problems with the placement on the vehicles in the UT2R I think because some slopes can be rather buggy. I'm still not sure how the repulsor works because it seems a bit hackish due to the softness variable and the speed at which it stabilises. Could be wrong though.</p>
+<h3><span class="mw-headline" id="Later_that_day">Later that day</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:O-GL/Developer_Journal?section=1" title="Edit section: Later that day">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>I modified the hoverbike to only have one repulsor. One thing that is moderately disturbing is that SHover extends SVehicle and its PostBeginPlay function spawns two repulsors for you unconditionally. Therefore, if you wanted to make another hover vehicle with different numbers of repulsors, youd have to call super(classabovesuper).PostBeginPlay(). ANYWAY, not that big of a deal.</p>
+<p>I found that repulsors are similar to other constraints. For example, KConstraint Actor1 would be the vehicle and Actor2 is an actor in tries to maintain CheckDist along CheckDir. Only problem is they extend Actor (instead of KConstraint) and they are a composite of KParams (instead of being spawned on their own). Seems like bad design&#160;:(.</p>
+<p>I also went back to Tim's Networking doc to check on what he said about quakeworld. It seems QW wasn't so good after all: "lock-step prediction protocol" and the "network code and the game code are separate modules". Gee, Carmack made it sound so good&#160;:(. I still admire him tho&#160;:D.</p>
+<div class="infobox infobox-class infobox-legacy">5th December, 2005</div>
+<p>Wow, long time, no see. Going to try to update this more regularly.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.017 seconds
+Real time usage: 0.017 seconds
+Preprocessor visited node count: 34/1000000
+Preprocessor generated node count: 109/1000000
+Post‐expand include size: 494/2097152 bytes
+Template argument size: 59/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    3.935      1 - -total
+ 86.43%    3.401      3 - Template:Classbox
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:2346-0!*!*!*!*!*!* and timestamp 20161215143407 and revision id 5649
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:O-GL/Developer_Journal?oldid=5649">https://wiki.beyondunreal.com/Legacy:O-GL/Developer_Journal?oldid=5649</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../Category_Legacy_Journal.html" title="Category:Legacy Journal">Legacy Journal</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Developer_Journal.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:O-GL/Developer_Journal?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:O-GL/Developer_Journal" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:O-GL/Developer_Journal" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AO-GL%2FDeveloper+Journal&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3AO-GL%2FDeveloper+Journal" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="../index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="../Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:O-GL/Developer_Journal" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:O-GL/Developer_Journal" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:O-GL/Developer_Journal?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:O-GL/Developer_Journal?oldid=5649" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:O-GL/Developer_Journal" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 10:50, 5 December 2005.</li>
+									<li id="copyright">Licensed as <a href="../Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="../Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="../Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="../Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":91});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:O-GL/Developer_Journal by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:59:07 GMT -->
+</html>

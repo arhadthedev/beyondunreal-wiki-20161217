@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:SkeletalMeshComponent_internal_variables_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 11:26:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:SkeletalMeshComponent internal variables (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_SkeletalMeshComponent_internal_variables_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:SkeletalMeshComponent_internal_variables_(UDK)","wgTitle":"SkeletalMeshComponent internal variables (UDK)","wgCurRevisionId":41723,"wgRevisionId":41723,"wgArticleId":27084,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:SkeletalMeshComponent_internal_variables_(UDK)","wgRelevantArticleId":27084,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_SkeletalMeshComponent_internal_variables_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Cogito, ergo sum
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:SkeletalMeshComponent internal variables (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<a href="UE3_Component_(UDK).html" title="UE3:Component (UDK)">Component</a> &gt;&gt;&#160;<a href="UE3_ActorComponent_(UDK).html" title="UE3:ActorComponent (UDK)">ActorComponent</a> &gt;&gt;&#160;<a href="UE3_PrimitiveComponent_(UDK).html" title="UE3:PrimitiveComponent (UDK)">PrimitiveComponent</a> &gt;&gt;&#160;<a href="UE3_MeshComponent_(UDK).html" title="UE3:MeshComponent (UDK)">MeshComponent</a> &gt;&gt;&#160;<a href="UE3_SkeletalMeshComponent_(UDK).html" title="UE3:SkeletalMeshComponent (UDK)">SkeletalMeshComponent</a> <i>(internal variables)</i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Internal_variables"><span class="tocnumber">1</span> <span class="toctext">Internal variables</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#ActiveCurveMorphs"><span class="tocnumber">1.1</span> <span class="toctext">ActiveCurveMorphs</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#ActiveMorphs"><span class="tocnumber">1.2</span> <span class="toctext">ActiveMorphs</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#AnimTickArray"><span class="tocnumber">1.3</span> <span class="toctext">AnimTickArray</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#AttachedToSkelComponent"><span class="tocnumber">1.4</span> <span class="toctext">AttachedToSkelComponent</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Attachments"><span class="tocnumber">1.5</span> <span class="toctext">Attachments</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#bAlwaysUseInstanceWeights"><span class="tocnumber">1.6</span> <span class="toctext">bAlwaysUseInstanceWeights</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#bAnimTreeInitialised"><span class="tocnumber">1.7</span> <span class="toctext">bAnimTreeInitialised</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#bCacheAnimSequenceNodes"><span class="tocnumber">1.8</span> <span class="toctext">bCacheAnimSequenceNodes</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#bChartDistanceFactor"><span class="tocnumber">1.9</span> <span class="toctext">bChartDistanceFactor</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#bDisableWarningWhenAnimNotFound"><span class="tocnumber">1.10</span> <span class="toctext">bDisableWarningWhenAnimNotFound</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#bDisplayBones"><span class="tocnumber">1.11</span> <span class="toctext">bDisplayBones</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#bEnableLineCheckWithBounds"><span class="tocnumber">1.12</span> <span class="toctext">bEnableLineCheckWithBounds</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#bForceMeshObjectUpdate"><span class="tocnumber">1.13</span> <span class="toctext">bForceMeshObjectUpdate</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#bForceMeshObjectUpdates"><span class="tocnumber">1.14</span> <span class="toctext">bForceMeshObjectUpdates</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#bForceRawOffset"><span class="tocnumber">1.15</span> <span class="toctext">bForceRawOffset</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#bForceRefpose"><span class="tocnumber">1.16</span> <span class="toctext">bForceRefpose</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#bForceWireframe"><span class="tocnumber">1.17</span> <span class="toctext">bForceWireframe</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#bHasHadPhysicsBlendedIn"><span class="tocnumber">1.18</span> <span class="toctext">bHasHadPhysicsBlendedIn</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#bHideSkin"><span class="tocnumber">1.19</span> <span class="toctext">bHideSkin</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#bIgnoreControllers"><span class="tocnumber">1.20</span> <span class="toctext">bIgnoreControllers</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#bIgnoreControllersWhenNotRendered"><span class="tocnumber">1.21</span> <span class="toctext">bIgnoreControllersWhenNotRendered</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#bNeedsInstanceWeightUpdate"><span class="tocnumber">1.22</span> <span class="toctext">bNeedsInstanceWeightUpdate</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#bNeedsToDeleteHitMask"><span class="tocnumber">1.23</span> <span class="toctext">bNeedsToDeleteHitMask</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#bNotUpdatingKinematicDueToDistance"><span class="tocnumber">1.24</span> <span class="toctext">bNotUpdatingKinematicDueToDistance</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#bOldForceRefPose"><span class="tocnumber">1.25</span> <span class="toctext">bOldForceRefPose</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#BoneVisibility"><span class="tocnumber">1.26</span> <span class="toctext">BoneVisibility</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#bOverrideAttachmentOwnerVisibility"><span class="tocnumber">1.27</span> <span class="toctext">bOverrideAttachmentOwnerVisibility</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#bPauseAnims"><span class="tocnumber">1.28</span> <span class="toctext">bPauseAnims</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#bRecentlyRendered"><span class="tocnumber">1.29</span> <span class="toctext">bRecentlyRendered</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#bRequiredBonesUpToDate"><span class="tocnumber">1.30</span> <span class="toctext">bRequiredBonesUpToDate</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#bRMMOneFrameDelay"><span class="tocnumber">1.31</span> <span class="toctext">bRMMOneFrameDelay</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#bRootMotionExtractedNotify"><span class="tocnumber">1.32</span> <span class="toctext">bRootMotionExtractedNotify</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#bRootMotionModeChangeNotify"><span class="tocnumber">1.33</span> <span class="toctext">bRootMotionModeChangeNotify</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#bShowPrePhysBones"><span class="tocnumber">1.34</span> <span class="toctext">bShowPrePhysBones</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#bSkelCompFixed"><span class="tocnumber">1.35</span> <span class="toctext">bSkelCompFixed</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#bSkipAllUpdateWhenPhysicsAsleep"><span class="tocnumber">1.36</span> <span class="toctext">bSkipAllUpdateWhenPhysicsAsleep</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#bTickAnimNodesWhenNotRendered"><span class="tocnumber">1.37</span> <span class="toctext">bTickAnimNodesWhenNotRendered</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#bTransformFromAnimParent"><span class="tocnumber">1.38</span> <span class="toctext">bTransformFromAnimParent</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#bUpdateComposeSkeletonPasses"><span class="tocnumber">1.39</span> <span class="toctext">bUpdateComposeSkeletonPasses</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#bUpdatedFixedClothVerts"><span class="tocnumber">1.40</span> <span class="toctext">bUpdatedFixedClothVerts</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#bUseRawData"><span class="tocnumber">1.41</span> <span class="toctext">bUseRawData</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#bUseSingleBodyPhysics"><span class="tocnumber">1.42</span> <span class="toctext">bUseSingleBodyPhysics</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="#CachedAtomsTag"><span class="tocnumber">1.43</span> <span class="toctext">CachedAtomsTag</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="#CachedFaceFXAudioComp"><span class="tocnumber">1.44</span> <span class="toctext">CachedFaceFXAudioComp</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href="#ClothDirtyBufferFlag"><span class="tocnumber">1.45</span> <span class="toctext">ClothDirtyBufferFlag</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#ClothDynamicBlendWeight"><span class="tocnumber">1.46</span> <span class="toctext">ClothDynamicBlendWeight</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="#ClothMeshIndexData"><span class="tocnumber">1.47</span> <span class="toctext">ClothMeshIndexData</span></a></li>
+<li class="toclevel-2 tocsection-49"><a href="#ClothMeshNormalData"><span class="tocnumber">1.48</span> <span class="toctext">ClothMeshNormalData</span></a></li>
+<li class="toclevel-2 tocsection-50"><a href="#ClothMeshParentData"><span class="tocnumber">1.49</span> <span class="toctext">ClothMeshParentData</span></a></li>
+<li class="toclevel-2 tocsection-51"><a href="#ClothMeshPosData"><span class="tocnumber">1.50</span> <span class="toctext">ClothMeshPosData</span></a></li>
+<li class="toclevel-2 tocsection-52"><a href="#ClothMeshWeldedIndexData"><span class="tocnumber">1.51</span> <span class="toctext">ClothMeshWeldedIndexData</span></a></li>
+<li class="toclevel-2 tocsection-53"><a href="#ClothMeshWeldedNormalData"><span class="tocnumber">1.52</span> <span class="toctext">ClothMeshWeldedNormalData</span></a></li>
+<li class="toclevel-2 tocsection-54"><a href="#ClothMeshWeldedPosData"><span class="tocnumber">1.53</span> <span class="toctext">ClothMeshWeldedPosData</span></a></li>
+<li class="toclevel-2 tocsection-55"><a href="#ClothSim"><span class="tocnumber">1.54</span> <span class="toctext">ClothSim</span></a></li>
+<li class="toclevel-2 tocsection-56"><a href="#ComposePass1RequiredBones"><span class="tocnumber">1.55</span> <span class="toctext">ComposePass1RequiredBones</span></a></li>
+<li class="toclevel-2 tocsection-57"><a href="#ComposePass2RequiredBones"><span class="tocnumber">1.56</span> <span class="toctext">ComposePass2RequiredBones</span></a></li>
+<li class="toclevel-2 tocsection-58"><a href="#ComposePass3RequiredBones"><span class="tocnumber">1.57</span> <span class="toctext">ComposePass3RequiredBones</span></a></li>
+<li class="toclevel-2 tocsection-59"><a href="#FaceFXActorInstance"><span class="tocnumber">1.58</span> <span class="toctext">FaceFXActorInstance</span></a></li>
+<li class="toclevel-2 tocsection-60"><a href="#FramesPhysicsAsleep"><span class="tocnumber">1.59</span> <span class="toctext">FramesPhysicsAsleep</span></a></li>
+<li class="toclevel-2 tocsection-61"><a href="#FrozenLocalToWorldPos"><span class="tocnumber">1.60</span> <span class="toctext">FrozenLocalToWorldPos</span></a></li>
+<li class="toclevel-2 tocsection-62"><a href="#FrozenLocalToWorldRot"><span class="tocnumber">1.61</span> <span class="toctext">FrozenLocalToWorldRot</span></a></li>
+<li class="toclevel-2 tocsection-63"><a href="#HiddenMaterials"><span class="tocnumber">1.62</span> <span class="toctext">HiddenMaterials</span></a></li>
+<li class="toclevel-2 tocsection-64"><a href="#InstanceVertexWeightBones"><span class="tocnumber">1.63</span> <span class="toctext">InstanceVertexWeightBones</span></a></li>
+<li class="toclevel-2 tocsection-65"><a href="#LastClothLocation"><span class="tocnumber">1.64</span> <span class="toctext">LastClothLocation</span></a></li>
+<li class="toclevel-2 tocsection-66"><a href="#LimitMaterial"><span class="tocnumber">1.65</span> <span class="toctext">LimitMaterial</span></a></li>
+<li class="toclevel-2 tocsection-67"><a href="#LineCheckBoundsScale"><span class="tocnumber">1.66</span> <span class="toctext">LineCheckBoundsScale</span></a></li>
+<li class="toclevel-2 tocsection-68"><a href="#LocalAtoms"><span class="tocnumber">1.67</span> <span class="toctext">LocalAtoms</span></a></li>
+<li class="toclevel-2 tocsection-69"><a href="#MaxDistanceFactor"><span class="tocnumber">1.68</span> <span class="toctext">MaxDistanceFactor</span></a></li>
+<li class="toclevel-2 tocsection-70"><a href="#MeshObject"><span class="tocnumber">1.69</span> <span class="toctext">MeshObject</span></a></li>
+<li class="toclevel-2 tocsection-71"><a href="#MinDistFactorForKinematicUpdate"><span class="tocnumber">1.70</span> <span class="toctext">MinDistFactorForKinematicUpdate</span></a></li>
+<li class="toclevel-2 tocsection-72"><a href="#MorphTargetIndexMap"><span class="tocnumber">1.71</span> <span class="toctext">MorphTargetIndexMap</span></a></li>
+<li class="toclevel-2 tocsection-73"><a href="#NumClothMeshIndices"><span class="tocnumber">1.72</span> <span class="toctext">NumClothMeshIndices</span></a></li>
+<li class="toclevel-2 tocsection-74"><a href="#NumClothMeshParentIndices"><span class="tocnumber">1.73</span> <span class="toctext">NumClothMeshParentIndices</span></a></li>
+<li class="toclevel-2 tocsection-75"><a href="#NumClothMeshVerts"><span class="tocnumber">1.74</span> <span class="toctext">NumClothMeshVerts</span></a></li>
+<li class="toclevel-2 tocsection-76"><a href="#NumSoftBodyTetraIndices"><span class="tocnumber">1.75</span> <span class="toctext">NumSoftBodyTetraIndices</span></a></li>
+<li class="toclevel-2 tocsection-77"><a href="#NumSoftBodyTetraVerts"><span class="tocnumber">1.76</span> <span class="toctext">NumSoftBodyTetraVerts</span></a></li>
+<li class="toclevel-2 tocsection-78"><a href="#OldPendingRMM"><span class="tocnumber">1.77</span> <span class="toctext">OldPendingRMM</span></a></li>
+<li class="toclevel-2 tocsection-79"><a href="#OldPredictedLODLevel"><span class="tocnumber">1.78</span> <span class="toctext">OldPredictedLODLevel</span></a></li>
+<li class="toclevel-2 tocsection-80"><a href="#ParentBoneMap"><span class="tocnumber">1.79</span> <span class="toctext">ParentBoneMap</span></a></li>
+<li class="toclevel-2 tocsection-81"><a href="#PendingRMM"><span class="tocnumber">1.80</span> <span class="toctext">PendingRMM</span></a></li>
+<li class="toclevel-2 tocsection-82"><a href="#PhysicsAssetInstance"><span class="tocnumber">1.81</span> <span class="toctext">PhysicsAssetInstance</span></a></li>
+<li class="toclevel-2 tocsection-83"><a href="#PostPhysSkelControlIndex"><span class="tocnumber">1.82</span> <span class="toctext">PostPhysSkelControlIndex</span></a></li>
+<li class="toclevel-2 tocsection-84"><a href="#PredictedLODLevel"><span class="tocnumber">1.83</span> <span class="toctext">PredictedLODLevel</span></a></li>
+<li class="toclevel-2 tocsection-85"><a href="#PreviousRMM"><span class="tocnumber">1.84</span> <span class="toctext">PreviousRMM</span></a></li>
+<li class="toclevel-2 tocsection-86"><a href="#ProgressiveDrawingFraction"><span class="tocnumber">1.85</span> <span class="toctext">ProgressiveDrawingFraction</span></a></li>
+<li class="toclevel-2 tocsection-87"><a href="#RequiredBones"><span class="tocnumber">1.86</span> <span class="toctext">RequiredBones</span></a></li>
+<li class="toclevel-2 tocsection-88"><a href="#RootBoneTranslation"><span class="tocnumber">1.87</span> <span class="toctext">RootBoneTranslation</span></a></li>
+<li class="toclevel-2 tocsection-89"><a href="#RootMotionAccelScale"><span class="tocnumber">1.88</span> <span class="toctext">RootMotionAccelScale</span></a></li>
+<li class="toclevel-2 tocsection-90"><a href="#RootMotionDelta"><span class="tocnumber">1.89</span> <span class="toctext">RootMotionDelta</span></a></li>
+<li class="toclevel-2 tocsection-91"><a href="#RootMotionVelocity"><span class="tocnumber">1.90</span> <span class="toctext">RootMotionVelocity</span></a></li>
+<li class="toclevel-2 tocsection-92"><a href="#SceneIndex"><span class="tocnumber">1.91</span> <span class="toctext">SceneIndex</span></a></li>
+<li class="toclevel-2 tocsection-93"><a href="#SkelControlIndex"><span class="tocnumber">1.92</span> <span class="toctext">SkelControlIndex</span></a></li>
+<li class="toclevel-2 tocsection-94"><a href="#SoftBodyASVPlane"><span class="tocnumber">1.93</span> <span class="toctext">SoftBodyASVPlane</span></a></li>
+<li class="toclevel-2 tocsection-95"><a href="#SoftBodySceneIndex"><span class="tocnumber">1.94</span> <span class="toctext">SoftBodySceneIndex</span></a></li>
+<li class="toclevel-2 tocsection-96"><a href="#SoftBodySim"><span class="tocnumber">1.95</span> <span class="toctext">SoftBodySim</span></a></li>
+<li class="toclevel-2 tocsection-97"><a href="#SoftBodyTetraIndexData"><span class="tocnumber">1.96</span> <span class="toctext">SoftBodyTetraIndexData</span></a></li>
+<li class="toclevel-2 tocsection-98"><a href="#SoftBodyTetraPosData"><span class="tocnumber">1.97</span> <span class="toctext">SoftBodyTetraPosData</span></a></li>
+<li class="toclevel-2 tocsection-99"><a href="#SpaceBases"><span class="tocnumber">1.98</span> <span class="toctext">SpaceBases</span></a></li>
+<li class="toclevel-2 tocsection-100"><a href="#TemporarySavedAnimSets"><span class="tocnumber">1.99</span> <span class="toctext">TemporarySavedAnimSets</span></a></li>
+<li class="toclevel-2 tocsection-101"><a href="#TickTag"><span class="tocnumber">1.100</span> <span class="toctext">TickTag</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>SkeletalMeshComponent internal variables in other games:</dt>
+<dd><span><a href="UE3_SkeletalMeshComponent_internal_variables_(UT3).html" title="UE3:SkeletalMeshComponent internal variables (UT3)">UT3</a></span></dd>
+<dt>Other member categories for this class:</dt>
+<dd><span><a href="UE3_SkeletalMeshComponent_native_functions_(UDK).html" title="UE3:SkeletalMeshComponent native functions (UDK)">native functions</a></span>, <span><a href="UE3_SkeletalMeshComponent_properties_(UDK).html" title="UE3:SkeletalMeshComponent properties (UDK)">properties</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Internal_variables">Internal variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=1" title="Edit section: Internal variables">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="ActiveCurveMorphs">ActiveCurveMorphs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=2" title="Edit section: ActiveCurveMorphs">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_SkeletalMeshComponent_(UDK).html#ActiveMorph" title="UE3:SkeletalMeshComponent (UDK)">ActiveMorph</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Array indicating all active MorphTargets. This array is updated inside UpdateSkelPose based on the AnimTree's st of MorphNodes.</p>
+<h4><span class="mw-headline" id="ActiveMorphs">ActiveMorphs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=3" title="Edit section: ActiveMorphs">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_SkeletalMeshComponent_(UDK).html#ActiveMorph" title="UE3:SkeletalMeshComponent (UDK)">ActiveMorph</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Array indicating all active MorphTargets. This array is updated inside UpdateSkelPose based on the AnimTree's st of MorphNodes.</p>
+<h4><span class="mw-headline" id="AnimTickArray">AnimTickArray</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=4" title="Edit section: AnimTickArray">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_AnimNode_(UDK).html" title="UE3:AnimNode (UDK)">AnimNode</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p>Array of all AnimNodes in entire tree, in the order they should be ticked - that is, all parents appear before a child.</p>
+<h4><span class="mw-headline" id="AttachedToSkelComponent">AttachedToSkelComponent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=5" title="Edit section: AttachedToSkelComponent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SkeletalMeshComponent_(UDK).html" title="UE3:SkeletalMeshComponent (UDK)">SkeletalMeshComponent</a></p>
+<p>The SkeletalMeshComponent that this one is possibly attached to.</p>
+<h4><span class="mw-headline" id="Attachments">Attachments</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=6" title="Edit section: Attachments">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_SkeletalMeshComponent_(UDK).html#Attachment" title="UE3:SkeletalMeshComponent (UDK)">Attachment</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> duplicatetransient, const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bAlwaysUseInstanceWeights">bAlwaysUseInstanceWeights</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=7" title="Edit section: bAlwaysUseInstanceWeights">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p>If TRUE, always use instanced vertex influences for this mesh</p>
+<h4><span class="mw-headline" id="bAnimTreeInitialised">bAnimTreeInitialised</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=8" title="Edit section: bAnimTreeInitialised">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p>If true, AnimTree has been initialised.</p>
+<h4><span class="mw-headline" id="bCacheAnimSequenceNodes">bCacheAnimSequenceNodes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=9" title="Edit section: bCacheAnimSequenceNodes">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Should anim sequence nodes cache the calculated values when not actually playing an animation?</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bChartDistanceFactor">bChartDistanceFactor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=10" title="Edit section: bChartDistanceFactor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If true, DistanceFactor for this SkeletalMeshComponent will be added to global chart.</p>
+<h4><span class="mw-headline" id="bDisableWarningWhenAnimNotFound">bDisableWarningWhenAnimNotFound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=11" title="Edit section: bDisableWarningWhenAnimNotFound">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Disable warning when an AnimSequence is not found. FALSE by default.</p>
+<h4><span class="mw-headline" id="bDisplayBones">bDisplayBones</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=12" title="Edit section: bDisplayBones">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Draw the skeleton hierarchy for this skel mesh.</p>
+<h4><span class="mw-headline" id="bEnableLineCheckWithBounds">bEnableLineCheckWithBounds</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=13" title="Edit section: bEnableLineCheckWithBounds">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If TRUE, line checks will test against the bounding box of this skeletal mesh component and return a hit if there is a collision.</p>
+<h4><span class="mw-headline" id="bForceMeshObjectUpdate">bForceMeshObjectUpdate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=14" title="Edit section: bForceMeshObjectUpdate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>If TRUE, UpdateTransform will always result in a call to MeshObject-&gt;Update.</p>
+<h4><span class="mw-headline" id="bForceMeshObjectUpdates">bForceMeshObjectUpdates</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=15" title="Edit section: bForceMeshObjectUpdates">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Should the mesh object be updated even when the component hasn't recently been rendered (fixes popping for cinematic cuts)</p>
+<h4><span class="mw-headline" id="bForceRawOffset">bForceRawOffset</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=16" title="Edit section: bForceRawOffset">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bForceRefpose">bForceRefpose</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=17" title="Edit section: bForceRefpose">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>If true, force the mesh into the reference pose - is an optimization.</p>
+<h4><span class="mw-headline" id="bForceWireframe">bForceWireframe</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=18" title="Edit section: bForceWireframe">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Forces the mesh to draw in wireframe mode.</p>
+<h4><span class="mw-headline" id="bHasHadPhysicsBlendedIn">bHasHadPhysicsBlendedIn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=19" title="Edit section: bHasHadPhysicsBlendedIn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Used for consistency checking. Indicates that the results of physics have been blended into SpaceBases this frame.</p>
+<h4><span class="mw-headline" id="bHideSkin">bHideSkin</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=20" title="Edit section: bHideSkin">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bIgnoreControllers">bIgnoreControllers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=21" title="Edit section: bIgnoreControllers">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bIgnoreControllersWhenNotRendered">bIgnoreControllersWhenNotRendered</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=22" title="Edit section: bIgnoreControllersWhenNotRendered">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If true, do not apply any SkelControls when owner has not been rendered recently.</p>
+<h4><span class="mw-headline" id="bNeedsInstanceWeightUpdate">bNeedsInstanceWeightUpdate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=23" title="Edit section: bNeedsInstanceWeightUpdate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p>If TRUE, update the instanced vertex influences for this mesh during the next update</p>
+<h4><span class="mw-headline" id="bNeedsToDeleteHitMask">bNeedsToDeleteHitMask</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=24" title="Edit section: bNeedsToDeleteHitMask">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p>if TRUE, when detach, send message to renderthread to delete this component from hit mask list *</p>
+<h4><span class="mw-headline" id="bNotUpdatingKinematicDueToDistance">bNotUpdatingKinematicDueToDistance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=25" title="Edit section: bNotUpdatingKinematicDueToDistance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>If this is true, we are not updating kinematic bones and motors based on animation because the skeletal mesh is too far from any viewer.</p>
+<h4><span class="mw-headline" id="bOldForceRefPose">bOldForceRefPose</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=26" title="Edit section: bOldForceRefPose">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>If bForceRefPose was set last tick.</p>
+<h4><span class="mw-headline" id="BoneVisibility">BoneVisibility</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=27" title="Edit section: BoneVisibility">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient, const</p>
+<p>Array of bone visibilities.</p>
+<h4><span class="mw-headline" id="bOverrideAttachmentOwnerVisibility">bOverrideAttachmentOwnerVisibility</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=28" title="Edit section: bOverrideAttachmentOwnerVisibility">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>if set, components that are attached to us have their bOwnerNoSee and bOnlyOwnerSee properties overridden by ours</p>
+<h4><span class="mw-headline" id="bPauseAnims">bPauseAnims</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=29" title="Edit section: bPauseAnims">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>pauses this component's animations (doesn't tick them)</p>
+<h4><span class="mw-headline" id="bRecentlyRendered">bRecentlyRendered</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=30" title="Edit section: bRecentlyRendered">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>TRUE if mesh has been recently rendered, FALSE otherwise Setting bUpdateSkelWhenNotRendered has the effect of setting this to TRUE all the time.</p>
+<h4><span class="mw-headline" id="bRequiredBonesUpToDate">bRequiredBonesUpToDate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=31" title="Edit section: bRequiredBonesUpToDate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bRMMOneFrameDelay">bRMMOneFrameDelay</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=32" title="Edit section: bRMMOneFrameDelay">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Handle one frame delay with PendingRMM</p>
+<h4><span class="mw-headline" id="bRootMotionExtractedNotify">bRootMotionExtractedNotify</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=33" title="Edit section: bRootMotionExtractedNotify">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>if TRUE, the event RootMotionExtracted() will be called on this owning actor, after root motion has been extracted, and before it's been used. This notification can be used to alter extracted root motion before it is forwarded to physics.</p>
+<h4><span class="mw-headline" id="bRootMotionModeChangeNotify">bRootMotionModeChangeNotify</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=34" title="Edit section: bRootMotionModeChangeNotify">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>if TRUE, notify owning actor of root motion mode changes. This calls the Actor.RootMotionModeChanged() event. This is useful for synchronizing movements. For intance, when using RMM_Translate, and the event is called, we know that root motion will kick in on next frame. It is possible to kill in-game physics, and then use root motion seemlessly.</p>
+<h4><span class="mw-headline" id="bShowPrePhysBones">bShowPrePhysBones</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=35" title="Edit section: bShowPrePhysBones">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Bool that enables debug drawing of the skeleton before it is passed to the physics. Useful for debugging animation-driven physics.</p>
+<h4><span class="mw-headline" id="bSkelCompFixed">bSkelCompFixed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=36" title="Edit section: bSkelCompFixed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Indicates whether this SkeletalMeshComponent is currently considered 'fixed' (ie kinematic)</p>
+<h4><span class="mw-headline" id="bSkipAllUpdateWhenPhysicsAsleep">bSkipAllUpdateWhenPhysicsAsleep</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=37" title="Edit section: bSkipAllUpdateWhenPhysicsAsleep">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>When true, if owned by a PHYS_RigidBody Actor, skip all update (bones and bounds) when physics are asleep. This is a very top level optimization flag for things we know are just physics (e.g. Kassets). Lots of things have physics on them that are asleep while the actor moves around the level and then are woken up. Setting this flag to true will stop those actors from having any updates which is not what we want in the general case.</p>
+<h4><span class="mw-headline" id="bTickAnimNodesWhenNotRendered">bTickAnimNodesWhenNotRendered</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=38" title="Edit section: bTickAnimNodesWhenNotRendered">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If true, tick anim nodes even when our Owner has not been rendered recently</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bTransformFromAnimParent">bTransformFromAnimParent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=39" title="Edit section: bTransformFromAnimParent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br />
+<b>Default value:</b> 1</p>
+<h4><span class="mw-headline" id="bUpdateComposeSkeletonPasses">bUpdateComposeSkeletonPasses</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=40" title="Edit section: bUpdateComposeSkeletonPasses">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p>TRUE if it needs to rebuild the required bones array for multi pass compose</p>
+<h4><span class="mw-headline" id="bUpdatedFixedClothVerts">bUpdatedFixedClothVerts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=41" title="Edit section: bUpdatedFixedClothVerts">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Whether we've updated fixed cloth verts since last attachment.</p>
+<h4><span class="mw-headline" id="bUseRawData">bUseRawData</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=42" title="Edit section: bUseRawData">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>If TRUE, force usage of raw animation data when animating this skeletal mesh; if FALSE, use compressed data.</p>
+<h4><span class="mw-headline" id="bUseSingleBodyPhysics">bUseSingleBodyPhysics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=43" title="Edit section: bUseSingleBodyPhysics">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Only instance Root Bone rigid body for physics. Mostly used by Vehicles. Other Rigid Bodies are ignored for physics, but still considered for traces.</p>
+<h4><span class="mw-headline" id="CachedAtomsTag">CachedAtomsTag</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=44" title="Edit section: CachedAtomsTag">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="CachedFaceFXAudioComp">CachedFaceFXAudioComp</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=45" title="Edit section: CachedFaceFXAudioComp">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_AudioComponent_(UDK).html" title="UE3:AudioComponent (UDK)">AudioComponent</a></p>
+<p>The audio component that we are using to play audio for a facial animation. Assigned in PlayFaceFXAnim and cleared in StopFaceFXAnim.</p>
+<h4><span class="mw-headline" id="ClothDirtyBufferFlag">ClothDirtyBufferFlag</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=46" title="Edit section: ClothDirtyBufferFlag">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>flags to indicate which buffers were recently updated by the cloth simulation.</p>
+<h4><span class="mw-headline" id="ClothDynamicBlendWeight">ClothDynamicBlendWeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=47" title="Edit section: ClothDynamicBlendWeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Cloth blend weight, controlled by distance from camera.</p>
+<h4><span class="mw-headline" id="ClothMeshIndexData">ClothMeshIndexData</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=48" title="Edit section: ClothMeshIndexData">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Int.html" title="Int" class="mw-redirect">int</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ClothMeshNormalData">ClothMeshNormalData</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=49" title="Edit section: ClothMeshNormalData">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ClothMeshParentData">ClothMeshParentData</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=50" title="Edit section: ClothMeshParentData">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Int.html" title="Int" class="mw-redirect">int</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Cloth parent indices contain the index of the original vertex when a vertex is created during tearing.</p>
+<pre>
+If it is an original vertex then the parent index is the same as the vertex index.
+</pre>
+<h4><span class="mw-headline" id="ClothMeshPosData">ClothMeshPosData</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=51" title="Edit section: ClothMeshPosData">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ClothMeshWeldedIndexData">ClothMeshWeldedIndexData</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=52" title="Edit section: ClothMeshWeldedIndexData">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Int.html" title="Int" class="mw-redirect">int</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, native, transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ClothMeshWeldedNormalData">ClothMeshWeldedNormalData</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=53" title="Edit section: ClothMeshWeldedNormalData">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, native, transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ClothMeshWeldedPosData">ClothMeshWeldedPosData</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=54" title="Edit section: ClothMeshWeldedPosData">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, native, transient</p>
+<p>buffers used for reverse lookups to unweld vertices to support wrapped UVs.</p>
+<h4><span class="mw-headline" id="ClothSim">ClothSim</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=55" title="Edit section: ClothSim">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Pointer.html" title="Pointer" class="mw-redirect">pointer</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, native, transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ComposePass1RequiredBones">ComposePass1RequiredBones</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=56" title="Edit section: ComposePass1RequiredBones">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> native, const, transient</p>
+<p>Required Bones array for 3 pass skeleton composing</p>
+<h4><span class="mw-headline" id="ComposePass2RequiredBones">ComposePass2RequiredBones</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=57" title="Edit section: ComposePass2RequiredBones">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> native, const, transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ComposePass3RequiredBones">ComposePass3RequiredBones</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=58" title="Edit section: ComposePass3RequiredBones">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> native, const, transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="FaceFXActorInstance">FaceFXActorInstance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=59" title="Edit section: FaceFXActorInstance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Pointer.html" title="Pointer" class="mw-redirect">pointer</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient, native</p>
+<p>The FaceFX actor instance associated with the skeletal mesh component.</p>
+<h4><span class="mw-headline" id="FramesPhysicsAsleep">FramesPhysicsAsleep</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=60" title="Edit section: FramesPhysicsAsleep">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Used to keep track of how many frames physics has been asleep for (when using PHYS_RigidBody).</p>
+<h4><span class="mw-headline" id="FrozenLocalToWorldPos">FrozenLocalToWorldPos</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=61" title="Edit section: FrozenLocalToWorldPos">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>The state of the LocalToWorld pos at the point the cloth was frozen.</p>
+<h4><span class="mw-headline" id="FrozenLocalToWorldRot">FrozenLocalToWorldRot</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=62" title="Edit section: FrozenLocalToWorldRot">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Rotator" title="UE3:Object structs (UDK)">Object.Rotator</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>The state of the LocalToWorld rotation at the point the cloth was frozen.</p>
+<h4><span class="mw-headline" id="HiddenMaterials">HiddenMaterials</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=63" title="Edit section: HiddenMaterials">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p>Material corresponds to section. To show/hide each section, use this *</p>
+<h4><span class="mw-headline" id="InstanceVertexWeightBones">InstanceVertexWeightBones</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=64" title="Edit section: InstanceVertexWeightBones">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_SkeletalMeshComponent_(UDK).html#BonePair" title="UE3:SkeletalMeshComponent (UDK)">BonePair</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> native, transient, const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastClothLocation">LastClothLocation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=65" title="Edit section: LastClothLocation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p>Last location of our owner/base for checking MinDistanceForClothReset.</p>
+<h4><span class="mw-headline" id="LimitMaterial">LimitMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=66" title="Edit section: LimitMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LineCheckBoundsScale">LineCheckBoundsScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=67" title="Edit section: LineCheckBoundsScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p>If bEnableLineCheckWithBounds is TRUE, scale the bounds by this value before doing line check.</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>X</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>1.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="LocalAtoms">LocalAtoms</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=68" title="Edit section: LocalAtoms">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Object_structs_(UDK).html#BoneAtom" title="UE3:Object structs (UDK)">Object.BoneAtom</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> native, transient, const</p>
+<p>Temporary array of local-space (ie relative to parent bone) rotation/translation for each bone.</p>
+<h4><span class="mw-headline" id="MaxDistanceFactor">MaxDistanceFactor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=69" title="Edit section: MaxDistanceFactor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>High (best) DistanceFactor that was desired for rendering this SkeletalMesh last frame. Represents how big this mesh was in screen space</p>
+<h4><span class="mw-headline" id="MeshObject">MeshObject</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=70" title="Edit section: MeshObject">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Pointer.html" title="Pointer" class="mw-redirect">pointer</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> native, transient, const</p>
+<p>Cache all AnimNodeSlots.</p>
+<h4><span class="mw-headline" id="MinDistFactorForKinematicUpdate">MinDistFactorForKinematicUpdate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=71" title="Edit section: MinDistFactorForKinematicUpdate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>If non-zero, skeletal mesh component will not update kinematic bones and bone springs when distance factor is greater than this (or has not been rendered for a while). This also turns off BlockRigidBody, so you do not get collisions with 'left behind' ragdoll setups. Items will fall through the world if you move too far away from them and they are in RigigBody.</p>
+<h4><span class="mw-headline" id="MorphTargetIndexMap">MorphTargetIndexMap</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=72" title="Edit section: MorphTargetIndexMap">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Types.html#Map" title="Types">Map</a><i>{FName, UMorphTarget*}</i></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, native</p>
+<p>Map of morph target to name *</p>
+<h4><span class="mw-headline" id="NumClothMeshIndices">NumClothMeshIndices</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=73" title="Edit section: NumClothMeshIndices">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="NumClothMeshParentIndices">NumClothMeshParentIndices</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=74" title="Edit section: NumClothMeshParentIndices">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="NumClothMeshVerts">NumClothMeshVerts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=75" title="Edit section: NumClothMeshVerts">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="NumSoftBodyTetraIndices">NumSoftBodyTetraIndices</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=76" title="Edit section: NumSoftBodyTetraIndices">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Number of tetrahedron indices of the soft-body mesh (equal to four times the number of tetrahedra).</p>
+<h4><span class="mw-headline" id="NumSoftBodyTetraVerts">NumSoftBodyTetraVerts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=77" title="Edit section: NumSoftBodyTetraVerts">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Number of tetrahedron vertices of the soft-body mesh.</p>
+<h4><span class="mw-headline" id="OldPendingRMM">OldPendingRMM</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=78" title="Edit section: OldPendingRMM">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SkeletalMeshComponent_(UDK).html#ERootMotionMode" title="UE3:SkeletalMeshComponent (UDK)">ERootMotionMode</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="OldPredictedLODLevel">OldPredictedLODLevel</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=79" title="Edit section: OldPredictedLODLevel">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>LOD level from previous frame, so we can detect changes in LOD to recalc required bones</p>
+<h4><span class="mw-headline" id="ParentBoneMap">ParentBoneMap</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=80" title="Edit section: ParentBoneMap">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Int.html" title="Int" class="mw-redirect">int</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> native, transient, const</p>
+<p>Mapping between bone indices in this component and the parent one. Each element is the index of the bone in the ParentAnimComponent. Size should be the same as SkeletalMesh.RefSkeleton size (ie number of bones in this skeleton).</p>
+<h4><span class="mw-headline" id="PendingRMM">PendingRMM</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=81" title="Edit section: PendingRMM">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SkeletalMeshComponent_(UDK).html#ERootMotionMode" title="UE3:SkeletalMeshComponent (UDK)">ERootMotionMode</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="PhysicsAssetInstance">PhysicsAssetInstance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=82" title="Edit section: PhysicsAssetInstance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_PhysicsAssetInstance_(UDK).html" title="UE3:PhysicsAssetInstance (UDK)">PhysicsAssetInstance</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient, editinline, export</p>
+<p>Any instanced physics engine information for this SkeletalMeshComponent. This is only required when you want to run physics or you want physical interaction with this skeletal mesh.</p>
+<h4><span class="mw-headline" id="PostPhysSkelControlIndex">PostPhysSkelControlIndex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=83" title="Edit section: PostPhysSkelControlIndex">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient, const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="PredictedLODLevel">PredictedLODLevel</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=84" title="Edit section: PredictedLODLevel">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="PreviousRMM">PreviousRMM</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=85" title="Edit section: PreviousRMM">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SkeletalMeshComponent_(UDK).html#ERootMotionMode" title="UE3:SkeletalMeshComponent (UDK)">ERootMotionMode</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Previous Root Motion Mode, to catch changes</p>
+<p><b>Default value:</b> <a href="UE3_SkeletalMeshComponent_(UDK).html#ERootMotionMode" title="UE3:SkeletalMeshComponent (UDK)">RMM_Ignore</a></p>
+<h4><span class="mw-headline" id="ProgressiveDrawingFraction">ProgressiveDrawingFraction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=86" title="Edit section: ProgressiveDrawingFraction">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Editor only. Used for visualizing drawing order in Animset Viewer. If &lt; 1.0, only the specified fraction of triangles will be rendered</p>
+<h4><span class="mw-headline" id="RequiredBones">RequiredBones</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=87" title="Edit section: RequiredBones">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> native, const, transient</p>
+<p>Temporary array of bone indices required this frame. Filled in by UpdateSkelPose.</p>
+<h4><span class="mw-headline" id="RootBoneTranslation">RootBoneTranslation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=88" title="Edit section: RootBoneTranslation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p>Offset of the root bone from the reference pose. Used to offset bounding box.</p>
+<h4><span class="mw-headline" id="RootMotionAccelScale">RootMotionAccelScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=89" title="Edit section: RootMotionAccelScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p>Scale applied in physics when RootMotionMode == RMM_Accel</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>X</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>1.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="RootMotionDelta">RootMotionDelta</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=90" title="Edit section: RootMotionDelta">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#BoneAtom" title="UE3:Object structs (UDK)">Object.BoneAtom</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p>Root Motion extracted from animation.</p>
+<h4><span class="mw-headline" id="RootMotionVelocity">RootMotionVelocity</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=91" title="Edit section: RootMotionVelocity">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Root Motion velocity for this frame, set from RootMotionDelta.</p>
+<h4><span class="mw-headline" id="SceneIndex">SceneIndex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=92" title="Edit section: SceneIndex">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, native, transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="SkelControlIndex">SkelControlIndex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=93" title="Edit section: SkelControlIndex">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient, const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="SoftBodyASVPlane">SoftBodyASVPlane</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=94" title="Edit section: SoftBodyASVPlane">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Pointer.html" title="Pointer" class="mw-redirect">pointer</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, native, transient</p>
+<p>Pointer to the Novodex plane-actor used when previewing the soft-body in the AnimSet Editor.</p>
+<h4><span class="mw-headline" id="SoftBodySceneIndex">SoftBodySceneIndex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=95" title="Edit section: SoftBodySceneIndex">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, native, transient</p>
+<p>Index of the Novodex scene the soft-body resides in.</p>
+<h4><span class="mw-headline" id="SoftBodySim">SoftBodySim</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=96" title="Edit section: SoftBodySim">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Pointer.html" title="Pointer" class="mw-redirect">pointer</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, native, transient</p>
+<p>Pointer to the simulated NxSoftBody object.</p>
+<h4><span class="mw-headline" id="SoftBodyTetraIndexData">SoftBodyTetraIndexData</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=97" title="Edit section: SoftBodyTetraIndexData">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Int.html" title="Int" class="mw-redirect">int</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Buffer of the updated tetrahedron-indices.</p>
+<h4><span class="mw-headline" id="SoftBodyTetraPosData">SoftBodyTetraPosData</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=98" title="Edit section: SoftBodyTetraPosData">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Buffer of the updated tetrahedron-vertex positions.</p>
+<h4><span class="mw-headline" id="SpaceBases">SpaceBases</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=99" title="Edit section: SpaceBases">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Object_structs_(UDK).html#Matrix" title="UE3:Object structs (UDK)">Object.Matrix</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> native, transient, const</p>
+<p>Temporary array of of component-space bone matrices, update each frame and used for rendering the mesh.</p>
+<h4><span class="mw-headline" id="TemporarySavedAnimSets">TemporarySavedAnimSets</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=100" title="Edit section: TemporarySavedAnimSets">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_AnimSet_(UDK).html" title="UE3:AnimSet (UDK)">AnimSet</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> native, transient, const</p>
+<p>Temporary array of AnimSets that are used as a backup target when the engine needs to temporarily modify the actor's animation set list. (e.g. Matinee playback)</p>
+<h4><span class="mw-headline" id="TickTag">TickTag</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)?section=101" title="Edit section: TickTag">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, transient</p>
+<p><br /></p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.375 seconds
+Real time usage: 0.587 seconds
+Preprocessor visited node count: 2285/1000000
+Preprocessor generated node count: 4261/1000000
+Post‐expand include size: 15475/2097152 bytes
+Template argument size: 3210/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  291.635      1 - -total
+ 54.91%  160.125      1 - Template:Infobox_class_part
+ 53.29%  155.416      1 - Template:Infobox_class_part/core
+ 31.38%   91.526     25 - Template:Tl
+ 24.09%   70.246     31 - Template:Samegame
+ 12.37%   36.076      1 - Template:Ch
+  6.24%   18.193      6 - Template:Cl
+  3.51%   10.230      3 - Template:Gamename
+  2.57%    7.506      1 - Template:Autogenerated
+  2.55%    7.425      1 - Template:UDK
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:27084-0!*!*!*!*!*!* and timestamp 20161216095802 and revision id 41723
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:SkeletalMeshComponent_internal_variables_(UDK)?oldid=41723">https://wiki.beyondunreal.com/UE3:SkeletalMeshComponent_internal_variables_(UDK)?oldid=41723</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_SkeletalMeshComponent_internal_variables_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:SkeletalMeshComponent_internal_variables_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:SkeletalMeshComponent_internal_variables_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:SkeletalMeshComponent_internal_variables_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3ASkeletalMeshComponent+internal+variables+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3ASkeletalMeshComponent+internal+variables+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:SkeletalMeshComponent_internal_variables_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:SkeletalMeshComponent_internal_variables_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:SkeletalMeshComponent_internal_variables_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:SkeletalMeshComponent_internal_variables_(UDK)?oldid=41723" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:SkeletalMeshComponent_internal_variables_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 07:48, 17 January 2010.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":111});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:SkeletalMeshComponent_internal_variables_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 11:26:04 GMT -->
+</html>

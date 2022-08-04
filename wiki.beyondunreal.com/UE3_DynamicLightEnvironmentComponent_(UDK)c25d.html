@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:DynamicLightEnvironmentComponent_(UDK)?redirect=no by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 12:27:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:DynamicLightEnvironmentComponent (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_DynamicLightEnvironmentComponent_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:DynamicLightEnvironmentComponent_(UDK)","wgTitle":"DynamicLightEnvironmentComponent (UDK)","wgCurRevisionId":36954,"wgRevisionId":36954,"wgArticleId":25418,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UDK-specific classes","Classes in UDK package Engine","Subclasses of LightEnvironmentComponent (UDK)","Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:DynamicLightEnvironmentComponent_(UDK)","wgRelevantArticleId":25418,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_DynamicLightEnvironmentComponent_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Always snap to grid
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:DynamicLightEnvironmentComponent (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<a href="UE3_Component_(UDK).html" title="UE3:Component (UDK)">Component</a> &gt;&gt;&#160;<a href="UE3_ActorComponent_(UDK).html" title="UE3:ActorComponent (UDK)">ActorComponent</a> &gt;&gt;&#160;<a href="UE3_LightEnvironmentComponent_(UDK).html" title="UE3:LightEnvironmentComponent (UDK)">LightEnvironmentComponent</a> &gt;&gt;&#160;<b>DynamicLightEnvironmentComponent</b></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Properties"><span class="tocnumber">1</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Property_group_.27DynamicLightEnvironmentComponent.27"><span class="tocnumber">1.1</span> <span class="toctext">Property group 'DynamicLightEnvironmentComponent'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#AmbientGlow"><span class="tocnumber">1.1.1</span> <span class="toctext">AmbientGlow</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#AmbientShadowColor"><span class="tocnumber">1.1.2</span> <span class="toctext">AmbientShadowColor</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#AmbientShadowSourceDirection"><span class="tocnumber">1.1.3</span> <span class="toctext">AmbientShadowSourceDirection</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#bCastShadows"><span class="tocnumber">1.1.4</span> <span class="toctext">bCastShadows</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#bCompositeShadowsFromDynamicLights"><span class="tocnumber">1.1.5</span> <span class="toctext">bCompositeShadowsFromDynamicLights</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#bDynamic"><span class="tocnumber">1.1.6</span> <span class="toctext">bDynamic</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#bForceAllowLightEnvSphericalHarmonicLights"><span class="tocnumber">1.1.7</span> <span class="toctext">bForceAllowLightEnvSphericalHarmonicLights</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#BouncedLightingFactor"><span class="tocnumber">1.1.8</span> <span class="toctext">BouncedLightingFactor</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#bRequiresNonLatentUpdates"><span class="tocnumber">1.1.9</span> <span class="toctext">bRequiresNonLatentUpdates</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#bSynthesizeDirectionalLight"><span class="tocnumber">1.1.10</span> <span class="toctext">bSynthesizeDirectionalLight</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#bSynthesizeSHLight"><span class="tocnumber">1.1.11</span> <span class="toctext">bSynthesizeSHLight</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="#InvisibleUpdateTime"><span class="tocnumber">1.1.12</span> <span class="toctext">InvisibleUpdateTime</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#LightDesaturation"><span class="tocnumber">1.1.13</span> <span class="toctext">LightDesaturation</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#LightDistance"><span class="tocnumber">1.1.14</span> <span class="toctext">LightDistance</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#LightShadowMode"><span class="tocnumber">1.1.15</span> <span class="toctext">LightShadowMode</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#MaxModulatedShadowColor"><span class="tocnumber">1.1.16</span> <span class="toctext">MaxModulatedShadowColor</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#MaxShadowResolution"><span class="tocnumber">1.1.17</span> <span class="toctext">MaxShadowResolution</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#MinShadowAngle"><span class="tocnumber">1.1.18</span> <span class="toctext">MinShadowAngle</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="#MinShadowResolution"><span class="tocnumber">1.1.19</span> <span class="toctext">MinShadowResolution</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="#MinTimeBetweenFullUpdates"><span class="tocnumber">1.1.20</span> <span class="toctext">MinTimeBetweenFullUpdates</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#ModShadowFadeoutExponent"><span class="tocnumber">1.1.21</span> <span class="toctext">ModShadowFadeoutExponent</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="#ModShadowFadeoutTime"><span class="tocnumber">1.1.22</span> <span class="toctext">ModShadowFadeoutTime</span></a></li>
+<li class="toclevel-3 tocsection-25"><a href="#NumVolumeVisibilitySamples"><span class="tocnumber">1.1.23</span> <span class="toctext">NumVolumeVisibilitySamples</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#ShadowDistance"><span class="tocnumber">1.1.24</span> <span class="toctext">ShadowDistance</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="#ShadowFadeResolution"><span class="tocnumber">1.1.25</span> <span class="toctext">ShadowFadeResolution</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="#ShadowFilterQuality"><span class="tocnumber">1.1.26</span> <span class="toctext">ShadowFilterQuality</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-29"><a href="#Internal_variables"><span class="tocnumber">1.2</span> <span class="toctext">Internal variables</span></a>
+<ul>
+<li class="toclevel-3 tocsection-30"><a href="#bForceCompositeAllLights"><span class="tocnumber">1.2.1</span> <span class="toctext">bForceCompositeAllLights</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="#BoundsMethod"><span class="tocnumber">1.2.2</span> <span class="toctext">BoundsMethod</span></a></li>
+<li class="toclevel-3 tocsection-32"><a href="#bOverrideOwnerLightingChannels"><span class="tocnumber">1.2.3</span> <span class="toctext">bOverrideOwnerLightingChannels</span></a></li>
+<li class="toclevel-3 tocsection-33"><a href="#bTraceFromClosestBoundsPoint"><span class="tocnumber">1.2.4</span> <span class="toctext">bTraceFromClosestBoundsPoint</span></a></li>
+<li class="toclevel-3 tocsection-34"><a href="#DominantShadowTransitionEndDistance"><span class="tocnumber">1.2.5</span> <span class="toctext">DominantShadowTransitionEndDistance</span></a></li>
+<li class="toclevel-3 tocsection-35"><a href="#DominantShadowTransitionStartDistance"><span class="tocnumber">1.2.6</span> <span class="toctext">DominantShadowTransitionStartDistance</span></a></li>
+<li class="toclevel-3 tocsection-36"><a href="#OverriddenBounds"><span class="tocnumber">1.2.7</span> <span class="toctext">OverriddenBounds</span></a></li>
+<li class="toclevel-3 tocsection-37"><a href="#OverriddenLightComponents"><span class="tocnumber">1.2.8</span> <span class="toctext">OverriddenLightComponents</span></a></li>
+<li class="toclevel-3 tocsection-38"><a href="#OverriddenLightingChannels"><span class="tocnumber">1.2.9</span> <span class="toctext">OverriddenLightingChannels</span></a></li>
+<li class="toclevel-3 tocsection-39"><a href="#State"><span class="tocnumber">1.2.10</span> <span class="toctext">State</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-40"><a href="#Enums"><span class="tocnumber">2</span> <span class="toctext">Enums</span></a>
+<ul>
+<li class="toclevel-2 tocsection-41"><a href="#EDynamicLightEnvironmentBoundsMethod"><span class="tocnumber">2.1</span> <span class="toctext">EDynamicLightEnvironmentBoundsMethod</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Package:&#160;</dt>
+<dd><a href="Category_Classes_in_UDK_package_Engine.html" title="Category:Classes in UDK package Engine">Engine</a></dd>
+<dt>Direct subclass:</dt>
+<dd><a href="UE3_ParticleLightEnvironmentComponent_(UDK).html" title="UE3:ParticleLightEnvironmentComponent (UDK)">ParticleLightEnvironmentComponent</a></dd>
+<dt>This class in other games:</dt>
+<dd><span><a href="UE3_DynamicLightEnvironmentComponent_(UT3).html" title="UE3:DynamicLightEnvironmentComponent (UT3)">UT3</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<p>This is used to light components / actors during the game. Doing something like: LightEnvironment=FooLightEnvironment</p>
+<h2><span class="mw-headline" id="Properties">Properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=1" title="Edit section: Properties">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Property_group_.27DynamicLightEnvironmentComponent.27">Property group 'DynamicLightEnvironmentComponent'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=2" title="Edit section: Property group 'DynamicLightEnvironmentComponent'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="AmbientGlow">AmbientGlow</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=3" title="Edit section: AmbientGlow">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p>Ambient color added in addition to the level's lighting.</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="AmbientShadowColor">AmbientShadowColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=4" title="Edit section: AmbientShadowColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p>The color of the ambient shadow.</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.0010</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.0010</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0.0010</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="AmbientShadowSourceDirection">AmbientShadowSourceDirection</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=5" title="Edit section: AmbientShadowSourceDirection">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Object.Vector</a></p>
+<p>The direction of the ambient shadow source.</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Vector" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>X</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>0.99</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="bCastShadows">bCastShadows</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=6" title="Edit section: bCastShadows">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Whether the light environment should cast shadows</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bCompositeShadowsFromDynamicLights">bCompositeShadowsFromDynamicLights</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=7" title="Edit section: bCompositeShadowsFromDynamicLights">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Whether the light environment's shadow includes the effect of dynamic lights.</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bDynamic">bDynamic</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=8" title="Edit section: bDynamic">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Whether the light environment should be dynamically updated.</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bForceAllowLightEnvSphericalHarmonicLights">bForceAllowLightEnvSphericalHarmonicLights</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=9" title="Edit section: bForceAllowLightEnvSphericalHarmonicLights">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>This is to allow individual DLEs to force override and get and SH light. We need this for levels which have their worldinfo's bAllowLightEnvSphericalHarmonicLights set to FALSE but then have cinematic levels added which were lit needing SH lights to look good.</p>
+<h4><span class="mw-headline" id="BouncedLightingFactor">BouncedLightingFactor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=10" title="Edit section: BouncedLightingFactor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>The intensity of the simulated bounced light, as a fraction of the LightComponent's bounced lighting settings.</p>
+<p><b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="bRequiresNonLatentUpdates">bRequiresNonLatentUpdates</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=11" title="Edit section: bRequiresNonLatentUpdates">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Whether this is an actor that can't tolerate latency in lighting updates; a full lighting update is done every frame.</p>
+<h4><span class="mw-headline" id="bSynthesizeDirectionalLight">bSynthesizeDirectionalLight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=12" title="Edit section: bSynthesizeDirectionalLight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Whether a directional light should be used to synthesize the dominant lighting in the environment.</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bSynthesizeSHLight">bSynthesizeSHLight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=13" title="Edit section: bSynthesizeSHLight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Whether a SH light should be used to synthesize all light not accounted for by the synthesized directional light. If not, a sky light is used instead. Using an SH light gives higher quality secondary lighting, but at a steeper performance cost.</p>
+<h4><span class="mw-headline" id="InvisibleUpdateTime">InvisibleUpdateTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=14" title="Edit section: InvisibleUpdateTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>The number of seconds between light environment updates for actors which aren't visible.</p>
+<p><b>Default value:</b> 5.0</p>
+<h4><span class="mw-headline" id="LightDesaturation">LightDesaturation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=15" title="Edit section: LightDesaturation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Desaturation percentage of level lighting, which can be used to help team colored characters stand out better under colored lighting.</p>
+<h4><span class="mw-headline" id="LightDistance">LightDistance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=16" title="Edit section: LightDistance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>The distance to create the light from the owner's origin, in radius units.</p>
+<p><b>Default value:</b> 10.0</p>
+<h4><span class="mw-headline" id="LightShadowMode">LightShadowMode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=17" title="Edit section: LightShadowMode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_LightComponent_(UDK).html#ELightShadowMode" title="UE3:LightComponent (UDK)">LightComponent.ELightShadowMode</a></p>
+<p>The type of shadowing to use for the environment's shadow.</p>
+<p><b>Default value:</b> <a href="UE3_LightComponent_(UDK).html#ELightShadowMode" title="UE3:LightComponent (UDK)">LightShadow_Modulate</a></p>
+<h4><span class="mw-headline" id="MaxModulatedShadowColor">MaxModulatedShadowColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=18" title="Edit section: MaxModulatedShadowColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p>Brightest ModulatedShadowColor allowed for the shadow. This can be used to limit the DLE's shadow to a specified darkness.</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0.5</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="MaxShadowResolution">MaxShadowResolution</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=19" title="Edit section: MaxShadowResolution">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Override for max square dimensions (in texels) allowed for rendering shadow subject depths. A value of 0 defaults to MaxShadowResolution in SystemSettings.</p>
+<h4><span class="mw-headline" id="MinShadowAngle">MinShadowAngle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=20" title="Edit section: MinShadowAngle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>The minimum angle to allow between the shadow direction and horizontal. An angle &gt; 0 constrains the shadow to never be cast from a light below horizontal.</p>
+<p><b>Default value:</b> 35.0</p>
+<h4><span class="mw-headline" id="MinShadowResolution">MinShadowResolution</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=21" title="Edit section: MinShadowResolution">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Override for min dimensions (in texels) allowed for rendering shadow subject depths. This also controls shadow fading, once the shadow resolution reaches MinShadowResolution it will be faded out completely. A value of 0 defaults to MinShadowResolution in SystemSettings.</p>
+<h4><span class="mw-headline" id="MinTimeBetweenFullUpdates">MinTimeBetweenFullUpdates</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=22" title="Edit section: MinTimeBetweenFullUpdates">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Minimum amount of time that needs to pass between full environment updates.</p>
+<p><b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="ModShadowFadeoutExponent">ModShadowFadeoutExponent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=23" title="Edit section: ModShadowFadeoutExponent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Exponent that controls mod shadow fadeout curve.</p>
+<p><b>Default value:</b> 3.0</p>
+<h4><span class="mw-headline" id="ModShadowFadeoutTime">ModShadowFadeoutTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=24" title="Edit section: ModShadowFadeoutTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Time since the caster was last visible at which the mod shadow will fade out completely.</p>
+<p><b>Default value:</b> 0.75</p>
+<h4><span class="mw-headline" id="NumVolumeVisibilitySamples">NumVolumeVisibilitySamples</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=25" title="Edit section: NumVolumeVisibilitySamples">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>The number of visibility samples to use within the primitive's bounding volume.</p>
+<p><b>Default value:</b> 1</p>
+<h4><span class="mw-headline" id="ShadowDistance">ShadowDistance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=26" title="Edit section: ShadowDistance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>The distance for the shadow to project beyond the owner's origin, in radius units.</p>
+<p><b>Default value:</b> 5.0</p>
+<h4><span class="mw-headline" id="ShadowFadeResolution">ShadowFadeResolution</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=27" title="Edit section: ShadowFadeResolution">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Resolution in texels below which shadows begin to be faded out. Once the shadow resolution reaches MinShadowResolution it will be faded out completely. A value of 0 defaults to ShadowFadeResolution in SystemSettings.</p>
+<h4><span class="mw-headline" id="ShadowFilterQuality">ShadowFilterQuality</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=28" title="Edit section: ShadowFilterQuality">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_LightComponent_(UDK).html#EShadowFilterQuality" title="UE3:LightComponent (UDK)">LightComponent.EShadowFilterQuality</a></p>
+<p>Quality of shadow buffer filtering to use on the light environment</p>
+<h3><span class="mw-headline" id="Internal_variables">Internal variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=29" title="Edit section: Internal variables">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="bForceCompositeAllLights">bForceCompositeAllLights</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=30" title="Edit section: bForceCompositeAllLights">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Whether to represent all lights with the light environment, including dominant lights which are usually rendered separately.</p>
+<h4><span class="mw-headline" id="BoundsMethod">BoundsMethod</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=31" title="Edit section: BoundsMethod">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="#EDynamicLightEnvironmentBoundsMethod">EDynamicLightEnvironmentBoundsMethod</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bOverrideOwnerLightingChannels">bOverrideOwnerLightingChannels</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=32" title="Edit section: bOverrideOwnerLightingChannels">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bTraceFromClosestBoundsPoint">bTraceFromClosestBoundsPoint</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=33" title="Edit section: bTraceFromClosestBoundsPoint">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="DominantShadowTransitionEndDistance">DominantShadowTransitionEndDistance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=34" title="Edit section: DominantShadowTransitionEndDistance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>The distance from the dominant light shadow transition at which to end fading out the DLE's modulated shadow and primary light. This must be smaller than DominantShadowTransitionStartDistance.</p>
+<p><b>Default value:</b> 10.0</p>
+<h4><span class="mw-headline" id="DominantShadowTransitionStartDistance">DominantShadowTransitionStartDistance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=35" title="Edit section: DominantShadowTransitionStartDistance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>The distance from the dominant light shadow transition at which to start fading out the DLE's modulated shadow and primary light. This must be larger than DominantShadowTransitionEndDistance.</p>
+<p><b>Default value:</b> 100.0</p>
+<h4><span class="mw-headline" id="OverriddenBounds">OverriddenBounds</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=36" title="Edit section: OverriddenBounds">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#BoxSphereBounds" title="UE3:Object structs (UDK)">Object.BoxSphereBounds</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="OverriddenLightComponents">OverriddenLightComponents</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=37" title="Edit section: OverriddenLightComponents">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_LightComponent_(UDK).html" title="UE3:LightComponent (UDK)">LightComponent</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Light components which override lights in GWorld, useful for rendering light environments in preview scenes.</p>
+<h4><span class="mw-headline" id="OverriddenLightingChannels">OverriddenLightingChannels</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=38" title="Edit section: OverriddenLightingChannels">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_LightComponent_(UDK).html#LightingChannelContainer" title="UE3:LightComponent (UDK)">LightComponent.LightingChannelContainer</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="State">State</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=39" title="Edit section: State">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Pointer.html" title="Pointer" class="mw-redirect">pointer</a><i>{class FDynamicLightEnvironmentState}</i></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private, native, transient, const</p>
+<p>The current state of the light environment.</p>
+<h2><span class="mw-headline" id="Enums">Enums</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=40" title="Edit section: Enums">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="EDynamicLightEnvironmentBoundsMethod">EDynamicLightEnvironmentBoundsMethod</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)?section=41" title="Edit section: EDynamicLightEnvironmentBoundsMethod">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Methods used to calculate the bounds that this light environment will use as a representation of what it is lighting. The default settings will trace one ray from the center of the calculated bounds to each relevant light.</p>
+<dl>
+<dt>DLEB_OwnerComponents&#160;</dt>
+<dd>The default DLE bounds method, starts with a small sphere at the Owner's origin and adds each component of Owner using this DLE.</dd>
+<dt>DLEB_ManualOverride&#160;</dt>
+<dd>Uses OverriddenBounds, doesn't depend on Owner at all.</dd>
+<dt>DLEB_ActiveComponents&#160;</dt>
+<dd>Accumulates the bounds of attached components on any actor using this DLE.</dd>
+</dl>
+<p>This is useful when the DLE is lighting something whose Owner is placed in the world, like a pool actor. This method only works when the components using this DLE are attached before the DLE is updated.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.282 seconds
+Real time usage: 0.295 seconds
+Preprocessor visited node count: 1477/1000000
+Preprocessor generated node count: 5358/1000000
+Post‐expand include size: 9945/2097152 bytes
+Template argument size: 2414/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  218.911      1 - -total
+ 62.74%  137.345      1 - Template:Infobox_class
+ 57.92%  126.803      1 - Template:Infobox_class/core
+ 27.63%   60.495     14 - Template:Tl
+ 18.30%   40.068     14 - Template:Samegame
+  8.54%   18.695      2 - Template:Ch
+  3.27%    7.160      1 - Template:Autogenerated
+  2.44%    5.331      1 - Template:Classname
+  2.32%    5.081      1 - Template:Cl
+  2.24%    4.912      3 - Template:Gamename
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:25418-0!*!*!*!*!*!* and timestamp 20161215211512 and revision id 36954
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:DynamicLightEnvironmentComponent_(UDK)?oldid=36954">https://wiki.beyondunreal.com/UE3:DynamicLightEnvironmentComponent_(UDK)?oldid=36954</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_UDK-specific_classes.html" title="Category:UDK-specific classes">UDK-specific classes</a></li><li><a href="Category_Classes_in_UDK_package_Engine.html" title="Category:Classes in UDK package Engine">Classes in UDK package Engine</a></li><li><a href="Category_Subclasses_of_LightEnvironmentComponent_(UDK).html" title="Category:Subclasses of LightEnvironmentComponent (UDK)">Subclasses of LightEnvironmentComponent (UDK)</a></li><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_DynamicLightEnvironmentComponent_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:DynamicLightEnvironmentComponent_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:DynamicLightEnvironmentComponent_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:DynamicLightEnvironmentComponent_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3ADynamicLightEnvironmentComponent+%28UDK%29&amp;returntoquery=redirect%3Dno&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3ADynamicLightEnvironmentComponent+%28UDK%29&amp;returntoquery=redirect%3Dno" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:DynamicLightEnvironmentComponent_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:DynamicLightEnvironmentComponent_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:DynamicLightEnvironmentComponent_(UDK)?redirect=no&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:DynamicLightEnvironmentComponent_(UDK)?oldid=36954" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:DynamicLightEnvironmentComponent_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 13:47, 6 November 2009.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":91});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:DynamicLightEnvironmentComponent_(UDK)?redirect=no by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 12:27:40 GMT -->
+</html>

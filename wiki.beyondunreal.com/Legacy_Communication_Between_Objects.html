@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Communication_Between_Objects by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Legacy:Communication Between Objects - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Communication_Between_Objects" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/Legacy:Communication_Between_Objects" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="Legacy_Communication_Between_Objects.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"Legacy","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Legacy:Communication_Between_Objects","wgTitle":"Communication Between Objects","wgCurRevisionId":2013,"wgRevisionId":2013,"wgArticleId":691,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Legacy Refactor Me"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Legacy:Communication_Between_Objects","wgRelevantArticleId":691,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Legacy_Communication_Between_Objects skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Worst-case scenario: the UEd Goblin wipes the map and burns down your house.
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Legacy:Communication Between Objects</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Objects in <a href="Legacy_UnrealScript.html" title="Legacy:UnrealScript">UnrealScript</a> often need to be able to discover information about each other in order to actually interact with eachother in some way. For example.</p>
+<ul>
+<li>A weapon needs to know how many charges are left in a powerup.</li>
+<li>In a CTF the flag needs to know the team of the player that just touched it.</li>
+<li>A player needs to know who fired the projectile that just killed them.</li>
+<li>The guided redeemer shell needs to know the orientation of the player guiding it.</li>
+</ul>
+<p>This is achieved by object <i>references</i> and will be better understood if we look at a few examples from the game itself.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#The_CTF_Flag"><span class="tocnumber">1</span> <span class="toctext">The CTF Flag</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#The_Reference_Itself"><span class="tocnumber">1.1</span> <span class="toctext">The Reference Itself</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Setting_The_Reference"><span class="tocnumber">1.2</span> <span class="toctext">Setting The Reference</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#A_silly_example"><span class="tocnumber">2</span> <span class="toctext">A silly example</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Comments"><span class="tocnumber">2.1</span> <span class="toctext">Comments</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Zedsquared_chips_in_with_a_more_general_view:"><span class="tocnumber">2.2</span> <span class="toctext">Zedsquared chips in with a more general view:</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Alternate_.2B_More_Efficient_Way"><span class="tocnumber">2.3</span> <span class="toctext">Alternate + More Efficient Way</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#.22Global.22_object_references"><span class="tocnumber">2.4</span> <span class="toctext">"Global" object references</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Related_Topics"><span class="tocnumber">3</span> <span class="toctext">Related Topics</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Comments_2"><span class="tocnumber">4</span> <span class="toctext">Comments</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="The_CTF_Flag">The CTF Flag</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Communication_Between_Objects?section=1" title="Edit section: The CTF Flag">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Let's first take a look at how the CTF Flag in UT2004 uses references to figure out just who exactly is holding it and how it interacts with that person.</p>
+<h3><span class="mw-headline" id="The_Reference_Itself">The Reference Itself</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Communication_Between_Objects?section=2" title="Edit section: The Reference Itself">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The code that tells the Flag who is holding it is not actually in the <a href="Legacy_CTFFlag.html" title="Legacy:CTFFlag">CTFFlag</a> class at all. It is actually in a SuperClass called GameObject. In this class there are several important things that are essential for the CTF Flag to operate.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="co1">//The reference itself</span>
+<span class="kw1">var</span> <span class="kw9">UnrealPawn</span>      Holder;  <span class="co1">//Holder has to be an UnrealPawn or any of it's subclasses</span>
+ 
+<span class="co1">//Another reference, although not required, it will help out</span>
+<span class="kw1">var</span> TeamPlayerReplicationInfo HolderPRI; <span class="co1">//HolderPRI is simply the TeamPlayerReplicationInfo for the flags holder</span>
+</pre></div>
+</div>
+<p>These are the only variable-level references that are useful to this example so I won't bother going into detail with too many other aspects of the code.</p>
+<p><b>Side Note</b></p>
+<p>These references are also pretty useless unless we 'reference' an actual object that exists. What I mean by that is best explained by this:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">var</span> <span class="kw9">UnrealPawn</span> MyPawn;
+ 
+<span class="kw1">function</span> <span class="kw4">PostBeginPlay</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    MyPawn.<span class="me0">Health</span> <span class="sy0">=</span> <span class="nu0">100</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Doing <b>just</b> this will actually create an Accessed None error in the log if it is executed by the engine. The reason for this is because declaring a variable as a reference is only good if you point that reference to something. Putting the following before trying to change the health of my Pawn in the previous pseudo-code does two things.</p>
+<p><b>One:</b> It will spawn an actor (in this case an UnrealPawn) and</p>
+<p><b>Two:</b> It will point MyPawn to the newly created actor.</p>
+<p>This means that everytime you use MyPawn in the script, you're actually talking about the UnrealPawn that you spawned.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+MyPawn <span class="sy0">=</span> <span class="kw4">Spawn</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'UnrealGame.UnrealPawn'</span><span class="br0">)</span>;
+</pre></div>
+</div>
+<h3><span class="mw-headline" id="Setting_The_Reference">Setting The Reference</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Communication_Between_Objects?section=3" title="Edit section: Setting The Reference">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Setting or Pointing the reference is what we need to do next, and the GameObject uses a SetHolder() function to do that.</p>
+<p>When the SetHolder() function is called it will execute the following code:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> SetHolder<span class="br0">(</span><span class="kw9">Controller</span> C<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw1">local</span> <span class="kw5">int</span> i;
+ 
+    <span class="co1">//log(self$" setholder c="$c, 'GameObject');</span>
+    LogTaken<span class="br0">(</span>c<span class="br0">)</span>;
+    Holder <span class="sy0">=</span> <span class="kw9">UnrealPawn</span><span class="br0">(</span>C.<span class="kw9">Pawn</span><span class="br0">)</span>;
+    Holder.<span class="me0">DeactivateSpawnProtection</span><span class="br0">(</span><span class="br0">)</span>;
+    HolderPRI <span class="sy0">=</span> TeamPlayerReplicationInfo<span class="br0">(</span>Holder.<span class="me0">PlayerReplicationInfo</span><span class="br0">)</span>;
+    C.<span class="me0">PlayerReplicationInfo</span>.<span class="me0">HasFlag</span> <span class="sy0">=</span> <span class="kw6">self</span>;
+	C.<span class="me0">PlayerReplicationInfo</span>.<span class="me0">NetUpdateTime</span> <span class="sy0">=</span> <span class="kw7">Level</span>.<span class="me0">TimeSeconds</span> <span class="sy0">-</span> <span class="nu0">1</span>;
+ 
+    <span class="kw3">GotoState</span><span class="br0">(</span><span class="st0">'Held'</span><span class="br0">)</span>;
+ 
+	<span class="co1">// AI Related</span>
+	C.<span class="me0">MoveTimer</span> <span class="sy0">=</span> <span class="sy0">-</span><span class="nu0">1</span>;
+	Holder.<span class="kw4">MakeNoise</span><span class="br0">(</span><span class="nu0">2.0</span><span class="br0">)</span>;
+ 
+	<span class="co1">// Track First Touch</span>
+ 
+	<span class="kw2">if</span> <span class="br0">(</span>FirstTouch <span class="sy0">==</span> <span class="kw5">None</span><span class="br0">)</span>
+		FirstTouch <span class="sy0">=</span> C;
+ 
+	<span class="co1">// Track Assists</span>
+ 
+	<span class="kw2">for</span> <span class="br0">(</span>i<span class="sy0">=</span><span class="nu0">0</span>;i<span class="sy0">&lt;</span>Assists.<span class="me0">Length</span>;i<span class="sy0">++</span><span class="br0">)</span>
+		<span class="kw2">if</span> <span class="br0">(</span>Assists<span class="br0">[</span>i<span class="br0">]</span> <span class="sy0">==</span> C<span class="br0">)</span>
+		  <span class="kw2">return</span>;
+ 
+	Assists.<span class="me0">Length</span> <span class="sy0">=</span> Assists.<span class="me0">Length</span><span class="sy0">+</span><span class="nu0">1</span>;
+  	Assists<span class="br0">[</span>Assists.<span class="me0">Length</span><span class="sy0">-</span><span class="nu0">1</span><span class="br0">]</span> <span class="sy0">=</span> C;
+ 
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>We will only concern ourselves with the first few lines of the code however. Firstly, the controller (the player) who took the flag will be logged. Then the Holder reference will be set with the following code.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+Holder <span class="sy0">=</span> <span class="kw9">UnrealPawn</span><span class="br0">(</span>C.<span class="kw9">Pawn</span><span class="br0">)</span>;
+</pre></div>
+</div>
+<p>Note that the Holder reference is being pointed to a Pawn that already exists, thus there is no need to spawn the pawn. If for some reason the pawn died when this function was called however, it would produce an error as the pawn in question would no longer exist.</p>
+<p>If the Holder had spawn protection active, it would disable it when the flag is picked up allowing defenders to have a chance to kill the Holder of the flag. This is done by called the DeactivateSpawnProtection() method through the Holder reference.</p>
+<p>Because Holder is pointed to UnrealPawn(C.Pawn), It actually calls that method within UnrealPawn(C.Pawn) so:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+Holder.<span class="me0">DeactivateSpawnProtection</span><span class="br0">(</span><span class="br0">)</span>;
+</pre></div>
+</div>
+<p>could very well be written as:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw9">UnrealPawn</span><span class="br0">(</span>C.<span class="kw9">Pawn</span><span class="br0">)</span>.<span class="me0">DeactivateSpawnProtection</span><span class="br0">(</span><span class="br0">)</span>;
+</pre></div>
+</div>
+<p>They will do the same thing, but using references is more efficient, less messy and can also help with describing how your code works.</p>
+<p>Next it will also assign HolderPRI to the PRI of the Holder in question. This is purely for efficiency and anti-mess purposes I would imagine.</p>
+<p>If for whatever reason we wanted to add 100 health to the Holder of the flag when it is picked up, we could add something like the following before the end of the function.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+Holder.<span class="me0">Health</span> <span class="sy0">=</span> Holder.<span class="me0">Health</span> <span class="sy0">+</span> <span class="nu0">50</span>; <span class="co1">//Add 50 health to the Holders current health</span>
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="A_silly_example">A silly example</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Communication_Between_Objects?section=4" title="Edit section: A silly example">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Using the BugEyedMonster class from <a href="Legacy_Extending_States.html" title="Legacy:Extending States">Extending States</a> again, let's suppose that we have a BugEyedQueen, and that when BugEyedMonster is very scared it runs towards her. We might have some sort of function RunToQueen() in BugEyedMonster's script.</p>
+<p>The simplest thing might be to look for the Queen when we need to find her, with a foreach <a href="Legacy_Iterator.html" title="Legacy:Iterator">iterator</a>: obtain a reference to the Queen, get her location and move towards it.</p>
+<dl>
+<dd>(example code here...)</dd>
+</dl>
+<p>This might be fine if the BUM only needs to do this once. However, if the Queen is also moving we have ourselves a case of the "pursuit problem" in maths (the one I could never solve – Tarquin), and BUM needs to know about her location more than once, maybe even every tick. Running a foreach iterator this frequently is too heavy for the engine, and there's a more efficient way of doing it:</p>
+<p>Give the BUM a <i>variable</i> of type BugEyedQueen. This in fact means a variable that holds a reference to an object, and the class of the object must be BugEyedQueen, or a subclass. (Remember the <a href="Legacy_Peppers_And_Pepper_Grinders.html" title="Legacy:Peppers And Pepper Grinders">Peppers And Pepper Grinders</a> analogy: this variable does not indicate a class, it indicates an object of a certain class.) We could make it so the mapper has to set its value to point to the Queen object in the map:</p>
+<dl>
+<dd>var() BugEyedQueen MyQueen;</dd>
+</dl>
+<p>This requires the mapper to think, is bound to lead to confusion, recriminations and spilled milk. Docers often need to think for pammers&#160;;-)</p>
+<ul>
+<li>set the variable uneditable by declaring it with just var, no ()</li>
+<li>in one of the begin play functions (PreBeginPlay, PostBeginPlay, I don't know which is appropriate (PostBeginPlay() gets my vote – <a href="Legacy_EntropicLqd.html" title="Legacy:EntropicLqd">EntropicLqd</a>)), run the foreach code as above to find the Queen, and set MyQueen to point to it</li>
+<li>whenever we need to find something out about the Queen, simply access local variable MyQueen, for example Destination = MyQueen.Location</li>
+</ul>
+<dl>
+<dd>I've just realised on reading the bit below that I essentially (and stupidly) rewrote it with BugEyedMonster above. I'll try and merge them later. I'll stick to the reactor example, it's by far the more sensible of the two – <i>Tarquin</i></dd>
+<dd>maybe a page on PreBeginPlay, PostBeginPlay would be useful, but I don't know what to call it. ­- <i>Tarquin</i></dd>
+</dl>
+<p>º: have a look at the <a href="Legacy_Creating_Actors_And_Objects.html" title="Legacy:Creating Actors And Objects">Creating Actors and Objects</a> page. ("What exactly happens when I spawn an actor?") Is this what you were looking for or should there be more details? – <a href="Legacy_Wormbo.html" title="Legacy:Wormbo">Wormbo</a></p>
+<hr />
+<p>Tarquin: snip from one of my forum posts:</p>
+<p>The standard way round this is to only call ForEach once, like this:</p>
+<p>Each actor that will need to call Bomb.AddTime gets a:</p>
+<p>var bomb myBomb&#160;;</p>
+<p>(check my syntax, it might be var class&lt;bomb&gt; etc...)</p>
+<p>Then one of the BeginPlay functions calls ForEach.AllActors and sets the local myBomb variable to point to the map's Bomb actor.</p>
+<p>Then when you need to access the Bomb actor's function, grab it from myBomb.AddTime.</p>
+<h4><span class="mw-headline" id="Comments">Comments</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Communication_Between_Objects?section=5" title="Edit section: Comments">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><i>Tarquin</i> Excellent idea, including this kind of information. Although, NOOBs will not have clue as to what you're referring to, and, how it would be implemented. I'll tell ya,...being a NOOB sucks. <a href="Legacy_Nuclear_Fuzz_Grunge.html" title="Legacy:Nuclear Fuzz Grunge">NFG</a></p>
+<dl>
+<dd>It's very vague for now, needs major work.&#160;:-) – <i>Tarquin</i></dd>
+</dl>
+<h4><span class="mw-headline" id="Zedsquared_chips_in_with_a_more_general_view:">Zedsquared chips in with a more general view:</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Communication_Between_Objects?section=6" title="Edit section: Zedsquared chips in with a more general view:">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>If you want to have a master actor on your map that exchanges information with other slave actors which can be dynamically created during gameplay then the only way for those slaves to get a reference the master actor is for the slaves to scan through all the actors on the level when created ( i.e. run a foreach.allactors iteration in prebeginplay ) and identify the master actor (hopefully it will be the only one of it's type on the level or we're in trouble).</p>
+<p>So, to put things in more concrete terms, imagine you have a mod where a reactor goes critical and will blow once the opposing team has pulled enough control rods out (meanwhile the defending team can push them back in).</p>
+<p>Each player on has a small device (we'll call it an RCM or Reactor Core Monitor) which can display a reactor temperature which is going to be varying according to how many rods are in or out, this means that there's</p>
+<p>no simple timer here, the state of the reactor depends on the actions of the players and this info has to come from the reactor</p>
+<p>itself.</p>
+<p>One way of doing this would be for the reactor object to scan all actors on the level each tick and each time it finds an RCM it would call an UpdateStatus function, like this:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">var</span> <span class="kw5">float</span> temperature;
+<span class="kw1">event</span> <span class="kw4">tick</span><span class="br0">(</span> <span class="kw5">float</span> deltatime<span class="br0">)</span>
+ <span class="br0">{</span>
+    <span class="kw1">local</span> RCM monitor;
+ 
+    modelheat<span class="br0">(</span>deltatime<span class="br0">)</span>; <span class="co1">// do calcs to see how hot we are</span>
+    <span class="kw2">if</span><span class="br0">(</span>temperature <span class="sy0">&gt;</span> critical_temperature<span class="br0">)</span> boom<span class="br0">(</span><span class="br0">)</span>
+    <span class="kw2">else</span>
+      <span class="kw2">foreach</span> <span class="kw2">allactors</span><span class="br0">(</span> <span class="kw1">class</span><span class="st0">'RCM'</span>, monitor<span class="br0">)</span>
+        monitor.<span class="me0">UpdateStatus</span><span class="br0">(</span>temperature<span class="br0">)</span>;
+ <span class="br0">}</span>
+</pre></div>
+</div>
+<p>Which is all well and good but somewhat inefficient as the foreach allactors iterator gets called every tick, this is slow and generally a Bad Thing.</p>
+<p>Another way to approach this is to have the RCM's find out where the reactor is when they're created and then use that information to query the reactor themselves, like this:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+  <span class="kw1">var</span> myreactor reactor;
+ 
+  <span class="kw1">function</span> <span class="kw4">prebeginplay</span> <span class="br0">(</span><span class="br0">)</span>
+  <span class="br0">{</span>
+   <span class="co1">// find the reactor and assign a pointer to it</span>
+   <span class="kw2">foreach</span> <span class="kw2">allactors</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'myreactor'</span>, reactor<span class="br0">)</span>;
+  <span class="br0">}</span>
+ 
+  <span class="kw1">event</span> <span class="kw4">tick</span> <span class="br0">(</span><span class="kw5">float</span> deltatime<span class="br0">)</span>
+  <span class="br0">{</span>
+   <span class="kw2">if</span><span class="br0">(</span>reactor <span class="sy0">!=</span><span class="kw5">none</span><span class="br0">)</span> UpdateStatus<span class="br0">(</span>reactor.<span class="me0">temperature</span><span class="br0">)</span>;
+  <span class="br0">}</span>
+</pre></div>
+</div>
+<p>The nasty slow iterator gets called only once per RCM actor (it'd probably be spawned as part of the players inventory on game login and that's when it scans to get a reference to the reactor) and all the reactor has to do is check how hot it's getting at regular intervals and set that value in it's temperature variable for the others to read... easy!</p>
+<p>(and that mod ideas sounds like it might be fun... feel free to pinch it&#160;:-) )</p>
+<h4><span class="mw-headline" id="Alternate_.2B_More_Efficient_Way">Alternate + More Efficient Way</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Communication_Between_Objects?section=7" title="Edit section: Alternate + More Efficient Way">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>An alternative way that I have found that works is to have a reference in your 'slave' actors to the 'master' actor and when you spawn the slaves (the easiest way would be to spawn from the slave), set the 'master' reference in their properties to that of the 'master' actor on the map.</p>
+<p>An Example:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="co1">//In the slave class</span>
+<span class="kw1">Class</span> SlaveClass <span class="kw1">Extends</span> SomeOtherActor;
+<span class="kw1">var</span> MasterActor MyMaster; <span class="co1">//An empty reference when the slave is first created</span>
+</pre></div>
+</div>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="co1">//In the Master Class</span>
+<span class="kw1">Class</span> MasterClass <span class="kw1">Extends</span> SomeOtherActor;
+ 
+<span class="kw1">function</span> SpawnSlave<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+   <span class="kw1">local</span> SlaveClass MySlave;   
+   MySlave <span class="sy0">=</span> <span class="kw4">Spawn</span><span class="br0">(</span><span class="kw1">class</span><span class="st0">'YourPackage.SlaveClass) //plus whatever else you need to spawn &gt;_&lt;
+   MySlave.MyMaster = Self //Set the empty reference MyMaster to reference the MasterClass    
+}</span>
+</pre></div>
+</div>
+<p>I believe this to be far more efficient than going through the list of actors etc.</p>
+<p><br /></p>
+<h4><span class="mw-headline" id=".22Global.22_object_references">"Global" object references</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Communication_Between_Objects?section=8" title="Edit section: &quot;Global&quot; object references">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">class</span> Foo <span class="kw1">extends</span> <span class="kw8">Object</span>;
+ 
+<span class="kw1">var</span> <span class="kw8">Object</span> Bar;
+ 
+<span class="kw1">event</span> Whatever<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw2">if</span><span class="br0">(</span> <span class="kw1">default</span>.<span class="me0">Bar</span> <span class="sy0">==</span> <span class="kw5">None</span> <span class="br0">)</span>
+    <span class="br0">{</span>
+        <span class="kw1">default</span>.<span class="me0">Bar</span> <span class="sy0">=</span> SpawnFindAssignWhatever<span class="br0">(</span><span class="br0">)</span>;
+        Bar <span class="sy0">=</span> <span class="kw1">default</span>.<span class="me0">Bar</span>;
+    <span class="br0">}</span>
+ 
+    <span class="kw2">if</span><span class="br0">(</span> <span class="kw1">default</span>.<span class="me0">Bar</span> <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+        <span class="kw1">default</span>.<span class="me0">Bar</span>.<span class="me0">Hello</span><span class="br0">(</span><span class="kw6">self</span><span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<ul>
+<li>SpawnFindAssignWhatever(); will be called only once per game in the best case</li>
+<li>All Foo's automatically gain access to Bar actor through default.Bar;</li>
+<li>Newly created objects have their Bar variable initialized to what's in default.Bar;</li>
+<li>Other objects can access Foo's bar through class'Foo'.default.Bar;</li>
+</ul>
+<p>another example:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">class</span> Foo <span class="kw1">extends</span> <span class="kw8">Object</span>;
+ 
+<span class="kw1">var</span> <span class="kw8">Object</span> Bar;
+ 
+<span class="kw1">event</span> Whatever<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw2">if</span><span class="br0">(</span> <span class="kw1">default</span>.<span class="me0">Bar</span> <span class="sy0">!=</span> <span class="kw5">None</span> <span class="br0">)</span>
+        <span class="kw1">default</span>.<span class="me0">Bar</span>.<span class="me0">Hello</span><span class="br0">(</span><span class="kw6">self</span><span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">class</span> Bar <span class="kw1">extends</span> <span class="kw8">Object</span>;
+ 
+<span class="kw1">event</span> Whatever<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw2">if</span><span class="br0">(</span> <span class="kw1">class</span><span class="st0">'Foo'</span>.<span class="kw1">default</span>.<span class="me0">Bar</span> <span class="sy0">==</span> <span class="kw5">None</span> <span class="br0">)</span>
+        <span class="kw1">class</span><span class="st0">'Foo'</span>.<span class="kw1">default</span>.<span class="me0">Bar</span> <span class="sy0">=</span> <span class="kw6">self</span>;
+<span class="br0">}</span>
+ 
+<span class="kw1">function</span> Hello<span class="br0">(</span> <span class="kw8">Object</span> o <span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="co1">//...</span>
+<span class="br0">}</span>
+</pre></div>
+</div>
+<h2><span class="mw-headline" id="Related_Topics">Related Topics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Communication_Between_Objects?section=9" title="Edit section: Related Topics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="Legacy_UnrealScript.html" title="Legacy:UnrealScript">UnrealScript</a></li>
+<li><a href="Legacy_Iterator.html" title="Legacy:Iterator">Iterators</a></li>
+</ul>
+<h2><span class="mw-headline" id="Comments_2">Comments</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/Legacy:Communication_Between_Objects?section=10" title="Edit section: Comments">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><b>dataangel</b>: I don't think this is correct:</p>
+<p>"If you want to have a master actor on your map that exchanges information with other slave actors which can be dynamically created during gameplay then the only way for those slaves to get a reference the master actor is for the slaves to scan through all the actors on the level when created ( i.e. run a foreach.allactors iteration in prebeginplay ) and identify the master actor (hopefully it will be the only one of it's type on the level or we're in trouble)."</p>
+<p>Couldn't you simply assign the slave's master when you create it? The same way game rules objects usually have a reference to the mutator that spawns them.</p>
+<p><b>Fataloverdose</b> yes, if it was the master that spawned the slave.But all the slaves would have to be spawned after the gameplay has started to be able get a valid refference to the master.</p>
+<p><b>Ben</b></p>
+<p>Well, what is the problem in the fact that the master didn't spawn the slaves&#160;? Why don't we do like that:</p>
+<p>The master has a list of all the slaves (empty at the begining) and a method "add_slave(slave newSlave)".</p>
+<p>When a slave appears, in its prebeginplay() method, it find the reactor and do "pointorToTheReactorFound.add_slave(this)"</p>
+<p>Like that the master update the slaves only when it changes.</p>
+<p><b>mE</b>: this is really confusing, and for some reason i think it's really important. Still it seems pretty simple, when i have my code working i may edit this down i think i know what i'm doing now.</p>
+<p><b>Kartoshka:</b> This page could use a good cleaning <a href="Category_Legacy_Refactor_Me.html" title="Category:Legacy Refactor Me">Category:Legacy Refactor Me</a>. Also, one earlier question wasn't ever really answered. Which is a better place for the foreach iterator code – PreBeginPlay or PostBeginPlay?</p>
+<p><b>MythOpus:</b> I didn't really know there was a question like that... but here's my answer... I believe it's better it do any iterators in the PostBeginPlay as all the actors would have been created at that point so I believe it would be a better way of doing things. I will also look at refactoring this up later in the week as I have final's but am off thursday and friday. EDIT- I guess I'll also write up examples for the CTF Flag that the original author hasn't gotten around to yet heh.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.175 seconds
+Real time usage: 0.177 seconds
+Preprocessor visited node count: 175/1000000
+Preprocessor generated node count: 352/1000000
+Post‐expand include size: 29/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:691-0!*!0!!en!*!* and timestamp 20161215143102 and revision id 2013
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/Legacy:Communication_Between_Objects?oldid=2013">https://wiki.beyondunreal.com/Legacy:Communication_Between_Objects?oldid=2013</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Legacy_Refactor_Me.html" title="Category:Legacy Refactor Me">Legacy Refactor Me</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-legacy" class="selected"><a href="Legacy_Communication_Between_Objects.html">Legacy</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Legacy_talk:Communication_Between_Objects?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/Legacy:Communication_Between_Objects" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/Legacy:Communication_Between_Objects" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ACommunication+Between+Objects&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=Legacy%3ACommunication+Between+Objects" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/Legacy:Communication_Between_Objects" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/Legacy:Communication_Between_Objects" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/Legacy:Communication_Between_Objects?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/Legacy:Communication_Between_Objects?oldid=2013" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/Legacy:Communication_Between_Objects" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 18:45, 21 April 2007.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":90});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/Legacy:Communication_Between_Objects by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:56:50 GMT -->
+</html>

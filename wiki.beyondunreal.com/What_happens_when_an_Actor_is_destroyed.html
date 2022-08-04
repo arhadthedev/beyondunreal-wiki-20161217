@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/What_happens_when_an_Actor_is_destroyed by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:52:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>What happens when an Actor is destroyed - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_destroyed" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_destroyed" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="What_happens_when_an_Actor_is_destroyed.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"What_happens_when_an_Actor_is_destroyed","wgTitle":"What happens when an Actor is destroyed","wgCurRevisionId":42668,"wgRevisionId":42668,"wgArticleId":28807,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Programming articles"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"What_happens_when_an_Actor_is_destroyed","wgRelevantArticleId":28807,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-What_happens_when_an_Actor_is_destroyed skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Gah - a solution with more questions. &#8211; EntropicLqd
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">What happens when an Actor is destroyed</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>While they released a snippet of native code in <a href="UnLevAct.html" title="UnLevAct.cpp" class="mw-redirect">UnLevAct.cpp</a> that explains <a href="What_happens_when_an_Actor_is_spawned.html" title="What happens when an Actor is spawned">what happens when an Actor is spawned</a>, Epic Games never released the corresponding code for destroying actors. However, though experiments and some experience with random bugs in one's own code, certain assumptions can be made about what exactly happens when an Actor is destroyed with the <a href="Actor.html#Destroy" title="Actor">Destroy() function</a>.</p>
+<p>The events described here also happen clientsidely when a replicated actor that isn't <i>bNetTemporary</i> and wasn't "torn off" is no longer relevant to that client. If the actor becomes relevant again at some later point, it will be spawned again as if it is a new actor to that client.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Summary_of_events"><span class="tocnumber">1</span> <span class="toctext">Summary of events</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Validity_checks"><span class="tocnumber">1.1</span> <span class="toctext">Validity checks</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#bPendingDelete"><span class="tocnumber">1.2</span> <span class="toctext">bPendingDelete</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#EndState.28.29"><span class="tocnumber">1.3</span> <span class="toctext">EndState()</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Destroyed.28.29"><span class="tocnumber">1.4</span> <span class="toctext">Destroyed()</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Detach.28.29.2C_BaseChanged.28.29"><span class="tocnumber">1.5</span> <span class="toctext">Detach(), BaseChanged()</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#UnTouch.28.29"><span class="tocnumber">1.6</span> <span class="toctext">UnTouch()</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Owner.LostChild.28.29"><span class="tocnumber">1.7</span> <span class="toctext">Owner.LostChild()</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#After_Destroy.28.29_returned"><span class="tocnumber">2</span> <span class="toctext">After Destroy() returned</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Summary_of_events">Summary of events</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_destroyed?section=1" title="Edit section: Summary of events">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Everything described in this section happens between the call to Destroy() and its return.</p>
+<p>Be careful about calling Destroy() on an actor currently being destroyed. This subsequent Destroy() call will processed as usual, so you will have to manually implement something to break out of this recursion before it crashes the engine with an <a href="https://wiki.beyondunreal.com/edit/Infinite_script_recursion?redlink=1" class="new" title="Infinite script recursion (page does not exist)">infinite script recursion</a> error. Once an "inner" Destroy() call succeeds, any "outer" Destroy() will short-circuit and return <code>True</code> without calling any additional events.</p>
+<h3><span class="mw-headline" id="Validity_checks">Validity checks</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_destroyed?section=2" title="Edit section: Validity checks">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Before doing anything, the engine checks whether the actor can be destroyed at all. Actors with <i>bStatic</i> or <i>bNoDelete</i> set to <code>True</code> cannot be destroyed. Neither can replicated actors with the <i>bNetTemporary</i> flag set to <code>False</code> on a network client, unless they are no longer network relevant to that client. In that case destruction does not originate from the Destroy() function, but from <a href="Replication.html" title="Replication" class="mw-redirect">replication</a> code. The Destroy() function will return <code>False</code> if it detects any of these conditions.</p>
+<p>Also it seems PlayerControllers (or PlayerPawns in <a href="https://wiki.beyondunreal.com/edit/UE1?redlink=1" class="new" title="UE1 (page does not exist)">UE1</a>) of clients cannot be destroyed directly on a network server, but the call to Destroy() causes them to be disconnected. That disconnect may happen a bit later, but after the connection is closed, the PlayerController (or PlayerPawn) is destroyed with the usual events getting called as described below. Destroy() returns <code>False</code> here as well, even though the player actor starts disconnecting, which will eventually result in its destruction.</p>
+<h3><span class="mw-headline" id="bPendingDelete">bPendingDelete</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_destroyed?section=3" title="Edit section: bPendingDelete">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>While the Destroy() function is executed, the Actor's <i>bPendingDelete</i> property is set to <code>True</code>. Any event called directly or indirectly during destruction should check this property before doing anything that won't make sense on an Actor that is about to be deleted from the level.</p>
+<h3><span class="mw-headline" id="EndState.28.29">EndState()</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_destroyed?section=4" title="Edit section: EndState()">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>If the actor is in a <a href="State.html" title="State" class="mw-redirect">state</a>, the EndState() event is called. The actor doesn't actually leave the state, though. You could probably still switch states via GotoState(), but don't complain if you or your code gets confused.</p>
+<h3><span class="mw-headline" id="Destroyed.28.29">Destroyed()</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_destroyed?section=5" title="Edit section: Destroyed()">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Next, the Destroyed() event is called. As mentioned above, the actor does not leave its current state, so you could probably override this event in states.</p>
+<h3><span class="mw-headline" id="Detach.28.29.2C_BaseChanged.28.29">Detach(), BaseChanged()</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_destroyed?section=6" title="Edit section: Detach(), BaseChanged()">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>If the actor is attached to another actor (<code>thisActor.Base&#160;!= None</code>), the base actor's Detach() event and the destroyed actor's BaseChange() event are called. Similarly, for any actor attached to the destroyed actor, the destroyed actor's Detach() event and the detached actor's BaseChange() event are called.</p>
+<h3><span class="mw-headline" id="UnTouch.28.29">UnTouch()</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_destroyed?section=7" title="Edit section: UnTouch()">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>If the actor is touching any other actors, those actors' UnTouch() event is called. It is not called on the destroyed actor itself, though.</p>
+<h3><span class="mw-headline" id="Owner.LostChild.28.29">Owner.LostChild()</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_destroyed?section=8" title="Edit section: Owner.LostChild()">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Lastly, if the actor has an <i>Owner</i>, that owner actor's LostChild() event is called.</p>
+<h2><span class="mw-headline" id="After_Destroy.28.29_returned">After Destroy() returned</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_destroyed?section=9" title="Edit section: After Destroy() returned">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>When the Destroy() function (or the <a href="Replication.html" title="Replication" class="mw-redirect">replication</a> code that cleans up obsolete replicated actors) returns, the actor object is not actually gone, it just becomes unaccessible by other objects in UnrealScript.</p>
+<p>If the Destroy() function was called from within a function of the destroyed actor, then that function continues to execute even after Destroy() returned successfully. If you execute code after a successful Destroy() call, things start getting awkward. You can still access the destroyed actor's variables and call its functions, but only directly, not through variables or function return values. You can even still assign the destroyed actor to variables, but accessing variable or calling functions through them fails with an <a href="Accessed_None.html" title="Accessed None" class="mw-redirect">Accessed None</a> warning:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="kw1">function</span> DestructionTest<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw1">local</span> <span class="kw9">Actor</span> Before, After;
+ 
+  Before <span class="sy0">=</span> <span class="kw6">Self</span>;
+ 
+  <span class="co1">// logs "False True True"</span>
+  <span class="kw3">log</span><span class="br0">(</span>bDeleteMe <span class="sy0">@</span> <span class="kw4">Destroy</span><span class="br0">(</span><span class="br0">)</span> <span class="sy0">@</span> bDeleteMe<span class="br0">)</span>;
+ 
+  After <span class="sy0">=</span> <span class="kw6">Self</span>;
+ 
+  <span class="co1">// logs 3 Accessed None warnings, then logs "True False False False",</span>
+  <span class="co1">// because accessing a variable through None returns its null value,</span>
+  <span class="co1">// which is False for type bool</span>
+  <span class="kw3">log</span><span class="br0">(</span>bDeleteMe <span class="sy0">@</span> <span class="kw6">Self</span>.<span class="me0">bDeleteMe</span> <span class="sy0">@</span> Before.<span class="me0">bDeleteMe</span> <span class="sy0">@</span> After.<span class="me0">bDeleteMe</span><span class="br0">)</span>;
+ 
+  <span class="co1">// logs 3x this actor's name, separated by single spaces</span>
+  <span class="co1">// (even though the engine claimed it was accessing None in the previous log() call)</span>
+  <span class="kw3">log</span><span class="br0">(</span><span class="kw6">Self</span> <span class="sy0">@</span> Before <span class="sy0">@</span> After<span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+<p>Note that the <a href="Self.html" title="Self" class="mw-redirect">Self</a> keyword and variable assignments still work, just accessing class members through them no longer does. That <i>bDeleteMe</i> variable is set to <code>True</code> by the Destroy() function after all the events described in the <a href="#Summary_of_events">Summary of events</a> section.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.030 seconds
+Real time usage: 0.031 seconds
+Preprocessor visited node count: 38/1000000
+Preprocessor generated node count: 60/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:28807-0!*!0!!en!*!* and timestamp 20161215141724 and revision id 42668
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/What_happens_when_an_Actor_is_destroyed?oldid=42668">https://wiki.beyondunreal.com/What_happens_when_an_Actor_is_destroyed?oldid=42668</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Programming_articles.html" title="Category:Programming articles">Programming articles</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="What_happens_when_an_Actor_is_destroyed.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				<li id="ca-talk"><a href="Talk_What_happens_when_an_Actor_is_destroyed.html" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_destroyed" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/What_happens_when_an_Actor_is_destroyed" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=What+happens+when+an+Actor+is+destroyed&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=What+happens+when+an+Actor+is+destroyed" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/What_happens_when_an_Actor_is_destroyed" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/What_happens_when_an_Actor_is_destroyed" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/What_happens_when_an_Actor_is_destroyed?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/What_happens_when_an_Actor_is_destroyed?oldid=42668" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/What_happens_when_an_Actor_is_destroyed" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 06:14, 18 March 2010.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":97});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/What_happens_when_an_Actor_is_destroyed by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 07:52:50 GMT -->
+</html>

@@ -1,0 +1,2113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:Engine_internal_variables_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 11:22:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:Engine internal variables (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_Engine_internal_variables_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:Engine_internal_variables_(UDK)","wgTitle":"Engine internal variables (UDK)","wgCurRevisionId":40859,"wgRevisionId":40859,"wgArticleId":25575,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:Engine_internal_variables_(UDK)","wgRelevantArticleId":25575,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_Engine_internal_variables_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>The three virtues of a programmer: Laziness, Impatience, and Hubris. &#8211; Larry Wall
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:Engine internal variables (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<a href="UE3_Subsystem_(UDK).html" title="UE3:Subsystem (UDK)">Subsystem</a> &gt;&gt;&#160;<a href="UE3_Engine_(UDK).html" title="UE3:Engine (UDK)">Engine</a> <i>(internal variables)</i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Internal_variables"><span class="tocnumber">1</span> <span class="toctext">Internal variables</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#AdditionalFontNames"><span class="tocnumber">1.1</span> <span class="toctext">AdditionalFontNames</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#AdditionalFonts"><span class="tocnumber">1.2</span> <span class="toctext">AdditionalFonts</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#bAllowMatureLanguage"><span class="tocnumber">1.3</span> <span class="toctext">bAllowMatureLanguage</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#bAreConstraintsDirty"><span class="tocnumber">1.4</span> <span class="toctext">bAreConstraintsDirty</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#bCheckParticleRenderSize"><span class="tocnumber">1.5</span> <span class="toctext">bCheckParticleRenderSize</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#bDisablePhysXHardwareSupport"><span class="tocnumber">1.6</span> <span class="toctext">bDisablePhysXHardwareSupport</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#BeginUPTryCount"><span class="tocnumber">1.7</span> <span class="toctext">BeginUPTryCount</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#bEnableColorClear"><span class="tocnumber">1.8</span> <span class="toctext">bEnableColorClear</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#bEnableKismetLogging"><span class="tocnumber">1.9</span> <span class="toctext">bEnableKismetLogging</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#bEnableOnScreenDebugMessages"><span class="tocnumber">1.10</span> <span class="toctext">bEnableOnScreenDebugMessages</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#bEnableOnScreenDebugMessagesDisplay"><span class="tocnumber">1.11</span> <span class="toctext">bEnableOnScreenDebugMessagesDisplay</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#bForceCPUSkinning"><span class="tocnumber">1.12</span> <span class="toctext">bForceCPUSkinning</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#bHasPendingGlobalReattach"><span class="tocnumber">1.13</span> <span class="toctext">bHasPendingGlobalReattach</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#BoneWeightMaterial"><span class="tocnumber">1.14</span> <span class="toctext">BoneWeightMaterial</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#BoneWeightMaterialName"><span class="tocnumber">1.15</span> <span class="toctext">BoneWeightMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#bOnScreenKismetWarnings"><span class="tocnumber">1.16</span> <span class="toctext">bOnScreenKismetWarnings</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#bPauseOnLossOfFocus"><span class="tocnumber">1.17</span> <span class="toctext">bPauseOnLossOfFocus</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#bRenderLightMapDensityGrayscale"><span class="tocnumber">1.18</span> <span class="toctext">bRenderLightMapDensityGrayscale</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#bRenderTerrainCollisionAsOverlay"><span class="tocnumber">1.19</span> <span class="toctext">bRenderTerrainCollisionAsOverlay</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#bShouldGenerateSimpleLightmaps"><span class="tocnumber">1.20</span> <span class="toctext">bShouldGenerateSimpleLightmaps</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#bSmoothFrameRate"><span class="tocnumber">1.21</span> <span class="toctext">bSmoothFrameRate</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#bSuppressMapWarnings"><span class="tocnumber">1.22</span> <span class="toctext">bSuppressMapWarnings</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#BuildingQuadStaticMesh"><span class="tocnumber">1.23</span> <span class="toctext">BuildingQuadStaticMesh</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#BuildingQuadStaticMeshName"><span class="tocnumber">1.24</span> <span class="toctext">BuildingQuadStaticMeshName</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#bUsePostProcessEffects"><span class="tocnumber">1.25</span> <span class="toctext">bUsePostProcessEffects</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#CameraRotationThreshold"><span class="tocnumber">1.26</span> <span class="toctext">CameraRotationThreshold</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#CameraTranslationThreshold"><span class="tocnumber">1.27</span> <span class="toctext">CameraTranslationThreshold</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#Client"><span class="tocnumber">1.28</span> <span class="toctext">Client</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#ClientCycles"><span class="tocnumber">1.29</span> <span class="toctext">ClientCycles</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#ConsoleClass"><span class="tocnumber">1.30</span> <span class="toctext">ConsoleClass</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#ConsoleClassName"><span class="tocnumber">1.31</span> <span class="toctext">ConsoleClassName</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#CrossMaterial"><span class="tocnumber">1.32</span> <span class="toctext">CrossMaterial</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#CrossMaterialName"><span class="tocnumber">1.33</span> <span class="toctext">CrossMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#DataStoreClientClass"><span class="tocnumber">1.34</span> <span class="toctext">DataStoreClientClass</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#DataStoreClientClassName"><span class="tocnumber">1.35</span> <span class="toctext">DataStoreClientClassName</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#DebugManager"><span class="tocnumber">1.36</span> <span class="toctext">DebugManager</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#DefaultDecalMaterial"><span class="tocnumber">1.37</span> <span class="toctext">DefaultDecalMaterial</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#DefaultDecalMaterialName"><span class="tocnumber">1.38</span> <span class="toctext">DefaultDecalMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#DefaultFogVolumeMaterial"><span class="tocnumber">1.39</span> <span class="toctext">DefaultFogVolumeMaterial</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#DefaultFogVolumeMaterialName"><span class="tocnumber">1.40</span> <span class="toctext">DefaultFogVolumeMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#DefaultMaterial"><span class="tocnumber">1.41</span> <span class="toctext">DefaultMaterial</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#DefaultMaterialName"><span class="tocnumber">1.42</span> <span class="toctext">DefaultMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="#DefaultOnlineSubsystemName"><span class="tocnumber">1.43</span> <span class="toctext">DefaultOnlineSubsystemName</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="#DefaultPhysMaterial"><span class="tocnumber">1.44</span> <span class="toctext">DefaultPhysMaterial</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href="#DefaultPhysMaterialName"><span class="tocnumber">1.45</span> <span class="toctext">DefaultPhysMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#DefaultPostProcess"><span class="tocnumber">1.46</span> <span class="toctext">DefaultPostProcess</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="#DefaultPostProcessName"><span class="tocnumber">1.47</span> <span class="toctext">DefaultPostProcessName</span></a></li>
+<li class="toclevel-2 tocsection-49"><a href="#DefaultSelectedMaterialColor"><span class="tocnumber">1.48</span> <span class="toctext">DefaultSelectedMaterialColor</span></a></li>
+<li class="toclevel-2 tocsection-50"><a href="#DefaultSound"><span class="tocnumber">1.49</span> <span class="toctext">DefaultSound</span></a></li>
+<li class="toclevel-2 tocsection-51"><a href="#DefaultSoundName"><span class="tocnumber">1.50</span> <span class="toctext">DefaultSoundName</span></a></li>
+<li class="toclevel-2 tocsection-52"><a href="#DefaultTexture"><span class="tocnumber">1.51</span> <span class="toctext">DefaultTexture</span></a></li>
+<li class="toclevel-2 tocsection-53"><a href="#DefaultTextureName"><span class="tocnumber">1.52</span> <span class="toctext">DefaultTextureName</span></a></li>
+<li class="toclevel-2 tocsection-54"><a href="#DefaultUICaretMaterial"><span class="tocnumber">1.53</span> <span class="toctext">DefaultUICaretMaterial</span></a></li>
+<li class="toclevel-2 tocsection-55"><a href="#DefaultUICaretMaterialName"><span class="tocnumber">1.54</span> <span class="toctext">DefaultUICaretMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-56"><a href="#DefaultUIScenePostProcess"><span class="tocnumber">1.55</span> <span class="toctext">DefaultUIScenePostProcess</span></a></li>
+<li class="toclevel-2 tocsection-57"><a href="#DefaultUIScenePostProcessName"><span class="tocnumber">1.56</span> <span class="toctext">DefaultUIScenePostProcessName</span></a></li>
+<li class="toclevel-2 tocsection-58"><a href="#DeferredCommands"><span class="tocnumber">1.57</span> <span class="toctext">DeferredCommands</span></a></li>
+<li class="toclevel-2 tocsection-59"><a href="#DynamicCoverMeshComponentName"><span class="tocnumber">1.58</span> <span class="toctext">DynamicCoverMeshComponentName</span></a></li>
+<li class="toclevel-2 tocsection-60"><a href="#EditorBrushMaterial"><span class="tocnumber">1.59</span> <span class="toctext">EditorBrushMaterial</span></a></li>
+<li class="toclevel-2 tocsection-61"><a href="#EditorBrushMaterialName"><span class="tocnumber">1.60</span> <span class="toctext">EditorBrushMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-62"><a href="#EmissiveTexturedMaterial"><span class="tocnumber">1.61</span> <span class="toctext">EmissiveTexturedMaterial</span></a></li>
+<li class="toclevel-2 tocsection-63"><a href="#EmissiveTexturedMaterialName"><span class="tocnumber">1.62</span> <span class="toctext">EmissiveTexturedMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-64"><a href="#FluidSimulationTimeLimit"><span class="tocnumber">1.63</span> <span class="toctext">FluidSimulationTimeLimit</span></a></li>
+<li class="toclevel-2 tocsection-65"><a href="#GameCycles"><span class="tocnumber">1.64</span> <span class="toctext">GameCycles</span></a></li>
+<li class="toclevel-2 tocsection-66"><a href="#GamePlayers"><span class="tocnumber">1.65</span> <span class="toctext">GamePlayers</span></a></li>
+<li class="toclevel-2 tocsection-67"><a href="#GameViewport"><span class="tocnumber">1.66</span> <span class="toctext">GameViewport</span></a></li>
+<li class="toclevel-2 tocsection-68"><a href="#GameViewportClientClass"><span class="tocnumber">1.67</span> <span class="toctext">GameViewportClientClass</span></a></li>
+<li class="toclevel-2 tocsection-69"><a href="#GameViewportClientClassName"><span class="tocnumber">1.68</span> <span class="toctext">GameViewportClientClassName</span></a></li>
+<li class="toclevel-2 tocsection-70"><a href="#GeomMaterial"><span class="tocnumber">1.69</span> <span class="toctext">GeomMaterial</span></a></li>
+<li class="toclevel-2 tocsection-71"><a href="#GeomMaterialName"><span class="tocnumber">1.70</span> <span class="toctext">GeomMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-72"><a href="#HACK_UseTickFrequency"><span class="tocnumber">1.71</span> <span class="toctext">HACK_UseTickFrequency</span></a></li>
+<li class="toclevel-2 tocsection-73"><a href="#HeatmapMaterial"><span class="tocnumber">1.72</span> <span class="toctext">HeatmapMaterial</span></a></li>
+<li class="toclevel-2 tocsection-74"><a href="#HeatmapMaterialName"><span class="tocnumber">1.73</span> <span class="toctext">HeatmapMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-75"><a href="#IdealLightMapDensity"><span class="tocnumber">1.74</span> <span class="toctext">IdealLightMapDensity</span></a></li>
+<li class="toclevel-2 tocsection-76"><a href="#IdealTextureDensity"><span class="tocnumber">1.75</span> <span class="toctext">IdealTextureDensity</span></a></li>
+<li class="toclevel-2 tocsection-77"><a href="#IgnoreSimulatedFuncWarnings"><span class="tocnumber">1.76</span> <span class="toctext">IgnoreSimulatedFuncWarnings</span></a></li>
+<li class="toclevel-2 tocsection-78"><a href="#LargeFont"><span class="tocnumber">1.77</span> <span class="toctext">LargeFont</span></a></li>
+<li class="toclevel-2 tocsection-79"><a href="#LargeFontName"><span class="tocnumber">1.78</span> <span class="toctext">LargeFontName</span></a></li>
+<li class="toclevel-2 tocsection-80"><a href="#LevelColorationLitMaterial"><span class="tocnumber">1.79</span> <span class="toctext">LevelColorationLitMaterial</span></a></li>
+<li class="toclevel-2 tocsection-81"><a href="#LevelColorationLitMaterialName"><span class="tocnumber">1.80</span> <span class="toctext">LevelColorationLitMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-82"><a href="#LevelColorationUnlitMaterial"><span class="tocnumber">1.81</span> <span class="toctext">LevelColorationUnlitMaterial</span></a></li>
+<li class="toclevel-2 tocsection-83"><a href="#LevelColorationUnlitMaterialName"><span class="tocnumber">1.82</span> <span class="toctext">LevelColorationUnlitMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-84"><a href="#LightComplexityColors"><span class="tocnumber">1.83</span> <span class="toctext">LightComplexityColors</span></a></li>
+<li class="toclevel-2 tocsection-85"><a href="#LightingOnlyBrightness"><span class="tocnumber">1.84</span> <span class="toctext">LightingOnlyBrightness</span></a></li>
+<li class="toclevel-2 tocsection-86"><a href="#LightingTexelDensityMaterial"><span class="tocnumber">1.85</span> <span class="toctext">LightingTexelDensityMaterial</span></a></li>
+<li class="toclevel-2 tocsection-87"><a href="#LightingTexelDensityName"><span class="tocnumber">1.86</span> <span class="toctext">LightingTexelDensityName</span></a></li>
+<li class="toclevel-2 tocsection-88"><a href="#LightMapDensityNormal"><span class="tocnumber">1.87</span> <span class="toctext">LightMapDensityNormal</span></a></li>
+<li class="toclevel-2 tocsection-89"><a href="#LightMapDensityNormalName"><span class="tocnumber">1.88</span> <span class="toctext">LightMapDensityNormalName</span></a></li>
+<li class="toclevel-2 tocsection-90"><a href="#LightMapDensitySelectedColor"><span class="tocnumber">1.89</span> <span class="toctext">LightMapDensitySelectedColor</span></a></li>
+<li class="toclevel-2 tocsection-91"><a href="#LightMapDensityTexture"><span class="tocnumber">1.90</span> <span class="toctext">LightMapDensityTexture</span></a></li>
+<li class="toclevel-2 tocsection-92"><a href="#LightMapDensityTextureName"><span class="tocnumber">1.91</span> <span class="toctext">LightMapDensityTextureName</span></a></li>
+<li class="toclevel-2 tocsection-93"><a href="#LightMapDensityVertexMappedColor"><span class="tocnumber">1.92</span> <span class="toctext">LightMapDensityVertexMappedColor</span></a></li>
+<li class="toclevel-2 tocsection-94"><a href="#LocalPlayerClass"><span class="tocnumber">1.93</span> <span class="toctext">LocalPlayerClass</span></a></li>
+<li class="toclevel-2 tocsection-95"><a href="#LocalPlayerClassName"><span class="tocnumber">1.94</span> <span class="toctext">LocalPlayerClassName</span></a></li>
+<li class="toclevel-2 tocsection-96"><a href="#MaxFluidNumVerts"><span class="tocnumber">1.95</span> <span class="toctext">MaxFluidNumVerts</span></a></li>
+<li class="toclevel-2 tocsection-97"><a href="#MaxLightMapDensity"><span class="tocnumber">1.96</span> <span class="toctext">MaxLightMapDensity</span></a></li>
+<li class="toclevel-2 tocsection-98"><a href="#MaxOcclusionPixelsFraction"><span class="tocnumber">1.97</span> <span class="toctext">MaxOcclusionPixelsFraction</span></a></li>
+<li class="toclevel-2 tocsection-99"><a href="#MaxParticleResize"><span class="tocnumber">1.98</span> <span class="toctext">MaxParticleResize</span></a></li>
+<li class="toclevel-2 tocsection-100"><a href="#MaxParticleResizeWarn"><span class="tocnumber">1.99</span> <span class="toctext">MaxParticleResizeWarn</span></a></li>
+<li class="toclevel-2 tocsection-101"><a href="#MaxParticleSpriteCount"><span class="tocnumber">1.100</span> <span class="toctext">MaxParticleSpriteCount</span></a></li>
+<li class="toclevel-2 tocsection-102"><a href="#MaxParticleSubUVCount"><span class="tocnumber">1.101</span> <span class="toctext">MaxParticleSubUVCount</span></a></li>
+<li class="toclevel-2 tocsection-103"><a href="#MaxParticleVertexMemory"><span class="tocnumber">1.102</span> <span class="toctext">MaxParticleVertexMemory</span></a></li>
+<li class="toclevel-2 tocsection-104"><a href="#MaxPixelShaderAdditiveComplexityCount"><span class="tocnumber">1.103</span> <span class="toctext">MaxPixelShaderAdditiveComplexityCount</span></a></li>
+<li class="toclevel-2 tocsection-105"><a href="#MaxSmoothedFrameRate"><span class="tocnumber">1.104</span> <span class="toctext">MaxSmoothedFrameRate</span></a></li>
+<li class="toclevel-2 tocsection-106"><a href="#MaxTextureDensity"><span class="tocnumber">1.105</span> <span class="toctext">MaxTextureDensity</span></a></li>
+<li class="toclevel-2 tocsection-107"><a href="#MaxTrackedOcclusionIncrement"><span class="tocnumber">1.106</span> <span class="toctext">MaxTrackedOcclusionIncrement</span></a></li>
+<li class="toclevel-2 tocsection-108"><a href="#MediumFont"><span class="tocnumber">1.107</span> <span class="toctext">MediumFont</span></a></li>
+<li class="toclevel-2 tocsection-109"><a href="#MediumFontName"><span class="tocnumber">1.108</span> <span class="toctext">MediumFontName</span></a></li>
+<li class="toclevel-2 tocsection-110"><a href="#MeshLODRange"><span class="tocnumber">1.109</span> <span class="toctext">MeshLODRange</span></a></li>
+<li class="toclevel-2 tocsection-111"><a href="#MinLightMapDensity"><span class="tocnumber">1.110</span> <span class="toctext">MinLightMapDensity</span></a></li>
+<li class="toclevel-2 tocsection-112"><a href="#MinSmoothedFrameRate"><span class="tocnumber">1.111</span> <span class="toctext">MinSmoothedFrameRate</span></a></li>
+<li class="toclevel-2 tocsection-113"><a href="#MinTextureDensity"><span class="tocnumber">1.112</span> <span class="toctext">MinTextureDensity</span></a></li>
+<li class="toclevel-2 tocsection-114"><a href="#NetClientTicksPerSecond"><span class="tocnumber">1.113</span> <span class="toctext">NetClientTicksPerSecond</span></a></li>
+<li class="toclevel-2 tocsection-115"><a href="#OnlineSubsystemClass"><span class="tocnumber">1.114</span> <span class="toctext">OnlineSubsystemClass</span></a></li>
+<li class="toclevel-2 tocsection-116"><a href="#PendingDroppedNotes"><span class="tocnumber">1.115</span> <span class="toctext">PendingDroppedNotes</span></a></li>
+<li class="toclevel-2 tocsection-117"><a href="#PercentUnoccludedRequeries"><span class="tocnumber">1.116</span> <span class="toctext">PercentUnoccludedRequeries</span></a></li>
+<li class="toclevel-2 tocsection-118"><a href="#PrimitiveProbablyVisibleTime"><span class="tocnumber">1.117</span> <span class="toctext">PrimitiveProbablyVisibleTime</span></a></li>
+<li class="toclevel-2 tocsection-119"><a href="#ProcBuildingSimpleMaterial"><span class="tocnumber">1.118</span> <span class="toctext">ProcBuildingSimpleMaterial</span></a></li>
+<li class="toclevel-2 tocsection-120"><a href="#ProcBuildingSimpleMaterialName"><span class="tocnumber">1.119</span> <span class="toctext">ProcBuildingSimpleMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-121"><a href="#RandomAngleTexture"><span class="tocnumber">1.120</span> <span class="toctext">RandomAngleTexture</span></a></li>
+<li class="toclevel-2 tocsection-122"><a href="#RandomAngleTextureName"><span class="tocnumber">1.121</span> <span class="toctext">RandomAngleTextureName</span></a></li>
+<li class="toclevel-2 tocsection-123"><a href="#RandomNormalTexture"><span class="tocnumber">1.122</span> <span class="toctext">RandomNormalTexture</span></a></li>
+<li class="toclevel-2 tocsection-124"><a href="#RandomNormalTexture2"><span class="tocnumber">1.123</span> <span class="toctext">RandomNormalTexture2</span></a></li>
+<li class="toclevel-2 tocsection-125"><a href="#RandomNormalTextureName"><span class="tocnumber">1.124</span> <span class="toctext">RandomNormalTextureName</span></a></li>
+<li class="toclevel-2 tocsection-126"><a href="#RandomNormalTextureName2"><span class="tocnumber">1.125</span> <span class="toctext">RandomNormalTextureName2</span></a></li>
+<li class="toclevel-2 tocsection-127"><a href="#RemoteControlExec"><span class="tocnumber">1.126</span> <span class="toctext">RemoteControlExec</span></a></li>
+<li class="toclevel-2 tocsection-128"><a href="#RemoveSurfaceMaterial"><span class="tocnumber">1.127</span> <span class="toctext">RemoveSurfaceMaterial</span></a></li>
+<li class="toclevel-2 tocsection-129"><a href="#RemoveSurfaceMaterialName"><span class="tocnumber">1.128</span> <span class="toctext">RemoveSurfaceMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-130"><a href="#RenderLightMapDensityColorScale"><span class="tocnumber">1.129</span> <span class="toctext">RenderLightMapDensityColorScale</span></a></li>
+<li class="toclevel-2 tocsection-131"><a href="#RenderLightMapDensityGrayscaleScale"><span class="tocnumber">1.130</span> <span class="toctext">RenderLightMapDensityGrayscaleScale</span></a></li>
+<li class="toclevel-2 tocsection-132"><a href="#SceneCaptureCubeActorMaterial"><span class="tocnumber">1.131</span> <span class="toctext">SceneCaptureCubeActorMaterial</span></a></li>
+<li class="toclevel-2 tocsection-133"><a href="#SceneCaptureCubeActorMaterialName"><span class="tocnumber">1.132</span> <span class="toctext">SceneCaptureCubeActorMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-134"><a href="#SceneCaptureReflectActorMaterial"><span class="tocnumber">1.133</span> <span class="toctext">SceneCaptureReflectActorMaterial</span></a></li>
+<li class="toclevel-2 tocsection-135"><a href="#SceneCaptureReflectActorMaterialName"><span class="tocnumber">1.134</span> <span class="toctext">SceneCaptureReflectActorMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-136"><a href="#ScoutClassName"><span class="tocnumber">1.135</span> <span class="toctext">ScoutClassName</span></a></li>
+<li class="toclevel-2 tocsection-137"><a href="#SelectedMaterialColor"><span class="tocnumber">1.136</span> <span class="toctext">SelectedMaterialColor</span></a></li>
+<li class="toclevel-2 tocsection-138"><a href="#ShadedLevelColorationLitMaterial"><span class="tocnumber">1.137</span> <span class="toctext">ShadedLevelColorationLitMaterial</span></a></li>
+<li class="toclevel-2 tocsection-139"><a href="#ShadedLevelColorationLitMaterialName"><span class="tocnumber">1.138</span> <span class="toctext">ShadedLevelColorationLitMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-140"><a href="#ShadedLevelColorationUnlitMaterial"><span class="tocnumber">1.139</span> <span class="toctext">ShadedLevelColorationUnlitMaterial</span></a></li>
+<li class="toclevel-2 tocsection-141"><a href="#ShadedLevelColorationUnlitMaterialName"><span class="tocnumber">1.140</span> <span class="toctext">ShadedLevelColorationUnlitMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-142"><a href="#ShaderComplexityColors"><span class="tocnumber">1.141</span> <span class="toctext">ShaderComplexityColors</span></a></li>
+<li class="toclevel-2 tocsection-143"><a href="#SmallFont"><span class="tocnumber">1.142</span> <span class="toctext">SmallFont</span></a></li>
+<li class="toclevel-2 tocsection-144"><a href="#SmallFontName"><span class="tocnumber">1.143</span> <span class="toctext">SmallFontName</span></a></li>
+<li class="toclevel-2 tocsection-145"><a href="#StatColorMappings"><span class="tocnumber">1.144</span> <span class="toctext">StatColorMappings</span></a></li>
+<li class="toclevel-2 tocsection-146"><a href="#SubtitleFont"><span class="tocnumber">1.145</span> <span class="toctext">SubtitleFont</span></a></li>
+<li class="toclevel-2 tocsection-147"><a href="#SubtitleFontName"><span class="tocnumber">1.146</span> <span class="toctext">SubtitleFontName</span></a></li>
+<li class="toclevel-2 tocsection-148"><a href="#TangentColorMaterial"><span class="tocnumber">1.147</span> <span class="toctext">TangentColorMaterial</span></a></li>
+<li class="toclevel-2 tocsection-149"><a href="#TangentColorMaterialName"><span class="tocnumber">1.148</span> <span class="toctext">TangentColorMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-150"><a href="#TerrainErrorMaterial"><span class="tocnumber">1.149</span> <span class="toctext">TerrainErrorMaterial</span></a></li>
+<li class="toclevel-2 tocsection-151"><a href="#TerrainErrorMaterialName"><span class="tocnumber">1.150</span> <span class="toctext">TerrainErrorMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-152"><a href="#TerrainMaterialMaxTextureCount"><span class="tocnumber">1.151</span> <span class="toctext">TerrainMaterialMaxTextureCount</span></a></li>
+<li class="toclevel-2 tocsection-153"><a href="#TerrainTessellationCheckCount"><span class="tocnumber">1.152</span> <span class="toctext">TerrainTessellationCheckCount</span></a></li>
+<li class="toclevel-2 tocsection-154"><a href="#TerrainTessellationCheckDistance"><span class="tocnumber">1.153</span> <span class="toctext">TerrainTessellationCheckDistance</span></a></li>
+<li class="toclevel-2 tocsection-155"><a href="#ThumbnailMaterialPostProcess"><span class="tocnumber">1.154</span> <span class="toctext">ThumbnailMaterialPostProcess</span></a></li>
+<li class="toclevel-2 tocsection-156"><a href="#ThumbnailMaterialPostProcessName"><span class="tocnumber">1.155</span> <span class="toctext">ThumbnailMaterialPostProcessName</span></a></li>
+<li class="toclevel-2 tocsection-157"><a href="#ThumbnailParticleSystemPostProcess"><span class="tocnumber">1.156</span> <span class="toctext">ThumbnailParticleSystemPostProcess</span></a></li>
+<li class="toclevel-2 tocsection-158"><a href="#ThumbnailParticleSystemPostProcessName"><span class="tocnumber">1.157</span> <span class="toctext">ThumbnailParticleSystemPostProcessName</span></a></li>
+<li class="toclevel-2 tocsection-159"><a href="#ThumbnailSkeletalMeshPostProcess"><span class="tocnumber">1.158</span> <span class="toctext">ThumbnailSkeletalMeshPostProcess</span></a></li>
+<li class="toclevel-2 tocsection-160"><a href="#ThumbnailSkeletalMeshPostProcessName"><span class="tocnumber">1.159</span> <span class="toctext">ThumbnailSkeletalMeshPostProcessName</span></a></li>
+<li class="toclevel-2 tocsection-161"><a href="#TickCycles"><span class="tocnumber">1.160</span> <span class="toctext">TickCycles</span></a></li>
+<li class="toclevel-2 tocsection-162"><a href="#TickMaterial"><span class="tocnumber">1.161</span> <span class="toctext">TickMaterial</span></a></li>
+<li class="toclevel-2 tocsection-163"><a href="#TickMaterialName"><span class="tocnumber">1.162</span> <span class="toctext">TickMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-164"><a href="#TinyFont"><span class="tocnumber">1.163</span> <span class="toctext">TinyFont</span></a></li>
+<li class="toclevel-2 tocsection-165"><a href="#TinyFontName"><span class="tocnumber">1.164</span> <span class="toctext">TinyFontName</span></a></li>
+<li class="toclevel-2 tocsection-166"><a href="#TrackedOcclusionStepSize"><span class="tocnumber">1.165</span> <span class="toctext">TrackedOcclusionStepSize</span></a></li>
+<li class="toclevel-2 tocsection-167"><a href="#TransitionDescription"><span class="tocnumber">1.166</span> <span class="toctext">TransitionDescription</span></a></li>
+<li class="toclevel-2 tocsection-168"><a href="#TransitionGameType"><span class="tocnumber">1.167</span> <span class="toctext">TransitionGameType</span></a></li>
+<li class="toclevel-2 tocsection-169"><a href="#TransitionType"><span class="tocnumber">1.168</span> <span class="toctext">TransitionType</span></a></li>
+<li class="toclevel-2 tocsection-170"><a href="#UnselectedMaterialColor"><span class="tocnumber">1.169</span> <span class="toctext">UnselectedMaterialColor</span></a></li>
+<li class="toclevel-2 tocsection-171"><a href="#VertexColorMaterial"><span class="tocnumber">1.170</span> <span class="toctext">VertexColorMaterial</span></a></li>
+<li class="toclevel-2 tocsection-172"><a href="#VertexColorMaterialName"><span class="tocnumber">1.171</span> <span class="toctext">VertexColorMaterialName</span></a></li>
+<li class="toclevel-2 tocsection-173"><a href="#VertexColorViewModeMaterial_AlphaAsColor"><span class="tocnumber">1.172</span> <span class="toctext">VertexColorViewModeMaterial_AlphaAsColor</span></a></li>
+<li class="toclevel-2 tocsection-174"><a href="#VertexColorViewModeMaterial_BlueOnly"><span class="tocnumber">1.173</span> <span class="toctext">VertexColorViewModeMaterial_BlueOnly</span></a></li>
+<li class="toclevel-2 tocsection-175"><a href="#VertexColorViewModeMaterial_ColorOnly"><span class="tocnumber">1.174</span> <span class="toctext">VertexColorViewModeMaterial_ColorOnly</span></a></li>
+<li class="toclevel-2 tocsection-176"><a href="#VertexColorViewModeMaterial_GreenOnly"><span class="tocnumber">1.175</span> <span class="toctext">VertexColorViewModeMaterial_GreenOnly</span></a></li>
+<li class="toclevel-2 tocsection-177"><a href="#VertexColorViewModeMaterial_RedOnly"><span class="tocnumber">1.176</span> <span class="toctext">VertexColorViewModeMaterial_RedOnly</span></a></li>
+<li class="toclevel-2 tocsection-178"><a href="#VertexColorViewModeMaterialName_AlphaAsColor"><span class="tocnumber">1.177</span> <span class="toctext">VertexColorViewModeMaterialName_AlphaAsColor</span></a></li>
+<li class="toclevel-2 tocsection-179"><a href="#VertexColorViewModeMaterialName_BlueOnly"><span class="tocnumber">1.178</span> <span class="toctext">VertexColorViewModeMaterialName_BlueOnly</span></a></li>
+<li class="toclevel-2 tocsection-180"><a href="#VertexColorViewModeMaterialName_ColorOnly"><span class="tocnumber">1.179</span> <span class="toctext">VertexColorViewModeMaterialName_ColorOnly</span></a></li>
+<li class="toclevel-2 tocsection-181"><a href="#VertexColorViewModeMaterialName_GreenOnly"><span class="tocnumber">1.180</span> <span class="toctext">VertexColorViewModeMaterialName_GreenOnly</span></a></li>
+<li class="toclevel-2 tocsection-182"><a href="#VertexColorViewModeMaterialName_RedOnly"><span class="tocnumber">1.181</span> <span class="toctext">VertexColorViewModeMaterialName_RedOnly</span></a></li>
+<li class="toclevel-2 tocsection-183"><a href="#WeightMapPlaceholderTexture"><span class="tocnumber">1.182</span> <span class="toctext">WeightMapPlaceholderTexture</span></a></li>
+<li class="toclevel-2 tocsection-184"><a href="#WeightMapPlaceholderTextureName"><span class="tocnumber">1.183</span> <span class="toctext">WeightMapPlaceholderTextureName</span></a></li>
+<li class="toclevel-2 tocsection-185"><a href="#WireframeMaterial"><span class="tocnumber">1.184</span> <span class="toctext">WireframeMaterial</span></a></li>
+<li class="toclevel-2 tocsection-186"><a href="#WireframeMaterialName"><span class="tocnumber">1.185</span> <span class="toctext">WireframeMaterialName</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Engine internal variables in other games:</dt>
+<dd><span><a href="UE3_Engine_internal_variables_(UT3).html" title="UE3:Engine internal variables (UT3)">UT3</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Internal_variables">Internal variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=1" title="Edit section: Internal variables">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="AdditionalFontNames">AdditionalFontNames</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=2" title="Edit section: AdditionalFontNames">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="String.html" title="String">string</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="AdditionalFonts">AdditionalFonts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=3" title="Edit section: AdditionalFonts">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Font_(UDK).html" title="UE3:Font (UDK)">Font</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private</p>
+<p>Any additional fonts that script may use without hard-referencing the font.</p>
+<h4><span class="mw-headline" id="bAllowMatureLanguage">bAllowMatureLanguage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=4" title="Edit section: bAllowMatureLanguage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>whether mature language is allowed *</p>
+<h4><span class="mw-headline" id="bAreConstraintsDirty">bAreConstraintsDirty</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=5" title="Edit section: bAreConstraintsDirty">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Keeps track whether actors moved via PostEditMove and therefore constraint syncup should be performed.</p>
+<h4><span class="mw-headline" id="bCheckParticleRenderSize">bCheckParticleRenderSize</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=6" title="Edit section: bCheckParticleRenderSize">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>If TRUE, then perform particle size checks in non FINAL_RELEASE builds.</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bDisablePhysXHardwareSupport">bDisablePhysXHardwareSupport</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=7" title="Edit section: bDisablePhysXHardwareSupport">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>Do not use Ageia PhysX hardware</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="BeginUPTryCount">BeginUPTryCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=8" title="Edit section: BeginUPTryCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>The number of times to attempt the Begin*UP call before assuming the GPU is hosed</p>
+<p><b>Default value:</b> 200000</p>
+<h4><span class="mw-headline" id="bEnableColorClear">bEnableColorClear</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=9" title="Edit section: bEnableColorClear">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig, const</p>
+<p>By default, each frame's initial scene color clear is disabled. This flag can be toggled at runtime to enable clearing for development.</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bEnableKismetLogging">bEnableKismetLogging</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=10" title="Edit section: bEnableKismetLogging">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>whether kismet logging is enabled.</p>
+<h4><span class="mw-headline" id="bEnableOnScreenDebugMessages">bEnableOnScreenDebugMessages</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=11" title="Edit section: bEnableOnScreenDebugMessages">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>If TRUE, then disable OnScreenDebug messages. Can be toggled in real-time.</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bEnableOnScreenDebugMessagesDisplay">bEnableOnScreenDebugMessagesDisplay</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=12" title="Edit section: bEnableOnScreenDebugMessagesDisplay">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>If TRUE, then disable the display of OnScreenDebug messages (used when running)</p>
+<h4><span class="mw-headline" id="bForceCPUSkinning">bForceCPUSkinning</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=13" title="Edit section: bForceCPUSkinning">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>Force to CPU skinning only for skeletal mesh rendering</p>
+<h4><span class="mw-headline" id="bHasPendingGlobalReattach">bHasPendingGlobalReattach</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=14" title="Edit section: bHasPendingGlobalReattach">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>TRUE if the engine needs to perform a delayed global component reattach (really just for editor)</p>
+<h4><span class="mw-headline" id="BoneWeightMaterial">BoneWeightMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=15" title="Edit section: BoneWeightMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material used to render bone weights on skel meshes</p>
+<h4><span class="mw-headline" id="BoneWeightMaterialName">BoneWeightMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=16" title="Edit section: BoneWeightMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineDebugMaterials.BoneWeightMaterial"</p>
+<h4><span class="mw-headline" id="bOnScreenKismetWarnings">bOnScreenKismetWarnings</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=17" title="Edit section: bOnScreenKismetWarnings">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>whether to send Kismet warning messages to the screen (via PlayerController::ClientMessage())</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bPauseOnLossOfFocus">bPauseOnLossOfFocus</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=18" title="Edit section: bPauseOnLossOfFocus">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>Whether to pause the game if focus is lost.</p>
+<h4><span class="mw-headline" id="bRenderLightMapDensityGrayscale">bRenderLightMapDensityGrayscale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=19" title="Edit section: bRenderLightMapDensityGrayscale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>If TRUE, then render grayscale density.</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bRenderTerrainCollisionAsOverlay">bRenderTerrainCollisionAsOverlay</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=20" title="Edit section: bRenderTerrainCollisionAsOverlay">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>Terrain collision viewing - If TRUE, overlay collion level else render it and overlay terrain.</p>
+<h4><span class="mw-headline" id="bShouldGenerateSimpleLightmaps">bShouldGenerateSimpleLightmaps</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=21" title="Edit section: bShouldGenerateSimpleLightmaps">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>Whether or not the simple lightmaps should be generated during lighting rebuilds.</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bSmoothFrameRate">bSmoothFrameRate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=22" title="Edit section: bSmoothFrameRate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>Whether to enable framerate smoothing.</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bSuppressMapWarnings">bSuppressMapWarnings</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=23" title="Edit section: bSuppressMapWarnings">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>If TRUE, then skip drawing map warnings on screen even in non FINAL_RELEASE builds</p>
+<h4><span class="mw-headline" id="BuildingQuadStaticMesh">BuildingQuadStaticMesh</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=24" title="Edit section: BuildingQuadStaticMesh">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_StaticMesh_(UDK).html" title="UE3:StaticMesh (UDK)">StaticMesh</a></p>
+<p>Mesh used when we need a quad</p>
+<h4><span class="mw-headline" id="BuildingQuadStaticMeshName">BuildingQuadStaticMeshName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=25" title="Edit section: BuildingQuadStaticMeshName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineBuildings.BuildingQuadMesh"</p>
+<h4><span class="mw-headline" id="bUsePostProcessEffects">bUsePostProcessEffects</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=26" title="Edit section: bUsePostProcessEffects">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>Whether to use post processing effects or not</p>
+<h4><span class="mw-headline" id="CameraRotationThreshold">CameraRotationThreshold</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=27" title="Edit section: CameraRotationThreshold">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>camera rotation (deg) beyond which occlusion queries are ignored from previous frame (because they are likely not valid)</p>
+<p><b>Default value:</b> 45.0</p>
+<h4><span class="mw-headline" id="CameraTranslationThreshold">CameraTranslationThreshold</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=28" title="Edit section: CameraTranslationThreshold">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>camera movement beyond which occlusion queries are ignored from previous frame (because they are likely not valid)</p>
+<p><b>Default value:</b> 10000.0</p>
+<h4><span class="mw-headline" id="Client">Client</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=29" title="Edit section: Client">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="https://wiki.beyondunreal.com/edit/UE3:Client_(UDK)?redlink=1" class="new" title="UE3:Client (UDK) (page does not exist)">Client</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Abstract interface to platform-specific subsystems</p>
+<h4><span class="mw-headline" id="ClientCycles">ClientCycles</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=30" title="Edit section: ClientCycles">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ConsoleClass">ConsoleClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=31" title="Edit section: ConsoleClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_Console_(UDK).html" title="UE3:Console (UDK)">Console</a>&gt;</p>
+<p>The class to use for the game console.</p>
+<h4><span class="mw-headline" id="ConsoleClassName">ConsoleClassName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=32" title="Edit section: ConsoleClassName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "UTGame.UTConsole"</p>
+<h4><span class="mw-headline" id="CrossMaterial">CrossMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=33" title="Edit section: CrossMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material used for drawing a cross mark.</p>
+<h4><span class="mw-headline" id="CrossMaterialName">CrossMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=34" title="Edit section: CrossMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EditorMaterials.Cross_Mat"</p>
+<h4><span class="mw-headline" id="DataStoreClientClass">DataStoreClientClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=35" title="Edit section: DataStoreClientClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_DataStoreClient_(UDK).html" title="UE3:DataStoreClient (UDK)">DataStoreClient</a>&gt;</p>
+<p>The class to use for managing the global data stores</p>
+<h4><span class="mw-headline" id="DataStoreClientClassName">DataStoreClientClassName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=36" title="Edit section: DataStoreClientClassName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "Engine.DataStoreClient"</p>
+<h4><span class="mw-headline" id="DebugManager">DebugManager</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=37" title="Edit section: DebugManager">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_DebugManager_(UDK).html" title="UE3:DebugManager (UDK)">DebugManager</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Global debug manager helper object that stores configuration and state used during development</p>
+<h4><span class="mw-headline" id="DefaultDecalMaterial">DefaultDecalMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=38" title="Edit section: DefaultDecalMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>The decal material used for fallback case of decals</p>
+<h4><span class="mw-headline" id="DefaultDecalMaterialName">DefaultDecalMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=39" title="Edit section: DefaultDecalMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.DefaultDecalMaterial"</p>
+<h4><span class="mw-headline" id="DefaultFogVolumeMaterial">DefaultFogVolumeMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=40" title="Edit section: DefaultFogVolumeMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>The default fog volume material</p>
+<h4><span class="mw-headline" id="DefaultFogVolumeMaterialName">DefaultFogVolumeMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=41" title="Edit section: DefaultFogVolumeMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.FogVolumeMaterial"</p>
+<h4><span class="mw-headline" id="DefaultMaterial">DefaultMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=42" title="Edit section: DefaultMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>The material used when no material is explicitly applied.</p>
+<h4><span class="mw-headline" id="DefaultMaterialName">DefaultMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=43" title="Edit section: DefaultMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.DefaultMaterial"</p>
+<h4><span class="mw-headline" id="DefaultOnlineSubsystemName">DefaultOnlineSubsystemName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=44" title="Edit section: DefaultOnlineSubsystemName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "OnlineSubsystemPC.OnlineSubsystemPC"</p>
+<h4><span class="mw-headline" id="DefaultPhysMaterial">DefaultPhysMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=45" title="Edit section: DefaultPhysMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_PhysicalMaterial_(UDK).html" title="UE3:PhysicalMaterial (UDK)">PhysicalMaterial</a></p>
+<p>PhysicalMaterial to use if none is defined for a particular object.</p>
+<h4><span class="mw-headline" id="DefaultPhysMaterialName">DefaultPhysMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=46" title="Edit section: DefaultPhysMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.DefaultPhysicalMaterial"</p>
+<h4><span class="mw-headline" id="DefaultPostProcess">DefaultPostProcess</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=47" title="Edit section: DefaultPostProcess">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_PostProcessChain_(UDK).html" title="UE3:PostProcessChain (UDK)">PostProcessChain</a></p>
+<p>Default engine post process chain used for the game and main editor view</p>
+<h4><span class="mw-headline" id="DefaultPostProcessName">DefaultPostProcessName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=48" title="Edit section: DefaultPostProcessName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p><br />
+<b>Default value:</b> "FX_HitEffects.UTPostProcess_Console"</p>
+<h4><span class="mw-headline" id="DefaultSelectedMaterialColor">DefaultSelectedMaterialColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=49" title="Edit section: DefaultSelectedMaterialColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>Default color of selected objects in the level viewport (additive)</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.24</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.02</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0.04</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="DefaultSound">DefaultSound</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=50" title="Edit section: DefaultSound">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SoundNodeWave_(UDK).html" title="UE3:SoundNodeWave (UDK)">SoundNodeWave</a></p>
+<p>White noise sound</p>
+<h4><span class="mw-headline" id="DefaultSoundName">DefaultSoundName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=51" title="Edit section: DefaultSoundName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineSounds.WhiteNoise"</p>
+<h4><span class="mw-headline" id="DefaultTexture">DefaultTexture</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=52" title="Edit section: DefaultTexture">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Texture_(UDK).html" title="UE3:Texture (UDK)">Texture</a></p>
+<p>A global default texture.</p>
+<h4><span class="mw-headline" id="DefaultTextureName">DefaultTextureName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=53" title="Edit section: DefaultTextureName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.DefaultDiffuse"</p>
+<h4><span class="mw-headline" id="DefaultUICaretMaterial">DefaultUICaretMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=54" title="Edit section: DefaultUICaretMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material used for drawing meshes when their collision is missing.</p>
+<h4><span class="mw-headline" id="DefaultUICaretMaterialName">DefaultUICaretMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=55" title="Edit section: DefaultUICaretMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.BlinkingCaret"</p>
+<h4><span class="mw-headline" id="DefaultUIScenePostProcess">DefaultUIScenePostProcess</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=56" title="Edit section: DefaultUIScenePostProcess">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_PostProcessChain_(UDK).html" title="UE3:PostProcessChain (UDK)">PostProcessChain</a></p>
+<p>post process chain used for rendering the UI</p>
+<h4><span class="mw-headline" id="DefaultUIScenePostProcessName">DefaultUIScenePostProcessName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=57" title="Edit section: DefaultUIScenePostProcessName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.DefaultUIPostProcess"</p>
+<h4><span class="mw-headline" id="DeferredCommands">DeferredCommands</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=58" title="Edit section: DeferredCommands">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="String.html" title="String">string</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> init</p>
+<p>Array of deferred command strings/ execs that get executed at the end of the frame</p>
+<h4><span class="mw-headline" id="DynamicCoverMeshComponentName">DynamicCoverMeshComponentName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=59" title="Edit section: DynamicCoverMeshComponentName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>Overridable class for cover mesh rendering in-game, used to get around the editoronly restrictions needed by the base CoverMeshComponent</p>
+<h4><span class="mw-headline" id="EditorBrushMaterial">EditorBrushMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=60" title="Edit section: EditorBrushMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>A material used to render the sides of the builder brush/volumes/etc.</p>
+<h4><span class="mw-headline" id="EditorBrushMaterialName">EditorBrushMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=61" title="Edit section: EditorBrushMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.EditorBrushMaterial"</p>
+<h4><span class="mw-headline" id="EmissiveTexturedMaterial">EmissiveTexturedMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=62" title="Edit section: EmissiveTexturedMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>A textured material with an instance parameter for the texture.</p>
+<h4><span class="mw-headline" id="EmissiveTexturedMaterialName">EmissiveTexturedMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=63" title="Edit section: EmissiveTexturedMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.EmissiveTexturedMaterial"</p>
+<h4><span class="mw-headline" id="FluidSimulationTimeLimit">FluidSimulationTimeLimit</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=64" title="Edit section: FluidSimulationTimeLimit">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>Time limit (in milliseconds) for a fluid simulation update, to avoid spiraling into a bad feedback-loop with slower and slower framerate. This value is doubled in debug builds.</p>
+<p><b>Default value:</b> 30.0</p>
+<h4><span class="mw-headline" id="GameCycles">GameCycles</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=65" title="Edit section: GameCycles">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="GamePlayers">GamePlayers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=66" title="Edit section: GamePlayers">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_LocalPlayer_(UDK).html" title="UE3:LocalPlayer (UDK)">LocalPlayer</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> init</p>
+<p>Viewports for all players in all game instances (all PIE windows, for example)</p>
+<h4><span class="mw-headline" id="GameViewport">GameViewport</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=67" title="Edit section: GameViewport">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_GameViewportClient_(UDK).html" title="UE3:GameViewportClient (UDK)">GameViewportClient</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>the viewport representing the current game instance</p>
+<h4><span class="mw-headline" id="GameViewportClientClass">GameViewportClientClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=68" title="Edit section: GameViewportClientClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_GameViewportClient_(UDK).html" title="UE3:GameViewportClient (UDK)">GameViewportClient</a>&gt;</p>
+<p>The class to use for the game viewport client.</p>
+<h4><span class="mw-headline" id="GameViewportClientClassName">GameViewportClientClassName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=69" title="Edit section: GameViewportClientClassName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "UTGame.UTGameViewportClient"</p>
+<h4><span class="mw-headline" id="GeomMaterial">GeomMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=70" title="Edit section: GeomMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>A translucent material used to render things in geometry mode.</p>
+<h4><span class="mw-headline" id="GeomMaterialName">GeomMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=71" title="Edit section: GeomMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineDebugMaterials.GeomMaterial"</p>
+<h4><span class="mw-headline" id="HACK_UseTickFrequency">HACK_UseTickFrequency</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=72" title="Edit section: HACK UseTickFrequency">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>Whether or not to use the TickFrequency code path (c.f. AActor::Tick()</p>
+<h4><span class="mw-headline" id="HeatmapMaterial">HeatmapMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=73" title="Edit section: HeatmapMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material used to render game stat heatmaps.</p>
+<h4><span class="mw-headline" id="HeatmapMaterialName">HeatmapMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=74" title="Edit section: HeatmapMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineDebugMaterials.HeatmapMaterial"</p>
+<h4><span class="mw-headline" id="IdealLightMapDensity">IdealLightMapDensity</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=75" title="Edit section: IdealLightMapDensity">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>Ideal lightmap density value for coloring.</p>
+<p><b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="IdealTextureDensity">IdealTextureDensity</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=76" title="Edit section: IdealTextureDensity">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> 13.0</p>
+<h4><span class="mw-headline" id="IgnoreSimulatedFuncWarnings">IgnoreSimulatedFuncWarnings</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=77" title="Edit section: IgnoreSimulatedFuncWarnings">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Name.html" title="Name" class="mw-redirect">name</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>If DevAbsorbFuncs logging is unsuppressed and _DEBUG is defined in native, functions listed in this array will not throw a warning when they are absorbed for not being simulated on clients. Useful for functions like Tick, where this behaviour is intentional</p>
+<p><b>Default value:</b> 'Tick'</p>
+<h4><span class="mw-headline" id="LargeFont">LargeFont</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=78" title="Edit section: LargeFont">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Font_(UDK).html" title="UE3:Font (UDK)">Font</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LargeFontName">LargeFontName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=79" title="Edit section: LargeFontName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "MultiFont'UI_Fonts_Final.HUD..MF_Large'"</p>
+<h4><span class="mw-headline" id="LevelColorationLitMaterial">LevelColorationLitMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=80" title="Edit section: LevelColorationLitMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material used for visualizing level membership in lit viewport modes.</p>
+<h4><span class="mw-headline" id="LevelColorationLitMaterialName">LevelColorationLitMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=81" title="Edit section: LevelColorationLitMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineDebugMaterials.LevelColorationLitMaterial"</p>
+<h4><span class="mw-headline" id="LevelColorationUnlitMaterial">LevelColorationUnlitMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=82" title="Edit section: LevelColorationUnlitMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material used for visualizing level membership in unlit viewport modes.</p>
+<h4><span class="mw-headline" id="LevelColorationUnlitMaterialName">LevelColorationUnlitMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=83" title="Edit section: LevelColorationUnlitMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineDebugMaterials.LevelColorationUnlitMaterial"</p>
+<h4><span class="mw-headline" id="LightComplexityColors">LightComplexityColors</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=84" title="Edit section: LightComplexityColors">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Object.Color</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>The colors used to render light complexity.</p>
+<p><b>Default value, index 0:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0</td>
+</tr>
+</table>
+<p><b>Default value, index 1:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>255</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0</td>
+</tr>
+</table>
+<p><b>Default value, index 2:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>191</td>
+</tr>
+<tr>
+<td>R</td>
+<td>63</td>
+</tr>
+</table>
+<p><b>Default value, index 3:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>127</td>
+</tr>
+<tr>
+<td>R</td>
+<td>127</td>
+</tr>
+</table>
+<p><b>Default value, index 4:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>63</td>
+</tr>
+<tr>
+<td>R</td>
+<td>191</td>
+</tr>
+</table>
+<p><b>Default value, index 5:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>255</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="LightingOnlyBrightness">LightingOnlyBrightness</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=85" title="Edit section: LightingOnlyBrightness">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0.5</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="LightingTexelDensityMaterial">LightingTexelDensityMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=86" title="Edit section: LightingTexelDensityMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material used for visualizing lighting only w/ lightmap texel density.</p>
+<h4><span class="mw-headline" id="LightingTexelDensityName">LightingTexelDensityName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=87" title="Edit section: LightingTexelDensityName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineDebugMaterials.MAT_LevelColorationLitLightmapUVs"</p>
+<h4><span class="mw-headline" id="LightMapDensityNormal">LightMapDensityNormal</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=88" title="Edit section: LightMapDensityNormal">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Texture2D_(UDK).html" title="UE3:Texture2D (UDK)">Texture2D</a></p>
+<p>Texture used to display LightMapDensity</p>
+<h4><span class="mw-headline" id="LightMapDensityNormalName">LightMapDensityNormalName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=89" title="Edit section: LightMapDensityNormalName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.DefaultNormal"</p>
+<h4><span class="mw-headline" id="LightMapDensitySelectedColor">LightMapDensitySelectedColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=90" title="Edit section: LightMapDensitySelectedColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>The color to render selected objects in for LightMap Density view mode.</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>R</td>
+<td>1.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="LightMapDensityTexture">LightMapDensityTexture</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=91" title="Edit section: LightMapDensityTexture">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Texture2D_(UDK).html" title="UE3:Texture2D (UDK)">Texture2D</a></p>
+<p>Texture used to display LightMapDensity</p>
+<h4><span class="mw-headline" id="LightMapDensityTextureName">LightMapDensityTextureName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=92" title="Edit section: LightMapDensityTextureName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.DefaultWhiteGrid"</p>
+<h4><span class="mw-headline" id="LightMapDensityVertexMappedColor">LightMapDensityVertexMappedColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=93" title="Edit section: LightMapDensityVertexMappedColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>The color to render vertex mapped objects in for LightMap Density view mode.</p>
+<p><b>Default value:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.25</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.65</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0.65</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="LocalPlayerClass">LocalPlayerClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=94" title="Edit section: LocalPlayerClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_LocalPlayer_(UDK).html" title="UE3:LocalPlayer (UDK)">LocalPlayer</a>&gt;</p>
+<p>The class to use for local players.</p>
+<h4><span class="mw-headline" id="LocalPlayerClassName">LocalPlayerClassName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=95" title="Edit section: LocalPlayerClassName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p><br />
+<b>Default value:</b> "Engine.LocalPlayer"</p>
+<h4><span class="mw-headline" id="MaxFluidNumVerts">MaxFluidNumVerts</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=96" title="Edit section: MaxFluidNumVerts">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>The most vertices a fluid surface can have. The number of verts is clamped to avoid running out of memory and exposing driver bugs.</p>
+<p><b>Default value:</b> 1048576</p>
+<h4><span class="mw-headline" id="MaxLightMapDensity">MaxLightMapDensity</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=97" title="Edit section: MaxLightMapDensity">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>Maximum lightmap density value for coloring.</p>
+<p><b>Default value:</b> 3.0</p>
+<h4><span class="mw-headline" id="MaxOcclusionPixelsFraction">MaxOcclusionPixelsFraction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=98" title="Edit section: MaxOcclusionPixelsFraction">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>Max screen pixel fraction where retesting when unoccluded is worth the GPU time.</p>
+<p><b>Default value:</b> 0.0010</p>
+<h4><span class="mw-headline" id="MaxParticleResize">MaxParticleResize</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=99" title="Edit section: MaxParticleResize">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>The maximum allowed size to a ParticleEmitterInstance::Resize call. If larger, the function will return without resizing.</p>
+<p><b>Default value:</b> 1024</p>
+<h4><span class="mw-headline" id="MaxParticleResizeWarn">MaxParticleResizeWarn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=100" title="Edit section: MaxParticleResizeWarn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>If the resize request is larger than this, spew out a warning to the log</p>
+<p><b>Default value:</b> 10240</p>
+<h4><span class="mw-headline" id="MaxParticleSpriteCount">MaxParticleSpriteCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=101" title="Edit section: MaxParticleSpriteCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="MaxParticleSubUVCount">MaxParticleSubUVCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=102" title="Edit section: MaxParticleSubUVCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="MaxParticleVertexMemory">MaxParticleVertexMemory</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=103" title="Edit section: MaxParticleVertexMemory">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>The maximum amount of memory any single emitter is allowed to take for its vertices</p>
+<p><b>Default value:</b> 131972</p>
+<h4><span class="mw-headline" id="MaxPixelShaderAdditiveComplexityCount">MaxPixelShaderAdditiveComplexityCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=104" title="Edit section: MaxPixelShaderAdditiveComplexityCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>Complexity limits for the various complexity viewmode combinations. These limits are used to map instruction counts to ShaderComplexityColors.</p>
+<p><b>Default value:</b> 900.0</p>
+<h4><span class="mw-headline" id="MaxSmoothedFrameRate">MaxSmoothedFrameRate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=105" title="Edit section: MaxSmoothedFrameRate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>Maximum framerate to smooth. Code will try to not go over via waiting.</p>
+<p><b>Default value:</b> 62.0</p>
+<h4><span class="mw-headline" id="MaxTextureDensity">MaxTextureDensity</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=106" title="Edit section: MaxTextureDensity">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> 55.0</p>
+<h4><span class="mw-headline" id="MaxTrackedOcclusionIncrement">MaxTrackedOcclusionIncrement</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=107" title="Edit section: MaxTrackedOcclusionIncrement">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>The largest step-size allowed for lens flare occlusion results before using the incremental step method.</p>
+<p><b>Default value:</b> 0.1</p>
+<h4><span class="mw-headline" id="MediumFont">MediumFont</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=108" title="Edit section: MediumFont">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Font_(UDK).html" title="UE3:Font (UDK)">Font</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="MediumFontName">MediumFontName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=109" title="Edit section: MediumFontName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "MultiFont'UI_Fonts_Final.HUD.MF_Medium'"</p>
+<h4><span class="mw-headline" id="MeshLODRange">MeshLODRange</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=110" title="Edit section: MeshLODRange">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>Level of detail range control for meshes</p>
+<h4><span class="mw-headline" id="MinLightMapDensity">MinLightMapDensity</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=111" title="Edit section: MinLightMapDensity">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>Minimum lightmap density value for coloring.</p>
+<h4><span class="mw-headline" id="MinSmoothedFrameRate">MinSmoothedFrameRate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=112" title="Edit section: MinSmoothedFrameRate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>Minimum framerate smoothing will kick in.</p>
+<p><b>Default value:</b> 22.0</p>
+<h4><span class="mw-headline" id="MinTextureDensity">MinTextureDensity</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=113" title="Edit section: MinTextureDensity">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>Range for the texture density viewmode.</p>
+<h4><span class="mw-headline" id="NetClientTicksPerSecond">NetClientTicksPerSecond</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=114" title="Edit section: NetClientTicksPerSecond">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>Number of times to tick each client per second</p>
+<p><b>Default value:</b> 200.0</p>
+<h4><span class="mw-headline" id="OnlineSubsystemClass">OnlineSubsystemClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=115" title="Edit section: OnlineSubsystemClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_OnlineSubsystem_(UDK).html" title="UE3:OnlineSubsystem (UDK)">OnlineSubsystem</a>&gt;</p>
+<p>OnlineSubsystem class to use for netplay</p>
+<h4><span class="mw-headline" id="PendingDroppedNotes">PendingDroppedNotes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=116" title="Edit section: PendingDroppedNotes">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Engine_(UDK).html#DropNoteInfo" title="UE3:Engine (UDK)">DropNoteInfo</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="PercentUnoccludedRequeries">PercentUnoccludedRequeries</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=117" title="Edit section: PercentUnoccludedRequeries">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>The percent of previously unoccluded primitives which are requeried every frame.</p>
+<p><b>Default value:</b> 0.125</p>
+<h4><span class="mw-headline" id="PrimitiveProbablyVisibleTime">PrimitiveProbablyVisibleTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=118" title="Edit section: PrimitiveProbablyVisibleTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>The amount of time a primitive is considered to be probably visible after it was last actually visible.</p>
+<p><b>Default value:</b> 8.0</p>
+<h4><span class="mw-headline" id="ProcBuildingSimpleMaterial">ProcBuildingSimpleMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=119" title="Edit section: ProcBuildingSimpleMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material used to render the low detail version of procedural buildings</p>
+<h4><span class="mw-headline" id="ProcBuildingSimpleMaterialName">ProcBuildingSimpleMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=120" title="Edit section: ProcBuildingSimpleMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineBuildings.ProcBuildingSimpleMaterial"</p>
+<h4><span class="mw-headline" id="RandomAngleTexture">RandomAngleTexture</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=121" title="Edit section: RandomAngleTexture">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Texture2D_(UDK).html" title="UE3:Texture2D (UDK)">Texture2D</a></p>
+<p>Texture used to get random angles per-pixel by the Branching PCF implementation</p>
+<h4><span class="mw-headline" id="RandomAngleTextureName">RandomAngleTextureName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=122" title="Edit section: RandomAngleTextureName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.RandomAngles"</p>
+<h4><span class="mw-headline" id="RandomNormalTexture">RandomNormalTexture</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=123" title="Edit section: RandomNormalTexture">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Texture2D_(UDK).html" title="UE3:Texture2D (UDK)">Texture2D</a></p>
+<p>Texture used to get random normals per-pixel</p>
+<h4><span class="mw-headline" id="RandomNormalTexture2">RandomNormalTexture2</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=124" title="Edit section: RandomNormalTexture2">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Texture2D_(UDK).html" title="UE3:Texture2D (UDK)">Texture2D</a></p>
+<p>Texture used to get random normals per-pixel, new SSAO</p>
+<h4><span class="mw-headline" id="RandomNormalTextureName">RandomNormalTextureName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=125" title="Edit section: RandomNormalTextureName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.RandomNormal"</p>
+<h4><span class="mw-headline" id="RandomNormalTextureName2">RandomNormalTextureName2</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=126" title="Edit section: RandomNormalTextureName2">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.RandomNormal2"</p>
+<h4><span class="mw-headline" id="RemoteControlExec">RemoteControlExec</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=127" title="Edit section: RemoteControlExec">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Pointer.html" title="Pointer" class="mw-redirect">pointer</a><i>{class FRemoteControlExec}</i></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> native</p>
+<p>Entry point for RemoteControl, the in-game UI for the exec system.</p>
+<h4><span class="mw-headline" id="RemoveSurfaceMaterial">RemoveSurfaceMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=128" title="Edit section: RemoveSurfaceMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material used to indicate that the associated BSP surface should be removed.</p>
+<h4><span class="mw-headline" id="RemoveSurfaceMaterialName">RemoveSurfaceMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=129" title="Edit section: RemoveSurfaceMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.RemoveSurfaceMaterial"</p>
+<h4><span class="mw-headline" id="RenderLightMapDensityColorScale">RenderLightMapDensityColorScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=130" title="Edit section: RenderLightMapDensityColorScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>The scale factor when rendering color density.</p>
+<p><b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="RenderLightMapDensityGrayscaleScale">RenderLightMapDensityGrayscaleScale</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=131" title="Edit section: RenderLightMapDensityGrayscaleScale">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>The scale factor when rendering grayscale density.</p>
+<p><b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="SceneCaptureCubeActorMaterial">SceneCaptureCubeActorMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=132" title="Edit section: SceneCaptureCubeActorMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material used for visualizing the cube map scene captures on a mesh</p>
+<h4><span class="mw-headline" id="SceneCaptureCubeActorMaterialName">SceneCaptureCubeActorMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=133" title="Edit section: SceneCaptureCubeActorMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.CubeMaterial"</p>
+<h4><span class="mw-headline" id="SceneCaptureReflectActorMaterial">SceneCaptureReflectActorMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=134" title="Edit section: SceneCaptureReflectActorMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material used for visualizing the reflection scene captures on a surface</p>
+<h4><span class="mw-headline" id="SceneCaptureReflectActorMaterialName">SceneCaptureReflectActorMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=135" title="Edit section: SceneCaptureReflectActorMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.ScreenMaterial"</p>
+<h4><span class="mw-headline" id="ScoutClassName">ScoutClassName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=136" title="Edit section: ScoutClassName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, config</p>
+<p>Class name of the scout to use for path building</p>
+<p><b>Default value:</b> "UTGame.UTScout"</p>
+<h4><span class="mw-headline" id="SelectedMaterialColor">SelectedMaterialColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=137" title="Edit section: SelectedMaterialColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Color of selected objects in the level viewport (additive)</p>
+<h4><span class="mw-headline" id="ShadedLevelColorationLitMaterial">ShadedLevelColorationLitMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=138" title="Edit section: ShadedLevelColorationLitMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material used for visualizing level membership in lit viewport modes. Uses shading to show axis directions.</p>
+<h4><span class="mw-headline" id="ShadedLevelColorationLitMaterialName">ShadedLevelColorationLitMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=139" title="Edit section: ShadedLevelColorationLitMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineDebugMaterials.ShadedLevelColorationLitMaterial"</p>
+<h4><span class="mw-headline" id="ShadedLevelColorationUnlitMaterial">ShadedLevelColorationUnlitMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=140" title="Edit section: ShadedLevelColorationUnlitMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material used for visualizing level membership in unlit viewport modes. Uses shading to show axis directions.</p>
+<h4><span class="mw-headline" id="ShadedLevelColorationUnlitMaterialName">ShadedLevelColorationUnlitMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=141" title="Edit section: ShadedLevelColorationUnlitMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineDebugMaterials.ShadedLevelColorationUnlitMaterial"</p>
+<h4><span class="mw-headline" id="ShaderComplexityColors">ShaderComplexityColors</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=142" title="Edit section: ShaderComplexityColors">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>The colors used to render shader complexity.</p>
+<p><b>Default value, index 0:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.127</td>
+</tr>
+<tr>
+<td>G</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0.0</td>
+</tr>
+</table>
+<p><b>Default value, index 1:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0.0</td>
+</tr>
+</table>
+<p><b>Default value, index 2:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.52</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0.046</td>
+</tr>
+</table>
+<p><b>Default value, index 3:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.215</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0.215</td>
+</tr>
+</table>
+<p><b>Default value, index 4:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.046</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0.52</td>
+</tr>
+</table>
+<p><b>Default value, index 5:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0.7</td>
+</tr>
+</table>
+<p><b>Default value, index 6:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>1.0</td>
+</tr>
+</table>
+<p><b>Default value, index 7:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>1.0</td>
+</tr>
+</table>
+<p><b>Default value, index 8:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.9</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0.9</td>
+</tr>
+<tr>
+<td>R</td>
+<td>1.0</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="SmallFont">SmallFont</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=143" title="Edit section: SmallFont">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Font_(UDK).html" title="UE3:Font (UDK)">Font</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="SmallFontName">SmallFontName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=144" title="Edit section: SmallFontName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineFonts.SmallFont"</p>
+<h4><span class="mw-headline" id="StatColorMappings">StatColorMappings</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=145" title="Edit section: StatColorMappings">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Engine_(UDK).html#StatColorMapping" title="UE3:Engine (UDK)">StatColorMapping</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value, index 0:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Engine_(UDK).html#StatColorMapping" title="UE3:Engine (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>ColorMap</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="#StatColorMapEntry">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>In</td>
+<td>15.0</td>
+</tr>
+<tr>
+<td>Out</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>255</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table class="list defaults">
+<tr>
+<th><a href="#StatColorMapEntry">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>In</td>
+<td>30.0</td>
+</tr>
+<tr>
+<td>Out</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>255</td>
+</tr>
+<tr>
+<td>R</td>
+<td>255</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table class="list defaults">
+<tr>
+<th><a href="#StatColorMapEntry">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>In</td>
+<td>45.0</td>
+</tr>
+<tr>
+<td>Out</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>255</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>StatName</td>
+<td>"AverageFPS"</td>
+</tr>
+</table>
+<p><b>Default value, index 1:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Engine_(UDK).html#StatColorMapping" title="UE3:Engine (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>ColorMap</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="#StatColorMapEntry">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>In</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Out</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>255</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table class="list defaults">
+<tr>
+<th><a href="#StatColorMapEntry">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>In</td>
+<td>15.0</td>
+</tr>
+<tr>
+<td>Out</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>255</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table class="list defaults">
+<tr>
+<th><a href="#StatColorMapEntry">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>In</td>
+<td>17.5</td>
+</tr>
+<tr>
+<td>Out</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>255</td>
+</tr>
+<tr>
+<td>R</td>
+<td>255</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table class="list defaults">
+<tr>
+<th><a href="#StatColorMapEntry">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>In</td>
+<td>20.0</td>
+</tr>
+<tr>
+<td>Out</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>255</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>StatName</td>
+<td>"Frametime"</td>
+</tr>
+</table>
+<p><b>Default value, index 2:</b></p>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Engine_(UDK).html#StatColorMapping" title="UE3:Engine (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>ColorMap</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="#StatColorMapEntry">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>Out</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>255</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table class="list defaults">
+<tr>
+<th><a href="#StatColorMapEntry">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>In</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Out</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>255</td>
+</tr>
+<tr>
+<td>R</td>
+<td>0</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table class="list defaults">
+<tr>
+<th><a href="#StatColorMapEntry">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>In</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>Out</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>255</td>
+</tr>
+<tr>
+<td>R</td>
+<td>255</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table class="list defaults">
+<tr>
+<th><a href="#StatColorMapEntry">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>In</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>Out</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>255</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table class="list defaults">
+<tr>
+<th><a href="#StatColorMapEntry">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>In</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>Out</td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_Object_structs_(UDK).html#Color" title="UE3:Object structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>A</td>
+<td>0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0</td>
+</tr>
+<tr>
+<td>R</td>
+<td>255</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>StatName</td>
+<td>"Streaming fudge factor"</td>
+</tr>
+</table>
+<h4><span class="mw-headline" id="SubtitleFont">SubtitleFont</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=146" title="Edit section: SubtitleFont">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Font_(UDK).html" title="UE3:Font (UDK)">Font</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="SubtitleFontName">SubtitleFontName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=147" title="Edit section: SubtitleFontName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "MultiFont'UI_Fonts_Final.HUD.MF_Medium'"</p>
+<h4><span class="mw-headline" id="TangentColorMaterial">TangentColorMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=148" title="Edit section: TangentColorMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material used to render tangents on skel meshes</p>
+<h4><span class="mw-headline" id="TangentColorMaterialName">TangentColorMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=149" title="Edit section: TangentColorMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineDebugMaterials.TangentColorMaterial"</p>
+<h4><span class="mw-headline" id="TerrainErrorMaterial">TerrainErrorMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=150" title="Edit section: TerrainErrorMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>The material used when terrain compilation is too complex.</p>
+<h4><span class="mw-headline" id="TerrainErrorMaterialName">TerrainErrorMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=151" title="Edit section: TerrainErrorMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineDebugMaterials.MaterialError_Mat"</p>
+<h4><span class="mw-headline" id="TerrainMaterialMaxTextureCount">TerrainMaterialMaxTextureCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=152" title="Edit section: TerrainMaterialMaxTextureCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> 16</p>
+<h4><span class="mw-headline" id="TerrainTessellationCheckCount">TerrainTessellationCheckCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=153" title="Edit section: TerrainTessellationCheckCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>This is the number of frames that are used between terrain tessellation re-calculations</p>
+<p><b>Default value:</b> 6</p>
+<h4><span class="mw-headline" id="TerrainTessellationCheckDistance">TerrainTessellationCheckDistance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=154" title="Edit section: TerrainTessellationCheckDistance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>The radius from the view origin that terrain tessellation checks should be performed. If 0.0, every component will be checked for tessellation changes each frame.</p>
+<p><b>Default value:</b> 4096.0</p>
+<h4><span class="mw-headline" id="ThumbnailMaterialPostProcess">ThumbnailMaterialPostProcess</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=155" title="Edit section: ThumbnailMaterialPostProcess">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_PostProcessChain_(UDK).html" title="UE3:PostProcessChain (UDK)">PostProcessChain</a></p>
+<p>post process chain used for material thumbnails</p>
+<h4><span class="mw-headline" id="ThumbnailMaterialPostProcessName">ThumbnailMaterialPostProcessName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=156" title="Edit section: ThumbnailMaterialPostProcessName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.DefaultThumbnailPostProcess"</p>
+<h4><span class="mw-headline" id="ThumbnailParticleSystemPostProcess">ThumbnailParticleSystemPostProcess</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=157" title="Edit section: ThumbnailParticleSystemPostProcess">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_PostProcessChain_(UDK).html" title="UE3:PostProcessChain (UDK)">PostProcessChain</a></p>
+<p>post process chain used for particle system thumbnails</p>
+<h4><span class="mw-headline" id="ThumbnailParticleSystemPostProcessName">ThumbnailParticleSystemPostProcessName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=158" title="Edit section: ThumbnailParticleSystemPostProcessName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.DefaultThumbnailPostProcess"</p>
+<h4><span class="mw-headline" id="ThumbnailSkeletalMeshPostProcess">ThumbnailSkeletalMeshPostProcess</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=159" title="Edit section: ThumbnailSkeletalMeshPostProcess">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_PostProcessChain_(UDK).html" title="UE3:PostProcessChain (UDK)">PostProcessChain</a></p>
+<p>post process chain used for skeletal mesh thumbnails</p>
+<h4><span class="mw-headline" id="ThumbnailSkeletalMeshPostProcessName">ThumbnailSkeletalMeshPostProcessName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=160" title="Edit section: ThumbnailSkeletalMeshPostProcessName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.DefaultThumbnailPostProcess"</p>
+<h4><span class="mw-headline" id="TickCycles">TickCycles</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=161" title="Edit section: TickCycles">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TickMaterial">TickMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=162" title="Edit section: TickMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material used for drawing a tick mark.</p>
+<h4><span class="mw-headline" id="TickMaterialName">TickMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=163" title="Edit section: TickMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EditorMaterials.Tick_Mat"</p>
+<h4><span class="mw-headline" id="TinyFont">TinyFont</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=164" title="Edit section: TinyFont">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Font_(UDK).html" title="UE3:Font (UDK)">Font</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TinyFontName">TinyFontName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=165" title="Edit section: TinyFontName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineFonts.TinyFont"</p>
+<h4><span class="mw-headline" id="TrackedOcclusionStepSize">TrackedOcclusionStepSize</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=166" title="Edit section: TrackedOcclusionStepSize">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>The incremental step size for the above.</p>
+<p><b>Default value:</b> 0.1</p>
+<h4><span class="mw-headline" id="TransitionDescription">TransitionDescription</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=167" title="Edit section: TransitionDescription">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p>The current transition description text.</p>
+<h4><span class="mw-headline" id="TransitionGameType">TransitionGameType</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=168" title="Edit section: TransitionGameType">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p>The gametype for the destination map</p>
+<h4><span class="mw-headline" id="TransitionType">TransitionType</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=169" title="Edit section: TransitionType">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Engine_(UDK).html#ETransitionType" title="UE3:Engine (UDK)">ETransitionType</a></p>
+<p>The current transition type.</p>
+<h4><span class="mw-headline" id="UnselectedMaterialColor">UnselectedMaterialColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=170" title="Edit section: UnselectedMaterialColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UDK).html#LinearColor" title="UE3:Object structs (UDK)">Object.LinearColor</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Color of unselected objects in the level viewport (additive)</p>
+<h4><span class="mw-headline" id="VertexColorMaterial">VertexColorMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=171" title="Edit section: VertexColorMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material that renders vertex colour as emissive.</p>
+<h4><span class="mw-headline" id="VertexColorMaterialName">VertexColorMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=172" title="Edit section: VertexColorMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineDebugMaterials.VertexColorMaterial"</p>
+<h4><span class="mw-headline" id="VertexColorViewModeMaterial_AlphaAsColor">VertexColorViewModeMaterial_AlphaAsColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=173" title="Edit section: VertexColorViewModeMaterial AlphaAsColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material for visualizing vertex colors on meshes in the scene (alpha channel as color)</p>
+<h4><span class="mw-headline" id="VertexColorViewModeMaterial_BlueOnly">VertexColorViewModeMaterial_BlueOnly</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=174" title="Edit section: VertexColorViewModeMaterial BlueOnly">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material for visualizing vertex colors on meshes in the scene (blue only)</p>
+<h4><span class="mw-headline" id="VertexColorViewModeMaterial_ColorOnly">VertexColorViewModeMaterial_ColorOnly</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=175" title="Edit section: VertexColorViewModeMaterial ColorOnly">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material for visualizing vertex colors on meshes in the scene (color only, no alpha)</p>
+<h4><span class="mw-headline" id="VertexColorViewModeMaterial_GreenOnly">VertexColorViewModeMaterial_GreenOnly</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=176" title="Edit section: VertexColorViewModeMaterial GreenOnly">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material for visualizing vertex colors on meshes in the scene (green only)</p>
+<h4><span class="mw-headline" id="VertexColorViewModeMaterial_RedOnly">VertexColorViewModeMaterial_RedOnly</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=177" title="Edit section: VertexColorViewModeMaterial RedOnly">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>Material for visualizing vertex colors on meshes in the scene (red only)</p>
+<h4><span class="mw-headline" id="VertexColorViewModeMaterialName_AlphaAsColor">VertexColorViewModeMaterialName_AlphaAsColor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=178" title="Edit section: VertexColorViewModeMaterialName AlphaAsColor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineDebugMaterials.VertexColorViewMode_AlphaAsColor"</p>
+<h4><span class="mw-headline" id="VertexColorViewModeMaterialName_BlueOnly">VertexColorViewModeMaterialName_BlueOnly</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=179" title="Edit section: VertexColorViewModeMaterialName BlueOnly">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineDebugMaterials.VertexColorViewMode_BlueOnly"</p>
+<h4><span class="mw-headline" id="VertexColorViewModeMaterialName_ColorOnly">VertexColorViewModeMaterialName_ColorOnly</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=180" title="Edit section: VertexColorViewModeMaterialName ColorOnly">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineDebugMaterials.VertexColorViewMode_ColorOnly"</p>
+<h4><span class="mw-headline" id="VertexColorViewModeMaterialName_GreenOnly">VertexColorViewModeMaterialName_GreenOnly</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=181" title="Edit section: VertexColorViewModeMaterialName GreenOnly">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineDebugMaterials.VertexColorViewMode_GreenOnly"</p>
+<h4><span class="mw-headline" id="VertexColorViewModeMaterialName_RedOnly">VertexColorViewModeMaterialName_RedOnly</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=182" title="Edit section: VertexColorViewModeMaterialName RedOnly">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineDebugMaterials.VertexColorViewMode_RedOnly"</p>
+<h4><span class="mw-headline" id="WeightMapPlaceholderTexture">WeightMapPlaceholderTexture</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=183" title="Edit section: WeightMapPlaceholderTexture">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Texture_(UDK).html" title="UE3:Texture (UDK)">Texture</a></p>
+<p>Texture used as a placeholder for terrain weight-maps to give the material the correct texture format.</p>
+<h4><span class="mw-headline" id="WeightMapPlaceholderTextureName">WeightMapPlaceholderTextureName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=184" title="Edit section: WeightMapPlaceholderTextureName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineMaterials.WeightMapPlaceholderTexture"</p>
+<h4><span class="mw-headline" id="WireframeMaterial">WireframeMaterial</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=185" title="Edit section: WireframeMaterial">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Material_(UDK).html" title="UE3:Material (UDK)">Material</a></p>
+<p>The material used to render wireframe meshes.</p>
+<h4><span class="mw-headline" id="WireframeMaterialName">WireframeMaterialName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)?section=186" title="Edit section: WireframeMaterialName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> "EngineDebugMaterials.WireframeMaterial"</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.819 seconds
+Real time usage: 0.972 seconds
+Preprocessor visited node count: 5696/1000000
+Preprocessor generated node count: 7341/1000000
+Post‐expand include size: 29713/2097152 bytes
+Template argument size: 5448/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  580.037      1 - -total
+ 46.53%  269.902    104 - Template:Samegame
+ 35.32%  204.855     57 - Template:Tl
+ 30.67%  177.913     59 - Template:Cl
+ 22.91%  132.871      1 - Template:Infobox_class_part
+ 22.07%  128.001      1 - Template:Infobox_class_part/core
+  5.29%   30.698      1 - Template:Ch
+  1.30%    7.567      1 - Template:UDK
+  1.15%    6.651      1 - Template:Autogenerated
+  0.90%    5.194      3 - Template:Gamename
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:25575-0!*!*!*!*!*!* and timestamp 20161215195036 and revision id 40859
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:Engine_internal_variables_(UDK)?oldid=40859">https://wiki.beyondunreal.com/UE3:Engine_internal_variables_(UDK)?oldid=40859</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_Engine_internal_variables_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:Engine_internal_variables_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:Engine_internal_variables_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:Engine_internal_variables_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AEngine+internal+variables+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AEngine+internal+variables+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:Engine_internal_variables_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:Engine_internal_variables_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:Engine_internal_variables_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:Engine_internal_variables_(UDK)?oldid=40859" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:Engine_internal_variables_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 07:39, 17 January 2010.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":149});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:Engine_internal_variables_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 11:22:32 GMT -->
+</html>

@@ -1,0 +1,415 @@
+/* External style sheet */
+/* Name: UnrealWiki Simple Gray */
+/* Author: Foogod */
+
+/* Description:
+
+This is a stylesheet intended to be used with the Unreal Wiki
+(http://wiki.beyondunreal.com/).  This theme is based on the "Chilled Blue"
+stylesheet, with some changes to accomplish a few particular goals:
+
+1. Reduction of wasted space.  The width of the sidebar has been reduced so it
+   isn't taking up so much of the content area of the screen.  Quote boxes now
+   take up a decent portion of the content width, instead of having huge blank
+   spaces on either side of a "cash register receipt width" box of text.
+   Various other elements have had margins or other whitespace reduced to make
+   more effective use of the screen real estate.
+
+2. Made some elements (table borders, colored text) a bit more visible on some
+   LCD screens.
+
+3. More consistent theme.  Some of the elements of the "Chilled Blue" style
+   seemed somewhat inconsistent and jarring (the green headers, etc).  Well, to
+   me at least..
+
+4. Better distinction of different parts of the Wiki interface.  The footer,
+   diff displays, etc are now clearly distinct from the content of the page.
+   (not really critical, but I think it makes it look better and is a bit
+   easier to find what you're looking for at a glance)
+
+Other things done along the way:
+
+ * Color changes to make a general "shades of gray" theme.  Personally, I find
+   this not only to look good, but also to be more soothing to read.
+
+ * Made underline (<u></u>) styling more distinctive, so it won't be confused
+   with links.
+
+ * Cleaned up the stylesheet to use more relative font sizing and element
+   spacing, so the font can be (more or less) scaled globally (to account for
+   higher resolution screens, etc) and everything else will adjust
+   appropriately.  (if nothing else, it's good CSS policy to do things this way)
+
+*/
+
+/* ######################################################## */
+/*            General Document Settings / Layout            */
+/* ######################################################## */
+BODY {	/* Defaults for everything */
+	background: #eeeeee;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: #000000;
+}
+#topbar {
+	background: #d6d6d6;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+}
+#footer { /* FIXME: todo */ }
+#quickbar {
+	background: inherit;
+	width: 100px; /* !! QB WIDTH */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+}
+#scrolling {
+	margin-left: 100px;  /* !! QB WIDTH */
+}
+
+/* ######################################################## */
+/*                   Quickbar Appearance                    */
+/* ######################################################## */
+#logo {
+	left: 0px;
+	margin: 0px;
+}
+/* (Owen hack to override Owen hack in template-default.css) */
+head:first-child+body #logo {
+	left: 0px;
+	margin: 0px;
+}
+#logo img {
+	width: 96px;
+	height: 67px;
+	border: 2px solid #d6d6d6;
+}
+#quickbar div.qbsitename {
+	background: #d6d6d6;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+}
+#quickbar div.qbsection {
+	border-top: 2px solid #eeeeee;
+	background: #d6d6d6;
+}
+
+#quickbar A:link {
+	color: #000066;
+	text-decoration: none;
+}
+#quickbar A:visited {
+	color: #000066;
+	text-decoration: none;
+}
+#quickbar A:hover {
+	color: #0000cc;
+	text-decoration: underline;
+}
+
+/* ######################################################## */
+/*                     Header / Footer                      */
+/* ######################################################## */
+#topbar SPAN,
+#topbar A:link {
+	color: #000066;
+	text-decoration: none;
+}
+#topbar A:visited {
+	color: #000066;
+	text-decoration: none;
+}
+#topbar SPAN:hover,
+#topbar A:hover {
+	color: #0000cc;
+	text-decoration: underline;
+}
+
+#footer {
+	margin: 1em;
+	margin-top: 0em;
+	padding: 0.25em;
+	border: solid 1px #666666;
+	background: #d6d6d6;
+}
+#footer P {
+	margin: 0em;
+}
+
+/* ######################################################## */
+/*                     Wiki Page Layout                     */
+/* ######################################################## */
+#content {
+	padding: 1em;
+}
+
+/* === Headings === */
+H1.pagetitle {
+	color: #666666;
+	border-bottom: #666666 solid 1px;
+	}
+H1.pagetitle A {
+	color: #666666;
+}
+H1.pagetitle A:hover {
+	color: #0000cc; /* FIXME: fix link-hover colors */
+	text-decoration: underline;
+}
+/* (common to all headings) */
+H2, H3, H4, H5  {
+	margin: 0em;
+	margin-top: 0.5em;
+	font-weight: bold;
+	text-decoration: none;
+	color: #444444;
+}
+H2+H3, H2+H4, H3+H4  { 
+	/* get rid of extra space between grouped headings */
+	margin-top: 0em; 
+}
+TD+H1, TD+H2, TD+H3, TD+H4, TD+H5, TD+H6 {
+	margin-top: 0em;
+}
+H2 {
+	font-size: 1.4em;
+	border-bottom: #888888 solid 1px;
+}
+H3 {
+	font-size: 1.2em;
+}
+H4 {
+	font-size: 1.0em;
+}
+
+/* === Text === */
+#content P {
+	margin-top: 0em;
+	margin-bottom: 0.6em;
+}	
+
+EM.em1 { font-weight: inherit; font-style: italic; }
+EM.em2 { font-weight: bold; font-style: inherit; }
+EM.em3 { font-weight: bold; font-style: inherit; color: #cc0000 }
+
+HR {
+	padding: 0em;
+	width: 100%;
+	background-color: #000000;
+	color: #000000; /* IE 5 */
+	height: 2px;
+}
+
+/* This will help distinguish underlined text from links */
+U {
+	text-decoration: none;
+	border-bottom: dotted 1px;
+}
+
+/* === Links === */
+A:link {
+	text-decoration: underline;
+	color: #000066;
+}
+A:visited { color: #666666; }
+A:hover   { color: #0000cc; }
+A:active  { color: #880000; }
+
+/* === Lists === */
+UL, OL {
+	margin-top: 0em;
+	margin-bottom: 0.6em;
+	padding-left: 2.5em;
+}
+OL {
+	list-style-type: decimal;
+	list-style-position: outside;
+}
+DL {
+	margin-left: 20px;
+}
+DL DT {
+	display: compact;
+	padding: 0em;
+	padding-right: 0.5em;
+	font-weight: bold;
+	font-size: 11px; /* Note, Arial 12px bold does not show -> arrows properly, so we're using 11px instead. */
+	}
+DL DD {
+	margin-top: 0em;
+	margin-left: 50px;
+	margin-bottom: 0.75em;
+}
+
+/* === Images === */
+
+.floatimages { margin: 16px -20px }
+
+.floatimages-left  { padding-left:  20px }
+.floatimages-right { padding-right: 20px }
+.floatimages-text  { padding: 0px 20px }
+
+BODY .floatimages-left  DIV,
+BODY .floatimages-right DIV,
+BODY .floatimages-block DIV {
+	margin-bottom: 1em;
+	margin-top: 1em;
+	padding: 0px; /* Note: there's extra whitespace in the DIV, so padding
+			 shows up doubled on the bottom.  No way (that I know
+			 of) to fix this without fixing the HTML. (use
+                         margins/padding on the inner elements instead) */
+	background: #cccccc;
+	border: 1px solid #999999;
+}
+
+BODY .floatimages-left  IMG,
+BODY .floatimages-right IMG,
+BODY .floatimages-block IMG {
+	margin: 5px;
+}
+
+BODY .floatimages-left  P,
+BODY .floatimages-right P,
+BODY .floatimages-block P {
+	text-align: center;
+	margin: 5px;
+	padding: 0px;
+}
+
+/* === Zip files === */
+SPAN.zip { }
+DIV.zip {
+	display: block;
+	width: 200px;
+	margin: 10px auto 20px 10px;
+	padding: 10px;
+	border-width: 0px 0px 0px 5px;
+	border-style: double;
+	border-color: #000066;
+	font-weight: bold;
+}
+
+/* ######################################################## */
+/*                      Special Blocks                      */
+/* ######################################################## */
+
+/* === General === */
+
+CODE, PRE {
+	font-family: 'Courier New',Courier, monospace;
+}
+
+/* (need the "BODY" here to make this override the "blockquote" definition in stylebase.structural.css) */
+BODY BLOCKQUOTE {
+	background-color: #e0e0e0;
+	border: #d6d6d6 inset 1px;
+	margin: 1em 2em;
+	padding: 0.5em;
+}
+
+/* === Paragraph indention === */
+
+BODY P.indent1 { margin-left: 2em }
+BODY P.indent2 { margin-left: 4em }
+BODY P.indent3 { margin-left: 6em }
+BODY P.indent4 { margin-left: 8em }
+BODY P.indent5 { margin-left: 10em }
+BODY P.indent6 { margin-left: 12em }
+
+/* === UnrealScript === */
+
+BODY DIV.classpath, BODY DIV.class {
+	margin: 10px 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	background-color: #dddddd;
+	border: groove 2px #e7e7e7;
+	padding: 0.5em;
+}
+DIV.classpath A, DIV.class A {
+	font-weight: bold;
+}
+/* (need the "BODY" here to make this override the "pre.uscript" definition in stylebase.structural.css) */
+BODY PRE.uscript {
+	margin: 0.5em;
+	padding: 5px;
+	border: 1px inset #eeeeee;
+	background: #ddffff;
+	font-family: 'Courier New', Courier, monospace;
+}
+SPAN.uscript-line     { color: #909090 }
+SPAN.uscript-comment  { color: #009000 }
+SPAN.uscript-string   { color: #009000 }
+SPAN.uscript-name     { color: #009090 }
+SPAN.uscript-exec     { color: #606060 }
+SPAN.uscript-number   { color: #000000 }
+SPAN.uscript-operator { color: #606060 }
+SPAN.uscript-type     { color: #009090 }
+SPAN.uscript-keyword  { color: #009090 }
+
+/* ######################################################## */
+/*                          Tables                          */
+/* ######################################################## */
+
+BODY .paratable,
+BODY .paratable-border {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	empty-cells: show;
+	border-collapse: collapse;
+}
+/* Without border */
+BODY .paratable TD {
+	padding: 5px;
+}
+/* With border */
+BODY .paratable-border TD {
+	padding: 5px;
+	border: solid 2px #bbbbbb;
+}
+
+
+/* ######################################################## */
+/*                          Diffs                           */
+/* ######################################################## */
+BODY DIV.diff {
+	border: solid 1px #aaaaaa;
+	background: #dddddd;
+	padding: 0.6em 0.3em;
+	text-align: center;
+	margin-bottom: 2em;
+}
+.diff TABLE {
+	border-collapse: separate;
+	text-align: left;
+}
+.diff TD {
+	/* Squeeze the empty middle column down to nothing ('width' is only the
+	 * minimum width, so this won't affect any columns with content in
+	 * them, only empty ones) */
+	width: 0px;
+	/* Add some space between columns (unfortunately, since IE doesn't
+	 * support cell-spacing, we have to do this with borders the same color
+	 * as the background instead) */
+	border-left:  0.3em solid #dddddd;
+	border-right: 0.3em solid #dddddd;
+}
+BODY .diff-header {
+	padding: 0em;
+	padding-top: 0.6em;
+	padding-bottom: 0.1em;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+/* Don't show the HR at the bottom of the diff section (we don't need it since
+ * we've got a box around the diff now, and that way it doesn't look like
+ * there's actually a "---" in the content (which there isn't) */
+DIV.diff + HR { display: none; }
+
+/* === Diff Colors === */
+
+BODY .diff-para-ident                       { background: #eeeeee }
+BODY .diff-para-changed                     { background: #eeeeee }
+BODY .diff-para-added,   .diff-span-added   { background: #77dd77 }
+BODY .diff-para-deleted, .diff-span-deleted { background: #dd7777 }
+

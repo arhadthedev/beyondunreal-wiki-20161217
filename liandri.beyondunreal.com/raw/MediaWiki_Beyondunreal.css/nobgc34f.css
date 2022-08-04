@@ -1,0 +1,41 @@
+MediaWiki internal error.<br />
+<br />
+Original exception: exception 'DBConnectionError' with message 'DB connection error: Lost connection to MySQL server during query (localhost)' in /var/www/liandri/w/includes/db/Database.php:626<br />
+Stack trace:<br />
+#0 /var/www/liandri/w/includes/db/LoadBalancer.php(679): DatabaseBase-&gt;reportConnectionError('Unknown error (...')<br />
+#1 /var/www/liandri/w/includes/db/LoadBalancer.php(452): LoadBalancer-&gt;reportConnectionError(Object(DatabaseMysql))<br />
+#2 /var/www/liandri/w/includes/BagOStuff.php(254): LoadBalancer-&gt;getConnection(-2)<br />
+#3 /var/www/liandri/w/includes/BagOStuff.php(265): SqlBagOStuff-&gt;getDB()<br />
+#4 /var/www/liandri/w/includes/MessageCache.php(252): SqlBagOStuff-&gt;get('liandri:message...')<br />
+#5 /var/www/liandri/w/includes/MessageCache.php(606): MessageCache-&gt;load('en')<br />
+#6 /var/www/liandri/w/includes/MessageCache.php(545): MessageCache-&gt;getMsgFromNamespace('Beyondunreal.cs...', 'en')<br />
+#7 /var/www/liandri/w/includes/GlobalFunctions.php(781): MessageCache-&gt;get('Beyondunreal.cs...', true, true)<br />
+#8 /var/www/liandri/w/includes/GlobalFunctions.php(744): wfMsgGetKey('Beyondunreal.cs...', true, true, false)<br />
+#9 /var/www/liandri/w/includes/GlobalFunctions.php(704): wfMsgReal('Beyondunreal.cs...', Array, true, true, false)<br />
+#10 /var/www/liandri/w/includes/RawPage.php(178): wfMsgForContentNoTrans('Beyondunreal.cs...')<br />
+#11 /var/www/liandri/w/includes/RawPage.php(167): RawPage-&gt;getArticleText()<br />
+#12 /var/www/liandri/w/includes/RawPage.php(143): RawPage-&gt;getRawText()<br />
+#13 /var/www/liandri/w/includes/Wiki.php(467): RawPage-&gt;view()<br />
+#14 /var/www/liandri/w/includes/Wiki.php(69): MediaWiki-&gt;performAction(Object(OutputPage), Object(Article), Object(Title), Object(User), Object(WebRequest))<br />
+#15 /var/www/liandri/w/index.php(114): MediaWiki-&gt;performRequestForTitle(Object(Title), Object(Article), Object(OutputPage), Object(User), Object(WebRequest))<br />
+#16 {main}<br />
+<br />
+Exception caught inside exception handler: exception 'DBConnectionError' with message 'DB connection error: Lost connection to MySQL server during query (localhost)' in /var/www/liandri/w/includes/db/Database.php:626<br />
+Stack trace:<br />
+#0 /var/www/liandri/w/includes/db/DatabaseMysql.php(131): DatabaseBase-&gt;reportConnectionError(' Can't connect ...')<br />
+#1 /var/www/liandri/w/includes/db/DatabaseMysql.php(341): DatabaseMysql-&gt;open('localhost', 'liandri', 'xpVaVEml8nRQ', 'liandri')<br />
+#2 /var/www/liandri/w/includes/db/Database.php(734): DatabaseMysql-&gt;ping()<br />
+#3 /var/www/liandri/w/includes/db/Database.php(1050): DatabaseBase-&gt;query('SELECT  lc_valu...', 'LCStore_DB::get')<br />
+#4 /var/www/liandri/w/includes/db/Database.php(1134): DatabaseBase-&gt;select('l10n_cache', Array, Array, 'LCStore_DB::get', Array, Array)<br />
+#5 /var/www/liandri/w/includes/LocalisationCache.php(792): DatabaseBase-&gt;selectRow('l10n_cache', Array, Array, 'LCStore_DB::get')<br />
+#6 /var/www/liandri/w/includes/LocalisationCache.php(313): LCStore_DB-&gt;get('en', 'messages:dberr-...')<br />
+#7 /var/www/liandri/w/includes/LocalisationCache.php(231): LocalisationCache-&gt;loadSubitem('en', 'messages', 'dberr-problems')<br />
+#8 /var/www/liandri/w/languages/Language.php(1574): LocalisationCache-&gt;getSubitem('en', 'messages', 'dberr-problems')<br />
+#9 /var/www/liandri/w/includes/db/Database.php(2897): Language-&gt;getMessage('dberr-problems')<br />
+#10 /var/www/liandri/w/includes/Exception.php(197): DBConnectionError-&gt;getHTML()<br />
+#11 /var/www/liandri/w/includes/Exception.php(220): MWException-&gt;reportHTML()<br />
+#12 /var/www/liandri/w/includes/Exception.php(325): MWException-&gt;report()<br />
+#13 /var/www/liandri/w/includes/Exception.php(393): wfReportException(Object(DBConnectionError))<br />
+#14 [internal function]: wfExceptionHandler(Object(DBConnectionError))<br />
+#15 {main}<br />
+

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UnLevAct.cpp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:08:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>What happens when an Actor is spawned - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="What_happens_when_an_Actor_is_spawned.html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="canonical" href="What_happens_when_an_Actor_is_spawned.html" />
+<link rel="stylesheet" href="w/load2743.css?debug=false&amp;lang=en&amp;modules=ext.geshi.language.uscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"What_happens_when_an_Actor_is_spawned","wgTitle":"What happens when an Actor is spawned","wgCurRevisionId":46301,"wgRevisionId":46301,"wgArticleId":28785,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Programming articles","Native code snippet"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"What_happens_when_an_Actor_is_spawned","wgRelevantArticleId":28785,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"UnLevAct.cpp","wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgInternalRedirectTargetUrl":"/What_happens_when_an_Actor_is_spawned#The_actual_UnLevAct.cpp_snippet"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.redirect","mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-What_happens_when_an_Actor_is_spawned skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Cogito, ergo sum
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">What happens when an Actor is spawned</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"><span class="mw-redirectedfrom">(Redirected from <a href="UnLevActc25d.html?redirect=no" title="UnLevAct.cpp">UnLevAct.cpp</a>)</span></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>The information in this article are based on a snipped of native <a href="UT2004.html" title="UT2004" class="mw-redirect">UT2004</a> code originally posted on Epic Game's ut2003mods mailing list. The code can be found as <i>UnLevAct.cpp</i> in the <i>Engine\Src</i> directory of the UT2004 <a href="UnrealScript_source_code.html" title="UnrealScript source code">UnrealScript source code</a> download. These events happen not only when the <a href="Spawn()_function.html" title="Spawn() function" class="mw-redirect">Spawn() function</a> is used, but also when a network client (this includes demo playback) receives a replicated actor.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Summary_of_events"><span class="tocnumber">1</span> <span class="toctext">Summary of events</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Pre-spawn_checks"><span class="tocnumber">1.1</span> <span class="toctext">Pre-spawn checks</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Spawning"><span class="tocnumber">1.2</span> <span class="toctext">Spawning</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Owner.GainedChild.28.29"><span class="tocnumber">1.3</span> <span class="toctext">Owner.GainedChild()</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Further_initialization"><span class="tocnumber">1.4</span> <span class="toctext">Further initialization</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Spawned.28.29"><span class="tocnumber">1.5</span> <span class="toctext">Spawned()</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#PreBeginPlay.28.29"><span class="tocnumber">1.6</span> <span class="toctext">PreBeginPlay()</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#BeginPlay.28.29"><span class="tocnumber">1.7</span> <span class="toctext">BeginPlay()</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Zone.2FPhysicsVolume"><span class="tocnumber">1.8</span> <span class="toctext">Zone/PhysicsVolume</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Collision_check"><span class="tocnumber">1.9</span> <span class="toctext">Collision check</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#PostBeginPlay.28.29"><span class="tocnumber">1.10</span> <span class="toctext">PostBeginPlay()</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#C.2B.2B_PostBeginPlay.28.29"><span class="tocnumber">1.11</span> <span class="toctext">C++ PostBeginPlay()</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#SetInitialState.28.29"><span class="tocnumber">1.12</span> <span class="toctext">SetInitialState()</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Finding_a_base"><span class="tocnumber">1.13</span> <span class="toctext">Finding a base</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#PostNetBeginPlay.28.29"><span class="tocnumber">1.14</span> <span class="toctext">PostNetBeginPlay()</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#SpawnNotify.SpawnNotification.28.29"><span class="tocnumber">1.15</span> <span class="toctext">SpawnNotify.SpawnNotification()</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Tag"><span class="tocnumber">1.16</span> <span class="toctext">Tag</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#The_actual_UnLevAct.cpp_snippet"><span class="tocnumber">2</span> <span class="toctext">The actual UnLevAct.cpp snippet</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="#Hints_for_reading_the_code"><span class="tocnumber">2.1</span> <span class="toctext">Hints for reading the code</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#General_notes_about_this_code_snippet"><span class="tocnumber">2.2</span> <span class="toctext">General notes about this code snippet</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Notes_for_Unreal_Engine_1"><span class="tocnumber">2.3</span> <span class="toctext">Notes for Unreal Engine 1</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Notes_for_Unreal_Engine_3"><span class="tocnumber">2.4</span> <span class="toctext">Notes for Unreal Engine 3</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#The_code"><span class="tocnumber">2.5</span> <span class="toctext">The code</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Summary_of_events">Summary of events</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=1" title="Edit section: Summary of events">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>For those who don't want to dig through the code, here's a summary of events the Spawn() function calls before returning the newly spawned actor. It is possible to call Destroy() on the spawned actor at any point during initialization. If that happens, initialization stops and the Spawn() function returns <code>None</code>.</p>
+<h3><span class="mw-headline" id="Pre-spawn_checks">Pre-spawn checks</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=2" title="Edit section: Pre-spawn checks">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Before actually creating the new actor, the native code ensures certain preconditions are met:</p>
+<ul>
+<li>The level must not be in the process of being garbage-collected.</li>
+<li>The class to spawn must not be <code>None</code>, cannot be <a href="Abstract.html" title="Abstract" class="mw-redirect">abstract</a> and must be an <a href="Actor.html" title="Actor">Actor</a> subclass.</li>
+<li>The actor class to spawn must be neither <i>bStatic</i> nor <i>bNoDelete</i>.</li>
+<li>If it's a high-detail actor, it is not spawned on low detail settings, if frame rate is low or on a dedicated server.</li>
+<li>For actors that can collide with world geometry, the spawn location is verified and potentially adjusted so the spawned actor will not be partially embedded in world geometry. If that fails, spawning is aborted.</li>
+</ul>
+<h3><span class="mw-headline" id="Spawning">Spawning</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=3" title="Edit section: Spawning">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>If the preconditions are met, the actor is created with its properties initialized to the specified template actor (<a href="UE3.html" title="UE3" class="mw-redirect">UE3</a>) or the class default properties if no template was specified.</p>
+<p>Before the first UnrealScript event is called, some of the actor's properties are initialized as follows:</p>
+<dl>
+<dt>Tag</dt>
+<dd>The actor's class name.</dd>
+<dt>Region</dt>
+<dd>The Zone is set to the LevelInfo, iLeaf to -1 and ZoneNumber to 0.</dd>
+<dt>Level</dt>
+<dd>The LevelInfo.</dd>
+<dt>bTicked, XLevel</dt>
+<dd>These are set, but aren't really interesting for the UnrealScript level.</dd>
+<dt>Role, RemoteRole</dt>
+<dd>If the actor was received through <a href="Replication.html" title="Replication" class="mw-redirect">replication</a>, the values of <i>Role</i> and <i>RemoteRole</i> are exchanged. In other words, <i>RemoteRole</i> becomes <code>ROLE_Authority</code> and <i>Role</i> becomes <code>ROLE_DumpProxy</code>, <code>ROLE_SimulatedProxy</code> or <code>ROLE_AutonomousProxy</code>. <code>ROLE_None</code> isn't possible here because the actor wouldn't have been replicated in the first place. Note that the server automatically downgrades <i>RemoteRole</i> from <code>ROLE_AutonomousProxy</code> to <code>ROLE_SimulatedProxy</code> during replication if it isn't owned by the target client. Also note that <i>bClientAuthoritative</i> does not have any effect here.</dd>
+<dt>Location, Rotation</dt>
+<dd>The values specified in Spawn() or received as part of the initial replication packet. If the default value for <i>bNetInitialRotation</i> is <code>False</code> for the actor class, <i>Rotation</i> is initialized with (0,0,0) for a replicated actor.</dd>
+<dt>Collision hash</dt>
+<dd>If the actor collides with other actors, it is added to the collision hash. (makes it findable for Trace(), CollidingActors(), etc.)</dd>
+<dt>PhysicsVolume</dt>
+<dd>The LevelInfo's PhysicsVolume, which always is the level's DefaultPhysicsVolume.</dd>
+</dl>
+<h3><span class="mw-headline" id="Owner.GainedChild.28.29">Owner.GainedChild()</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=4" title="Edit section: Owner.GainedChild()">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>If an owner was specified in the Spawn() call, that actor's <i>GainedChild()</i> function is called with the newly spawned actor as parameter. Since the <i>Owner</i> variable is not part of the replicated spawning data (only class, location and usually also rotation are), this will never happen clientsidely for replicated actors.</p>
+<h3><span class="mw-headline" id="Further_initialization">Further initialization</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=5" title="Edit section: Further initialization">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Between Owner.GainedChild() and the spawned actor's first own event, a number of additional initialization steps happen. These do not call any UnrealScript events, but should be kept in mind when using GainedChild() to do something with the actor while it is being spawned.</p>
+<ul>
+<li>The <a href="https://wiki.beyondunreal.com/edit/Instigator?redlink=1" class="new" title="Instigator (page does not exist)">Instigator</a> is set to the <i>Instigator</i> of the actor Spawn() was called on or <code>None</code> for replicated actors, since it is not part of the initial replication packet.</li>
+<li>Karma physics are initialized for the spawned actor. Before this happens, the actor's Karma-related functions and properties cannot be used.</li>
+<li>The actor's <a href="State.html" title="State" class="mw-redirect">state</a> support is initialized. Prior to this, calls to state-changing functions, such as GotoState(), do not have any effect.</li>
+</ul>
+<h3><span class="mw-headline" id="Spawned.28.29">Spawned()</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=6" title="Edit section: Spawned()">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>In <a href="https://wiki.beyondunreal.com/edit/Unreal_Engine_1?redlink=1" class="new" title="Unreal Engine 1 (page does not exist)">Unreal Engine 1</a>, the Spawned() event is called at this point. It is only called on actors spawned at runtime and can be used to perform initialization that should not be done for mapper-placed actors. Note that it also isn't called for the <a href="GameInfo.html" title="GameInfo">GameInfo</a> or any actors spawned through the ServerActors list.</p>
+<h3><span class="mw-headline" id="PreBeginPlay.28.29">PreBeginPlay()</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=7" title="Edit section: PreBeginPlay()">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The default implementation of the PreBeginPlay() function allows mutators to modify the actor while it is being spawned by calling the GameInfo's IsRelevant() in <a href="https://wiki.beyondunreal.com/edit/UE1?redlink=1" class="new" title="UE1 (page does not exist)">UE1</a>, the base mutator's CheckRelevance() in <a href="https://wiki.beyondunreal.com/edit/UE2?redlink=1" class="new" title="UE2 (page does not exist)">UE2</a> or the GameInfo's CheckRelevance() in <a href="UE3.html" title="UE3" class="mw-redirect">UE3</a>. These call <a href="https://wiki.beyondunreal.com/edit/Mutator?redlink=1" class="new" title="Mutator (page does not exist)">Mutator</a>.AlwaysKeep() and Mutator.IsRelevant(), which in turn calls Mutator.CheckReplacement().</p>
+<p>The above logic doesn't apply if PreBeginPlay() is overridden without calling <a href="Super.html" title="Super" class="mw-redirect">Super</a>, the actor is flagged as <i>bGameRelevant</i>, the actor is <i>bStatic</i> (only UE3) or spawning happens on a network client.</p>
+<h3><span class="mw-headline" id="BeginPlay.28.29">BeginPlay()</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=8" title="Edit section: BeginPlay()">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This event does nothing by default. It can be used to implement logic that should happen after mutators had a chance to modify the actor. This event no longer exists in Unreal Engine 3 as the same effect could be achieved by overriding PreBeginPlay() and calling Super.PreBeginPlay() first.</p>
+<h3><span class="mw-headline" id="Zone.2FPhysicsVolume">Zone/PhysicsVolume</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=9" title="Edit section: Zone/PhysicsVolume">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>At this point, the actor's <i>Region.Zone</i> and <i>PhysicsVolume</i> are initialized.</p>
+<p>First the actor's actual zone is determined, causing the ZoneChange() event of the actor and the ActorEntered() event of the new zone to be called. If you want to be picky, there's also an ActorLeaving() call on the LevelInfo before that, but it usually doesn't have any effect and the LevelInfo cannot be replaced.</p>
+<p>Next, the PhysicsVolume is determined. For <a href="https://wiki.beyondunreal.com/edit/PhysicsVolume?redlink=1" class="new" title="PhysicsVolume (page does not exist)">PhysicsVolumes</a>, this is the PhysicsVolume itself and no events are called. For all other actor types if the actor is contained in any PhysicsVolume, they get the PhysicsVolumeChange() event. For non-<a href="https://wiki.beyondunreal.com/edit/Pawn?redlink=1" class="new" title="Pawn (page does not exist)">Pawn</a> actors the volume's ActorEnteredVolume() event is called, for Pawns the volume's PawnEnteredVolume() is called instead. Pawns also receive the HeadVolumeChange() event.</p>
+<h3><span class="mw-headline" id="Collision_check">Collision check</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=10" title="Edit section: Collision check">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Next, the engine check if the newly spawned actor overlaps any other actor in a way that would cause "telefragging" on players. This only happens on colliding actors that can block other actors. During this check, the events EncroachingOn(), RanInto(), EncroachedBy(), Touch() and UnTouch() may get called on the spawned actor and any actors it overlaps.</p>
+<p>If it is found that the spawned actor is EncroachingOn() another actor, spawning fails and the spawned actor is destroyed.</p>
+<h3><span class="mw-headline" id="PostBeginPlay.28.29">PostBeginPlay()</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=11" title="Edit section: PostBeginPlay()">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>This event does nothing by default. It can be used to implement logic that should happen after engine-side initialization of the actor is complete.</p>
+<p>Note that in Unreal Engine 3 this event took the place of <a href="#PostNetBeginPlay.28.29">PostNetBeginPlay()</a>.</p>
+<h3><span class="mw-headline" id="C.2B.2B_PostBeginPlay.28.29">C++ PostBeginPlay()</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=12" title="Edit section: C++ PostBeginPlay()">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Here certain special actors can perform their final initialization steps. For example UT2004 <a href="UE2_Volume_(UT2004).html" title="UE2:Volume (UT2004)">Volumes</a> spawn <a href="UE2_DecoVolumeObject_(UT2004).html" title="UE2:DecoVolumeObject (UT2004)">DecoVolumeObjects</a> here according to their DecoList.</p>
+<h3><span class="mw-headline" id="SetInitialState.28.29">SetInitialState()</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=13" title="Edit section: SetInitialState()">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>As the name suggests, this function sets the actor's initial state. Using GotoState() it either switches to the state specified in the <a href="https://wiki.beyondunreal.com/edit/InitialState?redlink=1" class="new" title="InitialState (page does not exist)">InitialState</a> property or to the state marked with the <a href="Auto.html" title="Auto" class="mw-redirect">auto</a> modifier. As a result, the corresponding state's BeginState() event will be called.</p>
+<p>Starting with <a href="https://wiki.beyondunreal.com/edit/Unreal_Engine_2?redlink=1" class="new" title="Unreal Engine 2 (page does not exist)">Unreal Engine 2</a>, this function also sets the <i>bScriptInitialized</i> flag, so the map startup initialization is not applied to actors spawned during startup. If you override SetInitialState() without calling <a href="Super.html" title="Super" class="mw-redirect">Super</a>, you should manually execute <code>bScriptInitialized = True;</code> in your overridden version of this function.</p>
+<h3><span class="mw-headline" id="Finding_a_base">Finding a base</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=14" title="Edit section: Finding a base">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>If the actor <i>bShouldBaseOnStartup</i>, has world collision enabled and its <i>Physics</i> set to None or Rotating, a good base actor is determined. If a base is found, the base actor's Attach() event and this actor's BaseChange() event are called.</p>
+<h3><span class="mw-headline" id="PostNetBeginPlay.28.29">PostNetBeginPlay()</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=15" title="Edit section: PostNetBeginPlay()">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>For actors spawned locally, this event is called right after SetInitialState(). For actors received through <a href="Replication.html" title="Replication" class="mw-redirect">replication</a>, this event is instead called by the replication code after applying the initial bunch of replicated variables. This still happens right after spawning, but may be preceded by a call to PostNetReceive() in <a href="https://wiki.beyondunreal.com/edit/Unreal_Engine_2?redlink=1" class="new" title="Unreal Engine 2 (page does not exist)">Unreal Engine 2</a> or one or more calls to ReplicatedEvent() in <a href="Unreal_Engine_3.html" title="Unreal Engine 3">Unreal Engine 3</a>.</p>
+<p>Note that the name of this event is PostBeginPlay() in Unreal Engine 3.</p>
+<h3><span class="mw-headline" id="SpawnNotify.SpawnNotification.28.29">SpawnNotify.SpawnNotification()</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=16" title="Edit section: SpawnNotify.SpawnNotification()">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>In <a href="UT.html" title="UT" class="mw-redirect">UT</a> actors of the special class <a href="UE1_SpawnNotify_(UT).html" title="UE1:SpawnNotify (UT)">SpawnNotify</a> receive the SpawnNotification() event for locally spawned if the spawned actor's class matches the SpawnNotify's ActorClass or is a subclass thereof. Unlike the <a href="https://wiki.beyondunreal.com/edit/Mutator?redlink=1" class="new" title="Mutator (page does not exist)">Mutator</a> functions called during <a href="#PreBeginPlay.28.29">PreBeginPlay()</a>, the SpawnNotification() event can actually replace the actor eventually returned by the <a href="Spawn()_function.html" title="Spawn() function" class="mw-redirect">Spawn() function</a>.</p>
+<h3><span class="mw-headline" id="Tag">Tag</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=17" title="Edit section: Tag">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>If the actor is created with the Spawn() function and the SpawnTag parameter was specified as something different than <code>''</code> or <code>'None'</code>, the spawned actor's Tag is set to that value here.</p>
+<h2><span class="mw-headline" id="The_actual_UnLevAct.cpp_snippet">The actual UnLevAct.cpp snippet</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=18" title="Edit section: The actual UnLevAct.cpp snippet">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The following is a copy of the code snippet this article is based on. This particular piece of code is called called from within the UnrealScript Spawn() function, to create the GameInfo and any ServerActors at <a href="What_happens_at_map_startup.html" title="What happens at map startup">map startup</a> and also for any received replicated Actors. Even <a href="UnrealEd.html" title="UnrealEd" class="mw-redirect">UnrealEd</a> uses it to place new Actors in the map. Note that this code calls various UnrealScript functions, so for a complete picture you should have the UT2004 sources ready and browse to the relevant functions.</p>
+<h3><span class="mw-headline" id="Hints_for_reading_the_code">Hints for reading the code</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=19" title="Edit section: Hints for reading the code">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A few things that will help understanding the code even if you're not into C++:</p>
+<ul>
+<li>The <code>-&gt;</code> operator does the same as the dot does in UnrealScript - it accesses variables or functions of an object.</li>
+<li><code>GetLevelInfo()</code> returns the current LevelInfo object, similar to the UnrealScript variable <code>Level</code>.</li>
+<li>Variables in UnrealScript objects have the same name in C++. For example <code>Actor-&gt;PhysicsVolume</code> refers to UnrealScript variable of the same name.</li>
+<li>The LevelInfo's <code>bBegunPlay</code> acts as general gate to UnrealScript execution. During map load and in UnrealEd it is 0 (False), so no UnrealScript code will be executed. At some point in <a href="What_happens_at_map_startup.html" title="What happens at map startup">map startup</a> it is set to 1 (True), and from that point on until the map is unloaded UnrealScript functions can run. Any actors spawned before that (e.g. the GameInfo or any ServerActors) do not get any of the UnrealScript calls mentioned here and are instead initialized as part of map startup.</li>
+<li>UnrealScript functions declared with the <i>event</i> keyword are called from C++ via <code>event<i>NameOfUScriptFunction</i>(<i>parameters</i>)</code>, for example <code>eventPreBeginPlay</code> calls the PreBeginPlay() function.</li>
+<li>The native class name of Actor subclasses is prefixed with an A, the native name of non-Actor classes with a U and the native name of structs with an F, for example APhysicsVolume, UKarmaParams or FVector.</li>
+<li><a href="Name.html" title="Name" class="mw-redirect">Name</a> literals do not exist. Instead, the values of all natively-used names are hard-coded as <code>NAME_<i>name</i></code>, for example NAME_None for 'None'.</li>
+<li>Class <a href="Literals.html" title="Literals">literals</a> do exist, but look very different from UnrealScript. They are expressed as <code><i>nativeClassName</i>::StaticClass()</code>.</li>
+<li>Values for <a href="Bool.html" title="Bool" class="mw-redirect">bool</a> variables are 0 and 1, not False and True.</li>
+<li><code>Class-&gt;GetDefaultActor()</code> corresponds to UnrealScript's <code>.default.</code> syntax for <a href="Variables.html#Accessing_variables" title="Variables">accessing the default variable values</a> of a class.</li>
+<li><code>DestroyActor()</code> is the function that is called by the UnrealScript Destroy() function. (see <a href="What_happens_when_an_Actor_is_destroyed.html" title="What happens when an Actor is destroyed">What happens when an Actor is destroyed</a>)</li>
+</ul>
+<h3><span class="mw-headline" id="General_notes_about_this_code_snippet">General notes about this code snippet</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=20" title="Edit section: General notes about this code snippet">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<ul>
+<li>Only the parameters Class, Location, Rotation and Owner can be specified via the UnrealScript Spawn() function.</li>
+<li>The InName and Template parameters are always None for normal spawns. They are probably only used in special cases by UnrealEd, e.g. Template for actor duplication.</li>
+<li>The <code>bRemoteOwned</code> parameter is only True when the Actor was received clientsidely via <a href="Replication.html" title="Replication" class="mw-redirect">replication</a>.</li>
+<li>The Instigator parameter is set to the Instigator of the Actor the UnrealScript Spawn() function is called on.</li>
+<li>The UnrealScript Spawn() function parameter SpawnTag is applied by the native Spawn() implementation after ULevel::SpawnActor() returns. That means the value of the newly spawned Actor's Tag property does not have any meaningful value yet. (It is temporarily set to the class name.) Any changes to the Tag during the initialization of the spawned Actor are overridden with the SpawnTag value.</li>
+<li>The call to SetOwner() triggers the Owner's GainedChild() UnrealScript event before the new Actor is initialized. Among other things, this means you cannot use GotoState() on that Actor yet.</li>
+<li>Similarly, SetZone(), CheckEncroachment() and FindBase() may cause UnrealScript events to be called.</li>
+<li>The call to PostNetBeginPlay() only happens if the Actor wasn't received through <a href="Replication.html" title="Replication" class="mw-redirect">replication</a>. For replicated actors PostNetBeginPlay() will be called a bit later after the initial bunch of replicated variables have been received. If the Actor's bNetNotify property is True, PostNetReceive() might be called right before the PostNetBeginPlay() call.</li>
+</ul>
+<h3><span class="mw-headline" id="Notes_for_Unreal_Engine_1">Notes for Unreal Engine 1</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=21" title="Edit section: Notes for Unreal Engine 1">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<ul>
+<li>Unreal Engine 1 does not have volumes or Karma physics, so these parts of the code here do not apply.</li>
+<li>Before calling PreBeginPlay(), the UnrealScript event Spawned() is called.</li>
+<li><a href="UT.html" title="UT" class="mw-redirect">UT</a> also calls the SpawnNotification() event of all SpawnNotify actors that want notification for this type of actor, somewhere between PostNetBeginPlay() and setting the Tag property. Unlike any other function called during execution of the Spawn() function, a SpawnNotify can actually change the actor eventually returned by the Spawn() call.</li>
+</ul>
+<h3><span class="mw-headline" id="Notes_for_Unreal_Engine_3">Notes for Unreal Engine 3</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=22" title="Edit section: Notes for Unreal Engine 3">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<ul>
+<li>The Actor's Level variable and the LevelInfo class are both called <i>WorldInfo</i> in <a href="Unreal_Engine_3.html" title="Unreal Engine 3">Unreal Engine 3</a>.</li>
+<li>The BeginPlay() and PostNetBeginPlay() functions have been removed, with PostBeginPlay() now taking PostNetBeginPlay()'s role. PostNetReceive() has been replaced by the more specific ReplicatedEvent() function that will be called for every received <a href="Repnotify-2.html" title="Repnotify" class="mw-redirect">repnotify</a> variable.</li>
+<li>Unreal Engine 3 does not use zones, so the related parts of the code here do not apply.</li>
+<li>The <code>Template</code> and <code>bNoCollisionFail</code> parameters can be passed via the Spawn() function, but for replicated actors the template must be an actor the client knows about, ideally an Actor <a href="Subobject.html" title="Subobject" class="mw-redirect">subobject</a>, an Actor <a href="Archetype.html" title="Archetype">archetype</a> or a bStatic or bNoDelete Actor in the current level.</li>
+</ul>
+<h3><span class="mw-headline" id="The_code">The code</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned?section=23" title="Edit section: The code">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="uscript source-uscript">
+<pre class="de1">
+<span class="coMULTI">/*=============================================================================
+	UnLevAct.cpp: Level actor functions
+	Copyright 1997-2001 Epic Games, Inc. All Rights Reserved.
+ 
+=============================================================================*/</span>
+ 
+<span class="co1">//</span>
+<span class="co1">// Create a new actor. Returns the new actor, or NULL if failure.</span>
+<span class="co1">//</span>
+AActor<span class="sy0">*</span> ULevel::SpawnActor
+<span class="br0">(</span>
+	UClass<span class="sy0">*</span>			<span class="kw1">Class</span>,
+	FName			InName,
+	FVector			<span class="kw7">Location</span>,
+	FRotator		<span class="kw7">Rotation</span>,
+	AActor<span class="sy0">*</span>			Template,
+	UBOOL			bNoCollisionFail,
+	UBOOL			bRemoteOwned,
+	AActor<span class="sy0">*</span>			<span class="kw7">Owner</span>,
+	APawn<span class="sy0">*</span>			<span class="kw7">Instigator</span>,
+	UBOOL			bNoFail
+<span class="br0">)</span>
+<span class="br0">{</span>
+	guard<span class="br0">(</span>ULevel::SpawnActor<span class="br0">)</span>;
+ 
+    <span class="kw2">if</span><span class="br0">(</span> GetFlags<span class="br0">(</span><span class="br0">)</span> <span class="sy0">&amp;</span> RF_Unreachable <span class="br0">)</span>
+        <span class="kw2">return</span> <span class="kw5">NULL</span>;
+ 
+	<span class="co1">// Make sure this class is spawnable.</span>
+	<span class="kw2">if</span><span class="br0">(</span> <span class="sy0">!</span><span class="kw1">Class</span> <span class="br0">)</span>
+	<span class="br0">{</span>
+		debugf<span class="br0">(</span> NAME_Warning, TEXT<span class="br0">(</span><span class="st0">"SpawnActor failed because no class was specified"</span><span class="br0">)</span> <span class="br0">)</span>;
+		<span class="kw2">return</span> <span class="kw5">NULL</span>;
+	<span class="br0">}</span>
+	<span class="kw2">if</span><span class="br0">(</span> Class<span class="sy0">-&gt;</span>ClassFlags <span class="sy0">&amp;</span> CLASS_Abstract <span class="br0">)</span>
+	<span class="br0">{</span>
+		debugf<span class="br0">(</span> NAME_Warning, TEXT<span class="br0">(</span><span class="st0">"SpawnActor failed because class %s is abstract"</span><span class="br0">)</span>, Class<span class="sy0">-&gt;</span>GetName<span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span>;
+		<span class="kw2">return</span> <span class="kw5">NULL</span>;
+	<span class="br0">}</span>
+	<span class="kw2">else</span> <span class="kw2">if</span><span class="br0">(</span> <span class="sy0">!</span>Class<span class="sy0">-&gt;</span>IsChildOf<span class="br0">(</span>AActor::StaticClass<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">)</span>
+	<span class="br0">{</span>
+		debugf<span class="br0">(</span> NAME_Warning, TEXT<span class="br0">(</span><span class="st0">"SpawnActor failed because %s is not an actor class"</span><span class="br0">)</span>, Class<span class="sy0">-&gt;</span>GetName<span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span>;
+		<span class="kw2">return</span> <span class="kw5">NULL</span>;
+	<span class="br0">}</span>
+	<span class="kw2">else</span> <span class="kw2">if</span><span class="br0">(</span> <span class="sy0">!</span>GIsEditor <span class="sy0">&amp;&amp;</span> <span class="br0">(</span>Class<span class="sy0">-&gt;</span>GetDefaultActor<span class="br0">(</span><span class="br0">)</span><span class="sy0">-&gt;</span>bStatic <span class="sy0">||</span> Class<span class="sy0">-&gt;</span>GetDefaultActor<span class="br0">(</span><span class="br0">)</span><span class="sy0">-&gt;</span>bNoDelete<span class="br0">)</span> <span class="br0">)</span>
+	<span class="br0">{</span>
+		debugf<span class="br0">(</span> NAME_Warning, TEXT<span class="br0">(</span><span class="st0">"SpawnActor failed because class %s has bStatic or bNoDelete"</span><span class="br0">)</span>, Class<span class="sy0">-&gt;</span>GetName<span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span>;
+		<span class="kw2">if</span> <span class="br0">(</span> <span class="sy0">!</span>bNoFail <span class="br0">)</span>
+			<span class="kw2">return</span> <span class="kw5">NULL</span>;		
+	<span class="br0">}</span>
+ 
+	<span class="co1">// don't spawn bHighDetail actors if not wanted</span>
+	<span class="kw2">if</span><span class="br0">(</span> <span class="sy0">!</span>GIsEditor <span class="sy0">&amp;&amp;</span> Class<span class="sy0">-&gt;</span>GetDefaultActor<span class="br0">(</span><span class="br0">)</span><span class="sy0">-&gt;</span>bHighDetail <span class="sy0">&amp;&amp;</span> <span class="sy0">!</span>bNoFail <span class="br0">)</span>
+	<span class="br0">{</span>
+	    <span class="kw2">if</span><span class="br0">(</span> GetLevelInfo<span class="br0">(</span><span class="br0">)</span><span class="sy0">-&gt;</span>DetailMode <span class="sy0">==</span> DM_Low <span class="sy0">||</span> GetLevelInfo<span class="br0">(</span><span class="br0">)</span><span class="sy0">-&gt;</span>bDropDetail <span class="sy0">||</span> <span class="br0">(</span>GetLevelInfo<span class="br0">(</span><span class="br0">)</span><span class="sy0">-&gt;</span>NetMode <span class="sy0">==</span> NM_DedicatedServer<span class="br0">)</span> <span class="br0">)</span>
+		<span class="br0">{</span>
+			<span class="co1">//debugf(TEXT("%s not spawned"),Class-&gt;GetName());</span>
+			<span class="kw2">return</span> <span class="kw5">NULL</span>;
+		<span class="br0">}</span>
+    <span class="br0">}</span>
+<span class="co2">#if 1</span>
+    <span class="co1">// sjs - level's outer is not transient so we must do this</span>
+    <span class="co1">// doing this is a huge benefit for long running names, as the name table grows &gt; 40 megs after long multiplayer games.</span>
+    <span class="kw2">if</span><span class="br0">(</span> <span class="sy0">!</span>GTransientNaming <span class="sy0">&amp;&amp;</span> InName<span class="sy0">==</span>NAME_None<span class="br0">)</span>
+        InName <span class="sy0">=</span> NAME_Transient;
+<span class="co2">#endif</span>
+ 
+	<span class="co1">// Use class's default actor as a template.</span>
+	<span class="kw2">if</span><span class="br0">(</span> <span class="sy0">!</span>Template <span class="br0">)</span>
+		Template <span class="sy0">=</span> Class<span class="sy0">-&gt;</span>GetDefaultActor<span class="br0">(</span><span class="br0">)</span>;
+	check<span class="br0">(</span>Template<span class="sy0">!=</span><span class="kw5">NULL</span><span class="br0">)</span>;
+ 
+	<span class="co1">// Make sure actor will fit at desired location, and adjust location if necessary.</span>
+	<span class="kw2">if</span><span class="br0">(</span> <span class="br0">(</span>Template<span class="sy0">-&gt;</span>bCollideWorld <span class="sy0">||</span> <span class="br0">(</span>Template<span class="sy0">-&gt;</span>bCollideWhenPlacing <span class="sy0">&amp;&amp;</span> <span class="br0">(</span>GetLevelInfo<span class="br0">(</span><span class="br0">)</span><span class="sy0">-&gt;</span>NetMode <span class="sy0">!=</span> NM_Client<span class="br0">)</span><span class="br0">)</span><span class="br0">)</span> <span class="sy0">&amp;&amp;</span> <span class="sy0">!</span>bNoCollisionFail <span class="br0">)</span>
+		<span class="kw2">if</span><span class="br0">(</span> <span class="sy0">!</span>FindSpot<span class="br0">(</span> Template<span class="sy0">-&gt;</span>GetCylinderExtent<span class="br0">(</span><span class="br0">)</span>, <span class="kw7">Location</span> <span class="br0">)</span> <span class="br0">)</span>
+			<span class="kw2">return</span> <span class="kw5">NULL</span>;
+ 
+	<span class="co1">// Add at end of list.</span>
+	<span class="kw5">INT</span> iActor <span class="sy0">=</span> Actors.<span class="me0">Add</span><span class="br0">(</span><span class="br0">)</span>;
+    AActor<span class="sy0">*</span> <span class="kw9">Actor</span> <span class="sy0">=</span> Actors<span class="br0">(</span>iActor<span class="br0">)</span> <span class="sy0">=</span> <span class="br0">(</span>AActor<span class="sy0">*</span><span class="br0">)</span>StaticConstructObject<span class="br0">(</span> <span class="kw1">Class</span>, GetOuter<span class="br0">(</span><span class="br0">)</span>, InName, <span class="nu0">0</span>, Template <span class="br0">)</span>;
+ 
+	Actor<span class="sy0">-&gt;</span>SetFlags<span class="br0">(</span> RF_Transactional <span class="br0">)</span>;
+ 
+	<span class="co1">// Set base actor properties.</span>
+	Actor<span class="sy0">-&gt;</span><span class="kw7">Tag</span>		<span class="sy0">=</span> Class<span class="sy0">-&gt;</span>GetFName<span class="br0">(</span><span class="br0">)</span>;
+	Actor<span class="sy0">-&gt;</span>Region	<span class="sy0">=</span> FPointRegion<span class="br0">(</span> GetLevelInfo<span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span>;
+	Actor<span class="sy0">-&gt;</span><span class="kw7">Level</span>	<span class="sy0">=</span> GetLevelInfo<span class="br0">(</span><span class="br0">)</span>;
+	Actor<span class="sy0">-&gt;</span>bTicked  <span class="sy0">=</span> <span class="sy0">!</span>Ticked;
+	Actor<span class="sy0">-&gt;</span>XLevel	<span class="sy0">=</span> this;
+ 
+	<span class="co1">// Set network role.</span>
+	check<span class="br0">(</span>Actor<span class="sy0">-&gt;</span><span class="kw7">Role</span><span class="sy0">==</span><span class="kw7">ROLE_Authority</span><span class="br0">)</span>;
+	<span class="kw2">if</span><span class="br0">(</span> bRemoteOwned <span class="br0">)</span>
+		Exchange<span class="br0">(</span> Actor<span class="sy0">-&gt;</span><span class="kw7">Role</span>, Actor<span class="sy0">-&gt;</span><span class="kw7">RemoteRole</span> <span class="br0">)</span>;
+ 
+	<span class="co1">// Remove the actor's brush, if it has one, because moving brushes are not duplicatable.</span>
+	<span class="kw2">if</span><span class="br0">(</span> Actor<span class="sy0">-&gt;</span>Brush <span class="br0">)</span>
+		Actor<span class="sy0">-&gt;</span>Brush <span class="sy0">=</span> <span class="kw5">NULL</span>;
+ 
+	<span class="co1">// Set the actor's location and rotation.</span>
+	Actor<span class="sy0">-&gt;</span><span class="kw7">Location</span> <span class="sy0">=</span> <span class="kw7">Location</span>;
+	Actor<span class="sy0">-&gt;</span><span class="kw7">Rotation</span> <span class="sy0">=</span> <span class="kw7">Rotation</span>;
+	<span class="kw2">if</span><span class="br0">(</span> Actor<span class="sy0">-&gt;</span>bCollideActors <span class="sy0">&amp;&amp;</span> Hash  <span class="br0">)</span>
+		Hash<span class="sy0">-&gt;</span>AddActor<span class="br0">(</span> <span class="kw9">Actor</span> <span class="br0">)</span>;
+ 
+	<span class="co1">// init actor's physics volume</span>
+	Actor<span class="sy0">-&gt;</span><span class="kw9">PhysicsVolume</span> <span class="sy0">=</span> 	GetLevelInfo<span class="br0">(</span><span class="br0">)</span><span class="sy0">-&gt;</span><span class="kw9">PhysicsVolume</span>; 
+ 
+	<span class="co1">// Set owner.</span>
+	Actor<span class="sy0">-&gt;</span><span class="kw4">SetOwner</span><span class="br0">(</span> <span class="kw7">Owner</span> <span class="br0">)</span>;
+ 
+	<span class="co1">// Set instigator</span>
+	Actor<span class="sy0">-&gt;</span><span class="kw7">Instigator</span> <span class="sy0">=</span> <span class="kw7">Instigator</span>;
+ 
+<span class="co2">#ifdef WITH_KARMA</span>
+    <span class="co1">// Initilise Karma physics for this actor (if there are any)</span>
+    KInitActorKarma<span class="br0">(</span><span class="kw9">Actor</span><span class="br0">)</span>;
+<span class="co2">#endif</span>
+ 
+	<span class="co1">// Send messages.</span>
+	Actor<span class="sy0">-&gt;</span>InitExecution<span class="br0">(</span><span class="br0">)</span>;
+	Actor<span class="sy0">-&gt;</span>Spawned<span class="br0">(</span><span class="br0">)</span>;
+	Actor<span class="sy0">-&gt;</span>eventPreBeginPlay<span class="br0">(</span><span class="br0">)</span>;
+	<span class="kw2">if</span><span class="br0">(</span> Actor<span class="sy0">-&gt;</span>bDeleteMe <span class="sy0">&amp;&amp;</span> <span class="sy0">!</span>bNoFail <span class="br0">)</span>
+		<span class="kw2">return</span> <span class="kw5">NULL</span>;
+	Actor<span class="sy0">-&gt;</span>eventBeginPlay<span class="br0">(</span><span class="br0">)</span>;
+	<span class="kw2">if</span><span class="br0">(</span> Actor<span class="sy0">-&gt;</span>bDeleteMe <span class="sy0">&amp;&amp;</span> <span class="sy0">!</span>bNoFail <span class="br0">)</span>
+		<span class="kw2">return</span> <span class="kw5">NULL</span>;
+ 
+	<span class="co1">// Set the actor's zone.</span>
+	Actor<span class="sy0">-&gt;</span>SetZone<span class="br0">(</span> iActor<span class="sy0">==</span><span class="nu0">0</span>, <span class="nu0">1</span> <span class="br0">)</span>;
+ 
+	<span class="co1">// Update the list of leaves this actor is in.</span>
+	Actor<span class="sy0">-&gt;</span>ClearRenderData<span class="br0">(</span><span class="br0">)</span>;
+ 
+	<span class="co1">// Check for encroachment.</span>
+	<span class="kw2">if</span><span class="br0">(</span> <span class="sy0">!</span>bNoCollisionFail <span class="br0">)</span>
+	<span class="br0">{</span>
+		<span class="kw2">if</span><span class="br0">(</span> Actor<span class="sy0">-&gt;</span>bCollideActors <span class="sy0">&amp;&amp;</span> Hash <span class="br0">)</span>
+			Hash<span class="sy0">-&gt;</span>RemoveActor<span class="br0">(</span> <span class="kw9">Actor</span> <span class="br0">)</span>;
+ 
+		<span class="kw2">if</span><span class="br0">(</span> CheckEncroachment<span class="br0">(</span> <span class="kw9">Actor</span>, Actor<span class="sy0">-&gt;</span><span class="kw7">Location</span>, Actor<span class="sy0">-&gt;</span><span class="kw7">Rotation</span>, <span class="nu0">1</span> <span class="br0">)</span> <span class="br0">)</span>
+		<span class="br0">{</span>
+			DestroyActor<span class="br0">(</span> <span class="kw9">Actor</span> <span class="br0">)</span>;
+			<span class="kw2">return</span> <span class="kw5">NULL</span>;
+		<span class="br0">}</span>
+		<span class="kw2">if</span><span class="br0">(</span> Actor<span class="sy0">-&gt;</span>bCollideActors <span class="sy0">&amp;&amp;</span> Hash <span class="br0">)</span>
+			Hash<span class="sy0">-&gt;</span>AddActor<span class="br0">(</span> <span class="kw9">Actor</span> <span class="br0">)</span>;
+	<span class="br0">}</span>
+	<span class="co1">//if ( Actor-&gt;bCollideActors &amp;&amp; !Actor-&gt;bBlockActors &amp;&amp; !Actor-&gt;bUseCylinderCollision &amp;&amp; (Actor-&gt;DrawType == DT_StaticMesh) )</span>
+	<span class="co1">//	debugf(TEXT("%s shouldn't be using static mesh collision"),Actor-&gt;GetName());</span>
+ 
+	<span class="co1">// Send PostBeginPlay.</span>
+	Actor<span class="sy0">-&gt;</span>eventPostBeginPlay<span class="br0">(</span><span class="br0">)</span>;
+	<span class="kw2">if</span><span class="br0">(</span> Actor<span class="sy0">-&gt;</span>bDeleteMe <span class="sy0">&amp;&amp;</span> <span class="sy0">!</span>bNoFail <span class="br0">)</span>
+		<span class="kw2">return</span> <span class="kw5">NULL</span>;
+ 
+	Actor<span class="sy0">-&gt;</span><span class="kw4">PostBeginPlay</span><span class="br0">(</span><span class="br0">)</span>;
+ 
+	<span class="co1">// Init scripting.</span>
+	Actor<span class="sy0">-&gt;</span>eventSetInitialState<span class="br0">(</span><span class="br0">)</span>;
+ 
+	<span class="co1">// Find Base</span>
+	<span class="kw2">if</span><span class="br0">(</span> <span class="sy0">!</span>GIsEditor <span class="sy0">&amp;&amp;</span> <span class="sy0">!</span>Actor<span class="sy0">-&gt;</span><span class="kw7">Base</span> <span class="sy0">&amp;&amp;</span> Actor<span class="sy0">-&gt;</span>bCollideWorld <span class="sy0">&amp;&amp;</span> Actor<span class="sy0">-&gt;</span>bShouldBaseAtStartup 
+		 <span class="sy0">&amp;&amp;</span> <span class="br0">(</span><span class="br0">(</span>Actor<span class="sy0">-&gt;</span><span class="kw7">Physics</span> <span class="sy0">==</span> <span class="kw7">PHYS_None</span><span class="br0">)</span> <span class="sy0">||</span> <span class="br0">(</span>Actor<span class="sy0">-&gt;</span><span class="kw7">Physics</span> <span class="sy0">==</span> <span class="kw7">PHYS_Rotating</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">)</span>
+		Actor<span class="sy0">-&gt;</span>FindBase<span class="br0">(</span><span class="br0">)</span>;
+ 
+	<span class="co1">// Success: Return the actor.</span>
+	<span class="kw2">if</span><span class="br0">(</span> InTick <span class="br0">)</span>
+		NewlySpawned <span class="sy0">=</span> <span class="kw1">new</span><span class="br0">(</span>GEngineMem<span class="br0">)</span>FActorLink<span class="br0">(</span><span class="kw9">Actor</span>,NewlySpawned<span class="br0">)</span>;
+ 
+	<span class="co1">// replicated actors will have postnetbeginplay() called in net code, after initial properties are received</span>
+	<span class="kw2">if</span> <span class="br0">(</span> <span class="sy0">!</span>bRemoteOwned <span class="br0">)</span>
+		Actor<span class="sy0">-&gt;</span>eventPostNetBeginPlay<span class="br0">(</span><span class="br0">)</span>;
+ 
+	<span class="kw2">return</span> <span class="kw9">Actor</span>;
+	unguardf<span class="br0">(</span><span class="br0">(</span> TEXT<span class="br0">(</span><span class="st0">"(%s)"</span><span class="br0">)</span>, Class<span class="sy0">-&gt;</span>GetName<span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span><span class="br0">)</span>;
+<span class="br0">}</span>
+</pre></div>
+</div>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.152 seconds
+Real time usage: 0.159 seconds
+Preprocessor visited node count: 94/1000000
+Preprocessor generated node count: 116/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:28785-0!*!0!!en!*!* and timestamp 20161215120317 and revision id 46301
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/What_happens_when_an_Actor_is_spawned?oldid=46301#The_actual_UnLevAct.cpp_snippet">https://wiki.beyondunreal.com/What_happens_when_an_Actor_is_spawned?oldid=46301#The_actual_UnLevAct.cpp_snippet</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_Programming_articles.html" title="Category:Programming articles">Programming articles</a></li><li><a href="Category_Native_code_snippet.html" title="Category:Native code snippet">Native code snippet</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="What_happens_when_an_Actor_is_spawned.html" title="View the content page [c]" accesskey="c">Page</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/Talk:What_happens_when_an_Actor_is_spawned?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/What_happens_when_an_Actor_is_spawned" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/What_happens_when_an_Actor_is_spawned" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=What+happens+when+an+Actor+is+spawned&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=What+happens+when+an+Actor+is+spawned" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/What_happens_when_an_Actor_is_spawned" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/What_happens_when_an_Actor_is_spawned" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/What_happens_when_an_Actor_is_spawned?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/What_happens_when_an_Actor_is_spawned?oldid=46301" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/What_happens_when_an_Actor_is_spawned" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 17:35, 15 February 2016.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":113});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UnLevAct.cpp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 09:08:14 GMT -->
+</html>

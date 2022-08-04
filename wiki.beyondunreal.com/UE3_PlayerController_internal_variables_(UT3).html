@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:PlayerController_internal_variables_(UT3) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:43:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:PlayerController internal variables (UT3) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_PlayerController_internal_variables_(UT3).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:PlayerController_internal_variables_(UT3)","wgTitle":"PlayerController internal variables (UT3)","wgCurRevisionId":35074,"wgRevisionId":35074,"wgArticleId":18804,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:PlayerController_internal_variables_(UT3)","wgRelevantArticleId":18804,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_PlayerController_internal_variables_UT3 skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>The three virtues of a programmer: Laziness, Impatience, and Hubris. &#8211; Larry Wall
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:PlayerController internal variables (UT3)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Tournament_3.html" title="Unreal Tournament 3"><img alt="UT3" src="w/images/Icon-UT3.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UT3).html" title="UE3:Object (UT3)">Object</a> &gt;&gt;&#160;<a href="UE3_Actor_(UT3).html" title="UE3:Actor (UT3)">Actor</a> &gt;&gt;&#160;<a href="UE3_Controller_(UT3).html" title="UE3:Controller (UT3)">Controller</a> &gt;&gt;&#160;<a href="UE3_PlayerController_(UT3).html" title="UE3:PlayerController (UT3)">PlayerController</a> <i>(internal variables)</i></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Internal_variables"><span class="tocnumber">1</span> <span class="toctext">Internal variables</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#AcknowledgedPawn"><span class="tocnumber">1.1</span> <span class="toctext">AcknowledgedPawn</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#bAdminExecPipeCheck"><span class="tocnumber">1.2</span> <span class="toctext">bAdminExecPipeCheck</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#bAimingHelp"><span class="tocnumber">1.3</span> <span class="toctext">bAimingHelp</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#bCameraPositionLocked"><span class="tocnumber">1.4</span> <span class="toctext">bCameraPositionLocked</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#bCheatFlying"><span class="tocnumber">1.5</span> <span class="toctext">bCheatFlying</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#bCheckRelevancyThroughPortals"><span class="tocnumber">1.6</span> <span class="toctext">bCheckRelevancyThroughPortals</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#bCheckSoundOcclusion"><span class="tocnumber">1.7</span> <span class="toctext">bCheckSoundOcclusion</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#bCinemaDisableInputLook"><span class="tocnumber">1.8</span> <span class="toctext">bCinemaDisableInputLook</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#bCinemaDisableInputMove"><span class="tocnumber">1.9</span> <span class="toctext">bCinemaDisableInputMove</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#bCinematicMode"><span class="tocnumber">1.10</span> <span class="toctext">bCinematicMode</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#bClientDemo"><span class="tocnumber">1.11</span> <span class="toctext">bClientDemo</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#bConfirmSetHUD"><span class="tocnumber">1.12</span> <span class="toctext">bConfirmSetHUD</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#bDoubleJump"><span class="tocnumber">1.13</span> <span class="toctext">bDoubleJump</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#bDuck"><span class="tocnumber">1.14</span> <span class="toctext">bDuck</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#bDynamicNetSpeed"><span class="tocnumber">1.15</span> <span class="toctext">bDynamicNetSpeed</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#bFrozen"><span class="tocnumber">1.16</span> <span class="toctext">bFrozen</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#bIgnoreLookInput"><span class="tocnumber">1.17</span> <span class="toctext">bIgnoreLookInput</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#bIgnoreMoveInput"><span class="tocnumber">1.18</span> <span class="toctext">bIgnoreMoveInput</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#bIsControllerConnected"><span class="tocnumber">1.19</span> <span class="toctext">bIsControllerConnected</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#bIsExternalUIOpen"><span class="tocnumber">1.20</span> <span class="toctext">bIsExternalUIOpen</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#bIsUsingStreamingVolumes"><span class="tocnumber">1.21</span> <span class="toctext">bIsUsingStreamingVolumes</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#BlendedTargetViewRotation"><span class="tocnumber">1.22</span> <span class="toctext">BlendedTargetViewRotation</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#bLogHearSoundOverflow"><span class="tocnumber">1.23</span> <span class="toctext">bLogHearSoundOverflow</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#bNeverSwitchOnPickup"><span class="tocnumber">1.24</span> <span class="toctext">bNeverSwitchOnPickup</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#bPendingDestroy"><span class="tocnumber">1.25</span> <span class="toctext">bPendingDestroy</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#bPendingNotifyLoadedWorld"><span class="tocnumber">1.26</span> <span class="toctext">bPendingNotifyLoadedWorld</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#bPressedJump"><span class="tocnumber">1.27</span> <span class="toctext">bPressedJump</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#bReceivedUniqueId"><span class="tocnumber">1.28</span> <span class="toctext">bReceivedUniqueId</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#bReplicateAllPawns"><span class="tocnumber">1.29</span> <span class="toctext">bReplicateAllPawns</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#bRun"><span class="tocnumber">1.30</span> <span class="toctext">bRun</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#bShortConnectTimeOut"><span class="tocnumber">1.31</span> <span class="toctext">bShortConnectTimeOut</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#bUpdatePosition"><span class="tocnumber">1.32</span> <span class="toctext">bUpdatePosition</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#bUpdating"><span class="tocnumber">1.33</span> <span class="toctext">bUpdating</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#bWasSaturated"><span class="tocnumber">1.34</span> <span class="toctext">bWasSaturated</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#bWasSpeedHack"><span class="tocnumber">1.35</span> <span class="toctext">bWasSpeedHack</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#CameraClass"><span class="tocnumber">1.36</span> <span class="toctext">CameraClass</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#CheatClass"><span class="tocnumber">1.37</span> <span class="toctext">CheatClass</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="#CheatManager"><span class="tocnumber">1.38</span> <span class="toctext">CheatManager</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="#ClientCap"><span class="tocnumber">1.39</span> <span class="toctext">ClientCap</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#ClientHUDClass"><span class="tocnumber">1.40</span> <span class="toctext">ClientHUDClass</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#ClientScoringClass"><span class="tocnumber">1.41</span> <span class="toctext">ClientScoringClass</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#ClientUpdateTime"><span class="tocnumber">1.42</span> <span class="toctext">ClientUpdateTime</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="#CurrentPlayerData"><span class="tocnumber">1.43</span> <span class="toctext">CurrentPlayerData</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="#CurrentPlayerSettings"><span class="tocnumber">1.44</span> <span class="toctext">CurrentPlayerSettings</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href="#CurrentTimeStamp"><span class="tocnumber">1.45</span> <span class="toctext">CurrentTimeStamp</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#CylinderComponent"><span class="tocnumber">1.46</span> <span class="toctext">CylinderComponent</span></a></li>
+<li class="toclevel-2 tocsection-48"><a href="#DebugCameraControllerClass"><span class="tocnumber">1.47</span> <span class="toctext">DebugCameraControllerClass</span></a></li>
+<li class="toclevel-2 tocsection-49"><a href="#DebugCameraControllerRef"><span class="tocnumber">1.48</span> <span class="toctext">DebugCameraControllerRef</span></a></li>
+<li class="toclevel-2 tocsection-50"><a href="#DebugTextList"><span class="tocnumber">1.49</span> <span class="toctext">DebugTextList</span></a></li>
+<li class="toclevel-2 tocsection-51"><a href="#DefaultFOV"><span class="tocnumber">1.50</span> <span class="toctext">DefaultFOV</span></a></li>
+<li class="toclevel-2 tocsection-52"><a href="#DesiredFOV"><span class="tocnumber">1.51</span> <span class="toctext">DesiredFOV</span></a></li>
+<li class="toclevel-2 tocsection-53"><a href="#DoubleClickDir"><span class="tocnumber">1.52</span> <span class="toctext">DoubleClickDir</span></a></li>
+<li class="toclevel-2 tocsection-54"><a href="#DynamicPingThreshold"><span class="tocnumber">1.53</span> <span class="toctext">DynamicPingThreshold</span></a></li>
+<li class="toclevel-2 tocsection-55"><a href="#FailedPathStart"><span class="tocnumber">1.54</span> <span class="toctext">FailedPathStart</span></a></li>
+<li class="toclevel-2 tocsection-56"><a href="#ForceFeedbackManager"><span class="tocnumber">1.55</span> <span class="toctext">ForceFeedbackManager</span></a></li>
+<li class="toclevel-2 tocsection-57"><a href="#ForceFeedbackManagerClassName"><span class="tocnumber">1.56</span> <span class="toctext">ForceFeedbackManagerClassName</span></a></li>
+<li class="toclevel-2 tocsection-58"><a href="#FOVAngle"><span class="tocnumber">1.57</span> <span class="toctext">FOVAngle</span></a></li>
+<li class="toclevel-2 tocsection-59"><a href="#FreeMoves"><span class="tocnumber">1.58</span> <span class="toctext">FreeMoves</span></a></li>
+<li class="toclevel-2 tocsection-60"><a href="#GameplayVoiceMuteList"><span class="tocnumber">1.59</span> <span class="toctext">GameplayVoiceMuteList</span></a></li>
+<li class="toclevel-2 tocsection-61"><a href="#GroundPitch"><span class="tocnumber">1.60</span> <span class="toctext">GroundPitch</span></a></li>
+<li class="toclevel-2 tocsection-62"><a href="#HashResponseCache"><span class="tocnumber">1.61</span> <span class="toctext">HashResponseCache</span></a></li>
+<li class="toclevel-2 tocsection-63"><a href="#HearSoundActiveComponents"><span class="tocnumber">1.62</span> <span class="toctext">HearSoundActiveComponents</span></a></li>
+<li class="toclevel-2 tocsection-64"><a href="#HearSoundPoolComponents"><span class="tocnumber">1.63</span> <span class="toctext">HearSoundPoolComponents</span></a></li>
+<li class="toclevel-2 tocsection-65"><a href="#HiddenActors"><span class="tocnumber">1.64</span> <span class="toctext">HiddenActors</span></a></li>
+<li class="toclevel-2 tocsection-66"><a href="#HUDResetCount"><span class="tocnumber">1.65</span> <span class="toctext">HUDResetCount</span></a></li>
+<li class="toclevel-2 tocsection-67"><a href="#InputClass"><span class="tocnumber">1.66</span> <span class="toctext">InputClass</span></a></li>
+<li class="toclevel-2 tocsection-68"><a href="#InputRequests"><span class="tocnumber">1.67</span> <span class="toctext">InputRequests</span></a></li>
+<li class="toclevel-2 tocsection-69"><a href="#InteractDistance"><span class="tocnumber">1.68</span> <span class="toctext">InteractDistance</span></a></li>
+<li class="toclevel-2 tocsection-70"><a href="#Interactions"><span class="tocnumber">1.69</span> <span class="toctext">Interactions</span></a></li>
+<li class="toclevel-2 tocsection-71"><a href="#LastAckedAccel"><span class="tocnumber">1.70</span> <span class="toctext">LastAckedAccel</span></a></li>
+<li class="toclevel-2 tocsection-72"><a href="#LastActiveTime"><span class="tocnumber">1.71</span> <span class="toctext">LastActiveTime</span></a></li>
+<li class="toclevel-2 tocsection-73"><a href="#LastBroadcastString"><span class="tocnumber">1.72</span> <span class="toctext">LastBroadcastString</span></a></li>
+<li class="toclevel-2 tocsection-74"><a href="#LastBroadcastTime"><span class="tocnumber">1.73</span> <span class="toctext">LastBroadcastTime</span></a></li>
+<li class="toclevel-2 tocsection-75"><a href="#LastGoodMoveAckTime"><span class="tocnumber">1.74</span> <span class="toctext">LastGoodMoveAckTime</span></a></li>
+<li class="toclevel-2 tocsection-76"><a href="#LastPingUpdate"><span class="tocnumber">1.75</span> <span class="toctext">LastPingUpdate</span></a></li>
+<li class="toclevel-2 tocsection-77"><a href="#LastSpectatorStateSynchTime"><span class="tocnumber">1.76</span> <span class="toctext">LastSpectatorStateSynchTime</span></a></li>
+<li class="toclevel-2 tocsection-78"><a href="#LastSpeedHackLog"><span class="tocnumber">1.77</span> <span class="toctext">LastSpeedHackLog</span></a></li>
+<li class="toclevel-2 tocsection-79"><a href="#LastUpdateTime"><span class="tocnumber">1.78</span> <span class="toctext">LastUpdateTime</span></a></li>
+<li class="toclevel-2 tocsection-80"><a href="#LODDistanceFactor"><span class="tocnumber">1.79</span> <span class="toctext">LODDistanceFactor</span></a></li>
+<li class="toclevel-2 tocsection-81"><a href="#MaxClientNetSpeed"><span class="tocnumber">1.80</span> <span class="toctext">MaxClientNetSpeed</span></a></li>
+<li class="toclevel-2 tocsection-82"><a href="#MaxConcurrentHearSounds"><span class="tocnumber">1.81</span> <span class="toctext">MaxConcurrentHearSounds</span></a></li>
+<li class="toclevel-2 tocsection-83"><a href="#MaxResponseTime"><span class="tocnumber">1.82</span> <span class="toctext">MaxResponseTime</span></a></li>
+<li class="toclevel-2 tocsection-84"><a href="#MaxTimeMargin"><span class="tocnumber">1.83</span> <span class="toctext">MaxTimeMargin</span></a></li>
+<li class="toclevel-2 tocsection-85"><a href="#MinRespawnDelay"><span class="tocnumber">1.84</span> <span class="toctext">MinRespawnDelay</span></a></li>
+<li class="toclevel-2 tocsection-86"><a href="#MyCoverReplicator"><span class="tocnumber">1.85</span> <span class="toctext">MyCoverReplicator</span></a></li>
+<li class="toclevel-2 tocsection-87"><a href="#myHUD"><span class="tocnumber">1.86</span> <span class="toctext">myHUD</span></a></li>
+<li class="toclevel-2 tocsection-88"><a href="#NetPlayerIndex"><span class="tocnumber">1.87</span> <span class="toctext">NetPlayerIndex</span></a></li>
+<li class="toclevel-2 tocsection-89"><a href="#NoPauseMessage"><span class="tocnumber">1.88</span> <span class="toctext">NoPauseMessage</span></a></li>
+<li class="toclevel-2 tocsection-90"><a href="#OldFloor"><span class="tocnumber">1.89</span> <span class="toctext">OldFloor</span></a></li>
+<li class="toclevel-2 tocsection-91"><a href="#OldPing"><span class="tocnumber">1.90</span> <span class="toctext">OldPing</span></a></li>
+<li class="toclevel-2 tocsection-92"><a href="#OnlinePlayerData"><span class="tocnumber">1.91</span> <span class="toctext">OnlinePlayerData</span></a></li>
+<li class="toclevel-2 tocsection-93"><a href="#OnlineSub"><span class="tocnumber">1.92</span> <span class="toctext">OnlineSub</span></a></li>
+<li class="toclevel-2 tocsection-94"><a href="#OwnCamera"><span class="tocnumber">1.93</span> <span class="toctext">OwnCamera</span></a></li>
+<li class="toclevel-2 tocsection-95"><a href="#PendingAdjustment"><span class="tocnumber">1.94</span> <span class="toctext">PendingAdjustment</span></a></li>
+<li class="toclevel-2 tocsection-96"><a href="#PendingMapChangeLevelNames"><span class="tocnumber">1.95</span> <span class="toctext">PendingMapChangeLevelNames</span></a></li>
+<li class="toclevel-2 tocsection-97"><a href="#PendingMove"><span class="tocnumber">1.96</span> <span class="toctext">PendingMove</span></a></li>
+<li class="toclevel-2 tocsection-98"><a href="#Player"><span class="tocnumber">1.97</span> <span class="toctext">Player</span></a></li>
+<li class="toclevel-2 tocsection-99"><a href="#PlayerCamera"><span class="tocnumber">1.98</span> <span class="toctext">PlayerCamera</span></a></li>
+<li class="toclevel-2 tocsection-100"><a href="#PlayerOwnerDataStoreClass"><span class="tocnumber">1.99</span> <span class="toctext">PlayerOwnerDataStoreClass</span></a></li>
+<li class="toclevel-2 tocsection-101"><a href="#ProgressMessage"><span class="tocnumber">1.100</span> <span class="toctext">ProgressMessage</span></a></li>
+<li class="toclevel-2 tocsection-102"><a href="#ProgressTimeOut"><span class="tocnumber">1.101</span> <span class="toctext">ProgressTimeOut</span></a></li>
+<li class="toclevel-2 tocsection-103"><a href="#QuickSaveString"><span class="tocnumber">1.102</span> <span class="toctext">QuickSaveString</span></a></li>
+<li class="toclevel-2 tocsection-104"><a href="#RealViewTarget"><span class="tocnumber">1.103</span> <span class="toctext">RealViewTarget</span></a></li>
+<li class="toclevel-2 tocsection-105"><a href="#SavedMoveClass"><span class="tocnumber">1.104</span> <span class="toctext">SavedMoveClass</span></a></li>
+<li class="toclevel-2 tocsection-106"><a href="#SavedMoves"><span class="tocnumber">1.105</span> <span class="toctext">SavedMoves</span></a></li>
+<li class="toclevel-2 tocsection-107"><a href="#ServerTimeStamp"><span class="tocnumber">1.106</span> <span class="toctext">ServerTimeStamp</span></a></li>
+<li class="toclevel-2 tocsection-108"><a href="#SpectatorCameraSpeed"><span class="tocnumber">1.107</span> <span class="toctext">SpectatorCameraSpeed</span></a></li>
+<li class="toclevel-2 tocsection-109"><a href="#TargetEyeHeight"><span class="tocnumber">1.108</span> <span class="toctext">TargetEyeHeight</span></a></li>
+<li class="toclevel-2 tocsection-110"><a href="#TargetViewRotation"><span class="tocnumber">1.109</span> <span class="toctext">TargetViewRotation</span></a></li>
+<li class="toclevel-2 tocsection-111"><a href="#TimeMargin"><span class="tocnumber">1.110</span> <span class="toctext">TimeMargin</span></a></li>
+<li class="toclevel-2 tocsection-112"><a href="#ViewingFrom"><span class="tocnumber">1.111</span> <span class="toctext">ViewingFrom</span></a></li>
+<li class="toclevel-2 tocsection-113"><a href="#ViewTarget"><span class="tocnumber">1.112</span> <span class="toctext">ViewTarget</span></a></li>
+<li class="toclevel-2 tocsection-114"><a href="#VoiceInterface"><span class="tocnumber">1.113</span> <span class="toctext">VoiceInterface</span></a></li>
+<li class="toclevel-2 tocsection-115"><a href="#VoiceMuteList"><span class="tocnumber">1.114</span> <span class="toctext">VoiceMuteList</span></a></li>
+<li class="toclevel-2 tocsection-116"><a href="#VoicePacketFilter"><span class="tocnumber">1.115</span> <span class="toctext">VoicePacketFilter</span></a></li>
+<li class="toclevel-2 tocsection-117"><a href="#WaitDelay"><span class="tocnumber">1.116</span> <span class="toctext">WaitDelay</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>PlayerController internal variables in other games:</dt>
+<dd><span><a href="UE2_PlayerController_internal_variables_(U2).html" title="UE2:PlayerController internal variables (U2)">U2</a></span>, <span><a href="UE2_PlayerController_internal_variables_(UE2Runtime).html" title="UE2:PlayerController internal variables (UE2Runtime)">UE2Runtime</a></span>, <span><a href="UE2_PlayerController_internal_variables_(UT2003).html" title="UE2:PlayerController internal variables (UT2003)">UT2003</a></span>, <span><a href="UE2_PlayerController_internal_variables_(UT2004).html" title="UE2:PlayerController internal variables (UT2004)">UT2004</a></span>, <span><a href="UE3_PlayerController_internal_variables_(UDK).html" title="UE3:PlayerController internal variables (UDK)">UDK</a></span></dd>
+<dt>Other member categories for this class:</dt>
+<dd><span><a href="UE3_PlayerController_events_(UT3).html" title="UE3:PlayerController events (UT3)">events</a></span>, <span><a href="UE3_PlayerController_exec_functions_(UT3).html" title="UE3:PlayerController exec functions (UT3)">exec functions</a></span>, <span><a href="UE3_PlayerController_instance_functions_(UT3).html" title="UE3:PlayerController instance functions (UT3)">instance functions</a></span>, <span><a href="UE3_PlayerController_native_functions_(UT3).html" title="UE3:PlayerController native functions (UT3)">native functions</a></span>, <span><a href="UE3_PlayerController_states_(UT3).html" title="UE3:PlayerController states (UT3)">states</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Internal_variables">Internal variables</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=1" title="Edit section: Internal variables">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="AcknowledgedPawn">AcknowledgedPawn</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=2" title="Edit section: AcknowledgedPawn">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Pawn_(UT3).html" title="UE3:Pawn (UT3)">Pawn</a></p>
+<p>Used in net games so client can acknowledge it possessed a pawn</p>
+<h4><span class="mw-headline" id="bAdminExecPipeCheck">bAdminExecPipeCheck</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=3" title="Edit section: bAdminExecPipeCheck">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>If true, enable fix for Admin commands handling the pipe in a player name</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bAimingHelp">bAimingHelp</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=4" title="Edit section: bAimingHelp">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bCameraPositionLocked">bCameraPositionLocked</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=5" title="Edit section: bCameraPositionLocked">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bCheatFlying">bCheatFlying</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=6" title="Edit section: bCheatFlying">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>instantly stop in flying mode</p>
+<h4><span class="mw-headline" id="bCheckRelevancyThroughPortals">bCheckRelevancyThroughPortals</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=7" title="Edit section: bCheckRelevancyThroughPortals">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>if true, check relevancy of Actors through portals listed in VisiblePortals array</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bCheckSoundOcclusion">bCheckSoundOcclusion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=8" title="Edit section: bCheckSoundOcclusion">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>If true, do a trace to check if sound is occluded, and reduce the effective sound radius if so</p>
+<h4><span class="mw-headline" id="bCinemaDisableInputLook">bCinemaDisableInputLook</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=9" title="Edit section: bCinemaDisableInputLook">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>The state of the inputs from cinematic mode</p>
+<h4><span class="mw-headline" id="bCinemaDisableInputMove">bCinemaDisableInputMove</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=10" title="Edit section: bCinemaDisableInputMove">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>The state of the inputs from cinematic mode</p>
+<h4><span class="mw-headline" id="bCinematicMode">bCinematicMode</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=11" title="Edit section: bCinematicMode">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Is this player currently in cinematic mode? Prevents rotation/movement/firing/etc</p>
+<h4><span class="mw-headline" id="bClientDemo">bClientDemo</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=12" title="Edit section: bClientDemo">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Remotely set by the client when demo recording</p>
+<h4><span class="mw-headline" id="bConfirmSetHUD">bConfirmSetHUD</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=13" title="Edit section: bConfirmSetHUD">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Variables for checking that the clients HUD is correctly set</p>
+<h4><span class="mw-headline" id="bDoubleJump">bDoubleJump</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=14" title="Edit section: bDoubleJump">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bDuck">bDuck</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=15" title="Edit section: bDuck">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bDynamicNetSpeed">bDynamicNetSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=16" title="Edit section: bDynamicNetSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="bFrozen">bFrozen</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=17" title="Edit section: bFrozen">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Set when game ends or player dies to temporarily prevent player from restarting (until cleared by timer)</p>
+<h4><span class="mw-headline" id="bIgnoreLookInput">bIgnoreLookInput</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=18" title="Edit section: bIgnoreLookInput">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p>Ignores look input. Stacked state storage, use accessor function IgnoreLookInput().</p>
+<h4><span class="mw-headline" id="bIgnoreMoveInput">bIgnoreMoveInput</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=19" title="Edit section: bIgnoreMoveInput">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p>Ignores movement input. Stacked state storage, Use accessor function IgnoreMoveInput()</p>
+<h4><span class="mw-headline" id="bIsControllerConnected">bIsControllerConnected</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=20" title="Edit section: bIsControllerConnected">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>True if the controller is connected for this player</p>
+<h4><span class="mw-headline" id="bIsExternalUIOpen">bIsExternalUIOpen</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=21" title="Edit section: bIsExternalUIOpen">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>True if there is externally controlled UI that should pause the game</p>
+<h4><span class="mw-headline" id="bIsUsingStreamingVolumes">bIsUsingStreamingVolumes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=22" title="Edit section: bIsUsingStreamingVolumes">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Whether this controller is using streaming volumes *</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="BlendedTargetViewRotation">BlendedTargetViewRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=23" title="Edit section: BlendedTargetViewRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UT3).html#Rotator" title="UE3:Object structs (UT3)">Object.Rotator</a></p>
+<p>used for smoothing the viewrotation of spectated players</p>
+<h4><span class="mw-headline" id="bLogHearSoundOverflow">bLogHearSoundOverflow</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=24" title="Edit section: bLogHearSoundOverflow">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>option to print out list of sounds when MaxConcurrentHearSounds is exceeded</p>
+<h4><span class="mw-headline" id="bNeverSwitchOnPickup">bNeverSwitchOnPickup</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=25" title="Edit section: bNeverSwitchOnPickup">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>If true, don't automatically switch to picked up weapon</p>
+<h4><span class="mw-headline" id="bPendingDestroy">bPendingDestroy</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=26" title="Edit section: bPendingDestroy">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>when true, playercontroller is being destroyed</p>
+<h4><span class="mw-headline" id="bPendingNotifyLoadedWorld">bPendingNotifyLoadedWorld</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=27" title="Edit section: bPendingNotifyLoadedWorld">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>Set when the client begins seamless travel, and unset when the client has completed seamless travel</p>
+<h4><span class="mw-headline" id="bPressedJump">bPressedJump</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=28" title="Edit section: bPressedJump">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bReceivedUniqueId">bReceivedUniqueId</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=29" title="Edit section: bReceivedUniqueId">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>set when received a valid ServerSetUniqueId() call, so we don't allow duplicates</p>
+<h4><span class="mw-headline" id="bReplicateAllPawns">bReplicateAllPawns</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=30" title="Edit section: bReplicateAllPawns">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>if true, all pawns will be considered relevant</p>
+<h4><span class="mw-headline" id="bRun">bRun</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=31" title="Edit section: bRun">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> input</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bShortConnectTimeOut">bShortConnectTimeOut</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=32" title="Edit section: bShortConnectTimeOut">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p>when true, reduces connect timeout to 15 seconds</p>
+<h4><span class="mw-headline" id="bUpdatePosition">bUpdatePosition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=33" title="Edit section: bUpdatePosition">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bUpdating">bUpdating</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=34" title="Edit section: bUpdating">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="bWasSaturated">bWasSaturated</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=35" title="Edit section: bWasSaturated">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>used by servers to identify saturated client connections</p>
+<h4><span class="mw-headline" id="bWasSpeedHack">bWasSpeedHack</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=36" title="Edit section: bWasSpeedHack">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="CameraClass">CameraClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=37" title="Edit section: CameraClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_Camera_(UT3).html" title="UE3:Camera (UT3)">Camera</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br />
+<b>Default value:</b> <a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_Camera_(UT3).html" title="UE3:Camera (UT3)">Engine.Camera</a>'</p>
+<h4><span class="mw-headline" id="CheatClass">CheatClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=38" title="Edit section: CheatClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_CheatManager_(UT3).html" title="UE3:CheatManager (UT3)">CheatManager</a>&gt;</p>
+<p>class of my CheatManager</p>
+<p><b>Default value:</b> <a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_CheatManager_(UT3).html" title="UE3:CheatManager (UT3)">Engine.CheatManager</a>'</p>
+<h4><span class="mw-headline" id="CheatManager">CheatManager</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=39" title="Edit section: CheatManager">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_CheatManager_(UT3).html" title="UE3:CheatManager (UT3)">CheatManager</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Object within playercontroller that manages "cheat" commands</p>
+<h4><span class="mw-headline" id="ClientCap">ClientCap</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=40" title="Edit section: ClientCap">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ClientHUDClass">ClientHUDClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=41" title="Edit section: ClientHUDClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_HUD_(UT3).html" title="UE3:HUD (UT3)">HUD</a>&gt;</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ClientScoringClass">ClientScoringClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=42" title="Edit section: ClientScoringClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_ScoreBoard_(UT3).html" title="UE3:ScoreBoard (UT3)">ScoreBoard</a>&gt;</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ClientUpdateTime">ClientUpdateTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=43" title="Edit section: ClientUpdateTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="CurrentPlayerData">CurrentPlayerData</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=44" title="Edit section: CurrentPlayerData">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_PlayerOwnerDataStore_(UT3).html" title="UE3:PlayerOwnerDataStore (UT3)">PlayerOwnerDataStore</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected</p>
+<p>The data store instance responsible for presenting state data for this player.</p>
+<h4><span class="mw-headline" id="CurrentPlayerSettings">CurrentPlayerSettings</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=45" title="Edit section: CurrentPlayerSettings">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIDataStore_PlayerSettings_(UT3).html" title="UE3:UIDataStore PlayerSettings (UT3)">UIDataStore_PlayerSettings</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> protected</p>
+<p>The data store instance responsible for loading and saving settings data for this player.</p>
+<h4><span class="mw-headline" id="CurrentTimeStamp">CurrentTimeStamp</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=46" title="Edit section: CurrentTimeStamp">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="CylinderComponent">CylinderComponent</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=47" title="Edit section: CylinderComponent">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_CylinderComponent_(UT3).html" title="UE3:CylinderComponent (UT3)">CylinderComponent</a></p>
+<p><br />
+<b>Default value:</b> <a href="UE3_CylinderComponent_(UT3).html" title="UE3:CylinderComponent (UT3)">CylinderComponent</a>'<a href="UE3_PlayerController_(UT3).html#CollisionCylinder" title="UE3:PlayerController (UT3)">CollisionCylinder</a>'</p>
+<h4><span class="mw-headline" id="DebugCameraControllerClass">DebugCameraControllerClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=48" title="Edit section: DebugCameraControllerClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_DebugCameraController_(UT3).html" title="UE3:DebugCameraController (UT3)">DebugCameraController</a>&gt;</p>
+<p><br />
+<b>Default value:</b> <a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_DebugCameraController_(UT3).html" title="UE3:DebugCameraController (UT3)">Engine.DebugCameraController</a>'</p>
+<h4><span class="mw-headline" id="DebugCameraControllerRef">DebugCameraControllerRef</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=49" title="Edit section: DebugCameraControllerRef">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_DebugCameraController_(UT3).html" title="UE3:DebugCameraController (UT3)">DebugCameraController</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="DebugTextList">DebugTextList</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=50" title="Edit section: DebugTextList">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_PlayerController_(UT3).html#DebugTextInfo" title="UE3:PlayerController (UT3)">DebugTextInfo</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="DefaultFOV">DefaultFOV</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=51" title="Edit section: DefaultFOV">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 85.0</p>
+<h4><span class="mw-headline" id="DesiredFOV">DesiredFOV</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=52" title="Edit section: DesiredFOV">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 85.0</p>
+<h4><span class="mw-headline" id="DoubleClickDir">DoubleClickDir</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=53" title="Edit section: DoubleClickDir">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Actor_(UT3).html#EDoubleClickDir" title="UE3:Actor (UT3)">Actor.EDoubleClickDir</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="DynamicPingThreshold">DynamicPingThreshold</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=54" title="Edit section: DynamicPingThreshold">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p><br />
+<b>Default value:</b> 400.0</p>
+<h4><span class="mw-headline" id="FailedPathStart">FailedPathStart</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=55" title="Edit section: FailedPathStart">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UT3).html#Vector" title="UE3:Object structs (UT3)">Object.Vector</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ForceFeedbackManager">ForceFeedbackManager</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=56" title="Edit section: ForceFeedbackManager">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_ForceFeedbackManager_(UT3).html" title="UE3:ForceFeedbackManager (UT3)">ForceFeedbackManager</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ForceFeedbackManagerClassName">ForceFeedbackManagerClassName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=57" title="Edit section: ForceFeedbackManagerClassName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="FOVAngle">FOVAngle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=58" title="Edit section: FOVAngle">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>field of view angle in degrees</p>
+<p><b>Default value:</b> 85.0</p>
+<h4><span class="mw-headline" id="FreeMoves">FreeMoves</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=59" title="Edit section: FreeMoves">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SavedMove_(UT3).html" title="UE3:SavedMove (UT3)">SavedMove</a></p>
+<p>freed moves, available for buffering</p>
+<h4><span class="mw-headline" id="GameplayVoiceMuteList">GameplayVoiceMuteList</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=60" title="Edit section: GameplayVoiceMuteList">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_OnlineSubsystem_(UT3).html#UniqueNetId" title="UE3:OnlineSubsystem (UT3)">OnlineSubsystem.UniqueNetId</a>&gt;</p>
+<p>List of players muted via gameplay</p>
+<h4><span class="mw-headline" id="GroundPitch">GroundPitch</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=61" title="Edit section: GroundPitch">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="HashResponseCache">HashResponseCache</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=62" title="Edit section: HashResponseCache">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p>Cached value of the ConvolveResponse hash</p>
+<h4><span class="mw-headline" id="HearSoundActiveComponents">HearSoundActiveComponents</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=63" title="Edit section: HearSoundActiveComponents">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_AudioComponent_(UT3).html" title="UE3:AudioComponent (UT3)">AudioComponent</a>&gt;</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="HearSoundPoolComponents">HearSoundPoolComponents</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=64" title="Edit section: HearSoundPoolComponents">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_AudioComponent_(UT3).html" title="UE3:AudioComponent (UT3)">AudioComponent</a>&gt;</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="HiddenActors">HiddenActors</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=65" title="Edit section: HiddenActors">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Actor_(UT3).html" title="UE3:Actor (UT3)">Actor</a>&gt;</p>
+<p>The actors which the camera shouldn't see. Used to hide actors which the camera penetrates. This array used only if PlayerController does not have a playercamera</p>
+<h4><span class="mw-headline" id="HUDResetCount">HUDResetCount</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=66" title="Edit section: HUDResetCount">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="InputClass">InputClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=67" title="Edit section: InputClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_PlayerInput_(UT3).html" title="UE3:PlayerInput (UT3)">PlayerInput</a>&gt;</p>
+<p>class of my PlayerInput</p>
+<p><b>Default value:</b> <a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_PlayerInput_(UT3).html" title="UE3:PlayerInput (UT3)">Engine.PlayerInput</a>'</p>
+<h4><span class="mw-headline" id="InputRequests">InputRequests</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=68" title="Edit section: InputRequests">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_PlayerController_(UT3).html#InputMatchRequest" title="UE3:PlayerController (UT3)">InputMatchRequest</a>&gt;</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="InteractDistance">InteractDistance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=69" title="Edit section: InteractDistance">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> config</p>
+<p>Maximum distance to search for interactable actors</p>
+<p><b>Default value:</b> 512.0</p>
+<h4><span class="mw-headline" id="Interactions">Interactions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=70" title="Edit section: Interactions">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Interaction_(UT3).html" title="UE3:Interaction (UT3)">Interaction</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> transient</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastAckedAccel">LastAckedAccel</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=71" title="Edit section: LastAckedAccel">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UT3).html#Vector" title="UE3:Object structs (UT3)">Object.Vector</a></p>
+<p>last acknowledged sent acceleration</p>
+<h4><span class="mw-headline" id="LastActiveTime">LastActiveTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=72" title="Edit section: LastActiveTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>used to kick idlers</p>
+<h4><span class="mw-headline" id="LastBroadcastString">LastBroadcastString</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=73" title="Edit section: LastBroadcastString">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 4</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastBroadcastTime">LastBroadcastTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=74" title="Edit section: LastBroadcastTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastGoodMoveAckTime">LastGoodMoveAckTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=75" title="Edit section: LastGoodMoveAckTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Time stamp of last good move ack</p>
+<h4><span class="mw-headline" id="LastPingUpdate">LastPingUpdate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=76" title="Edit section: LastPingUpdate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LastSpectatorStateSynchTime">LastSpectatorStateSynchTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=77" title="Edit section: LastSpectatorStateSynchTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Used to make sure the client is kept synchronized when in a spectator state</p>
+<h4><span class="mw-headline" id="LastSpeedHackLog">LastSpeedHackLog</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=78" title="Edit section: LastSpeedHackLog">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> -100.0</p>
+<h4><span class="mw-headline" id="LastUpdateTime">LastUpdateTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=79" title="Edit section: LastUpdateTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="LODDistanceFactor">LODDistanceFactor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=80" title="Edit section: LODDistanceFactor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>last used FOV based multiplier to distance to an object when determining if it exceeds the object's cull distance</p>
+<p><b>Note:</b> only valid on client</p>
+<p><b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="MaxClientNetSpeed">MaxClientNetSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=81" title="Edit section: MaxClientNetSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p>Max netspeed client desires</p>
+<p><b>Default value:</b> 20000</p>
+<h4><span class="mw-headline" id="MaxConcurrentHearSounds">MaxConcurrentHearSounds</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=82" title="Edit section: MaxConcurrentHearSounds">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> globalconfig</p>
+<p>component pooling for sounds played through PlaySound()/ClientHearSound()</p>
+<p><b>Default value:</b> 32</p>
+<h4><span class="mw-headline" id="MaxResponseTime">MaxResponseTime</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=83" title="Edit section: MaxResponseTime">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>how long server will wait for client move update before setting position</p>
+<p><b>Default value:</b> 0.125</p>
+<h4><span class="mw-headline" id="MaxTimeMargin">MaxTimeMargin</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=84" title="Edit section: MaxTimeMargin">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="MinRespawnDelay">MinRespawnDelay</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=85" title="Edit section: MinRespawnDelay">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>minimum time before can respawn after dying</p>
+<p><b>Default value:</b> 1.0</p>
+<h4><span class="mw-headline" id="MyCoverReplicator">MyCoverReplicator</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=86" title="Edit section: MyCoverReplicator">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_CoverReplicator_(UT3).html" title="UE3:CoverReplicator (UT3)">CoverReplicator</a></p>
+<p>handles copying and replicating old cover changes from WorldInfo.CoverReplicatorBase on creation as well as replicating new changes</p>
+<h4><span class="mw-headline" id="myHUD">myHUD</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=87" title="Edit section: myHUD">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_HUD_(UT3).html" title="UE3:HUD (UT3)">HUD</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="NetPlayerIndex">NetPlayerIndex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=88" title="Edit section: NetPlayerIndex">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Byte.html" title="Byte" class="mw-redirect">byte</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, duplicatetransient</p>
+<p>index identifying players using the same base connection (splitscreen clients) Used by netcode to match replicated PlayerControllers to the correct splitscreen viewport and child connection replicated via special internal code, not through normal variable replication</p>
+<h4><span class="mw-headline" id="NoPauseMessage">NoPauseMessage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=89" title="Edit section: NoPauseMessage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> localized</p>
+<p><br />
+<b>Default value:</b> "Game is not pauseable"</p>
+<h4><span class="mw-headline" id="OldFloor">OldFloor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=90" title="Edit section: OldFloor">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UT3).html#Vector" title="UE3:Object structs (UT3)">Object.Vector</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="OldPing">OldPing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=91" title="Edit section: OldPing">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="OnlinePlayerData">OnlinePlayerData</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=92" title="Edit section: OnlinePlayerData">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIDataStore_OnlinePlayerData_(UT3).html" title="UE3:UIDataStore OnlinePlayerData (UT3)">UIDataStore_OnlinePlayerData</a></p>
+<p>The data store that holds any online player data</p>
+<h4><span class="mw-headline" id="OnlineSub">OnlineSub</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=93" title="Edit section: OnlineSub">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_OnlineSubsystem_(UT3).html" title="UE3:OnlineSubsystem (UT3)">OnlineSubsystem</a></p>
+<p>Cached online subsystem variable</p>
+<h4><span class="mw-headline" id="OwnCamera">OwnCamera</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=94" title="Edit section: OwnCamera">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> localized</p>
+<p><br />
+<b>Default value:</b> "Now viewing from own camera"</p>
+<h4><span class="mw-headline" id="PendingAdjustment">PendingAdjustment</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=95" title="Edit section: PendingAdjustment">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_PlayerController_(UT3).html#ClientAdjustment" title="UE3:PlayerController (UT3)">ClientAdjustment</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="PendingMapChangeLevelNames">PendingMapChangeLevelNames</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=96" title="Edit section: PendingMapChangeLevelNames">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="Name.html" title="Name" class="mw-redirect">name</a>&gt;</p>
+<p>list of names of levels the server is in the middle of sending us for a PrepareMapChange() call</p>
+<h4><span class="mw-headline" id="PendingMove">PendingMove</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=97" title="Edit section: PendingMove">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SavedMove_(UT3).html" title="UE3:SavedMove (UT3)">SavedMove</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="Player">Player</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=98" title="Edit section: Player">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Player_(UT3).html" title="UE3:Player (UT3)">Player</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Player info</p>
+<h4><span class="mw-headline" id="PlayerCamera">PlayerCamera</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=99" title="Edit section: PlayerCamera">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Camera_(UT3).html" title="UE3:Camera (UT3)">Camera</a></p>
+<p>Camera associated with this Player Controller</p>
+<h4><span class="mw-headline" id="PlayerOwnerDataStoreClass">PlayerOwnerDataStoreClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=100" title="Edit section: PlayerOwnerDataStoreClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_PlayerOwnerDataStore_(UT3).html" title="UE3:PlayerOwnerDataStore (UT3)">PlayerOwnerDataStore</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>The class to use for the player owner data store.</p>
+<p><b>Default value:</b> <a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_PlayerOwnerDataStore_(UT3).html" title="UE3:PlayerOwnerDataStore (UT3)">Engine.PlayerOwnerDataStore</a>'</p>
+<h4><span class="mw-headline" id="ProgressMessage">ProgressMessage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=101" title="Edit section: ProgressMessage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 2</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ProgressTimeOut">ProgressTimeOut</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=102" title="Edit section: ProgressTimeOut">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br />
+<b>Default value:</b> 8.0</p>
+<h4><span class="mw-headline" id="QuickSaveString">QuickSaveString</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=103" title="Edit section: QuickSaveString">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> localized</p>
+<p><br />
+<b>Default value:</b> "Quick Saving"</p>
+<h4><span class="mw-headline" id="RealViewTarget">RealViewTarget</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=104" title="Edit section: RealViewTarget">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_PlayerReplicationInfo_(UT3).html" title="UE3:PlayerReplicationInfo (UT3)">PlayerReplicationInfo</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="SavedMoveClass">SavedMoveClass</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=105" title="Edit section: SavedMoveClass">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Class.html" title="Class" class="mw-redirect">class</a>&lt;<a href="UE3_SavedMove_(UT3).html" title="UE3:SavedMove (UT3)">SavedMove</a>&gt;</p>
+<p>SavedMoveClass should be changed for network player move replication where different properties need to be replicated from the base engine implementation.</p>
+<p><b>Default value:</b> <a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_SavedMove_(UT3).html" title="UE3:SavedMove (UT3)">Engine.SavedMove</a>'</p>
+<h4><span class="mw-headline" id="SavedMoves">SavedMoves</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=106" title="Edit section: SavedMoves">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_SavedMove_(UT3).html" title="UE3:SavedMove (UT3)">SavedMove</a></p>
+<p>buffered moves pending position updates</p>
+<h4><span class="mw-headline" id="ServerTimeStamp">ServerTimeStamp</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=107" title="Edit section: ServerTimeStamp">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="SpectatorCameraSpeed">SpectatorCameraSpeed</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=108" title="Edit section: SpectatorCameraSpeed">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>How fast spectator camera is allowed to move</p>
+<p><b>Default value:</b> 600.0</p>
+<h4><span class="mw-headline" id="TargetEyeHeight">TargetEyeHeight</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=109" title="Edit section: TargetEyeHeight">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TargetViewRotation">TargetViewRotation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=110" title="Edit section: TargetViewRotation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Object_structs_(UT3).html#Rotator" title="UE3:Object structs (UT3)">Object.Rotator</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="TimeMargin">TimeMargin</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=111" title="Edit section: TimeMargin">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p><br /></p>
+<h4><span class="mw-headline" id="ViewingFrom">ViewingFrom</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=112" title="Edit section: ViewingFrom">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="String.html" title="String">string</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> localized</p>
+<p><br />
+<b>Default value:</b> "Now viewing from"</p>
+<h4><span class="mw-headline" id="ViewTarget">ViewTarget</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=113" title="Edit section: ViewTarget">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_Actor_(UT3).html" title="UE3:Actor (UT3)">Actor</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p><br /></p>
+<h4><span class="mw-headline" id="VoiceInterface">VoiceInterface</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=114" title="Edit section: VoiceInterface">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_OnlineVoiceInterface_(UT3).html" title="UE3:OnlineVoiceInterface (UT3)">OnlineVoiceInterface</a></p>
+<p>Cached online voice interface variable</p>
+<h4><span class="mw-headline" id="VoiceMuteList">VoiceMuteList</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=115" title="Edit section: VoiceMuteList">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_OnlineSubsystem_(UT3).html#UniqueNetId" title="UE3:OnlineSubsystem (UT3)">OnlineSubsystem.UniqueNetId</a>&gt;</p>
+<p>List of players that are explicitly muted (outside of gameplay)</p>
+<h4><span class="mw-headline" id="VoicePacketFilter">VoicePacketFilter</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=116" title="Edit section: VoicePacketFilter">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_OnlineSubsystem_(UT3).html#UniqueNetId" title="UE3:OnlineSubsystem (UT3)">OnlineSubsystem.UniqueNetId</a>&gt;</p>
+<p>The list of combined players to filter voice packets for</p>
+<h4><span class="mw-headline" id="WaitDelay">WaitDelay</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)?section=117" title="Edit section: WaitDelay">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Float.html" title="Float" class="mw-redirect">float</a></p>
+<p>Delay time until can restart</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.492 seconds
+Real time usage: 0.501 seconds
+Preprocessor visited node count: 2942/1000000
+Preprocessor generated node count: 4527/1000000
+Post‐expand include size: 20261/2097152 bytes
+Template argument size: 3442/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  335.919      1 - -total
+ 45.62%  153.240     51 - Template:Samegame
+ 43.45%  145.959     38 - Template:Cl
+ 22.98%   77.201      1 - Template:Infobox_class_part
+ 21.78%   73.154      1 - Template:Infobox_class_part/core
+ 21.15%   71.054     13 - Template:Tl
+  4.23%   14.208      1 - Template:Ch
+  1.84%    6.182      1 - Template:Autogenerated
+  1.23%    4.147      1 - Template:Ambox
+  1.06%    3.570      3 - Template:Gamename
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:18804-0!*!*!*!*!*!* and timestamp 20161215184003 and revision id 35074
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:PlayerController_internal_variables_(UT3)?oldid=35074">https://wiki.beyondunreal.com/UE3:PlayerController_internal_variables_(UT3)?oldid=35074</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_PlayerController_internal_variables_(UT3).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:PlayerController_internal_variables_(UT3)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:PlayerController_internal_variables_(UT3)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:PlayerController_internal_variables_(UT3)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3APlayerController+internal+variables+%28UT3%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3APlayerController+internal+variables+%28UT3%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:PlayerController_internal_variables_(UT3)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:PlayerController_internal_variables_(UT3)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:PlayerController_internal_variables_(UT3)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:PlayerController_internal_variables_(UT3)?oldid=35074" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:PlayerController_internal_variables_(UT3)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 04:33, 16 August 2009.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":118});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:PlayerController_internal_variables_(UT3) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 10:43:01 GMT -->
+</html>

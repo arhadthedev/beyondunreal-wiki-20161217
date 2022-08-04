@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:UIListElementCell_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 13:30:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:UIComp_ListPresenter (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_UIComp_ListPresenter_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="canonical" href="UE3_UIComp_ListPresenter_(UDK).html" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:UIComp_ListPresenter_(UDK)","wgTitle":"UIComp ListPresenter (UDK)","wgCurRevisionId":41818,"wgRevisionId":41818,"wgArticleId":27317,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UDK-specific classes","Classes within UIList (UDK)","Classes in UDK package Engine","Classes implementing CustomPropertyItemHandler (UDK)","Subclasses of UIComp ListPresenterBase (UDK)","Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:UIComp_ListPresenter_(UDK)","wgRelevantArticleId":27317,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"UE3:UIListElementCell_(UDK)","wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgInternalRedirectTargetUrl":"/UE3:UIComp_ListPresenter_(UDK)#UIListElementCell"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.redirect","mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_UIComp_ListPresenter_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>Gah - a solution with more questions. &#8211; EntropicLqd
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:UIComp_ListPresenter (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"><span class="mw-redirectedfrom">(Redirected from <a href="UE3_UIListElementCell_(UDK)c25d.html?redirect=no" title="UE3:UIListElementCell (UDK)">UE3:UIListElementCell (UDK)</a>)</span></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<a href="UE3_Component_(UDK).html" title="UE3:Component (UDK)">Component</a> &gt;&gt;&#160;<a href="UE3_UIComponent_(UDK).html" title="UE3:UIComponent (UDK)">UIComponent</a> &gt;&gt;&#160;<a href="UE3_UIComp_ListComponentBase_(UDK).html" title="UE3:UIComp ListComponentBase (UDK)">UIComp_ListComponentBase</a> &gt;&gt;&#160;<a href="UE3_UIComp_ListPresenterBase_(UDK).html" title="UE3:UIComp ListPresenterBase (UDK)">UIComp_ListPresenterBase</a> &gt;&gt;&#160;<b>UIComp_ListPresenter</b></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Properties"><span class="tocnumber">1</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Property_group_.27Appearance.27"><span class="tocnumber">1.1</span> <span class="toctext">Property group 'Appearance'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#bDisplayColumnHeaders"><span class="tocnumber">1.1.1</span> <span class="toctext">bDisplayColumnHeaders</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#MaxElementsPerPage"><span class="tocnumber">1.1.2</span> <span class="toctext">MaxElementsPerPage</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#SelectionHintPadding"><span class="tocnumber">1.1.3</span> <span class="toctext">SelectionHintPadding</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="#Property_group_.27Data.27"><span class="tocnumber">1.2</span> <span class="toctext">Property group 'Data'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#ElementSchema"><span class="tocnumber">1.2.1</span> <span class="toctext">ElementSchema</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#ListItems"><span class="tocnumber">1.2.2</span> <span class="toctext">ListItems</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-9"><a href="#Property_group_.27Style.27"><span class="tocnumber">1.3</span> <span class="toctext">Property group 'Style'</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="#ColumnHeaderBackground"><span class="tocnumber">1.3.1</span> <span class="toctext">ColumnHeaderBackground</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#ColumnHeaderBackgroundCoordinates"><span class="tocnumber">1.3.2</span> <span class="toctext">ColumnHeaderBackgroundCoordinates</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#ListItemOverlay"><span class="tocnumber">1.3.3</span> <span class="toctext">ListItemOverlay</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#ListItemOverlayCoordinates"><span class="tocnumber">1.3.4</span> <span class="toctext">ListItemOverlayCoordinates</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="#Subobjects"><span class="tocnumber">1.4</span> <span class="toctext">Subobjects</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="#ActiveOverlayTemplate"><span class="tocnumber">1.4.1</span> <span class="toctext">ActiveOverlayTemplate</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#HoverOverlayTemplate"><span class="tocnumber">1.4.2</span> <span class="toctext">HoverOverlayTemplate</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#NormalOverlayTemplate"><span class="tocnumber">1.4.3</span> <span class="toctext">NormalOverlayTemplate</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#SelectionOverlayTemplate"><span class="tocnumber">1.4.4</span> <span class="toctext">SelectionOverlayTemplate</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#Structs"><span class="tocnumber">2</span> <span class="toctext">Structs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#UIElementCellSchema"><span class="tocnumber">2.1</span> <span class="toctext">UIElementCellSchema</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#UIListElementCell"><span class="tocnumber">2.2</span> <span class="toctext">UIListElementCell</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#UIListElementCellTemplate"><span class="tocnumber">2.3</span> <span class="toctext">UIListElementCellTemplate</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#UIListItem"><span class="tocnumber">2.4</span> <span class="toctext">UIListItem</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-24"><a href="#Native_functions"><span class="tocnumber">3</span> <span class="toctext">Native functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-25"><a href="#FindElementIndex"><span class="tocnumber">3.1</span> <span class="toctext">FindElementIndex</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Package:&#160;</dt>
+<dd><a href="Category_Classes_in_UDK_package_Engine.html" title="Category:Classes in UDK package Engine">Engine</a></dd>
+<dt><a href="Within.html" title="Within" class="mw-redirect">Within</a> class:&#160;</dt>
+<dd><a href="UE3_UIList_(UDK).html" title="UE3:UIList (UDK)">UIList</a></dd>
+<dt><a href="Implements.html" title="Implements" class="mw-redirect">Implemented interfaces</a>:&#160;</dt>
+<dd><a href="UE3_CustomPropertyItemHandler_(UDK).html" title="UE3:CustomPropertyItemHandler (UDK)">CustomPropertyItemHandler</a></dd>
+<dt>Direct subclasses:</dt>
+<dd><a href="UE3_UIComp_ListPresenterCascade_(UDK).html" title="UE3:UIComp ListPresenterCascade (UDK)">UIComp_ListPresenterCascade</a>, <a href="UE3_UIComp_ListPresenterTree_(UDK).html" title="UE3:UIComp ListPresenterTree (UDK)">UIComp_ListPresenterTree</a>, <a href="UE3_UIComp_ObjectListPresenter_(UDK).html" title="UE3:UIComp ObjectListPresenter (UDK)">UIComp_ObjectListPresenter</a>, <a href="UE3_UIComp_UTUIMenuListPresenter_(UDK).html" title="UE3:UIComp UTUIMenuListPresenter (UDK)">UIComp_UTUIMenuListPresenter</a></dd>
+<dt>This class in other games:</dt>
+<dd><span><a href="UE3_UIComp_ListPresenter_(UT3).html" title="UE3:UIComp ListPresenter (UT3)">UT3</a></span></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<p>Presentation component for lists which present their data in standard report format. This presenter currently supports single or multiple column lists (landscape lists, which are basically multi-column lists turned sideways) do not currently work correctly.</p>
+<h2><span class="mw-headline" id="Properties">Properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=1" title="Edit section: Properties">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Property_group_.27Appearance.27">Property group 'Appearance'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=2" title="Edit section: Property group 'Appearance'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="bDisplayColumnHeaders">bDisplayColumnHeaders</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=3" title="Edit section: bDisplayColumnHeaders">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Bool.html" title="Bool" class="mw-redirect">bool</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private</p>
+<p>Controls whether column headers are rendered for this list</p>
+<p><b>Default value:</b> True</p>
+<h4><span class="mw-headline" id="MaxElementsPerPage">MaxElementsPerPage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=4" title="Edit section: MaxElementsPerPage">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> private</p>
+<p>The maximum number of items to display at once; only applicable when the list has linked columns and the RowAutoSizeMode is set to adjust list bounds. Use 0 to disable.</p>
+<h4><span class="mw-headline" id="SelectionHintPadding">SelectionHintPadding</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=5" title="Edit section: SelectionHintPadding">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#UIScreenValue_Extent" title="UE3:UIRoot structs (UDK)">UIRoot.UIScreenValue_Extent</a></p>
+<p>the amount of padding between the left side of the list and the left side of the selection hint widget</p>
+<h3><span class="mw-headline" id="Property_group_.27Data.27">Property group 'Data'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=6" title="Edit section: Property group 'Data'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="ElementSchema">ElementSchema</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=7" title="Edit section: ElementSchema">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="#UIElementCellSchema">UIElementCellSchema</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const, protected</p>
+<p>Contains the formatting information configured for each individual cell in the UI editor. Private/const because changing the value of this property invalidates all data in this, requiring that all data be refreshed.</p>
+<h4><span class="mw-headline" id="ListItems">ListItems</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=8" title="Edit section: ListItems">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="#UIListItem">UIListItem</a>&gt;</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> editconst, editinline, transient, noimport, init</p>
+<p>Contains the element cells for each list item. Each item in the ElementCells array is the list of UIListElementCells for the corresponding element in the list.</p>
+<h3><span class="mw-headline" id="Property_group_.27Style.27">Property group 'Style'</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=9" title="Edit section: Property group 'Style'">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="ColumnHeaderBackground">ColumnHeaderBackground</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=10" title="Edit section: ColumnHeaderBackground">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UITexture_(UDK).html" title="UE3:UITexture (UDK)">UITexture</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 3 (<code><a href="UE3_UIRoot_enums_(UDK).html#EColumnHeaderState" title="UE3:UIRoot enums (UDK)">EColumnHeaderState</a>.COLUMNHEADER_MAX</code>)</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> instanced, editinlineuse</p>
+<p>Optional background image for the column headers; only applicable if bDisplayColumnHeaders is TRUE.</p>
+<p><b>Note:</b> if this variable is removed or moved to another class, IsCustomPropertyValueIdentical and EditorSetPropertyValue must be updated as well</p>
+<h4><span class="mw-headline" id="ColumnHeaderBackgroundCoordinates">ColumnHeaderBackgroundCoordinates</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=11" title="Edit section: ColumnHeaderBackgroundCoordinates">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">UIRoot.TextureCoordinates</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 3 (<code><a href="UE3_UIRoot_enums_(UDK).html#EColumnHeaderState" title="UE3:UIRoot enums (UDK)">EColumnHeaderState</a>.COLUMNHEADER_MAX</code>)</p>
+<p>Texture atlas coordinates for the column header background textures; only applicable if bDisplayColumnHeaders is TRUE. Values of 0 indicate that the texture is not part of an atlas.</p>
+<h4><span class="mw-headline" id="ListItemOverlay">ListItemOverlay</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=12" title="Edit section: ListItemOverlay">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UITexture_(UDK).html" title="UE3:UITexture (UDK)">UITexture</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 4 (<code><a href="UE3_UIRoot_enums_(UDK).html#EUIListElementState" title="UE3:UIRoot enums (UDK)">EUIListElementState</a>.ELEMENT_MAX</code>)</p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> instanced, editinlineuse</p>
+<p>The image to render over each element.</p>
+<p><b>Note:</b> if this variable is removed or moved to another class, IsCustomPropertyValueIdentical and EditorSetPropertyValue must be updated as well</p>
+<p><b>Default value, index 0:</b> <a href="UE3_UITexture_(UDK).html" title="UE3:UITexture (UDK)">UITexture</a>'Engine.Default__UIComp_ListPresenter:NormalOverlayTemplate'</p>
+<p><b>Default value, index 1:</b> <a href="UE3_UITexture_(UDK).html" title="UE3:UITexture (UDK)">UITexture</a>'Engine.Default__UIComp_ListPresenter:ActiveOverlayTemplate'</p>
+<p><b>Default value, index 2:</b> <a href="UE3_UITexture_(UDK).html" title="UE3:UITexture (UDK)">UITexture</a>'Engine.Default__UIComp_ListPresenter:SelectionOverlayTemplate'</p>
+<p><b>Default value, index 3:</b> <a href="UE3_UITexture_(UDK).html" title="UE3:UITexture (UDK)">UITexture</a>'Engine.Default__UIComp_ListPresenter:HoverOverlayTemplate'</p>
+<h4><span class="mw-headline" id="ListItemOverlayCoordinates">ListItemOverlayCoordinates</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=13" title="Edit section: ListItemOverlayCoordinates">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="UE3_UIRoot_structs_(UDK).html#TextureCoordinates" title="UE3:UIRoot structs (UDK)">UIRoot.TextureCoordinates</a></p>
+<p><b><a href="Static_arrays.html" title="Static arrays">Array size</a>:</b> 4 (<code><a href="UE3_UIRoot_enums_(UDK).html#EUIListElementState" title="UE3:UIRoot enums (UDK)">EUIListElementState</a>.ELEMENT_MAX</code>)</p>
+<p>the texture atlas coordinates for the SelectionOverlay. Values of 0 indicate that the texture is not part of an atlas.</p>
+<h3><span class="mw-headline" id="Subobjects">Subobjects</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=14" title="Edit section: Subobjects">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="ActiveOverlayTemplate">ActiveOverlayTemplate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=15" title="Edit section: ActiveOverlayTemplate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Class:</b> <a href="UE3_UITexture_(UDK).html" title="UE3:UITexture (UDK)">Engine.UITexture</a></p>
+<p><i>No new values.</i></p>
+<h4><span class="mw-headline" id="HoverOverlayTemplate">HoverOverlayTemplate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=16" title="Edit section: HoverOverlayTemplate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Class:</b> <a href="UE3_UITexture_(UDK).html" title="UE3:UITexture (UDK)">Engine.UITexture</a></p>
+<p><i>No new values.</i></p>
+<h4><span class="mw-headline" id="NormalOverlayTemplate">NormalOverlayTemplate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=17" title="Edit section: NormalOverlayTemplate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Class:</b> <a href="UE3_UITexture_(UDK).html" title="UE3:UITexture (UDK)">Engine.UITexture</a></p>
+<p><i>No new values.</i></p>
+<h4><span class="mw-headline" id="SelectionOverlayTemplate">SelectionOverlayTemplate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=18" title="Edit section: SelectionOverlayTemplate">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Class:</b> <a href="UE3_UITexture_(UDK).html" title="UE3:UITexture (UDK)">Engine.UITexture</a></p>
+<p><i>No new values.</i></p>
+<h2><span class="mw-headline" id="Structs">Structs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=19" title="Edit section: Structs">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="UIElementCellSchema">UIElementCellSchema</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=20" title="Edit section: UIElementCellSchema">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<p>Contains the data store bindings for the individual cells of a single element in this list. This struct is used for looking up the data required to fill the cells of a list element when a new element is added.</p>
+<dl>
+<dt><a href="Array.html" title="Array">array</a>&lt;<a href="#UIListElementCellTemplate">UIListElementCellTemplate</a>&gt; Cells&#160;</dt>
+<dd>contains the data store bindings used for creating new elements in this list</dd>
+</dl>
+<h3><span class="mw-headline" id="UIListElementCell">UIListElementCell</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=21" title="Edit section: UIListElementCell">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<p>Corresponds to a single cell in a UIList (intersection of a row and column). Generally maps directly to a single item in the list, but in the case of multiple columns or rows, a single list item may be associated with multiple UIListElementCells (where each column for that row is represented by a UIListElementCell).</p>
+<p>The data for a UIListElementCell is accessed using a UIString. Contains one UIListCellRegion per UIStringNode in the UIString, which can be configured to manually controls the extent for each UIStringNode.</p>
+<dl>
+<dt><a href="Int.html" title="Int" class="mw-redirect">int</a> ContainerElementIndex&#160;</dt>
+<dd>index of the UIListElement that contains this UIListElementCell</dd>
+<dt><a href="UE3_UIList_(UDK).html" title="UE3:UIList (UDK)">UIList</a> OwnerList&#160;</dt>
+<dd>pointer to the list that contains this element cell</dd>
+<dt><a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">UIRoot.UIStyleReference</a> CellStyle[4] <i>(<a href="UE3_UIRoot_enums_(UDK).html#EUIListElementState" title="UE3:UIRoot enums (UDK)">EUIListElementState</a>.ELEMENT_MAX)</i>&#160;</dt>
+<dd>Allows the designer to specify a different style for each cell in a column/row</dd>
+<dt><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> ValueObject&#160;</dt>
+<dd>A UIString which contains data for this cell</dd>
+</dl>
+<p><b>Default values:</b></p>
+<table class="list defaults">
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+<tr>
+<td>CellStyle[-1] <i>(ELEMENT_Active)</i></td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>RequiredStyleClass</td>
+<td><a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UIStyle_Combo_(UDK).html" title="UE3:UIStyle Combo (UDK)">Engine.UIStyle_Combo</a>'</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>CellStyle[-1] <i>(ELEMENT_Normal)</i></td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>RequiredStyleClass</td>
+<td><a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UIStyle_Combo_(UDK).html" title="UE3:UIStyle Combo (UDK)">Engine.UIStyle_Combo</a>'</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>CellStyle[-1] <i>(ELEMENT_Selected)</i></td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>RequiredStyleClass</td>
+<td><a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UIStyle_Combo_(UDK).html" title="UE3:UIStyle Combo (UDK)">Engine.UIStyle_Combo</a>'</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>CellStyle[-1] <i>(ELEMENT_UnderCursor)</i></td>
+<td>
+<table class="list defaults">
+<tr>
+<th><a href="UE3_UIRoot_structs_(UDK).html#UIStyleReference" title="UE3:UIRoot structs (UDK)">Member</a></th>
+<th>Value</th>
+</tr>
+<tr>
+<td>RequiredStyleClass</td>
+<td><a href="Types.html#Class" title="Types">Class</a>'<a href="UE3_UIStyle_Combo_(UDK).html" title="UE3:UIStyle Combo (UDK)">Engine.UIStyle_Combo</a>'</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="UIListElementCellTemplate">UIListElementCellTemplate</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=22" title="Edit section: UIListElementCellTemplate">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b>Extends:</b> <a href="#UIListElementCell">UIListElementCell</a></p>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<p>Contains the data binding information for a single row or column in a list. Also used for rendering the list's column headers, if configured to do so.</p>
+<dl>
+<dt><a href="Name.html" title="Name" class="mw-redirect">name</a> CellDataField&#160;</dt>
+<dd>Contains the data binding for each cell group in the list (row if columns are linked, columns if</dd>
+</dl>
+<p>rows are linked, individual cells if neither are linked</p>
+<dl>
+<dt><a href="String.html" title="String">string</a> ColumnHeaderText&#160;</dt>
+<dd>The string that should be rendered in the header for the column which displays the data for this cell.</dd>
+<dt><a href="UE3_UIRoot_structs_(UDK).html#UIScreenValue_Extent" title="UE3:UIRoot structs (UDK)">UIRoot.UIScreenValue_Extent</a> CellSize&#160;</dt>
+<dd>The custom size for the linked cell (column/row). A value of 0 indicates that the row/column's size should be</dd>
+</dl>
+<p>controlled by the owning list according to its cell auto-size configuration.</p>
+<dl>
+<dt><a href="Float.html" title="Float" class="mw-redirect">float</a> CellPosition&#160;</dt>
+<dd>The starting position of this cell, in absolute pixels.</dd>
+</dl>
+<h3><span class="mw-headline" id="UIListItem">UIListItem</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=23" title="Edit section: UIListItem">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<p>Corresponds to a single item in a UIList, which may be any type of data structure.</p>
+<p>Contains a list of UIListElementCells, which correspond to one or more data fields of the underlying data structure associated with the list item represented by this object. For linked-column lists, each UIListElementCell is typically associated with a different field from the underlying data structure.</p>
+<dl>
+<dt><a href="UE3_UIComp_ListPresenterBase_(UDK).html#UIListItemDataBinding" title="UE3:UIComp ListPresenterBase (UDK)">UIComp_ListPresenterBase.UIListItemDataBinding</a> DataSource&#160;</dt>
+<dd>The list element associated with the cells contained by this UIListItem.</dd>
+<dt><a href="Array.html" title="Array">array</a>&lt;<a href="#UIListElementCell">UIListElementCell</a>&gt; Cells&#160;</dt>
+<dd>the cells associated with this list element</dd>
+<dt><a href="UE3_UIRoot_enums_(UDK).html#EUIListElementState" title="UE3:UIRoot enums (UDK)">UIRoot.EUIListElementState</a> ElementState&#160;</dt>
+<dd>The current state of this cell (selected, active, etc.)</dd>
+<dt><a href="UE3_UIObject_(UDK).html" title="UE3:UIObject (UDK)">UIObject</a> ElementWidget&#160;</dt>
+<dd>Holds the widget associated with this list item for object lists.</dd>
+</dl>
+<h2><span class="mw-headline" id="Native_functions">Native functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=24" title="Edit section: Native functions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="FindElementIndex">FindElementIndex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)?section=25" title="Edit section: FindElementIndex">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>FindElementIndex</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>DataSourceIndex</b>) const</div>
+<p>Find the index of the list item which corresponds to the data element specified.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>DataSourceIndex</i> - the index into the list element provider's data source collection for the element to find.</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the index [into the ListItems array] for the element which corresponds to the data element specified, or INDEX_NONE if none where found or DataSourceIndex is invalid.</dd>
+</dl>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.372 seconds
+Real time usage: 0.395 seconds
+Preprocessor visited node count: 2397/1000000
+Preprocessor generated node count: 6697/1000000
+Post‐expand include size: 15609/2097152 bytes
+Template argument size: 3778/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  313.701      1 - -total
+ 49.23%  154.441      1 - Template:Infobox_class
+ 47.30%  148.366      1 - Template:Infobox_class/core
+ 27.09%   84.994     33 - Template:Samegame
+ 26.68%   83.705     21 - Template:Tl
+ 17.03%   53.419     17 - Template:Cl
+  8.23%   25.811      2 - Template:Ch
+  4.16%   13.046      2 - Template:Links
+  2.13%    6.684      1 - Template:Autogenerated
+  1.78%    5.597      1 - Template:Classname
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:27317-0!*!*!*!*!*!* and timestamp 20161215180035 and revision id 41818
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:UIComp_ListPresenter_(UDK)?oldid=41818#UIListElementCell">https://wiki.beyondunreal.com/UE3:UIComp_ListPresenter_(UDK)?oldid=41818#UIListElementCell</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_UDK-specific_classes.html" title="Category:UDK-specific classes">UDK-specific classes</a></li><li><a href="Category_Classes_within_UIList_(UDK).html" title="Category:Classes within UIList (UDK)">Classes within UIList (UDK)</a></li><li><a href="Category_Classes_in_UDK_package_Engine.html" title="Category:Classes in UDK package Engine">Classes in UDK package Engine</a></li><li><a href="Category_Classes_implementing_CustomPropertyItemHandler_(UDK).html" title="Category:Classes implementing CustomPropertyItemHandler (UDK)">Classes implementing CustomPropertyItemHandler (UDK)</a></li><li><a href="Category_Subclasses_of_UIComp_ListPresenterBase_(UDK).html" title="Category:Subclasses of UIComp ListPresenterBase (UDK)">Subclasses of UIComp ListPresenterBase (UDK)</a></li><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_UIComp_ListPresenter_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:UIComp_ListPresenter_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:UIComp_ListPresenter_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:UIComp_ListPresenter_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AUIComp+ListPresenter+%28UDK%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AUIComp+ListPresenter+%28UDK%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:UIComp_ListPresenter_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:UIComp_ListPresenter_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:UIComp_ListPresenter_(UDK)?printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:UIComp_ListPresenter_(UDK)?oldid=41818" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:UIComp_ListPresenter_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 07:48, 17 January 2010.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":122});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:UIListElementCell_(UDK) by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 13:30:08 GMT -->
+</html>

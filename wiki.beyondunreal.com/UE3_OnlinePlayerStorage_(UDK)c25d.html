@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from wiki.beyondunreal.com/UE3:OnlinePlayerStorage_(UDK)?redirect=no by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 12:27:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>UE3:OnlinePlayerStorage (UDK) - Unreal Wiki</title>
+<meta name="generator" content="MediaWiki 1.25.1" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)" />
+<link rel="edit" title="Edit" href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)" />
+<link rel="shortcut icon" href="w/uewiki-favicon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="w/opensearch_desc.php" title="Unreal Wiki" />
+<link rel="EditURI" type="application/rsd+xml" href="w/api251f.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="UE3_OnlinePlayerStorage_(UDK).html" />
+<link rel="copyright" href="Unreal_Wiki_Copyrights.html" />
+<link rel="alternate" type="application/atom+xml" title="Unreal Wiki Atom feed" href="https://wiki.beyondunreal.com/Special:RecentChanges?feed=atom" />
+<link rel="stylesheet" href="w/load6852.css?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.content.externallinks%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.monobook.styles&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/MonoBook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/MonoBook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="w/load484a.css?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki:resourceloader:filter:minify-css:7:29b70323345a439ab9ed7007e0c178a6 */</style>
+<script src="w/load9316.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"UE3","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":106,"wgPageName":"UE3:OnlinePlayerStorage_(UDK)","wgTitle":"OnlinePlayerStorage (UDK)","wgCurRevisionId":41239,"wgRevisionId":41239,"wgArticleId":26414,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["UDK-specific classes","Classes in UDK package Engine","Subclasses of Object (UDK)","Auto-generated pages requiring human attention"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"UE3:OnlinePlayerStorage_(UDK)","wgRelevantArticleId":26414,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});
+/* cache key: wiki:resourceloader:filter:minify-js:7:a5c52c063dc436c1ca7c9f456936a5e9 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-106 ns-subject page-UE3_OnlinePlayerStorage_UDK skin-monobook action-view">
+<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+									<div id="siteNotice"><div id="localNotice" lang="en" dir="ltr"><p>I search for solutions in this order: Past Code, Unreal Source, Wiki, BUF, groups.yahoo, google, screaming at monitor. &#8211; RegularX
+</p></div></div>
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">UE3:OnlinePlayerStorage (UDK)</h1>
+
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Unreal Wiki, The Unreal Engine Documentation Site</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="infobox infobox-class">
+<table style="background:transparent">
+<tr>
+<td style="vertical-align:top"><a href="Unreal_Development_Kit.html" title="Unreal Development Kit"><img alt="UDK" src="w/images/Icon-UDK.png" width="16" height="16" /></a></td>
+<td><a href="UE3_Object_(UDK).html" title="UE3:Object (UDK)">Object</a> &gt;&gt;&#160;<b>OnlinePlayerStorage</b></td>
+</tr>
+</table>
+</div>
+<div style="float:right;padding:0 0 1em 1em;">
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Properties"><span class="tocnumber">1</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#AsyncState"><span class="tocnumber">1.1</span> <span class="toctext">AsyncState</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#ProfileMappings"><span class="tocnumber">1.2</span> <span class="toctext">ProfileMappings</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#ProfileSettings"><span class="tocnumber">1.3</span> <span class="toctext">ProfileSettings</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#VersionNumber"><span class="tocnumber">1.4</span> <span class="toctext">VersionNumber</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Enums"><span class="tocnumber">2</span> <span class="toctext">Enums</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#EOnlinePlayerStorageAsyncState"><span class="tocnumber">2.1</span> <span class="toctext">EOnlinePlayerStorageAsyncState</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#EOnlineProfilePropertyOwner"><span class="tocnumber">2.2</span> <span class="toctext">EOnlineProfilePropertyOwner</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Structs"><span class="tocnumber">3</span> <span class="toctext">Structs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#OnlineProfileSetting"><span class="tocnumber">3.1</span> <span class="toctext">OnlineProfileSetting</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Delegates"><span class="tocnumber">4</span> <span class="toctext">Delegates</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#NotifySettingValueUpdated"><span class="tocnumber">4.1</span> <span class="toctext">NotifySettingValueUpdated</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Functions"><span class="tocnumber">5</span> <span class="toctext">Functions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#Native_functions"><span class="tocnumber">5.1</span> <span class="toctext">Native functions</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="#AddSettingFloat"><span class="tocnumber">5.1.1</span> <span class="toctext">AddSettingFloat</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="#AddSettingInt"><span class="tocnumber">5.1.2</span> <span class="toctext">AddSettingInt</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="#FindProfileMappingIndex"><span class="tocnumber">5.1.3</span> <span class="toctext">FindProfileMappingIndex</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#FindProfileMappingIndexByName"><span class="tocnumber">5.1.4</span> <span class="toctext">FindProfileMappingIndexByName</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#FindProfileSettingIndex"><span class="tocnumber">5.1.5</span> <span class="toctext">FindProfileSettingIndex</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#GetProfileSettingColumnHeader"><span class="tocnumber">5.1.6</span> <span class="toctext">GetProfileSettingColumnHeader</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="#GetProfileSettingId"><span class="tocnumber">5.1.7</span> <span class="toctext">GetProfileSettingId</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="#GetProfileSettingMappingType"><span class="tocnumber">5.1.8</span> <span class="toctext">GetProfileSettingMappingType</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="#GetProfileSettingName"><span class="tocnumber">5.1.9</span> <span class="toctext">GetProfileSettingName</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="#GetProfileSettingRange"><span class="tocnumber">5.1.10</span> <span class="toctext">GetProfileSettingRange</span></a></li>
+<li class="toclevel-3 tocsection-25"><a href="#GetProfileSettingValue"><span class="tocnumber">5.1.11</span> <span class="toctext">GetProfileSettingValue</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="#GetProfileSettingValueByName"><span class="tocnumber">5.1.12</span> <span class="toctext">GetProfileSettingValueByName</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="#GetProfileSettingValueFloat"><span class="tocnumber">5.1.13</span> <span class="toctext">GetProfileSettingValueFloat</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="#GetProfileSettingValueId"><span class="tocnumber">5.1.14</span> <span class="toctext">GetProfileSettingValueId</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="#GetProfileSettingValueInt"><span class="tocnumber">5.1.15</span> <span class="toctext">GetProfileSettingValueInt</span></a></li>
+<li class="toclevel-3 tocsection-30"><a href="#GetProfileSettingValueName"><span class="tocnumber">5.1.16</span> <span class="toctext">GetProfileSettingValueName</span></a></li>
+<li class="toclevel-3 tocsection-31"><a href="#GetProfileSettingValues"><span class="tocnumber">5.1.17</span> <span class="toctext">GetProfileSettingValues</span></a></li>
+<li class="toclevel-3 tocsection-32"><a href="#GetRangedProfileSettingValue"><span class="tocnumber">5.1.18</span> <span class="toctext">GetRangedProfileSettingValue</span></a></li>
+<li class="toclevel-3 tocsection-33"><a href="#IsProfileSettingIdMapped"><span class="tocnumber">5.1.19</span> <span class="toctext">IsProfileSettingIdMapped</span></a></li>
+<li class="toclevel-3 tocsection-34"><a href="#SetProfileSettingValue"><span class="tocnumber">5.1.20</span> <span class="toctext">SetProfileSettingValue</span></a></li>
+<li class="toclevel-3 tocsection-35"><a href="#SetProfileSettingValueByName"><span class="tocnumber">5.1.21</span> <span class="toctext">SetProfileSettingValueByName</span></a></li>
+<li class="toclevel-3 tocsection-36"><a href="#SetProfileSettingValueFloat"><span class="tocnumber">5.1.22</span> <span class="toctext">SetProfileSettingValueFloat</span></a></li>
+<li class="toclevel-3 tocsection-37"><a href="#SetProfileSettingValueId"><span class="tocnumber">5.1.23</span> <span class="toctext">SetProfileSettingValueId</span></a></li>
+<li class="toclevel-3 tocsection-38"><a href="#SetProfileSettingValueInt"><span class="tocnumber">5.1.24</span> <span class="toctext">SetProfileSettingValueInt</span></a></li>
+<li class="toclevel-3 tocsection-39"><a href="#SetRangedProfileSettingValue"><span class="tocnumber">5.1.25</span> <span class="toctext">SetRangedProfileSettingValue</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-40"><a href="#Events"><span class="tocnumber">5.2</span> <span class="toctext">Events</span></a>
+<ul>
+<li class="toclevel-3 tocsection-41"><a href="#SetToDefaults"><span class="tocnumber">5.2.1</span> <span class="toctext">SetToDefaults</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<dl>
+<dt>Package:&#160;</dt>
+<dd><a href="Category_Classes_in_UDK_package_Engine.html" title="Category:Classes in UDK package Engine">Engine</a></dd>
+<dt>Direct subclass:</dt>
+<dd><a href="UE3_OnlineProfileSettings_(UDK).html" title="UE3:OnlineProfileSettings (UDK)">OnlineProfileSettings</a></dd>
+</dl>
+<table style="" class="metadata plainlinks ambox ambox-style">
+<tr>
+<td class="ambox-image"></td>
+<td class="ambox-text"><b>This is an auto-generated page and may need human attention.</b><br />
+<i>Please remove the</i> <code>{{<a href="Template_Autogenerated.html" title="Template:Autogenerated">autogenerated</a>}}</code> <i>tag if the page seems reasonably complete or replace it with the</i> <code>{{<a href="Template_Expand.html" title="Template:Expand">expand</a>}}</code> <i>tag if the page is not yet complete.</i></td>
+</tr>
+</table>
+<p>This class holds the data used in reading/writing online player data. The online player data is stored by an external service.</p>
+<h2><span class="mw-headline" id="Properties">Properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=1" title="Edit section: Properties">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="AsyncState">AsyncState</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=2" title="Edit section: AsyncState">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="#EOnlinePlayerStorageAsyncState">EOnlinePlayerStorageAsyncState</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Indicates the state of the profile (whether an async action is happening and what type)</p>
+<h4><span class="mw-headline" id="ProfileMappings">ProfileMappings</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=3" title="Edit section: ProfileMappings">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="UE3_Settings_(UDK).html#SettingsPropertyPropertyMetaData" title="UE3:Settings (UDK)">Settings.SettingsPropertyPropertyMetaData</a>&gt;</p>
+<p>Holds the set of mappings from native format to human readable format</p>
+<h4><span class="mw-headline" id="ProfileSettings">ProfileSettings</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=4" title="Edit section: ProfileSettings">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Array.html" title="Array">array</a>&lt;<a href="#OnlineProfileSetting">OnlineProfileSetting</a>&gt;</p>
+<p>Current set of player data that is either returned from a read or to be written out</p>
+<h4><span class="mw-headline" id="VersionNumber">VersionNumber</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=5" title="Edit section: VersionNumber">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p><b>Type:</b> <a href="Int.html" title="Int" class="mw-redirect">int</a></p>
+<p><b><a href="Variables.html#Modifiers" title="Variables">Modifiers</a>:</b> const</p>
+<p>Used to determine if the read online player data is the proper version or not</p>
+<p><b>Default value:</b> -1</p>
+<h2><span class="mw-headline" id="Enums">Enums</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=6" title="Edit section: Enums">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="EOnlinePlayerStorageAsyncState">EOnlinePlayerStorageAsyncState</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=7" title="Edit section: EOnlinePlayerStorageAsyncState">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Enum indicating the current async action happening on the player data</p>
+<dl>
+<dt>OPAS_None&#160;</dt>
+<dt>OPAS_Read&#160;</dt>
+<dt>OPAS_Write&#160;</dt>
+</dl>
+<h4><span class="mw-headline" id="EOnlineProfilePropertyOwner">EOnlineProfilePropertyOwner</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=8" title="Edit section: EOnlineProfilePropertyOwner">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Enum indicating who owns a given online profile proprety</p>
+<dl>
+<dt>OPPO_None&#160;</dt>
+<dd>No owner assigned</dd>
+<dt>OPPO_OnlineService&#160;</dt>
+<dd>Owned by the online service</dd>
+<dt>OPPO_Game&#160;</dt>
+<dd>Owned by the game in question</dd>
+</dl>
+<h2><span class="mw-headline" id="Structs">Structs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=9" title="Edit section: Structs">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="OnlineProfileSetting">OnlineProfileSetting</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=10" title="Edit section: OnlineProfileSetting">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b><a href="Structs.html#Modifiers" title="Structs">Modifiers</a>:</b> native</p>
+<p>Structure used to hold the information for a given profile setting</p>
+<dl>
+<dt><a href="#EOnlineProfilePropertyOwner">EOnlineProfilePropertyOwner</a> Owner&#160;</dt>
+<dd>Which party owns the data (online service vs game)</dd>
+<dt><a href="UE3_Settings_(UDK).html#SettingsProperty" title="UE3:Settings (UDK)">Settings.SettingsProperty</a> ProfileSetting&#160;</dt>
+<dd>The profile setting comprised of unique id and union of held types</dd>
+</dl>
+<h2><span class="mw-headline" id="Delegates">Delegates</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=11" title="Edit section: Delegates">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h4><span class="mw-headline" id="NotifySettingValueUpdated">NotifySettingValueUpdated</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=12" title="Edit section: NotifySettingValueUpdated">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">delegate <b>NotifySettingValueUpdated</b> (<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>SettingName</b>)</div>
+<p>Notification that the value of a ProfileSetting in this object has been updated.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>SettingName</i> - the name of the setting that was changed.</li>
+</ul>
+<h2><span class="mw-headline" id="Functions">Functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=13" title="Edit section: Functions">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Native_functions">Native functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=14" title="Edit section: Native functions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="AddSettingFloat">AddSettingFloat</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=15" title="Edit section: AddSettingFloat">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>AddSettingFloat</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>SettingId</b>)</div>
+<p>Adds an id to the array, assuming that it doesn't already exist</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>SettingId</i> - the id to add to the array</li>
+</ul>
+<h4><span class="mw-headline" id="AddSettingInt">AddSettingInt</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=16" title="Edit section: AddSettingInt">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <b>AddSettingInt</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>SettingId</b>)</div>
+<p>Adds an id to the array, assuming that it doesn't already exist</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>SettingId</i> - the id to add to the array</li>
+</ul>
+<h4><span class="mw-headline" id="FindProfileMappingIndex">FindProfileMappingIndex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=17" title="Edit section: FindProfileMappingIndex">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>FindProfileMappingIndex</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ProfileSettingId</b>) const</div>
+<p>Finds the index of SettingsPropertyPropertyMetaData struct, given its settings id.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileSettingId</i> - the id of the struct to search for</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the index into the ProfileMappings array for the struct with the matching id.</dd>
+</dl>
+<h4><span class="mw-headline" id="FindProfileMappingIndexByName">FindProfileMappingIndexByName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=18" title="Edit section: FindProfileMappingIndexByName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>FindProfileMappingIndexByName</b> (<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>ProfileSettingName</b>) const</div>
+<p>Finds the index of SettingsPropertyPropertyMetaData struct, given its settings name.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileSettingId</i> - the id of the struct to search for</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the index into the ProfileMappings array for the struct with the matching name.</dd>
+</dl>
+<h4><span class="mw-headline" id="FindProfileSettingIndex">FindProfileSettingIndex</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=19" title="Edit section: FindProfileSettingIndex">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native final function <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>FindProfileSettingIndex</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ProfileSettingId</b>) const</div>
+<p>Finds the index of an OnlineProfileSetting struct given its settings id.</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileSettingId</i> - the id of the struct to search for</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the index into the ProfileSettings array for the struct with the matching id.</dd>
+</dl>
+<h4><span class="mw-headline" id="GetProfileSettingColumnHeader">GetProfileSettingColumnHeader</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=20" title="Edit section: GetProfileSettingColumnHeader">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="String.html" title="String">string</a>&#160;<b>GetProfileSettingColumnHeader</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ProfileSettingId</b>)</div>
+<p>Finds the localized column header text for the profile setting</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileSettingId</i> - the id to look up in the mappings table</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the string to use as the list column header for the profile setting that matches the id, or an empty string if not found.</dd>
+</dl>
+<h4><span class="mw-headline" id="GetProfileSettingId">GetProfileSettingId</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=21" title="Edit section: GetProfileSettingId">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>GetProfileSettingId</b> (<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>ProfileSettingName</b>, out&#160;<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ProfileSettingId</b>)</div>
+<p>Searches the profile setting array for the matching string setting name and returns the id</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileSettingName</i> - the name of the profile setting being searched for</li>
+<li><i>ProfileSettingId</i> - the id of the context that matches the name</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the seting was found, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="GetProfileSettingMappingType">GetProfileSettingMappingType</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=22" title="Edit section: GetProfileSettingMappingType">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>GetProfileSettingMappingType</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ProfileId</b>, out&#160;<a href="UE3_Settings_(UDK).html#EPropertyValueMappingType" title="UE3:Settings (UDK)">Settings.EPropertyValueMappingType</a>&#160;<b>OutType</b>)</div>
+<p>Determines the mapping type for the specified property</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileId</i> - the ID to get the mapping type for</li>
+<li><i>OutType</i> - the out var the value is placed in</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE if found, FALSE otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="GetProfileSettingName">GetProfileSettingName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=23" title="Edit section: GetProfileSettingName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>GetProfileSettingName</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ProfileSettingId</b>)</div>
+<p>Finds the human readable name for the profile setting</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileSettingId</i> - the id to look up in the mappings table</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the name of the string setting that matches the id or NAME_None if not found</dd>
+</dl>
+<h4><span class="mw-headline" id="GetProfileSettingRange">GetProfileSettingRange</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=24" title="Edit section: GetProfileSettingRange">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>GetProfileSettingRange</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ProfileId</b>, out&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>OutMinValue</b>, out&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>OutMaxValue</b>, out&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>RangeIncrement</b>, out&#160;<a href="Byte.html" title="Byte" class="mw-redirect">byte</a>&#160;<b>bFormatAsInt</b>)</div>
+<p>Determines the min and max values of a property that is clamped to a range</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileId</i> - the ID to get the mapping type for</li>
+<li><i>OutMinValue</i> - the out var the min value is placed in</li>
+<li><i>OutMaxValue</i> - the out var the max value is placed in</li>
+<li><i>RangeIncrement</i> - the amount the range can be adjusted by the UI in any single update</li>
+<li><i>bFormatAsInt</i> - whether the range's value should be treated as an int.</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE if found and is a range property, FALSE otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="GetProfileSettingValue">GetProfileSettingValue</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=25" title="Edit section: GetProfileSettingValue">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>GetProfileSettingValue</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ProfileSettingId</b>, out&#160;<a href="String.html" title="String">string</a>&#160;<b>Value</b>, optional&#160;<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ValueMapID</b>)</div>
+<p>Finds the human readable name for a profile setting's value. Searches the profile settings mappings for the specifc profile setting and then searches the set of values for the specific value index and returns that value's human readable name</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileSettingId</i> - the id to look up in the mappings table</li>
+<li><i>Value</i> - the out param that gets the value copied to it</li>
+<li><i>ValueMapID</i> - optional parameter that allows you to select a specific index in the ValueMappings instead of automatically using the currently set index (if -1 is passed in, which is the default, it means to just use the set index</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if found, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="GetProfileSettingValueByName">GetProfileSettingValueByName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=26" title="Edit section: GetProfileSettingValueByName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>GetProfileSettingValueByName</b> (<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>ProfileSettingName</b>, out&#160;<a href="String.html" title="String">string</a>&#160;<b>Value</b>)</div>
+<p>Finds the human readable name for a profile setting's value. Searches the profile settings mappings for the specifc profile setting and then searches the set of values for the specific value index and returns that value's human readable name</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileSettingName</i> - the name of the profile setting to find the string value of</li>
+<li><i>Value</i> - the out param that gets the value copied to it</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if found, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="GetProfileSettingValueFloat">GetProfileSettingValueFloat</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=27" title="Edit section: GetProfileSettingValueFloat">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>GetProfileSettingValueFloat</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ProfileSettingId</b>, out&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>Value</b>)</div>
+<p>Searches for the profile setting by id and gets the value index</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileSettingId</i> - the id of the profile setting to return</li>
+<li><i>Value</i> - the out value of the setting</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the profile setting was found and not id mapped, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="GetProfileSettingValueId">GetProfileSettingValueId</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=28" title="Edit section: GetProfileSettingValueId">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>GetProfileSettingValueId</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ProfileSettingId</b>, out&#160;<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ValueId</b>, optional&#160;out&#160;<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ListIndex</b>)</div>
+<p>Searches for the profile setting by id and gets the value index</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileSettingId</i> - the id of the profile setting to return</li>
+<li><i>ValueId</i> - the out value of the id</li>
+<li><i>ListIndex</i> - the out value of the index where that value lies in the ValueMappings list</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the profile setting was found and id mapped, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="GetProfileSettingValueInt">GetProfileSettingValueInt</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=29" title="Edit section: GetProfileSettingValueInt">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>GetProfileSettingValueInt</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ProfileSettingId</b>, out&#160;<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>Value</b>)</div>
+<p>Searches for the profile setting by id and gets the value index</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileSettingId</i> - the id of the profile setting to return</li>
+<li><i>Value</i> - the out value of the setting</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the profile setting was found and not id mapped, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="GetProfileSettingValueName">GetProfileSettingValueName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=30" title="Edit section: GetProfileSettingValueName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>GetProfileSettingValueName</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ProfileSettingId</b>)</div>
+<p>Finds the human readable name for a profile setting's value. Searches the profile settings mappings for the specifc profile setting and then searches the set of values for the specific value index and returns that value's human readable name</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileSettingId</i> - the id to look up in the mappings table</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>the name of the value or NAME_None if not value mapped</dd>
+</dl>
+<h4><span class="mw-headline" id="GetProfileSettingValues">GetProfileSettingValues</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=31" title="Edit section: GetProfileSettingValues">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>GetProfileSettingValues</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ProfileSettingId</b>, out&#160;<a href="Array.html" title="Array">array</a>&lt;<a href="Name.html" title="Name" class="mw-redirect">name</a>&gt;&#160;<b>Values</b>)</div>
+<p>Searches the profile settings mappings for the specifc profile setting and then adds all of the possible values to the out parameter</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileSettingId</i> - the id to look up in the mappings table</li>
+<li><i>Values</i> - the out param that gets the list of values copied to it</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if found and value mapped, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="GetRangedProfileSettingValue">GetRangedProfileSettingValue</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=32" title="Edit section: GetRangedProfileSettingValue">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>GetRangedProfileSettingValue</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ProfileId</b>, out&#160;<a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>OutValue</b>)</div>
+<p>Gets the value of a ranged property</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileId</i> - the ID to get the value of</li>
+<li><i>OutValue</i> - the out var that receives the value</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE if found and is a range property, FALSE otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="IsProfileSettingIdMapped">IsProfileSettingIdMapped</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=33" title="Edit section: IsProfileSettingIdMapped">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>IsProfileSettingIdMapped</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ProfileSettingId</b>)</div>
+<p>Determines if the setting is id mapped or not</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileSettingId</i> - the id to look up in the mappings table</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE if the setting is id mapped, FALSE if it is a raw value</dd>
+</dl>
+<h4><span class="mw-headline" id="SetProfileSettingValue">SetProfileSettingValue</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=34" title="Edit section: SetProfileSettingValue">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>SetProfileSettingValue</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ProfileSettingId</b>, const&#160;out&#160;<a href="String.html" title="String">string</a>&#160;<b>NewValue</b>)</div>
+<p>Searches for the profile setting by name and sets the value index to the value contained in the profile setting meta data</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileSettingName</i> - the name of the profile setting to set the string value of</li>
+<li><i>NewValue</i> - the string value to use</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the profile setting was found and the value was set, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="SetProfileSettingValueByName">SetProfileSettingValueByName</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=35" title="Edit section: SetProfileSettingValueByName">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>SetProfileSettingValueByName</b> (<a href="Name.html" title="Name" class="mw-redirect">name</a>&#160;<b>ProfileSettingName</b>, const&#160;out&#160;<a href="String.html" title="String">string</a>&#160;<b>NewValue</b>)</div>
+<p>Searches for the profile setting by name and sets the value index to the value contained in the profile setting meta data</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileSettingName</i> - the name of the profile setting to find</li>
+<li><i>NewValue</i> - the string value to use</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the profile setting was found and the value was set, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="SetProfileSettingValueFloat">SetProfileSettingValueFloat</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=36" title="Edit section: SetProfileSettingValueFloat">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>SetProfileSettingValueFloat</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ProfileSettingId</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>Value</b>)</div>
+<p>Searches for the profile setting by id and sets the value</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileSettingId</i> - the id of the profile setting to return</li>
+<li><i>Value</i> - the new value</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the profile setting was found and not id mapped, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="SetProfileSettingValueId">SetProfileSettingValueId</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=37" title="Edit section: SetProfileSettingValueId">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>SetProfileSettingValueId</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ProfileSettingId</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>Value</b>)</div>
+<p>Searches for the profile setting by id and sets the value</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileSettingId</i> - the id of the profile setting to return</li>
+<li><i>Value</i> - the new value</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the profile setting was found and id mapped, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="SetProfileSettingValueInt">SetProfileSettingValueInt</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=38" title="Edit section: SetProfileSettingValueInt">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>SetProfileSettingValueInt</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ProfileSettingId</b>, <a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>Value</b>)</div>
+<p>Searches for the profile setting by id and sets the value</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileSettingId</i> - the id of the profile setting to return</li>
+<li><i>Value</i> - the new value</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>true if the profile setting was found and not id mapped, false otherwise</dd>
+</dl>
+<h4><span class="mw-headline" id="SetRangedProfileSettingValue">SetRangedProfileSettingValue</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=39" title="Edit section: SetRangedProfileSettingValue">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">native function <a href="Bool.html" title="Bool" class="mw-redirect">bool</a>&#160;<b>SetRangedProfileSettingValue</b> (<a href="Int.html" title="Int" class="mw-redirect">int</a>&#160;<b>ProfileId</b>, <a href="Float.html" title="Float" class="mw-redirect">float</a>&#160;<b>NewValue</b>)</div>
+<p>Sets the value of a ranged property, clamping to the min/max values</p>
+<p><b>Parameters:</b></p>
+<ul>
+<li><i>ProfileId</i> - the ID of the property to set</li>
+<li><i>NewValue</i> - the new value to apply to the</li>
+</ul>
+<p><b>Returns:</b></p>
+<dl>
+<dd>TRUE if found and is a range property, FALSE otherwise</dd>
+</dl>
+<h3><span class="mw-headline" id="Events">Events</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=40" title="Edit section: Events">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="SetToDefaults">SetToDefaults</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)?section=41" title="Edit section: SetToDefaults">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="code block" style="font-family:monospace;padding-left:4em;text-indent:-4em">event <b>SetToDefaults</b> ()</div>
+<p>Clear out the settings. Subclasses can override to set their own defaults.</p>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.224 seconds
+Real time usage: 0.232 seconds
+Preprocessor visited node count: 1107/1000000
+Preprocessor generated node count: 5405/1000000
+Post‐expand include size: 10868/2097152 bytes
+Template argument size: 4616/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  135.466      1 - -total
+ 69.84%   94.614      1 - Template:Infobox_class
+ 66.25%   89.749      1 - Template:Infobox_class/core
+ 12.94%   17.524      6 - Template:Tl
+ 11.37%   15.399      2 - Template:Ch
+  8.28%   11.223     27 - Template:Code
+  6.67%    9.040      3 - Template:Samegame
+  4.49%    6.088      1 - Template:Autogenerated
+  3.75%    5.085      1 - Template:Classname
+  3.06%    4.142      1 - Template:Ambox
+-->
+
+<!-- Saved in parser cache with key wiki:pcache:idhash:26414-0!*!*!*!*!*!* and timestamp 20161215151831 and revision id 41239
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.beyondunreal.com/UE3:OnlinePlayerStorage_(UDK)?oldid=41239">https://wiki.beyondunreal.com/UE3:OnlinePlayerStorage_(UDK)?oldid=41239</a>"</div>
+					<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.beyondunreal.com/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="Category_UDK-specific_classes.html" title="Category:UDK-specific classes">UDK-specific classes</a></li><li><a href="Category_Classes_in_UDK_package_Engine.html" title="Category:Classes in UDK package Engine">Classes in UDK package Engine</a></li><li><a href="Category_Subclasses_of_Object_(UDK).html" title="Category:Subclasses of Object (UDK)">Subclasses of Object (UDK)</a></li><li><a href="Category_Auto-generated_pages_requiring_human_attention.html" title="Category:Auto-generated pages requiring human attention">Auto-generated pages requiring human attention</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-ue3" class="selected"><a href="UE3_OnlinePlayerStorage_(UDK).html">UE3</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.beyondunreal.com/edit/UE3_talk:OnlinePlayerStorage_(UDK)?redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				<li id="ca-edit"><a href="https://wiki.beyondunreal.com/edit/UE3:OnlinePlayerStorage_(UDK)" title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></li>
+				<li id="ca-history"><a href="https://wiki.beyondunreal.com/history/UE3:OnlinePlayerStorage_(UDK)" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AOnlinePlayerStorage+%28UDK%29&amp;returntoquery=redirect%3Dno&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.beyondunreal.com/Special:UserLogin?returnto=UE3%3AOnlinePlayerStorage+%28UDK%29&amp;returntoquery=redirect%3Dno" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+							<ul>
+											<li id="n-mainpage"><a href="index.html" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+											<li id="n-portal"><a href="Unreal_Wiki_Community_portal-2.html" title="About the project, what you can do, where to find things">Community portal</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.beyondunreal.com/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+											<li id="n-randompage"><a href="https://wiki.beyondunreal.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+											<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>
+											<li id="n-Forums-.28General.29"><a href="https://forums.beyondunreal.com/forums/wiki-general.250/" rel="nofollow">Forums (General)</a></li>
+											<li id="n-Forums-.28Technical.29"><a href="https://forums.beyondunreal.com/forums/wiki-technical.251/" rel="nofollow">Forums (Technical)</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.beyondunreal.com/" id="searchform">
+					<input type='hidden' name="title" value="Special:Search"/>
+					<input type="search" name="search" placeholder="Search" title="Search Unreal Wiki [f]" accesskey="f" id="searchInput" />
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" />&#160;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
+				</form>
+
+							</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.beyondunreal.com/Special:WhatLinksHere/UE3:OnlinePlayerStorage_(UDK)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.beyondunreal.com/Special:RecentChangesLinked/UE3:OnlinePlayerStorage_(UDK)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.beyondunreal.com/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.beyondunreal.com/UE3:OnlinePlayerStorage_(UDK)?redirect=no&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.beyondunreal.com/UE3:OnlinePlayerStorage_(UDK)?oldid=41239" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.beyondunreal.com/info/UE3:OnlinePlayerStorage_(UDK)" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="../licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0" width="88" height="31" /></a>
+							</div>
+					<div id="f-poweredbyico">
+									<script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+        <!-- Home Page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-9605963037553244"
+             data-ad-slot="9528541415"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+							</div>
+					<ul id="f-list">
+									<li id="lastmod"> Last modified at 07:42, 17 January 2010.</li>
+									<li id="copyright">Licensed as <a href="Unreal_Wiki_Copyrights.html" title="Unreal Wiki:Copyrights">Attribution-Noncommercial-Share Alike 3.0</a>.</li>
+									<li id="privacy"><a href="Unreal_Wiki_Privacy_policy.html" title="Unreal Wiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="Unreal_Wiki_About.html" title="Unreal Wiki:About">About Unreal Wiki</a></li>
+									<li id="disclaimer"><a href="Unreal_Wiki_General_disclaimer.html" title="Unreal Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"https://wiki.beyondunreal.com/w/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=monobook\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":96});
+}</script></body>
+<!-- Mirrored from wiki.beyondunreal.com/UE3:OnlinePlayerStorage_(UDK)?redirect=no by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Dec 2016 12:27:40 GMT -->
+</html>

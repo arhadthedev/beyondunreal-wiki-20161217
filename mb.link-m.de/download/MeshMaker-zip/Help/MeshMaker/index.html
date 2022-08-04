@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <title>MeshMaker</title>
+    <link rel=stylesheet type="text/css" href="meshmaker.css">
+  </head>
+  
+  <body>
+    <table border=0 cellspacing=0 cellpadding=0 align=center>
+      <tr valign=top>
+        <td width=90><img src="meshmaker-spacer.gif" alt="" width=90 height=1></td>
+        <td width=560><img src="meshmaker-title.jpg" alt="MeshMaker" width=260 height=50></td>
+        <td width=100><img src="meshmaker-spacer.gif" alt="" width=100 height=1></td>
+      </tr>
+    </table>
+
+    <table border=0 cellspacing=0 cellpadding=0 align=center>
+      <tr valign=top>
+        <td width=100><img src="meshmaker-spacer.gif" alt="" width=100 height=1></td>
+        <td width=550>
+          <img src="meshmaker-steps-left.jpg" alt="" width=150 height=570 align=right hspace=0>
+          
+          <h1>What is MeshMaker?</h1>
+          <p>MeshMaker is a Windows-based Unreal and Unreal Tournament editing tool that makes converting UnrealEd brushes (or, more precisely, prefabs) to decoration actors a matter of seconds.</p>
+          <p>Have a look at the <a href="meshmaker.html">MeshMaker walkthrough</a> to find out how it works.</p>
+          
+          <h1 class="standalone">Why Meshes?</h1>
+          <p>Meshes (or, for our intents and purposes, decoration actors) have some advantages over brushes where it comes to detail work:</p>
+          
+          <ul>
+            <li>First and foremost, the engine can render much more raw mesh faces than brush polys.&nbsp; For comparison, an average player model (which is a mesh) has about 600 to 1200 faces, and the engine has no problems rendering scenes with many players in close view.&nbsp; That means that <b>meshes can be much more detailed</b> than anything you could create from regular detail brushes without a noticable slowdown.</li>
+            <li>Because meshes aren't part of the BSP tree, they <b>never cause BSP holes</b> or hall-of-mirror effects.&nbsp; When designing a prefab that's supposed to be converted to a mesh, you don't have to bother with grid alignment; same applies for placing meshes in your map.</li>
+            <li>The engine uses vertex lighting on meshes (as opposed to lightmaps on brushes).&nbsp; That's not necessarily an advantage since lightmaps are much more sophisticated than vertex lighting, but vertex lighting makes <b>meshes appear smoother than brushes</b>.&nbsp; Try that with a sphere, for instance.</li>
+            <li>Decoration actors are much more versatile when it comes to interactivity in maps:&nbsp; With just a simple property change, <b>you can make them pushable, floating on water, destructible, revolving</b> and more.</ul>
+          </ul>
+          
+          <p>But it's not all sunshine, of course.&nbsp; The advantages mentioned above come at a cost:</p>
+          
+          <ul>
+            <li>Although meshes are rendered vastly faster than brushes, part of that advantage is sacrificed to the fact that <b>meshes are always rendered as a whole</b> when they're visible (as opposed to brushes whose individual surfaces are only rendered when they're in view).&nbsp; In virtually all cases it's still a big performance gain, though.</li>
+            <li>Meshes only support an <b>upright collision cylinder</b>, while brushes have per-poly collision.</li>
+            <li>The vertex lighting mentioned above is <b>much less sophisticated than lightmaps</b>.&nbsp; On the other hand, the difference is most obvious on large-scale objects which aren't suited for mesh conversion anyway, and occasionally the smoother vertex lighting even is a desired effect.</li>
+            <li><b>Not more than eight individual textures</b> are supported per mesh, and <b>textures can't be tiled</b> on mesh faces as they can on brush surfaces.&nbsp; (MeshMaker automatically adjusts texture alignment to work around that limitation.)</li>
+          </ul>
+          
+          
+          <h1 class="standalone">Download and Installation</h1>
+          <p>MeshMaker is available for download as an automatic Umod installer and a simple Zip archive.&nbsp; Both versions contain the same files; they just differ in installation convenience.</p>
+          
+          <table border=0 cellspacing=0 cellpadding=0>
+            <tr>
+              <td width=40><img src="meshmaker-spacer.gif" alt="" width=40 height=1></td>
+              <td>FilePlanet</td>
+              <td width=30><img src="meshmaker-spacer.gif" alt="" width=30 height=1></td>
+              <td><a target="_blank" href="http://dl.fileplanet.com/dl/dl.asp?planetunreal/screen/MeshMaker-umod.zip">Umod installer</a></td>
+              <td width=10><img src="meshmaker-spacer.gif" alt="" width=10 height=1></td>
+              <td>(502 kB)</td>
+              <td width=30><img src="meshmaker-spacer.gif" alt="" width=30 height=1></td>
+              <td><a target="_blank" href="http://dl.fileplanet.com/dl/dl.asp?planetunreal/screen/MeshMaker-zip.zip">Zip archive</a></td>
+              <td width=10><img src="meshmaker-spacer.gif" alt="" width=10 height=1></td>
+              <td>(505 kB)</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Link-M (Germany)</td>
+              <td></td>
+              <td><a href="http://mb.link-m.de/download/MeshMaker-umod.zip">Umod installer</a></td>
+              <td colspan=3></td>
+              <td><a href="http://mb.link-m.de/download/MeshMaker-zip.zip">Zip archive</a></td>
+            </tr>
+          </table>
+          
+          <p>A note for webmasters:&nbsp; Please don't link to the individual downloads themselves; link to this page instead.&nbsp; The download locations might be changed or removed without prior notice.</p>
+
+          <h1 class="standalone">Conversion Details</h1>
+          <p>The converted prefabs retain their original size and orientation.&nbsp; Same applies to <i>most</i> static surface properties:&nbsp; Translucent, modulated, masked, unlit, two-sided, and non-smoothed.&nbsp; Mirror surfaces aren't supported by meshes, but MeshMaker converts mirror surfaces to environment-mapped mesh faces; it's a nifty effect, try it out.</p>
+
+          <h1 class="standalone">Common Pitfalls and Limitations</h1>
+          
+          <ul>
+            <li>Prefabs must be completely textured.&nbsp; Prefabs with untextured surfaces can't be converted.</li>
+            <li>Meshes don't support more than eight individual textures (per mesh).&nbsp; Prefabs using more than eight textures can't be converted.</li>
+            <li>Textures can't be tiled on mesh faces.&nbsp; MeshMaker will automatically adjust texture alignment to the closest possible representation of the original prefab's texturing.</li>
+            <li>UnrealEd's software rendering mode has major problems displaying meshes; if your converted prefabs appear distorted in UnrealEd, don't worry and jump into the game to actually judge their looks.&nbsp; If the decorations seem to be strangely greenish, unselect them.</li>
+          </ul>
+          
+          <p>If something doesn't work for you that <i>should</i> work for you, it might be a bug.&nbsp; If you find a bug or some strange behavior that you suspect to be a bug, send me an email at <a href="mailto:mychaeel@planetunreal.com">mychaeel@planetunreal.com</a>.&nbsp; Please try to provide as much information as possible; bug reports to the effect of "it doesn't work and you suck" are worthless and will be discarded.</p>
+          <p>Same applies to suggestions.&nbsp; I'm open for any suggestions you might have; I can't promise that I'll implement every suggested feature, but I'll definitely consider it.</p>
+
+          <h1 class="standalone">Copyright and Acknowledgements</h1>
+          <p>MeshMaker is &copy; 2001 by Mychaeel <a href="mailto:mychaeel@planetunreal.com">mychaeel@planetunreal.com</a>.&nbsp; Free for noncommercial use.&nbsp; For any other use and distribution, please contact me in advance.&nbsp; Thanks.</p>
+          <p>Kudos go to the following individuals and organizations:&nbsp; <a href="http://www.acordero.org">Antonio Cordero</a>, whose excellent (and free) Delphi unit for Unreal package access saved me an insane amount of research and coding; <a href="http://unreal.epicgames.com/Models.htm">David Townsend</a> from Legend Entertainment for publishing the source code of the <i>3ds2unr</i> tool, which provided me with vital information about Unreal's mesh format; Exodus-R from the <a href="http://forums.beyondunreal.com">BeyondUnreal</a> Editing forums for publishing a thorough listing of possible face flags in Unreal meshes; and last but not least my beta testers, <a href="mailto:matthiaskath@gmx.net">ElBundee</a> and <a href="mailto:jnobles@multipro.com">WillySurvive</a>.</p>
+          <p>Oh, and <i>really</i> last but <i>definitely</i> not least the nice folks from BeyondUnreal's <a href="http://forums.beyondunreal.com/forumdisplay.php?s=&forumid=9">Editing forums</a> that offered kind encouragement when I asked whether a tool like MeshMaker might be useful.</p>
+        </td>
+        <td width=100><img src="meshmaker-steps-right.jpg" alt="Conversion Steps" width=100 height=570></td>
+      </tr>
+    </table>
+  </body>
+</html>
